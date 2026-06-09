@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Copy, Check, Volume2, Play, MessageSquare } from "lucide-react";
-import { HistoryRow, langLabel, targetLabel } from "@/lib/types";
+import { HistoryRow, langLabel } from "@/lib/types";
 
 function speak(text: string, lang: string) {
   if (typeof window === "undefined" || !window.speechSynthesis) return;
@@ -13,27 +13,51 @@ function speak(text: string, lang: string) {
 }
 
 function Turn({ r }: { r: HistoryRow }) {
-  const [copied, setCopied] = useState(false);
   const target = r.sourceLang === "ru" ? "es" : "ru";
+  // show one language at a time; default = translation. Swipe to flip.
+  const [showSource, setShowSource] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const startX = useRef<number | null>(null);
+
+  const lang = showSource ? r.sourceLang : target;
+  const shown = showSource ? r.transcript : r.translation;
+
+  function toggle() {
+    setShowSource((s) => !s);
+  }
 
   async function copy() {
-    await navigator.clipboard.writeText(r.translation);
+    await navigator.clipboard.writeText(shown);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   }
 
   return (
     <div
-      className="rounded-2xl border p-3.5 shadow-sm"
+      onClick={toggle}
+      onTouchStart={(e) => (startX.current = e.touches[0].clientX)}
+      onTouchEnd={(e) => {
+        if (startX.current === null) return;
+        const dx = e.changedTouches[0].clientX - startX.current;
+        startX.current = null;
+        if (Math.abs(dx) > 40) toggle();
+      }}
+      className="cursor-pointer select-none rounded-2xl border p-3.5 shadow-sm"
       style={{ background: "var(--card)", borderColor: "var(--border)" }}
     >
-      <div className="mb-1.5 flex items-center gap-1 text-[11px] font-medium uppercase tracking-wide" style={{ color: "var(--hint)" }}>
-        {langLabel(r.sourceLang)}
-        <span className="text-emerald-500">→</span>
-        {targetLabel(r.sourceLang)}
+      <div className="mb-2 flex items-center gap-2 text-[11px] font-medium uppercase tracking-wide" style={{ color: "var(--hint)" }}>
+        <span>{langLabel(lang)}</span>
+        {/* swipe indicator: two dots, active = current language */}
+        <span className="flex items-center gap-1">
+          <span className={`h-1.5 w-1.5 rounded-full ${!showSource ? "bg-emerald-500" : ""}`} style={showSource ? { background: "var(--border)" } : undefined} />
+          <span className={`h-1.5 w-1.5 rounded-full ${showSource ? "bg-emerald-500" : ""}`} style={!showSource ? { background: "var(--border)" } : undefined} />
+        </span>
         {r.audioUrl && (
           <button
-            onClick={() => new Audio(r.audioUrl!).play()}
+            onClick={(e) => {
+              e.stopPropagation();
+              new Audio(r.audioUrl!).play();
+            }}
             aria-label="Проиграть аудио"
             className="ml-auto flex items-center gap-1 rounded-md px-1.5 py-0.5 transition active:scale-90"
             style={{ color: "var(--hint)" }}
@@ -43,22 +67,24 @@ function Turn({ r }: { r: HistoryRow }) {
         )}
       </div>
 
-      <p className="text-sm leading-relaxed" style={{ color: "var(--hint)" }}>
-        {r.transcript}
-      </p>
-
-      <div className="mt-2 flex items-start justify-between gap-2 border-t pt-2" style={{ borderColor: "var(--border)" }}>
-        <p className="text-base font-medium leading-relaxed">{r.translation}</p>
+      <div className="flex items-start justify-between gap-2">
+        <p className="text-base leading-relaxed">{shown}</p>
         <div className="flex shrink-0 items-center gap-0.5">
           <button
-            onClick={() => speak(r.translation, target)}
+            onClick={(e) => {
+              e.stopPropagation();
+              speak(shown, lang);
+            }}
             aria-label="Озвучить"
             className="rounded-lg p-1.5 text-emerald-600 transition active:scale-90 dark:text-emerald-400"
           >
             <Volume2 size={15} />
           </button>
           <button
-            onClick={copy}
+            onClick={(e) => {
+              e.stopPropagation();
+              copy();
+            }}
             aria-label="Копировать"
             className="rounded-lg p-1.5 text-emerald-600 transition active:scale-90 dark:text-emerald-400"
           >

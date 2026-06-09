@@ -71,17 +71,18 @@ function applyTheme() {
   if (!p) return;
   const root = document.documentElement;
   const set = (name: string, val?: string) => val && root.style.setProperty(name, val);
-  set("--bg", p.bg_color);
+  // page = greyish (secondary), header/footer/cards = white (surface)
+  const surface = p.section_bg_color || p.bg_color;
+  set("--bg", p.secondary_bg_color || p.bg_color);
+  set("--accent", surface);
+  set("--card", surface);
   set("--text", p.text_color);
   set("--hint", p.hint_color || p.subtitle_text_color);
-  set("--card", p.section_bg_color || p.secondary_bg_color || p.bg_color);
-  set("--accent", p.secondary_bg_color || p.header_bg_color || p.bg_color);
   set("--border", p.section_separator_color || p.hint_color);
   set("--button", p.button_color);
   set("--button-text", p.button_text_color);
   if (p.secondary_bg_color) w?.setBackgroundColor?.(p.secondary_bg_color);
-  if (p.header_bg_color || p.secondary_bg_color)
-    w?.setHeaderColor?.(p.header_bg_color || p.secondary_bg_color!);
+  if (surface) w?.setHeaderColor?.(surface);
 }
 
 // Call once on app load: signal readiness, expand viewport, sync theme.
