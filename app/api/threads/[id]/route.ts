@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { resolveOwner } from "@/lib/auth";
+import { resolveOwner, isAllowed } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
@@ -11,6 +11,7 @@ export async function GET(
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const { id } = await params;
     const thread = await prisma.thread.findUnique({
@@ -36,6 +37,7 @@ export async function DELETE(
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const { id } = await params;
     const thread = await prisma.thread.findUnique({ where: { id } });

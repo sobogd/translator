@@ -7,6 +7,19 @@ import crypto from "crypto";
 
 const TG_MAX_AGE_SEC = 60 * 60 * 24; // reject initData older than 24h
 
+// Allowlist gate. If ALLOWED_TG_IDS is set (comma-separated Telegram user ids),
+// only those Telegram users pass — device/browser identities are rejected,
+// making the app effectively Telegram-only for named people. Empty => open.
+export function isAllowed(owner: string): boolean {
+  const list = (process.env.ALLOWED_TG_IDS || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (list.length === 0) return true;
+  if (owner.startsWith("telegram:")) return list.includes(owner.slice(9));
+  return false;
+}
+
 export function resolveOwner(req: Request): string | null {
   const initData = req.headers.get("x-telegram-init-data");
   if (initData) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { resolveOwner } from "@/lib/auth";
+import { resolveOwner, isAllowed } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
@@ -8,6 +8,7 @@ export async function GET(req: NextRequest) {
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const threads = await prisma.thread.findMany({
       where: { ownerKey: owner },
@@ -25,6 +26,7 @@ export async function POST(req: NextRequest) {
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const body = await req.json();
     const title = typeof body.title === "string" ? body.title.trim() : "";

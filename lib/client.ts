@@ -34,6 +34,12 @@ export function isTelegram(): boolean {
   return !!tg()?.initData;
 }
 
+export function telegramUserId(): string | null {
+  const u = (tg() as unknown as { initDataUnsafe?: { user?: { id?: number } } })
+    ?.initDataUnsafe?.user?.id;
+  return u ? String(u) : null;
+}
+
 function deviceId(): string {
   let id = localStorage.getItem("deviceId");
   if (!id) {

@@ -3,7 +3,7 @@ import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getS3Client, s3Bucket, s3Key, getPublicUrl } from "@/lib/s3";
-import { resolveOwner } from "@/lib/auth";
+import { resolveOwner, isAllowed } from "@/lib/auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -80,6 +80,7 @@ export async function POST(req: NextRequest) {
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const contentType = req.headers.get("content-type") || "";
     let result: GeminiResult;

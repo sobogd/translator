@@ -2,20 +2,25 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, MessageSquare, Trash2, Loader2 } from "lucide-react";
+import { Plus, MessageSquare, Trash2, Loader2, Lock } from "lucide-react";
 import { NewThreadModal } from "@/components/NewThreadModal";
-import { apiFetch, initTelegram, haptic } from "@/lib/client";
+import { apiFetch, initTelegram, haptic, telegramUserId } from "@/lib/client";
 import type { Thread, ThreadWithCount } from "@/lib/types";
 
 export default function Home() {
   const router = useRouter();
   const [threads, setThreads] = useState<ThreadWithCount[]>([]);
   const [loading, setLoading] = useState(true);
+  const [forbidden, setForbidden] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const load = useCallback(async () => {
     try {
       const res = await apiFetch("/api/threads");
+      if (res.status === 403) {
+        setForbidden(true);
+        return;
+      }
       if (res.ok) setThreads(await res.json());
     } catch {
       /* ignore */
@@ -41,6 +46,31 @@ export default function Home() {
     haptic();
     await apiFetch(`/api/threads/${id}`, { method: "DELETE" });
     setThreads((ts) => ts.filter((t) => t.id !== id));
+  }
+
+  if (forbidden) {
+    const id = telegramUserId();
+    return (
+      <main
+        className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 px-6 text-center"
+        style={{ background: "var(--bg)", color: "var(--text)" }}
+      >
+        <Lock size={30} className="text-emerald-500" />
+        <p className="text-base font-medium">Доступ ограничен</p>
+        <p className="max-w-xs text-sm" style={{ color: "var(--hint)" }}>
+          Приложение пока доступно только избранным. Отправьте свой Telegram-ID
+          администратору, чтобы получить доступ.
+        </p>
+        {id && (
+          <div
+            className="rounded-xl border px-4 py-2 font-mono text-sm"
+            style={{ background: "var(--card)", borderColor: "var(--border)" }}
+          >
+            ID: {id}
+          </div>
+        )}
+      </main>
+    );
   }
 
   return (
