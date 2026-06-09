@@ -9,7 +9,7 @@ import { type RecStatus } from "@/components/RecordButton";
 import { History } from "@/components/History";
 import { ThreadMenu } from "@/components/ThreadMenu";
 import { EditFieldModal } from "@/components/EditFieldModal";
-import { apiFetch, initTelegram, showBackButton, haptic } from "@/lib/client";
+import { apiFetch, initTelegram, showBackButton, haptic, isTelegram } from "@/lib/client";
 import type { TranslateResult, ThreadDetail } from "@/lib/types";
 
 export default function ThreadPage() {
@@ -27,6 +27,7 @@ export default function ThreadPage() {
   const [error, setError] = useState<string | null>(null);
   const [editTitle, setEditTitle] = useState(false);
   const [editTopic, setEditTopic] = useState(false);
+  const [inTg, setInTg] = useState(false);
   const recRef = useRef<WavRecorder | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -64,10 +65,11 @@ export default function ThreadPage() {
 
   useEffect(() => {
     initTelegram();
-    const hide = showBackButton(() => router.push("/"));
-    // setThread runs only after the awaited fetch — not a synchronous cascade.
+    // one-time init from the Telegram runtime (external), not a render cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    load();
+    setInTg(isTelegram());
+    const hide = showBackButton(() => router.push("/"));
+    load(); // setThread runs after the awaited fetch
     return hide;
   }, [load, router]);
 
@@ -210,15 +212,17 @@ export default function ThreadPage() {
         className="flex shrink-0 items-center gap-2.5 border-b px-2 py-2"
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
-        <button
-          onClick={() => router.push("/")}
-          aria-label="Назад"
-          className="rounded-lg p-1.5 transition active:scale-90"
-          style={{ color: "var(--hint)" }}
-        >
-          <ArrowLeft size={22} />
-        </button>
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
+        {!inTg && (
+          <button
+            onClick={() => router.push("/")}
+            aria-label="Назад"
+            className="rounded-lg p-1.5 transition active:scale-90"
+            style={{ color: "var(--hint)" }}
+          >
+            <ArrowLeft size={22} />
+          </button>
+        )}
+        <div className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
           {(thread?.title?.[0] ?? "…").toUpperCase()}
         </div>
         <div className="min-w-0 flex-1 leading-tight">
