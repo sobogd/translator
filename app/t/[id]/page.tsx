@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Send, Loader2, Info } from "lucide-react";
+import { ArrowLeft, Send, Loader2, Info, Mic, Square, Keyboard } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
-import { ModeToggle, type Mode } from "@/components/ModeToggle";
-import { RecordButton, type RecStatus } from "@/components/RecordButton";
+import { type Mode } from "@/components/ModeToggle";
+import { type RecStatus } from "@/components/RecordButton";
 import { History } from "@/components/History";
 import { apiFetch, initTelegram, showBackButton } from "@/lib/client";
 import type { TranslateResult, ThreadDetail } from "@/lib/types";
@@ -21,12 +21,29 @@ export default function ThreadPage() {
   const [status, setStatus] = useState<RecStatus>("idle");
   const [text, setText] = useState("");
   const [textBusy, setTextBusy] = useState(false);
+  const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const recRef = useRef<WavRecorder | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
 
   const pending = textBusy || status === "processing";
+
+  useEffect(() => {
+    if (status !== "recording") return;
+    const start = Date.now();
+    const t = setInterval(
+      () => setElapsed(Math.floor((Date.now() - start) / 1000)),
+      250,
+    );
+    return () => {
+      clearInterval(t);
+      setElapsed(0);
+    };
+  }, [status]);
+
+  const fmtTime = (s: number) =>
+    `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   const load = useCallback(async () => {
     try {
@@ -203,23 +220,27 @@ export default function ThreadPage() {
         )}
       </div>
 
-      {/* footer input */}
+      {/* footer composer (Telegram-style single bar) */}
       <footer
-        className="flex shrink-0 flex-col gap-2 border-t px-3 pb-3 pt-2"
+        className="shrink-0 border-t px-3 pb-3 pt-2"
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
-        <div className="flex justify-center">
-          <ModeToggle
-            mode={mode}
-            onChange={setMode}
+        <div
+          className="flex items-end gap-2 rounded-[1.6rem] border p-1.5"
+          style={{ background: "var(--card)", borderColor: "var(--border)" }}
+        >
+          {/* left: mode switch */}
+          <button
+            onClick={() => setMode(mode === "text" ? "audio" : "text")}
             disabled={status !== "idle" || textBusy}
-          />
-        </div>
+            aria-label={mode === "text" ? "Режим диктовки" : "Режим текста"}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white transition hover:bg-emerald-500 active:scale-90 disabled:opacity-40"
+          >
+            {mode === "text" ? <Mic size={19} /> : <Keyboard size={19} />}
+          </button>
 
-        {mode === "audio" ? (
-          <RecordButton status={status} onStart={startRec} onStop={stopRec} />
-        ) : (
-          <div className="flex items-end gap-2">
+          {/* middle: textarea or recording status */}
+          {mode === "text" ? (
             <textarea
               ref={taRef}
               value={text}
@@ -228,16 +249,35 @@ export default function ThreadPage() {
               onKeyDown={(e) => {
                 if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
               }}
-              placeholder="Текст на русском или испанском…"
+              placeholder="Сообщение…"
               rows={1}
-              className="max-h-[28dvh] min-h-[2.75rem] flex-1 resize-none rounded-2xl border px-3 py-2.5 text-base leading-relaxed outline-none transition focus-visible:ring-2 focus-visible:ring-emerald-500/30"
-              style={{ background: "var(--card)", borderColor: "var(--border)" }}
+              className="max-h-[28dvh] min-h-[2.5rem] flex-1 resize-none border-0 bg-transparent px-1 py-2 text-base leading-relaxed outline-none"
             />
+          ) : (
+            <div
+              className="flex min-h-[2.5rem] flex-1 items-center gap-2 px-1 text-sm"
+              style={{ color: "var(--hint)" }}
+            >
+              {status === "recording" && (
+                <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500" />
+              )}
+              <span>
+                {status === "recording"
+                  ? `Запись · ${fmtTime(elapsed)}`
+                  : status === "processing"
+                    ? "Распознаю…"
+                    : "Нажми справа и говори"}
+              </span>
+            </div>
+          )}
+
+          {/* right: send (text) or record/stop (audio) */}
+          {mode === "text" ? (
             <button
               onClick={translateText}
               disabled={!text.trim() || textBusy}
               aria-label="Перевести"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white shadow transition hover:bg-emerald-500 active:scale-95 disabled:opacity-40"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white transition hover:bg-emerald-500 active:scale-90 disabled:opacity-40"
             >
               {textBusy ? (
                 <Loader2 size={18} className="animate-spin" />
@@ -245,8 +285,30 @@ export default function ThreadPage() {
                 <Send size={18} />
               )}
             </button>
-          </div>
-        )}
+          ) : (
+            <button
+              onClick={status === "recording" ? stopRec : startRec}
+              disabled={status === "processing"}
+              aria-label={status === "recording" ? "Стоп" : "Запись"}
+              className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition active:scale-90 disabled:opacity-40 ${
+                status === "recording"
+                  ? "bg-red-500 hover:bg-red-400"
+                  : "bg-emerald-600 hover:bg-emerald-500"
+              }`}
+            >
+              {status === "recording" && (
+                <span className="absolute inset-0 animate-ping rounded-full bg-red-500/40" />
+              )}
+              {status === "processing" ? (
+                <Loader2 size={18} className="animate-spin" />
+              ) : status === "recording" ? (
+                <Square size={16} fill="currentColor" />
+              ) : (
+                <Mic size={19} />
+              )}
+            </button>
+          )}
+        </div>
       </footer>
     </main>
   );
