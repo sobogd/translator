@@ -1,7 +1,7 @@
 "use client";
 
 import { Clock, Play } from "lucide-react";
-import { HistoryRow, langLabel } from "@/lib/types";
+import { HistoryRow, langLabel, targetLabel } from "@/lib/types";
 
 export function History({ rows }: { rows: HistoryRow[] }) {
   if (rows.length === 0) {
@@ -24,8 +24,10 @@ export function History({ rows }: { rows: HistoryRow[] }) {
           className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
         >
           <div className="mb-1.5 flex items-center justify-between">
-            <span className="text-[11px] font-medium uppercase tracking-wide text-zinc-400">
+            <span className="flex items-center gap-1 text-[11px] font-medium uppercase tracking-wide text-zinc-400">
               {langLabel(r.sourceLang)}
+              <span className="text-emerald-500">→</span>
+              {targetLabel(r.sourceLang)}
             </span>
             {r.audioUrl && (
               <button

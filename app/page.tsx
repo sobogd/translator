@@ -1,167 +1,111 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Send, Loader2 } from "lucide-react";
-import { WavRecorder } from "@/lib/recorder";
-import { ModeToggle, type Mode } from "@/components/ModeToggle";
-import { RecordButton, type RecStatus } from "@/components/RecordButton";
-import { ResultCards } from "@/components/ResultCards";
-import { History } from "@/components/History";
-import type { TranslateResult, HistoryRow } from "@/lib/types";
+import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Plus, MessageSquare, Trash2, Loader2 } from "lucide-react";
+import { NewThreadModal } from "@/components/NewThreadModal";
+import type { Thread, ThreadWithCount } from "@/lib/types";
 
 export default function Home() {
-  const [mode, setMode] = useState<Mode>("text");
-  const [status, setStatus] = useState<RecStatus>("idle");
-  const [text, setText] = useState("");
-  const [textBusy, setTextBusy] = useState(false);
-  const [result, setResult] = useState<TranslateResult | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [history, setHistory] = useState<HistoryRow[]>([]);
-  const recRef = useRef<WavRecorder | null>(null);
+  const router = useRouter();
+  const [threads, setThreads] = useState<ThreadWithCount[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
-  const loadHistory = useCallback(async () => {
+  const load = useCallback(async () => {
     try {
-      const res = await fetch("/api/history");
-      if (res.ok) setHistory(await res.json());
+      const res = await fetch("/api/threads");
+      if (res.ok) setThreads(await res.json());
     } catch {
       /* ignore */
+    } finally {
+      setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    // setHistory runs only after the awaited fetch — not a synchronous cascade.
+    // setThreads runs only after the awaited fetch — not a synchronous cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    loadHistory();
-  }, [loadHistory]);
+    load();
+  }, [load]);
 
-  function onResult(data: TranslateResult) {
-    setResult(data);
-    loadHistory();
+  function onCreated(t: Thread) {
+    router.push(`/t/${t.id}`);
   }
 
-  // ---- audio ----
-  async function startRec() {
-    setError(null);
-    setResult(null);
-    try {
-      const rec = new WavRecorder();
-      await rec.start();
-      recRef.current = rec;
-      setStatus("recording");
-    } catch {
-      setError("Нет доступа к микрофону");
-    }
-  }
-
-  async function stopRec() {
-    const rec = recRef.current;
-    if (!rec) return;
-    setStatus("processing");
-    try {
-      const blob = await rec.stop();
-      recRef.current = null;
-      const fd = new FormData();
-      fd.append("audio", blob, "speech.wav");
-      const res = await fetch("/api/translate", { method: "POST", body: fd });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Ошибка сервера");
-      onResult(data);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Ошибка");
-    } finally {
-      setStatus("idle");
-    }
-  }
-
-  // ---- text ----
-  async function translateText() {
-    if (!text.trim() || textBusy) return;
-    setError(null);
-    setResult(null);
-    setTextBusy(true);
-    try {
-      const res = await fetch("/api/translate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Ошибка сервера");
-      onResult(data);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Ошибка");
-    } finally {
-      setTextBusy(false);
-    }
+  async function remove(id: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    if (!confirm("Удалить этот тред со всей историей?")) return;
+    await fetch(`/api/threads/${id}`, { method: "DELETE" });
+    setThreads((ts) => ts.filter((t) => t.id !== id));
   }
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-gradient-to-b from-zinc-50 to-zinc-100 px-4 py-10 text-zinc-900 dark:from-zinc-950 dark:to-black dark:text-zinc-100">
-      <div className="flex w-full max-w-2xl flex-col items-center gap-8">
-        {/* header */}
-        <header className="flex flex-col items-center gap-4">
-          <h1 className="text-3xl font-bold tracking-tight">
+      <div className="flex w-full max-w-2xl flex-col gap-6">
+        <header className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold tracking-tight">
             RU <span className="text-emerald-500">⇄</span> ES
           </h1>
-          <ModeToggle
-            mode={mode}
-            onChange={setMode}
-            disabled={status !== "idle" || textBusy}
-          />
+          <button
+            onClick={() => setShowModal(true)}
+            className="flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow transition hover:bg-emerald-500 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+          >
+            <Plus size={16} /> Новый перевод
+          </button>
         </header>
 
-        {/* input */}
-        <section className="w-full">
-          {mode === "audio" ? (
-            <div className="flex justify-center py-4">
-              <RecordButton status={status} onStart={startRec} onStop={stopRec} />
-            </div>
-          ) : (
-            <div className="flex flex-col gap-3">
-              <textarea
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
-                }}
-                placeholder="Введите текст на русском или испанском…"
-                rows={4}
-                className="w-full resize-none rounded-2xl border border-zinc-200 bg-white p-4 text-base leading-relaxed shadow-sm outline-none transition placeholder:text-zinc-400 focus-visible:border-emerald-500 focus-visible:ring-2 focus-visible:ring-emerald-500/30 dark:border-zinc-800 dark:bg-zinc-900"
-              />
+        {loading ? (
+          <div className="flex justify-center py-16 text-zinc-400">
+            <Loader2 size={22} className="animate-spin" />
+          </div>
+        ) : threads.length === 0 ? (
+          <div className="flex flex-col items-center gap-3 py-16 text-center text-zinc-400">
+            <MessageSquare size={26} />
+            <p className="text-sm">
+              Пока нет тредов. Создай первый — задай тему, и ИИ будет в курсе
+              контекста разговора.
+            </p>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-3">
+            {threads.map((t) => (
               <button
-                onClick={translateText}
-                disabled={!text.trim() || textBusy}
-                className="flex items-center justify-center gap-2 self-end rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow transition hover:bg-emerald-500 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 disabled:cursor-not-allowed disabled:opacity-40"
+                key={t.id}
+                onClick={() => router.push(`/t/${t.id}`)}
+                className="group flex items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-4 text-left shadow-sm transition hover:border-emerald-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
               >
-                {textBusy ? (
-                  <>
-                    <Loader2 size={16} className="animate-spin" /> Перевод…
-                  </>
-                ) : (
-                  <>
-                    <Send size={16} /> Перевести
-                  </>
-                )}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <MessageSquare size={15} className="shrink-0 text-emerald-500" />
+                    <span className="truncate font-medium">{t.title}</span>
+                  </div>
+                  {t.context && (
+                    <p className="mt-1 line-clamp-2 text-sm text-zinc-500 dark:text-zinc-400">
+                      {t.context}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-zinc-400">
+                    {t._count.translations} переводов
+                  </p>
+                </div>
+                <span
+                  onClick={(e) => remove(t.id, e)}
+                  role="button"
+                  aria-label="Удалить тред"
+                  className="shrink-0 rounded-lg p-2 text-zinc-300 opacity-0 transition hover:bg-red-50 hover:text-red-500 group-hover:opacity-100 dark:text-zinc-600 dark:hover:bg-red-950/40"
+                >
+                  <Trash2 size={16} />
+                </span>
               </button>
-            </div>
-          )}
-        </section>
-
-        {/* error */}
-        {error && (
-          <div className="w-full rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
-            {error}
+            ))}
           </div>
         )}
-
-        {/* result */}
-        {result && <ResultCards result={result} />}
-
-        {/* history */}
-        <section className="mt-2 w-full">
-          <History rows={history} />
-        </section>
       </div>
+
+      {showModal && (
+        <NewThreadModal onClose={() => setShowModal(false)} onCreated={onCreated} />
+      )}
     </main>
   );
 }

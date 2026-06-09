@@ -8,8 +8,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Thread {
+  id           String        @id @default(cuid())
+  title        String
+  context      String        @default("")
+  createdAt    DateTime      @default(now())
+  translations Translation[]
+
+  @@map("threads")
+}
+
 model Translation {
   id          String   @id @default(cuid())
+  threadId    String?
+  thread      Thread?  @relation(fields: [threadId], references: [id], onDelete: Cascade)
   mode        String // "audio" | "text"
   sourceLang  String // "ru" | "es"
   transcript  String
@@ -17,5 +29,6 @@ model Translation {
   audioUrl    String?
   createdAt   DateTime @default(now())
 
+  @@index([threadId])
   @@map("translations")
 }

@@ -18,6 +18,17 @@ export type HistoryRow = {
   createdAt: string;
 };
 
+export type Thread = {
+  id: string;
+  title: string;
+  context: string;
+  createdAt: string;
+};
+
+export type ThreadWithCount = Thread & { _count: { translations: number } };
+
+export type ThreadDetail = Thread & { translations: HistoryRow[] };
+
 export const langLabel = (l?: string) =>
   l === "ru" ? "🇷🇺 Русский" : l === "es" ? "🇪🇸 Español" : "";
 export const targetLabel = (l?: string) =>
