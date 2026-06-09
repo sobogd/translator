@@ -61,5 +61,6 @@ jobs:
             npm ci --production
             npx prisma migrate deploy
             npx prisma generate
-            pm2 restart translator --update-env || pm2 start npm --name "translator" -- start
+            # PORT must be a real env var — next start ignores PORT from .env file
+            PORT=8200 pm2 restart translator --update-env || PORT=8200 pm2 start npm --name "translator" -- start
             pm2 save
