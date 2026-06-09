@@ -22,7 +22,8 @@ export function ModeToggle({
     <div
       role="tablist"
       aria-label="Режим перевода"
-      className="inline-flex items-center gap-1 rounded-full border border-zinc-200 bg-zinc-100/80 p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/80"
+      className="inline-flex items-center gap-1 rounded-full border p-1"
+      style={{ background: "var(--bg)", borderColor: "var(--border)" }}
     >
       {items.map(({ id, label, icon: Icon }) => {
         const active = mode === id;
@@ -33,13 +34,12 @@ export function ModeToggle({
             aria-selected={active}
             disabled={disabled}
             onClick={() => onChange(id)}
-            className={`flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 disabled:cursor-not-allowed disabled:opacity-50 ${
-              active
-                ? "bg-white text-zinc-900 shadow dark:bg-zinc-700 dark:text-white"
-                : "text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+            className={`flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition active:scale-95 disabled:opacity-50 ${
+              active ? "bg-emerald-600 text-white shadow" : ""
             }`}
+            style={active ? undefined : { color: "var(--hint)" }}
           >
-            <Icon size={16} />
+            <Icon size={15} />
             {label}
           </button>
         );

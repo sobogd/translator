@@ -39,12 +39,12 @@ export function RecordButton({
   const processing = status === "processing";
 
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex items-center justify-center gap-3 py-1">
       <button
         onClick={recording ? onStop : onStart}
         disabled={processing}
         aria-label={recording ? "Остановить запись" : "Начать запись"}
-        className={`relative flex h-32 w-32 items-center justify-center rounded-full text-white shadow-lg transition active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500/40 disabled:cursor-not-allowed ${
+        className={`relative flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg transition active:scale-95 disabled:cursor-not-allowed ${
           recording
             ? "bg-red-500 hover:bg-red-400"
             : processing
@@ -56,18 +56,18 @@ export function RecordButton({
           <span className="absolute inset-0 animate-ping rounded-full bg-red-500/40" />
         )}
         {processing ? (
-          <Loader2 size={40} className="animate-spin" />
+          <Loader2 size={26} className="animate-spin" />
         ) : recording ? (
-          <Square size={36} fill="currentColor" />
+          <Square size={22} fill="currentColor" />
         ) : (
-          <Mic size={44} />
+          <Mic size={26} />
         )}
       </button>
-      <p className="h-5 text-sm text-zinc-500 dark:text-zinc-400">
+      <span className="min-w-[7rem] text-sm" style={{ color: "var(--hint)" }}>
         {recording && `Запись · ${fmt(elapsed)}`}
-        {processing && "Gemini распознаёт и переводит…"}
+        {processing && "Распознаю…"}
         {status === "idle" && "Нажми и говори"}
-      </p>
+      </span>
     </div>
   );
 }

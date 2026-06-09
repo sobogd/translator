@@ -5,6 +5,39 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Palette driven by CSS vars so we can override them from Telegram themeParams
+   at runtime. Defaults below cover plain browser (light + dark). */
+:root {
+  --bg: #f4f4f5;
+  --accent: #e8e8eb; /* header / footer surface */
+  --card: #ffffff;
+  --text: #18181b;
+  --hint: #71717a;
+  --border: #e4e4e7;
+  --button: #059669;
+  --button-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --accent: #161618;
+    --card: #18181b;
+    --text: #fafafa;
+    --hint: #a1a1aa;
+    --border: #27272a;
+    --button: #10b981;
+    --button-text: #ffffff;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }

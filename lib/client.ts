@@ -4,11 +4,25 @@
 // (server verifies it); elsewhere we fall back to an anonymous device id stored
 // in localStorage (data isolation per browser/device, no registration).
 
+type ThemeParams = Record<string, string>;
+
 type TgWebApp = {
   initData?: string;
+  colorScheme?: "light" | "dark";
+  themeParams?: ThemeParams;
   ready?: () => void;
   expand?: () => void;
-  colorScheme?: "light" | "dark";
+  setHeaderColor?: (c: string) => void;
+  setBackgroundColor?: (c: string) => void;
+  onEvent?: (e: string, cb: () => void) => void;
+  offEvent?: (e: string, cb: () => void) => void;
+  BackButton?: {
+    show: () => void;
+    hide: () => void;
+    onClick: (cb: () => void) => void;
+    offClick: (cb: () => void) => void;
+  };
+  HapticFeedback?: { impactOccurred?: (s: string) => void };
 };
 
 function tg(): TgWebApp | undefined {
@@ -44,10 +58,48 @@ export async function apiFetch(input: string, init: RequestInit = {}) {
   return fetch(input, { ...init, headers });
 }
 
-// Call once on app load: signal readiness + expand the Mini App viewport.
+// Map Telegram themeParams onto our CSS vars so the app matches the client.
+function applyTheme() {
+  const w = tg();
+  const p = w?.themeParams;
+  if (!p) return;
+  const root = document.documentElement;
+  const set = (name: string, val?: string) => val && root.style.setProperty(name, val);
+  set("--bg", p.bg_color);
+  set("--text", p.text_color);
+  set("--hint", p.hint_color || p.subtitle_text_color);
+  set("--card", p.section_bg_color || p.secondary_bg_color || p.bg_color);
+  set("--accent", p.secondary_bg_color || p.header_bg_color || p.bg_color);
+  set("--border", p.section_separator_color || p.hint_color);
+  set("--button", p.button_color);
+  set("--button-text", p.button_text_color);
+  if (p.secondary_bg_color) w?.setBackgroundColor?.(p.secondary_bg_color);
+  if (p.header_bg_color || p.secondary_bg_color)
+    w?.setHeaderColor?.(p.header_bg_color || p.secondary_bg_color!);
+}
+
+// Call once on app load: signal readiness, expand viewport, sync theme.
 export function initTelegram() {
   const w = tg();
   if (!w) return;
   w.ready?.();
   w.expand?.();
+  applyTheme();
+  w.onEvent?.("themeChanged", applyTheme);
+}
+
+// Telegram native back button (no-op outside Telegram).
+export function showBackButton(cb: () => void) {
+  const b = tg()?.BackButton;
+  if (!b) return () => {};
+  b.onClick(cb);
+  b.show();
+  return () => {
+    b.offClick(cb);
+    b.hide();
+  };
+}
+
+export function haptic() {
+  tg()?.HapticFeedback?.impactOccurred?.("light");
 }
