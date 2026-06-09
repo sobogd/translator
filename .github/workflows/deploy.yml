@@ -55,6 +55,7 @@ jobs:
             S3_KEY="${{ secrets.S3_KEY }}"
             S3_TOKEN="${{ secrets.S3_TOKEN }}"
             S3_NAME="${{ secrets.S3_NAME }}"
+            BOT_TOKEN="${{ secrets.BOT_TOKEN }}"
             PORT="8200"
             EOF
 

@@ -9,6 +9,7 @@ import { ModeToggle, type Mode } from "@/components/ModeToggle";
 import { RecordButton, type RecStatus } from "@/components/RecordButton";
 import { ResultCards } from "@/components/ResultCards";
 import { History } from "@/components/History";
+import { apiFetch, initTelegram } from "@/lib/client";
 import type { TranslateResult, ThreadDetail } from "@/lib/types";
 
 export default function ThreadPage() {
@@ -27,7 +28,7 @@ export default function ThreadPage() {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch(`/api/threads/${threadId}`);
+      const res = await apiFetch(`/api/threads/${threadId}`);
       if (res.status === 404) {
         setNotFound(true);
         return;
@@ -39,6 +40,7 @@ export default function ThreadPage() {
   }, [threadId]);
 
   useEffect(() => {
+    initTelegram();
     // setThread runs only after the awaited fetch — not a synchronous cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
@@ -72,7 +74,7 @@ export default function ThreadPage() {
       const fd = new FormData();
       fd.append("audio", blob, "speech.wav");
       fd.append("threadId", threadId);
-      const res = await fetch("/api/translate", { method: "POST", body: fd });
+      const res = await apiFetch("/api/translate", { method: "POST", body: fd });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Ошибка сервера");
       onResult(data);
@@ -89,7 +91,7 @@ export default function ThreadPage() {
     setResult(null);
     setTextBusy(true);
     try {
-      const res = await fetch("/api/translate", {
+      const res = await apiFetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, threadId }),

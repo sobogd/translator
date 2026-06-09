@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, MessageSquare, Trash2, Loader2 } from "lucide-react";
 import { NewThreadModal } from "@/components/NewThreadModal";
+import { apiFetch, initTelegram } from "@/lib/client";
 import type { Thread, ThreadWithCount } from "@/lib/types";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch("/api/threads");
+      const res = await apiFetch("/api/threads");
       if (res.ok) setThreads(await res.json());
     } catch {
       /* ignore */
@@ -24,6 +25,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    initTelegram();
     // setThreads runs only after the awaited fetch — not a synchronous cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
@@ -36,7 +38,7 @@ export default function Home() {
   async function remove(id: string, e: React.MouseEvent) {
     e.stopPropagation();
     if (!confirm("Удалить этот тред со всей историей?")) return;
-    await fetch(`/api/threads/${id}`, { method: "DELETE" });
+    await apiFetch(`/api/threads/${id}`, { method: "DELETE" });
     setThreads((ts) => ts.filter((t) => t.id !== id));
   }
 

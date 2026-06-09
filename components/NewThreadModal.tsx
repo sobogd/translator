@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, Loader2 } from "lucide-react";
+import { apiFetch } from "@/lib/client";
 import type { Thread } from "@/lib/types";
 
 export function NewThreadModal({
@@ -21,7 +22,7 @@ export function NewThreadModal({
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/threads", {
+      const res = await apiFetch("/api/threads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, context }),

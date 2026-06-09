@@ -10,11 +10,13 @@ datasource db {
 
 model Thread {
   id           String        @id @default(cuid())
+  ownerKey     String? // "telegram:<id>" | "device:<uuid>" | "apple:<sub>" ...
   title        String
   context      String        @default("")
   createdAt    DateTime      @default(now())
   translations Translation[]
 
+  @@index([ownerKey])
   @@map("threads")
 }
 

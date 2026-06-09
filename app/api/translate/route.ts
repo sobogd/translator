@@ -3,6 +3,7 @@ import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getS3Client, s3Bucket, s3Key, getPublicUrl } from "@/lib/s3";
+import { resolveOwner } from "@/lib/auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -77,6 +78,9 @@ function contextBlock(context: string, recent: RecentTurn[]): string {
 
 export async function POST(req: NextRequest) {
   try {
+    const owner = resolveOwner(req);
+    if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
     const contentType = req.headers.get("content-type") || "";
     let result: GeminiResult;
     let mode: "audio" | "text";
@@ -110,7 +114,7 @@ export async function POST(req: NextRequest) {
     }
 
     const thread = await prisma.thread.findUnique({ where: { id: threadId } });
-    if (!thread) {
+    if (!thread || thread.ownerKey !== owner) {
       return NextResponse.json({ error: "thread not found" }, { status: 404 });
     }
 

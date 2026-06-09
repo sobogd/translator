@@ -1,13 +1,17 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { resolveOwner } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
 export async function GET(
-  _req: Request,
+  req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
+    const owner = resolveOwner(req);
+    if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
     const { id } = await params;
     const thread = await prisma.thread.findUnique({
       where: { id },
@@ -15,7 +19,7 @@ export async function GET(
         translations: { orderBy: { createdAt: "desc" }, take: 100 },
       },
     });
-    if (!thread) {
+    if (!thread || thread.ownerKey !== owner) {
       return NextResponse.json({ error: "not found" }, { status: 404 });
     }
     return NextResponse.json(thread);
@@ -26,11 +30,18 @@ export async function GET(
 }
 
 export async function DELETE(
-  _req: Request,
+  req: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
+    const owner = resolveOwner(req);
+    if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
     const { id } = await params;
+    const thread = await prisma.thread.findUnique({ where: { id } });
+    if (!thread || thread.ownerKey !== owner) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
+    }
     await prisma.thread.delete({ where: { id } });
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {
