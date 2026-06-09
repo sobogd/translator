@@ -2,12 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Send, Loader2, Info, Mic, Square, Keyboard } from "lucide-react";
+import { ArrowLeft, Send, Loader2, Mic, Square, Keyboard } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { type Mode } from "@/components/ModeToggle";
 import { type RecStatus } from "@/components/RecordButton";
 import { History } from "@/components/History";
-import { apiFetch, initTelegram, showBackButton } from "@/lib/client";
+import { ThreadMenu } from "@/components/ThreadMenu";
+import { EditFieldModal } from "@/components/EditFieldModal";
+import { apiFetch, initTelegram, showBackButton, haptic } from "@/lib/client";
 import type { TranslateResult, ThreadDetail } from "@/lib/types";
 
 export default function ThreadPage() {
@@ -23,6 +25,8 @@ export default function ThreadPage() {
   const [textBusy, setTextBusy] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [editTitle, setEditTitle] = useState(false);
+  const [editTopic, setEditTopic] = useState(false);
   const recRef = useRef<WavRecorder | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -78,6 +82,40 @@ export default function ThreadPage() {
 
   function onResult() {
     load();
+  }
+
+  async function patch(data: { title?: string; context?: string }) {
+    await apiFetch(`/api/threads/${threadId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    await load();
+  }
+
+  async function saveTitle(v: string) {
+    if (!v.trim()) return;
+    await patch({ title: v });
+    setEditTitle(false);
+  }
+
+  async function saveTopic(v: string) {
+    await patch({ context: v });
+    setEditTopic(false);
+  }
+
+  async function clearHistory() {
+    if (!confirm("Очистить всю историю переводов этого треда?")) return;
+    haptic();
+    await apiFetch(`/api/threads/${threadId}/translations`, { method: "DELETE" });
+    await load();
+  }
+
+  async function deleteThread() {
+    if (!confirm("Удалить тред со всей историей?")) return;
+    haptic();
+    await apiFetch(`/api/threads/${threadId}`, { method: "DELETE" });
+    router.push("/");
   }
 
   function autosize() {
@@ -167,9 +205,9 @@ export default function ThreadPage() {
       className="flex h-[100dvh] flex-col"
       style={{ background: "var(--bg)", color: "var(--text)" }}
     >
-      {/* header */}
+      {/* header (Telegram-style) */}
       <header
-        className="flex shrink-0 items-center gap-2 border-b px-3 py-3"
+        className="flex shrink-0 items-center gap-2.5 border-b px-2 py-2"
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
         <button
@@ -178,25 +216,26 @@ export default function ThreadPage() {
           className="rounded-lg p-1.5 transition active:scale-90"
           style={{ color: "var(--hint)" }}
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={22} />
         </button>
-        <h1 className="min-w-0 flex-1 truncate text-base font-semibold">
-          {thread?.title ?? "…"}
-        </h1>
-      </header>
-
-      {/* topic block */}
-      {thread?.context && (
-        <div
-          className="flex shrink-0 gap-2 border-b px-4 py-2.5 text-sm"
-          style={{ background: "var(--accent)", borderColor: "var(--border)" }}
-        >
-          <Info size={15} className="mt-0.5 shrink-0 text-emerald-500" />
-          <span className="leading-relaxed" style={{ color: "var(--hint)" }}>
-            {thread.context}
-          </span>
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
+          {(thread?.title?.[0] ?? "…").toUpperCase()}
         </div>
-      )}
+        <div className="min-w-0 flex-1 leading-tight">
+          <div className="truncate text-base font-semibold">
+            {thread?.title ?? "…"}
+          </div>
+          <div className="truncate text-xs" style={{ color: "var(--hint)" }}>
+            {thread?.context?.trim() || "тема не задана"}
+          </div>
+        </div>
+        <ThreadMenu
+          onEditTitle={() => setEditTitle(true)}
+          onEditTopic={() => setEditTopic(true)}
+          onClear={clearHistory}
+          onDelete={deleteThread}
+        />
+      </header>
 
       {/* scrollable history */}
       <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
@@ -310,6 +349,26 @@ export default function ThreadPage() {
           )}
         </div>
       </footer>
+
+      {editTitle && (
+        <EditFieldModal
+          heading="Название треда"
+          placeholder="Напр.: Приём у ветеринара"
+          initial={thread?.title ?? ""}
+          onClose={() => setEditTitle(false)}
+          onSave={saveTitle}
+        />
+      )}
+      {editTopic && (
+        <EditFieldModal
+          heading="Тема / контекст"
+          placeholder="О чём разговор и кто есть кто…"
+          initial={thread?.context ?? ""}
+          multiline
+          onClose={() => setEditTopic(false)}
+          onSave={saveTopic}
+        />
+      )}
     </main>
   );
 }

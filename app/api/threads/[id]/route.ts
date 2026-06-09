@@ -30,6 +30,38 @@ export async function GET(
   }
 }
 
+export async function PATCH(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  try {
+    const owner = resolveOwner(req);
+    if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
+    const { id } = await params;
+    const existing = await prisma.thread.findUnique({ where: { id } });
+    if (!existing || existing.ownerKey !== owner) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
+    }
+
+    const body = await req.json();
+    const data: { title?: string; context?: string } = {};
+    if (typeof body.title === "string") {
+      const t = body.title.trim();
+      if (!t) return NextResponse.json({ error: "empty title" }, { status: 400 });
+      data.title = t;
+    }
+    if (typeof body.context === "string") data.context = body.context.trim();
+
+    const thread = await prisma.thread.update({ where: { id }, data });
+    return NextResponse.json(thread);
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "unknown error";
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
+}
+
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> },

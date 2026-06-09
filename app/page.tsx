@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Plus, MessageSquare, Trash2, Loader2, Lock } from "lucide-react";
+import { Plus, MessageSquare, Loader2, Lock } from "lucide-react";
 import { NewThreadModal } from "@/components/NewThreadModal";
-import { apiFetch, initTelegram, haptic, telegramUserId } from "@/lib/client";
+import { apiFetch, initTelegram, telegramUserId } from "@/lib/client";
 import type { Thread, ThreadWithCount } from "@/lib/types";
 
 export default function Home() {
@@ -38,14 +38,6 @@ export default function Home() {
 
   function onCreated(t: Thread) {
     router.push(`/t/${t.id}`);
-  }
-
-  async function remove(id: string, e: React.MouseEvent) {
-    e.stopPropagation();
-    if (!confirm("Удалить этот тред со всей историей?")) return;
-    haptic();
-    await apiFetch(`/api/threads/${id}`, { method: "DELETE" });
-    setThreads((ts) => ts.filter((t) => t.id !== id));
   }
 
   if (forbidden) {
@@ -132,14 +124,6 @@ export default function Home() {
                     {t._count.translations} переводов
                   </p>
                 </div>
-                <button
-                  onClick={(e) => remove(t.id, e)}
-                  aria-label="Удалить тред"
-                  className="shrink-0 rounded-lg p-2 text-red-500 transition active:scale-90"
-                  style={{ background: "color-mix(in srgb, red 8%, transparent)" }}
-                >
-                  <Trash2 size={17} />
-                </button>
               </div>
             ))}
           </div>
