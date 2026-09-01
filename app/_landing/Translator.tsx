@@ -111,6 +111,10 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   const [defaultTarget, setDefaultTarget] = useState(DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<TopicDetail | null>(null);
+  // Source language chosen before a topic exists yet — carried into the
+  // topic created on first send. Mirrors topic.sourceLang's semantics
+  // (null = auto-detect).
+  const [draftSourceLang, setDraftSourceLang] = useState<string | null>(null);
   const [loadingTopic, setLoadingTopic] = useState(true);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [text, setText] = useState("");
@@ -142,22 +146,27 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     if (res.ok) setTopic(await res.json());
   }, []);
 
+  // Creates a topic and returns its id — the only place a session actually
+  // gets written. Called lazily, from translateText, on the first send.
   const createTopic = useCallback(
-    async (targetLang: string) => {
+    async (targetLang: string, sourceLang?: string | null) => {
       const res = await apiFetch("/api/topics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ targetLang }),
+        body: JSON.stringify({ targetLang, ...(sourceLang ? { sourceLang } : {}) }),
       });
       const created = await res.json();
       if (!res.ok) throw new Error(created.error || "error");
       await loadTopics();
       await loadTopic(created.id);
+      return created.id as string;
     },
     [loadTopics, loadTopic],
   );
 
-  // bootstrap once: open the most recently used topic, or start a fresh one.
+  // bootstrap once: open the most recently used topic. No topics yet? Stay
+  // in draft state (topic=null) — a session is only created once the user
+  // actually sends something to translate, not just for opening the page.
   useEffect(() => {
     (async () => {
       setLoadingTopic(true);
@@ -165,11 +174,7 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
         const res = await apiFetch("/api/topics");
         const list: Topic[] = res.ok ? await res.json() : [];
         setTopics(list);
-        if (list.length > 0) {
-          await loadTopic(list[0].id);
-        } else {
-          await createTopic(localStorage.getItem(TO_KEY) || DEFAULT_TO);
-        }
+        if (list.length > 0) await loadTopic(list[0].id);
       } catch {
         setTopic(null);
       } finally {
@@ -198,15 +203,13 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     setLoadingTopic(false);
   }
 
-  async function newTopic() {
+  // No API call — just clears the view back to a draft. The topic itself
+  // is only created once the user actually sends something (translateText).
+  function newTopic() {
+    setTopic(null);
+    setDraftSourceLang(null);
     setText("");
     setError(null);
-    setLoadingTopic(true);
-    try {
-      await createTopic(defaultTarget);
-    } finally {
-      setLoadingTopic(false);
-    }
   }
 
   async function deleteTopic(id: string) {
@@ -215,12 +218,16 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     const remaining = topics.filter((tp) => tp.id !== id);
     setTopics(remaining);
     if (id === topic?.id) {
-      setLoadingTopic(true);
-      try {
-        if (remaining.length > 0) await loadTopic(remaining[0].id);
-        else await createTopic(defaultTarget);
-      } finally {
-        setLoadingTopic(false);
+      if (remaining.length > 0) {
+        setLoadingTopic(true);
+        try {
+          await loadTopic(remaining[0].id);
+        } finally {
+          setLoadingTopic(false);
+        }
+      } else {
+        setTopic(null);
+        setDraftSourceLang(null);
       }
     }
   }
@@ -231,7 +238,12 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   // the source can mean "figure it out from the text").
   async function selectSource(code: string | null) {
     setPickerFor(null);
-    if (!topic) return;
+    if (!topic) {
+      // Draft state, nothing to PATCH yet — carried into the topic created
+      // on first send.
+      setDraftSourceLang(code !== null && code === defaultTarget ? null : code);
+      return;
+    }
     const nextSource = code !== null && code === topic.targetLang ? null : code;
     setTopic({ ...topic, sourceLang: nextSource });
     await apiFetch(`/api/topics/${topic.id}`, {
@@ -245,7 +257,10 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     setPickerFor(null);
     localStorage.setItem(TO_KEY, code);
     setDefaultTarget(code);
-    if (!topic) return;
+    if (!topic) {
+      setDraftSourceLang((prev) => (prev === code ? null : prev));
+      return;
+    }
     const nextSource = topic.sourceLang === code ? null : topic.sourceLang;
     setTopic({ ...topic, sourceLang: nextSource, targetLang: code });
     await apiFetch(`/api/topics/${topic.id}`, {
@@ -253,11 +268,6 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sourceLang: nextSource, targetLang: code }),
     });
-  }
-
-  function onResult() {
-    if (topic) loadTopic(topic.id);
-    loadTopics();
   }
 
   async function clearHistory() {
@@ -275,21 +285,25 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   }
 
   async function translateText() {
-    if (!topic || !text.trim() || textBusy) return;
+    if (!text.trim() || textBusy) return;
     setError(null);
     setTextBusy(true);
     const sent = text;
     setText("");
     requestAnimationFrame(autosize);
     try {
+      // First send with no topic yet: create one now, carrying over
+      // whatever source/target were picked in draft state.
+      const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
       const res = await apiFetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: sent, topicId: topic.id }),
+        body: JSON.stringify({ text: sent, topicId }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
-      onResult();
+      await loadTopic(topicId);
+      await loadTopics();
     } catch (e) {
       setError(e instanceof Error ? friendlyError(e.message, t) : "Error");
       setText(sent);
@@ -344,7 +358,8 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
 
   const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-  const sourceLanguage = useMemo(() => (topic?.sourceLang ? getLanguage(topic.sourceLang) : undefined), [topic?.sourceLang]);
+  const currentSourceCode = topic ? topic.sourceLang : draftSourceLang;
+  const sourceLanguage = useMemo(() => (currentSourceCode ? getLanguage(currentSourceCode) : undefined), [currentSourceCode]);
   const targetLanguage = useMemo(() => getLanguage(topic?.targetLang ?? defaultTarget), [topic?.targetLang, defaultTarget]);
   const rows = topic ? [...topic.translations].reverse() : [];
 
@@ -495,7 +510,7 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
             </button>
             <button
               onClick={translateText}
-              disabled={!topic || !text.trim() || textBusy}
+              disabled={!text.trim() || textBusy}
               aria-label={t.translateAria}
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-button text-button-text transition hover:opacity-90 active:scale-90 disabled:opacity-40"
             >
@@ -511,7 +526,7 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
 
       {pickerFor && (
         <LanguagePickerModal
-          current={pickerFor === "source" ? (topic?.sourceLang ?? null) : (topic?.targetLang ?? defaultTarget)}
+          current={pickerFor === "source" ? currentSourceCode : (topic?.targetLang ?? defaultTarget)}
           forSource={pickerFor === "source"}
           texts={t}
           onClose={() => setPickerFor(null)}

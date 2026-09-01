@@ -43,9 +43,18 @@ export async function POST(req: NextRequest) {
     if (!getLanguage(targetLang)) {
       return NextResponse.json({ error: "unknown language" }, { status: 400 });
     }
+    // Optional — lets the client carry over a source language picked before
+    // the topic existed (draft state, source chosen ahead of the first send).
+    let sourceLang: string | undefined;
+    if (typeof body.sourceLang === "string") {
+      if (!getLanguage(body.sourceLang)) {
+        return NextResponse.json({ error: "unknown language" }, { status: 400 });
+      }
+      sourceLang = body.sourceLang;
+    }
 
     const topic = await prisma.topic.create({
-      data: { ownerKey: identity.ownerKey, targetLang },
+      data: { ownerKey: identity.ownerKey, targetLang, ...(sourceLang ? { sourceLang } : {}) },
     });
 
     return NextResponse.json(topic);
