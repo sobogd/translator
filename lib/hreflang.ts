@@ -38,6 +38,10 @@ export function routeKeyFromCanonical(canonical: string): string | undefined {
   if (seg && (locales as readonly string[]).includes(seg[1])) {
     path = path.slice(seg[1].length + 1);
   }
-  const found = Object.entries(LOCALE_SLUG_OVERRIDES).find(([, m]) => Object.values(m).includes(path));
+  // Map values are stored without a leading slash (e.g. "text-translator"),
+  // so strip it from `path` before comparing — otherwise this never matches
+  // and every feature page silently loses its hreflang alternates.
+  const slug = path.startsWith("/") ? path.slice(1) : path;
+  const found = Object.entries(LOCALE_SLUG_OVERRIDES).find(([, m]) => Object.values(m).includes(slug));
   return found?.[0];
 }

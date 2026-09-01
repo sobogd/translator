@@ -41,9 +41,14 @@ export function swapLocale(pathname: string, targetLocale: string): string {
 
   if (restSegs.length === 0) return localeHome(targetLocale);
 
-  const rest = `/${restSegs.join("/")}`;
+  // Map values are stored without a leading slash (e.g. "text-translator"),
+  // so compare against the un-prefixed path segment, not `rest` itself —
+  // otherwise this never matches and every feature page falls through to
+  // the raw-path fallback below (wrong slug on the target locale, 404).
+  const restSlug = restSegs.join("/");
+  const rest = `/${restSlug}`;
   const routeKey = Object.entries(LOCALE_SLUG_OVERRIDES).find(
-    ([, map]) => map[currentLocale] === rest,
+    ([, map]) => map[currentLocale] === restSlug,
   )?.[0];
   const targetSlug = routeKey ? (LOCALE_SLUG_OVERRIDES[routeKey][targetLocale] ?? routeKey) : rest;
   return localePath(targetLocale, targetSlug);
