@@ -133,7 +133,7 @@ export function Header({
           {hasFeatureLinks ? (
             <div
               ref={triggerRef}
-              className="flex items-center"
+              className="flex cursor-pointer items-center"
               onMouseEnter={openFeatures}
               onMouseLeave={closeFeaturesSoon}
             >
@@ -141,7 +141,7 @@ export function Header({
                 type="button"
                 aria-expanded={featuresOpen}
                 onClick={() => setFeaturesOpen((v) => !v)}
-                className="flex items-center gap-1 transition-opacity hover:opacity-70"
+                className="flex cursor-pointer items-center gap-1 transition-opacity hover:opacity-70"
               >
                 {texts.features}
                 <ChevronDown className="h-3.5 w-3.5 text-hint" />
@@ -198,7 +198,7 @@ export function Header({
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                      className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                       onClick={() => setMenuOpen(false)}
                     >
                       {l.label}
@@ -207,7 +207,7 @@ export function Header({
                 : (
                   <Link
                     href={`${homeHref}#features`}
-                    className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                    className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                     onClick={() => setMenuOpen(false)}
                   >
                     {texts.features}
@@ -215,27 +215,27 @@ export function Header({
                 )}
               <Link
                 href="/pricing"
-                className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               >
                 {texts.pricing}
               </Link>
               <InstallAppButton
                 label={texts.mobileApp}
-                className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               />
               {signedIn ? (
                 <button
                   onClick={logout}
-                  className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                  className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
                 >
                   {texts.logOut}
                 </button>
               ) : (
                 <a
                   href="/api/auth/google/start"
-                  className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                  className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                   onClick={() => setMenuOpen(false)}
                 >
                   {texts.signIn}
@@ -267,7 +267,7 @@ export function Header({
             <Link
               key={l.href}
               href={l.href}
-              className="px-4 py-2.5 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+              className="px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
               onClick={() => setFeaturesOpen(false)}
             >
               {l.label}
