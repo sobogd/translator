@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { generateSessionToken } from "@/lib/auth";
+import { generateSessionToken, getOrigin } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
 export async function GET(req: Request) {
-  const origin = new URL(req.url).origin;
+  const origin = getOrigin(req);
   const redirectUri = `${origin}/api/auth/google/callback`;
   const state = generateSessionToken();
 

@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import {
   SESSION_COOKIE,
   generateSessionToken,
+  getOrigin,
   hashSessionToken,
   isAllowed,
   parseCookie,
@@ -22,7 +23,7 @@ export async function GET(req: Request) {
   const cookieHeader = req.headers.get("cookie");
   const expectedState = parseCookie(cookieHeader, STATE_COOKIE);
 
-  const origin = url.origin;
+  const origin = getOrigin(req);
   const redirectUri = `${origin}/api/auth/google/callback`;
 
   // Always clear the single-use state cookie regardless of outcome.

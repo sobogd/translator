@@ -27,6 +27,20 @@ export function isAllowed(email: string): boolean {
   return list.includes(email.trim().toLowerCase());
 }
 
+// Reconstruct the externally-visible origin behind the nginx TLS-terminating
+// reverse proxy. req.url reflects the plain-HTTP connection Node actually
+// sees (127.0.0.1:8200), not the public https:// origin, so building a
+// Google OAuth redirect_uri from it produces the wrong scheme and Google
+// rejects it with redirect_uri_mismatch. nginx forwards the real
+// scheme/host via X-Forwarded-Proto/X-Forwarded-Host; fall back to req.url
+// for local dev (no proxy in front there).
+export function getOrigin(req: Request): string {
+  const url = new URL(req.url);
+  const proto = req.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
+  const host = req.headers.get("x-forwarded-host") || req.headers.get("host") || url.host;
+  return `${proto}://${host}`;
+}
+
 // Parse a raw `cookie` header value by hand and return the named cookie's
 // value, or null if absent. Kept dependency-free to match the rest of this
 // file's style.
