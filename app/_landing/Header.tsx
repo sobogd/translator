@@ -77,6 +77,26 @@ export function Header({
     if (closeTimer.current) clearTimeout(closeTimer.current);
   }, []);
 
+  // The panel is a sibling of the header's own bottom edge (not of the
+  // inline trigger, which sits vertically centered mid-row) so `top-full`
+  // lands exactly on the header's border and the two read as one shape —
+  // same measurement technique as iq-rest's LandingHeader (`productsLeft`).
+  const headerRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const [featuresLeft, setFeaturesLeft] = useState(0);
+  useEffect(() => {
+    if (!hasFeatureLinks) return;
+    const measure = () => {
+      const header = headerRef.current;
+      const trigger = triggerRef.current;
+      if (!header || !trigger) return;
+      setFeaturesLeft(trigger.getBoundingClientRect().left - header.getBoundingClientRect().left);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [hasFeatureLinks, featuresOpen]);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -97,7 +117,10 @@ export function Header({
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md [transform:translateZ(0)]">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md [transform:translateZ(0)]"
+    >
       <div className={`${NARROW} flex h-14 items-center justify-between gap-3 sm:h-16`}>
         <Link
           href={homeHref}
@@ -106,9 +129,14 @@ export function Header({
           <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
           {texts.logo}
         </Link>
-        <nav className="mr-auto hidden items-center gap-6 pl-8 text-sm font-semibold sm:flex">
+        <nav className="mr-auto hidden items-stretch gap-6 pl-8 text-sm font-semibold sm:flex">
           {hasFeatureLinks ? (
-            <div className="relative" onMouseEnter={openFeatures} onMouseLeave={closeFeaturesSoon}>
+            <div
+              ref={triggerRef}
+              className="flex items-center"
+              onMouseEnter={openFeatures}
+              onMouseLeave={closeFeaturesSoon}
+            >
               <button
                 type="button"
                 aria-expanded={featuresOpen}
@@ -118,25 +146,6 @@ export function Header({
                 {texts.features}
                 <ChevronDown className="h-3.5 w-3.5 text-hint" />
               </button>
-              {/* Grows out of the header bar itself — same tint/blur, no top
-                  border, rounded only at the bottom — so the two read as one
-                  shape, same as iq-rest's products panel. */}
-              <div
-                className={`absolute left-0 top-full flex min-w-[220px] flex-col rounded-b-2xl border-x border-b border-border bg-bg/85 py-2 shadow-lg backdrop-blur-md transition-all duration-200 ${
-                  featuresOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
-                }`}
-              >
-                {links.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    className="px-4 py-2 text-sm font-semibold hover:bg-card"
-                    onClick={() => setFeaturesOpen(false)}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </div>
             </div>
           ) : (
             <Link href={`${homeHref}#features`} className="transition-opacity hover:opacity-70">
@@ -189,7 +198,7 @@ export function Header({
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-card"
+                      className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                       onClick={() => setMenuOpen(false)}
                     >
                       {l.label}
@@ -198,7 +207,7 @@ export function Header({
                 : (
                   <Link
                     href={`${homeHref}#features`}
-                    className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-card"
+                    className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                     onClick={() => setMenuOpen(false)}
                   >
                     {texts.features}
@@ -206,27 +215,27 @@ export function Header({
                 )}
               <Link
                 href="/pricing"
-                className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-card"
+                className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                 onClick={() => setMenuOpen(false)}
               >
                 {texts.pricing}
               </Link>
               <InstallAppButton
                 label={texts.mobileApp}
-                className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-card"
+                className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                 onClick={() => setMenuOpen(false)}
               />
               {signedIn ? (
                 <button
                   onClick={logout}
-                  className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-card"
+                  className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   {texts.logOut}
                 </button>
               ) : (
                 <a
                   href="/api/auth/google/start"
-                  className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-card"
+                  className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
                   onClick={() => setMenuOpen(false)}
                 >
                   {texts.signIn}
@@ -236,6 +245,36 @@ export function Header({
           ) : null}
         </div>
       </div>
+
+      {/* Sibling of the header's inner row, not of the trigger — `top-full`
+          here lands exactly on the header's own bottom border, so the panel
+          reads as growing out of the bar itself. `left` is measured from the
+          trigger so it still opens directly under "Features". Solid bg, no
+          blur: the header above already runs its own backdrop-blur, and a
+          second backdrop-filter nested inside it has nothing left to sample
+          — it renders as flat, near-invisible transparency instead of a
+          frosted panel. */}
+      {hasFeatureLinks && (
+        <div
+          onMouseEnter={openFeatures}
+          onMouseLeave={closeFeaturesSoon}
+          style={{ left: featuresLeft }}
+          className={`absolute top-full hidden min-w-[220px] flex-col rounded-b-2xl border-x border-b border-border bg-bg py-2 shadow-xl transition-all duration-200 sm:flex ${
+            featuresOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+          }`}
+        >
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="px-4 py-2.5 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+              onClick={() => setFeaturesOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </header>
   );
 }
