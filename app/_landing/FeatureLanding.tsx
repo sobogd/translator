@@ -63,7 +63,13 @@ export function FeatureLanding({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header signedIn={signedIn} homeHref={locale === "en" ? "/" : `/${locale}`} texts={chrome.header} />
+      <Header
+        signedIn={signedIn}
+        homeHref={locale === "en" ? "/" : `/${locale}`}
+        locale={locale}
+        texts={chrome.header}
+        featureLinks={chrome.footer.featureLinks}
+      />
       <Container className="py-6">
         <Band>
           <Hero texts={content.hero} />

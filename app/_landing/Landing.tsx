@@ -40,7 +40,13 @@ export function Landing({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header signedIn={signedIn} homeHref={homeHref} texts={texts.header} />
+      <Header
+        signedIn={signedIn}
+        homeHref={homeHref}
+        locale={locale}
+        texts={texts.header}
+        featureLinks={texts.footer.featureLinks}
+      />
       <Container className="py-6">
         <Band id="app">
           <Translator texts={texts} />

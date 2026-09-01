@@ -11,6 +11,25 @@ export const LOCALE_SLUG_OVERRIDES: Record<string, Record<string, string>> = {
   "/instant-voice-translator": { en: "instant-voice-translator", ru: "perevodchik-rechi-v-tekst" },
 };
 
+// Resolves a shared route key (e.g. "/text-translator") to its localized
+// href for one locale, falling back to the key itself when unregistered.
+export function featureHref(routeKey: string, locale: string): string {
+  const slug = LOCALE_SLUG_OVERRIDES[routeKey]?.[locale] ?? routeKey;
+  return localePath(locale, slug);
+}
+
+export type FeatureLinkDef = { routeKey: string; label: string };
+
+// Mirrors iq-rest's localizedFeatureLinks: header dropdown and footer column
+// both render from the same `footer.featureLinks` (routeKey + label) list,
+// so a page's copy never points at a stale slug for the other locale.
+export function localizedFeatureLinks(
+  locale: string,
+  links: FeatureLinkDef[],
+): { href: string; label: string }[] {
+  return links.map((l) => ({ href: featureHref(l.routeKey, locale), label: l.label }));
+}
+
 // Swaps the locale segment of a pathname, translating the slug through the
 // map when the path belongs to a registered route. Falls back to a plain
 // locale-prefix swap for anything not yet in the map (i.e. every path today).

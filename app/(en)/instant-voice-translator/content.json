@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Instant Voice Translator App | IQ Translate",
-    "description": "Tap the mic and talk — this instant voice translator app translates your speech in seconds, in 186 languages, spoken or written back. No downloads, no sign-up to try.",
-    "ogTitle": "Instant Voice Translator App",
-    "ogDescription": "Tap the mic and talk — your speech is translated in seconds, in 186 languages. No downloads, no sign-up required.",
+    "title": "Instant Voice Translator App for Spanish & 185 Languages | IQ Translate",
+    "description": "A Spanish speech translator, and 185 more — tap the mic and talk, get a translation seconds later, spoken or written back. No downloads, no sign-up to try.",
+    "ogTitle": "Instant Voice Translator App for Spanish & 185 Languages",
+    "ogDescription": "A Spanish speech translator, and 185 more. Tap the mic and talk — your speech is translated in seconds.",
     "canonical": "https://translate.iq-factura.com/instant-voice-translator",
     "ogLocale": "en_US"
   },
@@ -11,8 +11,8 @@
     "badgeVoice": "Voice",
     "badgeText": "Text",
     "badgeLanguages": "186 languages",
-    "title": "Instant voice translation",
-    "titleAccent": "for any conversation",
+    "title": "A Spanish speech translator,",
+    "titleAccent": "and 185 more languages",
     "description": "Tap the mic and speak. This instant voice translator app turns your speech into a spoken and written translation seconds after you stop talking — a Spanish speech translator, and 185 more languages, in one tool.",
     "ctaTry": "Try it now — free",
     "ctaSignIn": "Sign in with Google",
@@ -37,8 +37,8 @@
       ]
     },
     {
-      "heading": "A Spanish speech translator — and 185 more",
-      "sub": "Not just Spanish: pick from 186 languages and talk to anyone, in any pair.",
+      "heading": "186 languages, not just Spanish",
+      "sub": "Pick from 186 languages and talk to anyone, in any pair.",
       "bullets": [
         {
           "title": "186 languages included",

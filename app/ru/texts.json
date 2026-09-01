@@ -191,7 +191,12 @@
   },
   "footer": {
     "tagline": "Instant voice translation, 186 languages",
-    "brand": "IQ Translate"
+    "brand": "IQ Translate",
+    "featuresHeading": "Функции",
+    "featureLinks": [
+      { "routeKey": "/text-translator", "label": "Перевод текста" },
+      { "routeKey": "/instant-voice-translator", "label": "Голосовой перевод" }
+    ]
   },
   "translator": {
     "topics": "Topics",

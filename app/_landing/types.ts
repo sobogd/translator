@@ -61,6 +61,8 @@ export interface TranslatorTexts {
   footer: {
     tagline: string;
     brand: string;
+    featuresHeading: string;
+    featureLinks: { routeKey: string; label: string }[];
   };
   translator: {
     topics: string;
