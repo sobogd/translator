@@ -64,7 +64,13 @@ export default function PricingPage() {
           />
         </Band>
         <Band>
-          <FinalCta />
+          <FinalCta
+            heading="Need more credits?"
+            headingAccent="Try it free first."
+            sub="No sign-up required to try it — go back to the homepage and translate right away."
+            ctaLabel="Try it now"
+            ctaHref="/#app"
+          />
         </Band>
       </Container>
       <Footer />

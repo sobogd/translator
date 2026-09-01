@@ -1,5 +1,6 @@
 import { prisma } from "./prisma";
 import { ANONYMOUS_CREDIT_LIMIT, PLANS, type PlanId } from "./plans";
+import type { Identity } from "./auth";
 
 // Atomic conditional decrement: a single UPDATE with a WHERE guard on the
 // current balance, so two concurrent requests can never both succeed past
@@ -54,4 +55,26 @@ export async function consumeAnonymousCredits(fingerprint: string, cost: number)
     data: { creditsUsed: { increment: cost } },
   });
   return result.count > 0;
+}
+
+// identity.ownerKey is "fp:<fingerprint>" for anonymous identities (see
+// resolveIdentity) — strip the prefix to get back the raw fingerprint.
+function fingerprintOf(identity: Identity): string {
+  return identity.ownerKey.slice(3);
+}
+
+export async function maxCharsForIdentity(identity: Identity): Promise<number> {
+  if (identity.kind === "anonymous") return PLANS.FREE.maxCharsPerRequest;
+  const { plan } = await getAccountUsage(identity.ownerKey);
+  return plan.maxCharsPerRequest;
+}
+
+export async function consumeCreditsForIdentity(identity: Identity, cost: number): Promise<boolean> {
+  if (identity.kind === "anonymous") return consumeAnonymousCredits(fingerprintOf(identity), cost);
+  return consumeAccountCredits(identity.ownerKey, cost);
+}
+
+export async function getAnonymousUsage(fingerprint: string) {
+  const row = await prisma.anonymousCredit.findUnique({ where: { fingerprint } });
+  return { creditsUsed: row?.creditsUsed ?? 0 };
 }

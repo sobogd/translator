@@ -13,11 +13,11 @@ const DEFAULT_ITEMS: FaqItem[] = [
   },
   {
     q: "Do I need to create an account?",
-    a: "No. Sign in with Google in one tap — there's no password and no separate registration form.",
+    a: "No. Try it right on this page with no sign-up. Sign in with Google only if you want more daily credits and history synced across devices.",
   },
   {
     q: "Is my translation history saved?",
-    a: "Yes, per language pair, so past conversations stay organized. Clear or delete any thread anytime from its menu.",
+    a: "Yes, per language pair, so past conversations stay organized — even without signing in, your browser is remembered. Clear or delete any thread anytime from its menu.",
   },
   {
     q: "Can I use text instead of voice?",
@@ -32,7 +32,7 @@ const DEFAULT_ITEMS: FaqItem[] = [
 export function Faq({
   heading = "Frequently asked",
   headingAccent = "questions",
-  sub = "What people ask before signing in. Sign in with Google to try it yourself.",
+  sub = "What people ask before trying it. No sign-up needed — scroll up and try it yourself.",
   items = DEFAULT_ITEMS,
 }: {
   heading?: string;

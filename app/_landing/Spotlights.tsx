@@ -37,10 +37,10 @@ const SPOTLIGHTS = [
     ],
   },
   {
-    heading: "Google sign-in, no passwords",
-    sub: "One tap to sign in with your Google account — nothing else to set up.",
+    heading: "No sign-up required to start",
+    sub: "Try it right on this page — no account, no password. Sign in with Google only when you want more daily credits and history synced across devices.",
     bullets: [
-      { icon: LogIn, title: "One-tap sign-in", sub: "No registration form, no password to remember" },
+      { icon: LogIn, title: "Optional one-tap sign-in", sub: "No registration form, no password to remember" },
       { icon: ShieldCheck, title: "Your email, nothing else", sub: "Only your Google email identifies your account" },
     ],
   },

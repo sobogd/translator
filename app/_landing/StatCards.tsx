@@ -1,4 +1,4 @@
-import { Globe2, LogIn, History, Sparkles } from "lucide-react";
+import { Globe2, Zap, History, Sparkles } from "lucide-react";
 import { CARD } from "./shell";
 
 const STATS = [
@@ -8,9 +8,9 @@ const STATS = [
     sub: "Speak or type, translated instantly, no extra downloads",
   },
   {
-    icon: LogIn,
-    title: "One-tap Google sign-in",
-    sub: "No passwords, no separate account to create",
+    icon: Zap,
+    title: "No sign-up needed",
+    sub: "Try it right on this page — sign in only for more credits",
   },
   {
     icon: History,
@@ -20,7 +20,7 @@ const STATS = [
   {
     icon: Sparkles,
     title: "Free to start",
-    sub: "Sign in and start translating right away",
+    sub: "Scroll down and start translating right away",
   },
 ];
 

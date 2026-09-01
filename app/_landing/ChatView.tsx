@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Send, Loader2, Mic, Square, Keyboard } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
@@ -11,7 +10,7 @@ import type { ChatDetail } from "@/lib/types";
 import { getLanguage } from "@/lib/languages";
 
 const FROM_LANG_KEY = "translator_from_lang";
-const DEFAULT_FROM_LANG = "ru";
+const DEFAULT_FROM_LANG = "en";
 
 type Mode = "text" | "audio";
 type RecStatus = "idle" | "recording" | "processing";
@@ -40,11 +39,7 @@ function chatTitle(chat: ChatDetail | null, fromLang: string): string {
   return `${chat.langA} ⇄ ${chat.langB}`;
 }
 
-export default function ChatPage() {
-  const params = useParams<{ id: string }>();
-  const router = useRouter();
-  const chatId = params.id;
-
+export function ChatView({ chatId, onBack }: { chatId: string; onBack: () => void }) {
   const [chat, setChat] = useState<ChatDetail | null>(null);
   const [notFound, setNotFound] = useState(false);
   const [fromLang, setFromLang] = useState(DEFAULT_FROM_LANG);
@@ -119,7 +114,7 @@ export default function ChatPage() {
   async function deleteChat() {
     if (!confirm("Удалить чат со всей историей?")) return;
     await apiFetch(`/api/chats/${chatId}`, { method: "DELETE" });
-    router.push("/app");
+    onBack();
   }
 
   function autosize() {
@@ -190,15 +185,15 @@ export default function ChatPage() {
 
   if (notFound) {
     return (
-      <main
-        className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 px-4"
-        style={{ background: "var(--bg)", color: "var(--hint)" }}
+      <div
+        className="flex h-full flex-col items-center justify-center gap-4 px-4"
+        style={{ color: "var(--hint)" }}
       >
         Чат не найден.
-        <button onClick={() => router.push("/app")} className="text-emerald-500">
+        <button onClick={onBack} className="text-emerald-500">
           ← К списку
         </button>
-      </main>
+      </div>
     );
   }
 
@@ -206,17 +201,14 @@ export default function ChatPage() {
   const avatarFlag = chat ? getLanguage(chat.langA)?.flag ?? "…" : "…";
 
   return (
-    <main
-      className="flex h-[100dvh] flex-col"
-      style={{ background: "var(--bg)", color: "var(--text)" }}
-    >
+    <div className="flex h-full flex-col" style={{ color: "var(--text)" }}>
       {/* header (Telegram-style) */}
       <header
         className="flex shrink-0 items-center gap-2.5 border-b px-2 py-2"
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
         <button
-          onClick={() => router.push("/app")}
+          onClick={onBack}
           aria-label="Назад"
           className="rounded-lg p-1.5 transition active:scale-90"
           style={{ color: "var(--hint)" }}
@@ -351,6 +343,6 @@ export default function ChatPage() {
           )}
         </div>
       </footer>
-    </main>
+    </div>
   );
 }

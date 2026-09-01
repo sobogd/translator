@@ -2,9 +2,9 @@ import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getS3Client, s3Bucket, s3Key, getPublicUrl } from "@/lib/s3";
-import { resolveOwner, isAllowed } from "@/lib/auth";
+import { resolveIdentity } from "@/lib/auth";
 import { getLanguage } from "@/lib/languages";
-import { consumeAccountCredits, getAccountUsage } from "@/lib/credits";
+import { consumeCreditsForIdentity, maxCharsForIdentity } from "@/lib/credits";
 import { creditsForAudio, creditsForText } from "@/lib/plans";
 import { translateAudio, translateText } from "@/lib/gemini-translate";
 
@@ -18,9 +18,8 @@ function wavDurationSeconds(buf: Buffer): number {
 
 export async function POST(req: NextRequest) {
   try {
-    const owner = await resolveOwner(req);
-    if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-    if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+    const identity = await resolveIdentity(req);
+    if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
     const contentType = req.headers.get("content-type") || "";
     let mode: "audio" | "text";
@@ -54,7 +53,7 @@ export async function POST(req: NextRequest) {
     }
 
     const chat = await prisma.chat.findUnique({ where: { id: chatId } });
-    if (!chat || chat.ownerKey !== owner) {
+    if (!chat || chat.ownerKey !== identity.ownerKey) {
       return NextResponse.json({ error: "chat not found" }, { status: 404 });
     }
 
@@ -64,13 +63,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "unknown chat languages" }, { status: 500 });
     }
 
-    const { plan } = await getAccountUsage(owner);
-    if (mode === "text" && userText.length > plan.maxCharsPerRequest) {
+    const maxChars = await maxCharsForIdentity(identity);
+    if (mode === "text" && userText.length > maxChars) {
       return NextResponse.json({ error: "text too long for your plan" }, { status: 413 });
     }
     const cost =
       mode === "audio" && audioBuf ? creditsForAudio(wavDurationSeconds(audioBuf)) : creditsForText(userText.length);
-    const hasCredits = await consumeAccountCredits(owner, cost);
+    const hasCredits = await consumeCreditsForIdentity(identity, cost);
     if (!hasCredits) {
       return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
     }

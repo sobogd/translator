@@ -74,6 +74,23 @@ export async function resolveOwner(req: Request): Promise<string | null> {
   return verifySessionToken(token);
 }
 
+export type Identity = { ownerKey: string; kind: "account" | "anonymous" };
+
+// Unified identity for chat/translate endpoints: a verified Google session
+// ("account", ownerKey = email) or, absent one, a client-supplied browser
+// fingerprint ("anonymous", ownerKey = "fp:<fingerprint>") so the landing's
+// embedded translator works without signing in. Chat.ownerKey is a plain
+// string either way, so both kinds share the exact same chat/translation
+// rows and code paths — only credit consumption (lib/credits.ts) branches.
+export async function resolveIdentity(req: Request): Promise<Identity | null> {
+  const owner = await resolveOwner(req);
+  if (owner) {
+    return isAllowed(owner) ? { ownerKey: owner, kind: "account" } : null;
+  }
+  const fingerprint = req.headers.get("x-fingerprint")?.trim();
+  return fingerprint ? { ownerKey: `fp:${fingerprint}`, kind: "anonymous" } : null;
+}
+
 // Server-Component-friendly variant using next/headers cookies().
 export async function getServerSessionEmail(): Promise<string | null> {
   const { cookies } = await import("next/headers");

@@ -13,9 +13,9 @@ const ROWS = [
     them: "History disappears when you close the tab.",
   },
   {
-    title: "Sign-in",
-    us: "One-tap Google sign-in, no passwords.",
-    them: "Account creation with email and password.",
+    title: "Getting started",
+    us: "Try it immediately, right on this page — no account required.",
+    them: "Account creation with email and password before you can try it.",
   },
   {
     title: "Voice playback",

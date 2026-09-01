@@ -1,5 +1,5 @@
 import { Mic, Volume2 } from "lucide-react";
-import { CARD, PRIMARY_BTN } from "./shell";
+import { CARD, PRIMARY_BTN, OUTLINE_BTN } from "./shell";
 
 function MockCard() {
   return (
@@ -45,10 +45,13 @@ export function Hero() {
         </h1>
         <p className="text-sm text-hint/80 sm:text-base">
           Speak naturally and get an instant translation, spoken or written, in 186
-          languages. No typing required.
+          languages. No sign-up required to try it.
         </p>
         <div className="flex flex-wrap items-center gap-3">
-          <a href="/api/auth/google/start" className={PRIMARY_BTN}>
+          <a href="#app" className={PRIMARY_BTN}>
+            Try it now — free
+          </a>
+          <a href="/api/auth/google/start" className={OUTLINE_BTN}>
             Sign in with Google
           </a>
         </div>
