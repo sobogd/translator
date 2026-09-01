@@ -41,10 +41,14 @@ function MockCard({ texts }: { texts: HeroTexts }) {
   );
 }
 
+// Same left-column rhythm as iq-rest's FeatureHeroCard: gap-6 between the
+// badge row / headline+sub block / CTA row, with the headline+sub themselves
+// grouped in their own gap-4 block that centers vertically (`my-auto`)
+// against the art panel's height instead of top-aligning.
 export function Hero({ texts }: { texts: HeroTexts }) {
   return (
     <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:grid-cols-[11fr_9fr]`}>
-      <div className="order-2 flex flex-col justify-center gap-4 p-6 sm:p-8 lg:order-1">
+      <div className="order-2 flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8 lg:order-1">
         <div className="flex items-center gap-3 text-sm text-hint/80">
           <span>{texts.badgeVoice}</span>
           <span>·</span>
@@ -52,13 +56,15 @@ export function Hero({ texts }: { texts: HeroTexts }) {
           <span>·</span>
           <span>{texts.badgeLanguages}</span>
         </div>
-        <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
-          {texts.title}{" "}
-          <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
-            {texts.titleAccent}
-          </span>
-        </h1>
-        <p className="text-sm text-hint/80 sm:text-base">{texts.description}</p>
+        <div className="my-auto flex min-w-0 flex-col gap-4">
+          <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
+            {texts.title}{" "}
+            <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
+              {texts.titleAccent}
+            </span>
+          </h1>
+          <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{texts.description}</p>
+        </div>
         <div className="flex flex-wrap items-center gap-3">
           <a href="#app" className={PRIMARY_BTN}>
             {texts.ctaTry}
@@ -68,7 +74,7 @@ export function Hero({ texts }: { texts: HeroTexts }) {
           </a>
         </div>
       </div>
-      <div className="order-1 h-full lg:order-2">
+      <div className="order-1 aspect-[4/3] lg:order-2 lg:aspect-auto lg:min-h-[21.5rem]">
         <MockCard texts={texts} />
       </div>
     </div>

@@ -70,7 +70,7 @@ export function FeatureLanding({
         texts={chrome.header}
         featureLinks={chrome.footer.featureLinks}
       />
-      <Container className="py-6">
+      <Container>
         <Band>
           <Hero texts={content.hero} />
         </Band>

@@ -27,18 +27,20 @@ export function Spotlights({ items, icons = ICONS }: { items: Spotlight[]; icons
       {items.map((s, i) => (
         <article key={s.heading} className={`${CARD} flex flex-col overflow-hidden`}>
           <div className={`${TINTS[i % TINTS.length]} p-6 sm:p-8`}>
-            <h2 className="text-2xl font-medium sm:text-[1.75rem]">{s.heading}</h2>
-            <p className="mt-2 text-sm text-hint sm:text-base">{s.sub}</p>
+            <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
+              {s.heading}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-hint/80 sm:text-base">{s.sub}</p>
           </div>
           <ul className="flex flex-col gap-5 p-6 sm:p-8">
             {s.bullets.map((b, j) => {
               const Icon = icons[i]?.[j] ?? Mic;
               return (
                 <li key={b.title} className="flex items-start gap-3">
-                  <Icon className="mt-0.5 h-7 w-7 shrink-0 text-button" />
+                  <Icon className="mt-0.5 h-7 w-7 shrink-0 text-button" strokeWidth={1.75} />
                   <div>
-                    <div className="font-semibold">{b.title}</div>
-                    <p className="text-sm text-hint">{b.sub}</p>
+                    <div className="text-base font-semibold">{b.title}</div>
+                    <p className="text-sm leading-relaxed text-hint/80">{b.sub}</p>
                   </div>
                 </li>
               );

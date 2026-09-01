@@ -1,5 +1,3 @@
-import { CARD } from "./shell";
-
 export type FaqItem = { q: string; a: string };
 
 const DEFAULT_ITEMS: FaqItem[] = [
@@ -29,6 +27,9 @@ const DEFAULT_ITEMS: FaqItem[] = [
   },
 ];
 
+// Same layout as iq-rest's Faq: tinted 40% column on the left (heading/sub,
+// sticky while the right column scrolls, no gradient on the accent — that's
+// Hero-only there), plain 60% column on the right with the questions.
 export function Faq({
   heading = "Frequently asked",
   headingAccent = "questions",
@@ -41,30 +42,28 @@ export function Faq({
   items?: FaqItem[];
 }) {
   return (
-    <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:grid-cols-[2fr_3fr]`}>
-      <div className="flex flex-col justify-center gap-3 bg-[hsl(28_48%_93%)] p-6 dark:bg-[hsl(28_15%_13%)] sm:p-8">
-        <h2 className="text-2xl font-medium sm:text-[1.75rem]">
-          {heading}{" "}
-          <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
-            {headingAccent}
-          </span>
-        </h2>
-        <p className="text-sm text-hint sm:text-base">{sub}</p>
+    <div
+      itemScope
+      itemType="https://schema.org/FAQPage"
+      className="grid grid-cols-1 rounded-2xl border border-border lg:grid-cols-[2fr_3fr]"
+    >
+      <div className="rounded-t-2xl bg-[hsl(28_48%_93%)] dark:bg-[hsl(28_15%_13%)] lg:rounded-t-none lg:rounded-l-2xl">
+        <div className="flex flex-col items-start gap-3 p-5 text-start sm:p-6 lg:sticky lg:top-16">
+          <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
+            {heading} {headingAccent}
+          </h2>
+          <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
+        </div>
       </div>
-      <div className="flex flex-col divide-y divide-border" itemScope itemType="https://schema.org/FAQPage">
+
+      <div className="flex flex-col gap-8 p-5 sm:p-6">
         {items.map((item) => (
-          <div
-            key={item.q}
-            className="p-5 sm:p-6"
-            itemScope
-            itemProp="mainEntity"
-            itemType="https://schema.org/Question"
-          >
-            <h3 itemProp="name" className="text-base font-semibold">
+          <div key={item.q} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+            <h3 itemProp="name" className="mb-2 text-base font-medium tracking-tight sm:text-lg">
               {item.q}
             </h3>
             <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-              <p itemProp="text" className="mt-1.5 text-sm text-hint">
+              <p itemProp="text" className="text-sm leading-relaxed text-hint">
                 {item.a}
               </p>
             </div>
