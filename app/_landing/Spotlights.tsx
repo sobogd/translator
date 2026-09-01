@@ -10,7 +10,7 @@ const TINTS = [
 
 const SPOTLIGHTS = [
   {
-    heading: "Real-time voice translation",
+    heading: "Instant voice translation",
     sub: "Tap the mic and talk. Your speech is transcribed and translated in seconds — no typing needed.",
     bullets: [
       { icon: Mic, title: "Speak, get instant translation", sub: "One tap starts recording, translation appears right after" },

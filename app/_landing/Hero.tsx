@@ -38,7 +38,7 @@ export function Hero() {
           <span>186 languages</span>
         </div>
         <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
-          Real-time voice translation{" "}
+          Instant voice translation{" "}
           <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
             for any conversation
           </span>

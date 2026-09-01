@@ -1,7 +1,7 @@
 import { CARD, PRIMARY_BTN } from "./shell";
 
 export function FinalCta({
-  heading = "Real-time voice translation,",
+  heading = "Instant voice translation,",
   headingAccent = "ready in 10 seconds.",
   sub = "Try it right on this page — no sign-up, no downloads, 186 languages included.",
   ctaLabel = "Try it now",

@@ -10,7 +10,7 @@ import { Container, Band, PAGE } from "../_landing/shell";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple credit-based pricing for real-time voice translation. Free plan included, upgrade anytime.",
+    "Simple credit-based pricing for instant voice translation. Free plan included, upgrade anytime.",
 };
 
 const PRICING_FAQ = [

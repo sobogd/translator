@@ -16,7 +16,7 @@ const JSON_LD = {
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Web",
   description:
-    "Real-time voice translation app: speak naturally and get an instant translation, spoken or written, in 186 languages.",
+    "Instant voice translation app: speak naturally and get an instant translation, spoken or written, in 186 languages.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 

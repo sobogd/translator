@@ -6,7 +6,7 @@ const SITE_URL = "https://translate.iq-factura.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IQ Translate — Real-Time Voice Translation App",
+    default: "IQ Translate — Instant Voice Translation App",
     template: "%s | IQ Translate",
   },
   description:
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "IQ Translate",
-    title: "IQ Translate — Real-Time Voice Translation App",
+    title: "IQ Translate — Instant Voice Translation App",
     description:
       "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
   },
   twitter: {
     card: "summary",
-    title: "IQ Translate — Real-Time Voice Translation App",
+    title: "IQ Translate — Instant Voice Translation App",
     description:
       "Speak naturally and get an instant translation, spoken or written, in 186 languages.",
   },
