@@ -204,7 +204,7 @@
     "noTopicsYet": "No topics yet",
     "deleteTopic": "Delete topic",
     "deleteTopicConfirm": "Delete this topic and all its translations?",
-    "detectingLanguage": "Detecting language…",
+    "autoDetect": "Auto-detect",
     "chooseLanguage": "Choose a language",
     "close": "Close",
     "searchPlaceholder": "Search a language…",

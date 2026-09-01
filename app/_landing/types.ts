@@ -70,7 +70,7 @@ export interface TranslatorTexts {
     noTopicsYet: string;
     deleteTopic: string;
     deleteTopicConfirm: string;
-    detectingLanguage: string;
+    autoDetect: string;
     chooseLanguage: string;
     close: string;
     searchPlaceholder: string;

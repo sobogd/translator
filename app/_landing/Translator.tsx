@@ -40,19 +40,24 @@ function matchesQuery(l: { nameRu: string; nameNative: string }, q: string): boo
 
 function LanguagePickerModal({
   current,
-  exclude,
+  forSource,
   texts,
   onClose,
   onSelect,
 }: {
-  current: string;
-  exclude?: string;
+  current: string | null;
+  /** Only the source picker offers "Auto-detect" — the target always needs
+   *  a concrete language. Both pickers otherwise list every language,
+   *  including whatever's currently selected on the other side — picking a
+   *  colliding pair is resolved by auto-substituting the source with
+   *  auto-detect (see selectSource/selectTarget), not by hiding options. */
+  forSource?: boolean;
   texts: WidgetTexts;
   onClose: () => void;
-  onSelect: (code: string) => void;
+  onSelect: (code: string | null) => void;
 }) {
   const [query, setQuery] = useState("");
-  const list = LANGUAGES.filter((l) => l.code !== exclude && matchesQuery(l, query));
+  const list = LANGUAGES.filter((l) => matchesQuery(l, query));
 
   return (
     <div
@@ -84,6 +89,16 @@ function LanguagePickerModal({
           style={{ background: "var(--bg)", borderColor: "var(--border)" }}
         />
         <div className="flex-1 overflow-y-auto">
+          {forSource && (
+            <button
+              onClick={() => onSelect(null)}
+              className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
+              style={current === null ? { background: "var(--bg)" } : undefined}
+            >
+              <span className="text-xl">🌐</span>
+              <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
+            </button>
+          )}
           {list.map((l) => (
             <button
               key={l.code}
@@ -293,14 +308,19 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     }
   }
 
-  async function selectSource(code: string) {
+  // Both pickers list every language, including the one already selected on
+  // the other side — a same-language pair is resolved by falling back the
+  // source to auto-detect (target always stays a concrete language; only
+  // the source can mean "figure it out from the text").
+  async function selectSource(code: string | null) {
     setPickerFor(null);
     if (!topic) return;
-    setTopic({ ...topic, sourceLang: code });
+    const nextSource = code !== null && code === topic.targetLang ? null : code;
+    setTopic({ ...topic, sourceLang: nextSource });
     await apiFetch(`/api/topics/${topic.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sourceLang: code }),
+      body: JSON.stringify({ sourceLang: nextSource }),
     });
   }
 
@@ -309,11 +329,12 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     localStorage.setItem(TO_KEY, code);
     setDefaultTarget(code);
     if (!topic) return;
-    setTopic({ ...topic, targetLang: code });
+    const nextSource = topic.sourceLang === code ? null : topic.sourceLang;
+    setTopic({ ...topic, sourceLang: nextSource, targetLang: code });
     await apiFetch(`/api/topics/${topic.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ targetLang: code }),
+      body: JSON.stringify({ sourceLang: nextSource, targetLang: code }),
     });
   }
 
@@ -412,7 +433,7 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   const rows = topic ? [...topic.translations].reverse() : [];
 
   return (
-    <div className={`${CARD} flex flex-col gap-5 bg-card p-6 sm:p-8`}>
+    <div className={`${CARD} flex flex-col gap-5 p-6 sm:p-8`}>
       {/* topic bar */}
       <div className="flex flex-wrap items-center gap-2">
         <button
@@ -481,8 +502,8 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
             </>
           ) : (
             <>
-              <Loader2 size={11} className="animate-spin" />
-              {t.detectingLanguage}
+              <span className="text-sm">🌐</span>
+              {t.autoDetect}
             </>
           )}
         </button>
@@ -543,11 +564,11 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
 
       {pickerFor && (
         <LanguagePickerModal
-          current={pickerFor === "source" ? (topic?.sourceLang ?? "") : (topic?.targetLang ?? defaultTarget)}
-          exclude={pickerFor === "source" ? (topic?.targetLang ?? defaultTarget) : (topic?.sourceLang ?? undefined)}
+          current={pickerFor === "source" ? (topic?.sourceLang ?? null) : (topic?.targetLang ?? defaultTarget)}
+          forSource={pickerFor === "source"}
           texts={t}
           onClose={() => setPickerFor(null)}
-          onSelect={pickerFor === "source" ? selectSource : selectTarget}
+          onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
         />
       )}
 

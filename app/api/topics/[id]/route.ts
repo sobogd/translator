@@ -47,8 +47,12 @@ export async function PATCH(
     }
 
     const body = await req.json();
-    const data: { sourceLang?: string; targetLang?: string } = {};
-    if (typeof body.sourceLang === "string") {
+    const data: { sourceLang?: string | null; targetLang?: string } = {};
+    if (body.sourceLang === null) {
+      // Explicit reset to auto-detect — the next translation in this topic
+      // re-detects instead of staying pinned to whatever was locked in.
+      data.sourceLang = null;
+    } else if (typeof body.sourceLang === "string") {
       if (!getLanguage(body.sourceLang)) {
         return NextResponse.json({ error: "unknown language" }, { status: 400 });
       }
