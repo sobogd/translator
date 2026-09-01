@@ -1,5 +1,5 @@
 import { Mic, Volume2 } from "lucide-react";
-import { CARD, PRIMARY_BTN, PRIMARY_FILL, OUTLINE_BTN } from "./shell";
+import { CARD, PRIMARY_FILL } from "./shell";
 
 type HeroTexts = {
   badgeVoice: string;
@@ -64,14 +64,6 @@ export function Hero({ texts }: { texts: HeroTexts }) {
             </span>
           </h1>
           <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{texts.description}</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <a href="#app" className={PRIMARY_BTN}>
-            {texts.ctaTry}
-          </a>
-          <a href="/api/auth/google/start" className={OUTLINE_BTN}>
-            {texts.ctaSignIn}
-          </a>
         </div>
       </div>
       <div className="order-1 aspect-[4/3] lg:order-2 lg:aspect-auto lg:min-h-[21.5rem]">
