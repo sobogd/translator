@@ -55,8 +55,8 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
         <span>{langLabel(lang)}</span>
         {/* swipe indicator: two dots, active = current language */}
         <span className="flex items-center gap-1">
-          <span className={`h-1.5 w-1.5 rounded-full ${!showSource ? "bg-emerald-500" : ""}`} style={showSource ? { background: "var(--border)" } : undefined} />
-          <span className={`h-1.5 w-1.5 rounded-full ${showSource ? "bg-emerald-500" : ""}`} style={!showSource ? { background: "var(--border)" } : undefined} />
+          <span className={`h-1.5 w-1.5 rounded-full ${!showSource ? "bg-button" : ""}`} style={showSource ? { background: "var(--border)" } : undefined} />
+          <span className={`h-1.5 w-1.5 rounded-full ${showSource ? "bg-button" : ""}`} style={!showSource ? { background: "var(--border)" } : undefined} />
         </span>
         {r.audioUrl && (
           <button
@@ -82,7 +82,7 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
               speak(shown, lang);
             }}
             aria-label="Озвучить"
-            className="rounded-lg p-1.5 text-emerald-600 transition active:scale-90 dark:text-emerald-400"
+            className="rounded-lg p-1.5 text-button transition active:scale-90"
           >
             <Volume2 size={15} />
           </button>
@@ -92,7 +92,7 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
               copy();
             }}
             aria-label="Копировать"
-            className="rounded-lg p-1.5 text-emerald-600 transition active:scale-90 dark:text-emerald-400"
+            className="rounded-lg p-1.5 text-button transition active:scale-90"
           >
             {copied ? <Check size={15} /> : <Copy size={15} />}
           </button>

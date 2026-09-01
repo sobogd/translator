@@ -46,7 +46,7 @@ export default async function PricingPage() {
           <div className="flex flex-col items-center gap-3 py-4 text-center">
             <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
               Simple, credit-based{" "}
-              <span className="bg-gradient-to-br from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
                 pricing
               </span>
             </h1>

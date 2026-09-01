@@ -35,7 +35,7 @@ export function Comparison() {
       <div className="flex flex-col justify-center gap-3 bg-[hsl(160_30%_95%)] p-6 dark:bg-[hsl(160_18%_13%)] sm:p-8">
         <h2 className="text-2xl font-medium sm:text-[1.75rem]">
           Why voice{" "}
-          <span className="bg-gradient-to-br from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
             comes first
           </span>
         </h2>
@@ -49,7 +49,7 @@ export function Comparison() {
           <div key={r.title} className="flex flex-col gap-2 p-5 sm:p-6">
             <h3 className="text-base font-semibold">{r.title}</h3>
             <div className="flex items-start gap-2 text-sm">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-button" />
               <span>
                 <strong>IQ Translate</strong>: {r.us}
               </span>

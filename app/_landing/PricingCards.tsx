@@ -61,10 +61,10 @@ export function PricingCards() {
         return (
           <div
             key={id}
-            className={`${CARD} flex flex-col gap-5 p-6 ${plan.popular ? "ring-2 ring-emerald-500" : ""}`}
+            className={`${CARD} flex flex-col gap-5 p-6 ${plan.popular ? "ring-2 ring-button" : ""}`}
           >
             {plan.popular && (
-              <span className="w-fit rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="w-fit rounded-full bg-button/15 px-2.5 py-1 text-xs font-semibold text-button">
                 Most popular
               </span>
             )}
@@ -78,7 +78,7 @@ export function PricingCards() {
             <ul className="flex flex-1 flex-col gap-2.5">
               {FEATURES[id].map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm text-hint">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-button" />
                   {f}
                 </li>
               ))}

@@ -58,7 +58,7 @@ export function Spotlights() {
           <ul className="flex flex-col gap-5 p-6 sm:p-8">
             {s.bullets.map(({ icon: Icon, title, sub }) => (
               <li key={title} className="flex items-start gap-3">
-                <Icon className="mt-0.5 h-7 w-7 shrink-0 text-emerald-500" />
+                <Icon className="mt-0.5 h-7 w-7 shrink-0 text-button" />
                 <div>
                   <div className="font-semibold">{title}</div>
                   <p className="text-sm text-hint">{sub}</p>

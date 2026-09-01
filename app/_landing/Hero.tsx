@@ -1,5 +1,5 @@
 import { Mic, Volume2 } from "lucide-react";
-import { CARD, PRIMARY_BTN, OUTLINE_BTN } from "./shell";
+import { CARD, PRIMARY_BTN, PRIMARY_FILL, OUTLINE_BTN } from "./shell";
 
 function MockCard() {
   return (
@@ -14,10 +14,10 @@ function MockCard() {
         </div>
         <div className="flex items-start justify-between gap-2">
           <p className="text-base leading-relaxed">Hello, how are you?</p>
-          <Volume2 size={16} className="mt-0.5 shrink-0 text-emerald-500" />
+          <Volume2 size={16} className="mt-0.5 shrink-0 text-button" />
         </div>
         <div className="mt-5 flex justify-center">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-400 text-white">
+          <div className={`flex h-11 w-11 items-center justify-center rounded-full ${PRIMARY_FILL}`}>
             <Mic size={18} />
           </div>
         </div>
@@ -39,7 +39,7 @@ export function Hero() {
         </div>
         <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
           Real-time voice translation{" "}
-          <span className="bg-gradient-to-br from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
             for any conversation
           </span>
         </h1>

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { NARROW } from "./shell";
+import { NARROW, PRIMARY_FILL } from "./shell";
+import { LogoIcon } from "./LogoIcon";
 
 async function logout() {
   await fetch("/api/auth/logout", { method: "POST" });
@@ -19,10 +20,8 @@ export function Header({ signedIn }: { signedIn: boolean }) {
           href="/"
           className="flex shrink-0 items-center gap-1.5 text-lg font-semibold tracking-tight sm:text-xl"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 text-xs font-bold text-white sm:h-8 sm:w-8">
-            IQ
-          </span>
-          IQ Translate
+          <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
+          Translate
         </Link>
         <nav className="mr-auto hidden items-center gap-6 pl-8 text-sm font-semibold sm:flex">
           <Link href="/#features" className="transition-opacity hover:opacity-70">
@@ -52,7 +51,7 @@ export function Header({ signedIn }: { signedIn: boolean }) {
         )}
         <Link
           href="/#app"
-          className="inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+          className={`inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
         >
           Try it now
         </Link>

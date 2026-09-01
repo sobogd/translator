@@ -45,7 +45,7 @@ export function Faq({
       <div className="flex flex-col justify-center gap-3 bg-[hsl(160_30%_95%)] p-6 dark:bg-[hsl(160_18%_13%)] sm:p-8">
         <h2 className="text-2xl font-medium sm:text-[1.75rem]">
           {heading}{" "}
-          <span className="bg-gradient-to-br from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
             {headingAccent}
           </span>
         </h2>

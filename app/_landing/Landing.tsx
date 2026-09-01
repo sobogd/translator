@@ -29,11 +29,11 @@ export function Landing({ signedIn }: { signedIn: boolean }) {
       />
       <Header signedIn={signedIn} />
       <Container className="py-6">
-        <Band>
-          <Hero />
-        </Band>
         <Band id="app">
           <Translator />
+        </Band>
+        <Band>
+          <Hero />
         </Band>
         <Band>
           <StatCards />

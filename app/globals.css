@@ -11,28 +11,28 @@
   --color-button-text: var(--button-text);
 }
 
-/* Palette driven by CSS vars so we can override them from Telegram themeParams
-   at runtime. Defaults below cover plain browser (light + dark). */
+/* Same palette as iq-rest's landing (app/globals.css there): warm paper
+   light theme, warm #1A1612 dark theme, brand-orange accent. */
 :root {
-  --bg: #eceef1; /* page background — greyish */
-  --accent: #ffffff; /* header / footer — white */
-  --card: #ffffff; /* message cards — white */
-  --text: #18181b;
-  --hint: #71717a;
-  --border: #e3e4e8;
-  --button: #059669;
+  --bg: hsl(38 30% 97%);
+  --accent: hsl(40 33% 99%); /* header / footer surface */
+  --card: hsl(40 33% 99%);
+  --text: hsl(30 12% 8%);
+  --hint: hsl(30 8% 42%);
+  --border: hsl(36 20% 91%);
+  --button: hsl(23 100% 42%);
   --button-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0a0a0a;
-    --accent: #1b1b1e;
-    --card: #1b1b1e;
-    --text: #fafafa;
-    --hint: #a1a1aa;
-    --border: #2a2a2e;
-    --button: #10b981;
+    --bg: hsl(30 18% 9%); /* #1A1612 */
+    --accent: hsl(30 18% 9%);
+    --card: hsl(30 18% 9%);
+    --text: hsl(40 38% 95%); /* #f7f3ec */
+    --hint: hsl(36 11% 60%); /* #a59c8f */
+    --border: hsl(0 0% 12%);
+    --button: hsl(23 100% 58%);
     --button-text: #ffffff;
   }
 }

@@ -85,7 +85,7 @@ function LanguagePickerModal({
           onChange={(e) => setQuery(e.target.value)}
           autoFocus
           placeholder="Search a language…"
-          className="w-full rounded-xl border px-3 py-2.5 text-base outline-none transition focus-visible:ring-2 focus-visible:ring-emerald-500/30"
+          className="w-full rounded-xl border px-3 py-2.5 text-base outline-none transition focus-visible:ring-2 focus-visible:ring-button/30"
           style={{ background: "var(--bg)", borderColor: "var(--border)" }}
         />
         <div className="flex-1 overflow-y-auto">
@@ -284,7 +284,7 @@ export function Translator() {
   const rows = chat ? [...chat.translations].reverse() : [];
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className={`${CARD} flex flex-col gap-5 bg-card p-6 sm:p-8`}>
       {/* mode tabs — more will be added here later */}
       <div className="flex gap-1 border-b border-border">
         {TABS.map(({ id, label, icon: Icon }) => (
@@ -292,7 +292,7 @@ export function Translator() {
             key={id}
             onClick={() => setTab(id)}
             className={`flex items-center gap-1.5 border-b-2 px-3 py-2.5 text-sm font-semibold transition-colors ${
-              tab === id ? "border-emerald-500 text-text" : "border-transparent text-hint hover:text-text"
+              tab === id ? "border-button text-text" : "border-transparent text-hint hover:text-text"
             }`}
           >
             <Icon size={15} />
@@ -349,7 +349,7 @@ export function Translator() {
           <History rows={rows} langA={chat?.langA ?? ""} langB={chat?.langB ?? ""} />
         )}
         {pending && (
-          <div className={`${CARD} flex items-center gap-2 bg-card p-3.5 text-sm text-hint`}>
+          <div className="flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
             <Loader2 size={15} className="animate-spin" /> Translating…
           </div>
         )}
@@ -366,7 +366,7 @@ export function Translator() {
       </div>
 
       {/* input zone — text or voice, per the active tab */}
-      <div className={`${CARD} bg-card p-3`}>
+      <div className="border-t border-border pt-4">
         {tab === "text" ? (
           <div className="flex items-end gap-2">
             <textarea
@@ -385,7 +385,7 @@ export function Translator() {
               onClick={translateText}
               disabled={!chat || !text.trim() || textBusy}
               aria-label="Translate"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white transition hover:bg-emerald-500 active:scale-90 disabled:opacity-40"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-button text-button-text transition hover:opacity-90 active:scale-90 disabled:opacity-40"
             >
               {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
             </button>
@@ -397,7 +397,7 @@ export function Translator() {
               disabled={!chat || status === "processing"}
               aria-label={status === "recording" ? "Stop" : "Record"}
               className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white transition active:scale-90 disabled:opacity-40 ${
-                status === "recording" ? "bg-red-500 hover:bg-red-400" : "bg-emerald-600 hover:bg-emerald-500"
+                status === "recording" ? "bg-red-500 hover:bg-red-400" : "bg-button hover:opacity-90"
               }`}
             >
               {status === "recording" && (
