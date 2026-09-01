@@ -1,16 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MoreVertical, Pencil, FileText, Eraser, Trash2 } from "lucide-react";
+import { MoreVertical, Eraser, Trash2 } from "lucide-react";
 
 export function ThreadMenu({
-  onEditTitle,
-  onEditTopic,
   onClear,
   onDelete,
 }: {
-  onEditTitle: () => void;
-  onEditTopic: () => void;
   onClear: () => void;
   onDelete: () => void;
 }) {
@@ -32,10 +28,8 @@ export function ThreadMenu({
   };
 
   const items = [
-    { label: "Изменить название", icon: Pencil, fn: onEditTitle, danger: false },
-    { label: "Изменить тему", icon: FileText, fn: onEditTopic, danger: false },
     { label: "Очистить историю", icon: Eraser, fn: onClear, danger: false },
-    { label: "Удалить тред", icon: Trash2, fn: onDelete, danger: true },
+    { label: "Удалить чат", icon: Trash2, fn: onDelete, danger: true },
   ];
 
   return (

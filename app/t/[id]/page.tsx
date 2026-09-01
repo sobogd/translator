@@ -4,29 +4,50 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Send, Loader2, Mic, Square, Keyboard } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
-import { type Mode } from "@/components/ModeToggle";
-import { type RecStatus } from "@/components/RecordButton";
 import { History } from "@/components/History";
 import { ThreadMenu } from "@/components/ThreadMenu";
-import { EditFieldModal } from "@/components/EditFieldModal";
 import { apiFetch, initTelegram, showBackButton, haptic, isTelegram } from "@/lib/client";
-import type { TranslateResult, ThreadDetail } from "@/lib/types";
+import type { ChatDetail } from "@/lib/types";
+import { getLanguage } from "@/lib/languages";
 
-export default function ThreadPage() {
+const FROM_LANG_KEY = "translator_from_lang";
+const DEFAULT_FROM_LANG = "ru";
+
+type Mode = "text" | "audio";
+type RecStatus = "idle" | "recording" | "processing";
+
+type TranslateResult = {
+  source_lang: string;
+  transcript: string;
+  translation: string;
+  id?: string;
+  audioUrl?: string | null;
+};
+
+function chatTitle(chat: ChatDetail | null, fromLang: string): string {
+  if (!chat) return "…";
+  const a = getLanguage(chat.langA);
+  const b = getLanguage(chat.langB);
+  if (chat.langA === fromLang && b) return `${b.flag} ${b.nameRu}`;
+  if (chat.langB === fromLang && a) return `${a.flag} ${a.nameRu}`;
+  if (a && b) return `${a.flag} ${a.nameRu} ⇄ ${b.flag} ${b.nameRu}`;
+  return `${chat.langA} ⇄ ${chat.langB}`;
+}
+
+export default function ChatPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
-  const threadId = params.id;
+  const chatId = params.id;
 
-  const [thread, setThread] = useState<ThreadDetail | null>(null);
+  const [chat, setChat] = useState<ChatDetail | null>(null);
   const [notFound, setNotFound] = useState(false);
+  const [fromLang, setFromLang] = useState(DEFAULT_FROM_LANG);
   const [mode, setMode] = useState<Mode>("text");
   const [status, setStatus] = useState<RecStatus>("idle");
   const [text, setText] = useState("");
   const [textBusy, setTextBusy] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [editTitle, setEditTitle] = useState(false);
-  const [editTopic, setEditTopic] = useState(false);
   const [inTg, setInTg] = useState(false);
   const recRef = useRef<WavRecorder | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -52,29 +73,32 @@ export default function ThreadPage() {
 
   const load = useCallback(async () => {
     try {
-      const res = await apiFetch(`/api/threads/${threadId}`);
+      const res = await apiFetch(`/api/chats/${chatId}`);
       if (res.status === 404) {
         setNotFound(true);
         return;
       }
-      if (res.ok) setThread(await res.json());
+      if (res.ok) setChat(await res.json());
     } catch {
       /* ignore */
     }
-  }, [threadId]);
+  }, [chatId]);
 
   useEffect(() => {
     initTelegram();
-    // one-time init from the Telegram runtime (external), not a render cascade.
+    const saved = localStorage.getItem(FROM_LANG_KEY);
+    // one-time init from Telegram/localStorage/network (external), not a render cascade.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (saved) setFromLang(saved);
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setInTg(isTelegram());
     const hide = showBackButton(() => router.push("/"));
-    load(); // setThread runs after the awaited fetch
+    load(); // setChat runs after the awaited fetch
     return hide;
   }, [load, router]);
 
   // keep view pinned to the newest message
-  const turnCount = thread?.translations?.length ?? 0;
+  const turnCount = chat?.translations?.length ?? 0;
   useEffect(() => {
     requestAnimationFrame(() => {
       const el = scrollRef.current;
@@ -86,37 +110,17 @@ export default function ThreadPage() {
     load();
   }
 
-  async function patch(data: { title?: string; context?: string }) {
-    await apiFetch(`/api/threads/${threadId}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    await load();
-  }
-
-  async function saveTitle(v: string) {
-    if (!v.trim()) return;
-    await patch({ title: v });
-    setEditTitle(false);
-  }
-
-  async function saveTopic(v: string) {
-    await patch({ context: v });
-    setEditTopic(false);
-  }
-
   async function clearHistory() {
-    if (!confirm("Очистить всю историю переводов этого треда?")) return;
+    if (!confirm("Очистить всю историю переводов этого чата?")) return;
     haptic();
-    await apiFetch(`/api/threads/${threadId}/translations`, { method: "DELETE" });
+    await apiFetch(`/api/chats/${chatId}/translations`, { method: "DELETE" });
     await load();
   }
 
-  async function deleteThread() {
-    if (!confirm("Удалить тред со всей историей?")) return;
+  async function deleteChat() {
+    if (!confirm("Удалить чат со всей историей?")) return;
     haptic();
-    await apiFetch(`/api/threads/${threadId}`, { method: "DELETE" });
+    await apiFetch(`/api/chats/${chatId}`, { method: "DELETE" });
     router.push("/");
   }
 
@@ -150,7 +154,7 @@ export default function ThreadPage() {
       recRef.current = null;
       const fd = new FormData();
       fd.append("audio", blob, "speech.wav");
-      fd.append("threadId", threadId);
+      fd.append("chatId", chatId);
       const res = await apiFetch("/api/translate", { method: "POST", body: fd });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Ошибка сервера");
@@ -173,7 +177,7 @@ export default function ThreadPage() {
       const res = await apiFetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: sent, threadId }),
+        body: JSON.stringify({ text: sent, chatId }),
       });
       const data: TranslateResult & { error?: string } = await res.json();
       if (!res.ok) throw new Error(data.error || "Ошибка сервера");
@@ -192,7 +196,7 @@ export default function ThreadPage() {
         className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 px-4"
         style={{ background: "var(--bg)", color: "var(--hint)" }}
       >
-        Тред не найден.
+        Чат не найден.
         <button onClick={() => router.push("/")} className="text-emerald-500">
           ← К списку
         </button>
@@ -200,7 +204,8 @@ export default function ThreadPage() {
     );
   }
 
-  const rows = thread ? [...thread.translations].reverse() : [];
+  const rows = chat ? [...chat.translations].reverse() : [];
+  const avatarFlag = chat ? getLanguage(chat.langA)?.flag ?? "…" : "…";
 
   return (
     <main
@@ -222,28 +227,20 @@ export default function ThreadPage() {
             <ArrowLeft size={22} />
           </button>
         )}
-        <div className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
-          {(thread?.title?.[0] ?? "…").toUpperCase()}
+        <div className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-lg">
+          {avatarFlag}
         </div>
         <div className="min-w-0 flex-1 leading-tight">
           <div className="truncate text-base font-semibold">
-            {thread?.title ?? "…"}
-          </div>
-          <div className="truncate text-xs" style={{ color: "var(--hint)" }}>
-            {thread?.context?.trim() || "тема не задана"}
+            {chatTitle(chat, fromLang)}
           </div>
         </div>
-        <ThreadMenu
-          onEditTitle={() => setEditTitle(true)}
-          onEditTopic={() => setEditTopic(true)}
-          onClear={clearHistory}
-          onDelete={deleteThread}
-        />
+        <ThreadMenu onClear={clearHistory} onDelete={deleteChat} />
       </header>
 
       {/* scrollable history */}
       <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
-        <History rows={rows} />
+        <History rows={rows} langA={chat?.langA ?? ""} langB={chat?.langB ?? ""} />
         {pending && (
           <div
             className="mt-3 flex items-center gap-2 rounded-2xl border p-3.5 text-sm"
@@ -353,26 +350,6 @@ export default function ThreadPage() {
           )}
         </div>
       </footer>
-
-      {editTitle && (
-        <EditFieldModal
-          heading="Название треда"
-          placeholder="Напр.: Приём у ветеринара"
-          initial={thread?.title ?? ""}
-          onClose={() => setEditTitle(false)}
-          onSave={saveTitle}
-        />
-      )}
-      {editTopic && (
-        <EditFieldModal
-          heading="Тема / контекст"
-          placeholder="О чём разговор и кто есть кто…"
-          initial={thread?.context ?? ""}
-          multiline
-          onClose={() => setEditTopic(false)}
-          onSave={saveTopic}
-        />
-      )}
     </main>
   );
 }

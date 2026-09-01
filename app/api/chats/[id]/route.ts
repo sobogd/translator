@@ -1,43 +1,51 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveOwner, isAllowed } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
-export async function GET(req: NextRequest) {
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-    const threads = await prisma.thread.findMany({
-      where: { ownerKey: owner },
-      orderBy: { createdAt: "desc" },
-      include: { _count: { select: { translations: true } } },
+    const { id } = await params;
+    const chat = await prisma.chat.findUnique({
+      where: { id },
+      include: {
+        translations: { orderBy: { createdAt: "desc" }, take: 100 },
+      },
     });
-    return NextResponse.json(threads);
+    if (!chat || chat.ownerKey !== owner) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
+    }
+    return NextResponse.json(chat);
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "unknown error";
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function DELETE(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
   try {
     const owner = resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-    const body = await req.json();
-    const title = typeof body.title === "string" ? body.title.trim() : "";
-    const context = typeof body.context === "string" ? body.context.trim() : "";
-    if (!title) {
-      return NextResponse.json({ error: "no title" }, { status: 400 });
+    const { id } = await params;
+    const chat = await prisma.chat.findUnique({ where: { id } });
+    if (!chat || chat.ownerKey !== owner) {
+      return NextResponse.json({ error: "not found" }, { status: 404 });
     }
-    const thread = await prisma.thread.create({
-      data: { title, context, ownerKey: owner },
-    });
-    return NextResponse.json(thread);
+    await prisma.chat.delete({ where: { id } });
+    return NextResponse.json({ ok: true });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "unknown error";
     return NextResponse.json({ error: msg }, { status: 500 });

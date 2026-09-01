@@ -2,18 +2,24 @@
 
 import { useRef, useState } from "react";
 import { Copy, Check, Volume2, Play, MessageSquare } from "lucide-react";
-import { HistoryRow, langLabel } from "@/lib/types";
+import type { HistoryRow } from "@/lib/types";
+import { getLanguage } from "@/lib/languages";
 
 function speak(text: string, lang: string) {
   if (typeof window === "undefined" || !window.speechSynthesis) return;
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang === "ru" ? "ru-RU" : "es-ES";
+  u.lang = lang;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }
 
-function Turn({ r }: { r: HistoryRow }) {
-  const target = r.sourceLang === "ru" ? "es" : "ru";
+function langLabel(code: string) {
+  const l = getLanguage(code);
+  return l ? `${l.flag} ${l.nameRu}` : code;
+}
+
+function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string }) {
+  const target = r.sourceLang === langA ? langB : langA;
   // show one language at a time; default = translation. Swipe to flip.
   const [showSource, setShowSource] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -96,7 +102,15 @@ function Turn({ r }: { r: HistoryRow }) {
   );
 }
 
-export function History({ rows }: { rows: HistoryRow[] }) {
+export function History({
+  rows,
+  langA,
+  langB,
+}: {
+  rows: HistoryRow[];
+  langA: string;
+  langB: string;
+}) {
   if (rows.length === 0) {
     return (
       <div
@@ -112,7 +126,7 @@ export function History({ rows }: { rows: HistoryRow[] }) {
   return (
     <div className="flex flex-col gap-3">
       {rows.map((r) => (
-        <Turn key={r.id} r={r} />
+        <Turn key={r.id} r={r} langA={langA} langB={langB} />
       ))}
     </div>
   );

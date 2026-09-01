@@ -8,29 +8,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Thread {
+model Chat {
   id           String        @id @default(cuid())
-  ownerKey     String? // "telegram:<id>" | "device:<uuid>" | "apple:<sub>" ...
-  title        String
-  context      String        @default("")
+  ownerKey     String // "telegram:<id>" | "device:<uuid>" | "apple:<sub>" ...
+  langA        String // ISO 639-1 code, langA < langB lexicographically
+  langB        String // ISO 639-1 code
+  lastUsedAt   DateTime      @default(now())
   createdAt    DateTime      @default(now())
   translations Translation[]
 
+  @@unique([ownerKey, langA, langB])
   @@index([ownerKey])
-  @@map("threads")
+  @@map("chats")
 }
 
 model Translation {
   id          String   @id @default(cuid())
-  threadId    String?
-  thread      Thread?  @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  chatId      String?
+  chat        Chat?    @relation(fields: [chatId], references: [id], onDelete: Cascade)
   mode        String // "audio" | "text"
-  sourceLang  String // "ru" | "es"
+  sourceLang  String // ISO 639-1 code
   transcript  String
   translation String
   audioUrl    String?
   createdAt   DateTime @default(now())
 
-  @@index([threadId])
+  @@index([chatId])
   @@map("translations")
 }
