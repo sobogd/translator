@@ -3,11 +3,12 @@ import type { LucideIcon } from "lucide-react";
 import { CARD } from "./shell";
 import type { Spotlight } from "./types";
 
+// Same warm tint rotation as iq-rest's FeatureSpotlights (app/_landing/components/feature-spotlights.tsx there).
 const TINTS = [
-  "bg-[hsl(160_35%_95%)] dark:bg-[hsl(160_20%_14%)]",
-  "bg-[hsl(200_35%_95%)] dark:bg-[hsl(200_20%_14%)]",
-  "bg-[hsl(280_35%_96%)] dark:bg-[hsl(280_15%_14%)]",
-  "bg-[hsl(40_45%_95%)] dark:bg-[hsl(40_20%_14%)]",
+  "bg-[hsl(32_44%_92%)] dark:bg-[hsl(32_14%_14%)]",
+  "bg-[hsl(18_40%_92%)] dark:bg-[hsl(18_14%_14%)]",
+  "bg-[hsl(45_44%_92%)] dark:bg-[hsl(45_14%_14%)]",
+  "bg-[hsl(24_40%_92%)] dark:bg-[hsl(24_14%_14%)]",
 ];
 
 // Bullet icons, positional (index-matched to each spotlight's `bullets`

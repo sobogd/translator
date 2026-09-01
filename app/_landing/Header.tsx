@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW, PRIMARY_FILL } from "./shell";
 import { LogoIcon } from "./LogoIcon";
+import { InstallAppButton } from "./InstallAppButton";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { defaultLocale, type Locale } from "@/lib/locales";
 
@@ -17,7 +18,7 @@ type HeaderTexts = {
   logo: string;
   features: string;
   pricing: string;
-  faq: string;
+  mobileApp: string;
   signIn: string;
   logOut: string;
   tryItNow: string;
@@ -27,7 +28,7 @@ const DEFAULT_TEXTS: HeaderTexts = {
   logo: "Translate",
   features: "Features",
   pricing: "Pricing",
-  faq: "FAQ",
+  mobileApp: "Mobile app",
   signIn: "Sign in",
   logOut: "Log out",
   tryItNow: "Try it now",
@@ -117,8 +118,11 @@ export function Header({
                 {texts.features}
                 <ChevronDown className="h-3.5 w-3.5 text-hint" />
               </button>
+              {/* Grows out of the header bar itself — same tint/blur, no top
+                  border, rounded only at the bottom — so the two read as one
+                  shape, same as iq-rest's products panel. */}
               <div
-                className={`absolute left-0 top-full mt-2 flex min-w-[220px] flex-col rounded-2xl border border-border bg-bg py-2 shadow-xl transition-all duration-200 ${
+                className={`absolute left-0 top-full flex min-w-[220px] flex-col rounded-b-2xl border-x border-b border-border bg-bg/85 py-2 shadow-lg backdrop-blur-md transition-all duration-200 ${
                   featuresOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
                 }`}
               >
@@ -142,9 +146,7 @@ export function Header({
           <Link href="/pricing" className="transition-opacity hover:opacity-70">
             {texts.pricing}
           </Link>
-          <Link href={`${homeHref}#faq`} className="transition-opacity hover:opacity-70">
-            {texts.faq}
-          </Link>
+          <InstallAppButton label={texts.mobileApp} className="transition-opacity hover:opacity-70" />
         </nav>
         {signedIn ? (
           <button
@@ -209,13 +211,11 @@ export function Header({
               >
                 {texts.pricing}
               </Link>
-              <Link
-                href={`${homeHref}#faq`}
-                className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-card"
+              <InstallAppButton
+                label={texts.mobileApp}
+                className="rounded-lg px-3 py-2 text-left text-sm font-semibold hover:bg-card"
                 onClick={() => setMenuOpen(false)}
-              >
-                {texts.faq}
-              </Link>
+              />
               {signedIn ? (
                 <button
                   onClick={logout}

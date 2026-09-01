@@ -18,7 +18,7 @@ type HeroTexts = {
 
 function MockCard({ texts }: { texts: HeroTexts }) {
   return (
-    <div className="flex h-full items-center justify-center bg-[hsl(160_35%_92%)] p-6 dark:bg-[hsl(160_20%_14%)] sm:p-10">
+    <div className="flex h-full items-center justify-center bg-[hsl(32_44%_92%)] p-6 dark:bg-[hsl(32_14%_14%)] sm:p-10">
       <div className={`${CARD} w-full max-w-[280px] bg-card p-4 shadow-xl`}>
         <div className="mb-3 flex items-center gap-2 text-[11px] font-medium uppercase tracking-wide text-hint">
           <span>{texts.mockFromLabel}</span>

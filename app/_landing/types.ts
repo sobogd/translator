@@ -17,7 +17,7 @@ export interface TranslatorTexts {
     logo: string;
     features: string;
     pricing: string;
-    faq: string;
+    mobileApp: string;
     signIn: string;
     logOut: string;
     tryItNow: string;
