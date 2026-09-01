@@ -24,6 +24,12 @@ type TranslateResult = {
   audioUrl?: string | null;
 };
 
+function friendlyError(code: string): string {
+  if (code === "insufficient_credits") return "Кредиты закончились — обновите тариф";
+  if (code === "text too long for your plan") return "Слишком длинный текст для вашего тарифа";
+  return code;
+}
+
 function chatTitle(chat: ChatDetail | null, fromLang: string): string {
   if (!chat) return "…";
   const a = getLanguage(chat.langA);
@@ -113,7 +119,7 @@ export default function ChatPage() {
   async function deleteChat() {
     if (!confirm("Удалить чат со всей историей?")) return;
     await apiFetch(`/api/chats/${chatId}`, { method: "DELETE" });
-    router.push("/");
+    router.push("/app");
   }
 
   function autosize() {
@@ -152,7 +158,7 @@ export default function ChatPage() {
       if (!res.ok) throw new Error(data.error || "Ошибка сервера");
       onResult();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Ошибка");
+      setError(e instanceof Error ? friendlyError(e.message) : "Ошибка");
     } finally {
       setStatus("idle");
     }
@@ -175,7 +181,7 @@ export default function ChatPage() {
       if (!res.ok) throw new Error(data.error || "Ошибка сервера");
       onResult();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Ошибка");
+      setError(e instanceof Error ? friendlyError(e.message) : "Ошибка");
       setText(sent);
     } finally {
       setTextBusy(false);
@@ -189,7 +195,7 @@ export default function ChatPage() {
         style={{ background: "var(--bg)", color: "var(--hint)" }}
       >
         Чат не найден.
-        <button onClick={() => router.push("/")} className="text-emerald-500">
+        <button onClick={() => router.push("/app")} className="text-emerald-500">
           ← К списку
         </button>
       </main>
@@ -210,7 +216,7 @@ export default function ChatPage() {
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
         <button
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/app")}
           aria-label="Назад"
           className="rounded-lg p-1.5 transition active:scale-90"
           style={{ color: "var(--hint)" }}
@@ -244,8 +250,13 @@ export default function ChatPage() {
           </div>
         )}
         {error && (
-          <div className="mt-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
-            {error}
+          <div className="mt-3 flex items-center justify-between gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
+            <span>{error}</span>
+            {error.includes("Кредиты") && (
+              <a href="/pricing" className="shrink-0 font-medium underline">
+                Тарифы
+              </a>
+            )}
           </div>
         )}
       </div>

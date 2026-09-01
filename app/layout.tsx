@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { getServerSessionEmail } from "@/lib/auth";
-import { LoginScreen } from "@/components/LoginScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +12,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://translate.iq-factura.com";
+
 export const metadata: Metadata = {
-  title: "IQ Translate",
-  description: "Голосовой и текстовый переводчик между любыми языками",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "IQ Translate — Real-Time Voice Translation App",
+    template: "%s | IQ Translate",
+  },
+  description:
+    "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "IQ Translate",
+    title: "IQ Translate — Real-Time Voice Translation App",
+    description:
+      "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
+  },
+  twitter: {
+    card: "summary",
+    title: "IQ Translate — Real-Time Voice Translation App",
+    description:
+      "Speak naturally and get an instant translation, spoken or written, in 186 languages.",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -35,21 +54,17 @@ export const viewport: Viewport = {
   themeColor: "#059669",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const email = await getServerSessionEmail();
-
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {email ? children : <LoginScreen />}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

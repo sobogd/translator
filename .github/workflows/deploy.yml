@@ -58,6 +58,8 @@ jobs:
             GOOGLE_CLIENT_ID="${{ secrets.GOOGLE_CLIENT_ID }}"
             GOOGLE_CLIENT_SECRET="${{ secrets.GOOGLE_CLIENT_SECRET }}"
             ALLOWED_GOOGLE_EMAILS="${{ secrets.ALLOWED_GOOGLE_EMAILS }}"
+            STRIPE_SECRET_KEY="${{ secrets.STRIPE_SECRET_KEY }}"
+            STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}"
             PORT="8200"
             EOF
 

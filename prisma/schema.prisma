@@ -33,6 +33,43 @@ model Session {
   @@map("sessions")
 }
 
+// Billing + credits, keyed by the verified Google email (mirrors Chat.ownerKey
+// — there is no separate User table). Created lazily on first credit check.
+model Account {
+  email                String    @id
+  plan                 String    @default("FREE") // "FREE" | "STARTER" | "PRO" | "ULTIMATE"
+  stripeCustomerId     String?   @unique
+  stripeSubscriptionId String?   @unique
+  subscriptionStatus   String    @default("INACTIVE") // "INACTIVE" | "ACTIVE" | "PAST_DUE" | "CANCELED" | "EXPIRED"
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean   @default(false)
+  creditsBalance       Int       @default(40)
+  creditsResetAt       DateTime  @default(now())
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@map("accounts")
+}
+
+// One free lifetime credit pool per browser fingerprint, for the unauthenticated
+// landing-page translate widget. Not linked to Account/email.
+model AnonymousCredit {
+  fingerprint String   @id
+  creditsUsed Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@map("anonymous_credits")
+}
+
+// Stripe webhook idempotency: event id checked before processing, written after.
+model StripeEvent {
+  id         String   @id
+  type       String
+  receivedAt DateTime @default(now())
+
+  @@map("stripe_events")
+}
+
 model Translation {
   id          String   @id @default(cuid())
   chatId      String?

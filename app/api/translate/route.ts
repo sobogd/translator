@@ -1,88 +1,19 @@
-import { GoogleGenAI, Type } from "@google/genai";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getS3Client, s3Bucket, s3Key, getPublicUrl } from "@/lib/s3";
 import { resolveOwner, isAllowed } from "@/lib/auth";
-import { getLanguage, Language } from "@/lib/languages";
+import { getLanguage } from "@/lib/languages";
+import { consumeAccountCredits, getAccountUsage } from "@/lib/credits";
+import { creditsForAudio, creditsForText } from "@/lib/plans";
+import { translateAudio, translateText } from "@/lib/gemini-translate";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-const MODEL = "gemini-2.5-flash"; // fast + ~10-20x cheaper; thinking disabled below
-
-function langLabel(lang: Language): string {
-  return `${lang.nameNative} (${lang.nameRu})`;
-}
-
-function audioPrompt(langA: Language, langB: Language): string {
-  return `You are a professional interpreter between ${langLabel(langA)} and ${langLabel(langB)}.
-The audio contains speech in either ${langLabel(langA)} or ${langLabel(langB)}.
-1. Detect the spoken language (${langA.code} or ${langB.code}).
-2. Transcribe the speech accurately (correct punctuation, no filler).
-3. Translate it into the OTHER language:
-   - if source is ${langLabel(langA)} -> translate to ${langLabel(langB)} (natural, fluent)
-   - if source is ${langLabel(langB)} -> translate to ${langLabel(langA)} (natural, fluent)
-Keep meaning, tone and register. Produce a high-quality, idiomatic translation,
-not a literal word-for-word one. If audio is empty or unintelligible, return empty strings.`;
-}
-
-function textPrompt(langA: Language, langB: Language): string {
-  return `You are a professional interpreter between ${langLabel(langA)} and ${langLabel(langB)}.
-The user provides a text in either ${langLabel(langA)} or ${langLabel(langB)}.
-1. Detect the language (${langA.code} or ${langB.code}).
-2. Echo it back as the transcript (correct obvious typos/punctuation, no filler).
-3. Translate it into the OTHER language:
-   - if source is ${langLabel(langA)} -> translate to ${langLabel(langB)} (natural, fluent)
-   - if source is ${langLabel(langB)} -> translate to ${langLabel(langA)} (natural, fluent)
-Keep meaning, tone and register. Produce a high-quality, idiomatic translation,
-not a literal word-for-word one. If the text is empty, return empty strings.`;
-}
-
-function buildResponseSchema(langA: Language, langB: Language) {
-  return {
-    type: Type.OBJECT,
-    properties: {
-      source_lang: { type: Type.STRING, enum: [langA.code, langB.code] },
-      transcript: { type: Type.STRING },
-      translation: { type: Type.STRING },
-    },
-    required: ["source_lang", "transcript", "translation"],
-  };
-}
-
-function buildGenConfig(langA: Language, langB: Language) {
-  return {
-    temperature: 0.2,
-    responseMimeType: "application/json",
-    responseSchema: buildResponseSchema(langA, langB),
-    thinkingConfig: { thinkingBudget: 0 },
-  };
-}
-
-type GeminiResult = {
-  source_lang: string;
-  transcript: string;
-  translation: string;
-};
-
-type RecentTurn = { sourceLang: string; transcript: string; translation: string };
-
-// Recent turns so the model disambiguates names/domain terms and stays
-// consistent across a chat (e.g. "Foxy" is an animal's name, not "лиса").
-function contextBlock(recent: RecentTurn[]): string {
-  if (recent.length === 0) return "";
-  const lines = recent
-    .map((t) => `- (${t.sourceLang}) "${t.transcript}" => "${t.translation}"`)
-    .join("\n");
-  return (
-    "\n\nThis is part of an ongoing translation conversation. Use the RECENT TURNS " +
-    "below to disambiguate proper names, domain terms and entities (a word may be " +
-    "someone's/something's name, not its literal meaning) and to stay consistent " +
-    `with earlier turns.\n\nRECENT TURNS (oldest first):\n${lines}`
-  );
+// 16 kHz mono 16-bit PCM WAV with a fixed 44-byte header (see lib/recorder.ts).
+function wavDurationSeconds(buf: Buffer): number {
+  return Math.max(0, (buf.length - 44) / 32000);
 }
 
 export async function POST(req: NextRequest) {
@@ -92,7 +23,6 @@ export async function POST(req: NextRequest) {
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
     const contentType = req.headers.get("content-type") || "";
-    let result: GeminiResult;
     let mode: "audio" | "text";
     let chatId = "";
     let audioBuf: Buffer | null = null;
@@ -134,6 +64,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "unknown chat languages" }, { status: 500 });
     }
 
+    const { plan } = await getAccountUsage(owner);
+    if (mode === "text" && userText.length > plan.maxCharsPerRequest) {
+      return NextResponse.json({ error: "text too long for your plan" }, { status: 413 });
+    }
+    const cost =
+      mode === "audio" && audioBuf ? creditsForAudio(wavDurationSeconds(audioBuf)) : creditsForText(userText.length);
+    const hasCredits = await consumeAccountCredits(owner, cost);
+    if (!hasCredits) {
+      return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    }
+
     // last 6 turns, oldest first, for conversational consistency
     const recent = (
       await prisma.translation.findMany({
@@ -149,37 +90,10 @@ export async function POST(req: NextRequest) {
         translation: t.translation,
       }));
 
-    const ctx = contextBlock(recent);
-    const genConfig = buildGenConfig(langA, langB);
-
-    if (mode === "audio" && audioBuf) {
-      const response = await ai.models.generateContent({
-        model: MODEL,
-        contents: [
-          {
-            role: "user",
-            parts: [
-              { text: audioPrompt(langA, langB) + ctx },
-              { inlineData: { mimeType: audioMime, data: audioBuf.toString("base64") } },
-            ],
-          },
-        ],
-        config: genConfig,
-      });
-      result = JSON.parse(response.text ?? "{}");
-    } else {
-      const response = await ai.models.generateContent({
-        model: MODEL,
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: `${textPrompt(langA, langB)}${ctx}\n\nTEXT:\n${userText}` }],
-          },
-        ],
-        config: genConfig,
-      });
-      result = JSON.parse(response.text ?? "{}");
-    }
+    const result =
+      mode === "audio" && audioBuf
+        ? await translateAudio(langA, langB, audioBuf, audioMime, recent)
+        : await translateText(langA, langB, userText, recent);
 
     if (!result.translation) {
       return NextResponse.json({ error: "Не удалось распознать" }, { status: 422 });
