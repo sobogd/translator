@@ -1,7 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { NARROW } from "./shell";
 
-export function Header() {
+async function logout() {
+  await fetch("/api/auth/logout", { method: "POST" });
+  window.location.reload();
+}
+
+// `signedIn` is resolved server-side (getServerSessionEmail in page.tsx) and
+// passed down, so the sign-in/log-out state is correct on first paint —
+// no client fetch, no flash between the two.
+export function Header({ signedIn }: { signedIn: boolean }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md [transform:translateZ(0)]">
       <div className={`${NARROW} flex h-14 items-center justify-between gap-3 sm:h-16`}>
@@ -25,12 +35,21 @@ export function Header() {
             FAQ
           </Link>
         </nav>
-        <a
-          href="/api/auth/google/start"
-          className="hidden shrink-0 text-sm font-semibold transition-opacity hover:opacity-70 lg:inline-flex"
-        >
-          Sign in
-        </a>
+        {signedIn ? (
+          <button
+            onClick={logout}
+            className="inline-flex shrink-0 text-sm font-semibold transition-opacity hover:opacity-70"
+          >
+            Log out
+          </button>
+        ) : (
+          <a
+            href="/api/auth/google/start"
+            className="inline-flex shrink-0 text-sm font-semibold transition-opacity hover:opacity-70"
+          >
+            Sign in
+          </a>
+        )}
         <Link
           href="/#app"
           className="inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-emerald-500 to-teal-400 px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"

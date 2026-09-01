@@ -9,13 +9,6 @@ import { LANGUAGES, getLanguage } from "@/lib/languages";
 const FROM_LANG_KEY = "translator_from_lang";
 const DEFAULT_FROM_LANG = "en";
 
-type CreditsMe = {
-  kind: "account" | "anonymous";
-  planName: string;
-  creditsBalance: number;
-  hasSubscription: boolean;
-};
-
 type LangRow = {
   code: string;
   nameRu: string;
@@ -101,7 +94,6 @@ export function ChatList({ onOpenChat }: { onOpenChat: (id: string) => void }) {
   const [query, setQuery] = useState("");
   const [showPicker, setShowPicker] = useState(false);
   const [creating, setCreating] = useState<string | null>(null);
-  const [credits, setCredits] = useState<CreditsMe | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -120,27 +112,12 @@ export function ChatList({ onOpenChat }: { onOpenChat: (id: string) => void }) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (saved) setFromLang(saved);
     load();
-    apiFetch("/api/credits/me")
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => data && setCredits(data))
-      .catch(() => {});
   }, [load]);
 
   function selectFromLang(code: string) {
     setFromLang(code);
     localStorage.setItem(FROM_LANG_KEY, code);
     setShowPicker(false);
-  }
-
-  async function logout() {
-    await apiFetch("/api/auth/logout", { method: "POST" });
-    window.location.reload();
-  }
-
-  async function openBillingPortal() {
-    const res = await fetch("/api/billing/portal", { method: "POST" });
-    const data = await res.json();
-    if (data.url) window.location.href = data.url;
   }
 
   const rows = useMemo<LangRow[]>(() => {
@@ -191,39 +168,6 @@ export function ChatList({ onOpenChat }: { onOpenChat: (id: string) => void }) {
 
   return (
     <div className="flex h-full flex-col gap-4 overflow-y-auto p-4 sm:p-6">
-      <header className="flex items-center justify-between pt-1">
-        <h2 className="text-xl font-bold tracking-tight">Переводчик</h2>
-        <div className="flex items-center gap-3">
-          {credits && (
-            <button
-              onClick={credits.kind === "account" && credits.hasSubscription ? openBillingPortal : undefined}
-              className="rounded-full border px-3 py-1.5 text-xs font-medium transition active:scale-95"
-              style={{ borderColor: "var(--border)", color: "var(--hint)" }}
-            >
-              {credits.planName} · {credits.creditsBalance} кредитов
-            </button>
-          )}
-          {!credits?.hasSubscription && (
-            <a href="/pricing" className="text-sm transition active:scale-95" style={{ color: "var(--hint)" }}>
-              Тарифы
-            </a>
-          )}
-          {credits?.kind === "account" ? (
-            <button
-              onClick={logout}
-              className="text-sm transition active:scale-95"
-              style={{ color: "var(--hint)" }}
-            >
-              Выйти
-            </button>
-          ) : (
-            <a href="/api/auth/google/start" className="text-sm font-medium text-emerald-500">
-              Войти
-            </a>
-          )}
-        </div>
-      </header>
-
       <button
         onClick={() => setShowPicker(true)}
         className="flex items-center gap-2 self-start rounded-full border px-4 py-2 text-sm font-medium transition active:scale-95"

@@ -73,8 +73,3 @@ export async function consumeCreditsForIdentity(identity: Identity, cost: number
   if (identity.kind === "anonymous") return consumeAnonymousCredits(fingerprintOf(identity), cost);
   return consumeAccountCredits(identity.ownerKey, cost);
 }
-
-export async function getAnonymousUsage(fingerprint: string) {
-  const row = await prisma.anonymousCredit.findUnique({ where: { fingerprint } });
-  return { creditsUsed: row?.creditsUsed ?? 0 };
-}

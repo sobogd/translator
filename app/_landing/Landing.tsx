@@ -20,14 +20,14 @@ const JSON_LD = {
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export function Landing() {
+export function Landing({ signedIn }: { signedIn: boolean }) {
   return (
     <main className={PAGE}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
-      <Header />
+      <Header signedIn={signedIn} />
       <Container className="py-6">
         <Band>
           <Hero />

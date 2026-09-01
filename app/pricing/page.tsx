@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getServerSessionEmail } from "@/lib/auth";
 import { Header } from "../_landing/Header";
 import { Footer } from "../_landing/Footer";
 import { Faq } from "../_landing/Faq";
@@ -35,10 +36,11 @@ const PRICING_FAQ = [
   },
 ];
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const email = await getServerSessionEmail();
   return (
     <main className={PAGE}>
-      <Header />
+      <Header signedIn={!!email} />
       <Container className="py-6">
         <Band>
           <div className="flex flex-col items-center gap-3 py-4 text-center">
