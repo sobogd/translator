@@ -248,10 +248,11 @@ export function Header({
 
       {/* Sibling of the header's inner row (not of the trigger), so `top-full`
           is measured off the header's own box and `left` still opens the
-          panel directly under "Features". A small gap (mt-2) keeps the
-          header's own bottom border visible as its own line instead of the
-          panel fusing onto it — a separate floating card, full border on
-          all sides. Solid bg, no blur: the header above already runs its
+          panel directly under "Features". 1px gap so the header's own
+          bottom border stays visible as its own hairline instead of the
+          panel's shadow fusing straight onto it — still grows out of the
+          bar, not a separate floating card (no top border, rounded only at
+          the bottom). Solid bg, no blur: the header above already runs its
           own backdrop-blur, and a second backdrop-filter nested inside it
           has nothing left to sample — it renders as flat, near-invisible
           transparency instead of a frosted panel. */}
@@ -260,7 +261,7 @@ export function Header({
           onMouseEnter={openFeatures}
           onMouseLeave={closeFeaturesSoon}
           style={{ left: featuresLeft }}
-          className={`absolute top-full mt-2 hidden min-w-[220px] flex-col rounded-2xl border border-border bg-bg py-2 shadow-xl transition-all duration-200 sm:flex ${
+          className={`absolute top-full mt-px hidden min-w-[220px] flex-col rounded-b-2xl border-x border-b border-border bg-bg py-2 shadow-xl transition-all duration-200 sm:flex ${
             featuresOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
           }`}
         >
