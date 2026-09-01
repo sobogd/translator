@@ -8,7 +8,7 @@ import { localeHome, localePath } from "./locale-paths";
 // only ever needs one registration, not a change in four places.
 export const LOCALE_SLUG_OVERRIDES: Record<string, Record<string, string>> = {
   "/text-translator": { en: "text-translator", ru: "perevod-teksta-onlayn" },
-  "/real-time-voice-translator": { en: "real-time-voice-translator", ru: "perevodchik-rechi-v-tekst" },
+  "/instant-voice-translator": { en: "instant-voice-translator", ru: "perevodchik-rechi-v-tekst" },
 };
 
 // Swaps the locale segment of a pathname, translating the slug through the

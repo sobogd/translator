@@ -11,7 +11,7 @@ const content = contentJson as FeatureContent;
 
 export const metadata: Metadata = buildFeatureMetadata(content);
 
-export default async function RealTimeVoiceTranslatorPage() {
+export default async function InstantVoiceTranslatorPage() {
   const email = await getServerSessionEmail();
   return (
     <FeatureLanding
@@ -20,7 +20,7 @@ export default async function RealTimeVoiceTranslatorPage() {
       chrome={chrome}
       content={content}
       icons="voice"
-      pathname="/real-time-voice-translator"
+      pathname="/instant-voice-translator"
     />
   );
 }

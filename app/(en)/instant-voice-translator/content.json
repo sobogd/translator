@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "Real-Time Voice Translator App | IQ Translate",
-    "description": "Tap the mic and talk — this real time voice translation app translates your speech instantly in 186 languages, spoken or written back. No downloads, no sign-up to try.",
-    "ogTitle": "Real-Time Voice Translator App",
-    "ogDescription": "Tap the mic and talk — your speech is translated instantly in 186 languages. No downloads, no sign-up required.",
-    "canonical": "https://translate.iq-factura.com/real-time-voice-translator",
+    "title": "Instant Voice Translator App | IQ Translate",
+    "description": "Tap the mic and talk — this instant voice translator app translates your speech in seconds, in 186 languages, spoken or written back. No downloads, no sign-up to try.",
+    "ogTitle": "Instant Voice Translator App",
+    "ogDescription": "Tap the mic and talk — your speech is translated in seconds, in 186 languages. No downloads, no sign-up required.",
+    "canonical": "https://translate.iq-factura.com/instant-voice-translator",
     "ogLocale": "en_US"
   },
   "hero": {
     "badgeVoice": "Voice",
     "badgeText": "Text",
     "badgeLanguages": "186 languages",
-    "title": "Real-time voice translation",
+    "title": "Instant voice translation",
     "titleAccent": "for any conversation",
-    "description": "Tap the mic and speak. This app that translates voice in real time turns your speech into a spoken and written translation in seconds — a Spanish speech translator, and 185 more languages, in one tool.",
+    "description": "Tap the mic and speak. This instant voice translator app turns your speech into a spoken and written translation seconds after you stop talking — a Spanish speech translator, and 185 more languages, in one tool.",
     "ctaTry": "Try it now — free",
     "ctaSignIn": "Sign in with Google",
     "mockFromLabel": "🇪🇸 Spanish",
@@ -23,12 +23,12 @@
   },
   "spotlights": [
     {
-      "heading": "Speak, translated in real time",
-      "sub": "One tap starts recording — this real-time voice translation app turns your words into a translation in seconds.",
+      "heading": "Speak, translated in seconds",
+      "sub": "One tap starts recording — stop talking and this instant voice translator app turns your words into a translation right away.",
       "bullets": [
         {
           "title": "Instant speech translation",
-          "sub": "Tap the mic, talk naturally, see the translation appear in seconds"
+          "sub": "Tap the mic, talk naturally, see the translation appear seconds after you stop"
         },
         {
           "title": "Hear it aloud",
@@ -66,7 +66,7 @@
     }
   ],
   "comparison": {
-    "title": "Why real-time",
+    "title": "Why instant",
     "titleAccent": "voice translation wins",
     "description": "Typing what you hear is slow. Here's what changes when voice comes first.",
     "usLabel": "IQ Translate",
@@ -74,7 +74,7 @@
     "rows": [
       {
         "title": "Speed",
-        "us": "Speak and get a real-time voice translation in seconds.",
+        "us": "Speak, stop, and get a voice translation seconds later.",
         "them": "Type out what you heard, then translate the text."
       },
       {
@@ -100,8 +100,8 @@
     "sub": "What people ask before trying it. No sign-up needed — scroll up and try it yourself.",
     "items": [
       {
-        "q": "Is this a real-time voice translation app?",
-        "a": "Yes — tap the mic and speak, your voice is translated in a few seconds, shown as text and available to hear read aloud."
+        "q": "Is this an instant voice translator app?",
+        "a": "Yes — tap the mic and speak, your voice is translated a few seconds after you stop talking, shown as text and available to hear read aloud."
       },
       {
         "q": "Does it work for Spanish?",
@@ -122,7 +122,7 @@
     ]
   },
   "finalCta": {
-    "heading": "Real-time voice translation,",
+    "heading": "Instant voice translation,",
     "headingAccent": "ready in 10 seconds.",
     "sub": "Tap the mic and talk — no sign-up, no downloads, 186 languages included.",
     "ctaLabel": "Try it now"
