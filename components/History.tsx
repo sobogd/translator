@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Copy, Check, Volume2, MessageSquare } from "lucide-react";
 import type { HistoryRow } from "@/lib/types";
 import { getLanguage } from "@/lib/languages";
@@ -23,73 +23,66 @@ function langLabel(code: string) {
   return l ? `${l.flag} ${l.nameNative}` : code;
 }
 
-function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB: string; texts: HistoryTexts }) {
-  const target = r.sourceLang === langA ? langB : langA;
-  // show one language at a time; default = translation. Swipe to flip.
-  const [showSource, setShowSource] = useState(false);
+// One chat bubble — social-app convention: the original message sits on the
+// left (muted), the translation on the right (filled, "outgoing" style),
+// same as any messaging app showing "what they said" vs "what you send back".
+function Bubble({
+  text,
+  lang,
+  outgoing,
+  texts,
+}: {
+  text: string;
+  lang: string;
+  outgoing: boolean;
+  texts: HistoryTexts;
+}) {
   const [copied, setCopied] = useState(false);
-  const startX = useRef<number | null>(null);
-
-  const lang = showSource ? r.sourceLang : target;
-  const shown = showSource ? r.transcript : r.translation;
-
-  function toggle() {
-    setShowSource((s) => !s);
-  }
 
   async function copy() {
-    await navigator.clipboard.writeText(shown);
+    await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   }
 
   return (
-    <div
-      onClick={toggle}
-      onTouchStart={(e) => (startX.current = e.touches[0].clientX)}
-      onTouchEnd={(e) => {
-        if (startX.current === null) return;
-        const dx = e.changedTouches[0].clientX - startX.current;
-        startX.current = null;
-        if (Math.abs(dx) > 40) toggle();
-      }}
-      className="cursor-pointer select-none rounded-2xl border p-3.5 shadow-sm"
-      style={{ background: "var(--card)", borderColor: "var(--border)" }}
-    >
-      <div className="mb-2 flex items-center gap-2 text-[11px] font-medium uppercase tracking-wide" style={{ color: "var(--hint)" }}>
-        <span>{langLabel(lang)}</span>
-        {/* swipe indicator: two dots, active = current language */}
-        <span className="flex items-center gap-1">
-          <span className={`h-1.5 w-1.5 rounded-full ${!showSource ? "bg-button" : ""}`} style={showSource ? { background: "var(--border)" } : undefined} />
-          <span className={`h-1.5 w-1.5 rounded-full ${showSource ? "bg-button" : ""}`} style={!showSource ? { background: "var(--border)" } : undefined} />
-        </span>
+    <div className={`flex flex-col gap-1 ${outgoing ? "items-end" : "items-start"}`}>
+      <span className="px-1 text-[11px] font-medium uppercase tracking-wide text-hint">
+        {langLabel(lang)}
+      </span>
+      <div
+        className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 ${
+          outgoing ? "bg-button text-button-text" : "border border-border bg-card"
+        }`}
+      >
+        <p className="text-sm leading-relaxed">{text}</p>
       </div>
+      <div className="flex items-center gap-0.5">
+        <button
+          onClick={() => speak(text, lang)}
+          aria-label={texts.readAloudAria}
+          className="rounded-lg p-1 text-hint transition active:scale-90"
+        >
+          <Volume2 size={13} />
+        </button>
+        <button
+          onClick={copy}
+          aria-label={texts.copyAria}
+          className="rounded-lg p-1 text-hint transition active:scale-90"
+        >
+          {copied ? <Check size={13} /> : <Copy size={13} />}
+        </button>
+      </div>
+    </div>
+  );
+}
 
-      <div className="flex items-start justify-between gap-2">
-        <p className="text-base leading-relaxed">{shown}</p>
-        <div className="flex shrink-0 items-center gap-0.5">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(shown, lang);
-            }}
-            aria-label={texts.readAloudAria}
-            className="rounded-lg p-1.5 text-button transition active:scale-90"
-          >
-            <Volume2 size={15} />
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              copy();
-            }}
-            aria-label={texts.copyAria}
-            className="rounded-lg p-1.5 text-button transition active:scale-90"
-          >
-            {copied ? <Check size={15} /> : <Copy size={15} />}
-          </button>
-        </div>
-      </div>
+function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB: string; texts: HistoryTexts }) {
+  const target = r.sourceLang === langA ? langB : langA;
+  return (
+    <div className="flex flex-col gap-2">
+      <Bubble text={r.transcript} lang={r.sourceLang} outgoing={false} texts={texts} />
+      <Bubble text={r.translation} lang={target} outgoing texts={texts} />
     </div>
   );
 }
@@ -118,7 +111,7 @@ export function History({
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       {rows.map((r) => (
         <Turn key={r.id} r={r} langA={langA} langB={langB} texts={texts} />
       ))}

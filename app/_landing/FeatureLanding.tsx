@@ -71,11 +71,11 @@ export function FeatureLanding({
         featureLinks={chrome.footer.featureLinks}
       />
       <Container>
-        <Band>
-          <Hero texts={content.hero} />
-        </Band>
         <Band id="app">
           <Translator texts={chrome} />
+        </Band>
+        <Band>
+          <Hero texts={content.hero} />
         </Band>
         <Band id="features">
           <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />

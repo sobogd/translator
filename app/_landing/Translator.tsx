@@ -1,17 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  Eraser,
-  Loader2,
-  MessagesSquare,
-  Mic,
-  Plus,
-  Send,
-  Square,
-  Trash2,
-  X,
-} from "lucide-react";
+import { Eraser, Loader2, Mic, Plus, Send, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -116,85 +106,12 @@ function LanguagePickerModal({
   );
 }
 
-function TopicPickerModal({
-  topics,
-  activeId,
-  texts,
-  onClose,
-  onSelect,
-  onCreate,
-  onDelete,
-}: {
-  topics: Topic[];
-  activeId: string | null;
-  texts: WidgetTexts;
-  onClose: () => void;
-  onSelect: (id: string) => void;
-  onCreate: () => void;
-  onDelete: (id: string) => void;
-}) {
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
-      onClick={onClose}
-    >
-      <div
-        className="flex max-h-[85dvh] w-full max-w-lg flex-col gap-3 overflow-hidden rounded-t-3xl border p-4 shadow-xl sm:rounded-2xl"
-        style={{ background: "var(--card)", borderColor: "var(--border)" }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">{texts.topics}</h2>
-          <button
-            onClick={onClose}
-            aria-label={texts.close}
-            className="rounded-lg p-1.5 transition active:scale-90"
-            style={{ color: "var(--hint)" }}
-          >
-            <X size={18} />
-          </button>
-        </div>
-        <button
-          onClick={onCreate}
-          className="flex items-center gap-2 rounded-xl border border-dashed border-border px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
-        >
-          <Plus size={16} /> {texts.newTopic}
-        </button>
-        <div className="flex flex-1 flex-col gap-1 overflow-y-auto">
-          {topics.length === 0 && (
-            <div className="py-8 text-center text-sm text-hint">{texts.noTopicsYet}</div>
-          )}
-          {topics.map((tp) => (
-            <div key={tp.id} className="flex items-center gap-1">
-              <button
-                onClick={() => onSelect(tp.id)}
-                className="flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
-                style={tp.id === activeId ? { background: "var(--bg)" } : undefined}
-              >
-                <span className="min-w-0 flex-1 truncate">{tp.title || texts.newTopic}</span>
-              </button>
-              <button
-                onClick={() => onDelete(tp.id)}
-                aria-label={texts.deleteTopic}
-                className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
-              >
-                <Trash2 size={15} />
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function Translator({ texts }: { texts: TranslatorTexts }) {
   const t = texts.translator;
   const [defaultTarget, setDefaultTarget] = useState(DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<TopicDetail | null>(null);
   const [loadingTopic, setLoadingTopic] = useState(true);
-  const [topicPickerOpen, setTopicPickerOpen] = useState(false);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [text, setText] = useState("");
   const [textBusy, setTextBusy] = useState(false);
@@ -204,6 +121,7 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
 
   const recRef = useRef<WavRecorder | null>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   const pending = textBusy || status === "processing";
 
@@ -261,18 +179,18 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // keep the newest turn in view without turning history into a scroll box —
-  // it's page content, so the page itself scrolls.
+  // keep the newest turn in view — the chat column is its own scroll box now
+  // (fixed-height desktop layout), not page content, so it scrolls itself.
   const turnCount = topic?.translations?.length ?? 0;
   useEffect(() => {
-    if (turnCount === 0) return;
+    const el = chatScrollRef.current;
+    if (!el) return;
     requestAnimationFrame(() => {
-      document.getElementById("app")?.scrollIntoView({ block: "nearest" });
+      el.scrollTop = el.scrollHeight;
     });
-  }, [turnCount]);
+  }, [turnCount, topic?.id]);
 
   async function switchTopic(id: string) {
-    setTopicPickerOpen(false);
     setText("");
     setError(null);
     setLoadingTopic(true);
@@ -281,7 +199,6 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   }
 
   async function newTopic() {
-    setTopicPickerOpen(false);
     setText("");
     setError(null);
     setLoadingTopic(true);
@@ -353,9 +270,8 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   function autosize() {
     const el = taRef.current;
     if (!el) return;
-    const max = Math.round((window.visualViewport?.height ?? window.innerHeight) * 0.28);
     el.style.height = "auto";
-    el.style.height = `${Math.min(el.scrollHeight, max)}px`;
+    el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
   }
 
   async function translateText() {
@@ -433,133 +349,164 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   const rows = topic ? [...topic.translations].reverse() : [];
 
   return (
-    <div className={`${CARD} flex flex-col gap-5 p-6 sm:p-8`}>
-      {/* topic bar */}
-      <div className="flex flex-wrap items-center gap-2">
+    <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[34rem] lg:grid-cols-[2fr_3fr]`}>
+      {/* Mirrors the Hero card horizontally: tinted panel first (~40%,
+          same hue as the hero's art panel), functional column second — a
+          scrollable list of topics instead of a device mockup. */}
+      <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:min-h-0">
+        <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
         <button
-          onClick={() => setTopicPickerOpen(true)}
-          className="flex min-w-0 items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition active:scale-95"
+          onClick={newTopic}
+          className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
         >
-          <MessagesSquare size={15} className="shrink-0 text-hint" />
-          <span className="max-w-[12rem] truncate">{topic?.title || t.newTopic}</span>
+          <Plus size={16} /> {t.newTopic}
         </button>
-        {rows.length > 0 && (
-          <button
-            onClick={clearHistory}
-            aria-label={t.clearHistory}
-            className="ml-auto flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium text-hint transition hover:text-text active:scale-95"
-          >
-            <Eraser size={14} /> {t.clearHistory}
-          </button>
-        )}
-      </div>
-
-      {/* translation history — plain page content, the page scrolls */}
-      <div className="flex flex-col gap-3">
-        {loadingTopic ? (
-          <div className="flex justify-center py-10 text-hint">
-            <Loader2 size={20} className="animate-spin" />
-          </div>
-        ) : rows.length === 0 ? (
-          <div className="flex flex-col items-center gap-2 py-10 text-center text-sm text-hint">
-            {t.noTranslationsYet}
-          </div>
-        ) : (
-          <History
-            rows={rows}
-            langA={topic?.sourceLang ?? ""}
-            langB={topic?.targetLang ?? ""}
-            texts={texts.history}
-          />
-        )}
-        {pending && (
-          <div className="flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-            <Loader2 size={15} className="animate-spin" /> {t.translating}
-          </div>
-        )}
-        {error && (
-          <div className="flex items-center justify-between gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
-            <span>{error}</span>
-            {error === t.errors.insufficientCredits && (
-              <a href="/pricing" className="shrink-0 font-medium underline">
-                {t.pricingLink}
-              </a>
-            )}
-          </div>
-        )}
-      </div>
-
-      {/* composer */}
-      <div className="flex flex-col gap-2 border-t border-border pt-4">
-        <button
-          onClick={() => setPickerFor("source")}
-          className="flex w-fit items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint transition active:scale-95"
-        >
-          {sourceLanguage ? (
-            <>
-              <span className="text-sm">{sourceLanguage.flag}</span>
-              {sourceLanguage.nameNative}
-            </>
+        <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
+          {topics.length === 0 ? (
+            <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
           ) : (
-            <>
-              <span className="text-sm">🌐</span>
-              {t.autoDetect}
-            </>
+            topics.map((tp) => (
+              <div key={tp.id} className="flex items-center gap-1">
+                <button
+                  onClick={() => switchTopic(tp.id)}
+                  className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
+                    tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
+                  }`}
+                >
+                  <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
+                </button>
+                <button
+                  onClick={() => deleteTopic(tp.id)}
+                  aria-label={t.deleteTopic}
+                  className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+                >
+                  <Trash2 size={14} />
+                </button>
+              </div>
+            ))
           )}
-        </button>
+        </div>
+      </div>
 
-        <div className="flex flex-wrap items-end gap-2">
-          <textarea
-            ref={taRef}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            onInput={autosize}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
-            }}
-            placeholder={t.typePlaceholder}
-            rows={1}
-            className="max-h-[28dvh] min-h-[2.5rem] flex-1 resize-none border-0 bg-transparent px-2 py-2 text-base leading-relaxed outline-none"
-          />
+      {/* No background — language selectors pinned top, chat scrolls in the
+          middle, composer pinned bottom. */}
+      <div className="flex flex-col lg:h-full lg:min-h-0">
+        <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border p-4 sm:p-5">
           <button
-            onClick={status === "recording" ? stopRec : startRec}
-            disabled={status === "processing"}
-            aria-label={status === "recording" ? t.stopAria : t.recordAria}
-            className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition active:scale-90 disabled:opacity-40 ${
-              status === "recording" ? "bg-red-500 text-white hover:bg-red-400" : "text-hint hover:text-text"
-            }`}
+            onClick={() => setPickerFor("source")}
+            className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint transition active:scale-95"
           >
-            {status === "recording" && (
-              <span className="absolute inset-0 animate-ping rounded-full bg-red-500/40" />
-            )}
-            {status === "processing" ? (
-              <Loader2 size={16} className="animate-spin" />
-            ) : status === "recording" ? (
-              <Square size={14} fill="currentColor" />
+            {sourceLanguage ? (
+              <>
+                <span className="text-sm">{sourceLanguage.flag}</span>
+                {sourceLanguage.nameNative}
+              </>
             ) : (
-              <Mic size={18} />
+              <>
+                <span className="text-sm">🌐</span>
+                {t.autoDetect}
+              </>
             )}
           </button>
+          <span className="text-hint">→</span>
           <button
             onClick={() => setPickerFor("target")}
-            className="flex shrink-0 items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition active:scale-95"
+            className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium transition active:scale-95"
           >
-            <span className="text-lg">{targetLanguage?.flag ?? "🌐"}</span>
+            <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
             {targetLanguage?.nameNative ?? defaultTarget}
           </button>
-          <button
-            onClick={translateText}
-            disabled={!topic || !text.trim() || textBusy}
-            aria-label={t.translateAria}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-button text-button-text transition hover:opacity-90 active:scale-90 disabled:opacity-40"
-          >
-            {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-          </button>
+          {rows.length > 0 && (
+            <button
+              onClick={clearHistory}
+              aria-label={t.clearHistory}
+              className="ml-auto flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium text-hint transition hover:text-text active:scale-95"
+            >
+              <Eraser size={14} /> {t.clearHistory}
+            </button>
+          )}
         </div>
-        {status === "recording" && (
-          <span className="text-xs text-hint">{t.recording} · {fmtTime(elapsed)}</span>
-        )}
-        {status === "processing" && <span className="text-xs text-hint">{t.recognizing}</span>}
+
+        {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
+            actually shrink instead of pushing the composer off-screen) */}
+        <div ref={chatScrollRef} className="flex-1 overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+          {loadingTopic ? (
+            <div className="flex justify-center py-10 text-hint">
+              <Loader2 size={20} className="animate-spin" />
+            </div>
+          ) : (
+            <History
+              rows={rows}
+              langA={topic?.sourceLang ?? ""}
+              langB={topic?.targetLang ?? ""}
+              texts={texts.history}
+            />
+          )}
+          {pending && (
+            <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
+              <Loader2 size={15} className="animate-spin" /> {t.translating}
+            </div>
+          )}
+          {error && (
+            <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
+              <span>{error}</span>
+              {error === t.errors.insufficientCredits && (
+                <a href="/pricing" className="shrink-0 font-medium underline">
+                  {t.pricingLink}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* composer — text input plus the two buttons (voice, send) */}
+        <div className="shrink-0 border-t border-border p-4 sm:p-5">
+          <div className="flex flex-wrap items-end gap-2">
+            <textarea
+              ref={taRef}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              onInput={autosize}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
+              }}
+              placeholder={t.typePlaceholder}
+              rows={1}
+              className="max-h-[120px] min-h-[2.5rem] flex-1 resize-none border-0 bg-transparent px-2 py-2 text-base leading-relaxed outline-none"
+            />
+            <button
+              onClick={status === "recording" ? stopRec : startRec}
+              disabled={status === "processing"}
+              aria-label={status === "recording" ? t.stopAria : t.recordAria}
+              className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition active:scale-90 disabled:opacity-40 ${
+                status === "recording" ? "bg-red-500 text-white hover:bg-red-400" : "text-hint hover:text-text"
+              }`}
+            >
+              {status === "recording" && (
+                <span className="absolute inset-0 animate-ping rounded-full bg-red-500/40" />
+              )}
+              {status === "processing" ? (
+                <Loader2 size={16} className="animate-spin" />
+              ) : status === "recording" ? (
+                <Square size={14} fill="currentColor" />
+              ) : (
+                <Mic size={18} />
+              )}
+            </button>
+            <button
+              onClick={translateText}
+              disabled={!topic || !text.trim() || textBusy}
+              aria-label={t.translateAria}
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-button text-button-text transition hover:opacity-90 active:scale-90 disabled:opacity-40"
+            >
+              {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
+            </button>
+          </div>
+          {status === "recording" && (
+            <span className="text-xs text-hint">{t.recording} · {fmtTime(elapsed)}</span>
+          )}
+          {status === "processing" && <span className="text-xs text-hint">{t.recognizing}</span>}
+        </div>
       </div>
 
       {pickerFor && (
@@ -569,18 +516,6 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
           texts={t}
           onClose={() => setPickerFor(null)}
           onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
-        />
-      )}
-
-      {topicPickerOpen && (
-        <TopicPickerModal
-          topics={topics}
-          activeId={topic?.id ?? null}
-          texts={t}
-          onClose={() => setTopicPickerOpen(false)}
-          onSelect={switchTopic}
-          onCreate={newTopic}
-          onDelete={deleteTopic}
         />
       )}
     </div>
