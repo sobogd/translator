@@ -1,13 +1,13 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
-import { TranslatorApp } from "./TranslatorApp";
+import { Translator } from "./Translator";
 import { StatCards } from "./StatCards";
 import { Spotlights } from "./Spotlights";
 import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
-import { Container, Band, PAGE, CARD } from "./shell";
+import { Container, Band, PAGE } from "./shell";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -33,9 +33,7 @@ export function Landing({ signedIn }: { signedIn: boolean }) {
           <Hero />
         </Band>
         <Band id="app">
-          <div className={`${CARD} overflow-hidden bg-card`}>
-            <TranslatorApp />
-          </div>
+          <Translator />
         </Band>
         <Band>
           <StatCards />
