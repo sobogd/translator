@@ -1,9 +1,10 @@
 export type Lang = string; // ISO 639-1 code
 
-export interface Chat {
+export interface Topic {
   id: string;
-  langA: string;
-  langB: string;
+  title: string | null;
+  sourceLang: string | null;
+  targetLang: string;
   lastUsedAt: string;
   createdAt: string;
   translationCount?: number;
@@ -11,14 +12,12 @@ export interface Chat {
 
 export interface HistoryRow {
   id: string;
-  mode: string;
   sourceLang: string;
   transcript: string;
   translation: string;
-  audioUrl: string | null;
   createdAt: string;
 }
 
-export interface ChatDetail extends Chat {
+export interface TopicDetail extends Topic {
   translations: HistoryRow[];
 }

@@ -8,50 +8,73 @@ import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
+import type { Locale } from "@/lib/locales";
+import type { TranslatorTexts } from "./types";
 
-const JSON_LD = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "IQ Translate",
-  applicationCategory: "UtilitiesApplication",
-  operatingSystem: "Web",
-  description:
-    "Instant voice translation app: speak naturally and get an instant translation, spoken or written, in 186 languages.",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-};
+export function Landing({
+  signedIn,
+  locale,
+  texts,
+  homeHref,
+  pathname,
+}: {
+  signedIn: boolean;
+  locale: Locale;
+  texts: TranslatorTexts;
+  homeHref: string;
+  pathname: string;
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "IQ Translate",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web",
+    description: texts.meta.description,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
 
-export function Landing({ signedIn }: { signedIn: boolean }) {
   return (
     <main className={PAGE}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header signedIn={signedIn} />
+      <Header signedIn={signedIn} homeHref={homeHref} texts={texts.header} />
       <Container className="py-6">
         <Band id="app">
-          <Translator />
+          <Translator texts={texts} />
         </Band>
         <Band>
-          <Hero />
+          <Hero texts={texts.hero} />
         </Band>
         <Band>
-          <StatCards />
+          <StatCards items={texts.statCards} />
         </Band>
         <Band id="features">
-          <Spotlights />
+          <Spotlights items={texts.spotlights} />
         </Band>
         <Band id="comparison">
-          <Comparison />
+          <Comparison texts={texts.comparison} />
         </Band>
         <Band id="faq">
-          <Faq />
+          <Faq
+            heading={texts.faq.heading}
+            headingAccent={texts.faq.headingAccent}
+            sub={texts.faq.sub}
+            items={texts.faq.items}
+          />
         </Band>
         <Band>
-          <FinalCta />
+          <FinalCta
+            heading={texts.finalCta.heading}
+            headingAccent={texts.finalCta.headingAccent}
+            sub={texts.finalCta.sub}
+            ctaLabel={texts.finalCta.ctaLabel}
+          />
         </Band>
       </Container>
-      <Footer />
+      <Footer locale={locale} pathname={pathname} texts={texts.footer} />
     </main>
   );
 }

@@ -1,7 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
-
-const SITE_URL = "https://translate.iq-factura.com";
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -11,20 +9,6 @@ export const metadata: Metadata = {
   },
   description:
     "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
-  openGraph: {
-    type: "website",
-    url: SITE_URL,
-    siteName: "IQ Translate",
-    title: "IQ Translate — Instant Voice Translation App",
-    description:
-      "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
-  },
-  twitter: {
-    card: "summary",
-    title: "IQ Translate — Instant Voice Translation App",
-    description:
-      "Speak naturally and get an instant translation, spoken or written, in 186 languages.",
-  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -39,21 +23,9 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1612" },
-  ],
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+// No <html>/<body> here — each locale's own layout (app/(en)/layout.tsx,
+// app/ru/layout.tsx) owns the document shell, same split as iq-rest's
+// apps/landing/app/layout.tsx.
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

@@ -10,18 +10,19 @@ export async function GET(req: NextRequest) {
     const identity = await resolveIdentity(req);
     if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-    const chats = await prisma.chat.findMany({
+    const topics = await prisma.topic.findMany({
       where: { ownerKey: identity.ownerKey },
       orderBy: { lastUsedAt: "desc" },
       include: { _count: { select: { translations: true } } },
     });
-    const result = chats.map((chat) => ({
-      id: chat.id,
-      langA: chat.langA,
-      langB: chat.langB,
-      lastUsedAt: chat.lastUsedAt,
-      createdAt: chat.createdAt,
-      translationCount: chat._count.translations,
+    const result = topics.map((topic) => ({
+      id: topic.id,
+      title: topic.title,
+      sourceLang: topic.sourceLang,
+      targetLang: topic.targetLang,
+      lastUsedAt: topic.lastUsedAt,
+      createdAt: topic.createdAt,
+      translationCount: topic._count.translations,
     }));
     return NextResponse.json(result);
   } catch (err: unknown) {
@@ -30,31 +31,24 @@ export async function GET(req: NextRequest) {
   }
 }
 
+// Always creates a new topic — topics are independent sessions, not keyed
+// by language pair.
 export async function POST(req: NextRequest) {
   try {
     const identity = await resolveIdentity(req);
     if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
     const body = await req.json();
-    const from = typeof body.from === "string" ? body.from.trim() : "";
-    const to = typeof body.to === "string" ? body.to.trim() : "";
-
-    if (!getLanguage(from) || !getLanguage(to)) {
+    const targetLang = typeof body.targetLang === "string" ? body.targetLang.trim() : "";
+    if (!getLanguage(targetLang)) {
       return NextResponse.json({ error: "unknown language" }, { status: 400 });
     }
-    if (from === to) {
-      return NextResponse.json({ error: "languages must differ" }, { status: 400 });
-    }
 
-    const [langA, langB] = from < to ? [from, to] : [to, from];
-
-    const chat = await prisma.chat.upsert({
-      where: { ownerKey_langA_langB: { ownerKey: identity.ownerKey, langA, langB } },
-      update: {},
-      create: { ownerKey: identity.ownerKey, langA, langB },
+    const topic = await prisma.topic.create({
+      data: { ownerKey: identity.ownerKey, targetLang },
     });
 
-    return NextResponse.json(chat);
+    return NextResponse.json(topic);
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "unknown error";
     return NextResponse.json({ error: msg }, { status: 500 });

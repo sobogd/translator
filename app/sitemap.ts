@@ -1,14 +1,20 @@
 import type { MetadataRoute } from "next";
+import { locales } from "@/lib/locales";
+import { localeHome } from "@/lib/locale-paths";
+import { homeAlternates } from "@/lib/hreflang";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://translate.iq-factura.com";
+// Fixed snapshot date, not `new Date()` — matches iq-rest's convention of not
+// faking freshness on every deploy. Bump when the home page copy changes.
+const HOME_LAST_MODIFIED = "2026-09-01";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-  ];
+  const languages = homeAlternates();
+  return locales.map((locale) => ({
+    url: `${SITE_URL}${localeHome(locale)}`,
+    lastModified: HOME_LAST_MODIFIED,
+    changeFrequency: "weekly",
+    priority: locale === "en" ? 1 : 0.9,
+    alternates: { languages },
+  }));
 }

@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "IQ Translate",
     short_name: "Translate",
-    description: "Голосовой и текстовый переводчик между любыми языками",
+    description: "Voice and text translator between any languages",
     start_url: "/",
     display: "standalone",
     background_color: "#faf8f5",

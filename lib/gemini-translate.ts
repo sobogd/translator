@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import { Language } from "./languages";
+import { Language, LANGUAGES, getLanguage } from "./languages";
 
 export const MODEL = "gemini-2.5-flash"; // fast + ~10-20x cheaper; thinking disabled below
 
@@ -13,39 +13,6 @@ function langLabel(lang: Language): string {
   return `${lang.nameNative} (${lang.nameRu})`;
 }
 
-export function textPrompt(langA: Language, langB: Language): string {
-  return `You are a professional interpreter between ${langLabel(langA)} and ${langLabel(langB)}.
-The user provides a text in either ${langLabel(langA)} or ${langLabel(langB)}.
-1. Detect the language (${langA.code} or ${langB.code}).
-2. Echo it back as the transcript (correct obvious typos/punctuation, no filler).
-3. Translate it into the OTHER language:
-   - if source is ${langLabel(langA)} -> translate to ${langLabel(langB)} (natural, fluent)
-   - if source is ${langLabel(langB)} -> translate to ${langLabel(langA)} (natural, fluent)
-Keep meaning, tone and register. Produce a high-quality, idiomatic translation,
-not a literal word-for-word one. If the text is empty, return empty strings.`;
-}
-
-function buildResponseSchema(langA: Language, langB: Language) {
-  return {
-    type: Type.OBJECT,
-    properties: {
-      source_lang: { type: Type.STRING, enum: [langA.code, langB.code] },
-      transcript: { type: Type.STRING },
-      translation: { type: Type.STRING },
-    },
-    required: ["source_lang", "transcript", "translation"],
-  };
-}
-
-export function buildGenConfig(langA: Language, langB: Language) {
-  return {
-    temperature: 0.2,
-    responseMimeType: "application/json",
-    responseSchema: buildResponseSchema(langA, langB),
-    thinkingConfig: { thinkingBudget: 0 },
-  };
-}
-
 export type GeminiResult = {
   source_lang: string;
   transcript: string;
@@ -55,7 +22,7 @@ export type GeminiResult = {
 export type RecentTurn = { sourceLang: string; transcript: string; translation: string };
 
 // Recent turns so the model disambiguates names/domain terms and stays
-// consistent across a chat (e.g. "Foxy" is an animal's name, not "лиса").
+// consistent across a topic (e.g. "Foxy" is an animal's name, not "лиса").
 export function contextBlock(recent: RecentTurn[]): string {
   if (recent.length === 0) return "";
   const lines = recent
@@ -69,53 +36,106 @@ export function contextBlock(recent: RecentTurn[]): string {
   );
 }
 
+function fixedSchema() {
+  return {
+    type: Type.OBJECT,
+    properties: {
+      transcript: { type: Type.STRING },
+      translation: { type: Type.STRING },
+    },
+    required: ["transcript", "translation"],
+  };
+}
+
+function detectSchema() {
+  return {
+    type: Type.OBJECT,
+    properties: {
+      source_lang: { type: Type.STRING },
+      transcript: { type: Type.STRING },
+      translation: { type: Type.STRING },
+    },
+    required: ["source_lang", "transcript", "translation"],
+  };
+}
+
+function genConfig(schema: object) {
+  return {
+    temperature: 0.2,
+    responseMimeType: "application/json",
+    responseSchema: schema,
+    thinkingConfig: { thinkingBudget: 0 },
+  };
+}
+
 export async function translateText(
-  langA: Language,
-  langB: Language,
+  sourceLang: Language | null,
+  targetLang: Language,
   text: string,
   recent: RecentTurn[] = [],
 ): Promise<GeminiResult> {
+  const prompt = sourceLang
+    ? `You are a professional interpreter translating from ${langLabel(sourceLang)} to ${langLabel(targetLang)}.
+1. Echo the input back as the transcript (correct obvious typos/punctuation, no filler).
+2. Translate it into ${langLabel(targetLang)} — natural, fluent, idiomatic, not literal.
+Keep meaning, tone and register. If the text is empty, return empty strings.`
+    : `You are a professional interpreter. Translate the user's text into ${langLabel(targetLang)}.
+1. Detect the source language (ISO 639-1 code).
+2. Echo the input back as the transcript (correct obvious typos/punctuation, no filler).
+3. Translate it into ${langLabel(targetLang)} — natural, fluent, idiomatic, not literal.
+Keep meaning, tone and register. If the text is empty, return empty strings.`;
+
   const response = await ai().models.generateContent({
     model: MODEL,
     contents: [
-      {
-        role: "user",
-        parts: [{ text: `${textPrompt(langA, langB)}${contextBlock(recent)}\n\nTEXT:\n${text}` }],
-      },
+      { role: "user", parts: [{ text: `${prompt}${contextBlock(recent)}\n\nTEXT:\n${text}` }] },
     ],
-    config: buildGenConfig(langA, langB),
+    config: genConfig(sourceLang ? fixedSchema() : detectSchema()),
   });
-  return JSON.parse(response.text ?? "{}");
+  const parsed = JSON.parse(response.text ?? "{}");
+  return {
+    source_lang: sourceLang ? sourceLang.code : parsed.source_lang,
+    transcript: parsed.transcript ?? "",
+    translation: parsed.translation ?? "",
+  };
 }
 
-export async function translateAudio(
-  langA: Language,
-  langB: Language,
+export type TranscribeResult = { source_lang: string; transcript: string };
+
+export async function transcribeAudio(
+  sourceLang: Language | null,
   audioBuf: Buffer,
   audioMime: string,
-  recent: RecentTurn[] = [],
-): Promise<GeminiResult> {
-  const audioPrompt = `You are a professional interpreter between ${langLabel(langA)} and ${langLabel(langB)}.
-The audio contains speech in either ${langLabel(langA)} or ${langLabel(langB)}.
-1. Detect the spoken language (${langA.code} or ${langB.code}).
-2. Transcribe the speech accurately (correct punctuation, no filler).
-3. Translate it into the OTHER language:
-   - if source is ${langLabel(langA)} -> translate to ${langLabel(langB)} (natural, fluent)
-   - if source is ${langLabel(langB)} -> translate to ${langLabel(langA)} (natural, fluent)
-Keep meaning, tone and register. Produce a high-quality, idiomatic translation,
-not a literal word-for-word one. If audio is empty or unintelligible, return empty strings.`;
+): Promise<TranscribeResult> {
+  const prompt = sourceLang
+    ? `Transcribe the speech in this audio. The speaker is using ${langLabel(sourceLang)}.
+Correct obvious punctuation, no filler. If the audio is empty or unintelligible, return an empty transcript.`
+    : `Transcribe the speech in this audio, in its own language (any of: ${LANGUAGES.map((l) => l.code).join(", ")}).
+Detect the spoken language (ISO 639-1 code) and correct obvious punctuation, no filler.
+If the audio is empty or unintelligible, return an empty transcript.`;
+
+  const schema = sourceLang
+    ? { type: Type.OBJECT, properties: { transcript: { type: Type.STRING } }, required: ["transcript"] }
+    : {
+        type: Type.OBJECT,
+        properties: { source_lang: { type: Type.STRING }, transcript: { type: Type.STRING } },
+        required: ["source_lang", "transcript"],
+      };
+
   const response = await ai().models.generateContent({
     model: MODEL,
     contents: [
       {
         role: "user",
-        parts: [
-          { text: audioPrompt + contextBlock(recent) },
-          { inlineData: { mimeType: audioMime, data: audioBuf.toString("base64") } },
-        ],
+        parts: [{ text: prompt }, { inlineData: { mimeType: audioMime, data: audioBuf.toString("base64") } }],
       },
     ],
-    config: buildGenConfig(langA, langB),
+    config: genConfig(schema),
   });
-  return JSON.parse(response.text ?? "{}");
+  const parsed = JSON.parse(response.text ?? "{}");
+  const detected = sourceLang ? sourceLang.code : parsed.source_lang;
+  return {
+    source_lang: getLanguage(detected) ? detected : sourceLang?.code ?? "en",
+    transcript: parsed.transcript ?? "",
+  };
 }

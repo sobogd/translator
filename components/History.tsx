@@ -1,9 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Copy, Check, Volume2, Play, MessageSquare } from "lucide-react";
+import { Copy, Check, Volume2, MessageSquare } from "lucide-react";
 import type { HistoryRow } from "@/lib/types";
 import { getLanguage } from "@/lib/languages";
+import type { TranslatorTexts } from "@/app/_landing/types";
+
+type HistoryTexts = TranslatorTexts["history"];
 
 function speak(text: string, lang: string) {
   if (typeof window === "undefined" || !window.speechSynthesis) return;
@@ -13,12 +16,14 @@ function speak(text: string, lang: string) {
   window.speechSynthesis.speak(u);
 }
 
+// `nameNative` (not `nameRu`) — locale-neutral, matches the language picker
+// in Translator.tsx so history labels read correctly in every locale.
 function langLabel(code: string) {
   const l = getLanguage(code);
-  return l ? `${l.flag} ${l.nameRu}` : code;
+  return l ? `${l.flag} ${l.nameNative}` : code;
 }
 
-function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string }) {
+function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB: string; texts: HistoryTexts }) {
   const target = r.sourceLang === langA ? langB : langA;
   // show one language at a time; default = translation. Swipe to flip.
   const [showSource, setShowSource] = useState(false);
@@ -58,19 +63,6 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
           <span className={`h-1.5 w-1.5 rounded-full ${!showSource ? "bg-button" : ""}`} style={showSource ? { background: "var(--border)" } : undefined} />
           <span className={`h-1.5 w-1.5 rounded-full ${showSource ? "bg-button" : ""}`} style={!showSource ? { background: "var(--border)" } : undefined} />
         </span>
-        {r.audioUrl && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              new Audio(r.audioUrl!).play();
-            }}
-            aria-label="Проиграть аудио"
-            className="ml-auto flex items-center gap-1 rounded-md px-1.5 py-0.5 transition active:scale-90"
-            style={{ color: "var(--hint)" }}
-          >
-            <Play size={12} /> аудио
-          </button>
-        )}
       </div>
 
       <div className="flex items-start justify-between gap-2">
@@ -81,7 +73,7 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
               e.stopPropagation();
               speak(shown, lang);
             }}
-            aria-label="Озвучить"
+            aria-label={texts.readAloudAria}
             className="rounded-lg p-1.5 text-button transition active:scale-90"
           >
             <Volume2 size={15} />
@@ -91,7 +83,7 @@ function Turn({ r, langA, langB }: { r: HistoryRow; langA: string; langB: string
               e.stopPropagation();
               copy();
             }}
-            aria-label="Копировать"
+            aria-label={texts.copyAria}
             className="rounded-lg p-1.5 text-button transition active:scale-90"
           >
             {copied ? <Check size={15} /> : <Copy size={15} />}
@@ -106,10 +98,12 @@ export function History({
   rows,
   langA,
   langB,
+  texts,
 }: {
   rows: HistoryRow[];
   langA: string;
   langB: string;
+  texts: HistoryTexts;
 }) {
   if (rows.length === 0) {
     return (
@@ -118,7 +112,7 @@ export function History({
         style={{ color: "var(--hint)" }}
       >
         <MessageSquare size={22} />
-        Пока пусто. Введите текст или запишите голос ниже.
+        {texts.emptyState}
       </div>
     );
   }
@@ -126,7 +120,7 @@ export function History({
   return (
     <div className="flex flex-col gap-3">
       {rows.map((r) => (
-        <Turn key={r.id} r={r} langA={langA} langB={langB} />
+        <Turn key={r.id} r={r} langA={langA} langB={langB} texts={texts} />
       ))}
     </div>
   );

@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "title": "IQ Translate — Instant Voice Translation App",
+    "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
+    "ogTitle": "IQ Translate — Instant Voice Translation App",
+    "ogDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
+    "twitterTitle": "IQ Translate — Instant Voice Translation App",
+    "twitterDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "signIn": "Sign in",
+    "logOut": "Log out",
+    "tryItNow": "Try it now"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Instant voice translation",
+    "titleAccent": "for any conversation",
+    "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No sign-up required to try it.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google",
+    "mockFromLabel": "🇪🇸 Spanish",
+    "mockFromPhrase": "Hola, ¿cómo estás?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 languages",
+      "sub": "Speak or type, translated instantly, no extra downloads"
+    },
+    {
+      "title": "No sign-up needed",
+      "sub": "Try it right on this page — sign in only for more credits"
+    },
+    {
+      "title": "History per language pair",
+      "sub": "Every conversation stays organized and easy to find again"
+    },
+    {
+      "title": "Free to start",
+      "sub": "Scroll down and start translating right away"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Instant voice translation",
+      "sub": "Tap the mic and talk. Your speech is transcribed and translated in seconds — no typing needed.",
+      "bullets": [
+        {
+          "title": "Speak, get instant translation",
+          "sub": "One tap starts recording, translation appears right after"
+        },
+        {
+          "title": "Hear it aloud",
+          "sub": "Tap the speaker to have the translation read out loud"
+        },
+        {
+          "title": "Voice or text, your choice",
+          "sub": "Switch modes anytime with a single tap"
+        }
+      ]
+    },
+    {
+      "heading": "Text translation too",
+      "sub": "Prefer typing? Switch to keyboard mode and translate a message instantly.",
+      "bullets": [
+        {
+          "title": "Flip original and translation",
+          "sub": "Tap or swipe a line to see it in either language"
+        },
+        {
+          "title": "Copy with one tap",
+          "sub": "Grab the translated text to paste anywhere"
+        },
+        {
+          "title": "Switch to voice anytime",
+          "sub": "Start typing, then dictate the next line instead"
+        }
+      ]
+    },
+    {
+      "heading": "186 languages, organized by conversation",
+      "sub": "Pick your language once, then browse everyone else's — each language pair keeps its own saved thread.",
+      "bullets": [
+        {
+          "title": "186 languages included",
+          "sub": "No extra downloads or language packs to install"
+        },
+        {
+          "title": "Conversations stay organized",
+          "sub": "Every language pair has its own saved history"
+        },
+        {
+          "title": "Clear or delete anytime",
+          "sub": "Wipe a thread's history or remove it entirely from the menu"
+        }
+      ]
+    },
+    {
+      "heading": "No sign-up required to start",
+      "sub": "Try it right on this page — no account, no password. Sign in with Google only when you want more daily credits and history synced across devices.",
+      "bullets": [
+        {
+          "title": "Optional one-tap sign-in",
+          "sub": "No registration form, no password to remember"
+        },
+        {
+          "title": "Your email, nothing else",
+          "sub": "Only your Google email identifies your account"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why voice",
+    "titleAccent": "comes first",
+    "description": "Most translation apps stop at typed text. The rows below are what actually differs when you need to talk, not type.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical apps",
+    "rows": [
+      {
+        "title": "Voice translation",
+        "us": "One tap records, transcribes and translates in seconds.",
+        "them": "Text-only, or requires typing out what you heard."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every language pair keeps its own saved thread.",
+        "them": "History disappears when you close the tab."
+      },
+      {
+        "title": "Getting started",
+        "us": "Try it immediately, right on this page — no account required.",
+        "them": "Account creation with email and password before you can try it."
+      },
+      {
+        "title": "Voice playback",
+        "us": "Tap to hear the translation read aloud.",
+        "them": "No voice output."
+      },
+      {
+        "title": "Languages",
+        "us": "186 languages available, no extra download.",
+        "them": "Limited offline language packs."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "What people ask before trying it. No sign-up needed — scroll up and try it yourself.",
+    "items": [
+      {
+        "q": "How does voice translation work?",
+        "a": "Tap the mic and speak — your voice is transcribed and translated in a few seconds, shown as text and available to hear read aloud. No typing needed."
+      },
+      {
+        "q": "How many languages are supported?",
+        "a": "186 languages. Pick your own language once, then start a conversation thread with anyone else's."
+      },
+      {
+        "q": "Do I need to create an account?",
+        "a": "No. Try it right on this page with no sign-up. Sign in with Google only if you want more daily credits and history synced across devices."
+      },
+      {
+        "q": "Is my translation history saved?",
+        "a": "Yes, per language pair, so past conversations stay organized — even without signing in, your browser is remembered. Clear or delete any thread anytime from its menu."
+      },
+      {
+        "q": "Can I use text instead of voice?",
+        "a": "Yes. Switch to keyboard mode anytime and type your message instead of speaking."
+      },
+      {
+        "q": "Does it work for two-way conversation?",
+        "a": "Yes. Tap or swipe a translated line to flip between the original and the translation, so both sides can follow along on one screen."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Instant voice translation,",
+    "headingAccent": "ready in 10 seconds.",
+    "sub": "Try it right on this page — no sign-up, no downloads, 186 languages included.",
+    "ctaLabel": "Try it now"
+  },
+  "footer": {
+    "tagline": "Instant voice translation, 186 languages",
+    "brand": "IQ Translate"
+  },
+  "translator": {
+    "topics": "Topics",
+    "newTopic": "New topic",
+    "noTopicsYet": "No topics yet",
+    "deleteTopic": "Delete topic",
+    "deleteTopicConfirm": "Delete this topic and all its translations?",
+    "detectingLanguage": "Detecting language…",
+    "chooseLanguage": "Choose a language",
+    "close": "Close",
+    "searchPlaceholder": "Search a language…",
+    "clearHistory": "Clear history",
+    "clearHistoryConfirm": "Clear all translations in this topic?",
+    "noTranslationsYet": "No translations yet in this topic.",
+    "translating": "Translating…",
+    "typePlaceholder": "Type a message…",
+    "translateAria": "Translate",
+    "micDeniedError": "Microphone access denied",
+    "recording": "Recording",
+    "recognizing": "Recognizing…",
+    "recordAria": "Record",
+    "stopAria": "Stop",
+    "pricingLink": "Pricing",
+    "errors": {
+      "insufficientCredits": "Out of credits — upgrade your plan",
+      "textTooLong": "Text too long for your plan"
+    }
+  },
+  "history": {
+    "emptyState": "Nothing here yet. Type a message or record your voice below.",
+    "readAloudAria": "Read aloud",
+    "copyAria": "Copy"
+  }
+}

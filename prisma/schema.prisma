@@ -8,18 +8,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Chat {
+model Topic {
   id           String        @id @default(cuid())
   ownerKey     String // verified Google email, lowercased
-  langA        String // ISO 639-1 code, langA < langB lexicographically
-  langB        String // ISO 639-1 code
+  title        String? // null until first translation, then a truncated transcript
+  sourceLang   String? // ISO 639-1 code; null = auto-detect pending (locked on first translation)
+  targetLang   String // ISO 639-1 code
   lastUsedAt   DateTime      @default(now())
   createdAt    DateTime      @default(now())
   translations Translation[]
 
-  @@unique([ownerKey, langA, langB])
   @@index([ownerKey])
-  @@map("chats")
+  @@map("topics")
 }
 
 model Session {
@@ -72,15 +72,13 @@ model StripeEvent {
 
 model Translation {
   id          String   @id @default(cuid())
-  chatId      String?
-  chat        Chat?    @relation(fields: [chatId], references: [id], onDelete: Cascade)
-  mode        String // "audio" | "text"
+  topicId     String?
+  topic       Topic?   @relation(fields: [topicId], references: [id], onDelete: Cascade)
   sourceLang  String // ISO 639-1 code
   transcript  String
   translation String
-  audioUrl    String?
   createdAt   DateTime @default(now())
 
-  @@index([chatId])
+  @@index([topicId])
   @@map("translations")
 }
