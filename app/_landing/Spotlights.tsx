@@ -20,7 +20,7 @@ const ICONS: LucideIcon[][] = [
   [LogIn, ShieldCheck],
 ];
 
-export function Spotlights({ items }: { items: Spotlight[] }) {
+export function Spotlights({ items, icons = ICONS }: { items: Spotlight[]; icons?: LucideIcon[][] }) {
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {items.map((s, i) => (
@@ -31,7 +31,7 @@ export function Spotlights({ items }: { items: Spotlight[] }) {
           </div>
           <ul className="flex flex-col gap-5 p-6 sm:p-8">
             {s.bullets.map((b, j) => {
-              const Icon = ICONS[i]?.[j] ?? Mic;
+              const Icon = icons[i]?.[j] ?? Mic;
               return (
                 <li key={b.title} className="flex items-start gap-3">
                   <Icon className="mt-0.5 h-7 w-7 shrink-0 text-button" />

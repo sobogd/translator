@@ -6,7 +6,10 @@ import { localeHome, localePath } from "./locale-paths";
 // Empty until the first SEO feature page ships; sitemap, hreflang and the
 // footer locale switcher already read from this map so a future feature page
 // only ever needs one registration, not a change in four places.
-export const LOCALE_SLUG_OVERRIDES: Record<string, Record<string, string>> = {};
+export const LOCALE_SLUG_OVERRIDES: Record<string, Record<string, string>> = {
+  "/text-translator": { en: "text-translator", ru: "perevod-teksta-onlayn" },
+  "/real-time-voice-translator": { en: "real-time-voice-translator", ru: "perevodchik-rechi-v-tekst" },
+};
 
 // Swaps the locale segment of a pathname, translating the slug through the
 // map when the path belongs to a registered route. Falls back to a plain

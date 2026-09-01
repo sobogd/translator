@@ -95,3 +95,53 @@ export interface TranslatorTexts {
     copyAria: string;
   };
 }
+
+// Per-feature-page content (hero/spotlights/comparison/faq/finalCta copy +
+// SEO meta), separate from `TranslatorTexts` chrome (header/footer/translator
+// widget) which every feature page imports unchanged from its locale's
+// texts.json — mirrors iq-rest's CHROME_JSON + CONTENT_JSON split.
+export interface FeatureContent {
+  meta: {
+    title: string;
+    description: string;
+    ogTitle: string;
+    ogDescription: string;
+    canonical: string;
+    ogLocale: string;
+  };
+  hero: {
+    badgeVoice: string;
+    badgeText: string;
+    badgeLanguages: string;
+    title: string;
+    titleAccent: string;
+    description: string;
+    ctaTry: string;
+    ctaSignIn: string;
+    mockFromLabel: string;
+    mockFromPhrase: string;
+    mockToLabel: string;
+    mockToPhrase: string;
+  };
+  spotlights: Spotlight[];
+  comparison: {
+    title: string;
+    titleAccent: string;
+    description: string;
+    usLabel: string;
+    themLabel: string;
+    rows: ComparisonRow[];
+  };
+  faq: {
+    heading: string;
+    headingAccent: string;
+    sub: string;
+    items: FaqItem[];
+  };
+  finalCta: {
+    heading: string;
+    headingAccent: string;
+    sub: string;
+    ctaLabel: string;
+  };
+}
