@@ -4,7 +4,7 @@ import { resolveIdentity } from "@/lib/auth";
 import { getLanguage } from "@/lib/languages";
 import { consumeCreditsForIdentity, maxCharsForIdentity } from "@/lib/credits";
 import { creditsForText } from "@/lib/plans";
-import { translateText } from "@/lib/gemini-translate";
+import { translateText, translatePair } from "@/lib/gemini-translate";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -56,7 +56,15 @@ export async function POST(req: NextRequest) {
         translation: t.translation,
       }));
 
-    const result = await translateText(sourceLang, targetLang, text, recent);
+    // Once the pair is locked (a source got set on an earlier message), a
+    // reply can come from either side — translating it always toward the
+    // fixed targetLang would mangle a reply written in that same language.
+    // Detect which of the two known languages this message is in and
+    // translate to the other; the first message (sourceLang still null)
+    // keeps the plain open-detect path, which locks the pair below.
+    const result = sourceLang
+      ? await translatePair(sourceLang, targetLang, text, recent)
+      : await translateText(null, targetLang, text, recent);
     if (!result.translation) {
       return NextResponse.json({ error: "Не удалось распознать" }, { status: 422 });
     }

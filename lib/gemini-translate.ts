@@ -100,6 +100,52 @@ Keep meaning, tone and register. If the text is empty, return empty strings.`;
   };
 }
 
+// Once a topic's two-person pair is locked (see the schema comment on
+// Topic.sourceLang and the /api/translate route), every later message can
+// come from either side — translating it always toward the topic's fixed
+// targetLang would mangle a reply written in that same targetLang. Detects
+// which of the two known languages the text is in and translates to the
+// other one, so either person can type in their own language turn by turn.
+function pairSchema(langA: Language, langB: Language) {
+  return {
+    type: Type.OBJECT,
+    properties: {
+      source_lang: { type: Type.STRING, enum: [langA.code, langB.code] },
+      transcript: { type: Type.STRING },
+      translation: { type: Type.STRING },
+    },
+    required: ["source_lang", "transcript", "translation"],
+  };
+}
+
+export async function translatePair(
+  langA: Language,
+  langB: Language,
+  text: string,
+  recent: RecentTurn[] = [],
+): Promise<GeminiResult> {
+  const prompt = `You are interpreting a two-person conversation. One person writes in ${langLabel(langA)}, the other in ${langLabel(langB)} — every message is in exactly one of these two languages, never a third.
+1. Detect which of the two the text is in (source_lang: "${langA.code}" or "${langB.code}").
+2. Echo the input back as the transcript (correct obvious typos/punctuation, no filler).
+3. Translate it into the OTHER language of the pair — natural, fluent, idiomatic, not literal.
+Keep meaning, tone and register. If the text is empty, return empty strings.`;
+
+  const response = await ai().models.generateContent({
+    model: MODEL,
+    contents: [
+      { role: "user", parts: [{ text: `${prompt}${contextBlock(recent)}\n\nTEXT:\n${text}` }] },
+    ],
+    config: genConfig(pairSchema(langA, langB)),
+  });
+  const parsed = JSON.parse(response.text ?? "{}");
+  const source_lang = parsed.source_lang === langB.code ? langB.code : langA.code;
+  return {
+    source_lang,
+    transcript: parsed.transcript ?? "",
+    translation: parsed.translation ?? "",
+  };
+}
+
 export type TranscribeResult = { source_lang: string; transcript: string };
 
 export async function transcribeAudio(

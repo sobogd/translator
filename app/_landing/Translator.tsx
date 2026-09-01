@@ -361,6 +361,12 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   const currentSourceCode = topic ? topic.sourceLang : draftSourceLang;
   const sourceLanguage = useMemo(() => (currentSourceCode ? getLanguage(currentSourceCode) : undefined), [currentSourceCode]);
   const targetLanguage = useMemo(() => getLanguage(topic?.targetLang ?? defaultTarget), [topic?.targetLang, defaultTarget]);
+  // Once a message has locked the pair (topic.sourceLang set), it stays
+  // fixed for the rest of the topic — no re-picking, no resetting back to
+  // auto-detect. Later turns can come from either side of that pair (see
+  // translatePair server-side); the picker only ever applied to a draft or
+  // a topic still waiting on its first message.
+  const pairLocked = !!topic && topic.sourceLang !== null;
   const rows = topic ? [...topic.translations].reverse() : [];
 
   return (
@@ -407,30 +413,53 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
           middle, composer pinned bottom. */}
       <div className="flex flex-col lg:h-full lg:min-h-0">
         <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border p-4 sm:p-5">
-          <button
-            onClick={() => setPickerFor("source")}
-            className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint transition active:scale-95"
-          >
-            {sourceLanguage ? (
-              <>
-                <span className="text-sm">{sourceLanguage.flag}</span>
-                {sourceLanguage.nameNative}
-              </>
-            ) : (
-              <>
-                <span className="text-sm">🌐</span>
-                {t.autoDetect}
-              </>
-            )}
-          </button>
-          <span className="text-hint">→</span>
-          <button
-            onClick={() => setPickerFor("target")}
-            className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium transition active:scale-95"
-          >
-            <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
-            {targetLanguage?.nameNative ?? defaultTarget}
-          </button>
+          {pairLocked ? (
+            <span className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint">
+              {sourceLanguage ? (
+                <>
+                  <span className="text-sm">{sourceLanguage.flag}</span>
+                  {sourceLanguage.nameNative}
+                </>
+              ) : (
+                <>
+                  <span className="text-sm">🌐</span>
+                  {t.autoDetect}
+                </>
+              )}
+            </span>
+          ) : (
+            <button
+              onClick={() => setPickerFor("source")}
+              className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint transition active:scale-95"
+            >
+              {sourceLanguage ? (
+                <>
+                  <span className="text-sm">{sourceLanguage.flag}</span>
+                  {sourceLanguage.nameNative}
+                </>
+              ) : (
+                <>
+                  <span className="text-sm">🌐</span>
+                  {t.autoDetect}
+                </>
+              )}
+            </button>
+          )}
+          <span className="text-hint">⇄</span>
+          {pairLocked ? (
+            <span className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium">
+              <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
+              {targetLanguage?.nameNative ?? defaultTarget}
+            </span>
+          ) : (
+            <button
+              onClick={() => setPickerFor("target")}
+              className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium transition active:scale-95"
+            >
+              <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
+              {targetLanguage?.nameNative ?? defaultTarget}
+            </button>
+          )}
           {rows.length > 0 && (
             <button
               onClick={clearHistory}
