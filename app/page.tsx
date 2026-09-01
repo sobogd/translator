@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Loader2, Lock, X } from "lucide-react";
-import { apiFetch, initTelegram, telegramUserId } from "@/lib/client";
+import { Search, Loader2, X } from "lucide-react";
+import { apiFetch } from "@/lib/client";
 import type { Chat } from "@/lib/types";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 
@@ -114,7 +114,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    initTelegram();
     const saved = localStorage.getItem(FROM_LANG_KEY);
     // one-time init from localStorage/network (external), not a render cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -173,26 +172,12 @@ export default function Home() {
   }
 
   if (forbidden) {
-    const id = telegramUserId();
     return (
       <main
         className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 px-6 text-center"
         style={{ background: "var(--bg)", color: "var(--text)" }}
       >
-        <Lock size={30} className="text-emerald-500" />
-        <p className="text-base font-medium">Доступ ограничен</p>
-        <p className="max-w-xs text-sm" style={{ color: "var(--hint)" }}>
-          Приложение пока доступно только избранным. Отправьте свой Telegram-ID
-          администратору, чтобы получить доступ.
-        </p>
-        {id && (
-          <div
-            className="rounded-xl border px-4 py-2 font-mono text-sm"
-            style={{ background: "var(--card)", borderColor: "var(--border)" }}
-          >
-            ID: {id}
-          </div>
-        )}
+        <p className="text-base font-medium">Доступ отозван</p>
       </main>
     );
   }
@@ -207,6 +192,16 @@ export default function Home() {
       <div className="flex w-full max-w-2xl flex-col gap-4">
         <header className="flex items-center justify-between pt-2">
           <h1 className="text-2xl font-bold tracking-tight">Переводчик</h1>
+          <button
+            onClick={async () => {
+              await apiFetch("/api/auth/logout", { method: "POST" });
+              window.location.href = "/";
+            }}
+            className="text-sm transition active:scale-95"
+            style={{ color: "var(--hint)" }}
+          >
+            Выйти
+          </button>
         </header>
 
         <button

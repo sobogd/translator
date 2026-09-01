@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 
 export async function GET(req: NextRequest) {
   try {
-    const owner = resolveOwner(req);
+    const owner = await resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const owner = resolveOwner(req);
+    const owner = await resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 

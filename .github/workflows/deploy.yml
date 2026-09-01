@@ -55,8 +55,9 @@ jobs:
             S3_KEY="${{ secrets.S3_KEY }}"
             S3_TOKEN="${{ secrets.S3_TOKEN }}"
             S3_NAME="${{ secrets.S3_NAME }}"
-            BOT_TOKEN="${{ secrets.BOT_TOKEN }}"
-            ALLOWED_TG_IDS="${{ secrets.ALLOWED_TG_IDS }}"
+            GOOGLE_CLIENT_ID="${{ secrets.GOOGLE_CLIENT_ID }}"
+            GOOGLE_CLIENT_SECRET="${{ secrets.GOOGLE_CLIENT_SECRET }}"
+            ALLOWED_GOOGLE_EMAILS="${{ secrets.ALLOWED_GOOGLE_EMAILS }}"
             PORT="8200"
             EOF
 

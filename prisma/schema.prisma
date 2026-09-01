@@ -10,7 +10,7 @@ datasource db {
 
 model Chat {
   id           String        @id @default(cuid())
-  ownerKey     String // "telegram:<id>" | "device:<uuid>" | "apple:<sub>" ...
+  ownerKey     String // verified Google email, lowercased
   langA        String // ISO 639-1 code, langA < langB lexicographically
   langB        String // ISO 639-1 code
   lastUsedAt   DateTime      @default(now())
@@ -20,6 +20,17 @@ model Chat {
   @@unique([ownerKey, langA, langB])
   @@index([ownerKey])
   @@map("chats")
+}
+
+model Session {
+  id        String    @id @default(cuid())
+  email     String
+  tokenHash String    @unique
+  expiresAt DateTime? // null = never expires (until logout/cache clear)
+  createdAt DateTime  @default(now())
+
+  @@index([email])
+  @@map("sessions")
 }
 
 model Translation {

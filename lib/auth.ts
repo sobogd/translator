@@ -1,74 +1,69 @@
 import crypto from "crypto";
+import { prisma } from "./prisma";
 
-// Resolve the owner of a request into a stable key like "telegram:123" or
-// "device:<uuid>". Telegram identity is cryptographically verified via initData
-// HMAC; device identity is an anonymous client-generated id (data isolation,
-// not access control). Returns null when no identity is present.
+// Resolve the owner of a request into the verified, lowercased Google email
+// address for the signed-in session. Identity is established via Google OAuth
+// (see app/api/auth/google/**); sessions are opaque tokens stored (hashed) in
+// the database. Returns null when no valid session is present.
 
-const TG_MAX_AGE_SEC = 60 * 60 * 24; // reject initData older than 24h
+export const SESSION_COOKIE = "translator_session";
 
-// Allowlist gate. If ALLOWED_TG_IDS is set (comma-separated Telegram user ids),
-// only those Telegram users pass — device/browser identities are rejected,
-// making the app effectively Telegram-only for named people. Empty => open.
-export function isAllowed(owner: string): boolean {
-  const list = (process.env.ALLOWED_TG_IDS || "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-  if (list.length === 0) return true;
-  if (owner.startsWith("telegram:")) return list.includes(owner.slice(9));
-  return false;
+export function generateSessionToken(): string {
+  return crypto.randomBytes(32).toString("hex");
 }
 
-export function resolveOwner(req: Request): string | null {
-  const initData = req.headers.get("x-telegram-init-data");
-  if (initData) {
-    const tgId = verifyTelegramInitData(initData);
-    if (tgId) return `telegram:${tgId}`;
-    return null; // initData present but invalid → treat as unauthenticated
-  }
+export function hashSessionToken(token: string): string {
+  return crypto.createHash("sha256").update(token).digest("hex");
+}
 
-  const deviceId = req.headers.get("x-device-id");
-  if (deviceId && /^[A-Za-z0-9_-]{8,64}$/.test(deviceId)) {
-    return `device:${deviceId}`;
-  }
+// Allowlist gate. If ALLOWED_GOOGLE_EMAILS is set (comma-separated emails),
+// only those emails pass. Empty/unset => open.
+export function isAllowed(email: string): boolean {
+  const list = (process.env.ALLOWED_GOOGLE_EMAILS || "")
+    .split(",")
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  if (list.length === 0) return true;
+  return list.includes(email.trim().toLowerCase());
+}
 
+// Parse a raw `cookie` header value by hand and return the named cookie's
+// value, or null if absent. Kept dependency-free to match the rest of this
+// file's style.
+export function parseCookie(cookieHeader: string | null | undefined, name: string): string | null {
+  if (!cookieHeader) return null;
+  const parts = cookieHeader.split(";");
+  for (const part of parts) {
+    const eq = part.indexOf("=");
+    if (eq === -1) continue;
+    const key = part.slice(0, eq).trim();
+    if (key === name) {
+      return decodeURIComponent(part.slice(eq + 1).trim());
+    }
+  }
   return null;
 }
 
-// Validate Telegram WebApp initData. Returns the user id string if valid.
-// Algorithm: secret = HMAC_SHA256("WebAppData", botToken);
-//            hash   = HMAC_SHA256(secret, dataCheckString).
-function verifyTelegramInitData(initData: string): string | null {
-  const botToken = process.env.BOT_TOKEN;
-  if (!botToken) return null;
+// Shared verification: given a raw session token, look it up and return the
+// email if it's a valid, unexpired session.
+async function verifySessionToken(token: string | null): Promise<string | null> {
+  if (!token) return null;
+  const tokenHash = hashSessionToken(token);
+  const session = await prisma.session.findUnique({ where: { tokenHash } });
+  if (!session) return null;
+  if (session.expiresAt && session.expiresAt.getTime() < Date.now()) return null;
+  return session.email;
+}
 
-  const params = new URLSearchParams(initData);
-  const hash = params.get("hash");
-  if (!hash) return null;
-  params.delete("hash");
+export async function resolveOwner(req: Request): Promise<string | null> {
+  const token = parseCookie(req.headers.get("cookie"), SESSION_COOKIE);
+  return verifySessionToken(token);
+}
 
-  const dataCheckString = [...params.entries()]
-    .map(([k, v]) => `${k}=${v}`)
-    .sort()
-    .join("\n");
-
-  const secret = crypto.createHmac("sha256", "WebAppData").update(botToken).digest();
-  const computed = crypto
-    .createHmac("sha256", secret)
-    .update(dataCheckString)
-    .digest("hex");
-
-  if (computed !== hash) return null;
-
-  // freshness
-  const authDate = Number(params.get("auth_date") || 0);
-  if (!authDate || Date.now() / 1000 - authDate > TG_MAX_AGE_SEC) return null;
-
-  try {
-    const user = JSON.parse(params.get("user") || "{}");
-    return user?.id ? String(user.id) : null;
-  } catch {
-    return null;
-  }
+// Server-Component-friendly variant using next/headers cookies().
+export async function getServerSessionEmail(): Promise<string | null> {
+  const { cookies } = await import("next/headers");
+  const cookieStore = await cookies();
+  const token = cookieStore.get(SESSION_COOKIE)?.value ?? null;
+  return verifySessionToken(token);
 }

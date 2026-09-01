@@ -10,7 +10,7 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const owner = resolveOwner(req);
+    const owner = await resolveOwner(req);
     if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     if (!isAllowed(owner)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 

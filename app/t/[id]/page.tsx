@@ -6,7 +6,7 @@ import { ArrowLeft, Send, Loader2, Mic, Square, Keyboard } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { ThreadMenu } from "@/components/ThreadMenu";
-import { apiFetch, initTelegram, showBackButton, haptic, isTelegram } from "@/lib/client";
+import { apiFetch } from "@/lib/client";
 import type { ChatDetail } from "@/lib/types";
 import { getLanguage } from "@/lib/languages";
 
@@ -48,7 +48,6 @@ export default function ChatPage() {
   const [textBusy, setTextBusy] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [inTg, setInTg] = useState(false);
   const recRef = useRef<WavRecorder | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -85,17 +84,12 @@ export default function ChatPage() {
   }, [chatId]);
 
   useEffect(() => {
-    initTelegram();
     const saved = localStorage.getItem(FROM_LANG_KEY);
-    // one-time init from Telegram/localStorage/network (external), not a render cascade.
+    // one-time init from localStorage/network (external), not a render cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (saved) setFromLang(saved);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setInTg(isTelegram());
-    const hide = showBackButton(() => router.push("/"));
     load(); // setChat runs after the awaited fetch
-    return hide;
-  }, [load, router]);
+  }, [load]);
 
   // keep view pinned to the newest message
   const turnCount = chat?.translations?.length ?? 0;
@@ -112,14 +106,12 @@ export default function ChatPage() {
 
   async function clearHistory() {
     if (!confirm("Очистить всю историю переводов этого чата?")) return;
-    haptic();
     await apiFetch(`/api/chats/${chatId}/translations`, { method: "DELETE" });
     await load();
   }
 
   async function deleteChat() {
     if (!confirm("Удалить чат со всей историей?")) return;
-    haptic();
     await apiFetch(`/api/chats/${chatId}`, { method: "DELETE" });
     router.push("/");
   }
@@ -217,16 +209,14 @@ export default function ChatPage() {
         className="flex shrink-0 items-center gap-2.5 border-b px-2 py-2"
         style={{ background: "var(--accent)", borderColor: "var(--border)" }}
       >
-        {!inTg && (
-          <button
-            onClick={() => router.push("/")}
-            aria-label="Назад"
-            className="rounded-lg p-1.5 transition active:scale-90"
-            style={{ color: "var(--hint)" }}
-          >
-            <ArrowLeft size={22} />
-          </button>
-        )}
+        <button
+          onClick={() => router.push("/")}
+          aria-label="Назад"
+          className="rounded-lg p-1.5 transition active:scale-90"
+          style={{ color: "var(--hint)" }}
+        >
+          <ArrowLeft size={22} />
+        </button>
         <div className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-lg">
           {avatarFlag}
         </div>
