@@ -34,16 +34,18 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
 
   return (
     <div className={`flex ${fromA ? "justify-end" : "justify-start"}`}>
+      {/* Own side vs the other side is a fill difference, not an accent one:
+          the sand tone is the hero column's background (see Translator.tsx).
+          The gradient it replaced turned a long thread into a wall of orange,
+          which left nothing for the actual accent — the send button — to say. */}
       <div
         className={`w-full max-w-[85%] rounded-lg p-3.5 ${
-          fromA
-            ? "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white"
-            : "border border-border bg-card"
+          fromA ? "bg-[hsl(32_44%_92%)] dark:bg-[hsl(32_14%_14%)]" : "border border-border bg-card"
         }`}
       >
         {/* Original (small, muted) above the translation (larger, primary) —
             both texts, no language labels, no interaction. */}
-        <p className={`mb-1.5 text-sm leading-snug ${fromA ? "text-button-text/70" : "text-hint"}`}>{r.transcript}</p>
+        <p className="mb-1.5 text-sm leading-snug text-hint">{r.transcript}</p>
 
         <div className="flex items-start justify-between gap-2">
           <p className="text-base leading-relaxed">{r.translation}</p>
@@ -51,14 +53,14 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
             <button
               onClick={() => speak(r.translation, target)}
               aria-label={texts.readAloudAria}
-              className={`rounded-lg p-1.5 transition active:scale-90 ${fromA ? "text-button-text" : "text-button"}`}
+              className="rounded-lg p-1.5 text-button transition active:scale-90"
             >
               <Volume2 size={15} />
             </button>
             <button
               onClick={copy}
               aria-label={texts.copyAria}
-              className={`rounded-lg p-1.5 transition active:scale-90 ${fromA ? "text-button-text" : "text-button"}`}
+              className="rounded-lg p-1.5 text-button transition active:scale-90"
             >
               {copied ? <Check size={15} /> : <Copy size={15} />}
             </button>
