@@ -90,7 +90,23 @@ function LanguagePickerModal({
     <Modal title={texts.chooseLanguage} onClose={onClose} closeAria={texts.close} maxWidth="max-w-lg">
       {/* Flush full-width search: no box, no fill — just a bottom border,
           sticky over the list, text aligned with the option rows below. */}
+      {/* type="search" + the ignore hints, same set the composer textarea
+          carries: a bare <input> with no type and no name reads as a
+          credential field to iOS and to password managers, which put the
+          AutoFill/passwords bar over the keyboard here. */}
       <input
+        type="search"
+        inputMode="search"
+        enterKeyHint="search"
+        name="language-search"
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="none"
+        spellCheck={false}
+        data-lpignore="true"
+        data-1p-ignore
+        data-bwignore
+        data-form-type="other"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         autoFocus
