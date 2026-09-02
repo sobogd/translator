@@ -37,7 +37,7 @@
     },
     {
       "title": "Geen registratie nodig",
-      "sub": "Probeer het direct op deze pagina — log alleen in voor meer credits"
+      "sub": "Probeer het direct op deze pagina — log alleen in voor een groter maandelijks quotum"
     },
     {
       "title": "Geschiedenis per taalpaar",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Geen registratie nodig om te starten",
-      "sub": "Probeer het direct op deze pagina — geen account, geen wachtwoord. Log alleen in met Google voor meer dagelijkse credits en geschiedenis die wordt gesynchroniseerd tussen apparaten.",
+      "sub": "Probeer het direct op deze pagina — geen account, geen wachtwoord. Log alleen in met Google als je een groter maandelijks quotum wilt en geschiedenis die wordt gesynchroniseerd tussen apparaten.",
       "bullets": [
         {
           "title": "Optioneel inloggen met één tik",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Moet ik een account aanmaken?",
-        "a": "Nee. Probeer het direct op deze pagina zonder registratie. Log alleen in met Google als je meer dagelijkse credits wilt en geschiedenis gesynchroniseerd over apparaten."
+        "a": "Nee. Probeer het direct op deze pagina zonder registratie. Log alleen in met Google als je een groter maandelijks quotum wilt en geschiedenis gesynchroniseerd over apparaten."
       },
       {
         "q": "Wordt mijn vertaalgeschiedenis opgeslagen?",
@@ -224,6 +224,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Prijzen – Abonnementen voor Spraak & Tekst",
+      "description": "Drie eenvoudige maandelijkse abonnementen met spraakminuten en tekstkarakters inbegrepen. Probeer het gratis zonder registratie — geen kaart nodig."
+    },
+    "heading": "Eenvoudige maandelijkse",
+    "headingAccent": "prijzen",
+    "sub": "Elk abonnement bevat spraakminuten en tekstkarakters. Probeer het gratis direct op de homepage — geen registratie, geen kaart.",
+    "perMonth": "/mnd",
+    "mostPopular": "Meest gekozen",
+    "cta": "Aan de slag",
+    "freeNote": {
+      "title": "Geen gratis abonnement nodig — de homepage zelf is de gratis laag.",
+      "sub": "Vertaal zonder registratie: elke bezoeker krijgt 2 spraakminuten en 4.000 tekens om te proberen, rechtstreeks in de widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 spraakminuten per maand",
+          "1.500.000 tekstkarakters per maand",
+          "Tot 30.000 tekens per aanvraag",
+          "Alle 186 talen",
+          "Opgeslagen gespreksgeschiedenis"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 spraakminuten per maand",
+          "3.000.000 tekstkarakters per maand",
+          "Tot 100.000 tekens per aanvraag",
+          "Alle 186 talen",
+          "Opgeslagen gespreksgeschiedenis",
+          "Prioritaire verwerking"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 spraakminuten per maand",
+          "8.000.000 tekstkarakters per maand",
+          "Tot 150.000 tekens per aanvraag",
+          "Alle 186 talen",
+          "Opgeslagen gespreksgeschiedenis",
+          "Prioritaire verwerking"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Vragen over",
+      "headingAccent": "prijzen",
+      "sub": "Wat mensen vragen voordat ze zich abonneren.",
+      "items": [
+        {
+          "q": "Hoe werken spraakminuten en tekens?",
+          "a": "Spraakminuten dekken het omzetten van je stem naar tekst; tekens dekken het vertalen van tekst (ook bewerkte transcripties). Elk abonnement vult beide maandelijks aan."
+        },
+        {
+          "q": "Wat gebeurt er als ik door mijn limiet heen ben?",
+          "a": "Vertalen wordt gepauzeerd totdat je maandelijkse limiet wordt aangevuld of je upgradet naar een hoger abonnement via het facturatieportaal."
+        },
+        {
+          "q": "Is er een gratis manier om het te proberen?",
+          "a": "Ja — de widget op de homepage werkt zonder registratie: elke bezoeker krijgt 2 spraakminuten en 4.000 tekens."
+        },
+        {
+          "q": "Kan ik op elk moment opzeggen?",
+          "a": "Ja. Beheer of zeg je abonnement op elk moment op via het facturatieportaal — geen langetermijnverplichting."
+        },
+        {
+          "q": "Kan ik later van abonnement wisselen?",
+          "a": "Ja, upgrade of downgrade op elk moment; een nieuw abonnement geeft direct zijn volledige maandelijkse limiet."
+        },
+        {
+          "q": "Bieden jullie jaarlijkse facturatie aan?",
+          "a": "Nog niet — alle abonnementen worden voorlopig maandelijks gefactureerd."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Nog niet zeker?",
+      "headingAccent": "Probeer het eerst gratis.",
+      "sub": "Geen registratie nodig — ga terug naar de homepage en begin meteen met vertalen.",
+      "ctaLabel": "Nu proberen"
+    }
+  },
   "translator": {
     "topics": "Onderwerpen",
     "newTopic": "Nieuw onderwerp",
@@ -247,7 +337,7 @@
     "stopAria": "Stoppen",
     "pricingLink": "Prijzen",
     "errors": {
-      "insufficientCredits": "Geen credits meer — upgrade je abonnement",
+      "insufficientCredits": "Quotum verbruikt — upgrade je abonnement",
       "textTooLong": "Tekst te lang voor je abonnement"
     }
   },

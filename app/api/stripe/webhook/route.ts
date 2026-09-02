@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { prisma } from "@/lib/prisma";
 import { getStripe, mapStripeStatus } from "@/lib/stripe";
-import type { PlanId } from "@/lib/plans";
+import { PLANS, type PlanId } from "@/lib/plans";
 
 export const runtime = "nodejs";
 
-function planFromSubscription(sub: Stripe.Subscription): PlanId {
+function planFromSubscription(sub: Stripe.Subscription): PlanId | "FREE" {
   const fromMeta = sub.metadata?.plan as PlanId | undefined;
   if (fromMeta) return fromMeta;
   const price = sub.items.data[0]?.price;
@@ -21,15 +21,28 @@ async function applySubscription(sub: Stripe.Subscription, email: string | null)
   if (!account) return;
 
   const item = sub.items.data[0];
+  const plan = planFromSubscription(sub);
+  const planDef = plan === "FREE" ? null : PLANS[plan];
+  // A plan change grants its monthly quota immediately (and restarts the
+  // 30-day refill clock) instead of waiting out the old quotaResetAt.
+  const quotaGrant =
+    planDef && account.plan !== plan
+      ? {
+          charsBalance: planDef.charsPerMonth,
+          secondsBalance: planDef.minutesPerMonth * 60,
+          quotaResetAt: new Date(Date.now() + 30 * 86_400_000),
+        }
+      : {};
   await prisma.account.update({
     where: { email: account.email },
     data: {
       stripeCustomerId: customerId,
       stripeSubscriptionId: sub.id,
-      plan: planFromSubscription(sub),
+      plan,
       subscriptionStatus: mapStripeStatus(sub.status),
       currentPeriodEnd: item?.current_period_end ? new Date(item.current_period_end * 1000) : null,
       cancelAtPeriodEnd: sub.cancel_at_period_end,
+      ...quotaGrant,
     },
   });
 }

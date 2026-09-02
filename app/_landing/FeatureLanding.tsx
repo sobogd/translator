@@ -9,6 +9,7 @@ import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
+import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
@@ -84,7 +85,12 @@ export function FeatureLanding({
       />
       <Container>
         <Band id="app">
-          <Translator texts={chrome} presetSource={presetSource} presetTarget={presetTarget} />
+          <Translator
+            texts={chrome}
+            presetSource={presetSource}
+            presetTarget={presetTarget}
+            pricingHref={localePath(locale, "pricing")}
+          />
         </Band>
         <Band>
           <Hero texts={content.hero} />

@@ -37,7 +37,7 @@
     },
     {
       "title": "Bez registracije",
-      "sub": "Isprobajte odmah na ovoj stranici – prijava samo za više kredita"
+      "sub": "Isprobajte odmah na ovoj stranici – prijava samo kada nadograđujete plan"
     },
     {
       "title": "Istorija po jezičkom paru",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Nije potrebna registracija za početak",
-      "sub": "Isprobajte odmah na ovoj stranici – bez naloga, bez lozinke. Prijavite se preko Google-a samo kada želite više dnevnih kredita i istoriju sinhronizovanu na svim uređajima.",
+      "sub": "Isprobajte odmah na ovoj stranici – bez naloga, bez lozinke. Prijavite se preko Google-a samo kada želite veći mesečni limit i istoriju sinhronizovanu na svim uređajima.",
       "bullets": [
         {
           "title": "Opciona prijava jednim dodirom",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Da li moram da napravim nalog?",
-        "a": "Ne. Isprobajte direktno na ovoj stranici bez registracije. Prijavite se preko Google-a samo ako želite više dnevnih kredita i istoriju sinhronizovanu na svim uređajima."
+        "a": "Ne. Isprobajte direktno na ovoj stranici bez registracije. Prijavite se preko Google-a samo ako želite veći mesečni limit i istoriju sinhronizovanu na svim uređajima."
       },
       {
         "q": "Da li se čuva istorija mojih prevoda?",
@@ -224,6 +224,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Cene — Planovi za Glasovni i Tekstualni Prevod",
+      "description": "Tri jednostavna mesečna plana sa uključenim minutima govora i karakterima teksta. Isprobajte besplatno bez registracije — kartica nije potrebna."
+    },
+    "heading": "Jednostavne mesečne",
+    "headingAccent": "cene",
+    "sub": "Svaki plan uključuje minute govora i karaktere teksta. Isprobajte besplatno direktno na početnoj strani – bez registracije, bez kartice.",
+    "perMonth": "/mes.",
+    "mostPopular": "Najpopularniji",
+    "cta": "Započni",
+    "freeNote": {
+      "title": "Besplatan plan nije ni potreban — besplatan nivo je sama početna stranica.",
+      "sub": "Prevodite bez registracije: svaki posetilac dobija 2 minuta govora i 4.000 karaktera za probu, direktno u vidžetu."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 minuta govora mesečno",
+          "1.500.000 karaktera teksta mesečno",
+          "Do 30.000 karaktera po zahtevu",
+          "Svih 186 jezika",
+          "Sačuvana istorija razgovora"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 minuta govora mesečno",
+          "3.000.000 karaktera teksta mesečno",
+          "Do 100.000 karaktera po zahtevu",
+          "Svih 186 jezika",
+          "Sačuvana istorija razgovora",
+          "Prioritetna obrada"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 minuta govora mesečno",
+          "8.000.000 karaktera teksta mesečno",
+          "Do 150.000 karaktera po zahtevu",
+          "Svih 186 jezika",
+          "Sačuvana istorija razgovora",
+          "Prioritetna obrada"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Pitanja o",
+      "headingAccent": "cenama",
+      "sub": "Šta ljudi pitaju pre pretplate.",
+      "items": [
+        {
+          "q": "Kako funkcionišu minuti govora i karakteri?",
+          "a": "Minuti govora pokrivaju pretvaranje vašeg govora u tekst; karakteri pokrivaju prevod teksta (uključujući izmenjene transkripte). Svaki plan oba limita obnavlja mesečno."
+        },
+        {
+          "q": "Šta se dešava kada mi ponestane?",
+          "a": "Prevođenje se pauzira dok se mesečni limit ne obnovi ili dok ne nadogradite na viši plan preko portala za naplatu."
+        },
+        {
+          "q": "Postoji li besplatan način da probam?",
+          "a": "Da — vidžet na početnoj stranici radi bez ikakve registracije: svaki posetilac dobija 2 minuta govora i 4.000 karaktera."
+        },
+        {
+          "q": "Mogu li da otkažem u bilo kom trenutku?",
+          "a": "Da. Upravljajte ili otkažite pretplatu u bilo kom trenutku preko portala za naplatu — bez dugoročnih obaveza."
+        },
+        {
+          "q": "Mogu li kasnije da promenim plan?",
+          "a": "Da, nadogradite ili smanjite plan kad god želite; novi plan odmah dobija pun mesečni limit."
+        },
+        {
+          "q": "Da li nudite godišnju naplatu?",
+          "a": "Još ne — svi planovi se za sada naplaćuju mesečno."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Još niste sigurni?",
+      "headingAccent": "Prvo probajte besplatno.",
+      "sub": "Registracija nije potrebna — vratite se na početnu stranicu i odmah počnite da prevodite.",
+      "ctaLabel": "Isprobaj odmah"
+    }
+  },
   "translator": {
     "topics": "Teme",
     "newTopic": "Nova tema",
@@ -247,7 +337,7 @@
     "stopAria": "Zaustavi",
     "pricingLink": "Cene",
     "errors": {
-      "insufficientCredits": "Nema više kredita – nadogradite plan",
+      "insufficientCredits": "Mesečni limit je iskorišćen – nadogradite plan",
       "textTooLong": "Tekst je predugačak za vaš plan"
     }
   },

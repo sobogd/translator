@@ -37,7 +37,7 @@
     },
     {
       "title": "Fără cont necesar",
-      "sub": "Încearcă chiar pe această pagină — conectează-te doar pentru mai multe credite"
+      "sub": "Încearcă chiar pe această pagină — conectează-te doar pentru o cotă lunară mai mare"
     },
     {
       "title": "Istoric pe fiecare pereche de limbi",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Nu ai nevoie de cont pentru a începe",
-      "sub": "Încearcă chiar pe această pagină — fără cont, fără parolă. Conectează-te cu Google doar când vrei mai multe credite zilnice și istoric sincronizat pe toate dispozitivele.",
+      "sub": "Încearcă chiar pe această pagină — fără cont, fără parolă. Conectează-te cu Google doar când vrei o cotă lunară mai mare și istoric sincronizat pe toate dispozitivele.",
       "bullets": [
         {
           "title": "Conectare opțională, dintr-o atingere",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Trebuie să îmi creez un cont?",
-        "a": "Nu. Încearcă chiar pe această pagină, fără cont. Conectează-te cu Google doar dacă vrei mai multe credite zilnice și istoric sincronizat pe toate dispozitivele."
+        "a": "Nu. Încearcă chiar pe această pagină, fără cont. Conectează-te cu Google doar dacă vrei o cotă lunară mai mare și istoric sincronizat pe toate dispozitivele."
       },
       {
         "q": "Este salvat istoricul traducerilor?",
@@ -224,6 +224,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Prețuri – Planuri de Traducere Vocală și Text",
+      "description": "Trei planuri lunare simple cu minute vocale și caractere de text incluse. Încearcă gratuit fără cont — nu ai nevoie de card."
+    },
+    "heading": "Prețuri lunare",
+    "headingAccent": "simple",
+    "sub": "Fiecare plan include minute vocale și caractere de text. Încearcă gratuit chiar pe pagina principală — fără cont, fără card.",
+    "perMonth": "/lună",
+    "mostPopular": "Cel mai popular",
+    "cta": "Începe",
+    "freeNote": {
+      "title": "Nu ai nevoie de un plan gratuit — nivelul gratuit este chiar pagina principală.",
+      "sub": "Traduce fără cont: fiecare vizitator primește 2 minute vocale și 4.000 de caractere pentru a încerca, chiar în widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 de minute vocale pe lună",
+          "1.500.000 de caractere de text pe lună",
+          "Până la 30.000 de caractere per solicitare",
+          "Toate cele 186 de limbi",
+          "Istoric de conversații salvat"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 de minute vocale pe lună",
+          "3.000.000 de caractere de text pe lună",
+          "Până la 100.000 de caractere per solicitare",
+          "Toate cele 186 de limbi",
+          "Istoric de conversații salvat",
+          "Procesare prioritară"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 de minute vocale pe lună",
+          "8.000.000 de caractere de text pe lună",
+          "Până la 150.000 de caractere per solicitare",
+          "Toate cele 186 de limbi",
+          "Istoric de conversații salvat",
+          "Procesare prioritară"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Întrebări despre",
+      "headingAccent": "prețuri",
+      "sub": "Ce întreabă oamenii înainte de a se abona.",
+      "items": [
+        {
+          "q": "Cum funcționează minutele vocale și caracterele?",
+          "a": "Minutele vocale acoperă transformarea vocii tale în text; caracterele acoperă traducerea textului (inclusiv transcrierile editate). Ambele se reînnoiesc în fiecare lună."
+        },
+        {
+          "q": "Ce se întâmplă când se termină?",
+          "a": "Traducerea se oprește până când cota lunară se reînnoiește sau treci la un plan superior din portalul de facturare."
+        },
+        {
+          "q": "Există o modalitate gratuită de a încerca?",
+          "a": "Da — widgetul de pe pagina principală funcționează fără cont: fiecare vizitator primește 2 minute vocale și 4.000 de caractere."
+        },
+        {
+          "q": "Pot anula oricând?",
+          "a": "Da. Gestionează sau anulează abonamentul oricând din portalul de facturare — fără angajament pe termen lung."
+        },
+        {
+          "q": "Pot schimba planul mai târziu?",
+          "a": "Da, treci la un plan superior sau inferior oricând; noul plan primește imediat cota lunară completă."
+        },
+        {
+          "q": "Oferiți facturare anuală?",
+          "a": "Nu încă — toate planurile sunt facturate lunar deocamdată."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Nu ești încă sigur?",
+      "headingAccent": "Încearcă mai întâi gratuit.",
+      "sub": "Nu ai nevoie de cont — revino la pagina principală și tradu imediat.",
+      "ctaLabel": "Încearcă acum"
+    }
+  },
   "translator": {
     "topics": "Subiecte",
     "newTopic": "Subiect nou",
@@ -247,7 +337,7 @@
     "stopAria": "Oprește",
     "pricingLink": "Prețuri",
     "errors": {
-      "insufficientCredits": "Ai rămas fără credite — actualizează planul",
+      "insufficientCredits": "Cotă epuizată — actualizează planul",
       "textTooLong": "Text prea lung pentru planul tău"
     }
   },

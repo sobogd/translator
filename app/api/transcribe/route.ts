@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { getLanguage, type Language } from "@/lib/languages";
-import { consumeCreditsForIdentity } from "@/lib/credits";
-import { creditsForAudio } from "@/lib/plans";
+import { consumeSeconds } from "@/lib/credits";
 import { transcribeAudio } from "@/lib/gemini-translate";
 
 export const runtime = "nodejs";
@@ -39,8 +38,7 @@ export async function POST(req: NextRequest) {
       sourceLang = topic.sourceLang ? (getLanguage(topic.sourceLang) ?? null) : null;
     }
 
-    const cost = creditsForAudio(wavDurationSeconds(audioBuf));
-    const hasCredits = await consumeCreditsForIdentity(identity, cost);
+    const hasCredits = await consumeSeconds(identity, wavDurationSeconds(audioBuf));
     if (!hasCredits) {
       return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
     }

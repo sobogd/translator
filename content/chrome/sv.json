@@ -37,7 +37,7 @@
     },
     {
       "title": "Ingen registrering krävs",
-      "sub": "Prova direkt på den här sidan — logga in bara för fler krediter"
+      "sub": "Prova direkt på den här sidan — logga in bara för en större månatlig kvot"
     },
     {
       "title": "Historik per språkpar",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Ingen registrering krävs för att börja",
-      "sub": "Prova direkt på den här sidan — inget konto, inget lösenord. Logga in med Google bara när du vill ha fler dagliga krediter och historik synkad mellan enheter.",
+      "sub": "Prova direkt på den här sidan — inget konto, inget lösenord. Logga in med Google bara när du vill ha en större månatlig kvot och historik synkad mellan enheter.",
       "bullets": [
         {
           "title": "Valfri inloggning med ett tryck",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Behöver jag skapa ett konto?",
-        "a": "Nej. Prova direkt på den här sidan utan registrering. Logga in med Google bara om du vill ha fler dagliga krediter och historik synkad mellan enheter."
+        "a": "Nej. Prova direkt på den här sidan utan registrering. Logga in med Google bara om du vill ha en större månatlig kvot och historik synkad mellan enheter."
       },
       {
         "q": "Sparas min översättningshistorik?",
@@ -228,6 +228,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Priser – Planer för Röst & Text",
+      "description": "Tre enkla månadsabonnemang med röstminuter och textecken ingår, för alla 186 språk. Prova gratis direkt utan registrering — inget kort krävs."
+    },
+    "heading": "Enkla månatliga",
+    "headingAccent": "priser",
+    "sub": "Varje plan inkluderar röstminuter och textecken. Prova gratis direkt på startsidan — ingen registrering, inget kort.",
+    "perMonth": "/mån",
+    "mostPopular": "Mest populär",
+    "cta": "Kom igång",
+    "freeNote": {
+      "title": "Ingen gratisplan behövs — startsidan är själva gratisnivån.",
+      "sub": "Översätt utan registrering: varje besökare får 2 röstminuter och 4 000 tecken att prova, direkt i widgeten."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 röstminuter per månad",
+          "1 500 000 textecken per månad",
+          "Upp till 30 000 tecken per förfrågan",
+          "Alla 186 språk",
+          "Sparad samtalshistorik"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 röstminuter per månad",
+          "3 000 000 textecken per månad",
+          "Upp till 100 000 tecken per förfrågan",
+          "Alla 186 språk",
+          "Sparad samtalshistorik",
+          "Prioriterad bearbetning"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1 500 röstminuter per månad",
+          "8 000 000 textecken per månad",
+          "Upp till 150 000 tecken per förfrågan",
+          "Alla 186 språk",
+          "Sparad samtalshistorik",
+          "Prioriterad bearbetning"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Frågor om",
+      "headingAccent": "priser",
+      "sub": "Det folk undrar innan de prenumererar.",
+      "items": [
+        {
+          "q": "Hur fungerar röstminuter och tecken?",
+          "a": "Röstminuter täcker omvandlingen av ditt tal till text; tecken täcker översättning av text (inklusive redigerade transkript). Varje plan fyller på båda varje månad."
+        },
+        {
+          "q": "Vad händer när jag har använt allt?",
+          "a": "Översättningen pausas tills din månatliga kvot fylls på eller du uppgraderar till en högre plan från faktureringsportalen."
+        },
+        {
+          "q": "Finns det ett gratis sätt att prova?",
+          "a": "Ja — startsidans widget fungerar utan registrering: 2 röstminuter och 4 000 tecken ingår för varje besökare."
+        },
+        {
+          "q": "Kan jag avbryta när som helst?",
+          "a": "Ja. Hantera eller avbryt din prenumeration när som helst från faktureringsportalen — inget långsiktigt åtagande."
+        },
+        {
+          "q": "Kan jag byta plan senare?",
+          "a": "Ja, uppgradera eller nedgradera när som helst; en ny plan ger sin fulla månatliga kvot direkt."
+        },
+        {
+          "q": "Erbjuder ni årlig fakturering?",
+          "a": "Inte än — alla planer faktureras månadsvis tills vidare."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Fortfarande osäker?",
+      "headingAccent": "Prova gratis först.",
+      "sub": "Ingen registrering krävs — gå tillbaka till startsidan och börja översätta direkt.",
+      "ctaLabel": "Prova nu"
+    }
+  },
   "translator": {
     "topics": "Ämnen",
     "newTopic": "Nytt ämne",
@@ -251,7 +341,7 @@
     "stopAria": "Stoppa",
     "pricingLink": "Priser",
     "errors": {
-      "insufficientCredits": "Slut på krediter — uppgradera ditt abonnemang",
+      "insufficientCredits": "Kvoten är slut — uppgradera ditt abonnemang",
       "textTooLong": "Texten är för lång för ditt abonnemang"
     }
   },

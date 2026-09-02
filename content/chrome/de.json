@@ -37,7 +37,7 @@
     },
     {
       "title": "Keine Anmeldung nötig",
-      "sub": "Direkt auf dieser Seite ausprobieren – anmelden nur für mehr Guthaben"
+      "sub": "Direkt auf dieser Seite ausprobieren – anmelden nur zum Upgrade deines Plans"
     },
     {
       "title": "Verlauf pro Sprachpaar",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Keine Anmeldung zum Start nötig",
-      "sub": "Direkt auf dieser Seite ausprobieren – kein Konto, kein Passwort. Melde dich mit Google an, wenn du mehr tägliches Guthaben und geräteübergreifenden Verlauf möchtest.",
+      "sub": "Direkt auf dieser Seite ausprobieren – kein Konto, kein Passwort. Melde dich mit Google an, wenn du ein größeres monatliches Kontingent und geräteübergreifenden Verlauf möchtest.",
       "bullets": [
         {
           "title": "Optionale Anmeldung mit einem Tipp",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Muss ich ein Konto erstellen?",
-        "a": "Nein. Probiere es direkt auf dieser Seite ohne Anmeldung. Melde dich mit Google an, wenn du mehr tägliches Guthaben und geräteübergreifenden Verlauf möchtest."
+        "a": "Nein. Probiere es direkt auf dieser Seite ohne Anmeldung. Melde dich mit Google an, wenn du ein größeres monatliches Kontingent und geräteübergreifenden Verlauf möchtest."
       },
       {
         "q": "Wird mein Übersetzungsverlauf gespeichert?",
@@ -240,6 +240,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Preise — Tarife für Sprach- und Textübersetzung",
+      "description": "Drei einfache Monatstarife, jeweils mit Sprachminuten und Textzeichen inklusive. Teste es kostenlos ohne Anmeldung — es ist keine Kreditkarte nötig."
+    },
+    "heading": "Einfache monatliche",
+    "headingAccent": "Preise",
+    "sub": "Jeder Tarif enthält Sprachminuten und Textzeichen. Teste es kostenlos direkt auf der Startseite — ohne Anmeldung, ohne Kreditkarte.",
+    "perMonth": "/Monat",
+    "mostPopular": "Am beliebtesten",
+    "cta": "Loslegen",
+    "freeNote": {
+      "title": "Kein Gratistarif nötig — die Startseite selbst ist die kostenlose Stufe.",
+      "sub": "Übersetze ohne Anmeldung: Jeder Besucher erhält 2 Sprachminuten und 4.000 Zeichen zum Ausprobieren, direkt im Widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 Sprachminuten pro Monat",
+          "1.500.000 Textzeichen pro Monat",
+          "Bis zu 30.000 Zeichen pro Anfrage",
+          "Alle 186 Sprachen",
+          "Gespeicherter Gesprächsverlauf"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 Sprachminuten pro Monat",
+          "3.000.000 Textzeichen pro Monat",
+          "Bis zu 100.000 Zeichen pro Anfrage",
+          "Alle 186 Sprachen",
+          "Gespeicherter Gesprächsverlauf",
+          "Bevorzugte Verarbeitung"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 Sprachminuten pro Monat",
+          "8.000.000 Textzeichen pro Monat",
+          "Bis zu 150.000 Zeichen pro Anfrage",
+          "Alle 186 Sprachen",
+          "Gespeicherter Gesprächsverlauf",
+          "Bevorzugte Verarbeitung"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Fragen zu den",
+      "headingAccent": "Preisen",
+      "sub": "Was Nutzer vor dem Abschluss fragen.",
+      "items": [
+        {
+          "q": "Wie funktionieren Sprachminuten und Zeichen?",
+          "a": "Sprachminuten decken die Umwandlung deiner Sprache in Text ab; Zeichen decken die Textübersetzung ab (auch bearbeitete Transkripte). Beide werden bei jedem Tarif monatlich aufgefüllt."
+        },
+        {
+          "q": "Was passiert, wenn mein Kontingent aufgebraucht ist?",
+          "a": "Die Übersetzung pausiert, bis dein monatliches Kontingent sich auffüllt oder du im Rechnungsportal auf einen höheren Tarif wechselst."
+        },
+        {
+          "q": "Kann ich es kostenlos ausprobieren?",
+          "a": "Ja — das Widget auf der Startseite funktioniert ohne Anmeldung: Jeder Besucher erhält 2 Sprachminuten und 4.000 Zeichen inklusive."
+        },
+        {
+          "q": "Kann ich jederzeit kündigen?",
+          "a": "Ja. Verwalte oder kündige dein Abo jederzeit im Rechnungsportal — ohne langfristige Bindung."
+        },
+        {
+          "q": "Kann ich später den Tarif wechseln?",
+          "a": "Ja, wechsle jederzeit auf einen höheren oder niedrigeren Tarif; der neue Tarif gewährt sofort sein volles Monatskontingent."
+        },
+        {
+          "q": "Bietet ihr eine jährliche Abrechnung an?",
+          "a": "Noch nicht — aktuell werden alle Tarife monatlich abgerechnet."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Noch unsicher?",
+      "headingAccent": "Erst kostenlos testen.",
+      "sub": "Keine Anmeldung nötig — geh zurück zur Startseite und übersetze sofort los.",
+      "ctaLabel": "Jetzt testen"
+    }
+  },
   "translator": {
     "topics": "Themen",
     "newTopic": "Neues Thema",
@@ -263,7 +353,7 @@
     "stopAria": "Stopp",
     "pricingLink": "Preise",
     "errors": {
-      "insufficientCredits": "Guthaben aufgebraucht – Plan upgraden",
+      "insufficientCredits": "Kontingent aufgebraucht – Plan upgraden",
       "textTooLong": "Text zu lang für deinen Plan"
     }
   },

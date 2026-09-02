@@ -37,7 +37,7 @@
     },
     {
       "title": "Engin skráning nauðsynleg",
-      "sub": "Prófaðu beint á þessari síðu — skráðu þig aðeins inn fyrir fleiri inneignir"
+      "sub": "Prófaðu beint á þessari síðu — skráðu þig aðeins inn þegar þú uppfærir áskriftina"
     },
     {
       "title": "Saga eftir tungumálapari",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Engin skráning nauðsynleg til að byrja",
-      "sub": "Prófaðu beint á þessari síðu — enginn reikningur, ekkert lykilorð. Skráðu þig inn með Google aðeins þegar þú vilt fleiri daglegar inneignir og samstillta sögu milli tækja.",
+      "sub": "Prófaðu beint á þessari síðu — enginn reikningur, ekkert lykilorð. Skráðu þig inn með Google aðeins þegar þú vilt stærri mánaðarlega kvóta og samstillta sögu milli tækja.",
       "bullets": [
         {
           "title": "Valfrjáls innskráning með einni snertingu",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Þarf ég að stofna reikning?",
-        "a": "Nei. Prófaðu beint á þessari síðu án skráningar. Skráðu þig inn með Google aðeins ef þú vilt fleiri daglegar inneignir og samstillta sögu milli tækja."
+        "a": "Nei. Prófaðu beint á þessari síðu án skráningar. Skráðu þig inn með Google aðeins ef þú vilt stærri mánaðarlega kvóta og samstillta sögu milli tækja."
       },
       {
         "q": "Er þýðingarsagan mín vistuð?",
@@ -204,6 +204,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Verð — Áskriftarleiðir fyrir Rödd og Texta",
+      "description": "Þrjár einfaldar mánaðarlegar áskriftir með rödd-mínútum og texta-stöfum innifalið. Prófaðu frítt án skráningar — ekkert kort þarf."
+    },
+    "heading": "Einfalt mánaðarlegt",
+    "headingAccent": "verð",
+    "sub": "Hver áskrift inniheldur raddmínútur og textastafi. Prófaðu frítt beint á forsíðunni — engin skráning, ekkert kort.",
+    "perMonth": "/mán.",
+    "mostPopular": "Vinsælast",
+    "cta": "Byrja",
+    "freeNote": {
+      "title": "Engin þörf á fríri áskrift — fría stigið er sjálf forsíðan.",
+      "sub": "Þýddu án skráningar: hver gestur fær 2 raddmínútur og 4.000 stafi til að prófa, beint í tólinu."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 raddmínútur á mánuði",
+          "1.500.000 textastafir á mánuði",
+          "Allt að 30.000 stafir í hverri beiðni",
+          "Öll 186 tungumál",
+          "Vistuð samtalasaga"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 raddmínútur á mánuði",
+          "3.000.000 textastafir á mánuði",
+          "Allt að 100.000 stafir í hverri beiðni",
+          "Öll 186 tungumál",
+          "Vistuð samtalasaga",
+          "Forgangsvinnsla"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 raddmínútur á mánuði",
+          "8.000.000 textastafir á mánuði",
+          "Allt að 150.000 stafir í hverri beiðni",
+          "Öll 186 tungumál",
+          "Vistuð samtalasaga",
+          "Forgangsvinnsla"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Spurningar um",
+      "headingAccent": "verð",
+      "sub": "Það sem fólk spyr áður en það gerist áskrifandi.",
+      "items": [
+        {
+          "q": "Hvernig virka raddmínútur og stafir?",
+          "a": "Raddmínútur ná yfir að breyta tali þínu í texta; stafir ná yfir að þýða texta (þar með talið breyttar afritanir). Hver áskrift endurnýjar bæði hvern mánuð."
+        },
+        {
+          "q": "Hvað gerist þegar það klárast?",
+          "a": "Þýðing stöðvast þar til mánaðarlegi kvótinn endurnýjast eða þar til þú uppfærir í hærri áskrift í gegnum reikningagáttina."
+        },
+        {
+          "q": "Er hægt að prófa frítt?",
+          "a": "Já — tólið á forsíðunni virkar án nokkurrar skráningar: hver gestur fær 2 raddmínútur og 4.000 stafi innifalið."
+        },
+        {
+          "q": "Get ég sagt upp hvenær sem er?",
+          "a": "Já. Stjórnaðu eða segðu upp áskriftinni hvenær sem er í gegnum reikningagáttina — engin langtímaskuldbinding."
+        },
+        {
+          "q": "Get ég skipt um áskrift síðar?",
+          "a": "Já, uppfærðu eða lækkaðu áskrift hvenær sem er; ný áskrift veitir fullan mánaðarlegan kvóta samstundis."
+        },
+        {
+          "q": "Bjóðið þið upp á árlega greiðslu?",
+          "a": "Ekki ennþá — allar áskriftir eru greiddar mánaðarlega í bili."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Ekki alveg viss enn?",
+      "headingAccent": "Prófaðu frítt fyrst.",
+      "sub": "Engin skráning nauðsynleg — farðu aftur á forsíðuna og byrjaðu að þýða strax.",
+      "ctaLabel": "Prófa núna"
+    }
+  },
   "translator": {
     "topics": "Umræður",
     "newTopic": "Ný umræða",
@@ -227,7 +317,7 @@
     "stopAria": "Stöðva",
     "pricingLink": "Verð",
     "errors": {
-      "insufficientCredits": "Inneign búin — uppfærðu áskriftina þína",
+      "insufficientCredits": "Kvótinn búinn — uppfærðu áskriftina þína",
       "textTooLong": "Textinn er of langur fyrir áskriftina þína"
     }
   },

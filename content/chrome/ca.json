@@ -37,7 +37,7 @@
     },
     {
       "title": "Sense necessitat de registre",
-      "sub": "Prova-ho directament en aquesta pàgina — inicia sessió només per a més crèdits"
+      "sub": "Prova-ho directament en aquesta pàgina — inicia sessió només quan vulguis millorar el pla"
     },
     {
       "title": "Historial per parella de llengües",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "No cal registrar-se per començar",
-      "sub": "Prova-ho directament en aquesta pàgina — sense compte, sense contrasenya. Inicia sessió amb Google només si vols més crèdits diaris i historial sincronitzat entre dispositius.",
+      "sub": "Prova-ho directament en aquesta pàgina — sense compte, sense contrasenya. Inicia sessió amb Google només quan vulguis una quota mensual més gran i historial sincronitzat entre dispositius.",
       "bullets": [
         {
           "title": "Inici de sessió opcional amb un toc",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Necessito crear un compte?",
-        "a": "No. Prova-ho directament en aquesta pàgina sense registrar-te. Inicia sessió amb Google només si vols més crèdits diaris i historial sincronitzat entre dispositius."
+        "a": "No. Prova-ho directament en aquesta pàgina sense registrar-te. Inicia sessió amb Google només si vols una quota mensual més gran i historial sincronitzat entre dispositius."
       },
       {
         "q": "Es guarda el meu historial de traduccions?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Preus — Plans de Traducció de Veu i Text",
+      "description": "Tres plans mensuals senzills amb minuts de veu i caràcters de text inclosos. Prova-ho gratis sense registrar-te — no cal targeta."
+    },
+    "heading": "Preus mensuals",
+    "headingAccent": "senzills",
+    "sub": "Cada pla inclou minuts de veu i caràcters de text. Prova-ho gratis directament a la pàgina d'inici — sense registre, sense targeta.",
+    "perMonth": "/mes",
+    "mostPopular": "El més popular",
+    "cta": "Comença",
+    "freeNote": {
+      "title": "No cal cap pla gratuït — el nivell gratuït és la mateixa pàgina d'inici.",
+      "sub": "Tradueix sense registrar-te: cada visitant obté 2 minuts de veu i 4.000 caràcters per provar-ho, directament al widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 minuts de veu al mes",
+          "1.500.000 caràcters de text al mes",
+          "Fins a 30.000 caràcters per petició",
+          "Les 186 llengües",
+          "Historial de converses guardat"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 minuts de veu al mes",
+          "3.000.000 caràcters de text al mes",
+          "Fins a 100.000 caràcters per petició",
+          "Les 186 llengües",
+          "Historial de converses guardat",
+          "Processament prioritari"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 minuts de veu al mes",
+          "8.000.000 caràcters de text al mes",
+          "Fins a 150.000 caràcters per petició",
+          "Les 186 llengües",
+          "Historial de converses guardat",
+          "Processament prioritari"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Preguntes sobre",
+      "headingAccent": "preus",
+      "sub": "El que la gent pregunta abans de subscriure's.",
+      "items": [
+        {
+          "q": "Com funcionen els minuts de veu i els caràcters?",
+          "a": "Els minuts de veu cobreixen convertir la teva parla en text; els caràcters cobreixen la traducció de text (incloses les transcripcions editades). Cada pla renova tots dos cada mes."
+        },
+        {
+          "q": "Què passa quan se m'acaben?",
+          "a": "La traducció es pausa fins que es renovi la teva quota mensual o fins que actualitzis a un pla superior des del portal de facturació."
+        },
+        {
+          "q": "Hi ha alguna manera gratuïta de provar-ho?",
+          "a": "Sí — el widget de la pàgina d'inici funciona sense cap registre: cada visitant té 2 minuts de veu i 4.000 caràcters inclosos."
+        },
+        {
+          "q": "Puc cancel·lar quan vulgui?",
+          "a": "Sí. Gestiona o cancel·la la teva subscripció quan vulguis des del portal de facturació — sense cap compromís a llarg termini."
+        },
+        {
+          "q": "Puc canviar de pla més endavant?",
+          "a": "Sí, millora o redueix el pla quan vulguis; el nou pla t'atorga la quota mensual completa a l'instant."
+        },
+        {
+          "q": "Oferiu facturació anual?",
+          "a": "Encara no — de moment tots els plans es facturen mensualment."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Encara no ho tens clar?",
+      "headingAccent": "Prova-ho gratis primer.",
+      "sub": "No cal registrar-se — torna a la pàgina d'inici i comença a traduir a l'instant.",
+      "ctaLabel": "Prova-ho ara"
+    }
+  },
   "translator": {
     "topics": "Temes",
     "newTopic": "Tema nou",
@@ -235,7 +325,7 @@
     "stopAria": "Atura",
     "pricingLink": "Preus",
     "errors": {
-      "insufficientCredits": "Sense crèdits — millora el teu pla",
+      "insufficientCredits": "Quota esgotada — millora el teu pla",
       "textTooLong": "Text massa llarg per al teu pla"
     }
   },

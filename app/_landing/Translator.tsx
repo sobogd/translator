@@ -111,6 +111,7 @@ export function Translator({
   presetSource,
   presetTarget,
   initialTarget,
+  pricingHref = "/pricing",
 }: {
   texts: TranslatorTexts;
   /** Pair-page preset: pre-picked source language for the draft state. */
@@ -119,6 +120,8 @@ export function Translator({
   presetTarget?: string;
   /** Soft default target (locale homes): initial value only, localStorage wins. */
   initialTarget?: string;
+  /** Locale-local pricing path for the out-of-quota error link. */
+  pricingHref?: string;
 }) {
   const t = texts.translator;
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
@@ -511,7 +514,7 @@ export function Translator({
             <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
               <span>{error}</span>
               {error === t.errors.insufficientCredits && (
-                <a href="/pricing" className="shrink-0 font-medium underline">
+                <a href={pricingHref} className="shrink-0 font-medium underline">
                   {t.pricingLink}
                 </a>
               )}

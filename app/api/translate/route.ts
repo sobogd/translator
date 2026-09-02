@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { getLanguage } from "@/lib/languages";
-import { consumeCreditsForIdentity, maxCharsForIdentity } from "@/lib/credits";
-import { creditsForText } from "@/lib/plans";
+import { consumeChars, maxCharsForIdentity } from "@/lib/credits";
 import { translateText, translatePair } from "@/lib/gemini-translate";
 
 export const runtime = "nodejs";
@@ -35,8 +34,7 @@ export async function POST(req: NextRequest) {
     if (text.length > maxChars) {
       return NextResponse.json({ error: "text too long for your plan" }, { status: 413 });
     }
-    const cost = creditsForText(text.length);
-    const hasCredits = await consumeCreditsForIdentity(identity, cost);
+    const hasCredits = await consumeChars(identity, text.length);
     if (!hasCredits) {
       return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
     }

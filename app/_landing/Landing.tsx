@@ -8,6 +8,7 @@ import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
+import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import type { TranslatorTexts } from "./types";
 
@@ -52,7 +53,7 @@ export function Landing({
       />
       <Container className="py-6">
         <Band id="app">
-          <Translator texts={texts} initialTarget={locale} />
+          <Translator texts={texts} initialTarget={locale} pricingHref={localePath(locale, "pricing")} />
         </Band>
         <Band>
           <Hero texts={texts.hero} />

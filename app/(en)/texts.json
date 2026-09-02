@@ -37,7 +37,7 @@
     },
     {
       "title": "No sign-up needed",
-      "sub": "Try it right on this page — sign in only for more credits"
+      "sub": "Try it right on this page — sign in only when you upgrade"
     },
     {
       "title": "History per language pair",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "No sign-up required to start",
-      "sub": "Try it right on this page — no account, no password. Sign in with Google only when you want more daily credits and history synced across devices.",
+      "sub": "Try it right on this page — no account, no password. Sign in with Google only when you want a bigger monthly quota and history synced across devices.",
       "bullets": [
         {
           "title": "Optional one-tap sign-in",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Do I need to create an account?",
-        "a": "No. Try it right on this page with no sign-up. Sign in with Google only if you want more daily credits and history synced across devices."
+        "a": "No. Try it right on this page with no sign-up. Sign in with Google only if you want a bigger monthly quota and history synced across devices."
       },
       {
         "q": "Is my translation history saved?",
@@ -271,7 +271,7 @@
     "stopAria": "Stop",
     "pricingLink": "Pricing",
     "errors": {
-      "insufficientCredits": "Out of credits — upgrade your plan",
+      "insufficientCredits": "Quota used up — upgrade your plan",
       "textTooLong": "Text too long for your plan"
     }
   },
@@ -279,5 +279,95 @@
     "emptyState": "Nothing here yet. Type a message or record your voice below.",
     "readAloudAria": "Read aloud",
     "copyAria": "Copy"
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing — Voice & Text Translation Plans",
+      "description": "Three simple monthly plans with voice minutes and text characters included. Try it free without signing up — no card required."
+    },
+    "heading": "Simple monthly",
+    "headingAccent": "pricing",
+    "sub": "Every plan includes voice minutes and text characters. Try it free right on the homepage — no sign-up, no card.",
+    "perMonth": "/mo",
+    "mostPopular": "Most popular",
+    "cta": "Get started",
+    "freeNote": {
+      "title": "No free plan needed — the free tier is the homepage itself.",
+      "sub": "Translate without signing up: every visitor gets 2 voice minutes and 4,000 characters to try, right in the widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 voice minutes per month",
+          "1,500,000 text characters per month",
+          "Up to 30,000 characters per request",
+          "All 186 languages",
+          "Saved conversation history"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 voice minutes per month",
+          "3,000,000 text characters per month",
+          "Up to 100,000 characters per request",
+          "All 186 languages",
+          "Saved conversation history",
+          "Priority processing"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1,500 voice minutes per month",
+          "8,000,000 text characters per month",
+          "Up to 150,000 characters per request",
+          "All 186 languages",
+          "Saved conversation history",
+          "Priority processing"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Pricing",
+      "headingAccent": "questions",
+      "sub": "What people ask before subscribing.",
+      "items": [
+        {
+          "q": "How do voice minutes and characters work?",
+          "a": "Voice minutes cover turning your speech into text; characters cover translating text (including edited transcripts). Each plan refills both every month."
+        },
+        {
+          "q": "What happens when I run out?",
+          "a": "Translation pauses until your monthly quota refills or you upgrade to a higher plan from the billing portal."
+        },
+        {
+          "q": "Is there a free way to try it?",
+          "a": "Yes — the homepage widget works without any sign-up: 2 voice minutes and 4,000 characters are included for every visitor."
+        },
+        {
+          "q": "Can I cancel anytime?",
+          "a": "Yes. Manage or cancel your subscription anytime from the billing portal — no long-term commitment."
+        },
+        {
+          "q": "Can I change plans later?",
+          "a": "Yes, upgrade or downgrade anytime; a new plan grants its full monthly quota immediately."
+        },
+        {
+          "q": "Do you offer yearly billing?",
+          "a": "Not yet — all plans are billed monthly for now."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Not sure yet?",
+      "headingAccent": "Try it free first.",
+      "sub": "No sign-up required — go back to the homepage and translate right away.",
+      "ctaLabel": "Try it now"
+    }
   }
 }

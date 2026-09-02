@@ -37,7 +37,7 @@
     },
     {
       "title": "Registracija ni potrebna",
-      "sub": "Preizkusite kar na tej strani – prijava le za več dobroimetja"
+      "sub": "Preizkusite kar na tej strani – prijava le, ko nadgradite paket"
     },
     {
       "title": "Zgodovina po jezikovnem paru",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Registracija za začetek ni potrebna",
-      "sub": "Preizkusite kar na tej strani – brez računa, brez gesla. Prijavite se z Googlom le, ko želite več dnevnega dobroimetja in zgodovino, sinhronizirano med napravami.",
+      "sub": "Preizkusite kar na tej strani – brez računa, brez gesla. Prijavite se z Googlom le, ko želite večjo mesečno kvoto in zgodovino, sinhronizirano med napravami.",
       "bullets": [
         {
           "title": "Neobvezna prijava z enim dotikom",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Ali moram ustvariti račun?",
-        "a": "Ne. Preizkusite kar na tej strani brez registracije. Prijavite se z Googlom le, če želite več dnevnega dobroimetja in zgodovino, sinhronizirano med napravami."
+        "a": "Ne. Preizkusite kar na tej strani brez registracije. Prijavite se z Googlom le, če želite večjo mesečno kvoto in zgodovino, sinhronizirano med napravami."
       },
       {
         "q": "Ali se moja zgodovina prevodov shranjuje?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Cenik — Paketi za glas in besedilo",
+      "description": "Trije preprosti mesečni paketi z glasovnimi minutami in znaki besedila. Preizkusite brezplačno brez registracije — kartica ni potrebna."
+    },
+    "heading": "Preprost mesečni",
+    "headingAccent": "cenik",
+    "sub": "Vsak paket vključuje glasovne minute in znake besedila. Preizkusite brezplačno kar na domači strani — brez registracije, brez kartice.",
+    "perMonth": "/mes",
+    "mostPopular": "Najbolj priljubljen",
+    "cta": "Začni",
+    "freeNote": {
+      "title": "Brezplačen paket ni potreben — brezplačna raven je kar domača stran.",
+      "sub": "Prevajajte brez registracije: vsak obiskovalec za preizkus dobi 2 glasovni minuti in 4.000 znakov, kar v pripomočku."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 glasovnih minut na mesec",
+          "1.500.000 znakov besedila na mesec",
+          "Do 30.000 znakov na zahtevo",
+          "Vseh 186 jezikov",
+          "Shranjena zgodovina pogovorov"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 glasovnih minut na mesec",
+          "3.000.000 znakov besedila na mesec",
+          "Do 100.000 znakov na zahtevo",
+          "Vseh 186 jezikov",
+          "Shranjena zgodovina pogovorov",
+          "Prednostna obdelava"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 glasovnih minut na mesec",
+          "8.000.000 znakov besedila na mesec",
+          "Do 150.000 znakov na zahtevo",
+          "Vseh 186 jezikov",
+          "Shranjena zgodovina pogovorov",
+          "Prednostna obdelava"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Vprašanja o",
+      "headingAccent": "cenah",
+      "sub": "Kaj ljudje sprašujejo pred naročilom.",
+      "items": [
+        {
+          "q": "Kako delujejo glasovne minute in znaki?",
+          "a": "Glasovne minute pokrivajo pretvorbo govora v besedilo; znaki pokrivajo prevajanje besedila (vključno z urejenimi prepisi). Vsak paket oboje obnovi vsak mesec."
+        },
+        {
+          "q": "Kaj se zgodi, ko mi zmanjka?",
+          "a": "Prevajanje se ustavi, dokler se mesečna kvota ne obnovi ali dokler ne nadgradite paketa prek portala za obračun."
+        },
+        {
+          "q": "Ali obstaja brezplačen način preizkusa?",
+          "a": "Da — pripomoček na domači strani deluje brez registracije: vsak obiskovalec ima na voljo 2 glasovni minuti in 4.000 znakov."
+        },
+        {
+          "q": "Ali lahko kadar koli prekličem?",
+          "a": "Da. Naročnino lahko kadar koli upravljate ali prekličete prek portala za obračun — brez dolgoročne obveznosti."
+        },
+        {
+          "q": "Ali lahko kasneje spremenim paket?",
+          "a": "Da, kadar koli nadgradite ali znižate paket; novi paket takoj dobi svojo polno mesečno kvoto."
+        },
+        {
+          "q": "Ali ponujate letni obračun?",
+          "a": "Še ne — vsi paketi se trenutno obračunavajo mesečno."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Še niste prepričani?",
+      "headingAccent": "Najprej preizkusite brezplačno.",
+      "sub": "Registracija ni potrebna — vrnite se na domačo stran in takoj začnite prevajati.",
+      "ctaLabel": "Preizkusi zdaj"
+    }
+  },
   "translator": {
     "topics": "Teme",
     "newTopic": "Nova tema",
@@ -235,7 +325,7 @@
     "stopAria": "Ustavi",
     "pricingLink": "Cenik",
     "errors": {
-      "insufficientCredits": "Zmanjkalo je dobroimetja – nadgradite paket",
+      "insufficientCredits": "Kvota je porabljena – nadgradite paket",
       "textTooLong": "Besedilo je predolgo za vaš paket"
     }
   },

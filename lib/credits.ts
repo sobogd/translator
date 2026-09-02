@@ -1,10 +1,15 @@
 import { prisma } from "./prisma";
-import { ANONYMOUS_CREDIT_LIMIT, PLANS, type PlanId } from "./plans";
+import { FREE_TRIAL, PLANS, type PlanId } from "./plans";
 import type { Identity } from "./auth";
 
-// Atomic conditional decrement: a single UPDATE with a WHERE guard on the
-// current balance, so two concurrent requests can never both succeed past
-// zero (no read-then-write race). Mirrors iq-rest's ai-quota.ts pattern.
+// Two independent quotas: characters of text translation and seconds of STT
+// audio. Consumption stays an atomic conditional decrement (single UPDATE
+// with a WHERE guard on the balance) so two concurrent requests can never
+// both succeed past zero — mirrors iq-rest's ai-quota.ts pattern.
+//
+// No subscription (plan not in PLANS) = the lifetime free-trial pool that the
+// account was created with; it never refills. Active plans refill lazily
+// once quotaResetAt has elapsed — cheap enough to run before every consume.
 
 async function getOrCreateAccount(email: string) {
   return prisma.account.upsert({
@@ -14,47 +19,28 @@ async function getOrCreateAccount(email: string) {
   });
 }
 
-// Lazily refills the credit balance once its period has elapsed. Cheap
-// enough to call before every consume — no cron needed.
 async function refillIfDue(email: string) {
   const account = await getOrCreateAccount(email);
-  if (Date.now() < account.creditsResetAt.getTime()) return account;
+  const plan = PLANS[account.plan as PlanId];
+  if (!plan) return account; // free trial: lifetime pool, no refill
+  if (Date.now() < account.quotaResetAt.getTime()) return account;
 
-  const plan = PLANS[account.plan as PlanId] ?? PLANS.FREE;
-  const nextReset = new Date(Date.now() + plan.periodDays * 86_400_000);
+  const nextReset = new Date(Date.now() + 30 * 86_400_000);
   await prisma.account.updateMany({
-    where: { email, creditsResetAt: account.creditsResetAt },
-    data: { creditsBalance: plan.creditsPerPeriod, creditsResetAt: nextReset },
+    where: { email, quotaResetAt: account.quotaResetAt },
+    data: {
+      charsBalance: plan.charsPerMonth,
+      secondsBalance: plan.minutesPerMonth * 60,
+      quotaResetAt: nextReset,
+    },
   });
   return prisma.account.findUniqueOrThrow({ where: { email } });
 }
 
 export async function getAccountUsage(email: string) {
   const account = await refillIfDue(email);
-  const plan = PLANS[account.plan as PlanId] ?? PLANS.FREE;
+  const plan = PLANS[account.plan as PlanId] ?? null;
   return { account, plan };
-}
-
-export async function consumeAccountCredits(email: string, cost: number): Promise<boolean> {
-  await refillIfDue(email);
-  const result = await prisma.account.updateMany({
-    where: { email, creditsBalance: { gte: cost } },
-    data: { creditsBalance: { decrement: cost } },
-  });
-  return result.count > 0;
-}
-
-export async function consumeAnonymousCredits(fingerprint: string, cost: number): Promise<boolean> {
-  await prisma.anonymousCredit.upsert({
-    where: { fingerprint },
-    create: { fingerprint },
-    update: {},
-  });
-  const result = await prisma.anonymousCredit.updateMany({
-    where: { fingerprint, creditsUsed: { lte: ANONYMOUS_CREDIT_LIMIT - cost } },
-    data: { creditsUsed: { increment: cost } },
-  });
-  return result.count > 0;
 }
 
 // identity.ownerKey is "fp:<fingerprint>" for anonymous identities (see
@@ -63,13 +49,54 @@ function fingerprintOf(identity: Identity): string {
   return identity.ownerKey.slice(3);
 }
 
-export async function maxCharsForIdentity(identity: Identity): Promise<number> {
-  if (identity.kind === "anonymous") return PLANS.FREE.maxCharsPerRequest;
-  const { plan } = await getAccountUsage(identity.ownerKey);
-  return plan.maxCharsPerRequest;
+async function ensureAnonymousRow(fingerprint: string) {
+  await prisma.anonymousCredit.upsert({
+    where: { fingerprint },
+    create: { fingerprint },
+    update: {},
+  });
 }
 
-export async function consumeCreditsForIdentity(identity: Identity, cost: number): Promise<boolean> {
-  if (identity.kind === "anonymous") return consumeAnonymousCredits(fingerprintOf(identity), cost);
-  return consumeAccountCredits(identity.ownerKey, cost);
+export async function maxCharsForIdentity(identity: Identity): Promise<number> {
+  if (identity.kind === "anonymous") return FREE_TRIAL.maxCharsPerRequest;
+  const { plan } = await getAccountUsage(identity.ownerKey);
+  return plan?.maxCharsPerRequest ?? FREE_TRIAL.maxCharsPerRequest;
+}
+
+export async function consumeChars(identity: Identity, chars: number): Promise<boolean> {
+  const cost = Math.max(1, chars);
+  if (identity.kind === "anonymous") {
+    const fingerprint = fingerprintOf(identity);
+    await ensureAnonymousRow(fingerprint);
+    const result = await prisma.anonymousCredit.updateMany({
+      where: { fingerprint, charsUsed: { lte: FREE_TRIAL.chars - cost } },
+      data: { charsUsed: { increment: cost } },
+    });
+    return result.count > 0;
+  }
+  await refillIfDue(identity.ownerKey);
+  const result = await prisma.account.updateMany({
+    where: { email: identity.ownerKey, charsBalance: { gte: cost } },
+    data: { charsBalance: { decrement: cost } },
+  });
+  return result.count > 0;
+}
+
+export async function consumeSeconds(identity: Identity, seconds: number): Promise<boolean> {
+  const cost = Math.max(1, Math.ceil(seconds));
+  if (identity.kind === "anonymous") {
+    const fingerprint = fingerprintOf(identity);
+    await ensureAnonymousRow(fingerprint);
+    const result = await prisma.anonymousCredit.updateMany({
+      where: { fingerprint, secondsUsed: { lte: FREE_TRIAL.seconds - cost } },
+      data: { secondsUsed: { increment: cost } },
+    });
+    return result.count > 0;
+  }
+  await refillIfDue(identity.ownerKey);
+  const result = await prisma.account.updateMany({
+    where: { email: identity.ownerKey, secondsBalance: { gte: cost } },
+    data: { secondsBalance: { decrement: cost } },
+  });
+  return result.count > 0;
 }

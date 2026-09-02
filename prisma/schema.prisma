@@ -43,19 +43,24 @@ model Account {
   subscriptionStatus   String    @default("INACTIVE") // "INACTIVE" | "ACTIVE" | "PAST_DUE" | "CANCELED" | "EXPIRED"
   currentPeriodEnd     DateTime?
   cancelAtPeriodEnd    Boolean   @default(false)
-  creditsBalance       Int       @default(40)
-  creditsResetAt       DateTime  @default(now())
+  // Quotas (chars of text translation + seconds of STT audio). Without a
+  // subscription these hold the lifetime free-trial pool (no refill); on an
+  // active plan they refill to the plan's monthly allowance at quotaResetAt.
+  charsBalance         Int       @default(4000)
+  secondsBalance       Int       @default(120)
+  quotaResetAt         DateTime  @default(now())
   createdAt            DateTime  @default(now())
   updatedAt            DateTime  @updatedAt
 
   @@map("accounts")
 }
 
-// One free lifetime credit pool per browser fingerprint, for the unauthenticated
+// One free lifetime quota pool per browser fingerprint, for the unauthenticated
 // landing-page translate widget. Not linked to Account/email.
 model AnonymousCredit {
   fingerprint String   @id
-  creditsUsed Int      @default(0)
+  charsUsed   Int      @default(0)
+  secondsUsed Int      @default(0)
   createdAt   DateTime @default(now())
 
   @@map("anonymous_credits")

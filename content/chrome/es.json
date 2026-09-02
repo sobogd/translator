@@ -37,7 +37,7 @@
     },
     {
       "title": "Sin necesidad de registro",
-      "sub": "Pruébalo directamente en esta página — inicia sesión solo para más créditos"
+      "sub": "Pruébalo directamente en esta página — inicia sesión solo para mejorar tu plan"
     },
     {
       "title": "Historial por par de idiomas",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "No hace falta registrarse para empezar",
-      "sub": "Pruébalo directamente en esta página — sin cuenta, sin contraseña. Inicia sesión con Google solo si quieres más créditos diarios e historial sincronizado entre dispositivos.",
+      "sub": "Pruébalo directamente en esta página — sin cuenta, sin contraseña. Inicia sesión con Google solo si quieres una cuota mensual más grande e historial sincronizado entre dispositivos.",
       "bullets": [
         {
           "title": "Inicio de sesión opcional con un toque",
@@ -167,7 +167,7 @@
       },
       {
         "q": "¿Necesito crear una cuenta?",
-        "a": "No. Pruébalo directamente en esta página sin registrarte. Inicia sesión con Google solo si quieres más créditos diarios e historial sincronizado entre dispositivos."
+        "a": "No. Pruébalo directamente en esta página sin registrarte. Inicia sesión con Google solo si quieres una cuota mensual más grande e historial sincronizado entre dispositivos."
       },
       {
         "q": "¿Se guarda mi historial de traducciones?",
@@ -232,6 +232,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Precios — Planes de traducción de voz y texto",
+      "description": "Tres planes mensuales sencillos, cada uno con minutos de voz y caracteres de texto incluidos. Pruébalo gratis sin registrarte — no hace falta tarjeta."
+    },
+    "heading": "Precios mensuales",
+    "headingAccent": "sencillos",
+    "sub": "Cada plan incluye minutos de voz y caracteres de texto. Pruébalo gratis en la propia página de inicio — sin registro, sin tarjeta.",
+    "perMonth": "/mes",
+    "mostPopular": "Más popular",
+    "cta": "Empezar",
+    "freeNote": {
+      "title": "No hace falta un plan gratis — el nivel gratuito ya está en la página de inicio.",
+      "sub": "Traduce sin registrarte: cada visitante tiene 2 minutos de voz y 4.000 caracteres para probar, directamente en el widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 minutos de voz al mes",
+          "1.500.000 caracteres de texto al mes",
+          "Hasta 30.000 caracteres por solicitud",
+          "Los 186 idiomas",
+          "Historial de conversaciones guardado"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 minutos de voz al mes",
+          "3.000.000 caracteres de texto al mes",
+          "Hasta 100.000 caracteres por solicitud",
+          "Los 186 idiomas",
+          "Historial de conversaciones guardado",
+          "Procesamiento prioritario"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 minutos de voz al mes",
+          "8.000.000 caracteres de texto al mes",
+          "Hasta 150.000 caracteres por solicitud",
+          "Los 186 idiomas",
+          "Historial de conversaciones guardado",
+          "Procesamiento prioritario"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Preguntas sobre",
+      "headingAccent": "los precios",
+      "sub": "Lo que la gente pregunta antes de suscribirse.",
+      "items": [
+        {
+          "q": "¿Cómo funcionan los minutos de voz y los caracteres?",
+          "a": "Los minutos de voz cubren la conversión de tu voz en texto; los caracteres cubren la traducción de texto (incluidas las transcripciones editadas). Cada plan renueva ambos cada mes."
+        },
+        {
+          "q": "¿Qué pasa si se me agotan?",
+          "a": "La traducción se pausa hasta que se renueve tu cuota mensual o pases a un plan superior desde el portal de facturación."
+        },
+        {
+          "q": "¿Hay alguna forma gratuita de probarlo?",
+          "a": "Sí — el widget de la página de inicio funciona sin registrarte: cada visitante tiene 2 minutos de voz y 4.000 caracteres incluidos."
+        },
+        {
+          "q": "¿Puedo cancelar en cualquier momento?",
+          "a": "Sí. Gestiona o cancela tu suscripción cuando quieras desde el portal de facturación — sin permanencia."
+        },
+        {
+          "q": "¿Puedo cambiar de plan más adelante?",
+          "a": "Sí, sube o baja de plan cuando quieras; el nuevo plan te da su cuota mensual completa al momento."
+        },
+        {
+          "q": "¿Ofrecéis facturación anual?",
+          "a": "Todavía no — por ahora todos los planes se facturan mensualmente."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "¿Aún no lo tienes claro?",
+      "headingAccent": "Pruébalo gratis primero.",
+      "sub": "No hace falta registrarte — vuelve a la página de inicio y traduce ahora mismo.",
+      "ctaLabel": "Probarlo ahora"
+    }
+  },
   "translator": {
     "topics": "Temas",
     "newTopic": "Nuevo tema",
@@ -255,7 +345,7 @@
     "stopAria": "Detener",
     "pricingLink": "Precios",
     "errors": {
-      "insufficientCredits": "Sin créditos — mejora tu plan",
+      "insufficientCredits": "Cuota agotada — mejora tu plan",
       "textTooLong": "Texto demasiado largo para tu plan"
     }
   },

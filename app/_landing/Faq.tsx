@@ -11,7 +11,7 @@ const DEFAULT_ITEMS: FaqItem[] = [
   },
   {
     q: "Do I need to create an account?",
-    a: "No. Try it right on this page with no sign-up. Sign in with Google only if you want more daily credits and history synced across devices.",
+    a: "No. Try it right on this page with no sign-up. Sign in with Google only if you want a bigger monthly quota and history synced across devices.",
   },
   {
     q: "Is my translation history saved?",

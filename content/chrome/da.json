@@ -37,7 +37,7 @@
     },
     {
       "title": "Ingen registrering nødvendig",
-      "sub": "Prøv direkte på denne side — log kun ind for flere krediter"
+      "sub": "Prøv direkte på denne side — log kun ind for en større månedlig kvote"
     },
     {
       "title": "Historik pr. sprogpar",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Ingen registrering nødvendig for at starte",
-      "sub": "Prøv direkte på denne side — ingen konto, intet kodeord. Log kun ind med Google, når du vil have flere daglige krediter og historik synkroniseret på tværs af enheder.",
+      "sub": "Prøv direkte på denne side — ingen konto, intet kodeord. Log kun ind med Google, når du vil have en større månedlig kvote og historik synkroniseret på tværs af enheder.",
       "bullets": [
         {
           "title": "Valgfri login med ét tryk",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Skal jeg oprette en konto?",
-        "a": "Nej. Prøv det direkte på denne side uden registrering. Log kun ind med Google, hvis du vil have flere daglige krediter og historik synkroniseret på tværs af enheder."
+        "a": "Nej. Prøv det direkte på denne side uden registrering. Log kun ind med Google, hvis du vil have en større månedlig kvote og historik synkroniseret på tværs af enheder."
       },
       {
         "q": "Gemmes min oversættelseshistorik?",
@@ -220,6 +220,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Priser – Planer for Stemme & Tekst",
+      "description": "Tre enkle månedlige planer med stemmeminutter og tegn inkluderet, til alle 186 sprog. Prøv gratis direkte uden registrering — intet kort krævet."
+    },
+    "heading": "Enkle månedlige",
+    "headingAccent": "priser",
+    "sub": "Hver plan inkluderer stemmeminutter og tekst-tegn. Prøv gratis direkte på forsiden — ingen registrering, intet kort.",
+    "perMonth": "/md.",
+    "mostPopular": "Mest populær",
+    "cta": "Kom i gang",
+    "freeNote": {
+      "title": "Ingen gratis plan nødvendig — forsiden er selv det gratis niveau.",
+      "sub": "Oversæt uden registrering: hver besøgende får 2 stemmeminutter og 4.000 tegn at prøve, direkte i widgeten."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 stemmeminutter om måneden",
+          "1.500.000 tekst-tegn om måneden",
+          "Op til 30.000 tegn pr. forespørgsel",
+          "Alle 186 sprog",
+          "Gemt samtalehistorik"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 stemmeminutter om måneden",
+          "3.000.000 tekst-tegn om måneden",
+          "Op til 100.000 tegn pr. forespørgsel",
+          "Alle 186 sprog",
+          "Gemt samtalehistorik",
+          "Prioriteret behandling"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 stemmeminutter om måneden",
+          "8.000.000 tekst-tegn om måneden",
+          "Op til 150.000 tegn pr. forespørgsel",
+          "Alle 186 sprog",
+          "Gemt samtalehistorik",
+          "Prioriteret behandling"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Spørgsmål om",
+      "headingAccent": "priser",
+      "sub": "Det folk spørger om, før de abonnerer.",
+      "items": [
+        {
+          "q": "Hvordan fungerer stemmeminutter og tegn?",
+          "a": "Stemmeminutter dækker omdannelse af din tale til tekst; tegn dækker oversættelse af tekst (inklusive redigerede transskriptioner). Hver plan genopfylder begge hver måned."
+        },
+        {
+          "q": "Hvad sker der, når jeg løber tør?",
+          "a": "Oversættelse sættes på pause, indtil din månedlige kvote genopfyldes, eller du opgraderer til en højere plan fra faktureringsportalen."
+        },
+        {
+          "q": "Er der en gratis måde at prøve det på?",
+          "a": "Ja — widgeten på forsiden fungerer uden registrering: 2 stemmeminutter og 4.000 tegn er inkluderet for hver besøgende."
+        },
+        {
+          "q": "Kan jeg opsige når som helst?",
+          "a": "Ja. Administrer eller opsig dit abonnement når som helst fra faktureringsportalen — ingen langsigtet binding."
+        },
+        {
+          "q": "Kan jeg skifte plan senere?",
+          "a": "Ja, opgrader eller nedgrader når som helst; en ny plan giver straks sin fulde månedlige kvote."
+        },
+        {
+          "q": "Tilbyder I årlig fakturering?",
+          "a": "Ikke endnu — alle planer faktureres månedligt indtil videre."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Stadig i tvivl?",
+      "headingAccent": "Prøv det gratis først.",
+      "sub": "Ingen registrering nødvendig — gå tilbage til forsiden og begynd at oversætte med det samme.",
+      "ctaLabel": "Prøv nu"
+    }
+  },
   "translator": {
     "topics": "Emner",
     "newTopic": "Nyt emne",
@@ -243,7 +333,7 @@
     "stopAria": "Stop",
     "pricingLink": "Priser",
     "errors": {
-      "insufficientCredits": "Løbet tør for krediter — opgrader din plan",
+      "insufficientCredits": "Kvote opbrugt — opgrader din plan",
       "textTooLong": "Teksten er for lang til din plan"
     }
   },

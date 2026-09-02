@@ -37,7 +37,7 @@
     },
     {
       "title": "Bez registrácie",
-      "sub": "Vyskúšajte priamo na tejto stránke — prihláste sa len kvôli väčšiemu množstvu kreditov"
+      "sub": "Vyskúšajte priamo na tejto stránke — prihláste sa len vtedy, keď budete chcieť vylepšiť plán"
     },
     {
       "title": "História pre každú jazykovú dvojicu",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Bez registrácie na začiatok",
-      "sub": "Vyskúšajte priamo na tejto stránke — bez účtu, bez hesla. Prihláste sa cez Google len vtedy, keď chcete viac denných kreditov a históriu synchronizovanú medzi zariadeniami.",
+      "sub": "Vyskúšajte priamo na tejto stránke — bez účtu, bez hesla. Prihláste sa cez Google len vtedy, keď chcete väčšiu mesačnú kvótu a históriu synchronizovanú medzi zariadeniami.",
       "bullets": [
         {
           "title": "Voliteľné prihlásenie jedným klepnutím",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Musím si vytvoriť účet?",
-        "a": "Nie. Vyskúšajte priamo na tejto stránke bez registrácie. Prihláste sa cez Google len vtedy, keď chcete viac denných kreditov a históriu synchronizovanú medzi zariadeniami."
+        "a": "Nie. Vyskúšajte priamo na tejto stránke bez registrácie. Prihláste sa cez Google len vtedy, keď chcete väčšiu mesačnú kvótu a históriu synchronizovanú medzi zariadeniami."
       },
       {
         "q": "Ukladá sa moja história prekladov?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Cenník — Plány pre hlas a text",
+      "description": "Tri jednoduché mesačné plány s hlasovými minútami a textovými znakmi. Vyskúšajte zadarmo bez registrácie — karta nie je potrebná."
+    },
+    "heading": "Jednoduchý mesačný",
+    "headingAccent": "cenník",
+    "sub": "Každý plán zahŕňa hlasové minúty a textové znaky. Vyskúšajte zadarmo priamo na domovskej stránke — bez registrácie, bez karty.",
+    "perMonth": "/mes",
+    "mostPopular": "Najobľúbenejší",
+    "cta": "Začať",
+    "freeNote": {
+      "title": "Bezplatný plán nie je potrebný — bezplatná úroveň je samotná domovská stránka.",
+      "sub": "Prekladajte bez registrácie: každý návštevník dostane na vyskúšanie 2 hlasové minúty a 4.000 znakov priamo vo widgete."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 hlasových minút mesačne",
+          "1.500.000 textových znakov mesačne",
+          "Až 30.000 znakov na požiadavku",
+          "Všetkých 186 jazykov",
+          "Uložená história rozhovorov"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 hlasových minút mesačne",
+          "3.000.000 textových znakov mesačne",
+          "Až 100.000 znakov na požiadavku",
+          "Všetkých 186 jazykov",
+          "Uložená história rozhovorov",
+          "Prioritné spracovanie"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1.500 hlasových minút mesačne",
+          "8.000.000 textových znakov mesačne",
+          "Až 150.000 znakov na požiadavku",
+          "Všetkých 186 jazykov",
+          "Uložená história rozhovorov",
+          "Prioritné spracovanie"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Otázky o",
+      "headingAccent": "cenách",
+      "sub": "Na čo sa ľudia pýtajú pred predplatením.",
+      "items": [
+        {
+          "q": "Ako fungujú hlasové minúty a znaky?",
+          "a": "Hlasové minúty pokrývajú prevod vašej reči na text; znaky pokrývajú preklad textu (vrátane upravených prepisov). Každý plán dopĺňa oboje každý mesiac."
+        },
+        {
+          "q": "Čo sa stane, keď mi dôjdu?",
+          "a": "Preklad sa pozastaví, kým sa vaša mesačná kvóta nedoplní alebo kým neprejdete na vyšší plán cez portál fakturácie."
+        },
+        {
+          "q": "Existuje bezplatný spôsob vyskúšania?",
+          "a": "Áno — widget na domovskej stránke funguje bez akejkoľvek registrácie: 2 hlasové minúty a 4.000 znakov sú zahrnuté pre každého návštevníka."
+        },
+        {
+          "q": "Môžem kedykoľvek zrušiť?",
+          "a": "Áno. Spravujte alebo zrušte svoje predplatné kedykoľvek cez portál fakturácie — bez dlhodobého záväzku."
+        },
+        {
+          "q": "Môžem neskôr zmeniť plán?",
+          "a": "Áno, kedykoľvek prejdite na vyšší alebo nižší plán; nový plán okamžite získa svoju plnú mesačnú kvótu."
+        },
+        {
+          "q": "Ponúkate ročnú fakturáciu?",
+          "a": "Zatiaľ nie — všetky plány sa momentálne fakturujú mesačne."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Ešte si nie ste istí?",
+      "headingAccent": "Najprv to vyskúšajte zadarmo.",
+      "sub": "Registrácia nie je potrebná — vráťte sa na domovskú stránku a začnite prekladať hneď.",
+      "ctaLabel": "Vyskúšať teraz"
+    }
+  },
   "translator": {
     "topics": "Vlákna",
     "newTopic": "Nové vlákno",
@@ -235,7 +325,7 @@
     "stopAria": "Zastaviť",
     "pricingLink": "Cenník",
     "errors": {
-      "insufficientCredits": "Minuli sa kredity — vylepšite svoj plán",
+      "insufficientCredits": "Kvóta je vyčerpaná — vylepšite svoj plán",
       "textTooLong": "Text je pre váš plán príliš dlhý"
     }
   },

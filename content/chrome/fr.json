@@ -37,7 +37,7 @@
     },
     {
       "title": "Aucune inscription requise",
-      "sub": "Essayez directement sur cette page — connectez-vous seulement pour plus de crédits"
+      "sub": "Essayez directement sur cette page — connectez-vous seulement pour passer à un forfait supérieur"
     },
     {
       "title": "Historique par paire de langues",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Aucune inscription requise pour démarrer",
-      "sub": "Essayez directement sur cette page — sans compte, sans mot de passe. Connectez-vous avec Google seulement pour plus de crédits quotidiens et un historique synchronisé entre vos appareils.",
+      "sub": "Essayez directement sur cette page — sans compte, sans mot de passe. Connectez-vous avec Google seulement pour un quota mensuel plus élevé et un historique synchronisé entre vos appareils.",
       "bullets": [
         {
           "title": "Connexion facultative en un appui",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Dois-je créer un compte ?",
-        "a": "Non. Essayez directement sur cette page sans inscription. Connectez-vous avec Google seulement si vous voulez plus de crédits quotidiens et un historique synchronisé entre vos appareils."
+        "a": "Non. Essayez directement sur cette page sans inscription. Connectez-vous avec Google seulement si vous voulez un quota mensuel plus élevé et un historique synchronisé entre vos appareils."
       },
       {
         "q": "Mon historique de traduction est-il enregistré ?",
@@ -232,6 +232,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Tarifs — Formules de traduction vocale et texte",
+      "description": "Trois formules mensuelles simples avec minutes vocales et caractères de texte inclus. Essayez gratuitement sans inscription — sans carte bancaire."
+    },
+    "heading": "Des tarifs mensuels",
+    "headingAccent": "simples",
+    "sub": "Chaque formule inclut des minutes vocales et des caractères de texte. Essayez gratuitement directement sur la page d'accueil — sans inscription, sans carte.",
+    "perMonth": "/mois",
+    "mostPopular": "Le plus populaire",
+    "cta": "Commencer",
+    "freeNote": {
+      "title": "Pas besoin de formule gratuite — la page d'accueil est déjà le niveau gratuit.",
+      "sub": "Traduisez sans inscription : chaque visiteur dispose de 2 minutes vocales et 4 000 caractères à l'essai, directement dans le widget."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 minutes vocales par mois",
+          "1 500 000 caractères de texte par mois",
+          "Jusqu'à 30 000 caractères par requête",
+          "Les 186 langues",
+          "Historique des conversations sauvegardé"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 minutes vocales par mois",
+          "3 000 000 caractères de texte par mois",
+          "Jusqu'à 100 000 caractères par requête",
+          "Les 186 langues",
+          "Historique des conversations sauvegardé",
+          "Traitement prioritaire"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1 500 minutes vocales par mois",
+          "8 000 000 caractères de texte par mois",
+          "Jusqu'à 150 000 caractères par requête",
+          "Les 186 langues",
+          "Historique des conversations sauvegardé",
+          "Traitement prioritaire"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Questions sur",
+      "headingAccent": "les tarifs",
+      "sub": "Ce que les gens demandent avant de s'abonner.",
+      "items": [
+        {
+          "q": "Comment fonctionnent les minutes vocales et les caractères ?",
+          "a": "Les minutes vocales couvrent la conversion de votre voix en texte ; les caractères couvrent la traduction de texte (y compris les transcriptions modifiées). Chaque formule renouvelle les deux tous les mois."
+        },
+        {
+          "q": "Que se passe-t-il quand j'atteins la limite ?",
+          "a": "La traduction se met en pause jusqu'au renouvellement de votre quota mensuel ou jusqu'à ce que vous passiez à une formule supérieure depuis le portail de facturation."
+        },
+        {
+          "q": "Puis-je l'essayer gratuitement ?",
+          "a": "Oui — le widget de la page d'accueil fonctionne sans inscription : chaque visiteur dispose de 2 minutes vocales et 4 000 caractères inclus."
+        },
+        {
+          "q": "Puis-je annuler à tout moment ?",
+          "a": "Oui. Gérez ou annulez votre abonnement à tout moment depuis le portail de facturation — sans engagement."
+        },
+        {
+          "q": "Puis-je changer de formule plus tard ?",
+          "a": "Oui, passez à une formule supérieure ou inférieure quand vous le souhaitez ; la nouvelle formule accorde immédiatement son quota mensuel complet."
+        },
+        {
+          "q": "Proposez-vous une facturation annuelle ?",
+          "a": "Pas encore — pour l'instant, toutes les formules sont facturées mensuellement."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Pas encore sûr ?",
+      "headingAccent": "Essayez-le d'abord gratuitement.",
+      "sub": "Aucune inscription requise — retournez à la page d'accueil et traduisez tout de suite.",
+      "ctaLabel": "Essayer maintenant"
+    }
+  },
   "translator": {
     "topics": "Sujets",
     "newTopic": "Nouveau sujet",
@@ -255,7 +345,7 @@
     "stopAria": "Arrêter",
     "pricingLink": "Tarifs",
     "errors": {
-      "insufficientCredits": "Crédits épuisés — passez à un forfait supérieur",
+      "insufficientCredits": "Quota épuisé — passez à un forfait supérieur",
       "textTooLong": "Texte trop long pour votre forfait"
     }
   },

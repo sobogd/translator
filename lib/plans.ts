@@ -1,40 +1,36 @@
-export type PlanId = "FREE" | "STARTER" | "PRO" | "ULTIMATE";
+export type PlanId = "STARTER" | "PRO" | "ULTIMATE";
 
 export type Plan = {
   id: PlanId;
   name: string;
   priceMonthly: number; // USD
-  creditsPerPeriod: number;
-  periodDays: number; // credits reset cadence
+  charsPerMonth: number; // text-translation quota, characters
+  minutesPerMonth: number; // voice (speech-to-text) quota, minutes
   maxCharsPerRequest: number;
   popular?: boolean;
 };
 
-// 1 credit = 100 characters (text) or 10 seconds (audio), rounded up, min 1.
-// Prices and per-request character caps mirror openl.io's public pricing page.
+// Quotas sized off Gemini 2.5 Flash unit costs (text in $0.30/M tok, out
+// $2.50/M tok, audio in $1.00/M tok @ 32 tok/s): ~$1.3 per 1M translated
+// characters, ~$0.0025 per STT minute. Each plan's fully-drained quota costs
+// ≤ 1/3 of its price — a 3x floor on margin; real utilization sits far lower.
+// A dictated message is charged twice by design: its seconds at /api/transcribe,
+// then its characters when the edited transcript goes through /api/translate.
 export const PLANS: Record<PlanId, Plan> = {
-  FREE: {
-    id: "FREE",
-    name: "Free",
-    priceMonthly: 0,
-    creditsPerPeriod: 40,
-    periodDays: 1,
-    maxCharsPerRequest: 1500,
-  },
   STARTER: {
     id: "STARTER",
     name: "Starter",
     priceMonthly: 9.9,
-    creditsPerPeriod: 1000,
-    periodDays: 30,
+    charsPerMonth: 1_500_000,
+    minutesPerMonth: 250,
     maxCharsPerRequest: 30000,
   },
   PRO: {
     id: "PRO",
     name: "Pro",
     priceMonthly: 19.9,
-    creditsPerPeriod: 3000,
-    periodDays: 30,
+    charsPerMonth: 3_000_000,
+    minutesPerMonth: 600,
     maxCharsPerRequest: 100000,
     popular: true,
   },
@@ -42,20 +38,19 @@ export const PLANS: Record<PlanId, Plan> = {
     id: "ULTIMATE",
     name: "Ultimate",
     priceMonthly: 49.9,
-    creditsPerPeriod: 10000,
-    periodDays: 30,
+    charsPerMonth: 8_000_000,
+    minutesPerMonth: 1500,
     maxCharsPerRequest: 150000,
   },
 };
 
-export const PLAN_ORDER: PlanId[] = ["FREE", "STARTER", "PRO", "ULTIMATE"];
+export const PLAN_ORDER: PlanId[] = ["STARTER", "PRO", "ULTIMATE"];
 
-export const ANONYMOUS_CREDIT_LIMIT = 50; // lifetime, per browser fingerprint
-
-export function creditsForText(chars: number): number {
-  return Math.max(1, Math.ceil(chars / 100));
-}
-
-export function creditsForAudio(seconds: number): number {
-  return Math.max(1, Math.ceil(seconds / 10));
-}
+// The free tier is the product without a subscription — anonymous fingerprint
+// or signed-in account alike. Lifetime (not renewing) trial pool costing
+// ~$0.01 in Gemini spend: 2 voice minutes (~$0.005) + 4k chars (~$0.005).
+export const FREE_TRIAL = {
+  chars: 4_000,
+  seconds: 120,
+  maxCharsPerRequest: 1000,
+};

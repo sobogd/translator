@@ -37,7 +37,7 @@
     },
     {
       "title": "Registreerimist ei vaja",
-      "sub": "Proovi otse sellel lehel – logi sisse ainult lisakrediitide saamiseks"
+      "sub": "Proovi otse sellel lehel – logi sisse ainult siis, kui soovid paketti uuendada"
     },
     {
       "title": "Ajalugu keelepaari kaupa",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Alustamiseks pole registreerimist vaja",
-      "sub": "Proovi otse sellel lehel – ei kontot, ei parooli. Logi sisse Google'iga ainult siis, kui soovid rohkem päevaseid krediite ja seadmete vahel sünkroonitud ajalugu.",
+      "sub": "Proovi otse sellel lehel – ei kontot, ei parooli. Logi sisse Google'iga ainult siis, kui soovid suuremat kuulimiiti ja seadmete vahel sünkroonitud ajalugu.",
       "bullets": [
         {
           "title": "Valikuline sisselogimine ühe puudutusega",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Kas pean looma konto?",
-        "a": "Ei. Proovi otse sellel lehel ilma registreerimiseta. Logi sisse Google'iga ainult siis, kui soovid rohkem päevaseid krediite ja seadmete vahel sünkroonitud ajalugu."
+        "a": "Ei. Proovi otse sellel lehel ilma registreerimiseta. Logi sisse Google'iga ainult siis, kui soovid suuremat kuulimiiti ja seadmete vahel sünkroonitud ajalugu."
       },
       {
         "q": "Kas mu tõlkeajalugu salvestatakse?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Hinnad — Hääle ja teksti paketid",
+      "description": "Kolm lihtsat kuupaketti häälminutite ja tekstimärkidega. Proovi tasuta ilma registreerimiseta — krediitkaarti pole vaja."
+    },
+    "heading": "Lihtsad kuu",
+    "headingAccent": "hinnad",
+    "sub": "Iga pakett sisaldab häälminuteid ja tekstimärke. Proovi tasuta otse avalehel — registreerimist ega kaarti pole vaja.",
+    "perMonth": "/kuus",
+    "mostPopular": "Populaareim",
+    "cta": "Alusta",
+    "freeNote": {
+      "title": "Tasuta paketti pole vaja — tasuta tase ongi avaleht ise.",
+      "sub": "Tõlgi ilma registreerimiseta: iga külastaja saab proovimiseks 2 häälminutit ja 4 000 tähemärki otse vidinas."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 häälminutit kuus",
+          "1 500 000 tekstimärki kuus",
+          "Kuni 30 000 tähemärki päringu kohta",
+          "Kõik 186 keelt",
+          "Salvestatud vestluste ajalugu"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 häälminutit kuus",
+          "3 000 000 tekstimärki kuus",
+          "Kuni 100 000 tähemärki päringu kohta",
+          "Kõik 186 keelt",
+          "Salvestatud vestluste ajalugu",
+          "Prioriteetne töötlus"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1 500 häälminutit kuus",
+          "8 000 000 tekstimärki kuus",
+          "Kuni 150 000 tähemärki päringu kohta",
+          "Kõik 186 keelt",
+          "Salvestatud vestluste ajalugu",
+          "Prioriteetne töötlus"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Korduma kippuvad",
+      "headingAccent": "hinnaküsimused",
+      "sub": "Mida küsitakse enne tellimist.",
+      "items": [
+        {
+          "q": "Kuidas häälminutid ja tähemärgid töötavad?",
+          "a": "Häälminutid katavad kõne teisendamise tekstiks; tähemärgid katavad teksti tõlkimise (sh muudetud transkriptid). Iga pakett täidab mõlemad igal kuul uuesti."
+        },
+        {
+          "q": "Mis juhtub, kui need otsa saavad?",
+          "a": "Tõlkimine peatub, kuni kuine limiit täitub uuesti või uuendad paketti arveldusportaalis kõrgemale."
+        },
+        {
+          "q": "Kas on tasuta viis proovimiseks?",
+          "a": "Jah — avalehe vidin töötab ilma registreerimiseta: igal külastajal on kasutada 2 häälminutit ja 4 000 tähemärki."
+        },
+        {
+          "q": "Kas saan igal ajal tühistada?",
+          "a": "Jah. Halda või tühista oma tellimust igal ajal arveldusportaalis – ilma pikaajalise kohustuseta."
+        },
+        {
+          "q": "Kas saan hiljem paketti vahetada?",
+          "a": "Jah, uuenda või vaheta paketti madalamale igal ajal; uus pakett annab kohe oma täieliku kuulimiidi."
+        },
+        {
+          "q": "Kas pakute aastamaksmist?",
+          "a": "Veel mitte — kõiki pakette arveldatakse praegu igakuiselt."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Pole veel kindel?",
+      "headingAccent": "Proovi kõigepealt tasuta.",
+      "sub": "Registreerimist pole vaja — mine tagasi avalehele ja alusta kohe tõlkimist.",
+      "ctaLabel": "Proovi kohe"
+    }
+  },
   "translator": {
     "topics": "Teemad",
     "newTopic": "Uus teema",
@@ -235,7 +325,7 @@
     "stopAria": "Peata",
     "pricingLink": "Hinnad",
     "errors": {
-      "insufficientCredits": "Krediidid otsas – uuenda oma paketti",
+      "insufficientCredits": "Limiit on täis – uuenda oma paketti",
       "textTooLong": "Tekst on sinu paketi jaoks liiga pikk"
     }
   },

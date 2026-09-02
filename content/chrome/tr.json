@@ -37,7 +37,7 @@
     },
     {
       "title": "Kayıt gerekmez",
-      "sub": "Bu sayfada hemen deneyin — daha fazla kredi için giriş yapın"
+      "sub": "Bu sayfada hemen deneyin — daha yüksek aylık kota için giriş yapın"
     },
     {
       "title": "Dil çiftine göre geçmiş",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Başlamak için kayıt gerekmez",
-      "sub": "Bu sayfada hemen deneyin — hesap yok, şifre yok. Daha fazla günlük kredi ve cihazlar arası senkronize geçmiş için Google ile giriş yapın.",
+      "sub": "Bu sayfada hemen deneyin — hesap yok, şifre yok. Daha yüksek aylık kota ve cihazlar arası senkronize geçmiş için Google ile giriş yapın.",
       "bullets": [
         {
           "title": "İsteğe bağlı tek dokunuşla giriş",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Hesap oluşturmam gerekiyor mu?",
-        "a": "Hayır. Bu sayfada kayıt olmadan hemen deneyebilirsiniz. Daha fazla günlük kredi ve cihazlar arası senkronize geçmiş için Google ile giriş yapabilirsiniz."
+        "a": "Hayır. Bu sayfada kayıt olmadan hemen deneyebilirsiniz. Daha yüksek aylık kota ve cihazlar arası senkronize geçmiş için Google ile giriş yapabilirsiniz."
       },
       {
         "q": "Çeviri geçmişim kaydediliyor mu?",
@@ -228,6 +228,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Fiyatlandırma – Sesli ve Metin Çeviri Planları",
+      "description": "Ses dakikaları ve metin karakterleri içeren üç basit aylık plan sunuyoruz. Kayıt olmadan ücretsiz deneyin — kredi kartı bilgisi gerekmez."
+    },
+    "heading": "Basit aylık",
+    "headingAccent": "fiyatlandırma",
+    "sub": "Her plan ses dakikaları ve metin karakterleri içerir. Ana sayfada ücretsiz deneyin — kayıt yok, kart yok.",
+    "perMonth": "/ay",
+    "mostPopular": "En popüler",
+    "cta": "Başlayın",
+    "freeNote": {
+      "title": "Ücretsiz plana gerek yok — ücretsiz katman zaten ana sayfanın kendisi.",
+      "sub": "Kayıt olmadan çevirin: her ziyaretçi widget üzerinde denemek için 2 ses dakikası ve 4.000 karakter alır."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "Ayda 250 ses dakikası",
+          "Ayda 1.500.000 metin karakteri",
+          "İstek başına 30.000 karaktere kadar",
+          "186 dilin tamamı",
+          "Kaydedilen konuşma geçmişi"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "Ayda 600 ses dakikası",
+          "Ayda 3.000.000 metin karakteri",
+          "İstek başına 100.000 karaktere kadar",
+          "186 dilin tamamı",
+          "Kaydedilen konuşma geçmişi",
+          "Öncelikli işleme"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "Ayda 1.500 ses dakikası",
+          "Ayda 8.000.000 metin karakteri",
+          "İstek başına 150.000 karaktere kadar",
+          "186 dilin tamamı",
+          "Kaydedilen konuşma geçmişi",
+          "Öncelikli işleme"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Fiyatlandırma",
+      "headingAccent": "soruları",
+      "sub": "İnsanların abone olmadan önce sorduğu sorular.",
+      "items": [
+        {
+          "q": "Ses dakikaları ve karakterler nasıl çalışır?",
+          "a": "Ses dakikaları konuşmanızın metne çevrilmesini kapsar; karakterler metin çevirisini (düzenlenmiş dökümler dahil) kapsar. Her ikisi de her ay yenilenir."
+        },
+        {
+          "q": "Kotam bittiğinde ne olur?",
+          "a": "Aylık kotanız yenilenene veya faturalandırma portalından daha üst bir plana geçene kadar çeviri duraklar."
+        },
+        {
+          "q": "Ücretsiz deneme yolu var mı?",
+          "a": "Evet — ana sayfadaki widget kayıt olmadan çalışır: her ziyaretçi 2 ses dakikası ve 4.000 karakter alır."
+        },
+        {
+          "q": "İstediğim zaman iptal edebilir miyim?",
+          "a": "Evet. Aboneliğinizi faturalandırma portalından istediğiniz zaman yönetin veya iptal edin — uzun vadeli taahhüt yok."
+        },
+        {
+          "q": "Planımı daha sonra değiştirebilir miyim?",
+          "a": "Evet, istediğiniz zaman yükseltin veya düşürün; yeni plan hemen tam aylık kotasını verir."
+        },
+        {
+          "q": "Yıllık faturalandırma sunuyor musunuz?",
+          "a": "Henüz değil — tüm planlar şu an için aylık faturalandırılıyor."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Henüz emin değil misiniz?",
+      "headingAccent": "Önce ücretsiz deneyin.",
+      "sub": "Kayıt gerekmez — ana sayfaya dönün ve hemen çevirmeye başlayın.",
+      "ctaLabel": "Hemen dene"
+    }
+  },
   "translator": {
     "topics": "Konular",
     "newTopic": "Yeni konu",
@@ -251,7 +341,7 @@
     "stopAria": "Durdur",
     "pricingLink": "Fiyatlandırma",
     "errors": {
-      "insufficientCredits": "Krediniz bitti — planınızı yükseltin",
+      "insufficientCredits": "Kotanız doldu — planınızı yükseltin",
       "textTooLong": "Metin planınız için çok uzun"
     }
   },

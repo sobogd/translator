@@ -4,25 +4,9 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { CARD, PRIMARY_BTN, OUTLINE_BTN } from "./shell";
 import { PLAN_ORDER, PLANS, type PlanId } from "@/lib/plans";
+import type { TranslatorTexts } from "./types";
 
-const FEATURES: Record<PlanId, string[]> = {
-  FREE: ["40 credits/day", "1,500 characters per request", "Voice + text translation", "186 languages"],
-  STARTER: ["1,000 credits/month", "30,000 characters per request", "Voice + text translation", "186 languages"],
-  PRO: [
-    "3,000 credits/month",
-    "100,000 characters per request",
-    "Voice + text translation",
-    "186 languages",
-    "Priority processing",
-  ],
-  ULTIMATE: [
-    "10,000 credits/month",
-    "150,000 characters per request",
-    "Voice + text translation",
-    "186 languages",
-    "Priority processing",
-  ],
-};
+type PricingTexts = TranslatorTexts["pricing"];
 
 async function startCheckout(plan: PlanId) {
   const res = await fetch("/api/billing/checkout", {
@@ -38,14 +22,13 @@ async function startCheckout(plan: PlanId) {
   if (data.redirectUrl) window.location.href = data.redirectUrl;
 }
 
-export function PricingCards() {
+// Copy (plan names, feature lines with the quota numbers, CTA labels) comes
+// from the locale's pricing texts; only the price itself renders from
+// lib/plans.ts so a price change can never go stale in 34 translations.
+export function PricingCards({ texts }: { texts: PricingTexts }) {
   const [loading, setLoading] = useState<PlanId | null>(null);
 
   async function onSelect(plan: PlanId) {
-    if (plan === "FREE") {
-      window.location.assign("/api/auth/google/start");
-      return;
-    }
     setLoading(plan);
     try {
       await startCheckout(plan);
@@ -55,9 +38,10 @@ export function PricingCards() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
       {PLAN_ORDER.map((id) => {
         const plan = PLANS[id];
+        const copy = texts.plans.find((p) => p.id === id);
         return (
           <div
             key={id}
@@ -65,18 +49,18 @@ export function PricingCards() {
           >
             {plan.popular && (
               <span className="w-fit rounded-full bg-button/15 px-2.5 py-1 text-xs font-semibold text-button">
-                Most popular
+                {texts.mostPopular}
               </span>
             )}
             <div>
-              <h3 className="text-lg font-semibold">{plan.name}</h3>
+              <h3 className="text-lg font-semibold">{copy?.name ?? plan.name}</h3>
               <p className="mt-1 text-3xl font-medium">
                 ${plan.priceMonthly.toFixed(2).replace(/\.00$/, "")}
-                <span className="text-sm font-normal text-hint">/mo</span>
+                <span className="text-sm font-normal text-hint">{texts.perMonth}</span>
               </p>
             </div>
             <ul className="flex flex-1 flex-col gap-2.5">
-              {FEATURES[id].map((f) => (
+              {(copy?.features ?? []).map((f) => (
                 <li key={f} className="flex items-start gap-2 text-sm text-hint">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-button" />
                   {f}
@@ -88,7 +72,7 @@ export function PricingCards() {
               disabled={loading === id}
               className={plan.popular ? PRIMARY_BTN : OUTLINE_BTN}
             >
-              {loading === id ? "…" : id === "FREE" ? "Sign in with Google" : "Get started"}
+              {loading === id ? "…" : texts.cta}
             </button>
           </div>
         );

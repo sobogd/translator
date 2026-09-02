@@ -7,6 +7,7 @@ import { NARROW, PRIMARY_FILL } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { InstallAppButton } from "./InstallAppButton";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
+import { localePath } from "@/lib/locale-paths";
 import { defaultLocale, type Locale } from "@/lib/locales";
 
 async function logout() {
@@ -152,7 +153,7 @@ export function Header({
               {texts.features}
             </Link>
           )}
-          <Link href="/pricing" className="transition-opacity hover:opacity-70">
+          <Link href={localePath(locale, "pricing")} className="transition-opacity hover:opacity-70">
             {texts.pricing}
           </Link>
           <InstallAppButton label={texts.mobileApp} className="transition-opacity hover:opacity-70" />
@@ -214,7 +215,7 @@ export function Header({
                   </Link>
                 )}
               <Link
-                href="/pricing"
+                href={localePath(locale, "pricing")}
                 className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               >

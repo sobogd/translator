@@ -37,7 +37,7 @@
     },
     {
       "title": "Registruotis nereikia",
-      "sub": "Išbandykite tiesiai šiame puslapyje — prisijunkite tik dėl papildomų kreditų"
+      "sub": "Išbandykite tiesiai šiame puslapyje — prisijunkite tik norėdami atnaujinti planą"
     },
     {
       "title": "Kiekvienos kalbų poros istorija",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Registruotis pradžioje nereikia",
-      "sub": "Išbandykite tiesiai šiame puslapyje — be paskyros, be slaptažodžio. Prisijunkite su Google tik tada, kai norėsite daugiau kreditų per dieną ir istorijos, sinchronizuotos tarp įrenginių.",
+      "sub": "Išbandykite tiesiai šiame puslapyje — be paskyros, be slaptažodžio. Prisijunkite su Google tik tada, kai norėsite didesnės mėnesinės kvotos ir istorijos, sinchronizuotos tarp įrenginių.",
       "bullets": [
         {
           "title": "Neprivalomas prisijungimas vienu palietimu",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Ar reikia susikurti paskyrą?",
-        "a": "Ne. Išbandykite tiesiai šiame puslapyje be registracijos. Prisijunkite su Google tik jei norite daugiau kreditų per dieną ir istorijos, sinchronizuotos tarp įrenginių."
+        "a": "Ne. Išbandykite tiesiai šiame puslapyje be registracijos. Prisijunkite su Google tik jei norite didesnės mėnesinės kvotos ir istorijos, sinchronizuotos tarp įrenginių."
       },
       {
         "q": "Ar mano vertimų istorija išsaugoma?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Kainos — Balso ir Teksto Vertimo Planai",
+      "description": "Trys paprasti mėnesiniai planai su balso minutėmis ir teksto simboliais. Išbandykite nemokamai be registracijos — kortelė nereikalinga."
+    },
+    "heading": "Paprastos mėnesinės",
+    "headingAccent": "kainos",
+    "sub": "Kiekviename plane yra balso minučių ir teksto simbolių. Išbandykite nemokamai tiesiai pagrindiniame puslapyje — be registracijos, be kortelės.",
+    "perMonth": "/mėn.",
+    "mostPopular": "Populiariausias",
+    "cta": "Pradėti",
+    "freeNote": {
+      "title": "Nemokamo plano nereikia — nemokamas lygis yra pats pagrindinis puslapis.",
+      "sub": "Verskite be registracijos: kiekvienas lankytojas gauna 2 balso minutes ir 4 000 simbolių išbandymui, tiesiai valdiklyje."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 balso minučių per mėnesį",
+          "1 500 000 teksto simbolių per mėnesį",
+          "Iki 30 000 simbolių per užklausą",
+          "Visos 186 kalbos",
+          "Išsaugota pokalbių istorija"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 balso minučių per mėnesį",
+          "3 000 000 teksto simbolių per mėnesį",
+          "Iki 100 000 simbolių per užklausą",
+          "Visos 186 kalbos",
+          "Išsaugota pokalbių istorija",
+          "Prioritetinis apdorojimas"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1 500 balso minučių per mėnesį",
+          "8 000 000 teksto simbolių per mėnesį",
+          "Iki 150 000 simbolių per užklausą",
+          "Visos 186 kalbos",
+          "Išsaugota pokalbių istorija",
+          "Prioritetinis apdorojimas"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Kainų",
+      "headingAccent": "klausimai",
+      "sub": "Ką žmonės klausia prieš užsiprenumeruodami.",
+      "items": [
+        {
+          "q": "Kaip veikia balso minutės ir simboliai?",
+          "a": "Balso minutės skirtos jūsų kalbai paversti tekstu; simboliai — teksto vertimui (įskaitant redaguotus nuorašus). Kiekvienas planas abu limitus atnaujina kas mėnesį."
+        },
+        {
+          "q": "Kas atsitinka, kai limitas baigiasi?",
+          "a": "Vertimas pristabdomas, kol atsinaujins mėnesinis limitas arba kol pereisite prie aukštesnio plano per atsiskaitymų portalą."
+        },
+        {
+          "q": "Ar yra nemokamas būdas išbandyti?",
+          "a": "Taip — pagrindinio puslapio valdiklis veikia be jokios registracijos: kiekvienam lankytojui suteikiama 2 balso minutės ir 4 000 simbolių."
+        },
+        {
+          "q": "Ar galiu bet kada atsisakyti?",
+          "a": "Taip. Valdykite arba atšaukite prenumeratą bet kada per atsiskaitymų portalą — jokių ilgalaikių įsipareigojimų."
+        },
+        {
+          "q": "Ar galiu vėliau pakeisti planą?",
+          "a": "Taip, bet kada padidinkite ar sumažinkite planą; naujas planas iš karto suteikia visą mėnesio limitą."
+        },
+        {
+          "q": "Ar siūlote metinį atsiskaitymą?",
+          "a": "Kol kas ne — visi planai šiuo metu apmokestinami mėnesiui."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Dar neapsisprendėte?",
+      "headingAccent": "Pirmiausia išbandykite nemokamai.",
+      "sub": "Registruotis nereikia — grįžkite į pagrindinį puslapį ir iškart verskite.",
+      "ctaLabel": "Išbandyti dabar"
+    }
+  },
   "translator": {
     "topics": "Temos",
     "newTopic": "Nauja tema",
@@ -235,7 +325,7 @@
     "stopAria": "Sustabdyti",
     "pricingLink": "Kainos",
     "errors": {
-      "insufficientCredits": "Baigėsi kreditai — atnaujinkite planą",
+      "insufficientCredits": "Kvota išnaudota — atnaujinkite planą",
       "textTooLong": "Tekstas per ilgas jūsų planui"
     }
   },

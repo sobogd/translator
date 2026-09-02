@@ -37,7 +37,7 @@
     },
     {
       "title": "Bez rejestracji",
-      "sub": "Wypróbuj od razu na tej stronie — logowanie tylko po więcej kredytów"
+      "sub": "Wypróbuj od razu na tej stronie — logowanie tylko po większy miesięczny limit"
     },
     {
       "title": "Historia dla każdej pary języków",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Bez rejestracji na start",
-      "sub": "Wypróbuj od razu na tej stronie — bez konta, bez hasła. Zaloguj się przez Google tylko wtedy, gdy chcesz więcej dziennych kredytów i historii zsynchronizowanej między urządzeniami.",
+      "sub": "Wypróbuj od razu na tej stronie — bez konta, bez hasła. Zaloguj się przez Google tylko wtedy, gdy chcesz większy miesięczny limit i historii zsynchronizowanej między urządzeniami.",
       "bullets": [
         {
           "title": "Opcjonalne logowanie jednym dotknięciem",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Czy muszę zakładać konto?",
-        "a": "Nie. Wypróbuj od razu na tej stronie, bez rejestracji. Zaloguj się przez Google tylko wtedy, gdy chcesz więcej dziennych kredytów i historii zsynchronizowanej między urządzeniami."
+        "a": "Nie. Wypróbuj od razu na tej stronie, bez rejestracji. Zaloguj się przez Google tylko wtedy, gdy chcesz większy miesięczny limit i historii zsynchronizowanej między urządzeniami."
       },
       {
         "q": "Czy moja historia tłumaczeń jest zapisywana?",
@@ -232,6 +232,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Cennik – minuty głosowe i znaki tekstowe",
+      "description": "Trzy proste miesięczne plany z minutami głosowymi i znakami tekstowymi w cenie, dla 186 języków. Wypróbuj za darmo bez rejestracji — karta niepotrzebna."
+    },
+    "heading": "Proste miesięczne",
+    "headingAccent": "ceny",
+    "sub": "Każdy plan zawiera minuty głosowe i znaki tekstowe. Wypróbuj za darmo od razu na stronie głównej — bez rejestracji, bez karty.",
+    "perMonth": "/mies.",
+    "mostPopular": "Najpopularniejszy",
+    "cta": "Zacznij teraz",
+    "freeNote": {
+      "title": "Darmowy plan niepotrzebny — sama strona główna to darmowa warstwa.",
+      "sub": "Tłumacz bez rejestracji: każdy odwiedzający otrzymuje 2 minuty głosowe i 4000 znaków do wypróbowania, prosto w widżecie."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 minut głosowych miesięcznie",
+          "1 500 000 znaków tekstowych miesięcznie",
+          "Do 30 000 znaków na zapytanie",
+          "Wszystkie 186 języków",
+          "Zapisana historia rozmów"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 minut głosowych miesięcznie",
+          "3 000 000 znaków tekstowych miesięcznie",
+          "Do 100 000 znaków na zapytanie",
+          "Wszystkie 186 języków",
+          "Zapisana historia rozmów",
+          "Priorytetowe przetwarzanie"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1500 minut głosowych miesięcznie",
+          "8 000 000 znaków tekstowych miesięcznie",
+          "Do 150 000 znaków na zapytanie",
+          "Wszystkie 186 języków",
+          "Zapisana historia rozmów",
+          "Priorytetowe przetwarzanie"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Pytania o",
+      "headingAccent": "cennik",
+      "sub": "O co pytają ludzie przed subskrypcją.",
+      "items": [
+        {
+          "q": "Jak działają minuty głosowe i znaki?",
+          "a": "Minuty głosowe obejmują zamianę mowy na tekst; znaki obejmują tłumaczenie tekstu (w tym edytowanych transkrypcji). Każdy plan odnawia oba limity co miesiąc."
+        },
+        {
+          "q": "Co się dzieje, gdy wyczerpię limit?",
+          "a": "Tłumaczenie zostaje wstrzymane do odnowienia miesięcznego limitu lub przejścia na wyższy plan w portalu rozliczeniowym."
+        },
+        {
+          "q": "Czy jest darmowy sposób, by to wypróbować?",
+          "a": "Tak — widżet na stronie głównej działa bez rejestracji: każdy odwiedzający otrzymuje 2 minuty głosowe i 4000 znaków."
+        },
+        {
+          "q": "Czy mogę zrezygnować w dowolnym momencie?",
+          "a": "Tak. Zarządzaj lub anuluj subskrypcję w dowolnym momencie w portalu rozliczeniowym — bez długoterminowego zobowiązania."
+        },
+        {
+          "q": "Czy mogę później zmienić plan?",
+          "a": "Tak, uaktualnij lub obniż plan w dowolnym momencie; nowy plan od razu przyznaje pełny miesięczny limit."
+        },
+        {
+          "q": "Czy oferujecie rozliczenia roczne?",
+          "a": "Jeszcze nie — na razie wszystkie plany są rozliczane miesięcznie."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Jeszcze się wahasz?",
+      "headingAccent": "Najpierw wypróbuj za darmo.",
+      "sub": "Rejestracja niepotrzebna — wróć na stronę główną i zacznij tłumaczyć od razu.",
+      "ctaLabel": "Wypróbuj teraz"
+    }
+  },
   "translator": {
     "topics": "Wątki",
     "newTopic": "Nowy wątek",
@@ -255,7 +345,7 @@
     "stopAria": "Zatrzymaj",
     "pricingLink": "Cennik",
     "errors": {
-      "insufficientCredits": "Brak kredytów — zmień plan",
+      "insufficientCredits": "Limit wyczerpany — ulepsz plan",
       "textTooLong": "Tekst zbyt długi dla Twojego planu"
     }
   },

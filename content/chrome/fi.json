@@ -37,7 +37,7 @@
     },
     {
       "title": "Ei rekisteröitymistä",
-      "sub": "Kokeile suoraan tällä sivulla – kirjaudu vain saadaksesi lisää krediittejä"
+      "sub": "Kokeile suoraan tällä sivulla – kirjaudu vain saadaksesi isomman kuukausikiintiön"
     },
     {
       "title": "Historia kieliparin mukaan",
@@ -105,7 +105,7 @@
     },
     {
       "heading": "Ei rekisteröitymistä aloittaaksesi",
-      "sub": "Kokeile suoraan tällä sivulla – ei tiliä, ei salasanaa. Kirjaudu Googlella vain, jos haluat lisää päivittäisiä krediittejä ja historian synkronoituna laitteiden välillä.",
+      "sub": "Kokeile suoraan tällä sivulla – ei tiliä, ei salasanaa. Kirjaudu Googlella vain, jos haluat isomman kuukausikiintiön ja historian synkronoituna laitteiden välillä.",
       "bullets": [
         {
           "title": "Valinnainen kirjautuminen yhdellä napautuksella",
@@ -167,7 +167,7 @@
       },
       {
         "q": "Tarvitseeko minun luoda tili?",
-        "a": "Ei. Kokeile suoraan tällä sivulla ilman rekisteröitymistä. Kirjaudu Googlella vain, jos haluat lisää päivittäisiä krediittejä ja laitteiden välillä synkronoidun historian."
+        "a": "Ei. Kokeile suoraan tällä sivulla ilman rekisteröitymistä. Kirjaudu Googlella vain, jos haluat isomman kuukausikiintiön ja laitteiden välillä synkronoidun historian."
       },
       {
         "q": "Tallentuuko käännöshistoriani?",
@@ -212,6 +212,96 @@
       }
     ]
   },
+  "pricing": {
+    "meta": {
+      "title": "Hinnoittelu – Puhe- ja tekstikäännössuunnitelmat",
+      "description": "Kolme yksinkertaista kuukausisuunnitelmaa, joissa on puheminuutteja ja tekstimerkkejä. Kokeile ilmaiseksi ilman rekisteröitymistä – ei korttia tarvita."
+    },
+    "heading": "Yksinkertainen kuukausittainen",
+    "headingAccent": "hinnoittelu",
+    "sub": "Jokainen suunnitelma sisältää puheminuutteja ja tekstimerkkejä. Kokeile ilmaiseksi suoraan etusivulla – ei rekisteröitymistä, ei korttia.",
+    "perMonth": "/kk",
+    "mostPopular": "Suosituin",
+    "cta": "Aloita",
+    "freeNote": {
+      "title": "Ilmaista suunnitelmaa ei tarvita – ilmainen taso on itse etusivu.",
+      "sub": "Käännä ilman rekisteröitymistä: jokainen kävijä saa 2 puheminuuttia ja 4 000 merkkiä kokeiluun suoraan widgetissä."
+    },
+    "plans": [
+      {
+        "id": "STARTER",
+        "name": "Starter",
+        "features": [
+          "250 puheminuuttia kuukaudessa",
+          "1 500 000 tekstimerkkiä kuukaudessa",
+          "Jopa 30 000 merkkiä per pyyntö",
+          "Kaikki 186 kieltä",
+          "Tallennettu keskusteluhistoria"
+        ]
+      },
+      {
+        "id": "PRO",
+        "name": "Pro",
+        "features": [
+          "600 puheminuuttia kuukaudessa",
+          "3 000 000 tekstimerkkiä kuukaudessa",
+          "Jopa 100 000 merkkiä per pyyntö",
+          "Kaikki 186 kieltä",
+          "Tallennettu keskusteluhistoria",
+          "Ensisijainen käsittely"
+        ]
+      },
+      {
+        "id": "ULTIMATE",
+        "name": "Ultimate",
+        "features": [
+          "1 500 puheminuuttia kuukaudessa",
+          "8 000 000 tekstimerkkiä kuukaudessa",
+          "Jopa 150 000 merkkiä per pyyntö",
+          "Kaikki 186 kieltä",
+          "Tallennettu keskusteluhistoria",
+          "Ensisijainen käsittely"
+        ]
+      }
+    ],
+    "faq": {
+      "heading": "Hinnoittelua",
+      "headingAccent": "koskevat kysymykset",
+      "sub": "Mitä ihmiset kysyvät ennen tilaamista.",
+      "items": [
+        {
+          "q": "Miten puheminuutit ja merkit toimivat?",
+          "a": "Puheminuutit kattavat puheen muuntamisen tekstiksi; merkit kattavat tekstin kääntämisen (myös muokatut litteroinnit). Molemmat täyttyvät joka kuukausi uudelleen."
+        },
+        {
+          "q": "Mitä tapahtuu, kun kiintiö loppuu?",
+          "a": "Kääntäminen pysähtyy, kunnes kuukausikiintiösi täyttyy uudelleen tai päivität ylempään suunnitelmaan laskutusportaalista."
+        },
+        {
+          "q": "Onko olemassa ilmainen tapa kokeilla?",
+          "a": "Kyllä — etusivun widget toimii ilman rekisteröitymistä: jokainen kävijä saa 2 puheminuuttia ja 4 000 merkkiä."
+        },
+        {
+          "q": "Voinko peruuttaa milloin tahansa?",
+          "a": "Kyllä. Hallinnoi tai peruuta tilauksesi milloin tahansa laskutusportaalista – ei pitkäaikaista sitoutumista."
+        },
+        {
+          "q": "Voinko vaihtaa suunnitelmaa myöhemmin?",
+          "a": "Kyllä, päivitä tai alenna milloin vain; uusi suunnitelma antaa täyden kuukausikiintiön heti."
+        },
+        {
+          "q": "Tarjoatteko vuosilaskutusta?",
+          "a": "Ei vielä – kaikki suunnitelmat laskutetaan toistaiseksi kuukausittain."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Etkö ole vielä varma?",
+      "headingAccent": "Kokeile ensin ilmaiseksi.",
+      "sub": "Ei rekisteröitymistä – palaa etusivulle ja ala kääntää heti.",
+      "ctaLabel": "Kokeile nyt"
+    }
+  },
   "translator": {
     "topics": "Aiheet",
     "newTopic": "Uusi aihe",
@@ -235,7 +325,7 @@
     "stopAria": "Pysäytä",
     "pricingLink": "Hinnoittelu",
     "errors": {
-      "insufficientCredits": "Krediitit loppu – päivitä tilaus",
+      "insufficientCredits": "Kiintiö käytetty – päivitä tilauksesi",
       "textTooLong": "Teksti on liian pitkä tilaukseesi"
     }
   },

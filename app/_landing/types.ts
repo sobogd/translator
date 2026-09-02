@@ -64,6 +64,21 @@ export interface TranslatorTexts {
     featuresHeading: string;
     featureLinks: { routeKey: string; label: string }[];
   };
+  // The /pricing page, localized. Quota numbers live inside the translated
+  // feature strings (agents write them from lib/plans.ts facts).
+  pricing: {
+    meta: { title: string; description: string };
+    heading: string;
+    headingAccent: string;
+    sub: string;
+    perMonth: string;
+    mostPopular: string;
+    cta: string;
+    freeNote: { title: string; sub: string };
+    plans: { id: string; name: string; features: string[] }[];
+    faq: { heading: string; headingAccent: string; sub: string; items: FaqItem[] };
+    finalCta: { heading: string; headingAccent: string; sub: string; ctaLabel: string };
+  };
   translator: {
     topics: string;
     newTopic: string;

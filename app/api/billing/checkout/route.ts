@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json();
   const plan = body.plan as PlanId;
-  if (!PLAN_ORDER.includes(plan) || plan === "FREE") {
+  if (!PLAN_ORDER.includes(plan)) {
     return NextResponse.json({ error: "invalid plan" }, { status: 400 });
   }
 
