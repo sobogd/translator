@@ -22,7 +22,7 @@ export function Comparison({ texts }: { texts: ComparisonTexts }) {
           <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
             {texts.title} {texts.titleAccent}
           </h2>
-          <p className="text-base leading-relaxed text-hint/80">{texts.description}</p>
+          <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{texts.description}</p>
         </div>
       </div>
 
@@ -33,14 +33,14 @@ export function Comparison({ texts }: { texts: ComparisonTexts }) {
             <div className="flex flex-col gap-1.5">
               <div className="flex items-start gap-2">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" strokeWidth={2.5} />
-                <p className="text-base leading-relaxed">
+                <p className="text-sm leading-relaxed">
                   <span className="font-medium">{texts.usLabel}: </span>
                   {r.us}
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <Minus className="mt-0.5 h-4 w-4 shrink-0 text-hint/60" strokeWidth={2.5} />
-                <p className="text-base leading-relaxed text-hint/80">
+                <p className="text-sm leading-relaxed text-hint/80">
                   <span className="font-medium">{texts.themLabel}: </span>
                   {r.them}
                 </p>

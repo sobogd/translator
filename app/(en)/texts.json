@@ -247,7 +247,8 @@
         "routeKey": "/",
         "label": "Translate to any language"
       }
-    ]
+    ],
+    "languagesHeading": "Languages"
   },
   "translator": {
     "topics": "Topics",

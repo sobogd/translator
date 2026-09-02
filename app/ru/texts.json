@@ -227,7 +227,8 @@
         "routeKey": "/",
         "label": "Перевод на любой язык"
       }
-    ]
+    ],
+    "languagesHeading": "Языки"
   },
   "account": {
     "title": "Аккаунт",

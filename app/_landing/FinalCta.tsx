@@ -21,7 +21,7 @@ export function FinalCta({
       <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
         {heading} {headingAccent}
       </h2>
-      <p className="text-base leading-relaxed text-hint/80">{sub}</p>
+      <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
         <a href={ctaHref} className={PRIMARY_BTN}>
           {ctaLabel}

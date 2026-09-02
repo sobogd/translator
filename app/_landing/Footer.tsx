@@ -2,12 +2,14 @@ import { NARROW } from "./shell";
 import { defaultLocale, type Locale } from "@/lib/locales";
 import { localeSwitchHref, localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { READY_LOCALES } from "@/content";
+import { getLanguage } from "@/lib/languages";
 
 type FooterTexts = {
   tagline: string;
   brand: string;
   featuresHeading?: string;
   featureLinks?: FeatureLinkDef[];
+  languagesHeading?: string;
 };
 
 const DEFAULT_TEXTS: FooterTexts = {
@@ -15,7 +17,12 @@ const DEFAULT_TEXTS: FooterTexts = {
   brand: "IQ Translate",
   featuresHeading: "Features",
   featureLinks: [{ routeKey: "/", label: "All 186 languages" }],
+  languagesHeading: "Languages",
 };
+
+// Same label style as the Topics heading in the translator widget — uppercase,
+// muted, tracked-out.
+const SECTION_HEADING = "text-xs font-semibold uppercase tracking-wide text-hint";
 
 // `locale`/`pathname`/`texts` default to English/home so the not-yet-localized
 // /pricing page can keep calling <Footer /> unchanged.
@@ -41,13 +48,13 @@ export function Footer({
       <div className={`${NARROW} flex flex-col gap-6`}>
         {featureLinks.length > 0 && (
           <div className="flex flex-col gap-2">
-            <p className="text-base font-semibold">{texts.featuresHeading ?? "Features"}</p>
+            <p className={SECTION_HEADING}>{texts.featuresHeading ?? "Features"}</p>
             <nav className="flex flex-wrap gap-x-4 gap-y-2">
               {featureLinks.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
-                  className="text-base text-hint transition-colors hover:text-text"
+                  className="text-sm text-hint transition-colors hover:text-text"
                 >
                   {l.label}
                 </a>
@@ -58,20 +65,27 @@ export function Footer({
         {/* Locale switcher: every shipped locale's home (or the registered
             translation of the current feature route). Doubles as internal
             linking to the localized homes. */}
-        <nav className="flex flex-wrap gap-x-3 gap-y-2 text-base uppercase tracking-wide text-hint">
-          {READY_LOCALES.map((l) =>
-            l === locale ? (
-              <span key={l} className="font-semibold text-text">
-                {l}
-              </span>
-            ) : (
-              <a key={l} href={localeSwitchHref(pathname, locale, l)} className="transition hover:text-text">
-                {l}
-              </a>
-            ),
-          )}
-        </nav>
-        <div className="flex flex-col items-center justify-between gap-3 text-base text-hint sm:flex-row">
+        <div className="flex flex-col gap-2">
+          <p className={SECTION_HEADING}>{texts.languagesHeading ?? "Languages"}</p>
+          <nav className="flex flex-wrap gap-x-4 gap-y-2">
+            {READY_LOCALES.map((l) =>
+              l === locale ? (
+                <span key={l} className="text-sm font-semibold text-text">
+                  {getLanguage(l)?.nameNative ?? l}
+                </span>
+              ) : (
+                <a
+                  key={l}
+                  href={localeSwitchHref(pathname, locale, l)}
+                  className="text-sm text-hint transition-colors hover:text-text"
+                >
+                  {getLanguage(l)?.nameNative ?? l}
+                </a>
+              ),
+            )}
+          </nav>
+        </div>
+        <div className="flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <span>{texts.tagline}</span>
         </div>

@@ -48,7 +48,7 @@ export function PricingCards({ texts }: { texts: PricingTexts }) {
             className={`${CARD} flex flex-col gap-5 p-6 ${plan.popular ? "ring-2 ring-button" : ""}`}
           >
             {plan.popular && (
-              <span className="w-fit rounded-full bg-button/15 px-2.5 py-1 text-base font-semibold text-button">
+              <span className="w-fit rounded-full bg-button/15 px-2.5 py-1 text-xs font-semibold text-button">
                 {texts.mostPopular}
               </span>
             )}
@@ -56,12 +56,12 @@ export function PricingCards({ texts }: { texts: PricingTexts }) {
               <h3 className="text-lg font-semibold">{copy?.name ?? plan.name}</h3>
               <p className="mt-1 text-3xl font-medium">
                 ${plan.priceMonthly.toFixed(2).replace(/\.00$/, "")}
-                <span className="text-base font-normal text-hint">{texts.perMonth}</span>
+                <span className="text-sm font-normal text-hint">{texts.perMonth}</span>
               </p>
             </div>
             <ul className="flex flex-1 flex-col gap-2.5">
               {(copy?.features ?? []).map((f) => (
-                <li key={f} className="flex items-start gap-2 text-base text-hint">
+                <li key={f} className="flex items-start gap-2 text-sm text-hint">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-button" />
                   {f}
                 </li>

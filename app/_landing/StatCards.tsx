@@ -15,7 +15,7 @@ export function StatCards({ items }: { items: StatCard[] }) {
           <div key={title} className={`${CARD} flex flex-col gap-1.5 p-5 sm:p-6`}>
             <Icon className="mb-1 h-7 w-7 text-button" />
             <div className="font-semibold">{title}</div>
-            <p className="text-base text-hint">{sub}</p>
+            <p className="text-sm text-hint">{sub}</p>
           </div>
         );
       })}

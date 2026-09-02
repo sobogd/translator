@@ -65,7 +65,7 @@ export function QuotaBadge({
   return (
     <span
       className={`flex h-9 items-center rounded-lg border border-border font-medium text-hint ${
-        compact ? "gap-2 px-2.5 text-base" : "shrink-0 gap-2.5 px-3 text-base"
+        compact ? "gap-2 px-2.5 text-[11px]" : "shrink-0 gap-2.5 px-3 text-xs"
       }`}
       title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
     >
@@ -131,7 +131,7 @@ export function AuthButton({
 
   const nf = new Intl.NumberFormat(locale);
   const isPaid = quota?.kind === "account" && quota.plan !== "FREE";
-  const btnClass = `h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-base font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL} ${fullWidth ? "flex w-full" : "inline-flex"}`;
+  const btnClass = `h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL} ${fullWidth ? "flex w-full" : "inline-flex"}`;
 
   return (
     <>
@@ -155,21 +155,21 @@ export function AuthButton({
                 <button
                   onClick={openPortal}
                   disabled={portalBusy}
-                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-base font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
+                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
                 >
                   {portalBusy ? <Loader2 size={16} className="animate-spin" /> : accountTexts.manageSubscription}
                 </button>
               ) : (
                 <a
                   href={pricingHref}
-                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-base font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
+                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
                 >
                   {accountTexts.upgrade}
                 </a>
               )}
               <button
                 onClick={logout}
-                className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg border border-border px-4 text-base font-semibold transition-all hover:bg-bg active:scale-[0.99]"
+                className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg border border-border px-4 text-sm font-semibold transition-all hover:bg-bg active:scale-[0.99]"
               >
                 {texts.logOut}
               </button>
@@ -177,8 +177,8 @@ export function AuthButton({
           }
         >
           <div className="flex flex-col gap-4 px-5 py-4">
-            {quota?.email && <p className="break-all text-base text-hint">{quota.email}</p>}
-            <div className="flex flex-col gap-2 rounded-xl border border-border p-4 text-base">
+            {quota?.email && <p className="break-all text-sm text-hint">{quota.email}</p>}
+            <div className="flex flex-col gap-2 rounded-xl border border-border p-4 text-sm">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-hint">{accountTexts.planLabel}</span>
                 <span className="font-semibold">

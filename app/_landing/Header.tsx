@@ -85,7 +85,12 @@ export function Header({
   /** SSR-computed quota for the badge (lib/quota-server.ts). */
   initialQuota?: Quota | null;
 }) {
-  const links = localizedFeatureLinks(locale, featureLinks);
+  // Drop the catch-all "/" entry (home link) — redundant in a features
+  // dropdown; it still renders in the footer's own list.
+  const links = localizedFeatureLinks(
+    locale,
+    featureLinks.filter((l) => l.routeKey !== "/"),
+  );
   const hasFeatureLinks = links.length > 0;
 
   const [featuresOpen, setFeaturesOpen] = useState(false);
@@ -172,7 +177,7 @@ export function Header({
           <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
           {texts.logo}
         </Link>
-        <nav className="mr-auto hidden items-stretch gap-6 pl-8 text-base font-semibold sm:flex">
+        <nav className="mr-auto hidden items-stretch gap-6 pl-8 text-sm font-semibold sm:flex">
           {hasFeatureLinks ? (
             <div
               ref={triggerRef}
@@ -250,7 +255,7 @@ export function Header({
           >
               <Link
                 href={localePath(locale, "pricing")}
-                className="rounded-lg px-3 py-2 text-base font-semibold transition-opacity hover:opacity-70"
+                className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               >
                 {texts.pricing}
@@ -261,7 +266,7 @@ export function Header({
                   <Link
                     key={l.href}
                     href={l.href}
-                    className="rounded-lg px-3 py-2 text-base font-semibold transition-opacity hover:opacity-70"
+                    className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                     onClick={() => setMenuOpen(false)}
                   >
                     {l.label}
@@ -270,7 +275,7 @@ export function Header({
               ) : (
                 <Link
                   href={`${homeHref}#features`}
-                  className="rounded-lg px-3 py-2 text-base font-semibold transition-opacity hover:opacity-70"
+                  className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                   onClick={() => setMenuOpen(false)}
                 >
                   {texts.features}
@@ -316,7 +321,7 @@ export function Header({
             <Link
               key={l.href}
               href={l.href}
-              className="px-4 py-2.5 text-base font-semibold transition-opacity hover:opacity-70"
+              className="px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
               onClick={() => setFeaturesOpen(false)}
             >
               {l.label}

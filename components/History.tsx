@@ -43,7 +43,7 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
       >
         {/* Original (small, muted) above the translation (larger, primary) —
             both texts, no language labels, no interaction. */}
-        <p className={`mb-1.5 text-base leading-snug ${fromA ? "text-button-text/70" : "text-hint"}`}>{r.transcript}</p>
+        <p className={`mb-1.5 text-sm leading-snug ${fromA ? "text-button-text/70" : "text-hint"}`}>{r.transcript}</p>
 
         <div className="flex items-start justify-between gap-2">
           <p className="text-base leading-relaxed">{r.translation}</p>

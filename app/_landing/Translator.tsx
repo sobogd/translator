@@ -79,7 +79,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={current === null ? { background: "var(--bg)" } : undefined}
           >
-            <span className="w-8 shrink-0 text-base font-medium text-hint">—</span>
+            <span className="w-8 shrink-0 text-xs font-medium text-hint">—</span>
             <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
           </button>
         )}
@@ -90,7 +90,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={l.code === current ? { background: "var(--bg)" } : undefined}
           >
-            <span className="w-8 shrink-0 font-mono text-base uppercase text-hint">{l.code}</span>
+            <span className="w-8 shrink-0 font-mono text-xs uppercase text-hint">{l.code}</span>
             <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
           </button>
         ))}
@@ -449,7 +449,7 @@ export function Translator({
   const composerRow = (
     <div className="flex min-w-0 flex-1 items-stretch">
       {status !== "idle" ? (
-        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-base text-hint">
+        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-sm text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -493,7 +493,7 @@ export function Translator({
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-base font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -517,7 +517,7 @@ export function Translator({
   // Language buttons: always full-width halves — the pair row sits on its
   // own line above the composer/content, on every breakpoint.
   const langBtnClass =
-    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-base font-semibold transition hover:bg-bg disabled:pointer-events-none";
+    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none";
 
   // Language pair half of the omnibar — source, reverse, target. Pickers
   // stay disabled once the pair locks.
@@ -539,7 +539,7 @@ export function Translator({
   // the permanent desktop sidebar and the mobile drawer (see below).
   const topicsList = (onPick: () => void) =>
     topics.length === 0 ? (
-      <div className="py-6 text-center text-base text-hint">{t.noTopicsYet}</div>
+      <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
     ) : (
       topics.map((tp) => (
         <div key={tp.id} className="flex items-center gap-1">
@@ -548,7 +548,7 @@ export function Translator({
               switchTopic(tp.id);
               onPick();
             }}
-            className={`flex min-w-0 flex-1 items-center gap-2 px-1 py-2.5 text-left text-base transition active:scale-[0.99] ${
+            className={`flex min-w-0 flex-1 items-center gap-2 px-1 py-2.5 text-left text-sm transition active:scale-[0.99] ${
               tp.id === topic?.id ? "font-medium text-text" : "text-hint hover:text-text"
             }`}
           >
@@ -579,7 +579,7 @@ export function Translator({
                   {heroTexts.titleAccent}
                 </span>
               </h1>
-              <p className="text-base leading-relaxed text-hint/80">{heroTexts.description}</p>
+              <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
             </div>
           </div>
           <div className="order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
@@ -598,7 +598,7 @@ export function Translator({
                 />
               )}
               {pending && (
-                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-base text-hint">
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
                   <Loader2 size={15} className="animate-spin" /> {t.translating}
                 </div>
               )}
@@ -613,7 +613,7 @@ export function Translator({
         <div className="relative flex flex-col overflow-hidden rounded-2xl border border-border lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr]">
           <div className="hidden flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:flex lg:h-full lg:min-h-0">
             <div className="flex shrink-0 items-center justify-between">
-              <h2 className="px-1 text-base font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+              <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
               <button
                 onClick={newTopic}
                 aria-label={t.newTopic}
@@ -629,7 +629,7 @@ export function Translator({
             <div className="flex shrink-0 items-center border-b border-border px-2 lg:hidden">
               <button
                 onClick={() => setTopicsOpen(true)}
-                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-base font-medium text-hint transition hover:text-text active:scale-[0.99]"
+                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
               >
                 <PanelLeft size={16} />
                 <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
@@ -654,7 +654,7 @@ export function Translator({
                 />
               )}
               {pending && (
-                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-base text-hint">
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
                   <Loader2 size={15} className="animate-spin" /> {t.translating}
                 </div>
               )}
@@ -668,7 +668,7 @@ export function Translator({
               <div className="absolute inset-0 z-20 bg-black/40" onClick={() => setTopicsOpen(false)} />
               <div className="absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-[hsl(32_44%_92%)] p-4 shadow-xl dark:bg-[hsl(32_14%_14%)] sm:p-5">
                 <div className="flex shrink-0 items-center justify-between">
-                  <h2 className="px-1 text-base font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+                  <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => {
@@ -706,7 +706,7 @@ export function Translator({
           footer={
             <button
               onClick={() => setError(null)}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.close}
             </button>
@@ -724,13 +724,13 @@ export function Translator({
           footer={
             <a
               href={pricingHref}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.pricingLink}
             </a>
           }
         >
-          <div className="px-5 py-4 text-base text-hint">{t.errors.insufficientCredits}</div>
+          <div className="px-5 py-4 text-sm text-hint">{t.errors.insufficientCredits}</div>
         </Modal>
       )}
 
