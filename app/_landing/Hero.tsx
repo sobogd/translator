@@ -48,7 +48,7 @@ function MockCard({ texts }: { texts: HeroTexts }) {
 export function Hero({ texts }: { texts: HeroTexts }) {
   return (
     <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:grid-cols-[11fr_9fr]`}>
-      <div className="order-2 flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8 lg:order-1">
+      <div className="order-1 flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8">
         <div className="flex items-center gap-3 text-sm text-hint/80">
           <span>{texts.badgeVoice}</span>
           <span>·</span>
@@ -66,7 +66,7 @@ export function Hero({ texts }: { texts: HeroTexts }) {
           <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{texts.description}</p>
         </div>
       </div>
-      <div className="order-1 aspect-[4/3] lg:order-2 lg:aspect-auto lg:min-h-[21.5rem]">
+      <div className="order-2 aspect-[4/3] lg:aspect-auto lg:min-h-[21.5rem]">
         <MockCard texts={texts} />
       </div>
     </div>
