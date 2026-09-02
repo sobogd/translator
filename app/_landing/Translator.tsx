@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRightLeft, ArrowUp, Loader2, Mic, PanelLeft, Plus, Square, Trash2, X } from "lucide-react";
+import { ArrowRightLeft, ArrowUp, BookOpen, Loader2, Mic, Plus, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -108,7 +108,9 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={current === null ? { background: "var(--bg)" } : undefined}
           >
-            <span className="w-8 shrink-0 text-xs font-medium text-hint">—</span>
+            {/* Keeps the label aligned with the coded rows below it — the
+                auto-detect row has no code to show, and a dash read as one. */}
+            <span className="w-8 shrink-0" aria-hidden />
             <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
           </button>
         )}
@@ -368,11 +370,10 @@ export function Translator({
     setDraftSourceLang((prev) => (prev === code ? null : prev));
   }
 
-  // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-1.5 (12px).
-  // One line is 36px, which — with the island's p-1 and its border — makes the
-  // resting composer exactly as tall as the pair row above it (min-h-11 + 1px
-  // borders). Anything longer grows the island from there.
-  const TEXTAREA_MAX_H = 84;
+  // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2.5 (20px).
+  // One line is 44px — the resting height of the field — and the island adds
+  // its p-1.5 and border on top of that. Anything longer grows the island.
+  const TEXTAREA_MAX_H = 92;
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -579,77 +580,74 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 items-end gap-2">
-      <div className="flex min-w-0 flex-1 flex-col rounded-lg border border-border bg-bg p-1">
-        {/* Turnstile render target. Empty (zero-height) unless Cloudflare
-            decides this visitor has to interact with the challenge. */}
-        <div ref={turnstileRef} className="empty:hidden" />
-        {status !== "idle" ? (
-          <div className="flex min-h-9 items-center gap-3 px-2.5 text-sm text-hint">
-            {status === "recording" ? (
-              <>
-                <span className="flex h-4 items-end gap-0.5">
-                  {[0, 150, 300, 450, 300, 150].map((delay, i) => (
-                    <span
-                      key={i}
-                      className="h-4 w-1 origin-bottom animate-wave rounded-full bg-red-500"
-                      style={{ animationDelay: `${delay}ms` }}
-                    />
-                  ))}
-                </span>
-                {t.recording} · {fmtTime(elapsed)}
-              </>
-            ) : (
-              <>
-                <Loader2 size={14} className="animate-spin" /> {t.recognizing}
-              </>
-            )}
-          </div>
-        ) : (
-          <textarea
-            ref={taRef}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            onInput={autosize}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
-            }}
-            placeholder={t.typePlaceholder}
-            rows={1}
-            name="translator-source-text"
-            autoComplete="off"
-            data-lpignore="true"
-            data-1p-ignore
-            data-bwignore
-            data-form-type="other"
-            style={{ maxHeight: TEXTAREA_MAX_H }}
-            className="min-h-9 w-full resize-none border-0 bg-transparent px-2.5 py-1.5 text-base leading-6 outline-none"
-          />
-        )}
-      </div>
-      {/* Its own island, next to the text one — same split as the row above
-          (pair card + topics button). Fixed at the resting height of that
-          island so a growing textarea stretches only itself. */}
+    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-1.5 pr-2">
+      {/* Turnstile render target. Empty (zero-height) unless Cloudflare
+          decides this visitor has to interact with the challenge. */}
+      <div ref={turnstileRef} className="empty:hidden" />
+      {status !== "idle" ? (
+        <div className="flex min-h-11 flex-1 items-center gap-3 px-2.5 text-sm text-hint">
+          {status === "recording" ? (
+            <>
+              <span className="flex h-4 items-end gap-0.5">
+                {[0, 150, 300, 450, 300, 150].map((delay, i) => (
+                  <span
+                    key={i}
+                    className="h-4 w-1 origin-bottom animate-wave rounded-full bg-red-500"
+                    style={{ animationDelay: `${delay}ms` }}
+                  />
+                ))}
+              </span>
+              {t.recording} · {fmtTime(elapsed)}
+            </>
+          ) : (
+            <>
+              <Loader2 size={14} className="animate-spin" /> {t.recognizing}
+            </>
+          )}
+        </div>
+      ) : (
+        <textarea
+          ref={taRef}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onInput={autosize}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
+          }}
+          placeholder={t.typePlaceholder}
+          rows={1}
+          name="translator-source-text"
+          autoComplete="off"
+          data-lpignore="true"
+          data-1p-ignore
+          data-bwignore
+          data-form-type="other"
+          style={{ maxHeight: TEXTAREA_MAX_H }}
+          className="min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-2.5 text-base leading-6 outline-none"
+        />
+      )}
+      {/* Square, sized off the header's CTA (h-9) so the two accent buttons on
+          screen read as the same control at the same weight. */}
       <button
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex h-[46px] w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
         {status === "processing" ? (
-          <Loader2 size={18} className="animate-spin" />
+          <Loader2 className="h-5 w-5 animate-spin" />
         ) : status === "recording" ? (
-          <Square size={14} fill="currentColor" />
+          <Square className="h-4 w-4" fill="currentColor" />
         ) : showSend ? (
           textBusy ? (
-            <Loader2 size={18} className="animate-spin" />
+            <Loader2 className="h-5 w-5 animate-spin" />
           ) : (
-            <ArrowUp size={18} />
+            <ArrowUp className="h-5 w-5" />
           )
         ) : (
-          <Mic size={18} />
+          <Mic className="h-5 w-5" />
         )}
       </button>
     </div>
@@ -798,7 +796,8 @@ export function Translator({
               live in there. Landing keeps the single topics button. */}
           {isApp ? (
             <div className="absolute inset-x-0 top-0 z-10 flex items-stretch gap-2 p-3 pb-0">
-              <div className="min-w-0 flex-1">{heroPairRow}</div>
+              {/* Left of the pair card, on the same side the topics drawer
+                  slides in from. */}
               <button
                 onClick={() => {
                   analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
@@ -807,8 +806,9 @@ export function Translator({
                 aria-label={t.topics}
                 className="flex w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-bg text-hint transition hover:text-text active:scale-[0.99]"
               >
-                <PanelLeft size={18} />
+                <BookOpen size={18} />
               </button>
+              <div className="min-w-0 flex-1">{heroPairRow}</div>
             </div>
           ) : (
             pairKnown && (
@@ -820,7 +820,7 @@ export function Translator({
                   }}
                   className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
                 >
-                  <PanelLeft size={16} />
+                  <BookOpen size={16} />
                   <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
                 </button>
               </div>

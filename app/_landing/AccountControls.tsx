@@ -35,16 +35,16 @@ export function QuotaBadge({
   return (
     <span
       className={`flex h-9 items-center rounded-lg border border-border font-medium text-hint ${
-        compact ? "gap-2 px-2.5 text-[11px]" : "shrink-0 gap-2.5 px-3 text-xs"
+        compact ? "gap-2 px-2.5 text-xs" : "shrink-0 gap-2.5 px-3 text-sm"
       }`}
       title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
     >
       <span className="flex items-center gap-1">
-        <Mic className={compact ? "h-3 w-3" : "h-3.5 w-3.5"} aria-label={accountTexts.minutesLeft} />
+        <Mic className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} aria-label={accountTexts.minutesLeft} />
         {fmtSeconds(quota.seconds)}
       </span>
       <span className="flex items-center gap-1">
-        <Type className={compact ? "h-3 w-3" : "h-3.5 w-3.5"} aria-label={accountTexts.charsLeft} />
+        <Type className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} aria-label={accountTexts.charsLeft} />
         {nf.format(quota.chars)}
       </span>
     </span>

@@ -10,6 +10,7 @@ import { AuthButton, QuotaBadge } from "./AccountControls";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
 import { analytics } from "@/lib/analytics";
+import { lockScroll } from "@/lib/scroll-lock";
 import { defaultLocale, type Locale } from "@/lib/locales";
 
 type HeaderTexts = {
@@ -132,14 +133,11 @@ export function Header({
   const [menuOpen, setMenuOpen] = useState(false);
   // Lock page scroll while the panel is open — swipes inside the panel then
   // scroll the panel only (its own overflow + overscroll-contain), never the
-  // page behind it.
+  // page behind it. Ref-counted (lib/scroll-lock.ts): a modal opened from
+  // inside this panel holds a lock of its own at the same time.
   useEffect(() => {
     if (!menuOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
+    return lockScroll();
   }, [menuOpen]);
   const menuRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
