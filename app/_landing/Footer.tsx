@@ -50,15 +50,17 @@ export function Footer({
           <div className="flex flex-col gap-2">
             <p className={SECTION_HEADING}>{texts.featuresHeading ?? "Features"}</p>
             <nav className="flex flex-wrap gap-x-4 gap-y-2">
-              {featureLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className="text-sm text-hint transition-colors hover:text-text"
-                >
-                  {l.label}
-                </a>
-              ))}
+              {featureLinks.map((l) =>
+                l.href === pathname ? (
+                  <span key={l.href} className="text-sm font-semibold text-text">
+                    {l.label}
+                  </span>
+                ) : (
+                  <a key={l.href} href={l.href} className="text-sm text-hint transition-colors hover:text-text">
+                    {l.label}
+                  </a>
+                ),
+              )}
             </nav>
           </div>
         )}
@@ -85,7 +87,7 @@ export function Footer({
             )}
           </nav>
         </div>
-        <div className="flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
+        <div className="mt-2 flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <span>{texts.tagline}</span>
         </div>

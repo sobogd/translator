@@ -591,13 +591,13 @@ export function Translator({
         </div>
 
         <div className="relative order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
-          <div className="flex shrink-0 items-center border-b border-border px-2">
+          <div className="flex min-h-11 shrink-0 items-center border-b border-border px-2">
             <button
               onClick={() => setTopicsOpen((v) => !v)}
               className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
             >
               <PanelLeft size={16} />
-              <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+              <span className="max-w-[10rem] truncate">{topic?.title || (topics.length > 0 ? t.newTopic : t.topics)}</span>
             </button>
           </div>
 
