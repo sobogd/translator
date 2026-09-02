@@ -12,9 +12,10 @@
     "features": "الميزات",
     "pricing": "الأسعار",
     "mobileApp": "تطبيق الجوال",
-    "signIn": "تسجيل الدخول",
+    "signIn": "إنشاء حساب / تسجيل الدخول",
     "logOut": "تسجيل الخروج",
-    "tryItNow": "جرّبه الآن"
+    "tryItNow": "جرّبه الآن",
+    "account": "الحساب"
   },
   "hero": {
     "badgeVoice": "صوت",
@@ -223,6 +224,15 @@
         "label": "186 لغة"
       }
     ]
+  },
+  "account": {
+    "title": "الحساب",
+    "planLabel": "الخطة",
+    "freePlan": "نسخة تجريبية مجانية",
+    "minutesLeft": "الدقائق الصوتية المتبقية",
+    "charsLeft": "الأحرف المتبقية",
+    "manageSubscription": "إدارة الاشتراك",
+    "upgrade": "ترقية"
   },
   "pricing": {
     "meta": {

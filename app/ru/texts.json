@@ -12,9 +12,10 @@
     "features": "Возможности",
     "pricing": "Тарифы",
     "mobileApp": "Приложение",
-    "signIn": "Войти",
+    "signIn": "Регистрация / Вход",
     "logOut": "Выйти",
-    "tryItNow": "Попробовать"
+    "tryItNow": "Попробовать",
+    "account": "Аккаунт"
   },
   "hero": {
     "badgeVoice": "Голос",
@@ -227,6 +228,15 @@
         "label": "186 языков"
       }
     ]
+  },
+  "account": {
+    "title": "Аккаунт",
+    "planLabel": "Тариф",
+    "freePlan": "Бесплатный пробный",
+    "minutesLeft": "Осталось голосовых минут",
+    "charsLeft": "Осталось символов",
+    "manageSubscription": "Управление подпиской",
+    "upgrade": "Улучшить тариф"
   },
   "pricing": {
     "meta": {

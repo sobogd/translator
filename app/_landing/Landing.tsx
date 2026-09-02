@@ -49,6 +49,7 @@ export function Landing({
         homeHref={homeHref}
         locale={locale}
         texts={texts.header}
+        accountTexts={texts.account}
         featureLinks={texts.footer.featureLinks}
       />
       <Container className="py-6">

@@ -12,9 +12,10 @@
     "features": "Funcions",
     "pricing": "Preus",
     "mobileApp": "App mòbil",
-    "signIn": "Inicia sessió",
+    "signIn": "Registra't / Inicia sessió",
     "logOut": "Tanca sessió",
-    "tryItNow": "Prova-ho ara"
+    "tryItNow": "Prova-ho ara",
+    "account": "Compte"
   },
   "hero": {
     "badgeVoice": "Veu",
@@ -211,6 +212,15 @@
         "label": "186 llengües"
       }
     ]
+  },
+  "account": {
+    "title": "Compte",
+    "planLabel": "Pla",
+    "freePlan": "Prova gratuïta",
+    "minutesLeft": "Minuts de veu restants",
+    "charsLeft": "Caràcters restants",
+    "manageSubscription": "Gestiona la subscripció",
+    "upgrade": "Millora"
   },
   "pricing": {
     "meta": {

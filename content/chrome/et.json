@@ -12,9 +12,10 @@
     "features": "Funktsioonid",
     "pricing": "Hinnad",
     "mobileApp": "Mobiilirakendus",
-    "signIn": "Logi sisse",
+    "signIn": "Registreeru / Logi sisse",
     "logOut": "Logi välja",
-    "tryItNow": "Proovi kohe"
+    "tryItNow": "Proovi kohe",
+    "account": "Konto"
   },
   "hero": {
     "badgeVoice": "Hääl",
@@ -211,6 +212,15 @@
         "label": "186 keelt"
       }
     ]
+  },
+  "account": {
+    "title": "Konto",
+    "planLabel": "Pakett",
+    "freePlan": "Tasuta prooviperiood",
+    "minutesLeft": "Jäänud hääleminutid",
+    "charsLeft": "Jäänud tähemärgid",
+    "manageSubscription": "Halda tellimust",
+    "upgrade": "Uuenda"
   },
   "pricing": {
     "meta": {

@@ -12,9 +12,10 @@
     "features": "Λειτουργίες",
     "pricing": "Τιμές",
     "mobileApp": "Εφαρμογή για κινητά",
-    "signIn": "Σύνδεση",
+    "signIn": "Εγγραφή / Σύνδεση",
     "logOut": "Αποσύνδεση",
-    "tryItNow": "Δοκιμάστε τώρα"
+    "tryItNow": "Δοκιμάστε τώρα",
+    "account": "Λογαριασμός"
   },
   "hero": {
     "badgeVoice": "Φωνή",
@@ -219,6 +220,15 @@
         "label": "186 γλώσσες"
       }
     ]
+  },
+  "account": {
+    "title": "Λογαριασμός",
+    "planLabel": "Πλάνο",
+    "freePlan": "Δωρεάν δοκιμή",
+    "minutesLeft": "Λεπτά φωνής που απομένουν",
+    "charsLeft": "Χαρακτήρες που απομένουν",
+    "manageSubscription": "Διαχείριση συνδρομής",
+    "upgrade": "Αναβάθμιση"
   },
   "pricing": {
     "meta": {

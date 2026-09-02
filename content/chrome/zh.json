@@ -12,9 +12,10 @@
     "features": "功能",
     "pricing": "价格",
     "mobileApp": "手机应用",
-    "signIn": "登录",
+    "signIn": "注册 / 登录",
     "logOut": "退出登录",
-    "tryItNow": "立即试用"
+    "tryItNow": "立即试用",
+    "account": "账户"
   },
   "hero": {
     "badgeVoice": "语音",
@@ -211,6 +212,15 @@
         "label": "186种语言"
       }
     ]
+  },
+  "account": {
+    "title": "账户",
+    "planLabel": "套餐",
+    "freePlan": "免费试用",
+    "minutesLeft": "剩余语音分钟数",
+    "charsLeft": "剩余字符数",
+    "manageSubscription": "管理订阅",
+    "upgrade": "升级"
   },
   "pricing": {
     "meta": {

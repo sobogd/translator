@@ -12,9 +12,10 @@
     "features": "Функции",
     "pricing": "Цени",
     "mobileApp": "Мобилно приложение",
-    "signIn": "Вход",
+    "signIn": "Регистрация / Вход",
     "logOut": "Изход",
-    "tryItNow": "Опитай сега"
+    "tryItNow": "Опитай сега",
+    "account": "Профил"
   },
   "hero": {
     "badgeVoice": "Глас",
@@ -215,6 +216,15 @@
         "label": "186 езика"
       }
     ]
+  },
+  "account": {
+    "title": "Профил",
+    "planLabel": "План",
+    "freePlan": "Безплатен пробен период",
+    "minutesLeft": "Оставащи гласови минути",
+    "charsLeft": "Оставащи символи",
+    "manageSubscription": "Управление на абонамента",
+    "upgrade": "Надстройка"
   },
   "pricing": {
     "meta": {

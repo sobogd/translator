@@ -81,6 +81,7 @@ export function FeatureLanding({
         homeHref={locale === "en" ? "/" : `/${locale}`}
         locale={locale}
         texts={chrome.header}
+        accountTexts={chrome.account}
         featureLinks={chrome.footer.featureLinks}
       />
       <Container>

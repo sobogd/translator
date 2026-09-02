@@ -21,6 +21,17 @@ export interface TranslatorTexts {
     signIn: string;
     logOut: string;
     tryItNow: string;
+    account: string;
+  };
+  // The header's account modal (signed-in) / quota badge labels.
+  account: {
+    title: string;
+    planLabel: string;
+    freePlan: string;
+    minutesLeft: string;
+    charsLeft: string;
+    manageSubscription: string;
+    upgrade: string;
   };
   hero: {
     badgeVoice: string;

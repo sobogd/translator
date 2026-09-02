@@ -12,9 +12,10 @@
     "features": "機能",
     "pricing": "料金",
     "mobileApp": "モバイルアプリ",
-    "signIn": "ログイン",
+    "signIn": "登録 / ログイン",
     "logOut": "ログアウト",
-    "tryItNow": "今すぐ試す"
+    "tryItNow": "今すぐ試す",
+    "account": "アカウント"
   },
   "hero": {
     "badgeVoice": "音声",
@@ -215,6 +216,15 @@
         "label": "186言語"
       }
     ]
+  },
+  "account": {
+    "title": "アカウント",
+    "planLabel": "プラン",
+    "freePlan": "無料お試し",
+    "minutesLeft": "残り音声分数",
+    "charsLeft": "残り文字数",
+    "manageSubscription": "サブスクリプション管理",
+    "upgrade": "アップグレード"
   },
   "pricing": {
     "meta": {

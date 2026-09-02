@@ -3,17 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { NARROW, PRIMARY_FILL } from "./shell";
+import { NARROW } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { InstallAppButton } from "./InstallAppButton";
+import { AccountControls } from "./AccountControls";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
 import { defaultLocale, type Locale } from "@/lib/locales";
-
-async function logout() {
-  await fetch("/api/auth/logout", { method: "POST" });
-  window.location.reload();
-}
 
 type HeaderTexts = {
   logo: string;
@@ -23,6 +19,17 @@ type HeaderTexts = {
   signIn: string;
   logOut: string;
   tryItNow: string;
+  account: string;
+};
+
+type AccountTexts = {
+  title: string;
+  planLabel: string;
+  freePlan: string;
+  minutesLeft: string;
+  charsLeft: string;
+  manageSubscription: string;
+  upgrade: string;
 };
 
 const DEFAULT_TEXTS: HeaderTexts = {
@@ -30,9 +37,20 @@ const DEFAULT_TEXTS: HeaderTexts = {
   features: "Features",
   pricing: "Pricing",
   mobileApp: "Mobile app",
-  signIn: "Sign in",
+  signIn: "Sign up / Sign in",
   logOut: "Log out",
   tryItNow: "Try it now",
+  account: "Account",
+};
+
+const DEFAULT_ACCOUNT_TEXTS: AccountTexts = {
+  title: "Account",
+  planLabel: "Plan",
+  freePlan: "Free trial",
+  minutesLeft: "Voice minutes left",
+  charsLeft: "Characters left",
+  manageSubscription: "Manage subscription",
+  upgrade: "Upgrade",
 };
 
 // `signedIn` is resolved server-side (getServerSessionEmail in page.tsx) and
@@ -53,12 +71,14 @@ export function Header({
   homeHref = "/",
   locale = defaultLocale,
   texts = DEFAULT_TEXTS,
+  accountTexts = DEFAULT_ACCOUNT_TEXTS,
   featureLinks = [],
 }: {
   signedIn: boolean;
   homeHref?: string;
   locale?: Locale;
   texts?: HeaderTexts;
+  accountTexts?: AccountTexts;
   featureLinks?: FeatureLinkDef[];
 }) {
   const links = localizedFeatureLinks(locale, featureLinks);
@@ -158,27 +178,27 @@ export function Header({
           </Link>
           <InstallAppButton label={texts.mobileApp} className="transition-opacity hover:opacity-70" />
         </nav>
-        {signedIn ? (
-          <button
-            onClick={logout}
-            className="hidden shrink-0 text-sm font-semibold transition-opacity hover:opacity-70 sm:inline-flex"
-          >
-            {texts.logOut}
-          </button>
-        ) : (
-          <a
-            href="/api/auth/google/start"
-            className="hidden shrink-0 text-sm font-semibold transition-opacity hover:opacity-70 sm:inline-flex"
-          >
-            {texts.signIn}
-          </a>
-        )}
-        <Link
-          href={`${homeHref}#app`}
-          className={`hidden h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] sm:inline-flex ${PRIMARY_FILL}`}
-        >
-          {texts.tryItNow}
-        </Link>
+        {/* Quota badge + the one combined auth button ("Sign up / Sign in",
+            or "Account" opening the settings modal once signed in). */}
+        <div className="hidden shrink-0 items-center gap-3 sm:flex">
+          <AccountControls
+            signedIn={signedIn}
+            locale={locale}
+            texts={texts}
+            accountTexts={accountTexts}
+            pricingHref={localePath(locale, "pricing")}
+          />
+        </div>
+        <div className="flex shrink-0 items-center gap-2 sm:hidden">
+          <AccountControls
+            signedIn={signedIn}
+            locale={locale}
+            texts={texts}
+            accountTexts={accountTexts}
+            pricingHref={localePath(locale, "pricing")}
+            compact
+          />
+        </div>
 
         {/* Mobile burger — the nav row above is sm:flex only, so small
             screens need their own way into features/pricing/faq/auth. */}
@@ -226,22 +246,6 @@ export function Header({
                 className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               />
-              {signedIn ? (
-                <button
-                  onClick={logout}
-                  className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
-                >
-                  {texts.logOut}
-                </button>
-              ) : (
-                <a
-                  href="/api/auth/google/start"
-                  className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {texts.signIn}
-                </a>
-              )}
             </div>
           ) : null}
         </div>

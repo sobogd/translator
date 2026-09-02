@@ -12,9 +12,10 @@
     "features": "Funkcije",
     "pricing": "Cene",
     "mobileApp": "Mobilna aplikacija",
-    "signIn": "Prijava",
+    "signIn": "Registracija / Prijava",
     "logOut": "Odjava",
-    "tryItNow": "Isprobaj odmah"
+    "tryItNow": "Isprobaj odmah",
+    "account": "Nalog"
   },
   "hero": {
     "badgeVoice": "Glas",
@@ -223,6 +224,15 @@
         "label": "186 jezika"
       }
     ]
+  },
+  "account": {
+    "title": "Nalog",
+    "planLabel": "Plan",
+    "freePlan": "Besplatan probni period",
+    "minutesLeft": "Preostalih glasovnih minuta",
+    "charsLeft": "Preostalih karaktera",
+    "manageSubscription": "Upravljanje pretplatom",
+    "upgrade": "Nadogradi"
   },
   "pricing": {
     "meta": {

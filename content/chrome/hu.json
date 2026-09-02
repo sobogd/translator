@@ -12,9 +12,10 @@
     "features": "Funkciók",
     "pricing": "Árak",
     "mobileApp": "Mobilalkalmazás",
-    "signIn": "Bejelentkezés",
+    "signIn": "Regisztráció / Bejelentkezés",
     "logOut": "Kijelentkezés",
-    "tryItNow": "Próbáld ki most"
+    "tryItNow": "Próbáld ki most",
+    "account": "Fiók"
   },
   "hero": {
     "badgeVoice": "Hang",
@@ -207,6 +208,15 @@
         "label": "186 nyelv"
       }
     ]
+  },
+  "account": {
+    "title": "Fiók",
+    "planLabel": "Csomag",
+    "freePlan": "Ingyenes próba",
+    "minutesLeft": "Hátralévő hangperc",
+    "charsLeft": "Hátralévő karakter",
+    "manageSubscription": "Előfizetés kezelése",
+    "upgrade": "Frissítés"
   },
   "pricing": {
     "meta": {

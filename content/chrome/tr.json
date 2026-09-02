@@ -12,9 +12,10 @@
     "features": "Özellikler",
     "pricing": "Fiyatlandırma",
     "mobileApp": "Mobil uygulama",
-    "signIn": "Giriş yap",
+    "signIn": "Kaydol / Giriş yap",
     "logOut": "Çıkış yap",
-    "tryItNow": "Hemen dene"
+    "tryItNow": "Hemen dene",
+    "account": "Hesap"
   },
   "hero": {
     "badgeVoice": "Ses",
@@ -227,6 +228,15 @@
         "label": "186 dil"
       }
     ]
+  },
+  "account": {
+    "title": "Hesap",
+    "planLabel": "Plan",
+    "freePlan": "Ücretsiz deneme",
+    "minutesLeft": "Kalan sesli dakika",
+    "charsLeft": "Kalan karakter",
+    "manageSubscription": "Aboneliği yönet",
+    "upgrade": "Yükselt"
   },
   "pricing": {
     "meta": {

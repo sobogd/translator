@@ -12,9 +12,10 @@
     "features": "기능",
     "pricing": "요금제",
     "mobileApp": "모바일 앱",
-    "signIn": "로그인",
+    "signIn": "회원가입 / 로그인",
     "logOut": "로그아웃",
-    "tryItNow": "지금 사용해 보기"
+    "tryItNow": "지금 사용해 보기",
+    "account": "계정"
   },
   "hero": {
     "badgeVoice": "음성",
@@ -215,6 +216,15 @@
         "label": "186개 언어"
       }
     ]
+  },
+  "account": {
+    "title": "계정",
+    "planLabel": "플랜",
+    "freePlan": "무료 체험",
+    "minutesLeft": "남은 음성 분",
+    "charsLeft": "남은 글자 수",
+    "manageSubscription": "구독 관리",
+    "upgrade": "업그레이드"
   },
   "pricing": {
     "meta": {

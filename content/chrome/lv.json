@@ -12,9 +12,10 @@
     "features": "Iespējas",
     "pricing": "Cenas",
     "mobileApp": "Mobilā lietotne",
-    "signIn": "Pieteikties",
+    "signIn": "Reģistrēties / Pierakstīties",
     "logOut": "Iziet",
-    "tryItNow": "Izmēģini tagad"
+    "tryItNow": "Izmēģini tagad",
+    "account": "Konts"
   },
   "hero": {
     "badgeVoice": "Balss",
@@ -207,6 +208,15 @@
         "label": "186 valodas"
       }
     ]
+  },
+  "account": {
+    "title": "Konts",
+    "planLabel": "Plāns",
+    "freePlan": "Bezmaksas izmēģinājums",
+    "minutesLeft": "Atlikušās balss minūtes",
+    "charsLeft": "Atlikušās rakstzīmes",
+    "manageSubscription": "Pārvaldīt abonementu",
+    "upgrade": "Uzlabot"
   },
   "pricing": {
     "meta": {

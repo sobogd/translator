@@ -12,9 +12,10 @@
     "features": "Functies",
     "pricing": "Prijzen",
     "mobileApp": "Mobiele app",
-    "signIn": "Inloggen",
+    "signIn": "Registreren / Inloggen",
     "logOut": "Uitloggen",
-    "tryItNow": "Nu proberen"
+    "tryItNow": "Nu proberen",
+    "account": "Account"
   },
   "hero": {
     "badgeVoice": "Spraak",
@@ -223,6 +224,15 @@
         "label": "186 talen"
       }
     ]
+  },
+  "account": {
+    "title": "Account",
+    "planLabel": "Abonnement",
+    "freePlan": "Gratis proefperiode",
+    "minutesLeft": "Resterende spraakminuten",
+    "charsLeft": "Resterende tekens",
+    "manageSubscription": "Abonnement beheren",
+    "upgrade": "Upgraden"
   },
   "pricing": {
     "meta": {

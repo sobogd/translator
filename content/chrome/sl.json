@@ -12,9 +12,10 @@
     "features": "Funkcije",
     "pricing": "Cenik",
     "mobileApp": "Mobilna aplikacija",
-    "signIn": "Prijava",
+    "signIn": "Registracija / Prijava",
     "logOut": "Odjava",
-    "tryItNow": "Preizkusi zdaj"
+    "tryItNow": "Preizkusi zdaj",
+    "account": "Račun"
   },
   "hero": {
     "badgeVoice": "Glas",
@@ -211,6 +212,15 @@
         "label": "186 jezikov"
       }
     ]
+  },
+  "account": {
+    "title": "Račun",
+    "planLabel": "Paket",
+    "freePlan": "Brezplačno preizkusno obdobje",
+    "minutesLeft": "Preostale glasovne minute",
+    "charsLeft": "Preostali znaki",
+    "manageSubscription": "Upravljanje naročnine",
+    "upgrade": "Nadgradi"
   },
   "pricing": {
     "meta": {

@@ -12,9 +12,10 @@
     "features": "Features",
     "pricing": "Pricing",
     "mobileApp": "Mobile app",
-    "signIn": "Sign in",
+    "signIn": "Sign up / Sign in",
     "logOut": "Log out",
-    "tryItNow": "Try it now"
+    "tryItNow": "Try it now",
+    "account": "Account"
   },
   "hero": {
     "badgeVoice": "Voice",
@@ -279,6 +280,15 @@
     "emptyState": "Nothing here yet. Type a message or record your voice below.",
     "readAloudAria": "Read aloud",
     "copyAria": "Copy"
+  },
+  "account": {
+    "title": "Account",
+    "planLabel": "Plan",
+    "freePlan": "Free trial",
+    "minutesLeft": "Voice minutes left",
+    "charsLeft": "Characters left",
+    "manageSubscription": "Manage subscription",
+    "upgrade": "Upgrade"
   },
   "pricing": {
     "meta": {

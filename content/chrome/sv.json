@@ -12,9 +12,10 @@
     "features": "Funktioner",
     "pricing": "Priser",
     "mobileApp": "Mobilapp",
-    "signIn": "Logga in",
+    "signIn": "Registrera dig / Logga in",
     "logOut": "Logga ut",
-    "tryItNow": "Prova nu"
+    "tryItNow": "Prova nu",
+    "account": "Konto"
   },
   "hero": {
     "badgeVoice": "Röst",
@@ -227,6 +228,15 @@
         "label": "186 språk"
       }
     ]
+  },
+  "account": {
+    "title": "Konto",
+    "planLabel": "Plan",
+    "freePlan": "Gratis provperiod",
+    "minutesLeft": "Röstminuter kvar",
+    "charsLeft": "Tecken kvar",
+    "manageSubscription": "Hantera abonnemang",
+    "upgrade": "Uppgradera"
   },
   "pricing": {
     "meta": {

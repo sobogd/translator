@@ -12,9 +12,10 @@
     "features": "Funkcie",
     "pricing": "Cenník",
     "mobileApp": "Mobilná aplikácia",
-    "signIn": "Prihlásiť sa",
+    "signIn": "Registrácia / Prihlásenie",
     "logOut": "Odhlásiť sa",
-    "tryItNow": "Vyskúšať teraz"
+    "tryItNow": "Vyskúšať teraz",
+    "account": "Účet"
   },
   "hero": {
     "badgeVoice": "Hlas",
@@ -211,6 +212,15 @@
         "label": "186 jazykov"
       }
     ]
+  },
+  "account": {
+    "title": "Účet",
+    "planLabel": "Plán",
+    "freePlan": "Bezplatná skúšobná verzia",
+    "minutesLeft": "Zostávajúce hlasové minúty",
+    "charsLeft": "Zostávajúce znaky",
+    "manageSubscription": "Spravovať predplatné",
+    "upgrade": "Upgradovať"
   },
   "pricing": {
     "meta": {

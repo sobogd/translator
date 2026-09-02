@@ -12,9 +12,10 @@
     "features": "Funcții",
     "pricing": "Prețuri",
     "mobileApp": "Aplicație mobilă",
-    "signIn": "Conectare",
+    "signIn": "Înregistrare / Conectare",
     "logOut": "Deconectare",
-    "tryItNow": "Încearcă acum"
+    "tryItNow": "Încearcă acum",
+    "account": "Cont"
   },
   "hero": {
     "badgeVoice": "Voce",
@@ -223,6 +224,15 @@
         "label": "186 de limbi"
       }
     ]
+  },
+  "account": {
+    "title": "Cont",
+    "planLabel": "Plan",
+    "freePlan": "Perioadă de probă gratuită",
+    "minutesLeft": "Minute vocale rămase",
+    "charsLeft": "Caractere rămase",
+    "manageSubscription": "Gestionează abonamentul",
+    "upgrade": "Upgrade"
   },
   "pricing": {
     "meta": {

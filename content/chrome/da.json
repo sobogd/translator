@@ -12,9 +12,10 @@
     "features": "Funktioner",
     "pricing": "Priser",
     "mobileApp": "Mobilapp",
-    "signIn": "Log ind",
+    "signIn": "Opret dig / Log ind",
     "logOut": "Log ud",
-    "tryItNow": "Prøv nu"
+    "tryItNow": "Prøv nu",
+    "account": "Konto"
   },
   "hero": {
     "badgeVoice": "Stemme",
@@ -219,6 +220,15 @@
         "label": "186 sprog"
       }
     ]
+  },
+  "account": {
+    "title": "Konto",
+    "planLabel": "Plan",
+    "freePlan": "Gratis prøveperiode",
+    "minutesLeft": "Taleminutter tilbage",
+    "charsLeft": "Tegn tilbage",
+    "manageSubscription": "Administrer abonnement",
+    "upgrade": "Opgrader"
   },
   "pricing": {
     "meta": {

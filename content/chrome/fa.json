@@ -12,9 +12,10 @@
     "features": "امکانات",
     "pricing": "تعرفه",
     "mobileApp": "اپلیکیشن موبایل",
-    "signIn": "ورود",
+    "signIn": "ثبت‌نام / ورود",
     "logOut": "خروج",
-    "tryItNow": "همین حالا امتحان کنید"
+    "tryItNow": "همین حالا امتحان کنید",
+    "account": "حساب کاربری"
   },
   "hero": {
     "badgeVoice": "صدا",
@@ -215,6 +216,15 @@
         "label": "۱۸۶ زبان"
       }
     ]
+  },
+  "account": {
+    "title": "حساب کاربری",
+    "planLabel": "طرح",
+    "freePlan": "دوره آزمایشی رایگان",
+    "minutesLeft": "دقایق صوتی باقی‌مانده",
+    "charsLeft": "کاراکترهای باقی‌مانده",
+    "manageSubscription": "مدیریت اشتراک",
+    "upgrade": "ارتقا"
   },
   "pricing": {
     "meta": {

@@ -12,9 +12,10 @@
     "features": "Funciones",
     "pricing": "Precios",
     "mobileApp": "App móvil",
-    "signIn": "Iniciar sesión",
+    "signIn": "Regístrate / Inicia sesión",
     "logOut": "Cerrar sesión",
-    "tryItNow": "Pruébalo ahora"
+    "tryItNow": "Pruébalo ahora",
+    "account": "Cuenta"
   },
   "hero": {
     "badgeVoice": "Voz",
@@ -231,6 +232,15 @@
         "label": "186 idiomas"
       }
     ]
+  },
+  "account": {
+    "title": "Cuenta",
+    "planLabel": "Plan",
+    "freePlan": "Prueba gratuita",
+    "minutesLeft": "Minutos de voz restantes",
+    "charsLeft": "Caracteres restantes",
+    "manageSubscription": "Gestionar suscripción",
+    "upgrade": "Mejorar plan"
   },
   "pricing": {
     "meta": {

@@ -30,6 +30,7 @@ export function PricingPage({
         homeHref={localeHome(locale)}
         locale={locale}
         texts={chrome.header}
+        accountTexts={chrome.account}
         featureLinks={chrome.footer.featureLinks}
       />
       <Container className="py-6">

@@ -12,9 +12,10 @@
     "features": "Можливості",
     "pricing": "Тарифи",
     "mobileApp": "Мобільний застосунок",
-    "signIn": "Увійти",
+    "signIn": "Реєстрація / Вхід",
     "logOut": "Вийти",
-    "tryItNow": "Спробувати зараз"
+    "tryItNow": "Спробувати зараз",
+    "account": "Акаунт"
   },
   "hero": {
     "badgeVoice": "Голос",
@@ -227,6 +228,15 @@
         "label": "186 мов"
       }
     ]
+  },
+  "account": {
+    "title": "Акаунт",
+    "planLabel": "Тариф",
+    "freePlan": "Безкоштовний пробний період",
+    "minutesLeft": "Залишилось голосових хвилин",
+    "charsLeft": "Залишилось символів",
+    "manageSubscription": "Керувати підпискою",
+    "upgrade": "Оновити план"
   },
   "pricing": {
     "meta": {

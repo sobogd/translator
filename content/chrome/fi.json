@@ -12,9 +12,10 @@
     "features": "Ominaisuudet",
     "pricing": "Hinnoittelu",
     "mobileApp": "Mobiilisovellus",
-    "signIn": "Kirjaudu sisään",
+    "signIn": "Rekisteröidy / Kirjaudu sisään",
     "logOut": "Kirjaudu ulos",
-    "tryItNow": "Kokeile nyt"
+    "tryItNow": "Kokeile nyt",
+    "account": "Tili"
   },
   "hero": {
     "badgeVoice": "Puhe",
@@ -211,6 +212,15 @@
         "label": "186 kieltä"
       }
     ]
+  },
+  "account": {
+    "title": "Tili",
+    "planLabel": "Suunnitelma",
+    "freePlan": "Ilmainen kokeilu",
+    "minutesLeft": "Puheminuutteja jäljellä",
+    "charsLeft": "Merkkejä jäljellä",
+    "manageSubscription": "Hallinnoi tilausta",
+    "upgrade": "Päivitä"
   },
   "pricing": {
     "meta": {

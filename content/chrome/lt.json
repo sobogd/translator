@@ -12,9 +12,10 @@
     "features": "Galimybės",
     "pricing": "Kainos",
     "mobileApp": "Mobili programėlė",
-    "signIn": "Prisijungti",
+    "signIn": "Registracija / Prisijungimas",
     "logOut": "Atsijungti",
-    "tryItNow": "Išbandyti dabar"
+    "tryItNow": "Išbandyti dabar",
+    "account": "Paskyra"
   },
   "hero": {
     "badgeVoice": "Balsas",
@@ -211,6 +212,15 @@
         "label": "186 kalbų"
       }
     ]
+  },
+  "account": {
+    "title": "Paskyra",
+    "planLabel": "Planas",
+    "freePlan": "Nemokamas bandomasis laikotarpis",
+    "minutesLeft": "Likusios balso minutės",
+    "charsLeft": "Likę simboliai",
+    "manageSubscription": "Tvarkyti prenumeratą",
+    "upgrade": "Atnaujinti"
   },
   "pricing": {
     "meta": {

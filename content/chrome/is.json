@@ -12,9 +12,10 @@
     "features": "Eiginleikar",
     "pricing": "Verð",
     "mobileApp": "Farsímaforrit",
-    "signIn": "Skrá inn",
+    "signIn": "Nýskráning / Innskráning",
     "logOut": "Skrá út",
-    "tryItNow": "Prófa núna"
+    "tryItNow": "Prófa núna",
+    "account": "Aðgangur"
   },
   "hero": {
     "badgeVoice": "Rödd",
@@ -203,6 +204,15 @@
         "label": "186 tungumál"
       }
     ]
+  },
+  "account": {
+    "title": "Aðgangur",
+    "planLabel": "Pakki",
+    "freePlan": "Ókeypis prufa",
+    "minutesLeft": "Raddmínútur eftir",
+    "charsLeft": "Stafir eftir",
+    "manageSubscription": "Stjórna áskrift",
+    "upgrade": "Uppfæra"
   },
   "pricing": {
     "meta": {
