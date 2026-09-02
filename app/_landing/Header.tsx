@@ -146,7 +146,7 @@ export function Header({
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md [transform:translateZ(0)]"
+      className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md"
     >
       <div className={`${NARROW} flex h-14 items-center justify-between gap-3 sm:h-16`}>
         <Link
@@ -198,8 +198,8 @@ export function Header({
             pricingHref={localePath(locale, "pricing")}
           />
         </div>
-        <div className="flex shrink-0 items-center sm:hidden">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} />
+        <div className="flex min-w-0 items-center sm:hidden">
+          <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
         </div>
 
         {/* Mobile burger — the nav row above is sm:flex only, so small

@@ -41,24 +41,29 @@ function useQuota() {
 export function QuotaBadge({
   locale,
   accountTexts,
+  compact = false,
 }: {
   locale: string;
   accountTexts: TranslatorTexts["account"];
+  /** Tighter paddings/gaps so the badge fits a narrow mobile header row. */
+  compact?: boolean;
 }) {
   const quota = useQuota();
   if (!quota) return null;
   const nf = new Intl.NumberFormat(locale);
   return (
     <span
-      className="flex shrink-0 items-center gap-2.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-hint"
+      className={`flex items-center rounded-full border border-border font-medium text-hint ${
+        compact ? "gap-1.5 px-2 py-1 text-[11px]" : "shrink-0 gap-2.5 px-3 py-1.5 text-xs"
+      }`}
       title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
     >
       <span className="flex items-center gap-1">
-        <Mic className="h-3.5 w-3.5" aria-label={accountTexts.minutesLeft} />
+        <Mic className={compact ? "h-3 w-3" : "h-3.5 w-3.5"} aria-label={accountTexts.minutesLeft} />
         {fmtSeconds(quota.seconds)}
       </span>
       <span className="flex items-center gap-1">
-        <Type className="h-3.5 w-3.5" aria-label={accountTexts.charsLeft} />
+        <Type className={compact ? "h-3 w-3" : "h-3.5 w-3.5"} aria-label={accountTexts.charsLeft} />
         {nf.format(quota.chars)}
       </span>
     </span>
