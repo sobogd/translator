@@ -119,6 +119,12 @@ export function Header({
   }, [hasFeatureLinks, featuresOpen]);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  // Burger's nested "Features" accordion — collapsed by default so the pair
+  // links don't flood the menu; resets whenever the burger closes.
+  const [burgerFeaturesOpen, setBurgerFeaturesOpen] = useState(false);
+  useEffect(() => {
+    if (!menuOpen) setBurgerFeaturesOpen(false);
+  }, [menuOpen]);
   const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!menuOpen) return;
@@ -214,26 +220,43 @@ export function Header({
           </button>
           {menuOpen ? (
             <div className="absolute right-0 top-full z-50 mt-2 flex min-w-[220px] flex-col rounded-2xl border border-border bg-bg p-2 shadow-xl">
-              {hasFeatureLinks
-                ? links.map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {l.label}
-                    </Link>
-                  ))
-                : (
-                  <Link
-                    href={`${homeHref}#features`}
-                    className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                    onClick={() => setMenuOpen(false)}
+              {hasFeatureLinks ? (
+                <>
+                  <button
+                    type="button"
+                    aria-expanded={burgerFeaturesOpen}
+                    onClick={() => setBurgerFeaturesOpen((v) => !v)}
+                    className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
                   >
                     {texts.features}
-                  </Link>
-                )}
+                    <ChevronDown
+                      className={`h-4 w-4 text-hint transition-transform ${burgerFeaturesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {burgerFeaturesOpen && (
+                    <div className="flex max-h-64 flex-col overflow-y-auto pl-3">
+                      {links.map((l) => (
+                        <Link
+                          key={l.href}
+                          href={l.href}
+                          className="rounded-lg px-3 py-2 text-sm font-medium transition-opacity hover:opacity-70"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {l.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={`${homeHref}#features`}
+                  className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {texts.features}
+                </Link>
+              )}
               <Link
                 href={localePath(locale, "pricing")}
                 className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
