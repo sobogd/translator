@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "title": "Taleoversetter På Nett – Prøv Gratis | IQ Translate",
+    "description": "Gratis taleoversetter på nett: snakk naturlig og få en oversettelse med det samme, opplest eller skrevet, på 186 språk. Ingen nedlasting, ingen registrering.",
+    "ogTitle": "Taleoversetter På Nett – Prøv Gratis",
+    "ogDescription": "Gratis taleoversetter på nett: snakk og få en oversettelse med det samme, opplest eller skrevet, på 186 språk.",
+    "twitterTitle": "Taleoversetter På Nett – Prøv Gratis",
+    "twitterDescription": "Gratis taleoversetter på nett: oversettelse med det samme, opplest eller skrevet, på 186 språk."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funksjoner",
+    "pricing": "Priser",
+    "mobileApp": "Mobilapp",
+    "signIn": "Logg inn",
+    "logOut": "Logg ut",
+    "tryItNow": "Prøv nå"
+  },
+  "hero": {
+    "badgeVoice": "Stemme",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 språk",
+    "title": "En taleoversetter",
+    "titleAccent": "for enhver samtale",
+    "description": "Snakk naturlig og få en oversettelse med det samme, opplest eller skrevet, på 186 språk. Ingen registrering kreves for å prøve.",
+    "ctaTry": "Prøv nå — gratis",
+    "ctaSignIn": "Logg inn med Google",
+    "mockFromLabel": "🇳🇴 Norsk",
+    "mockFromPhrase": "Hei, hvordan har du det?",
+    "mockToLabel": "🇬🇧 Engelsk",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 språk",
+      "sub": "Snakk eller skriv, oversatt med det samme, ingen ekstra nedlastinger"
+    },
+    {
+      "title": "Ingen registrering nødvendig",
+      "sub": "Prøv rett på denne siden — logg inn bare for flere kreditter"
+    },
+    {
+      "title": "Historikk per språkpar",
+      "sub": "Hver samtale holdes organisert og lett å finne igjen"
+    },
+    {
+      "title": "Gratis å starte",
+      "sub": "Bla ned og begynn å oversette med en gang"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Øyeblikkelig taleoversettelse",
+      "sub": "Trykk på mikrofonen og snakk. Talen din transkriberes og oversettes på sekunder — ingen skriving nødvendig.",
+      "bullets": [
+        {
+          "title": "Snakk, få oversettelsen med det samme",
+          "sub": "Ett trykk starter opptaket, oversettelsen vises like etter"
+        },
+        {
+          "title": "Hør den lest opp",
+          "sub": "Trykk på høyttalerikonet for å få oversettelsen lest høyt"
+        },
+        {
+          "title": "Stemme eller tekst, ditt valg",
+          "sub": "Bytt modus når som helst med ett trykk"
+        }
+      ]
+    },
+    {
+      "heading": "Tekstoversettelse også",
+      "sub": "Foretrekker du å skrive? Bytt til tastaturmodus og oversett en melding umiddelbart.",
+      "bullets": [
+        {
+          "title": "Bytt mellom original og oversettelse",
+          "sub": "Trykk eller sveip en linje for å se den på begge språk"
+        },
+        {
+          "title": "Kopier med ett trykk",
+          "sub": "Hent den oversatte teksten for å lime inn hvor som helst"
+        },
+        {
+          "title": "Bytt til stemme når som helst",
+          "sub": "Begynn å skrive, og diktér neste linje i stedet"
+        }
+      ]
+    },
+    {
+      "heading": "186 språk, organisert etter samtale",
+      "sub": "Velg ditt eget språk én gang, og bla deretter gjennom alle de andre — hvert språkpar har sin egen lagrede tråd.",
+      "bullets": [
+        {
+          "title": "186 språk inkludert",
+          "sub": "Ingen ekstra nedlastinger eller språkpakker å installere"
+        },
+        {
+          "title": "Samtalene holdes organiserte",
+          "sub": "Hvert språkpar har sin egen lagrede historikk"
+        },
+        {
+          "title": "Tøm eller slett når som helst",
+          "sub": "Fjern en tråds historikk eller slett den helt fra menyen"
+        }
+      ]
+    },
+    {
+      "heading": "Ingen registrering kreves for å starte",
+      "sub": "Prøv rett på denne siden — ingen konto, intet passord. Logg inn med Google bare når du vil ha flere daglige kreditter og historikk synkronisert på tvers av enheter.",
+      "bullets": [
+        {
+          "title": "Valgfri innlogging med ett trykk",
+          "sub": "Ingen registreringsskjema, intet passord å huske"
+        },
+        {
+          "title": "Bare e-posten din, ikke noe annet",
+          "sub": "Bare Google-e-posten din identifiserer kontoen din"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Derfor kommer stemme",
+    "titleAccent": "først",
+    "description": "De fleste oversettelsesapper stopper ved skrevet tekst. Radene under viser hva som faktisk er annerledes når du trenger å snakke, ikke skrive.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Vanlige apper",
+    "rows": [
+      {
+        "title": "Taleoversettelse",
+        "us": "Ett trykk tar opp, transkriberer og oversetter på sekunder.",
+        "them": "Bare tekst, eller du må skrive det du hørte."
+      },
+      {
+        "title": "Samtalehistorikk",
+        "us": "Hvert språkpar har sin egen lagrede tråd.",
+        "them": "Historikken forsvinner når du lukker fanen."
+      },
+      {
+        "title": "Komme i gang",
+        "us": "Prøv med en gang, rett på denne siden — ingen konto kreves.",
+        "them": "Kontoopprettelse med e-post og passord før du kan prøve."
+      },
+      {
+        "title": "Avspilling av stemme",
+        "us": "Trykk for å få oversettelsen lest høyt.",
+        "them": "Ingen taleavspilling."
+      },
+      {
+        "title": "Språk",
+        "us": "186 språk tilgjengelig, ingen ekstra nedlasting.",
+        "them": "Begrensede offline språkpakker."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Ofte stilte",
+    "headingAccent": "spørsmål",
+    "sub": "Det folk lurer på før de prøver. Ingen registrering nødvendig — bla opp og prøv selv.",
+    "items": [
+      {
+        "q": "Hvordan fungerer taleoversettelse?",
+        "a": "Trykk på mikrofonen og snakk — stemmen din transkriberes og oversettes på noen sekunder, vises som tekst og kan leses høyt. Ingen skriving nødvendig."
+      },
+      {
+        "q": "Hvor mange språk støttes?",
+        "a": "186 språk. Velg ditt eget språk én gang, og start deretter en samtaletråd med hvem som helst annen."
+      },
+      {
+        "q": "Må jeg opprette en konto?",
+        "a": "Nei. Prøv rett på denne siden uten registrering. Logg inn med Google bare hvis du vil ha flere daglige kreditter og historikk synkronisert på tvers av enheter."
+      },
+      {
+        "q": "Blir oversettelseshistorikken min lagret?",
+        "a": "Ja, per språkpar, slik at tidligere samtaler holdes organisert — selv uten innlogging blir nettleseren din gjenkjent. Tøm eller slett en hvilken som helst tråd når som helst fra menyen."
+      },
+      {
+        "q": "Kan jeg bruke tekst i stedet for stemme?",
+        "a": "Ja. Bytt til tastaturmodus når som helst og skriv meldingen din i stedet for å snakke."
+      },
+      {
+        "q": "Fungerer det for samtale begge veier?",
+        "a": "Ja. Trykk eller sveip en oversatt linje for å bytte mellom original og oversettelse, slik at begge parter kan følge med på én skjerm."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Øyeblikkelig taleoversettelse,",
+    "headingAccent": "klar på 10 sekunder.",
+    "sub": "Prøv rett på denne siden — ingen registrering, ingen nedlastinger, 186 språk inkludert.",
+    "ctaLabel": "Prøv nå"
+  },
+  "footer": {
+    "tagline": "Øyeblikkelig taleoversettelse, 186 språk",
+    "brand": "IQ Translate",
+    "featuresHeading": "Oversettere",
+    "featureLinks": [
+      { "routeKey": "/oversetter-norsk-engelsk", "label": "Norsk–Engelsk" },
+      { "routeKey": "/oversetter-norsk-spansk", "label": "Norsk–Spansk" },
+      { "routeKey": "/oversetter-norsk-tysk", "label": "Norsk–Tysk" },
+      { "routeKey": "/oversetter-norsk-svensk", "label": "Norsk–Svensk" }
+    ]
+  },
+  "translator": {
+    "topics": "Emner",
+    "newTopic": "Nytt emne",
+    "noTopicsYet": "Ingen emner ennå",
+    "deleteTopic": "Slett emne",
+    "deleteTopicConfirm": "Slette dette emnet og alle oversettelsene i det?",
+    "autoDetect": "Automatisk gjenkjenning",
+    "chooseLanguage": "Velg et språk",
+    "close": "Lukk",
+    "searchPlaceholder": "Søk etter et språk…",
+    "clearHistory": "Tøm historikk",
+    "clearHistoryConfirm": "Tømme alle oversettelser i dette emnet?",
+    "noTranslationsYet": "Ingen oversettelser ennå i dette emnet.",
+    "translating": "Oversetter…",
+    "typePlaceholder": "Skriv en melding…",
+    "translateAria": "Oversett",
+    "micDeniedError": "Mikrofontilgang avslått",
+    "recording": "Tar opp",
+    "recognizing": "Gjenkjenner…",
+    "recordAria": "Ta opp",
+    "stopAria": "Stopp",
+    "pricingLink": "Priser",
+    "errors": {
+      "insufficientCredits": "Tomt for kreditter — oppgrader abonnementet ditt",
+      "textTooLong": "Teksten er for lang for abonnementet ditt"
+    }
+  },
+  "history": {
+    "emptyState": "Ingenting her ennå. Skriv en melding eller ta opp stemmen din nedenfor.",
+    "readAloudAria": "Les høyt",
+    "copyAria": "Kopier"
+  }
+}

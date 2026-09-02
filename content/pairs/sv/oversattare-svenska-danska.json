@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Svenska-Danska Röstöversättare | IQ Translate",
+    "description": "Dansk och svensk översättare med röst och text – för när grannspråket inte räcker. Prata eller skriv, hör svaret direkt. 186 språk, gratis att testa.",
+    "ogTitle": "Svenska-Danska Röstöversättare",
+    "ogDescription": "Prata eller skriv på svenska, få den danska översättningen direkt – till hjälp när talad danska är svårare att förstå än skriven.",
+    "canonical": "https://translate.iq-factura.com/sv/oversattare-svenska-danska",
+    "ogLocale": "sv_SE"
+  },
+  "hero": {
+    "badgeVoice": "Röst",
+    "badgeText": "Text",
+    "badgeLanguages": "186 språk",
+    "title": "Svensk-dansk översättare",
+    "titleAccent": "när grannspråket krånglar",
+    "description": "Svenska och danska liknar varandra på papper, men talad danska kan vara svår att hänga med i. Prata eller skriv på svenska och få den danska översättningen på några sekunder — som text och uppläst, åt båda håll.",
+    "ctaTry": "Prova gratis",
+    "ctaSignIn": "Logga in med Google",
+    "mockFromLabel": "🇸🇪 Svenska",
+    "mockFromPhrase": "Vad kostar den här?",
+    "mockToLabel": "🇩🇰 Danska",
+    "mockToPhrase": "Hvad koster den her?"
+  },
+  "spotlights": [
+    {
+      "heading": "Prata istället för att gissa",
+      "sub": "Tryck på mikrofonen, säg det på svenska eller danska, och läs eller lyssna på översättningen istället för att gissa dig fram.",
+      "bullets": [
+        { "title": "Tal blir till danska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på danska några sekunder senare" },
+        { "title": "Lyssna på danskan", "sub": "Tryck på högtalarikonen när det talade uttalet är svårare att tyda än texten" }
+      ]
+    },
+    {
+      "heading": "Ett ämne, båda sidorna av samtalet",
+      "sub": "Fortsätt prata fram och tillbaka med danska kollegor, kunder eller vänner — allt hamnar i samma ämne.",
+      "bullets": [
+        { "title": "Svara på danska, översatt till svenska", "sub": "Den du pratar med kan säga det på danska och du ser och hör det tydligt på svenska" },
+        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma danska-tråd nästa gång ni hörs, till exempel över Öresund" }
+      ]
+    },
+    {
+      "heading": "Svenska–danska, plus 185 språk till",
+      "sub": "Danska är ett av 186 tillgängliga språk, åt vilket håll du vill.",
+      "bullets": [
+        { "title": "Fångar falska vänner", "sub": "Skiljer på ord som ser lika ut men betyder olika saker på svenska och danska" },
+        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för danska idag och vilket annat språk som helst imorgon" }
+      ]
+    },
+    {
+      "heading": "Föredrar du att skriva? Det går också",
+      "sub": "Skriv eller klistra in svensk text och få en dansk översättning utan att röra mikrofonen.",
+      "bullets": [
+        { "title": "Skriv istället för att prata", "sub": "Praktiskt när du är osäker på stavningen eller sitter i ett tyst rum" },
+        { "title": "Kopiera översättningen", "sub": "Kopiera den danska texten direkt till ett mejl eller meddelande" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Varför det här slår",
+    "titleAccent": "en vanlig dansk översättare",
+    "description": "De flesta översättningsappar antar att de nordiska språken går att gissa sig till. Här är vad som faktiskt skiljer.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Vanliga översättningsappar",
+    "rows": [
+      { "title": "Hur du börjar", "us": "Prata på svenska eller danska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
+      { "title": "Talad danska", "us": "Transkriberar och översätter talad danska, inte bara skriven text.", "them": "Klarar oftast bara text du redan skrivit in själv." },
+      { "title": "Samtalshistorik", "us": "Varje danska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
+      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
+      { "title": "Att höra svaret", "us": "Tryck för att få den danska översättningen uppläst i rätt tempo.", "them": "Bara text, så det talade uttalet får du klara själv." }
+    ]
+  },
+  "faq": {
+    "heading": "Vanliga",
+    "headingAccent": "frågor",
+    "sub": "Vanliga frågor om att översätta mellan svenska och danska.",
+    "items": [
+      { "q": "Varför behövs en översättare när språken är så lika?", "a": "Skriven danska och svenska liknar varandra, men talad danska har ett annat uttal och egna ord som lätt missförstås — då hjälper en riktig översättning." },
+      { "q": "Kan den översätta talad danska till svenska?", "a": "Ja — tryck på mikrofonen, låt personen prata på danska, och du får en svensk översättning som text och uppläst." },
+      { "q": "Fångar den falska vänner mellan språken?", "a": "Ja, ord som ser likadana ut men betyder olika saker på svenska och danska översätts efter rätt betydelse, inte bara stavning." },
+      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
+      { "q": "Kan jag översätta tillbaka från svenska till danska i samma tråd?", "a": "Ja, samma samtal fungerar åt båda håll i ett och samma ämne." },
+      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starta ditt svensk-danska",
+    "headingAccent": "samtal nu.",
+    "sub": "Prata eller skriv, hör svaret på danska — gratis att testa, till hjälp när grannspråket krånglar.",
+    "ctaLabel": "Prova gratis"
+  }
+}

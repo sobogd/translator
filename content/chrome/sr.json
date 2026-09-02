@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Glasovni Prevodilac Online – Besplatno | IQ Translate",
+    "description": "Besplatan glasovni prevodilac onlajn: govorite prirodno i dobijte trenutni prevod, izgovoren ili napisan, na 186 jezika. Bez preuzimanja, bez registracije za probu.",
+    "ogTitle": "Glasovni Prevodilac Online – Besplatno",
+    "ogDescription": "Besplatan glasovni prevodilac onlajn: govorite i dobijte trenutni prevod, izgovoren ili napisan, na 186 jezika.",
+    "twitterTitle": "Glasovni Prevodilac Online – Besplatno",
+    "twitterDescription": "Besplatan glasovni prevodilac: trenutni izgovoreni ili pisani prevod na 186 jezika."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funkcije",
+    "pricing": "Cene",
+    "mobileApp": "Mobilna aplikacija",
+    "signIn": "Prijava",
+    "logOut": "Odjava",
+    "tryItNow": "Isprobaj odmah"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Glasovni prevodilac",
+    "titleAccent": "za svaki razgovor",
+    "description": "Govorite prirodno i dobijte trenutni prevod, izgovoren ili napisan, na 186 jezika. Za probu nije potrebna registracija.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Zdravo, kako si?",
+    "mockToLabel": "🇬🇧 Engleski",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 jezika",
+      "sub": "Govorite ili kucajte, prevod odmah, bez dodatnih preuzimanja"
+    },
+    {
+      "title": "Bez registracije",
+      "sub": "Isprobajte odmah na ovoj stranici – prijava samo za više kredita"
+    },
+    {
+      "title": "Istorija po jezičkom paru",
+      "sub": "Svaki razgovor ostaje organizovan i lako dostupan"
+    },
+    {
+      "title": "Besplatno za početak",
+      "sub": "Skrolujte nadole i odmah počnite da prevodite"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Trenutni glasovni prevod",
+      "sub": "Dodirnite mikrofon i pričajte. Vaš govor se prepoznaje i prevodi za par sekundi – bez kucanja.",
+      "bullets": [
+        {
+          "title": "Pričajte, dobijte trenutni prevod",
+          "sub": "Jedan dodir pokreće snimanje, prevod se pojavljuje odmah zatim"
+        },
+        {
+          "title": "Slušajte prevod naglas",
+          "sub": "Dodirnite ikonicu zvučnika da čujete prevod izgovoren naglas"
+        },
+        {
+          "title": "Glas ili tekst, birate vi",
+          "sub": "Prebacujte režime u svakom trenutku jednim dodirom"
+        }
+      ]
+    },
+    {
+      "heading": "Prevod teksta takođe",
+      "sub": "Volite da kucate? Pređite na tastaturu i prevedite poruku odmah.",
+      "bullets": [
+        {
+          "title": "Zamenite original i prevod",
+          "sub": "Dodirnite ili prevucite red da ga vidite na oba jezika"
+        },
+        {
+          "title": "Kopirajte jednim dodirom",
+          "sub": "Preuzmite prevedeni tekst da ga nalepite bilo gde"
+        },
+        {
+          "title": "Pređite na glas u svakom trenutku",
+          "sub": "Počnite kucanjem, pa izdiktirajte sledeći red"
+        }
+      ]
+    },
+    {
+      "heading": "186 jezika, organizovano po razgovoru",
+      "sub": "Izaberite svoj jezik jednom, pa pregledajte sve ostale – svaki jezički par čuva svoju sopstvenu istoriju.",
+      "bullets": [
+        {
+          "title": "186 jezika uključeno",
+          "sub": "Bez dodatnih preuzimanja ili jezičkih paketa"
+        },
+        {
+          "title": "Razgovori ostaju organizovani",
+          "sub": "Svaki jezički par ima svoju sačuvanu istoriju"
+        },
+        {
+          "title": "Obrišite kad god želite",
+          "sub": "Očistite istoriju teme ili je uklonite u potpunosti iz menija"
+        }
+      ]
+    },
+    {
+      "heading": "Nije potrebna registracija za početak",
+      "sub": "Isprobajte odmah na ovoj stranici – bez naloga, bez lozinke. Prijavite se preko Google-a samo kada želite više dnevnih kredita i istoriju sinhronizovanu na svim uređajima.",
+      "bullets": [
+        {
+          "title": "Opciona prijava jednim dodirom",
+          "sub": "Bez formulara za registraciju, bez lozinke za pamćenje"
+        },
+        {
+          "title": "Samo vaš imejl, ništa više",
+          "sub": "Samo vaš Google imejl identifikuje vaš nalog"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto glas",
+    "titleAccent": "dolazi na prvo mesto",
+    "description": "Većina aplikacija za prevođenje staje kod otkucanog teksta. Redovi ispod pokazuju šta se zaista razlikuje kada treba da pričate, a ne kucate.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije",
+    "rows": [
+      {
+        "title": "Glasovni prevod",
+        "us": "Jedan dodir snima, prepoznaje i prevodi za par sekundi.",
+        "them": "Samo tekst, ili morate sami da otkucate ono što ste čuli."
+      },
+      {
+        "title": "Istorija razgovora",
+        "us": "Svaki jezički par čuva svoju sopstvenu sačuvanu temu.",
+        "them": "Istorija nestaje kada zatvorite karticu."
+      },
+      {
+        "title": "Početak korišćenja",
+        "us": "Isprobajte odmah, direktno na ovoj stranici – bez naloga.",
+        "them": "Kreiranje naloga sa imejlom i lozinkom pre nego što uopšte probate."
+      },
+      {
+        "title": "Puštanje prevoda naglas",
+        "us": "Dodirnite da čujete prevod izgovoren naglas.",
+        "them": "Nema glasovnog izlaza."
+      },
+      {
+        "title": "Jezici",
+        "us": "186 jezika dostupno, bez dodatnog preuzimanja.",
+        "them": "Ograničeni oflajn jezički paketi."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Šta ljudi pitaju pre nego što probaju. Nije potrebna registracija – skrolujte nagore i probajte sami.",
+    "items": [
+      {
+        "q": "Kako funkcioniše glasovni prevod?",
+        "a": "Dodirnite mikrofon i pričajte – vaš glas se prepoznaje i prevodi za nekoliko sekundi, prikazuje se kao tekst i može se preslušati naglas. Kucanje nije potrebno."
+      },
+      {
+        "q": "Koliko jezika je podržano?",
+        "a": "186 jezika. Izaberite svoj jezik jednom, pa započnite temu razgovora sa bilo kojim drugim jezikom."
+      },
+      {
+        "q": "Da li moram da napravim nalog?",
+        "a": "Ne. Isprobajte direktno na ovoj stranici bez registracije. Prijavite se preko Google-a samo ako želite više dnevnih kredita i istoriju sinhronizovanu na svim uređajima."
+      },
+      {
+        "q": "Da li se čuva istorija mojih prevoda?",
+        "a": "Da, po jezičkom paru, tako da prethodni razgovori ostaju organizovani – čak i bez prijave, vaš pregledač se pamti. Obrišite bilo koju temu kad god želite, iz njenog menija."
+      },
+      {
+        "q": "Mogu li da koristim tekst umesto glasa?",
+        "a": "Da. Pređite na tastaturu u svakom trenutku i otkucajte poruku umesto da je izgovarate."
+      },
+      {
+        "q": "Da li radi za razgovor u oba smera?",
+        "a": "Da. Dodirnite ili prevucite prevedeni red da prebacite između originala i prevoda, tako da obe strane mogu da prate na jednom ekranu."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Trenutni glasovni prevod,",
+    "headingAccent": "spreman za 10 sekundi.",
+    "sub": "Isprobajte direktno na ovoj stranici – bez registracije, bez preuzimanja, 186 jezika uključeno.",
+    "ctaLabel": "Isprobaj odmah"
+  },
+  "footer": {
+    "tagline": "Trenutni glasovni prevod, 186 jezika",
+    "brand": "IQ Translate",
+    "featuresHeading": "Prevodioci",
+    "featureLinks": [
+      { "routeKey": "/prevodilac-srpski-engleski", "label": "Srpsko–engleski" },
+      { "routeKey": "/prevodilac-srpski-nemacki", "label": "Srpsko–nemački" },
+      { "routeKey": "/prevodilac-srpski-spanski", "label": "Srpsko–španski" },
+      { "routeKey": "/prevodilac-srpski-italijanski", "label": "Srpsko–italijanski" },
+      { "routeKey": "/prevodilac-srpski-turski", "label": "Srpsko–turski" },
+      { "routeKey": "/prevodilac-srpski-ruski", "label": "Srpsko–ruski" }
+    ]
+  },
+  "translator": {
+    "topics": "Teme",
+    "newTopic": "Nova tema",
+    "noTopicsYet": "Još nema tema",
+    "deleteTopic": "Obriši temu",
+    "deleteTopicConfirm": "Obrisati ovu temu i sve njene prevode?",
+    "autoDetect": "Automatsko prepoznavanje",
+    "chooseLanguage": "Izaberite jezik",
+    "close": "Zatvori",
+    "searchPlaceholder": "Pretraži jezik…",
+    "clearHistory": "Obriši istoriju",
+    "clearHistoryConfirm": "Obrisati sve prevode u ovoj temi?",
+    "noTranslationsYet": "Još nema prevoda u ovoj temi.",
+    "translating": "Prevođenje…",
+    "typePlaceholder": "Unesite poruku…",
+    "translateAria": "Prevedi",
+    "micDeniedError": "Pristup mikrofonu odbijen",
+    "recording": "Snimanje",
+    "recognizing": "Prepoznavanje…",
+    "recordAria": "Snimi",
+    "stopAria": "Zaustavi",
+    "pricingLink": "Cene",
+    "errors": {
+      "insufficientCredits": "Nema više kredita – nadogradite plan",
+      "textTooLong": "Tekst je predugačak za vaš plan"
+    }
+  },
+  "history": {
+    "emptyState": "Ovde još nema ničega. Ukucajte poruku ili snimite svoj glas ispod.",
+    "readAloudAria": "Pročitaj naglas",
+    "copyAria": "Kopiraj"
+  }
+}

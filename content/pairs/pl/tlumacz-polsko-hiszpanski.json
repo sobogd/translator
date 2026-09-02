@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tłumacz Polsko-Hiszpański Głosowy | IQ Translate",
+    "description": "Tłumacz polsko-hiszpański online: mów lub pisz po polsku, usłysz tłumaczenie na hiszpański od razu. Idealny na wakacje i w podróży, 186 języków, bez rejestracji.",
+    "ogTitle": "Tłumacz Polsko-Hiszpański Głosowy",
+    "ogDescription": "Mów lub pisz po polsku, otrzymaj tłumaczenie na hiszpański od razu, mówione lub pisane. Działa w obie strony, za darmo do wypróbowania.",
+    "canonical": "https://translate.iq-factura.com/pl/tlumacz-polsko-hiszpanski",
+    "ogLocale": "pl_PL"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz polsko-hiszpański",
+    "titleAccent": "który odpowiada głosem",
+    "description": "Mów lub pisz po polsku i w kilka sekund otrzymaj tłumaczenie na hiszpański, pokazane na ekranie i gotowe do odczytania na głos. Sprawdza się w restauracji, na lotnisku czy w rozmowie z sąsiadami na wakacjach — zmień kierunek w dowolnej chwili i odpowiadaj po polsku.",
+    "ctaTry": "Wypróbuj za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Gdzie jest najbliższa plaża?",
+    "mockToLabel": "🇪🇸 Hiszpański",
+    "mockToPhrase": "¿Dónde está la playa más cercana?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mów, nie pisz",
+      "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub hiszpańsku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
+      "bullets": [
+        { "title": "Mowa zamieniona na hiszpański", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po hiszpańsku w kilka sekund" },
+        { "title": "Usłysz hiszpański na głos", "sub": "Dotknij ikony głośnika, gdy wymowa jeszcze sprawia trudność" }
+      ]
+    },
+    {
+      "heading": "Jeden wątek, obie strony rozmowy",
+      "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
+      "bullets": [
+        { "title": "Odpowiedź po hiszpańsku, przetłumaczona na polski", "sub": "Kelner albo recepcjonista może mówić po hiszpańsku, a Ty zobaczysz i usłyszysz to po polsku" },
+        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy z wakacji później, zamiast szukać jej od nowa" }
+      ]
+    },
+    {
+      "heading": "Polsko-hiszpański i 185 kolejnych języków",
+      "sub": "Hiszpański to jeden z 186 dostępnych języków, w dowolnym kierunku.",
+      "bullets": [
+        { "title": "Poprawnie z akcentami i ñ", "sub": "Znaki takie jak á, é, í, ó, ú i ñ są obsługiwane poprawnie w tekście i w wymowie" },
+        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do hiszpańskiego, a jutro do dowolnego innego języka" }
+      ]
+    },
+    {
+      "heading": "Wolisz pisać? To też działa",
+      "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na hiszpański bez dotykania mikrofonu — na przykład wiadomość do wynajmującego mieszkanie.",
+      "bullets": [
+        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę w cichym pokoju hotelowym albo hałaśliwym barze" },
+        { "title": "Skopiuj tłumaczenie", "sub": "Wklej hiszpański tekst prosto do e-maila albo wiadomości" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego to lepszy",
+    "titleAccent": "tłumacz polsko-hiszpański",
+    "description": "Typowe aplikacje każą najpierw pisać, a potem zapominają rozmowę. Oto co jest inne.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje do tłumaczenia",
+    "rows": [
+      { "title": "Jak zaczynasz", "us": "Mów po polsku lub hiszpańsku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
+      { "title": "Historia rozmów", "us": "Każda rozmowa po hiszpańsku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
+      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
+      { "title": "Obie strony rozmowy", "us": "Polsko-hiszpański i hiszpańsko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
+      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć hiszpańskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "Częste pytania o tłumaczenie polsko-hiszpańskie.",
+    "items": [
+      { "q": "Czy tłumaczy mowę z polskiego na hiszpański?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na hiszpański jako tekst, z opcją odsłuchania go na głos." },
+      { "q": "Czy poradzi sobie z hiszpańskimi akcentami?", "a": "Tak, znaki á, é, í, ó, ú i ñ są obsługiwane poprawnie zarówno w zapisie, jak i w odczytywanej na głos wymowie." },
+      { "q": "Czy mogę tłumaczyć z powrotem z hiszpańskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po hiszpańsku i odbierz tłumaczenie na polski w tym samym wątku." },
+      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
+      { "q": "Przyda się na wakacjach w Hiszpanii?", "a": "Tak, sprawdza się w restauracji, hotelu, na lotnisku i w codziennych rozmowach podczas podróży." },
+      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Zacznij swoją rozmowę",
+    "headingAccent": "polsko-hiszpańską już teraz.",
+    "sub": "Mów lub pisz, usłysz odpowiedź po hiszpańsku — za darmo do wypróbowania, bez rejestracji.",
+    "ctaLabel": "Wypróbuj teraz"
+  }
+}

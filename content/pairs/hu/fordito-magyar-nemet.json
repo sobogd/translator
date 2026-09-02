@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Magyar–Német Hangos Fordító | IQ Translate",
+    "description": "Fordíts magyarról németre hangoddal vagy szöveggel, hallgasd meg felolvasva, és válaszolj németül ugyanott. 186 nyelv, ingyen kipróbálható, regisztráció nélkül.",
+    "ogTitle": "Magyar–Német Hangos Fordító",
+    "ogDescription": "Beszélj vagy gépelj magyarul, kapj azonnali német fordítást, felolvasva vagy leírva. Mindkét irányban működik, ingyen kipróbálható.",
+    "canonical": "https://translate.iq-factura.com/hu/fordito-magyar-nemet",
+    "ogLocale": "hu_HU"
+  },
+  "hero": {
+    "badgeVoice": "Hang",
+    "badgeText": "Szöveg",
+    "badgeLanguages": "186 nyelv",
+    "title": "Magyar–német fordító",
+    "titleAccent": "ami vissza is beszél",
+    "description": "Beszélj vagy gépelj magyarul, és pár másodperc múlva német fordítást kapsz, ami a képernyőn is megjelenik, és fel is olvasható. Bármikor válts irányt: beszélj németül, és halld vissza magyarul, mindezt ugyanabban a beszélgetésben.",
+    "ctaTry": "Próbáld ki ingyen",
+    "ctaSignIn": "Bejelentkezés Google-lel",
+    "mockFromLabel": "🇭🇺 Magyar",
+    "mockFromPhrase": "Hol van a legközelebbi buszmegálló?",
+    "mockToLabel": "🇩🇪 Német",
+    "mockToPhrase": "Wo ist die nächste Bushaltestelle?"
+  },
+  "spotlights": [
+    {
+      "heading": "Beszélj magyarul, halld németül",
+      "sub": "Koppints a mikrofonra, mondd németül vagy magyarul, és kapj fordítást, amit elolvashatsz vagy meghallgathatsz.",
+      "bullets": [
+        { "title": "A beszéd német szöveggé válik", "sub": "Mondd magyarul – a szavaid átiratra kerülnek, lefordítjuk, és pár másodperc múlva németül megjelennek" },
+        { "title": "Halld hangosan a németet", "sub": "Koppints a hangszóró ikonra, ha a kiejtésed még nem magabiztos" }
+      ]
+    },
+    {
+      "heading": "Egy szálban mindkét fél",
+      "sub": "Ne kezdd újra a beszélgetést egy ausztriai vagy németországi munkanapon – minden váltás ugyanabban a témában marad.",
+      "bullets": [
+        { "title": "Válaszolj németül, fordítva magyarra", "sub": "A kollégád beszélhet németül, te pedig magyarul látod és hallod" },
+        { "title": "A beszélgetések témaként mentődnek", "sub": "Térj vissza ugyanahhoz a német beszélgetéshez később, ahelyett hogy elveszne a fonal" }
+      ]
+    },
+    {
+      "heading": "Magyar–német, plusz 185 másik nyelv",
+      "sub": "A német csak egy a 186 elérhető nyelv közül, bármelyik irányban.",
+      "bullets": [
+        { "title": "Pontos az umlautokkal és az összetett szavakkal is", "sub": "Helyesen kezeli a német kiejtést és helyesírást, nem csak nagyjából" },
+        { "title": "186 nyelv összesen", "sub": "Ugyanez az eszköz működik németre ma, és bármelyik más nyelvre holnap" }
+      ]
+    },
+    {
+      "heading": "Inkább gépelnél? Az is megy",
+      "sub": "Gépeld be vagy illeszd be a magyar szöveget, és kapj német fordítást a mikrofon érintése nélkül.",
+      "bullets": [
+        { "title": "Gépelj beszéd helyett", "sub": "Válts billentyűzetre bármikor – hasznos egy csendes irodában vagy zajos üzemben" },
+        { "title": "Másold ki a fordítást", "sub": "Vedd át a német szöveget, és illeszd be egy e-mailbe vagy WhatsApp-üzenetbe" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miért jobb, mint",
+    "titleAccent": "egy hagyományos magyar–német fordító",
+    "description": "A legtöbb fordítóalkalmazás előbb gépelést kér, aztán elfelejti a beszélgetést. Íme, mi a különbség.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Hagyományos fordítóappok",
+    "rows": [
+      { "title": "Hogyan indulsz", "us": "Beszélj magyarul vagy németül, és azonnal kapsz fordítást.", "them": "Előbb be kell gépelned, amit mondani szeretnél." },
+      { "title": "Beszélgetési előzmények", "us": "Minden német beszélgetés saját témaként mentődik, amit újra megnyithatsz.", "them": "Minden fordítás eltűnik, amint bezárod az appot." },
+      { "title": "Beállítás", "us": "Nyisd meg böngészőben – nincs mit telepíteni.", "them": "Appot kell letölteni és jogosultságokat engedélyezni, mielőtt használhatnád." },
+      { "title": "Mindkét irány", "us": "Magyarról németre és németről magyarra ugyanabban a szálban zajlik.", "them": "Az irányváltás általában új fordítás indítását jelenti." },
+      { "title": "Meghallgatás", "us": "Koppints, hogy meghallgasd a felolvasott német fordítást.", "them": "Csak szöveg, a kiejtés a te dolgod." }
+    ]
+  },
+  "faq": {
+    "heading": "Gyakran",
+    "headingAccent": "ismételt kérdések",
+    "sub": "Gyakori kérdések a magyar–német fordításról.",
+    "items": [
+      { "q": "Le tudja fordítani a kimondott magyar szöveget németre?", "a": "Igen – koppints a mikrofonra, beszélj magyarul, és német fordítást kapsz szövegként, felolvasási lehetőséggel." },
+      { "q": "Vissza tudok fordítani németről magyarra?", "a": "Igen, ugyanaz a beszélgetés mindkét irányban működik – beszélj vagy gépelj németül, és a magyar fordítást ugyanabban a témában kapod meg." },
+      { "q": "Segít, ha Ausztriában vagy Németországban dolgozom?", "a": "Igen, gyors fordítást ad munkahelyi egyeztetésekhez, hivatalos ügyintézéshez és mindennapi beszélgetésekhez egyaránt." },
+      { "q": "Ingyenes?", "a": "Igen, fiók létrehozása nélkül is kipróbálhatod ingyen. Jelentkezz be Google-lel a több napi kreditért és a mentett előzményekért." },
+      { "q": "Kell hozzá telepíteni valamit?", "a": "Nem, a böngésződben fut asztali gépen és mobilon is – nincs mit letölteni." },
+      { "q": "Használható folyamatos beszélgetéshez, nem csak egyszeri fordításhoz?", "a": "Igen, a fordítások témákba rendeződnek, így egy német beszélgetés egy helyen marad, nem szóródik szét külön keresésekre." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Kezdd el a magyar–német",
+    "headingAccent": "beszélgetésed most.",
+    "sub": "Beszélj vagy gépelj, halld vissza németül – ingyenesen kipróbálható, regisztráció nélkül.",
+    "ctaLabel": "Próbáld ki most"
+  }
+}

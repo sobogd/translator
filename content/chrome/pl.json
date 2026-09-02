@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "Tłumacz Głosowy Online — Mów i Tłumacz | IQ Translate",
+    "description": "Darmowy tłumacz głosowy online: mów naturalnie i od razu otrzymuj tłumaczenie, mówione lub pisane, w 186 językach. Bez instalacji, bez rejestracji na start.",
+    "ogTitle": "Tłumacz Głosowy Online — Mów i Tłumacz",
+    "ogDescription": "Darmowy tłumacz głosowy online: mów, a otrzymasz natychmiastowe tłumaczenie, mówione lub pisane, w 186 językach.",
+    "twitterTitle": "Tłumacz Głosowy Online — Mów i Tłumacz",
+    "twitterDescription": "Darmowy tłumacz głosowy: natychmiastowe tłumaczenie mówione lub pisane w 186 językach."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funkcje",
+    "pricing": "Cennik",
+    "mobileApp": "Aplikacja mobilna",
+    "signIn": "Zaloguj się",
+    "logOut": "Wyloguj się",
+    "tryItNow": "Wypróbuj teraz"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz głosowy",
+    "titleAccent": "do każdej rozmowy",
+    "description": "Mów naturalnie i od razu otrzymuj tłumaczenie, mówione lub pisane, w 186 językach. Do wypróbowania nie potrzebujesz konta.",
+    "ctaTry": "Wypróbuj teraz — za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Cześć, jak się masz?",
+    "mockToLabel": "🇬🇧 Angielski",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 języków",
+      "sub": "Mów lub pisz, tłumaczenie od razu, bez dodatkowych pobrań"
+    },
+    {
+      "title": "Bez rejestracji",
+      "sub": "Wypróbuj od razu na tej stronie — logowanie tylko po więcej kredytów"
+    },
+    {
+      "title": "Historia dla każdej pary języków",
+      "sub": "Każda rozmowa zostaje uporządkowana i łatwa do odnalezienia"
+    },
+    {
+      "title": "Darmowy start",
+      "sub": "Przewiń w dół i zacznij tłumaczyć od razu"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Natychmiastowe tłumaczenie głosowe",
+      "sub": "Dotknij mikrofonu i mów. Twoja mowa jest rozpoznawana i tłumaczona w kilka sekund — bez pisania.",
+      "bullets": [
+        {
+          "title": "Mów, otrzymaj tłumaczenie od razu",
+          "sub": "Jedno dotknięcie rozpoczyna nagrywanie, tłumaczenie pojawia się chwilę później"
+        },
+        {
+          "title": "Posłuchaj na głos",
+          "sub": "Dotknij ikony głośnika, aby usłyszeć tłumaczenie odczytane na głos"
+        },
+        {
+          "title": "Głos lub tekst — wybór należy do Ciebie",
+          "sub": "Przełączaj tryby w dowolnym momencie jednym dotknięciem"
+        }
+      ]
+    },
+    {
+      "heading": "Tłumaczenie tekstu też działa",
+      "sub": "Wolisz pisać? Przełącz się na klawiaturę i przetłumacz wiadomość od razu.",
+      "bullets": [
+        {
+          "title": "Zamień oryginał z tłumaczeniem",
+          "sub": "Dotknij lub przesuń linię, aby zobaczyć ją w dowolnym z języków"
+        },
+        {
+          "title": "Skopiuj jednym dotknięciem",
+          "sub": "Pobierz przetłumaczony tekst, aby wkleić go gdziekolwiek"
+        },
+        {
+          "title": "Przełącz się na głos w każdej chwili",
+          "sub": "Zacznij pisać, a kolejną linię podyktuj"
+        }
+      ]
+    },
+    {
+      "heading": "186 języków, uporządkowanych według rozmów",
+      "sub": "Wybierz swój język raz, a potem przeglądaj wszystkie pozostałe — każda para języków ma swój własny zapisany wątek.",
+      "bullets": [
+        {
+          "title": "186 języków w zestawie",
+          "sub": "Bez dodatkowych pobrań ani pakietów językowych do instalacji"
+        },
+        {
+          "title": "Rozmowy pozostają uporządkowane",
+          "sub": "Każda para języków ma swoją własną zapisaną historię"
+        },
+        {
+          "title": "Czyść lub usuwaj w dowolnym momencie",
+          "sub": "Wyczyść historię wątku albo usuń go całkowicie z menu"
+        }
+      ]
+    },
+    {
+      "heading": "Bez rejestracji na start",
+      "sub": "Wypróbuj od razu na tej stronie — bez konta, bez hasła. Zaloguj się przez Google tylko wtedy, gdy chcesz więcej dziennych kredytów i historii zsynchronizowanej między urządzeniami.",
+      "bullets": [
+        {
+          "title": "Opcjonalne logowanie jednym dotknięciem",
+          "sub": "Bez formularza rejestracji, bez hasła do zapamiętania"
+        },
+        {
+          "title": "Tylko Twój e-mail, nic więcej",
+          "sub": "Konto identyfikuje wyłącznie Twój adres e-mail Google"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego głos",
+    "titleAccent": "jest na pierwszym miejscu",
+    "description": "Większość aplikacji do tłumaczenia zatrzymuje się na pisanym tekście. Poniżej to, co naprawdę się liczy, gdy trzeba mówić, a nie pisać.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje",
+    "rows": [
+      {
+        "title": "Tłumaczenie głosowe",
+        "us": "Jedno dotknięcie nagrywa, rozpoznaje i tłumaczy w kilka sekund.",
+        "them": "Tylko tekst albo konieczność przepisania tego, co usłyszałeś."
+      },
+      {
+        "title": "Historia rozmów",
+        "us": "Każda para języków ma swój własny zapisany wątek.",
+        "them": "Historia znika po zamknięciu karty."
+      },
+      {
+        "title": "Rozpoczęcie pracy",
+        "us": "Wypróbuj od razu, bez zakładania konta.",
+        "them": "Zakładanie konta z e-mailem i hasłem, zanim w ogóle spróbujesz."
+      },
+      {
+        "title": "Odtwarzanie głosowe",
+        "us": "Dotknij, aby usłyszeć tłumaczenie odczytane na głos.",
+        "them": "Brak odtwarzania głosowego."
+      },
+      {
+        "title": "Języki",
+        "us": "186 dostępnych języków, bez dodatkowego pobierania.",
+        "them": "Ograniczone pakiety językowe offline."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "O co pytają ludzie, zanim spróbują. Bez rejestracji — przewiń w górę i wypróbuj sam.",
+    "items": [
+      {
+        "q": "Jak działa tłumaczenie głosowe?",
+        "a": "Dotknij mikrofonu i mów — Twój głos zostaje rozpoznany i przetłumaczony w kilka sekund, pokazany jako tekst i dostępny do odsłuchania na głos. Bez pisania."
+      },
+      {
+        "q": "Ile języków jest obsługiwanych?",
+        "a": "186 języków. Wybierz swój język raz, a potem rozpocznij wątek rozmowy z dowolnym innym."
+      },
+      {
+        "q": "Czy muszę zakładać konto?",
+        "a": "Nie. Wypróbuj od razu na tej stronie, bez rejestracji. Zaloguj się przez Google tylko wtedy, gdy chcesz więcej dziennych kredytów i historii zsynchronizowanej między urządzeniami."
+      },
+      {
+        "q": "Czy moja historia tłumaczeń jest zapisywana?",
+        "a": "Tak, dla każdej pary języków osobno, dzięki czemu wcześniejsze rozmowy pozostają uporządkowane — nawet bez logowania Twoja przeglądarka jest zapamiętywana. Wyczyść lub usuń dowolny wątek z jego menu w dowolnym momencie."
+      },
+      {
+        "q": "Czy mogę używać tekstu zamiast głosu?",
+        "a": "Tak. Przełącz się na tryb klawiatury w dowolnym momencie i wpisz wiadomość zamiast ją wypowiadać."
+      },
+      {
+        "q": "Czy działa to przy rozmowie w obie strony?",
+        "a": "Tak. Dotknij lub przesuń przetłumaczoną linię, aby przełączyć się między oryginałem a tłumaczeniem, dzięki czemu obie strony mogą śledzić rozmowę na jednym ekranie."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Natychmiastowe tłumaczenie głosowe,",
+    "headingAccent": "gotowe w 10 sekund.",
+    "sub": "Wypróbuj od razu na tej stronie — bez rejestracji, bez instalacji, 186 języków w zestawie.",
+    "ctaLabel": "Wypróbuj teraz"
+  },
+  "footer": {
+    "tagline": "Natychmiastowe tłumaczenie głosowe, 186 języków",
+    "brand": "IQ Translate",
+    "featuresHeading": "Tłumacze",
+    "featureLinks": [
+      { "routeKey": "/tlumacz-polsko-angielski", "label": "Polsko–angielski" },
+      { "routeKey": "/tlumacz-polsko-niemiecki", "label": "Polsko–niemiecki" },
+      { "routeKey": "/tlumacz-polsko-chinski", "label": "Polsko–chiński" },
+      { "routeKey": "/tlumacz-polsko-hiszpanski", "label": "Polsko–hiszpański" },
+      { "routeKey": "/tlumacz-polsko-rosyjski", "label": "Polsko–rosyjski" },
+      { "routeKey": "/tlumacz-polsko-ukrainski", "label": "Polsko–ukraiński" },
+      { "routeKey": "/tlumacz-polsko-francuski", "label": "Polsko–francuski" },
+      { "routeKey": "/tlumacz-polsko-czeski", "label": "Polsko–czeski" }
+    ]
+  },
+  "translator": {
+    "topics": "Wątki",
+    "newTopic": "Nowy wątek",
+    "noTopicsYet": "Brak wątków",
+    "deleteTopic": "Usuń wątek",
+    "deleteTopicConfirm": "Usunąć ten wątek i wszystkie jego tłumaczenia?",
+    "autoDetect": "Wykryj automatycznie",
+    "chooseLanguage": "Wybierz język",
+    "close": "Zamknij",
+    "searchPlaceholder": "Szukaj języka…",
+    "clearHistory": "Wyczyść historię",
+    "clearHistoryConfirm": "Wyczyścić wszystkie tłumaczenia w tym wątku?",
+    "noTranslationsYet": "Brak tłumaczeń w tym wątku.",
+    "translating": "Tłumaczenie…",
+    "typePlaceholder": "Wpisz wiadomość…",
+    "translateAria": "Tłumacz",
+    "micDeniedError": "Odmówiono dostępu do mikrofonu",
+    "recording": "Nagrywanie",
+    "recognizing": "Rozpoznawanie…",
+    "recordAria": "Nagraj",
+    "stopAria": "Zatrzymaj",
+    "pricingLink": "Cennik",
+    "errors": {
+      "insufficientCredits": "Brak kredytów — zmień plan",
+      "textTooLong": "Tekst zbyt długi dla Twojego planu"
+    }
+  },
+  "history": {
+    "emptyState": "Tu jeszcze nic nie ma. Wpisz wiadomość albo nagraj swój głos poniżej.",
+    "readAloudAria": "Odczytaj na głos",
+    "copyAria": "Kopiuj"
+  }
+}

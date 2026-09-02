@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevajalnik Slovensko-Italijansko z Glasom | IQ Translate",
+    "description": "Prevajajte slovensko v italijansko z glasom ali besedilom - za Primorsko, turizem in nakupovanje v Italiji. Zgodovina pogovorov shranjena. 186 jezikov, brezplačno.",
+    "ogTitle": "Prevajalnik Slovensko-Italijansko z Glasom",
+    "ogDescription": "Prevajajte slovensko v italijansko z glasom ali besedilom, poslušajte prevod naglas, s shranjeno zgodovino pogovora.",
+    "canonical": "https://translate.iq-factura.com/sl/prevajalnik-slovensko-italijansko",
+    "ogLocale": "sl_SI"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Besedilo",
+    "badgeLanguages": "186 jezikov",
+    "title": "Prevajalnik slovensko-italijansko",
+    "titleAccent": "za Primorsko in potovanja v Italijo",
+    "description": "Govorite ali tipkajte v slovenščini in v nekaj sekundah dobite italijanski prevod, pripravljen za branje ali poslušanje. Idealno za goste na Primorskem, nakupovanje v Trstu ali počitnice v Italiji. Smer kadar koli zamenjajte – vse v isti temi.",
+    "ctaTry": "Preizkusite brezplačno",
+    "ctaSignIn": "Prijava z Googlom",
+    "mockFromLabel": "🇸🇮 Slovenščina",
+    "mockFromPhrase": "Koliko stane ta soba?",
+    "mockToLabel": "🇮🇹 Italijanščina",
+    "mockToPhrase": "Quanto costa questa stanza?"
+  },
+  "spotlights": [
+    {
+      "heading": "Govorite slovensko, slišite italijansko takoj",
+      "sub": "Dotaknite se mikrofona in izgovorite stavek v slovenščini ali italijanščini – prevod pride v nekaj sekundah, pripravljen za branje ali poslušanje.",
+      "bullets": [
+        { "title": "Govor spremenjen v italijanščino", "sub": "Izgovorite stavek v slovenščini – besede se prepišejo, prevedejo in prikažejo v italijanščini v nekaj sekundah" },
+        { "title": "Poslušajte italijanščino naglas", "sub": "Dotaknite se ikone zvočnika, kadar italijanske izgovorjave še niste povsem prepričani" }
+      ]
+    },
+    {
+      "heading": "Ena tema, celoten pogovor",
+      "sub": "Nadaljujte pogovor sem in tja z gostom, prodajalcem ali sopotnikom brez začenjanja znova – vse ostane v isti temi.",
+      "bullets": [
+        { "title": "Odgovor v italijanščini, preveden v slovenščino", "sub": "Sogovornik lahko govori italijansko, vi pa to vidite in slišite v slovenščini" },
+        { "title": "Pogovori shranjeni kot teme", "sub": "Kasneje se vrnite k istemu pogovoru o potovanju ali nakupu, namesto da izgubite nit" }
+      ]
+    },
+    {
+      "heading": "Slovensko-italijansko, plus še 185 jezikov",
+      "sub": "Italijanščina je le eden od 186 razpoložljivih jezikov, v katero koli smer.",
+      "bullets": [
+        { "title": "Uporabno na Primorskem in v obmejni trgovini", "sub": "Pogovori s trgovci, gosti ali sosedi iz Italije prevedeni brez napak" },
+        { "title": "186 jezikov skupaj", "sub": "Isto orodje deluje za italijanščino danes in za katerikoli drug jezik jutri" }
+      ]
+    },
+    {
+      "heading": "Raje tipkate? Tudi to je mogoče",
+      "sub": "Vnesite ali prilepite besedilo v slovenščini in dobite italijanski prevod brez dotika mikrofona.",
+      "bullets": [
+        { "title": "Tipkajte namesto govora", "sub": "Preklopite na tipkovnico za rezervacijo ali sporočilo, ki ga morate prevesti natančno" },
+        { "title": "Kopirajte prevod", "sub": "Italijansko besedilo kopirajte neposredno in ga prilepite v e-pošto ali sporočilo" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zakaj je boljši",
+    "titleAccent": "od navadnega italijanskega prevajalnika",
+    "description": "Večina prevajalskih aplikacij zahteva, da stavek najprej natipkate, pogovor pa pozabijo takoj, ko jih zaprete. Tukaj je razlika.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Običajne prevajalske aplikacije",
+    "rows": [
+      { "title": "Kako začnete", "us": "Spregovorite v slovenščini ali italijanščini in takoj dobite prevod.", "them": "Najprej morate natipkati, kar želite povedati." },
+      { "title": "Zgodovina pogovorov", "us": "Vsak italijanski pogovor se shrani kot svoja tema, ki jo lahko znova odprete.", "them": "Prevod izgine takoj, ko zaprete aplikacijo." },
+      { "title": "Namestitev", "us": "Odprite zavihek v brskalniku – nič se ne namešča.", "them": "Prenos aplikacije in dovoljenja, preden jo lahko prvič uporabite." },
+      { "title": "Obe smeri", "us": "Slovensko-italijansko in italijansko-slovensko sta v isti temi.", "them": "Menjava smeri običajno pomeni nov prevod od začetka." },
+      { "title": "Poslušanje prevoda", "us": "Dotaknite se, da italijanski prevod slišite prebranega naglas.", "them": "Samo besedilo, izgovorjava prepuščena vam." }
+    ]
+  },
+  "faq": {
+    "heading": "Pogosta",
+    "headingAccent": "vprašanja",
+    "sub": "Pogosta vprašanja o prevajanju slovenščine v italijanščino.",
+    "items": [
+      { "q": "Ali glasovni prevod prevede slovenski govor v italijanščino?", "a": "Da – dotaknite se mikrofona, izgovorite stavek v slovenščini in dobili boste italijanski prevod kot besedilo, z možnostjo, da ga slišite prebranega naglas." },
+      { "q": "Je uporaben za Primorsko in obmejno trgovino?", "a": "Da, odličen je za pogovor s trgovci, gosti ali sosedi iz Italije – spregovorite slovensko, italijanski prevod pa pride v nekaj sekundah." },
+      { "q": "Ali deluje tudi obratno, iz italijanščine v slovenščino?", "a": "Da, isti pogovor deluje v obe smeri – sogovornik lahko govori italijansko, vi pa dobite slovenski prevod v isti temi." },
+      { "q": "Ali je brezplačno?", "a": "Da, lahko ga preizkusite brezplačno brez odpiranja računa. Prijavite se z Googlom za več dnevnega dobroimetja in shranjeno zgodovino." },
+      { "q": "Ali moram kaj namestiti?", "a": "Ne, deluje neposredno v brskalniku na računalniku ali telefonu – nič se ne prenaša." },
+      { "q": "Ali je koristen na počitnicah v Italiji?", "a": "Da, hitro prevede naročilo v restavraciji, vprašanje o ceni ali poti, prevod pa lahko tudi poslušate naglas." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Začnite svoj slovensko-italijanski",
+    "headingAccent": "pogovor takoj.",
+    "sub": "Govorite ali tipkajte, odgovor slišite v italijanščini – brezplačno za preizkus, brez registracije.",
+    "ctaLabel": "Preizkusite brezplačno"
+  }
+}

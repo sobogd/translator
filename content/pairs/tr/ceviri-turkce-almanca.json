@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Türkçe Almanca Çeviri, Sesli | IQ Translate",
+    "description": "Türkçe ve Almanca arasında sesli çeviri: Almanya'daki aile, iş ve resmi kurumlarla konuşun veya yazın, çeviriyi dinleyin. 186 dil, ücretsiz deneme.",
+    "ogTitle": "Türkçe Almanca Çeviri, Sesli",
+    "ogDescription": "Türkçe konuşun, Almanca çeviriyi anında görün ve dinleyin. Almanya'daki iş ve aile görüşmeleri için iki yönlü çalışır.",
+    "canonical": "https://translate.iq-factura.com/tr/ceviri-turkce-almanca",
+    "ogLocale": "tr_TR"
+  },
+  "hero": {
+    "badgeVoice": "Ses",
+    "badgeText": "Metin",
+    "badgeLanguages": "186 dil",
+    "title": "Türkçe-Almanca çevirmen",
+    "titleAccent": "Almanya'daki hayatınız için",
+    "description": "Türkçe konuşun ya da yazın, Almanca çeviriyi saniyeler içinde ekranda görün ve sesli dinleyin. Ailenizle, iş yerinde ya da bir dairede görüşürken karşınızdaki Almanca konuşsun, siz Türkçe duyun — hepsi aynı sohbette.",
+    "ctaTry": "Ücretsiz dene",
+    "ctaSignIn": "Google ile giriş yap",
+    "mockFromLabel": "🇹🇷 Türkçe",
+    "mockFromPhrase": "Bu belgeyi nereye teslim etmeliyim?",
+    "mockToLabel": "🇩🇪 Almanca",
+    "mockToPhrase": "Wo muss ich dieses Dokument abgeben?"
+  },
+  "spotlights": [
+    {
+      "heading": "Konuşun, Almancayı dinleyin",
+      "sub": "Mikrofona dokunun, Türkçe konuşun, Almanca çeviriyi okuyun ya da dinleyin.",
+      "bullets": [
+        { "title": "Konuşmanız anında Almancaya döner", "sub": "Türkçe söyleyin — çeviri saniyeler içinde Almanca olarak ekranda belirir" },
+        { "title": "Almancayı sesli dinleyin", "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun" }
+      ]
+    },
+    {
+      "heading": "Aile, iş ya da dairede tek sohbet",
+      "sub": "Almanya'da yaşayan akrabalarınızla ya da iş yerinizde tüm konuşma aynı konuda kalır.",
+      "bullets": [
+        { "title": "Almanca yanıt Türkçeye çevrilir", "sub": "Karşınızdaki Almanca konuşur, siz Türkçe olarak okur ve duyarsınız" },
+        { "title": "Görüşme konu olarak saklanır", "sub": "Aynı aile üyesi ya da iş arkadaşınızla sohbete daha sonra kaldığınız yerden dönün" }
+      ]
+    },
+    {
+      "heading": "Türkçe-Almanca, artı 185 dil daha",
+      "sub": "Almanca, her yönde kullanılabilen 186 dilden biri.",
+      "bullets": [
+        { "title": "Resmi ve gündelik Almancaya uygun", "sub": "Daireden aile sohbetine kadar doğru çeviri" },
+        { "title": "Toplam 186 dil", "sub": "Bugün Almanca, yarın başka bir dil — aynı araç yeterli" }
+      ]
+    },
+    {
+      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "sub": "Almanca bir yazıyı yapıştırın ya da Türkçe yazın, mikrofona dokunmadan çeviriyi alın.",
+      "bullets": [
+        { "title": "Resmi yazıyı yapıştırın", "sub": "Daireden gelen Almanca mektubu yapıştırın, Türkçe çeviriyi anında okuyun" },
+        { "title": "Çeviriyi kopyalayın", "sub": "Almanca metni doğrudan forma, e-postaya ya da mesaja yapıştırın" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Neden sıradan bir",
+    "titleAccent": "Almanca çeviriden daha iyi",
+    "description": "Çoğu uygulama önce yazmanızı ister, sohbeti sonra unutur. Almanya'da iş ve aile hayatında fark yaratan noktalar.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Sıradan çeviri uygulamaları",
+    "rows": [
+      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da Almanca konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
+      { "title": "Görüşme geçmişi", "us": "Her aile üyesi ya da iş arkadaşıyla sohbet ayrı konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
+      { "title": "Kuruluma gerek yok", "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.", "them": "Uygulamayı indirip izin vermeniz gerekir." },
+      { "title": "İki yön aynı sohbette", "us": "Türkçe-Almanca ve Almanca-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
+      { "title": "Sesli dinleme", "us": "Almanca çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+    ]
+  },
+  "faq": {
+    "heading": "Sıkça sorulan",
+    "headingAccent": "sorular",
+    "sub": "Türkçe-Almanca çeviri hakkında en çok sorulanlar.",
+    "items": [
+      { "q": "Konuşulan Türkçeyi Almancaya çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, Almanca çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
+      { "q": "Daire ya da resmi kurum görüşmelerinde işe yarar mı?", "a": "Evet, önemli cümleleri önceden yazabilir ya da görüşme sırasında doğrudan konuşabilir, Almanca çeviriyi gösterebilir ya da dinletebilirsiniz." },
+      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
+      { "q": "Almancadan Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki Almanca konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
+      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." },
+      { "q": "Almanya'daki ailemle sohbeti düzenli tutabilir miyim?", "a": "Evet, her aile üyesiyle konuşma kendi konusunda saklanır, istediğiniz zaman geri dönüp devam edebilirsiniz." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Türkçe-Almanca sohbetinizi",
+    "headingAccent": "şimdi başlatın.",
+    "sub": "Konuşun ya da yazın, Almanca yanıtı sesli dinleyin — ücretsiz, kayıt gerekmez.",
+    "ctaLabel": "Ücretsiz dene"
+  }
+}

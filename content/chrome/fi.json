@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "Puhekääntäjä Netissä – Ilmainen | IQ Translate",
+    "description": "Ilmainen puhekääntäjä netissä: puhu luonnollisesti ja saat käännöksen heti, puhuttuna tai kirjoitettuna, 186 kielellä. Ei latauksia, ei rekisteröitymistä kokeiluun.",
+    "ogTitle": "Puhekääntäjä Netissä – Ilmainen",
+    "ogDescription": "Ilmainen puhekääntäjä netissä: puhu ja saat käännöksen heti, puhuttuna tai kirjoitettuna, 186 kielellä.",
+    "twitterTitle": "Puhekääntäjä Netissä – Ilmainen",
+    "twitterDescription": "Ilmainen puhekääntäjä: välitön puhuttu tai kirjoitettu käännös 186 kielellä."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Ominaisuudet",
+    "pricing": "Hinnoittelu",
+    "mobileApp": "Mobiilisovellus",
+    "signIn": "Kirjaudu sisään",
+    "logOut": "Kirjaudu ulos",
+    "tryItNow": "Kokeile nyt"
+  },
+  "hero": {
+    "badgeVoice": "Puhe",
+    "badgeText": "Teksti",
+    "badgeLanguages": "186 kieltä",
+    "title": "Puhekääntäjä",
+    "titleAccent": "jokaiseen keskusteluun",
+    "description": "Puhu luonnollisesti ja saat käännöksen heti – puhuttuna tai kirjoitettuna, 186 kielellä. Kokeiluun ei tarvita rekisteröitymistä.",
+    "ctaTry": "Kokeile nyt – ilmaiseksi",
+    "ctaSignIn": "Kirjaudu Googlella",
+    "mockFromLabel": "🇫🇮 Suomi",
+    "mockFromPhrase": "Hei, mitä kuuluu?",
+    "mockToLabel": "🇬🇧 Englanti",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 kieltä",
+      "sub": "Puhu tai kirjoita, käännös valmiina heti – ei lisälatauksia"
+    },
+    {
+      "title": "Ei rekisteröitymistä",
+      "sub": "Kokeile suoraan tällä sivulla – kirjaudu vain saadaksesi lisää krediittejä"
+    },
+    {
+      "title": "Historia kieliparin mukaan",
+      "sub": "Jokainen keskustelu pysyy järjestyksessä ja helposti löydettävissä"
+    },
+    {
+      "title": "Ilmainen aloittaa",
+      "sub": "Vieritä alas ja ala kääntää heti"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Välitön puhekäännös",
+      "sub": "Napauta mikrofonia ja puhu. Puheesi litteroidaan ja käännetään sekunneissa – ilman kirjoittamista.",
+      "bullets": [
+        {
+          "title": "Puhu, saat käännöksen heti",
+          "sub": "Yksi napautus aloittaa tallennuksen, käännös ilmestyy heti perään"
+        },
+        {
+          "title": "Kuuntele ääneen luettuna",
+          "sub": "Napauta kaiutinkuvaketta, niin käännös luetaan ääneen"
+        },
+        {
+          "title": "Puhe tai teksti, valinta on sinun",
+          "sub": "Vaihda tilaa milloin tahansa yhdellä napautuksella"
+        }
+      ]
+    },
+    {
+      "heading": "Myös tekstikäännös",
+      "sub": "Haluatko mieluummin kirjoittaa? Vaihda näppäimistötilaan ja käännä viesti heti.",
+      "bullets": [
+        {
+          "title": "Vaihda alkuperäisen ja käännöksen välillä",
+          "sub": "Napauta tai pyyhkäise riviä nähdäksesi sen kummallakin kielellä"
+        },
+        {
+          "title": "Kopioi yhdellä napautuksella",
+          "sub": "Ota käännetty teksti talteen ja liitä se minne tahansa"
+        },
+        {
+          "title": "Vaihda puheeseen milloin vain",
+          "sub": "Aloita kirjoittamalla ja sanele seuraava rivi sen sijaan"
+        }
+      ]
+    },
+    {
+      "heading": "186 kieltä, järjestetty keskusteluittain",
+      "sub": "Valitse oma kielesi kerran ja selaa sitten muita – jokainen kielipari säilyttää oman tallennetun keskustelunsa.",
+      "bullets": [
+        {
+          "title": "186 kieltä mukana",
+          "sub": "Ei lisälatauksia eikä kielipaketteja asennettavaksi"
+        },
+        {
+          "title": "Keskustelut pysyvät järjestyksessä",
+          "sub": "Jokaisella kieliparilla on oma tallennettu historiansa"
+        },
+        {
+          "title": "Tyhjennä tai poista milloin vain",
+          "sub": "Tyhjennä aiheen historia tai poista se kokonaan valikosta"
+        }
+      ]
+    },
+    {
+      "heading": "Ei rekisteröitymistä aloittaaksesi",
+      "sub": "Kokeile suoraan tällä sivulla – ei tiliä, ei salasanaa. Kirjaudu Googlella vain, jos haluat lisää päivittäisiä krediittejä ja historian synkronoituna laitteiden välillä.",
+      "bullets": [
+        {
+          "title": "Valinnainen kirjautuminen yhdellä napautuksella",
+          "sub": "Ei rekisteröitymislomaketta, ei muistettavaa salasanaa"
+        },
+        {
+          "title": "Vain sähköpostiosoitteesi, ei muuta",
+          "sub": "Vain Google-sähköpostisi tunnistaa tilisi"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miksi puhe",
+    "titleAccent": "tulee ensin",
+    "description": "Useimmat käännössovellukset pysähtyvät kirjoitettuun tekstiin. Alla on se, mikä oikeasti eroaa, kun haluat puhua etkä kirjoittaa.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tavalliset sovellukset",
+    "rows": [
+      {
+        "title": "Puhekäännös",
+        "us": "Yksi napautus tallentaa, litteroi ja kääntää sekunneissa.",
+        "them": "Vain tekstiä, tai sinun pitää kirjoittaa kuulemasi itse."
+      },
+      {
+        "title": "Keskusteluhistoria",
+        "us": "Jokaisella kieliparilla on oma tallennettu historiansa.",
+        "them": "Historia katoaa, kun suljet välilehden."
+      },
+      {
+        "title": "Aloittaminen",
+        "us": "Kokeile heti tällä sivulla – ei tiliä tarvita.",
+        "them": "Tili sähköpostilla ja salasanalla ennen kuin pääset kokeilemaan."
+      },
+      {
+        "title": "Ääneen kuunteleminen",
+        "us": "Napauta, niin käännös luetaan ääneen.",
+        "them": "Ei äänentoistoa."
+      },
+      {
+        "title": "Kielet",
+        "us": "186 kieltä käytettävissä, ei lisälatauksia.",
+        "them": "Rajalliset offline-kielipaketit."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Usein kysytyt",
+    "headingAccent": "kysymykset",
+    "sub": "Mitä ihmiset kysyvät ennen kokeilua. Ei rekisteröitymistä – vieritä ylös ja kokeile itse.",
+    "items": [
+      {
+        "q": "Miten puhekäännös toimii?",
+        "a": "Napauta mikrofonia ja puhu – puheesi litteroidaan ja käännetään muutamassa sekunnissa, näytetään tekstinä ja voidaan myös lukea ääneen. Kirjoittamista ei tarvita."
+      },
+      {
+        "q": "Kuinka monta kieltä tuetaan?",
+        "a": "186 kieltä. Valitse oma kielesi kerran ja aloita sitten keskustelu kenen tahansa toisen kanssa."
+      },
+      {
+        "q": "Tarvitseeko minun luoda tili?",
+        "a": "Ei. Kokeile suoraan tällä sivulla ilman rekisteröitymistä. Kirjaudu Googlella vain, jos haluat lisää päivittäisiä krediittejä ja laitteiden välillä synkronoidun historian."
+      },
+      {
+        "q": "Tallentuuko käännöshistoriani?",
+        "a": "Kyllä, kieliparin mukaan, joten aiemmat keskustelut pysyvät järjestyksessä – selaimesi muistaa sinut jopa ilman kirjautumista. Tyhjennä tai poista mikä tahansa aihe milloin vain sen valikosta."
+      },
+      {
+        "q": "Voinko käyttää tekstiä puheen sijaan?",
+        "a": "Kyllä. Vaihda näppäimistötilaan milloin vain ja kirjoita viestisi puhumisen sijaan."
+      },
+      {
+        "q": "Toimiiko se molempiin suuntiin käytävässä keskustelussa?",
+        "a": "Kyllä. Napauta tai pyyhkäise käännettyä riviä vaihtaaksesi alkuperäisen ja käännöksen välillä, jotta molemmat osapuolet pysyvät mukana samalla näytöllä."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Välitön puhekäännös,",
+    "headingAccent": "valmiina 10 sekunnissa.",
+    "sub": "Kokeile suoraan tällä sivulla – ei rekisteröitymistä, ei latauksia, 186 kieltä mukana.",
+    "ctaLabel": "Kokeile nyt"
+  },
+  "footer": {
+    "tagline": "Välitön puhekäännös, 186 kieltä",
+    "brand": "IQ Translate",
+    "featuresHeading": "Kääntäjät",
+    "featureLinks": [
+      { "routeKey": "/kaantaja-suomi-englanti", "label": "Suomi–Englanti" },
+      { "routeKey": "/kaantaja-suomi-espanja", "label": "Suomi–Espanja" },
+      { "routeKey": "/kaantaja-suomi-saksa", "label": "Suomi–Saksa" }
+    ]
+  },
+  "translator": {
+    "topics": "Aiheet",
+    "newTopic": "Uusi aihe",
+    "noTopicsYet": "Ei vielä aiheita",
+    "deleteTopic": "Poista aihe",
+    "deleteTopicConfirm": "Poistetaanko tämä aihe ja kaikki sen käännökset?",
+    "autoDetect": "Tunnista automaattisesti",
+    "chooseLanguage": "Valitse kieli",
+    "close": "Sulje",
+    "searchPlaceholder": "Hae kieltä…",
+    "clearHistory": "Tyhjennä historia",
+    "clearHistoryConfirm": "Tyhjennetäänkö kaikki tämän aiheen käännökset?",
+    "noTranslationsYet": "Ei vielä käännöksiä tässä aiheessa.",
+    "translating": "Käännetään…",
+    "typePlaceholder": "Kirjoita viesti…",
+    "translateAria": "Käännä",
+    "micDeniedError": "Mikrofonin käyttö estetty",
+    "recording": "Tallennetaan",
+    "recognizing": "Tunnistetaan…",
+    "recordAria": "Tallenna",
+    "stopAria": "Pysäytä",
+    "pricingLink": "Hinnoittelu",
+    "errors": {
+      "insufficientCredits": "Krediitit loppu – päivitä tilaus",
+      "textTooLong": "Teksti on liian pitkä tilaukseesi"
+    }
+  },
+  "history": {
+    "emptyState": "Täällä ei ole vielä mitään. Kirjoita viesti tai tallenna äänesi alta.",
+    "readAloudAria": "Lue ääneen",
+    "copyAria": "Kopioi"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traducere Română-Spaniolă cu Voce | IQ Translate",
+    "description": "Traducere română-spaniolă cu voce sau text: vorbește sau scrie și primești răspunsul instant, scris și citit cu voce tare. Utilă la muncă sau acte în Spania.",
+    "ogTitle": "Traducere Română-Spaniolă cu Voce",
+    "ogDescription": "Vorbește sau scrie în română și primești traducerea în spaniolă instant, scrisă sau citită cu voce tare. Funcționează în ambele sensuri.",
+    "canonical": "https://translate.iq-factura.com/ro/traducere-romana-spaniola",
+    "ogLocale": "ro_RO"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Text",
+    "badgeLanguages": "186 de limbi",
+    "title": "Traducător Română-Spaniolă",
+    "titleAccent": "pentru românii din Spania",
+    "description": "Vorbește sau scrie în română și primești traducerea în spaniolă în câteva secunde, ca text și gata de ascultat. Util la muncă, la medic sau la rezolvarea actelor — răspunsul vine direct în aceeași conversație.",
+    "ctaTry": "Încearcă gratuit",
+    "ctaSignIn": "Conectează-te cu Google",
+    "mockFromLabel": "🇷🇴 Română",
+    "mockFromPhrase": "Unde este cel mai apropiat spital?",
+    "mockToLabel": "🇪🇸 Spaniolă",
+    "mockToPhrase": "¿Dónde está el hospital más cercano?"
+  },
+  "spotlights": [
+    {
+      "heading": "Vorbește, nu tasta",
+      "sub": "Apasă pe microfon, spune-o în română sau spaniolă, și citește sau ascultă traducerea.",
+      "bullets": [
+        { "title": "Vocea ta devine spaniolă", "sub": "Spune-o în română — traducerea apare în spaniolă câteva secunde mai târziu" },
+        { "title": "Ascultă spaniola cu voce tare", "sub": "Util la medic sau la ghișeu, când pronunția nu e sigură" }
+      ]
+    },
+    {
+      "heading": "Un subiect, ambele sensuri ale discuției",
+      "sub": "Vorbește dus-întors cu un medic, un angajator sau un funcționar — fiecare schimb rămâne salvat.",
+      "bullets": [
+        { "title": "Răspuns în spaniolă, tradus în română", "sub": "Interlocutorul vorbește spaniolă, tu vezi și auzi totul în română" },
+        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Discuția cu medicul sau cu primăria rămâne într-un singur loc" }
+      ]
+    },
+    {
+      "heading": "Română-Spaniolă, plus alte 185 de limbi",
+      "sub": "Spaniola este una dintre cele 186 de limbi disponibile, în orice direcție.",
+      "bullets": [
+        { "title": "Diacritice și accente recunoscute corect", "sub": "Literele ñ, á, é, í, ó, ú sunt gestionate corect, nu aproximate" },
+        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru spaniolă și mâine pentru orice altă limbă" }
+      ]
+    },
+    {
+      "heading": "Preferi să scrii? Merge și așa",
+      "sub": "Scrie sau lipește text în spaniolă și primești traducerea în română fără microfon.",
+      "bullets": [
+        { "title": "Lipește text în loc să vorbești", "sub": "Util pentru un mesaj de la medic, angajator sau primărie" },
+        { "title": "Copiază traducerea", "sub": "Preia textul tradus direct într-un formular sau răspuns oficial" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "De ce e mai bun",
+    "titleAccent": "decât un traducător obișnuit de spaniolă",
+    "description": "Majoritatea aplicațiilor cer să tastezi primul și uită conversația imediat după. Iată diferența.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Aplicațiile obișnuite de traducere",
+    "rows": [
+      { "title": "Cum începi", "us": "Vorbești în română sau spaniolă și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
+      { "title": "Istoricul conversației", "us": "Fiecare conversație română-spaniolă rămâne salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
+      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
+      { "title": "Ambele sensuri", "us": "Română spre spaniolă și spaniolă spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
+      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în spaniolă citită cu voce tare.", "them": "Doar text, deci pronunția rămâne pe cont propriu." }
+    ]
+  },
+  "faq": {
+    "heading": "Întrebări",
+    "headingAccent": "frecvente",
+    "sub": "Întrebări obișnuite despre traducerea română-spaniolă.",
+    "items": [
+      { "q": "Poate traduce spaniola vorbită în română?", "a": "Da — apasă pe microfon, vorbește în spaniolă, și primești traducerea în română ca text, cu opțiunea de a o asculta." },
+      { "q": "Funcționează și din română în spaniolă?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în spaniolă în același subiect." },
+      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
+      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon." },
+      { "q": "Se potrivește pentru muncă sau acte în Spania?", "a": "Da, e util la interviuri de angajare, la medicul de familie sau la ghișeul primăriei, când e nevoie de o traducere rapidă." },
+      { "q": "Pot ține o conversație, nu doar traduceri izolate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție cu medicul sau angajatorul rămâne organizată." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Începe traducerea ta",
+    "headingAccent": "română-spaniolă acum.",
+    "sub": "Vorbește sau scrie, ascultă răspunsul în spaniolă — gratuit, fără cont necesar.",
+    "ctaLabel": "Încearcă acum"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "English to Spanish Voice Translator | IQ Translate",
+    "description": "Translate English to Spanish by voice or text, hear it spoken aloud, and reply in Spanish in the same thread. 186 languages, free to try, no sign-up.",
+    "ogTitle": "English to Spanish Voice Translator",
+    "ogDescription": "Speak or type English, get an instant Spanish translation, spoken aloud or written. Works both directions, free to try.",
+    "canonical": "https://translate.iq-factura.com/translate-english-to-spanish",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "English to Spanish translator",
+    "titleAccent": "that speaks back",
+    "description": "Speak or type in English and get a Spanish translation in seconds, shown on screen and ready to read aloud. Switch direction any time: speak Spanish and hear it back in English, all in the same conversation.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google",
+    "mockFromLabel": "🇬🇧 English",
+    "mockFromPhrase": "Where's the nearest pharmacy?",
+    "mockToLabel": "🇪🇸 Spanish",
+    "mockToPhrase": "¿Dónde está la farmacia más cercana?"
+  },
+  "spotlights": [
+    {
+      "heading": "Talk, don't type",
+      "sub": "Tap the mic, say it in English or Spanish, and get a translation you can read or hear.",
+      "bullets": [
+        { "title": "Speech turned into Spanish", "sub": "Say it in English — your words are transcribed, translated, and shown in Spanish seconds later" },
+        { "title": "Hear the Spanish out loud", "sub": "Tap the speaker icon for a spoken translation when your pronunciation isn't there yet" }
+      ]
+    },
+    {
+      "heading": "One thread, both sides of the conversation",
+      "sub": "Keep talking back and forth without starting over — every exchange stays in the same topic.",
+      "bullets": [
+        { "title": "Reply in Spanish, translated to English", "sub": "Whoever you're talking to can speak Spanish and you'll see and hear it in English" },
+        { "title": "Conversations saved as topics", "sub": "Come back to the same Spanish chat later instead of losing the thread" }
+      ]
+    },
+    {
+      "heading": "English–Spanish, plus 185 more languages",
+      "sub": "Spanish is one of 186 languages available, in any direction.",
+      "bullets": [
+        { "title": "Accurate with accents and ñ", "sub": "Handles Spanish spelling and pronunciation correctly, not a rough guess" },
+        { "title": "186 languages total", "sub": "The same tool works for Spanish today and any other language tomorrow" }
+      ]
+    },
+    {
+      "heading": "Prefer typing? That works too",
+      "sub": "Type or paste English text and get a Spanish translation without touching the mic.",
+      "bullets": [
+        { "title": "Type instead of speak", "sub": "Switch to the keyboard any time — useful in a quiet room or a noisy street" },
+        { "title": "Copy the translation", "sub": "Copy the Spanish text straight out to paste into an email or message" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a typical Spanish translator",
+    "description": "Most translator apps make you type first and forget the conversation after. Here's what's different.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "How you start", "us": "Speak in English or Spanish and get a translation right away.", "them": "Type out what you want to say first." },
+      { "title": "Conversation history", "us": "Every Spanish conversation is saved as its own topic you can reopen.", "them": "Each translation disappears once you close the app." },
+      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app and grant permissions before you can use it." },
+      { "title": "Both directions", "us": "English to Spanish and Spanish to English live in the same thread.", "them": "Switching direction usually means starting a new translation." },
+      { "title": "Hearing it back", "us": "Tap to hear the Spanish translation spoken aloud.", "them": "Text only, so you're on your own for pronunciation." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating English to Spanish.",
+    "items": [
+      { "q": "Can it translate spoken English into Spanish?", "a": "Yes — tap the mic, speak in English, and you'll get a Spanish translation as text, with an option to hear it read aloud." },
+      { "q": "Does it handle Spanish accents and punctuation correctly?", "a": "Yes, accented letters like á, é, í, ó, ú and ñ are handled correctly in what you read and what gets spoken aloud." },
+      { "q": "Can I translate from Spanish back to English?", "a": "Yes, the same conversation works both ways — speak or type in Spanish and get the English translation in the same thread." },
+      { "q": "Is it free to use?", "a": "Yes, you can try it free without creating an account. Sign in with Google for more daily credits and saved history." },
+      { "q": "Do I need to install anything?", "a": "No, it runs in your browser on desktop or mobile — nothing to download." },
+      { "q": "Can I keep a running conversation instead of one-off translations?", "a": "Yes, translations are grouped into topics, so a Spanish conversation stays in one place instead of scattering across separate lookups." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start your English to Spanish",
+    "headingAccent": "conversation now.",
+    "sub": "Speak or type, hear it back in Spanish — free to try, no sign-up.",
+    "ctaLabel": "Try it now"
+  }
+}

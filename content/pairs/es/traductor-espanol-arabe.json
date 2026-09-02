@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traductor de Español a Árabe con Voz | IQ Translate",
+    "description": "Traduce del español al árabe por voz o texto, escúchalo en voz alta y responde en árabe en el mismo hilo. 186 idiomas, gratis para probar, sin registro.",
+    "ogTitle": "Traductor de Español a Árabe con Voz",
+    "ogDescription": "Habla o escribe en español y recibe la traducción en árabe al instante, hablada o escrita. Funciona también al revés, en el mismo hilo.",
+    "canonical": "https://translate.iq-factura.com/es/traductor-espanol-arabe",
+    "ogLocale": "es_ES"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Traductor de español a árabe",
+    "titleAccent": "que también lee el alfabeto por ti",
+    "description": "Habla o escribe en español y recibe la traducción en árabe al instante, lista para leer o escuchar. Funciona también de árabe a español, en la misma conversación.",
+    "ctaTry": "Pruébalo gratis",
+    "ctaSignIn": "Iniciar sesión con Google",
+    "mockFromLabel": "🇪🇸 Español",
+    "mockFromPhrase": "Mucho gusto, ¿de dónde eres?",
+    "mockToLabel": "🇸🇦 Árabe",
+    "mockToPhrase": "تشرفت بمعرفتك، من أين أنت؟"
+  },
+  "spotlights": [
+    {
+      "heading": "Habla y escúchalo en árabe",
+      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en árabe, lista para leer o escuchar.",
+      "bullets": [
+        { "title": "Tu voz, traducida al árabe", "sub": "Habla con naturalidad y la traducción aparece como texto al momento" },
+        { "title": "Sin necesidad de leer el alfabeto árabe", "sub": "Toca el altavoz y escucha la traducción en voz alta, sin tener que descifrar la escritura" }
+      ]
+    },
+    {
+      "heading": "Conversación en dos sentidos, guardada",
+      "sub": "Sigue la charla en árabe y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "bullets": [
+        { "title": "Responde en árabe, tú lo oyes en español", "sub": "La otra persona habla o escribe en árabe y ves la traducción en español al instante" },
+        { "title": "Vuelve a la conversación cuando quieras", "sub": "Cada tema guarda su propio historial de español-árabe" }
+      ]
+    },
+    {
+      "heading": "Español-árabe, y 185 idiomas más",
+      "sub": "El árabe es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "bullets": [
+        { "title": "Útil para viajar, trabajar o hacer trámites", "sub": "Sirve igual para un viaje que para un documento o una conversación cotidiana" },
+        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para árabe hoy y cualquier otro idioma mañana" }
+      ]
+    },
+    {
+      "heading": "Escribe o pega el texto",
+      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o árabe.",
+      "bullets": [
+        { "title": "Sin escribir en el teclado árabe", "sub": "Escribe en español y recibe el texto en árabe ya traducido, listo para copiar" },
+        { "title": "Copia el resultado con un toque", "sub": "Lleva la traducción directa a un mensaje, un email o un documento" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por qué esto supera",
+    "titleAccent": "a un traductor de árabe típico",
+    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps de traducción típicas",
+    "rows": [
+      { "title": "Cómo empiezas", "us": "Hablas en español o árabe y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
+      { "title": "Historial de conversación", "us": "Cada conversación en árabe queda guardada como un tema.", "them": "La traducción desaparece en cuanto cierras la app." },
+      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos primero." },
+      { "title": "Ambos sentidos", "us": "Español a árabe y árabe a español conviven en el mismo hilo.", "them": "Cambiar de sentido suele obligarte a empezar de nuevo." },
+      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en árabe en voz alta.", "them": "Solo texto, sin lectura en voz alta." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas",
+    "headingAccent": "frecuentes",
+    "sub": "Dudas habituales sobre traducir del español al árabe.",
+    "items": [
+      { "q": "¿Traduce del español al árabe hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en árabe como texto, con opción de escucharla." },
+      { "q": "¿Funciona también de árabe a español?", "a": "Sí, la misma conversación funciona en ambos sentidos, en el mismo hilo." },
+      { "q": "¿Necesito saber leer el alfabeto árabe?", "a": "No, puedes tocar el altavoz y escuchar la traducción en voz alta en lugar de leerla." },
+      { "q": "¿Necesito un teclado árabe para escribir?", "a": "No, escribes en español y la traducción en árabe aparece ya escrita, lista para copiar." },
+      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para más créditos diarios e historial guardado." },
+      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador, en el móvil o el ordenador." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Empieza tu conversación",
+    "headingAccent": "de español a árabe ahora.",
+    "sub": "Habla o escribe, escúchalo en árabe — gratis para probar, sin registro.",
+    "ctaLabel": "Pruébalo ahora"
+  }
+}

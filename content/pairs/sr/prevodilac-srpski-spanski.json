@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevodilac Srpsko-Španski sa Glasom | IQ Translate",
+    "description": "Prevodite sa srpskog na španski glasom ili tekstom, čujte prevod naglas i snalazite se na putovanju ili u razgovoru. 186 jezika, besplatno bez registracije.",
+    "ogTitle": "Prevodilac Srpsko-Španski sa Glasom",
+    "ogDescription": "Govorite ili kucajte na srpskom, dobijte španski prevod za par sekundi i čujte ga izgovorenog naglas.",
+    "canonical": "https://translate.iq-factura.com/sr/prevodilac-srpski-spanski",
+    "ogLocale": "sr_RS"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Srpsko-španski prevodilac",
+    "titleAccent": "koji vam odgovara glasom",
+    "description": "Govorite ili kucajte na srpskom i dobijte španski prevod za par sekundi, prikazan na ekranu i spreman da se pročita naglas. Promenite smer kad god želite i čujte odgovor na srpskom, sve u istom razgovoru.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Koliko ovo košta?",
+    "mockToLabel": "🇪🇸 Španski",
+    "mockToPhrase": "¿Cuánto cuesta esto?"
+  },
+  "spotlights": [
+    {
+      "heading": "Pričajte, ne kucajte",
+      "sub": "Dodirnite mikrofon i izgovorite rečenicu na srpskom ili španskom – prevod stiže za par sekundi.",
+      "bullets": [
+        { "title": "Govor pretvoren u španski", "sub": "Recite rečenicu na srpskom – prepoznaje se, prevodi i prikazuje na španskom za par sekundi" },
+        { "title": "Čujte španski izgovor naglas", "sub": "Dodirnite zvučnik kad niste sigurni kako nešto zvuči na španskom" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, ceo razgovor na putovanju",
+      "sub": "Razgovor sa konobarom, taksistom ili domaćinom ostaje sačuvan u istoj temi, bez ponovnog počinjanja.",
+      "bullets": [
+        { "title": "Odgovor na španskom, preveden na srpski", "sub": "Sagovornik govori španski, a vi vidite i čujete prevod na srpskom" },
+        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se na isti razgovor kasnije umesto da ponovo tražite prepisku" }
+      ]
+    },
+    {
+      "heading": "Srpsko-španski, plus još 185 jezika",
+      "sub": "Španski je samo jedan od 186 dostupnih jezika, u oba smera.",
+      "bullets": [
+        { "title": "Tačno prepoznaje akcente i izgovor", "sub": "Radi pouzdano bez obzira na region ili brzinu govora" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za španski danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Više volite da kucate? I to radi",
+      "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte španski prevod bez dodirivanja mikrofona.",
+      "bullets": [
+        { "title": "Kucajte umesto da govorite", "sub": "Korisno za poruke na WhatsApp-u, mejlove ili rezervacije" },
+        { "title": "Kopirajte prevod", "sub": "Prekopirajte španski tekst pravo u poruku ili dokument" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto ovo pobeđuje",
+    "titleAccent": "uobičajeni srpsko-španski prevodilac",
+    "description": "Većina aplikacija za prevođenje traži da prvo otkucate tekst, a onda zaboravi ceo razgovor. Evo šta je drugačije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na srpskom ili španskom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
+      { "title": "Istorija razgovora", "us": "Svaki srpsko-španski razgovor se čuva kao posebna tema.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dozvole pre prve upotrebe." },
+      { "title": "Oba smera", "us": "Srpsko-španski i špansko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
+      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete španski prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate sami da pogađate." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju sa srpskog na španski.",
+    "items": [
+      { "q": "Da li prevodi govor sa srpskog na španski?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate španski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
+      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda." },
+      { "q": "Da li tačno prevodi špansko slovo ñ i akcente?", "a": "Da, akcentovana slova poput á, é, í, ó, ú i ñ se ispravno obrađuju i u tekstu i u izgovoru." },
+      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
+      { "q": "Mogu li da prevedem sa španskog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na španskom i dobijate prevod na srpskom u istoj temi." },
+      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj srpsko-španski",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili kucajte, čujte odgovor na španskom – besplatno za probu, bez registracije.",
+    "ctaLabel": "Isprobaj odmah"
+  }
+}

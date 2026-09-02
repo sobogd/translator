@@ -106,15 +106,25 @@ function LanguagePickerModal({
   );
 }
 
-export function Translator({ texts }: { texts: TranslatorTexts }) {
+export function Translator({
+  texts,
+  presetSource,
+  presetTarget,
+}: {
+  texts: TranslatorTexts;
+  /** Pair-page preset: pre-picked source language for the draft state. */
+  presetSource?: string;
+  /** Pair-page preset: pre-picked target language; wins over localStorage. */
+  presetTarget?: string;
+}) {
   const t = texts.translator;
-  const [defaultTarget, setDefaultTarget] = useState(DEFAULT_TO);
+  const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<TopicDetail | null>(null);
   // Source language chosen before a topic exists yet — carried into the
   // topic created on first send. Mirrors topic.sourceLang's semantics
   // (null = auto-detect).
-  const [draftSourceLang, setDraftSourceLang] = useState<string | null>(null);
+  const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? null);
   const [loadingTopic, setLoadingTopic] = useState(true);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [text, setText] = useState("");
@@ -130,10 +140,13 @@ export function Translator({ texts }: { texts: TranslatorTexts }) {
   const pending = textBusy || status === "processing";
 
   useEffect(() => {
+    // A pair page's preset wins over the last-used target from localStorage.
+    if (presetTarget) return;
     const saved = localStorage.getItem(TO_KEY);
     // one-time init from localStorage, not a render cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (saved) setDefaultTarget(saved);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadTopics = useCallback(async () => {

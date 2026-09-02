@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "title": "Sprachübersetzer Online – Kostenlos | IQ Translate",
+    "description": "Kostenloser Sprachübersetzer online: Sprich einfach los und erhalte die Übersetzung sofort, gesprochen oder geschrieben, in 186 Sprachen. Ohne Download, ohne Anmeldung zum Testen.",
+    "ogTitle": "Sprachübersetzer Online – Kostenlos",
+    "ogDescription": "Kostenloser Sprachübersetzer online: Sprich los und erhalte die Übersetzung sofort, gesprochen oder geschrieben, in 186 Sprachen.",
+    "twitterTitle": "Sprachübersetzer Online – Kostenlos",
+    "twitterDescription": "Kostenloser Sprachübersetzer: sofortige gesprochene oder geschriebene Übersetzung in 186 Sprachen."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "mobileApp": "Mobile App",
+    "signIn": "Anmelden",
+    "logOut": "Abmelden",
+    "tryItNow": "Jetzt testen"
+  },
+  "hero": {
+    "badgeVoice": "Sprache",
+    "badgeText": "Text",
+    "badgeLanguages": "186 Sprachen",
+    "title": "Ein Sprachübersetzer",
+    "titleAccent": "für jedes Gespräch",
+    "description": "Sprich einfach los und erhalte die Übersetzung sofort – gesprochen oder geschrieben, in 186 Sprachen. Zum Ausprobieren ist keine Anmeldung nötig.",
+    "ctaTry": "Jetzt kostenlos testen",
+    "ctaSignIn": "Mit Google anmelden",
+    "mockFromLabel": "🇩🇪 Deutsch",
+    "mockFromPhrase": "Hallo, wie geht es dir?",
+    "mockToLabel": "🇬🇧 Englisch",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 Sprachen",
+      "sub": "Sprechen oder tippen, sofort übersetzt, ohne zusätzliche Downloads"
+    },
+    {
+      "title": "Keine Anmeldung nötig",
+      "sub": "Direkt auf dieser Seite ausprobieren – anmelden nur für mehr Guthaben"
+    },
+    {
+      "title": "Verlauf pro Sprachpaar",
+      "sub": "Jedes Gespräch bleibt übersichtlich und leicht wiederzufinden"
+    },
+    {
+      "title": "Kostenlos starten",
+      "sub": "Einfach runterscrollen und sofort losübersetzen"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Sofortige Sprachübersetzung",
+      "sub": "Tippe aufs Mikrofon und sprich. Deine Worte werden in Sekunden erkannt und übersetzt – ganz ohne Tippen.",
+      "bullets": [
+        {
+          "title": "Sprechen, sofort übersetzt",
+          "sub": "Ein Tipp startet die Aufnahme, die Übersetzung erscheint gleich danach"
+        },
+        {
+          "title": "Laut vorlesen lassen",
+          "sub": "Tippe auf das Lautsprecher-Symbol, um dir die Übersetzung vorlesen zu lassen"
+        },
+        {
+          "title": "Sprache oder Text, du entscheidest",
+          "sub": "Wechsle jederzeit mit einem Tipp den Modus"
+        }
+      ]
+    },
+    {
+      "heading": "Auch Text wird übersetzt",
+      "sub": "Lieber tippen? Wechsle in den Tastatur-Modus und übersetze eine Nachricht sofort.",
+      "bullets": [
+        {
+          "title": "Original und Übersetzung tauschen",
+          "sub": "Tippe oder wische eine Zeile, um sie in beiden Sprachen zu sehen"
+        },
+        {
+          "title": "Mit einem Tipp kopieren",
+          "sub": "Übernimm den übersetzten Text, um ihn überall einzufügen"
+        },
+        {
+          "title": "Jederzeit zur Sprache wechseln",
+          "sub": "Fang mit Tippen an und sprich die nächste Zeile stattdessen"
+        }
+      ]
+    },
+    {
+      "heading": "186 Sprachen, nach Gesprächen sortiert",
+      "sub": "Wähle einmal deine Sprache und stöbere dann durch alle anderen – jedes Sprachpaar behält seinen eigenen gespeicherten Verlauf.",
+      "bullets": [
+        {
+          "title": "186 Sprachen inklusive",
+          "sub": "Keine zusätzlichen Downloads oder Sprachpakete nötig"
+        },
+        {
+          "title": "Gespräche bleiben übersichtlich",
+          "sub": "Jedes Sprachpaar hat seinen eigenen gespeicherten Verlauf"
+        },
+        {
+          "title": "Jederzeit löschen oder leeren",
+          "sub": "Lösche den Verlauf eines Themas oder entferne es komplett über das Menü"
+        }
+      ]
+    },
+    {
+      "heading": "Keine Anmeldung zum Start nötig",
+      "sub": "Direkt auf dieser Seite ausprobieren – kein Konto, kein Passwort. Melde dich mit Google an, wenn du mehr tägliches Guthaben und geräteübergreifenden Verlauf möchtest.",
+      "bullets": [
+        {
+          "title": "Optionale Anmeldung mit einem Tipp",
+          "sub": "Kein Registrierungsformular, kein Passwort zum Merken"
+        },
+        {
+          "title": "Nur deine E-Mail, sonst nichts",
+          "sub": "Nur deine Google-E-Mail identifiziert dein Konto"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Warum Sprache",
+    "titleAccent": "zuerst kommt",
+    "description": "Die meisten Übersetzer-Apps bleiben beim geschriebenen Text stehen. Das hier ist der Unterschied, wenn du sprechen statt tippen willst.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typische Apps",
+    "rows": [
+      {
+        "title": "Sprachübersetzung",
+        "us": "Ein Tipp nimmt auf, erkennt und übersetzt in Sekunden.",
+        "them": "Nur Text, oder du musst erst abtippen, was du gehört hast."
+      },
+      {
+        "title": "Gesprächsverlauf",
+        "us": "Jedes Sprachpaar behält seinen eigenen gespeicherten Verlauf.",
+        "them": "Der Verlauf verschwindet, sobald du den Tab schließt."
+      },
+      {
+        "title": "Loslegen",
+        "us": "Sofort auf dieser Seite ausprobieren – kein Konto nötig.",
+        "them": "Erst ein Konto mit E-Mail und Passwort anlegen, bevor du es testen kannst."
+      },
+      {
+        "title": "Vorlesefunktion",
+        "us": "Tippe, um dir die Übersetzung laut vorlesen zu lassen.",
+        "them": "Keine Sprachausgabe."
+      },
+      {
+        "title": "Sprachen",
+        "us": "186 Sprachen verfügbar, ohne zusätzlichen Download.",
+        "them": "Begrenzte Offline-Sprachpakete."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte",
+    "headingAccent": "Fragen",
+    "sub": "Was Nutzer vor dem Ausprobieren fragen. Keine Anmeldung nötig – scroll nach oben und probiere es selbst.",
+    "items": [
+      {
+        "q": "Wie funktioniert die Sprachübersetzung?",
+        "a": "Tippe aufs Mikrofon und sprich – deine Stimme wird in wenigen Sekunden erkannt und übersetzt, als Text angezeigt und kann vorgelesen werden. Kein Tippen nötig."
+      },
+      {
+        "q": "Wie viele Sprachen werden unterstützt?",
+        "a": "186 Sprachen. Wähle einmal deine eigene Sprache und starte dann ein Gesprächsthema mit jeder anderen."
+      },
+      {
+        "q": "Muss ich ein Konto erstellen?",
+        "a": "Nein. Probiere es direkt auf dieser Seite ohne Anmeldung. Melde dich mit Google an, wenn du mehr tägliches Guthaben und geräteübergreifenden Verlauf möchtest."
+      },
+      {
+        "q": "Wird mein Übersetzungsverlauf gespeichert?",
+        "a": "Ja, pro Sprachpaar, damit frühere Gespräche übersichtlich bleiben – selbst ohne Anmeldung merkt sich dein Browser den Verlauf. Lösche oder leere jedes Thema jederzeit über sein Menü."
+      },
+      {
+        "q": "Kann ich Text statt Sprache verwenden?",
+        "a": "Ja. Wechsle jederzeit in den Tastatur-Modus und tippe deine Nachricht statt sie zu sprechen."
+      },
+      {
+        "q": "Funktioniert es für ein Gespräch in beide Richtungen?",
+        "a": "Ja. Tippe oder wische eine übersetzte Zeile, um zwischen Original und Übersetzung zu wechseln, damit beide Seiten auf einem Bildschirm mitlesen können."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Sofortige Sprachübersetzung,",
+    "headingAccent": "startklar in 10 Sekunden.",
+    "sub": "Direkt auf dieser Seite ausprobieren – keine Anmeldung, keine Downloads, 186 Sprachen inklusive.",
+    "ctaLabel": "Jetzt testen"
+  },
+  "footer": {
+    "tagline": "Sofortige Sprachübersetzung, 186 Sprachen",
+    "brand": "IQ Translate",
+    "featuresHeading": "Übersetzer",
+    "featureLinks": [
+      { "routeKey": "/uebersetzer-deutsch-englisch", "label": "Deutsch–Englisch" },
+      { "routeKey": "/uebersetzer-deutsch-spanisch", "label": "Deutsch–Spanisch" },
+      { "routeKey": "/uebersetzer-deutsch-russisch", "label": "Deutsch–Russisch" },
+      { "routeKey": "/uebersetzer-deutsch-italienisch", "label": "Deutsch–Italienisch" },
+      { "routeKey": "/uebersetzer-deutsch-arabisch", "label": "Deutsch–Arabisch" },
+      { "routeKey": "/uebersetzer-deutsch-tuerkisch", "label": "Deutsch–Türkisch" },
+      { "routeKey": "/uebersetzer-deutsch-polnisch", "label": "Deutsch–Polnisch" },
+      { "routeKey": "/uebersetzer-deutsch-ukrainisch", "label": "Deutsch–Ukrainisch" },
+      { "routeKey": "/uebersetzer-deutsch-rumaenisch", "label": "Deutsch–Rumänisch" },
+      { "routeKey": "/uebersetzer-deutsch-kroatisch", "label": "Deutsch–Kroatisch" }
+    ]
+  },
+  "translator": {
+    "topics": "Themen",
+    "newTopic": "Neues Thema",
+    "noTopicsYet": "Noch keine Themen",
+    "deleteTopic": "Thema löschen",
+    "deleteTopicConfirm": "Dieses Thema und alle Übersetzungen löschen?",
+    "autoDetect": "Automatisch erkennen",
+    "chooseLanguage": "Sprache wählen",
+    "close": "Schließen",
+    "searchPlaceholder": "Sprache suchen…",
+    "clearHistory": "Verlauf löschen",
+    "clearHistoryConfirm": "Alle Übersetzungen in diesem Thema löschen?",
+    "noTranslationsYet": "Noch keine Übersetzungen in diesem Thema.",
+    "translating": "Übersetzt…",
+    "typePlaceholder": "Nachricht eingeben…",
+    "translateAria": "Übersetzen",
+    "micDeniedError": "Mikrofonzugriff verweigert",
+    "recording": "Aufnahme läuft",
+    "recognizing": "Erkennung läuft…",
+    "recordAria": "Aufnehmen",
+    "stopAria": "Stopp",
+    "pricingLink": "Preise",
+    "errors": {
+      "insufficientCredits": "Guthaben aufgebraucht – Plan upgraden",
+      "textTooLong": "Text zu lang für deinen Plan"
+    }
+  },
+  "history": {
+    "emptyState": "Hier ist noch nichts. Tippe eine Nachricht oder nimm deine Stimme unten auf.",
+    "readAloudAria": "Vorlesen",
+    "copyAria": "Kopieren"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevodilac Srpsko-Nemački sa Glasom | IQ Translate",
+    "description": "Prevodite sa srpskog na nemački glasom ili tekstom, korisno za posao i život u Nemačkoj i Austriji. Čujte prevod naglas, besplatno za probu, bez registracije.",
+    "ogTitle": "Prevodilac Srpsko-Nemački sa Glasom",
+    "ogDescription": "Govorite ili kucajte na srpskom, dobijte nemački prevod za par sekundi i čujte ga izgovorenog naglas.",
+    "canonical": "https://translate.iq-factura.com/sr/prevodilac-srpski-nemacki",
+    "ogLocale": "sr_RS"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Srpsko-nemački prevodilac",
+    "titleAccent": "za posao i svakodnevni razgovor",
+    "description": "Govorite ili kucajte na srpskom i dobijte nemački prevod za par sekundi, koristan na poslu, prilikom preseljenja u Nemačku ili Austriju, ili u svakodnevnim razgovorima. Promenite smer kad god želite i čujte odgovor na srpskom.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Kada počinje smena?",
+    "mockToLabel": "🇩🇪 Nemački",
+    "mockToPhrase": "Wann beginnt die Schicht?"
+  },
+  "spotlights": [
+    {
+      "heading": "Pričajte, ne kucajte",
+      "sub": "Dodirnite mikrofon i izgovorite rečenicu na srpskom ili nemačkom – prevod stiže za par sekundi, spreman da se pročita ili čuje.",
+      "bullets": [
+        { "title": "Govor pretvoren u nemački", "sub": "Recite rečenicu na srpskom – prepoznaje se, prevodi i prikazuje na nemačkom gotovo trenutno" },
+        { "title": "Čujte nemački izgovor naglas", "sub": "Dodirnite zvučnik kad niste sigurni kako se nešto pravilno izgovara" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, ceo razgovor sa poslodavcem ili kolegama",
+      "sub": "Razgovor ide napred-nazad bez ponovnog počinjanja – sve ostaje sačuvano u istoj temi.",
+      "bullets": [
+        { "title": "Odgovor na nemačkom, preveden na srpski", "sub": "Kolega ili poslodavac govori nemački, a vi vidite i čujete prevod na srpskom" },
+        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se kasnije na istu temu umesto da tražite staru prepisku" }
+      ]
+    },
+    {
+      "heading": "Srpsko-nemački, plus još 185 jezika",
+      "sub": "Nemački je samo jedan od 186 dostupnih jezika, u oba smera.",
+      "bullets": [
+        { "title": "Tačan prevod poslovnih i svakodnevnih izraza", "sub": "Radi pouzdano i za formalne razgovore i za brzu poruku prijatelju" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za nemački danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Više volite da kucate? I to radi",
+      "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte nemački prevod bez dodirivanja mikrofona.",
+      "bullets": [
+        { "title": "Kucajte umesto da govorite", "sub": "Korisno za formulare, imejlove poslodavcu ili poruke na WhatsApp-u" },
+        { "title": "Kopirajte prevod", "sub": "Prekopirajte nemački tekst pravo u imejl ili zvanični dokument" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto ovo pobeđuje",
+    "titleAccent": "uobičajeni srpsko-nemački prevodilac",
+    "description": "Većina aplikacija za prevođenje traži da prvo otkucate tekst, a onda zaboravi ceo razgovor. Evo šta je drugačije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na srpskom ili nemačkom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
+      { "title": "Istorija razgovora", "us": "Svaki srpsko-nemački razgovor se čuva kao posebna tema.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dozvole pre prve upotrebe." },
+      { "title": "Oba smera", "us": "Srpsko-nemački i nemačko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
+      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete nemački prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate sami da pogađate." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju sa srpskog na nemački.",
+    "items": [
+      { "q": "Da li prevodi govor sa srpskog na nemački?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate nemački prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
+      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda." },
+      { "q": "Da li je koristan za rad u Nemačkoj ili Austriji?", "a": "Da, mnogi ga koriste za razgovor sa poslodavcem, kolegama ili prilikom useljenja – prevod pokriva i svakodnevni i poslovni jezik." },
+      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
+      { "q": "Mogu li da prevedem sa nemačkog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na nemačkom i dobijate prevod na srpskom u istoj temi." },
+      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj srpsko-nemački",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili kucajte, čujte odgovor na nemačkom – besplatno za probu, bez registracije.",
+    "ctaLabel": "Isprobaj odmah"
+  }
+}

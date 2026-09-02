@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traducteur Français-Anglais Vocal | IQ Translate",
+    "description": "Traduisez du français vers l'anglais à la voix ou à l'écrit, écoutez le résultat et répondez dans le même fil. 186 langues, gratuit, sans inscription.",
+    "ogTitle": "Traducteur Français-Anglais Vocal",
+    "ogDescription": "Parlez ou tapez en français et obtenez une traduction anglaise instantanée, orale ou écrite. Fonctionne dans les deux sens, gratuit à essayer.",
+    "canonical": "https://translate.iq-factura.com/fr/traducteur-francais-anglais",
+    "ogLocale": "fr_FR"
+  },
+  "hero": {
+    "badgeVoice": "Voix",
+    "badgeText": "Texte",
+    "badgeLanguages": "186 langues",
+    "title": "Traducteur français-anglais",
+    "titleAccent": "qui répond aussi",
+    "description": "Parlez ou tapez en français et obtenez une traduction anglaise en quelques secondes, affichée à l'écran et prête à être lue à voix haute. Changez de sens à tout moment : parlez anglais et écoutez la réponse en français, dans la même conversation.",
+    "ctaTry": "Essayer gratuitement",
+    "ctaSignIn": "Se connecter avec Google",
+    "mockFromLabel": "🇫🇷 Français",
+    "mockFromPhrase": "Où est la gare la plus proche ?",
+    "mockToLabel": "🇬🇧 Anglais",
+    "mockToPhrase": "Where is the nearest train station?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parlez, n'écrivez pas",
+      "sub": "Appuyez sur le micro, dites-le en français ou en anglais, et lisez ou écoutez la traduction.",
+      "bullets": [
+        { "title": "Votre voix devient de l'anglais", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en anglais quelques secondes plus tard" },
+        { "title": "Écoutez l'anglais à voix haute", "sub": "Appuyez sur le haut-parleur pour entendre la prononciation quand la vôtre hésite encore" }
+      ]
+    },
+    {
+      "heading": "Un seul fil, les deux côtés de l'échange",
+      "sub": "Discutez dans les deux sens sans repartir de zéro — chaque échange reste dans le même sujet.",
+      "bullets": [
+        { "title": "Réponse en anglais, traduite en français", "sub": "Votre interlocuteur peut parler anglais, vous le voyez et l'entendez en français" },
+        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en anglais plus tard au lieu de perdre le fil" }
+      ]
+    },
+    {
+      "heading": "Français-anglais, plus 184 autres langues",
+      "sub": "L'anglais est l'une des 186 langues disponibles, dans les deux sens.",
+      "bullets": [
+        { "title": "Précis avec les expressions courantes", "sub": "Reconnaît les tournures anglaises usuelles plutôt que de traduire mot à mot" },
+        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour l'anglais et demain pour toute autre langue" }
+      ]
+    },
+    {
+      "heading": "Vous préférez taper ? C'est possible aussi",
+      "sub": "Tapez ou collez du texte en français et obtenez la traduction anglaise sans toucher au micro.",
+      "bullets": [
+        { "title": "Taper plutôt que parler", "sub": "Utile dans un bureau silencieux ou une rue bruyante" },
+        { "title": "Copier la traduction", "sub": "Récupérez le texte anglais pour le coller dans un e-mail ou un message" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Pourquoi c'est mieux",
+    "titleAccent": "qu'un traducteur anglais classique",
+    "description": "La plupart des applications de traduction classiques vous font taper d'abord et oublient la conversation ensuite. Voici ce qui change.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Applications de traduction classiques",
+    "rows": [
+      { "title": "Pour commencer", "us": "Parlez en français ou en anglais et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire." },
+      { "title": "Historique des échanges", "us": "Chaque conversation en anglais est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
+      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
+      { "title": "Les deux sens", "us": "Français vers anglais et anglais vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
+      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction anglaise lue à voix haute.", "them": "Texte uniquement, la prononciation reste à votre charge." }
+    ]
+  },
+  "faq": {
+    "heading": "Questions",
+    "headingAccent": "fréquentes",
+    "sub": "Les questions courantes sur la traduction du français vers l'anglais.",
+    "items": [
+      { "q": "Peut-il traduire du français parlé en anglais ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction anglaise sous forme de texte, avec une option pour l'écouter à voix haute." },
+      { "q": "Gère-t-il les expressions et l'anglais familier ?", "a": "Oui, les tournures courantes et les expressions familières sont traduites selon le sens, pas mot à mot." },
+      { "q": "Puis-je traduire de l'anglais vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en anglais et obtenez la traduction française dans le même sujet." },
+      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
+      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." },
+      { "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?", "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en anglais reste au même endroit au lieu de se disperser." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Démarrez votre conversation",
+    "headingAccent": "français-anglais maintenant.",
+    "sub": "Parlez ou tapez, écoutez la réponse en anglais — gratuit à essayer, sans inscription.",
+    "ctaLabel": "Essayer maintenant"
+  }
+}

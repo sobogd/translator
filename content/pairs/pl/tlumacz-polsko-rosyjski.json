@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tłumacz Polsko-Rosyjski Głosowy | IQ Translate",
+    "description": "Tłumacz polsko-rosyjski online: mów lub pisz po polsku, usłysz tłumaczenie na rosyjski od razu. Rozmowa w obie strony, 186 języków, za darmo bez rejestracji.",
+    "ogTitle": "Tłumacz Polsko-Rosyjski Głosowy",
+    "ogDescription": "Mów lub pisz po polsku, otrzymaj tłumaczenie na rosyjski od razu, mówione lub pisane. Działa w obie strony, za darmo do wypróbowania.",
+    "canonical": "https://translate.iq-factura.com/pl/tlumacz-polsko-rosyjski",
+    "ogLocale": "pl_PL"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz polsko-rosyjski",
+    "titleAccent": "który odpowiada głosem",
+    "description": "Mów lub pisz po polsku i w kilka sekund otrzymaj tłumaczenie na rosyjski, pokazane na ekranie i gotowe do odczytania na głos. Cyrylica pokazywana jest poprawnie, więc nie musisz jej znać, żeby wysłać wiadomość albo odpowiedzieć — zmień kierunek w dowolnej chwili.",
+    "ctaTry": "Wypróbuj za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Czy mogę prosić rachunek?",
+    "mockToLabel": "🇷🇺 Rosyjski",
+    "mockToPhrase": "Можно счёт, пожалуйста?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mów, nie pisz",
+      "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub rosyjsku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
+      "bullets": [
+        { "title": "Mowa zamieniona na rosyjski", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po rosyjsku w kilka sekund" },
+        { "title": "Usłysz rosyjski na głos", "sub": "Dotknij ikony głośnika, gdy czytanie cyrylicy jeszcze sprawia trudność" }
+      ]
+    },
+    {
+      "heading": "Jeden wątek, obie strony rozmowy",
+      "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
+      "bullets": [
+        { "title": "Odpowiedź po rosyjsku, przetłumaczona na polski", "sub": "Twój rozmówca może mówić po rosyjsku, a Ty zobaczysz i usłyszysz to po polsku" },
+        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy później, zamiast szukać jej od nowa" }
+      ]
+    },
+    {
+      "heading": "Polsko-rosyjski i 185 kolejnych języków",
+      "sub": "Rosyjski to jeden z 186 dostępnych języków, w dowolnym kierunku.",
+      "bullets": [
+        { "title": "Poprawny zapis cyrylicą", "sub": "Tłumaczenie pokazuje właściwe litery cyrylicy, gotowe do przeczytania i wysłania" },
+        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do rosyjskiego, a jutro do dowolnego innego języka" }
+      ]
+    },
+    {
+      "heading": "Wolisz pisać? To też działa",
+      "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na rosyjski bez dotykania mikrofonu.",
+      "bullets": [
+        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę, gdy nie chcesz mówić na głos" },
+        { "title": "Skopiuj tłumaczenie", "sub": "Wklej rosyjski tekst prosto do e-maila albo wiadomości" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego to lepszy",
+    "titleAccent": "tłumacz polsko-rosyjski",
+    "description": "Typowe aplikacje każą najpierw pisać, a potem zapominają rozmowę. Oto co jest inne.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje do tłumaczenia",
+    "rows": [
+      { "title": "Jak zaczynasz", "us": "Mów po polsku lub rosyjsku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
+      { "title": "Historia rozmów", "us": "Każda rozmowa po rosyjsku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
+      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
+      { "title": "Obie strony rozmowy", "us": "Polsko-rosyjski i rosyjsko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
+      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć rosyjskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "Częste pytania o tłumaczenie polsko-rosyjskie.",
+    "items": [
+      { "q": "Czy tłumaczy mowę z polskiego na rosyjski?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na rosyjski jako tekst, z opcją odsłuchania go na głos." },
+      { "q": "Czy muszę znać cyrylicę, żeby z tego korzystać?", "a": "Nie, tłumaczenie pokazuje poprawną cyrylicę na ekranie i może je odczytać na głos, więc nie musisz umieć jej czytać." },
+      { "q": "Czy mogę tłumaczyć z powrotem z rosyjskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po rosyjsku i odbierz tłumaczenie na polski w tym samym wątku." },
+      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
+      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." },
+      { "q": "Czy mogę prowadzić dłuższą rozmowę, a nie pojedyncze tłumaczenia?", "a": "Tak, tłumaczenia grupują się w wątki, więc rozmowa po rosyjsku zostaje w jednym miejscu zamiast rozpraszać się po osobnych wyszukiwaniach." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Zacznij swoją rozmowę",
+    "headingAccent": "polsko-rosyjską już teraz.",
+    "sub": "Mów lub pisz, usłysz odpowiedź po rosyjsku — za darmo do wypróbowania, bez rejestracji.",
+    "ctaLabel": "Wypróbuj teraz"
+  }
+}

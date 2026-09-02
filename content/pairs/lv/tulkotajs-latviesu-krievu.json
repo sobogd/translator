@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Latviešu–Krievu Tulkotājs ar Balsi | IQ Translate",
+    "description": "Runā vai raksti latviski, uzreiz saņem tulkojumu krievu valodā — skaļi vai rakstiski. Noderīgi ikdienā: veikalā, pie ārsta, kaimiņos. 186 valodas bez maksas.",
+    "ogTitle": "Latviešu–Krievu Tulkotājs ar Balsi",
+    "ogDescription": "Runā vai raksti latviski un saņem tulkojumu krievu valodā — skaļi vai rakstiski, uzreiz un abos virzienos.",
+    "canonical": "https://translate.iq-factura.com/lv/tulkotajs-latviesu-krievu",
+    "ogLocale": "lv_LV"
+  },
+  "hero": {
+    "badgeVoice": "Balss",
+    "badgeText": "Teksts",
+    "badgeLanguages": "186 valodas",
+    "title": "Latviešu–krievu tulkotājs",
+    "titleAccent": "kas atbild ar balsi",
+    "description": "Runā vai raksti latviski un saņem tulkojumu krievu valodā — tekstā un balsī. Noderīgi ikdienas sarunām Latvijā: veikalā, pie ārsta vai ar kaimiņiem — atbilde krieviski parādās tajā pašā sarunā.",
+    "ctaTry": "Izmēģini bez maksas",
+    "ctaSignIn": "Pieteikties ar Google",
+    "mockFromLabel": "🇱🇻 Latviešu",
+    "mockFromPhrase": "Kur ir tuvākā aptieka?",
+    "mockToLabel": "🇷🇺 Krievu",
+    "mockToPhrase": "Где ближайшая аптека?"
+  },
+  "spotlights": [
+    {
+      "heading": "Runā latviski, klausies krieviski",
+      "sub": "Pieskaries mikrofonam un pasaki frāzi — pēc dažām sekundēm tā skan krieviski, gatava gan tekstā, gan balsī.",
+      "bullets": [
+        { "title": "Runa uzreiz kļūst par krievu tekstu", "sub": "Pasaki frāzi latviski — tā tiek atpazīta, pārtulkota un parādās ekrānā" },
+        { "title": "Noklausies pareizo izrunu", "sub": "Pieskaries skaļruņa ikonai, ja neesi drošs, kā izrunāt frāzi krieviski" }
+      ]
+    },
+    {
+      "heading": "Saruna abos virzienos, saglabāta kā tēma",
+      "sub": "Saruna veikalā, pie ārsta vai ar kaimiņiem — viss paliek vienā tēmā, pie kuras var atgriezties.",
+      "bullets": [
+        { "title": "Sarunu biedrs atbild krieviski — tu dzirdi latviski", "sub": "Tulkojums notiek abos virzienos vienā un tajā pašā sarunā" },
+        { "title": "Atgriezies pie sarunas vēlāk", "sub": "Ikdienas saruna vai vizīte pie ārsta saglabājas kā atsevišķa tēma" }
+      ]
+    },
+    {
+      "heading": "Krievu valoda — un vēl 185 valodas līdzās",
+      "sub": "Krievu valoda noder ikdienā Latvijā, taču tā ir tikai viena no 186 pieejamām valodām jebkurā virzienā.",
+      "bullets": [
+        { "title": "Noder ikdienas situācijām Latvijā", "sub": "No veikala līdz poliklīnikai — viens un tas pats rīks jebkurā sarunā" },
+        { "title": "186 valodas vienā lietotnē", "sub": "Vajadzēs angļu vai poļu valodu — pārslēgties nekur nevajadzēs" }
+      ]
+    },
+    {
+      "heading": "Var arī vienkārši rakstīt",
+      "sub": "Ja runāt neērti, ieraksti tekstu latviski un saņem gatavu tulkojumu krievu valodā.",
+      "bullets": [
+        { "title": "Raksti vai ielīmē tekstu", "sub": "Ielīmē ziņu vai vēstuli tieši laukā — tulkojums parādās uzreiz" },
+        { "title": "Nokopē rezultātu ar vienu pieskārienu", "sub": "Gatavo krievu tekstu var uzreiz ielīmēt ziņā vai vēstulē" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Kāpēc šis ir labāks",
+    "titleAccent": "par parastu latviešu–krievu tulkotāju",
+    "description": "Vairums tulkošanas lietotņu liek vispirms rakstīt un pēc tam aizmirst sarunu. Lūk, kas šeit ir citādi.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Parastās tulkošanas lietotnes",
+    "rows": [
+      { "title": "Kā sākt", "us": "Runā latviski vai krieviski un uzreiz saņem tulkojumu.", "them": "Vispirms jāuzraksta frāze." },
+      { "title": "Sarunu vēsture", "us": "Katra saruna tiek saglabāta kā atsevišķa tēma, pie kuras var atgriezties.", "them": "Tulkojums pazūd, tiklīdz aizver lietotni." },
+      { "title": "Uzsākšana", "us": "Atveras pārlūkā, nekas nav jālejupielādē.", "them": "Jālejupielādē lietotne un jāpiešķir atļaujas." },
+      { "title": "Abi virzieni", "us": "Latviešu→krievu un krievu→latviešu dzīvo vienā sarunā.", "them": "Pretējam virzienam parasti jāsāk no jauna." },
+      { "title": "Balss atskaņošana", "us": "Pieskaries un dzirdi tulkojumu krieviski skaļi nolasītu.", "them": "Tikai teksts, izruna jāmin pašam." }
+    ]
+  },
+  "faq": {
+    "heading": "Biežāk uzdotie",
+    "headingAccent": "jautājumi",
+    "sub": "Ko cilvēki jautā par tulkošanu no latviešu uz krievu valodu.",
+    "items": [
+      { "q": "Vai tulko runāto latviešu valodu krieviski?", "a": "Jā — pieskaries mikrofonam, runā latviski, un ekrānā parādīsies krievu teksts, ko var arī noklausīties skaļi." },
+      { "q": "Vai darbojas arī no krievu uz latviešu?", "a": "Jā, tā pati saruna strādā abos virzienos — sarunu biedrs runā vai raksta krieviski, tu redzi un dzirdi tulkojumu latviski." },
+      { "q": "Vai tas ir bez maksas?", "a": "Jā, izmēģināt var bez maksas un bez reģistrācijas. Pieteikšanās ar Google dod vairāk kredītu dienā un saglabātu vēsturi." },
+      { "q": "Vai der ikdienas sarunām veikalā vai pie ārsta?", "a": "Jā, pasaki vai ieraksti frāzi latviski — krievu tulkojums ir gatavs uzreiz, tekstā un balsī." },
+      { "q": "Vai jāinstalē kāda lietotne?", "a": "Nē, viss darbojas tieši pārlūkā telefonā vai datorā, nekas nav jālejupielādē." },
+      { "q": "Vai saglabājas sarunas vēsture?", "a": "Jā, tulkojumi tiek grupēti tēmās, tāpēc ikdienas sarunas vai vizītes pie ārsta nepazūd starp citiem tulkojumiem." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Sāc savu latviešu–krievu",
+    "headingAccent": "sarunu jau tagad.",
+    "sub": "Runā vai raksti, dzirdi atbildi krieviski — bez maksas, bez reģistrācijas.",
+    "ctaLabel": "Izmēģini tagad"
+  }
+}

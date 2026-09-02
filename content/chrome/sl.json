@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "Glasovni Prevajalnik Online – Brezplačno | IQ Translate",
+    "description": "Brezplačen glasovni prevajalnik online: govorite naravno in v nekaj sekundah dobite prevod, izgovorjen ali zapisan, v 186 jezikih. Brez prenosov, brez registracije za preizkus.",
+    "ogTitle": "Glasovni Prevajalnik Online – Brezplačno",
+    "ogDescription": "Brezplačen glasovni prevajalnik online: govorite in v nekaj sekundah dobite prevod, izgovorjen ali zapisan, v 186 jezikih.",
+    "twitterTitle": "Glasovni Prevajalnik Online – Brezplačno",
+    "twitterDescription": "Brezplačen glasovni prevajalnik: takojšen izgovorjen ali pisan prevod v 186 jezikih."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funkcije",
+    "pricing": "Cenik",
+    "mobileApp": "Mobilna aplikacija",
+    "signIn": "Prijava",
+    "logOut": "Odjava",
+    "tryItNow": "Preizkusi zdaj"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Besedilo",
+    "badgeLanguages": "186 jezikov",
+    "title": "Glasovni prevajalnik",
+    "titleAccent": "za vsak pogovor",
+    "description": "Govorite naravno in v nekaj sekundah dobite prevod, izgovorjen ali zapisan, v 186 jezikih. Za preizkus ni potrebna registracija.",
+    "ctaTry": "Preizkusi zdaj – brezplačno",
+    "ctaSignIn": "Prijava z Googlom",
+    "mockFromLabel": "🇸🇮 Slovenščina",
+    "mockFromPhrase": "Živjo, kako si?",
+    "mockToLabel": "🇬🇧 Angleščina",
+    "mockToPhrase": "Hi, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 jezikov",
+      "sub": "Govorite ali pišite, prevod takoj, brez dodatnih prenosov"
+    },
+    {
+      "title": "Registracija ni potrebna",
+      "sub": "Preizkusite kar na tej strani – prijava le za več dobroimetja"
+    },
+    {
+      "title": "Zgodovina po jezikovnem paru",
+      "sub": "Vsak pogovor ostane urejen in ga je lahko znova najti"
+    },
+    {
+      "title": "Brezplačno za začetek",
+      "sub": "Pomaknite se navzdol in takoj začnite prevajati"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Takojšen glasovni prevod",
+      "sub": "Dotaknite se mikrofona in spregovorite. Vaš govor se prepiše in prevede v nekaj sekundah – brez tipkanja.",
+      "bullets": [
+        {
+          "title": "Spregovorite, dobite takojšen prevod",
+          "sub": "En dotik sproži snemanje, prevod se prikaže takoj zatem"
+        },
+        {
+          "title": "Poslušajte naglas",
+          "sub": "Dotaknite se zvočnika, da prevod slišite prebranega naglas"
+        },
+        {
+          "title": "Glas ali besedilo, izbira je vaša",
+          "sub": "Način kadar koli preklopite z enim dotikom"
+        }
+      ]
+    },
+    {
+      "heading": "Prevajanje besedila prav tako",
+      "sub": "Raje tipkate? Preklopite na tipkovnico in sporočilo prevedite v trenutku.",
+      "bullets": [
+        {
+          "title": "Zamenjajte izvirnik in prevod",
+          "sub": "Dotaknite se ali povlecite vrstico, da jo vidite v obeh jezikih"
+        },
+        {
+          "title": "Kopirajte z enim dotikom",
+          "sub": "Prevedeno besedilo zajemite in prilepite kamor koli"
+        },
+        {
+          "title": "Kadar koli preklopite na glas",
+          "sub": "Začnite tipkati, naslednjo vrstico pa narekujte"
+        }
+      ]
+    },
+    {
+      "heading": "186 jezikov, urejenih po pogovorih",
+      "sub": "Svoj jezik izberite enkrat, nato brskajte po vseh drugih – vsak jezikovni par ohranja svojo shranjeno nit.",
+      "bullets": [
+        {
+          "title": "186 vključenih jezikov",
+          "sub": "Brez dodatnih prenosov ali jezikovnih paketov za namestitev"
+        },
+        {
+          "title": "Pogovori ostanejo urejeni",
+          "sub": "Vsak jezikovni par ima svojo shranjeno zgodovino"
+        },
+        {
+          "title": "Počistite ali izbrišite kadar koli",
+          "sub": "Zgodovino niti počistite ali jo v celoti odstranite iz menija"
+        }
+      ]
+    },
+    {
+      "heading": "Registracija za začetek ni potrebna",
+      "sub": "Preizkusite kar na tej strani – brez računa, brez gesla. Prijavite se z Googlom le, ko želite več dnevnega dobroimetja in zgodovino, sinhronizirano med napravami.",
+      "bullets": [
+        {
+          "title": "Neobvezna prijava z enim dotikom",
+          "sub": "Brez registracijskega obrazca, brez gesla za zapomniti"
+        },
+        {
+          "title": "Le vaš e-poštni naslov, nič drugega",
+          "sub": "Vaš račun prepozna samo vaš Google e-poštni naslov"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zakaj je glas",
+    "titleAccent": "na prvem mestu",
+    "description": "Večina prevajalskih aplikacij se ustavi pri natipkanem besedilu. Spodnje vrstice kažejo, kaj se dejansko razlikuje, ko morate govoriti in ne tipkati.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Običajne aplikacije",
+    "rows": [
+      {
+        "title": "Glasovni prevod",
+        "us": "En dotik posname, prepiše in prevede v nekaj sekundah.",
+        "them": "Samo besedilo, ali morate sami natipkati, kar ste slišali."
+      },
+      {
+        "title": "Zgodovina pogovorov",
+        "us": "Vsak jezikovni par ohranja svojo shranjeno nit.",
+        "them": "Zgodovina izgine, ko zaprete zavihek."
+      },
+      {
+        "title": "Začetek uporabe",
+        "us": "Preizkusite takoj, kar na tej strani – brez računa.",
+        "them": "Odpiranje računa z e-pošto in geslom, preden lahko poskusite."
+      },
+      {
+        "title": "Predvajanje glasu",
+        "us": "Dotaknite se, da prevod slišite prebranega naglas.",
+        "them": "Brez glasovnega izhoda."
+      },
+      {
+        "title": "Jeziki",
+        "us": "Na voljo 186 jezikov, brez dodatnega prenosa.",
+        "them": "Omejeni offline jezikovni paketi."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Pogosta",
+    "headingAccent": "vprašanja",
+    "sub": "Kaj ljudje sprašujejo, preden ga preizkusijo. Registracija ni potrebna – pomaknite se navzgor in preizkusite sami.",
+    "items": [
+      {
+        "q": "Kako deluje glasovno prevajanje?",
+        "a": "Dotaknite se mikrofona in spregovorite – vaš glas se v nekaj sekundah prepiše in prevede, prikaže kot besedilo in ga je mogoče poslušati naglas. Tipkanje ni potrebno."
+      },
+      {
+        "q": "Koliko jezikov je podprtih?",
+        "a": "186 jezikov. Svoj jezik izberite enkrat, nato začnite pogovorno nit s katerim koli drugim."
+      },
+      {
+        "q": "Ali moram ustvariti račun?",
+        "a": "Ne. Preizkusite kar na tej strani brez registracije. Prijavite se z Googlom le, če želite več dnevnega dobroimetja in zgodovino, sinhronizirano med napravami."
+      },
+      {
+        "q": "Ali se moja zgodovina prevodov shranjuje?",
+        "a": "Da, po jezikovnem paru, tako da pretekli pogovori ostanejo urejeni – tudi brez prijave si aplikacija zapomni vaš brskalnik. Katero koli nit lahko kadar koli počistite ali izbrišete iz njenega menija."
+      },
+      {
+        "q": "Ali lahko namesto glasu uporabim besedilo?",
+        "a": "Da. Kadar koli preklopite na tipkovnico in sporočilo natipkajte namesto izgovorjave."
+      },
+      {
+        "q": "Ali deluje za dvosmerni pogovor?",
+        "a": "Da. Dotaknite se ali povlecite prevedeno vrstico, da preklopite med izvirnikom in prevodom, tako da lahko obe strani sledita na enem zaslonu."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Takojšen glasovni prevod,",
+    "headingAccent": "pripravljen v 10 sekundah.",
+    "sub": "Preizkusite kar na tej strani – brez registracije, brez prenosov, vključenih 186 jezikov.",
+    "ctaLabel": "Preizkusi zdaj"
+  },
+  "footer": {
+    "tagline": "Takojšen glasovni prevod, 186 jezikov",
+    "brand": "IQ Translate",
+    "featuresHeading": "Prevajalniki",
+    "featureLinks": [
+      { "routeKey": "/prevajalnik-slovensko-anglesko", "label": "Slovensko–angleški" },
+      { "routeKey": "/prevajalnik-slovensko-nemsko", "label": "Slovensko–nemški" },
+      { "routeKey": "/prevajalnik-slovensko-italijansko", "label": "Slovensko–italijanski" }
+    ]
+  },
+  "translator": {
+    "topics": "Teme",
+    "newTopic": "Nova tema",
+    "noTopicsYet": "Še ni tem",
+    "deleteTopic": "Izbriši temo",
+    "deleteTopicConfirm": "Izbrišem to temo in vse njene prevode?",
+    "autoDetect": "Samodejno zaznaj",
+    "chooseLanguage": "Izberite jezik",
+    "close": "Zapri",
+    "searchPlaceholder": "Iščite jezik…",
+    "clearHistory": "Počisti zgodovino",
+    "clearHistoryConfirm": "Počistim vse prevode v tej temi?",
+    "noTranslationsYet": "V tej temi še ni prevodov.",
+    "translating": "Prevajanje…",
+    "typePlaceholder": "Vnesite sporočilo…",
+    "translateAria": "Prevedi",
+    "micDeniedError": "Dostop do mikrofona zavrnjen",
+    "recording": "Snemanje",
+    "recognizing": "Prepoznavanje…",
+    "recordAria": "Snemaj",
+    "stopAria": "Ustavi",
+    "pricingLink": "Cenik",
+    "errors": {
+      "insufficientCredits": "Zmanjkalo je dobroimetja – nadgradite paket",
+      "textTooLong": "Besedilo je predolgo za vaš paket"
+    }
+  },
+  "history": {
+    "emptyState": "Tukaj še ni ničesar. Spodaj vnesite sporočilo ali posnemite svoj glas.",
+    "readAloudAria": "Preberi naglas",
+    "copyAria": "Kopiraj"
+  }
+}

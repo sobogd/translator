@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Saksa-Suomi-kääntäjä työhön ja matkoille | IQ Translate",
+    "description": "Käännä saksasta suomeksi puhumalla tai kirjoittamalla, kuuntele käännös ääneen työmatkoilla ja kokouksissa. Ilmainen kokeilla, ei rekisteröitymistä.",
+    "ogTitle": "Saksa-Suomi-kääntäjä työhön ja matkoille",
+    "ogDescription": "Puhu tai kirjoita suomeksi, saat saksankielisen käännöksen heti – tekstinä ja ääneen luettuna. Toimii molempiin suuntiin.",
+    "canonical": "https://translate.iq-factura.com/fi/kaantaja-suomi-saksa",
+    "ogLocale": "fi_FI"
+  },
+  "hero": {
+    "badgeVoice": "Puhe",
+    "badgeText": "Teksti",
+    "badgeLanguages": "186 kieltä",
+    "title": "Saksa–suomi-kääntäjä",
+    "titleAccent": "joka toimii molempiin suuntiin puhumalla",
+    "description": "Puhu tai kirjoita suomeksi ja saat saksankielisen käännöksen sekunneissa – näytöllä tekstinä ja valmiina luettavaksi ääneen. Sopii työmatkoille, kokouksiin, WhatsApp-viesteihin ja sähköposteihin, ja toimii aina molempiin suuntiin samassa keskustelussa.",
+    "ctaTry": "Kokeile ilmaiseksi",
+    "ctaSignIn": "Kirjaudu Googlella",
+    "mockFromLabel": "🇫🇮 Suomi",
+    "mockFromPhrase": "Voimmeko siirtää tapaamisen huomiseen?",
+    "mockToLabel": "🇩🇪 Saksa",
+    "mockToPhrase": "Können wir den Termin auf morgen verschieben?"
+  },
+  "spotlights": [
+    {
+      "heading": "Puhu suomea, kuuntele saksaa",
+      "sub": "Napauta mikrofonia ja sano asiasi suomeksi kokouksessa tai messuilla – käännös näkyy tekstinä ja kuuluu ääneen saksaksi.",
+      "bullets": [
+        { "title": "Puheesi muuttuu saksaksi hetkessä", "sub": "Sano se suomeksi palaverissa tai lentokentällä – käännös tulee sekunneissa" },
+        { "title": "Kuuntele oikea saksankielinen ääntäminen", "sub": "Napauta kaiutinta, kun oma saksasi ei vielä riitä ääntämiseen" }
+      ]
+    },
+    {
+      "heading": "Sama aihe koko työmatkan ajaksi",
+      "sub": "Saksalainen kollega tai asiakas vastaa saksaksi ja näet sen suomeksi – kaikki tallentuu samaan keskusteluun.",
+      "bullets": [
+        { "title": "Vastaus saksaksi näkyy suomeksi", "sub": "Kollega puhuu tai kirjoittaa saksaa WhatsAppissa ja sinä luet sen suomeksi" },
+        { "title": "Yksi aihe koko yhteydenpidon ajaksi", "sub": "Palaa samaan Saksa-keskusteluun sen sijaan, että aloitat joka kerta alusta" }
+      ]
+    },
+    {
+      "heading": "Suomi–saksa ja 185 muuta kieltä",
+      "sub": "Saksa on yksi 186 kielestä, jotka toimivat samalla työkalulla mihin tahansa suuntaan.",
+      "bullets": [
+        { "title": "Tarkka saksan yhdyssanoille ja umlauteille", "sub": "Käsittelee ä, ö, ü ja pitkät yhdyssanat oikein tekstissä ja puheessa" },
+        { "title": "186 kieltä samalla työkalulla", "sub": "Sama sovellus toimii saksan lisäksi mille tahansa muulle kielelle" }
+      ]
+    },
+    {
+      "heading": "Kirjoita, jos et voi puhua ääneen",
+      "sub": "Liitä tai kirjoita suomenkielinen työsähköposti ja saat saksankielisen käännöksen ilman mikrofonia.",
+      "bullets": [
+        { "title": "Liitä teksti sähköpostista tai WhatsAppista", "sub": "Kirjoita tai liitä viesti ja saat käännöksen heti näytölle" },
+        { "title": "Kopioi käännös yhdellä napautuksella", "sub": "Vie saksankielinen teksti suoraan takaisin viestiin tai sähköpostiin" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miksi tämä on parempi kuin",
+    "titleAccent": "tavallinen saksa-suomi-sovellus",
+    "description": "Useimmat käännössovellukset vaativat kirjoittamista etkä pysty jatkamaan samaa keskustelua kokouksesta toiseen. Tässä on ero.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tavalliset käännössovellukset",
+    "rows": [
+      { "title": "Aloittaminen", "us": "Puhu suomeksi tai saksaksi ja saat käännöksen heti.", "them": "Kirjoita ensin se, mitä haluat sanoa." },
+      { "title": "Keskusteluhistoria", "us": "Koko työmatkan tai asiakassuhteen keskustelu tallentuu yhdeksi aiheeksi.", "them": "Käännös katoaa, kun suljet sovelluksen." },
+      { "title": "Käyttöönotto", "us": "Avaa selaimessa kokoushuoneen wifissä – ei asennettavaa.", "them": "Lataa sovellus ja hyväksy käyttöoikeudet ennen käyttöä." },
+      { "title": "Molemmat suunnat", "us": "Suomesta saksaan ja saksasta suomeen samassa aiheessa.", "them": "Suunnan vaihtaminen aloittaa yleensä uuden käännöksen." },
+      { "title": "Ääneen kuunteleminen", "us": "Napauta ja kuule saksankielinen käännös luettuna ääneen.", "them": "Vain tekstiä, ääntäminen jää arvailun varaan." }
+    ]
+  },
+  "faq": {
+    "heading": "Usein kysytyt",
+    "headingAccent": "kysymykset",
+    "sub": "Näihin kysytään vastauksia ennen saksa-suomi-kääntäjän kokeilua.",
+    "items": [
+      { "q": "Kääntääkö se puhutun suomen saksaksi?", "a": "Kyllä – napauta mikrofonia, puhu suomeksi, ja saat saksankielisen käännöksen tekstinä sekä mahdollisuuden kuunnella se ääneen." },
+      { "q": "Toimiiko se myös saksasta suomeen?", "a": "Kyllä, sama keskustelu toimii molempiin suuntiin – kollega tai asiakas puhuu tai kirjoittaa saksaa ja sinä näet sen suomeksi." },
+      { "q": "Sopiiko se työsähköposteihin ja WhatsApp-viesteihin?", "a": "Kyllä, liitä tai kirjoita teksti mistä tahansa viestistä ja kopioi saksankielinen käännös suoraan takaisin." },
+      { "q": "Onko se ilmainen?", "a": "Kyllä, voit kokeilla ilmaiseksi ilman tiliä. Kirjaudu Googlella saadaksesi lisää päivittäisiä krediittejä ja tallennetun historian." },
+      { "q": "Näkyvätkö saksan umlautit oikein?", "a": "Kyllä, ä, ö, ü ja ß käsitellään oikein sekä tekstissä että ääneen luettuna." },
+      { "q": "Tarvitseeko asentaa mitään?", "a": "Ei, se toimii selaimessa tietokoneella tai puhelimella – ei ladattavaa." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Aloita saksa-suomi-",
+    "headingAccent": "keskustelusi nyt.",
+    "sub": "Puhu tai kirjoita, kuuntele käännös saksaksi – ilmainen kokeilla, ei rekisteröitymistä.",
+    "ctaLabel": "Kokeile nyt"
+  }
+}

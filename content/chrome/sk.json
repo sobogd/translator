@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "Hlasový Prekladač Online Zdarma | IQ Translate",
+    "description": "Bezplatný hlasový prekladač online: hovorte prirodzene a okamžite získajte preklad, hovorený aj písaný, v 186 jazykoch. Bez sťahovania, vyskúšanie bez registrácie.",
+    "ogTitle": "Hlasový Prekladač Online Zdarma",
+    "ogDescription": "Bezplatný hlasový prekladač: hovorte a hneď získajte preklad, hovorený aj písaný, v 186 jazykoch.",
+    "twitterTitle": "Hlasový Prekladač Online Zdarma",
+    "twitterDescription": "Bezplatný hlasový prekladač: okamžitý hovorený aj písaný preklad v 186 jazykoch."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funkcie",
+    "pricing": "Cenník",
+    "mobileApp": "Mobilná aplikácia",
+    "signIn": "Prihlásiť sa",
+    "logOut": "Odhlásiť sa",
+    "tryItNow": "Vyskúšať teraz"
+  },
+  "hero": {
+    "badgeVoice": "Hlas",
+    "badgeText": "Text",
+    "badgeLanguages": "186 jazykov",
+    "title": "Hlasový prekladač",
+    "titleAccent": "pre každý rozhovor",
+    "description": "Hovorte prirodzene a okamžite získajte preklad, hovorený aj písaný, v 186 jazykoch. Vyskúšanie nevyžaduje registráciu.",
+    "ctaTry": "Vyskúšať zadarmo",
+    "ctaSignIn": "Prihlásiť sa cez Google",
+    "mockFromLabel": "🇸🇰 Slovenčina",
+    "mockFromPhrase": "Ahoj, ako sa máš?",
+    "mockToLabel": "🇬🇧 Angličtina",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 jazykov",
+      "sub": "Hovorte alebo píšte, preklad okamžite, bez ďalšieho sťahovania"
+    },
+    {
+      "title": "Bez registrácie",
+      "sub": "Vyskúšajte priamo na tejto stránke — prihláste sa len kvôli väčšiemu množstvu kreditov"
+    },
+    {
+      "title": "História pre každú jazykovú dvojicu",
+      "sub": "Každý rozhovor zostáva prehľadný a ľahko sa k nemu vrátite"
+    },
+    {
+      "title": "Zadarmo na začiatok",
+      "sub": "Zídite nižšie a začnite prekladať hneď"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Okamžitý hlasový preklad",
+      "sub": "Klepnite na mikrofón a hovorte. Vaša reč sa prepíše a preloží v priebehu pár sekúnd — bez písania.",
+      "bullets": [
+        {
+          "title": "Hovorte, preklad hneď",
+          "sub": "Jedno klepnutie spustí nahrávanie, preklad sa zobrazí hneď potom"
+        },
+        {
+          "title": "Vypočujte si ho nahlas",
+          "sub": "Klepnite na ikonu reproduktora a nechajte si preklad prečítať nahlas"
+        },
+        {
+          "title": "Hlas alebo text, vyberte si",
+          "sub": "Kedykoľvek prepnite režim jedným klepnutím"
+        }
+      ]
+    },
+    {
+      "heading": "Preklad textu funguje tiež",
+      "sub": "Radšej píšete? Prepnite na klávesnicu a preložte správu okamžite.",
+      "bullets": [
+        {
+          "title": "Prehoďte originál a preklad",
+          "sub": "Klepnite alebo prejdite prstom po riadku a zobrazte ho v oboch jazykoch"
+        },
+        {
+          "title": "Skopírujte jedným klepnutím",
+          "sub": "Vezmite preložený text a vložte ho kamkoľvek"
+        },
+        {
+          "title": "Kedykoľvek prepnite na hlas",
+          "sub": "Začnite písať a ďalší riadok nadiktujte"
+        }
+      ]
+    },
+    {
+      "heading": "186 jazykov, usporiadaných podľa rozhovoru",
+      "sub": "Vyberte si svoj jazyk raz a potom prechádzajte všetky ostatné — každá jazyková dvojica má svoje vlastné uložené vlákno.",
+      "bullets": [
+        {
+          "title": "186 jazykov v cene",
+          "sub": "Žiadne ďalšie sťahovanie ani jazykové balíky na inštaláciu"
+        },
+        {
+          "title": "Rozhovory zostávajú prehľadné",
+          "sub": "Každá jazyková dvojica má svoju vlastnú uloženú históriu"
+        },
+        {
+          "title": "Kedykoľvek vymažte alebo zmažte",
+          "sub": "Vymažte históriu vlákna alebo ho z ponuky úplne odstráňte"
+        }
+      ]
+    },
+    {
+      "heading": "Bez registrácie na začiatok",
+      "sub": "Vyskúšajte priamo na tejto stránke — bez účtu, bez hesla. Prihláste sa cez Google len vtedy, keď chcete viac denných kreditov a históriu synchronizovanú medzi zariadeniami.",
+      "bullets": [
+        {
+          "title": "Voliteľné prihlásenie jedným klepnutím",
+          "sub": "Žiadny registračný formulár, žiadne heslo na zapamätanie"
+        },
+        {
+          "title": "Len váš e-mail, nič viac",
+          "sub": "Váš účet identifikuje iba e-mail z Google"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Prečo hlas",
+    "titleAccent": "je na prvom mieste",
+    "description": "Väčšina prekladateľských aplikácií končí pri písanom texte. Nižšie je to, čo sa naozaj líši, keď potrebujete hovoriť, nie písať.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Bežné aplikácie",
+    "rows": [
+      {
+        "title": "Hlasový preklad",
+        "us": "Jedno klepnutie nahrá, prepíše a preloží v priebehu pár sekúnd.",
+        "them": "Iba text, alebo musíte to, čo ste počuli, prepísať sami."
+      },
+      {
+        "title": "História rozhovorov",
+        "us": "Každá jazyková dvojica má svoje vlastné uložené vlákno.",
+        "them": "História zmizne, len čo zavriete kartu."
+      },
+      {
+        "title": "Začiatok práce",
+        "us": "Vyskúšajte priamo, hneď na tejto stránke — bez účtu.",
+        "them": "Založenie účtu s e-mailom a heslom skôr, než to vôbec skúsite."
+      },
+      {
+        "title": "Prehrávanie hlasom",
+        "us": "Klepnite a nechajte si preklad prečítať nahlas.",
+        "them": "Žiadny hlasový výstup."
+      },
+      {
+        "title": "Jazyky",
+        "us": "186 dostupných jazykov, bez ďalšieho sťahovania.",
+        "them": "Obmedzené offline jazykové balíky."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Najčastejšie",
+    "headingAccent": "otázky",
+    "sub": "Na čo sa ľudia pýtajú predtým, ako to vyskúšajú. Registrácia nie je potrebná — choďte hore a vyskúšajte si to sami.",
+    "items": [
+      {
+        "q": "Ako funguje hlasový preklad?",
+        "a": "Klepnite na mikrofón a hovorte — váš hlas sa v priebehu pár sekúnd prepíše a preloží, zobrazí sa ako text a dá sa nechať prečítať nahlas. Písanie nie je potrebné."
+      },
+      {
+        "q": "Koľko jazykov aplikácia podporuje?",
+        "a": "186 jazykov. Vyberte si svoj jazyk raz a potom začnite vlákno rozhovoru s kýmkoľvek ďalším."
+      },
+      {
+        "q": "Musím si vytvoriť účet?",
+        "a": "Nie. Vyskúšajte priamo na tejto stránke bez registrácie. Prihláste sa cez Google len vtedy, keď chcete viac denných kreditov a históriu synchronizovanú medzi zariadeniami."
+      },
+      {
+        "q": "Ukladá sa moja história prekladov?",
+        "a": "Áno, pre každú jazykovú dvojicu zvlášť, takže minulé rozhovory zostávajú prehľadné — aj bez prihlásenia si aplikácia pamätá váš prehliadač. Kedykoľvek môžete vlákno vymazať alebo úplne odstrániť z jeho ponuky."
+      },
+      {
+        "q": "Môžem namiesto hlasu použiť text?",
+        "a": "Áno. Kedykoľvek prepnite na klávesnicu a správu napíšte namiesto toho, aby ste ju hovorili."
+      },
+      {
+        "q": "Funguje to aj pre obojsmerný rozhovor?",
+        "a": "Áno. Klepnite alebo prejdite prstom po preloženom riadku a prepínajte medzi originálom a prekladom, takže obe strany môžu sledovať rozhovor na jednej obrazovke."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Okamžitý hlasový preklad,",
+    "headingAccent": "pripravený za 10 sekúnd.",
+    "sub": "Vyskúšajte priamo na tejto stránke — bez registrácie, bez inštalácie, 186 jazykov v cene.",
+    "ctaLabel": "Vyskúšať teraz"
+  },
+  "footer": {
+    "tagline": "Okamžitý hlasový preklad, 186 jazykov",
+    "brand": "IQ Translate",
+    "featuresHeading": "Prekladače",
+    "featureLinks": [
+      { "routeKey": "/prekladac-slovensko-anglicky", "label": "Slovensko–anglický" },
+      { "routeKey": "/prekladac-slovensko-cesky", "label": "Slovensko–český" },
+      { "routeKey": "/prekladac-slovensko-nemecky", "label": "Slovensko–nemecký" }
+    ]
+  },
+  "translator": {
+    "topics": "Vlákna",
+    "newTopic": "Nové vlákno",
+    "noTopicsYet": "Zatiaľ žiadne vlákna",
+    "deleteTopic": "Zmazať vlákno",
+    "deleteTopicConfirm": "Zmazať toto vlákno a všetky jeho preklady?",
+    "autoDetect": "Automaticky rozpoznať",
+    "chooseLanguage": "Vyberte jazyk",
+    "close": "Zavrieť",
+    "searchPlaceholder": "Hľadať jazyk…",
+    "clearHistory": "Vymazať históriu",
+    "clearHistoryConfirm": "Vymazať všetky preklady v tomto vlákne?",
+    "noTranslationsYet": "V tomto vlákne zatiaľ nie sú žiadne preklady.",
+    "translating": "Prekladanie…",
+    "typePlaceholder": "Napíšte správu…",
+    "translateAria": "Preložiť",
+    "micDeniedError": "Prístup k mikrofónu bol zamietnutý",
+    "recording": "Nahrávanie",
+    "recognizing": "Rozpoznávanie…",
+    "recordAria": "Nahrať",
+    "stopAria": "Zastaviť",
+    "pricingLink": "Cenník",
+    "errors": {
+      "insufficientCredits": "Minuli sa kredity — vylepšite svoj plán",
+      "textTooLong": "Text je pre váš plán príliš dlhý"
+    }
+  },
+  "history": {
+    "emptyState": "Zatiaľ tu nič nie je. Napíšte správu alebo nižšie nahrajte svoj hlas.",
+    "readAloudAria": "Prečítať nahlas",
+    "copyAria": "Kopírovať"
+  }
+}

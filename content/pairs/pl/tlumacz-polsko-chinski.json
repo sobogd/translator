@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tłumacz Polsko-Chiński Głosowy | IQ Translate",
+    "description": "Tłumacz polsko-chiński online: mów lub pisz po polsku, usłysz tłumaczenie na chiński od razu. Przydatny w biznesie i imporcie, 186 języków, bez rejestracji.",
+    "ogTitle": "Tłumacz Polsko-Chiński Głosowy",
+    "ogDescription": "Mów lub pisz po polsku, otrzymaj tłumaczenie na chiński od razu, mówione lub pisane. Działa w obie strony, za darmo do wypróbowania.",
+    "canonical": "https://translate.iq-factura.com/pl/tlumacz-polsko-chinski",
+    "ogLocale": "pl_PL"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz polsko-chiński",
+    "titleAccent": "do rozmów biznesowych i nie tylko",
+    "description": "Mów lub pisz po polsku i w kilka sekund otrzymaj tłumaczenie na chiński, pokazane na ekranie i gotowe do odczytania na głos. Przydatny przy negocjacjach z dostawcą, imporcie towaru czy zwykłej rozmowie — zmień kierunek w dowolnej chwili i odpowiadaj po polsku.",
+    "ctaTry": "Wypróbuj za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Jaka jest minimalna wielkość zamówienia?",
+    "mockToLabel": "🇨🇳 Chiński",
+    "mockToPhrase": "最小起订量是多少?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mów, nie pisz",
+      "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub chińsku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
+      "bullets": [
+        { "title": "Mowa zamieniona na chiński", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po chińsku w kilka sekund" },
+        { "title": "Usłysz chiński na głos", "sub": "Dotknij ikony głośnika, gdy poprawna wymowa tonów jest poza zasięgiem" }
+      ]
+    },
+    {
+      "heading": "Jeden wątek, obie strony rozmowy",
+      "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
+      "bullets": [
+        { "title": "Odpowiedź po chińsku, przetłumaczona na polski", "sub": "Dostawca albo partner biznesowy może mówić po chińsku, a Ty zobaczysz i usłyszysz to po polsku" },
+        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy z kontrahentem później, zamiast szukać jej od nowa" }
+      ]
+    },
+    {
+      "heading": "Polsko-chiński i 185 kolejnych języków",
+      "sub": "Chiński to jeden z 186 dostępnych języków, w dowolnym kierunku.",
+      "bullets": [
+        { "title": "Poprawnie z chińskimi znakami", "sub": "Tłumaczenie pokazuje właściwe znaki, a nie przybliżony zapis fonetyczny" },
+        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do chińskiego, a jutro do dowolnego innego języka" }
+      ]
+    },
+    {
+      "heading": "Wolisz pisać? To też działa",
+      "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na chiński bez dotykania mikrofonu — przydatne przy mailu do fabryki albo wiadomości handlowej.",
+      "bullets": [
+        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę, gdy zapisujesz warunki umowy albo specyfikację" },
+        { "title": "Skopiuj tłumaczenie", "sub": "Wklej chiński tekst prosto do e-maila albo wiadomości handlowej" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego to lepszy",
+    "titleAccent": "tłumacz polsko-chiński",
+    "description": "Typowe aplikacje każą najpierw pisać, a potem zapominają rozmowę. Oto co jest inne.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje do tłumaczenia",
+    "rows": [
+      { "title": "Jak zaczynasz", "us": "Mów po polsku lub chińsku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
+      { "title": "Historia rozmów", "us": "Każda rozmowa po chińsku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
+      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
+      { "title": "Obie strony rozmowy", "us": "Polsko-chiński i chińsko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
+      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć chińskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę i tony musisz sprawdzić sam." }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "Częste pytania o tłumaczenie polsko-chińskie.",
+    "items": [
+      { "q": "Czy tłumaczy mowę z polskiego na chiński?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na chiński jako tekst, z opcją odsłuchania go na głos." },
+      { "q": "Czy pokazuje chińskie znaki, czy tylko pinyin?", "a": "Tłumaczenie pokazuje pełny tekst w chińskich znakach, gotowy do przeczytania i wysłania." },
+      { "q": "Czy mogę tłumaczyć z powrotem z chińskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po chińsku i odbierz tłumaczenie na polski w tym samym wątku." },
+      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
+      { "q": "Przyda się przy rozmowach z dostawcą z Chin?", "a": "Tak, sprawdza się przy negocjacjach, ustalaniu warunków zamówienia i codziennej korespondencji handlowej." },
+      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Zacznij swoją rozmowę",
+    "headingAccent": "polsko-chińską już teraz.",
+    "sub": "Mów lub pisz, usłysz odpowiedź po chińsku — za darmo do wypróbowania, bez rejestracji.",
+    "ctaLabel": "Wypróbuj teraz"
+  }
+}

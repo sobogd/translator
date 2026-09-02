@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Magyar–Angol Hangos Fordító | IQ Translate",
+    "description": "Fordíts magyarról angolra hangoddal vagy szöveggel, hallgasd meg felolvasva, és válaszolj angolul ugyanott. 186 nyelv, ingyen kipróbálható, regisztráció nélkül.",
+    "ogTitle": "Magyar–Angol Hangos Fordító",
+    "ogDescription": "Beszélj vagy gépelj magyarul, kapj azonnali angol fordítást, felolvasva vagy leírva. Mindkét irányban működik, ingyen kipróbálható.",
+    "canonical": "https://translate.iq-factura.com/hu/fordito-magyar-angol",
+    "ogLocale": "hu_HU"
+  },
+  "hero": {
+    "badgeVoice": "Hang",
+    "badgeText": "Szöveg",
+    "badgeLanguages": "186 nyelv",
+    "title": "Magyar–angol fordító",
+    "titleAccent": "ami vissza is beszél",
+    "description": "Beszélj vagy gépelj magyarul, és pár másodperc múlva angol fordítást kapsz, ami a képernyőn is megjelenik, és fel is olvasható. Bármikor válts irányt: beszélj angolul, és halld vissza magyarul, mindezt ugyanabban a beszélgetésben.",
+    "ctaTry": "Próbáld ki ingyen",
+    "ctaSignIn": "Bejelentkezés Google-lel",
+    "mockFromLabel": "🇭🇺 Magyar",
+    "mockFromPhrase": "Merre van a legközelebbi gyógyszertár?",
+    "mockToLabel": "🇬🇧 Angol",
+    "mockToPhrase": "Where's the nearest pharmacy?"
+  },
+  "spotlights": [
+    {
+      "heading": "Beszélj magyarul, halld angolul",
+      "sub": "Koppints a mikrofonra, mondd angolul vagy magyarul, és kapj fordítást, amit elolvashatsz vagy meghallgathatsz.",
+      "bullets": [
+        { "title": "A beszéd angol szöveggé válik", "sub": "Mondd magyarul – a szavaid átiratra kerülnek, lefordítjuk, és pár másodperc múlva angolul megjelennek" },
+        { "title": "Halld hangosan az angolt", "sub": "Koppints a hangszóró ikonra, ha a kiejtésed még nem magabiztos" }
+      ]
+    },
+    {
+      "heading": "Egy szálban mindkét fél",
+      "sub": "Ne kezdd újra a beszélgetést – minden váltás ugyanabban a témában marad, akár egy meetingen, akár utazás közben.",
+      "bullets": [
+        { "title": "Válaszolj angolul, fordítva magyarra", "sub": "A partnered beszélhet angolul, te pedig magyarul látod és hallod" },
+        { "title": "A beszélgetések témaként mentődnek", "sub": "Térj vissza ugyanahhoz az angol beszélgetéshez később, ahelyett hogy elveszne a fonal" }
+      ]
+    },
+    {
+      "heading": "Magyar–angol, plusz 185 másik nyelv",
+      "sub": "Az angol csak egy a 186 elérhető nyelv közül, bármelyik irányban.",
+      "bullets": [
+        { "title": "Pontos a köznyelvben és a szaknyelvben is", "sub": "Munkahelyi egyeztetéstől az utazási kifejezésekig helyesen fordít" },
+        { "title": "186 nyelv összesen", "sub": "Ugyanez az eszköz működik angolra ma, és bármelyik más nyelvre holnap" }
+      ]
+    },
+    {
+      "heading": "Inkább gépelnél? Az is megy",
+      "sub": "Gépeld be vagy illeszd be a magyar szöveget, és kapj angol fordítást a mikrofon érintése nélkül.",
+      "bullets": [
+        { "title": "Gépelj beszéd helyett", "sub": "Válts billentyűzetre bármikor – hasznos egy csendes irodában vagy zajos utcán" },
+        { "title": "Másold ki a fordítást", "sub": "Vedd át az angol szöveget, és illeszd be egy e-mailbe vagy üzenetbe" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miért jobb, mint",
+    "titleAccent": "egy hagyományos magyar–angol fordító",
+    "description": "A legtöbb fordítóalkalmazás előbb gépelést kér, aztán elfelejti a beszélgetést. Íme, mi a különbség.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Hagyományos fordítóappok",
+    "rows": [
+      { "title": "Hogyan indulsz", "us": "Beszélj magyarul vagy angolul, és azonnal kapsz fordítást.", "them": "Előbb be kell gépelned, amit mondani szeretnél." },
+      { "title": "Beszélgetési előzmények", "us": "Minden angol beszélgetés saját témaként mentődik, amit újra megnyithatsz.", "them": "Minden fordítás eltűnik, amint bezárod az appot." },
+      { "title": "Beállítás", "us": "Nyisd meg böngészőben – nincs mit telepíteni.", "them": "Appot kell letölteni és jogosultságokat engedélyezni, mielőtt használhatnád." },
+      { "title": "Mindkét irány", "us": "Magyarról angolra és angolról magyarra ugyanabban a szálban zajlik.", "them": "Az irányváltás általában új fordítás indítását jelenti." },
+      { "title": "Meghallgatás", "us": "Koppints, hogy meghallgasd a felolvasott angol fordítást.", "them": "Csak szöveg, a kiejtés a te dolgod." }
+    ]
+  },
+  "faq": {
+    "heading": "Gyakran",
+    "headingAccent": "ismételt kérdések",
+    "sub": "Gyakori kérdések a magyar–angol fordításról.",
+    "items": [
+      { "q": "Le tudja fordítani a kimondott magyar szöveget angolra?", "a": "Igen – koppints a mikrofonra, beszélj magyarul, és angol fordítást kapsz szövegként, felolvasási lehetőséggel." },
+      { "q": "Vissza tudok fordítani angolról magyarra?", "a": "Igen, ugyanaz a beszélgetés mindkét irányban működik – beszélj vagy gépelj angolul, és a magyar fordítást ugyanabban a témában kapod meg." },
+      { "q": "Alkalmas munkahelyi egyeztetésekhez és meetingekhez?", "a": "Igen, gyors és pontos fordítást ad, ami segít követni egy angol nyelvű megbeszélést vagy céges levelezést." },
+      { "q": "Ingyenes?", "a": "Igen, fiók létrehozása nélkül is kipróbálhatod ingyen. Jelentkezz be Google-lel a több napi kreditért és a mentett előzményekért." },
+      { "q": "Kell hozzá telepíteni valamit?", "a": "Nem, a böngésződben fut asztali gépen és mobilon is – nincs mit letölteni." },
+      { "q": "Használható folyamatos beszélgetéshez, nem csak egyszeri fordításhoz?", "a": "Igen, a fordítások témákba rendeződnek, így egy angol beszélgetés egy helyen marad, nem szóródik szét külön keresésekre." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Kezdd el a magyar–angol",
+    "headingAccent": "beszélgetésed most.",
+    "sub": "Beszélj vagy gépelj, halld vissza angolul – ingyenesen kipróbálható, regisztráció nélkül.",
+    "ctaLabel": "Próbáld ki most"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traductor de Español a Catalán con Voz | IQ Translate",
+    "description": "Traduce del español al catalán por voz o texto, escúchalo en voz alta y responde en catalán en el mismo hilo. 186 idiomas, gratis para probar, sin registro.",
+    "ogTitle": "Traductor de Español a Catalán con Voz",
+    "ogDescription": "Habla o escribe en español y recibe la traducción en catalán al instante, hablada o escrita. Funciona también al revés, en el mismo hilo.",
+    "canonical": "https://translate.iq-factura.com/es/traductor-espanol-catalan",
+    "ogLocale": "es_ES"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Traductor de español a catalán",
+    "titleAccent": "que entiende los dos idiomas de España",
+    "description": "Habla o escribe en español y recibe la traducción en catalán al instante, lista para leer o escuchar. Funciona también al revés, catalán a español, en la misma conversación.",
+    "ctaTry": "Pruébalo gratis",
+    "ctaSignIn": "Iniciar sesión con Google",
+    "mockFromLabel": "🇪🇸 Español",
+    "mockFromPhrase": "¿Cómo se dice esto en catalán?",
+    "mockToLabel": "🇪🇸 Catalán",
+    "mockToPhrase": "Com es diu això en català?"
+  },
+  "spotlights": [
+    {
+      "heading": "Habla y escúchalo en catalán",
+      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en catalán, lista para leer o escuchar.",
+      "bullets": [
+        { "title": "Tu voz, traducida al catalán", "sub": "Habla con naturalidad y la traducción aparece como texto, lista para leer" },
+        { "title": "Escucha cómo suena en catalán", "sub": "Toca el altavoz si quieres oír la pronunciación en lugar de leerla" }
+      ]
+    },
+    {
+      "heading": "Conversación en los dos idiomas, guardada",
+      "sub": "Sigue la charla en catalán y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "bullets": [
+        { "title": "Responde en catalán, tú lo oyes en español", "sub": "La otra persona habla o escribe en catalán y ves la traducción en español al momento" },
+        { "title": "Vuelve a la conversación cuando quieras", "sub": "Cada tema guarda su propio historial de español-catalán" }
+      ]
+    },
+    {
+      "heading": "Español-catalán, y 185 idiomas más",
+      "sub": "El catalán es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "bullets": [
+        { "title": "Distingue bien el catalán del castellano", "sub": "Traduce con precisión, sin confundir ambos idiomas ni sus acentos" },
+        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor sirve para catalán hoy y cualquier otro idioma mañana" }
+      ]
+    },
+    {
+      "heading": "Escribe o pega el texto",
+      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o catalán.",
+      "bullets": [
+        { "title": "Ideal para documentos y trámites", "sub": "Pega un párrafo en español y consigue la versión en catalán en segundos" },
+        { "title": "Copia el resultado con un toque", "sub": "Lleva la traducción directa a un correo, un formulario o un mensaje" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por qué esto supera",
+    "titleAccent": "a un traductor de catalán típico",
+    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps de traducción típicas",
+    "rows": [
+      { "title": "Cómo empiezas", "us": "Hablas en español o catalán y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
+      { "title": "Historial de conversación", "us": "Cada conversación en catalán queda guardada como un tema.", "them": "La traducción desaparece en cuanto cierras la app." },
+      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos primero." },
+      { "title": "Ambos sentidos", "us": "Español a catalán y catalán a español conviven en el mismo hilo.", "them": "Cambiar de sentido suele obligarte a empezar de nuevo." },
+      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en catalán en voz alta.", "them": "Solo texto, sin pronunciación." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas",
+    "headingAccent": "frecuentes",
+    "sub": "Dudas habituales sobre traducir del español al catalán.",
+    "items": [
+      { "q": "¿Traduce del español al catalán hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en catalán como texto, con opción de escucharla." },
+      { "q": "¿Funciona también de catalán a español?", "a": "Sí, la misma conversación funciona en ambos sentidos, en el mismo hilo." },
+      { "q": "¿Distingue bien el catalán del castellano?", "a": "Sí, cada idioma se reconoce y traduce por separado, sin mezclarlos." },
+      { "q": "¿Sirve para trámites o documentos en catalán?", "a": "Sí, escribe o pega el texto y copia la traducción para usarla donde la necesites." },
+      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para más créditos diarios e historial guardado." },
+      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador, en el móvil o el ordenador." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Empieza tu conversación",
+    "headingAccent": "de español a catalán ahora.",
+    "sub": "Habla o escribe, escúchalo en catalán — gratis para probar, sin registro.",
+    "ctaLabel": "Pruébalo ahora"
+  }
+}

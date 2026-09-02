@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevodilac Srpsko-Ruski sa Glasom | IQ Translate",
+    "description": "Prevodite sa srpskog na ruski glasom ili tekstom, korisno za turiste i doseljenike u Srbiji. Čujte prevod naglas, 186 jezika, besplatno za probu.",
+    "ogTitle": "Prevodilac Srpsko-Ruski sa Glasom",
+    "ogDescription": "Govorite ili kucajte na srpskom, dobijte ruski prevod za par sekundi i čujte ga izgovorenog naglas.",
+    "canonical": "https://translate.iq-factura.com/sr/prevodilac-srpski-ruski",
+    "ogLocale": "sr_RS"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Srpsko-ruski prevodilac",
+    "titleAccent": "koji vam odgovara glasom",
+    "description": "Govorite ili kucajte na srpskom i dobijte ruski prevod za par sekundi, prikazan na ekranu i spreman da se pročita naglas. Korisno za turiste i doseljenike u Srbiji – promenite smer kad god želite i čujte odgovor na srpskom.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Dobro došli u Beograd!",
+    "mockToLabel": "🇷🇺 Ruski",
+    "mockToPhrase": "Добро пожаловать в Белград!"
+  },
+  "spotlights": [
+    {
+      "heading": "Pričajte, ne kucajte",
+      "sub": "Dodirnite mikrofon i izgovorite rečenicu na srpskom ili ruskom – prevod stiže za par sekundi.",
+      "bullets": [
+        { "title": "Govor pretvoren u ruski", "sub": "Recite rečenicu na srpskom – prepoznaje se, prevodi i prikazuje na ruskom za par sekundi" },
+        { "title": "Čujte ruski izgovor naglas", "sub": "Dodirnite zvučnik kad niste sigurni kako nešto zvuči na ruskom" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, ceo razgovor sa gostom ili susedom",
+      "sub": "Razgovor sa turistom, novim susedom ili kolegom ostaje sačuvan u istoj temi.",
+      "bullets": [
+        { "title": "Odgovor na ruskom, preveden na srpski", "sub": "Sagovornik govori ruski, a vi vidite i čujete prevod na srpskom" },
+        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se na isti razgovor kasnije umesto da ponovo tražite prepisku" }
+      ]
+    },
+    {
+      "heading": "Srpsko-ruski, plus još 185 jezika",
+      "sub": "Ruski je samo jedan od 186 dostupnih jezika, u oba smera.",
+      "bullets": [
+        { "title": "Tačno prepoznaje ćirilicu i izgovor", "sub": "Radi pouzdano bez obzira da li kucate ćirilicom ili latinicom" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za ruski danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Više volite da kucate? I to radi",
+      "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte ruski prevod bez dodirivanja mikrofona.",
+      "bullets": [
+        { "title": "Kucajte umesto da govorite", "sub": "Korisno za poruke na WhatsApp-u, mejlove ili prijavu boravka" },
+        { "title": "Kopirajte prevod", "sub": "Prekopirajte ruski tekst pravo u poruku ili dokument" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto ovo pobeđuje",
+    "titleAccent": "uobičajeni srpsko-ruski prevodilac",
+    "description": "Većina aplikacija za prevođenje traži da prvo otkucate tekst, a onda zaboravi ceo razgovor. Evo šta je drugačije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na srpskom ili ruskom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
+      { "title": "Istorija razgovora", "us": "Svaki srpsko-ruski razgovor se čuva kao posebna tema.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dozvole pre prve upotrebe." },
+      { "title": "Oba smera", "us": "Srpsko-ruski i rusko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
+      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete ruski prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate sami da pogađate." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju sa srpskog na ruski.",
+    "items": [
+      { "q": "Da li prevodi govor sa srpskog na ruski?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate ruski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
+      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, kao i rusku ćirilicu, bez razlike u tačnosti prevoda." },
+      { "q": "Da li je koristan za ruske turiste i doseljenike u Srbiji?", "a": "Da, mnogi ga koriste za svakodnevnu komunikaciju, prijavu boravka ili razgovor sa komšijama i kolegama." },
+      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
+      { "q": "Mogu li da prevedem sa ruskog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na ruskom i dobijate prevod na srpskom u istoj temi." },
+      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj srpsko-ruski",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili kucajte, čujte odgovor na ruskom – besplatno za probu, bez registracije.",
+    "ctaLabel": "Isprobaj odmah"
+  }
+}

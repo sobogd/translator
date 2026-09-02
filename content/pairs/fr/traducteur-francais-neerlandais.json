@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traducteur Français-Néerlandais Vocal | IQ Translate",
+    "description": "Traduisez du français vers le néerlandais à la voix ou à l'écrit, écoutez le résultat et répondez dans le même fil. 186 langues, gratuit, sans inscription.",
+    "ogTitle": "Traducteur Français-Néerlandais Vocal",
+    "ogDescription": "Parlez ou tapez en français et obtenez une traduction néerlandaise instantanée, orale ou écrite. Fonctionne dans les deux sens, gratuit à essayer.",
+    "canonical": "https://translate.iq-factura.com/fr/traducteur-francais-neerlandais",
+    "ogLocale": "fr_FR"
+  },
+  "hero": {
+    "badgeVoice": "Voix",
+    "badgeText": "Texte",
+    "badgeLanguages": "186 langues",
+    "title": "Traducteur français-néerlandais",
+    "titleAccent": "qui répond aussi",
+    "description": "Parlez ou tapez en français et obtenez une traduction néerlandaise en quelques secondes, affichée à l'écran et prête à être lue à voix haute. Changez de sens à tout moment : parlez néerlandais et écoutez la réponse en français, dans la même conversation.",
+    "ctaTry": "Essayer gratuitement",
+    "ctaSignIn": "Se connecter avec Google",
+    "mockFromLabel": "🇫🇷 Français",
+    "mockFromPhrase": "À quelle heure part le train ?",
+    "mockToLabel": "🇳🇱 Néerlandais",
+    "mockToPhrase": "Hoe laat vertrekt de trein?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parlez, n'écrivez pas",
+      "sub": "Appuyez sur le micro, dites-le en français ou en néerlandais, et lisez ou écoutez la traduction.",
+      "bullets": [
+        { "title": "Votre voix devient du néerlandais", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en néerlandais quelques secondes plus tard" },
+        { "title": "Écoutez le néerlandais à voix haute", "sub": "Appuyez sur le haut-parleur pour entendre la prononciation d'une langue qui n'est pas toujours intuitive pour un francophone" }
+      ]
+    },
+    {
+      "heading": "Un seul fil, les deux côtés de l'échange",
+      "sub": "Utile en Belgique comme aux Pays-Bas — au travail avec des collègues néerlandophones ou dans la vie quotidienne, chaque échange reste dans le même sujet.",
+      "bullets": [
+        { "title": "Réponse en néerlandais, traduite en français", "sub": "Votre interlocuteur peut parler néerlandais, vous le voyez et l'entendez en français" },
+        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en néerlandais plus tard au lieu de perdre le fil" }
+      ]
+    },
+    {
+      "heading": "Français-néerlandais, plus 184 autres langues",
+      "sub": "Le néerlandais est l'une des 186 langues disponibles, dans les deux sens.",
+      "bullets": [
+        { "title": "Adapté au néerlandais standard et flamand", "sub": "Comprend les usages courants, utiles pour la Belgique comme pour les Pays-Bas" },
+        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour le néerlandais et demain pour toute autre langue" }
+      ]
+    },
+    {
+      "heading": "Vous préférez taper ? C'est possible aussi",
+      "sub": "Tapez ou collez du texte en français et obtenez la traduction néerlandaise sans toucher au micro — pratique pour un e-mail administratif.",
+      "bullets": [
+        { "title": "Taper plutôt que parler", "sub": "Utile pour traduire un courrier, un formulaire ou un message écrit" },
+        { "title": "Copier la traduction", "sub": "Récupérez le texte néerlandais pour le coller dans un e-mail ou un message" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Pourquoi c'est mieux",
+    "titleAccent": "qu'un traducteur néerlandais classique",
+    "description": "La plupart des applications de traduction classiques vous font taper d'abord et oublient la conversation ensuite. Voici ce qui change.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Applications de traduction classiques",
+    "rows": [
+      { "title": "Pour commencer", "us": "Parlez en français ou en néerlandais et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire." },
+      { "title": "Historique des échanges", "us": "Chaque conversation en néerlandais est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
+      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
+      { "title": "Les deux sens", "us": "Français vers néerlandais et néerlandais vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
+      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction néerlandaise lue à voix haute.", "them": "Texte uniquement, la prononciation reste à votre charge." }
+    ]
+  },
+  "faq": {
+    "heading": "Questions",
+    "headingAccent": "fréquentes",
+    "sub": "Les questions courantes sur la traduction du français vers le néerlandais.",
+    "items": [
+      { "q": "Peut-il traduire du français parlé en néerlandais ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction néerlandaise sous forme de texte, avec une option pour l'écouter à voix haute." },
+      { "q": "Est-il utile pour la vie en Belgique entre communautés linguistiques ?", "a": "Oui, il aide à échanger avec des collègues ou voisins néerlandophones, que ce soit à l'oral au bureau ou à l'écrit pour un e-mail." },
+      { "q": "Puis-je traduire du néerlandais vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en néerlandais et obtenez la traduction française dans le même sujet." },
+      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
+      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." },
+      { "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?", "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en néerlandais reste au même endroit au lieu de se disperser." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Démarrez votre conversation",
+    "headingAccent": "français-néerlandais maintenant.",
+    "sub": "Parlez ou tapez, écoutez la réponse en néerlandais — gratuit à essayer, sans inscription.",
+    "ctaLabel": "Essayer maintenant"
+  }
+}

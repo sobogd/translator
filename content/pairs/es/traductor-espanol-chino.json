@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traductor de Español a Chino con Voz | IQ Translate",
+    "description": "Traduce del español al chino por voz o texto, escúchalo en voz alta y responde en chino en el mismo hilo. 186 idiomas, gratis para probar, sin registro.",
+    "ogTitle": "Traductor de Español a Chino con Voz",
+    "ogDescription": "Habla o escribe en español y recibe la traducción en chino al instante, hablada o escrita. Funciona también al revés, en el mismo hilo.",
+    "canonical": "https://translate.iq-factura.com/es/traductor-espanol-chino",
+    "ogLocale": "es_ES"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Traductor de español a chino",
+    "titleAccent": "que también pronuncia los tonos por ti",
+    "description": "Habla o escribe en español y recibe la traducción en chino al instante, lista para leer o escuchar. Funciona también de chino a español, en la misma conversación.",
+    "ctaTry": "Pruébalo gratis",
+    "ctaSignIn": "Iniciar sesión con Google",
+    "mockFromLabel": "🇪🇸 Español",
+    "mockFromPhrase": "¿Cuánto cuesta esto?",
+    "mockToLabel": "🇨🇳 Chino",
+    "mockToPhrase": "这个多少钱?"
+  },
+  "spotlights": [
+    {
+      "heading": "Habla y escúchalo en chino",
+      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en chino, lista para leer o escuchar.",
+      "bullets": [
+        { "title": "Tu voz, traducida al chino", "sub": "Habla con naturalidad y la traducción aparece como texto al momento" },
+        { "title": "Los tonos, resueltos por voz", "sub": "Toca el altavoz y escucha la pronunciación correcta, sin adivinar el tono" }
+      ]
+    },
+    {
+      "heading": "Conversación en dos sentidos, guardada",
+      "sub": "Sigue la charla en chino y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "bullets": [
+        { "title": "Responde en chino, tú lo oyes en español", "sub": "La otra persona habla o escribe en chino y ves la traducción en español al instante" },
+        { "title": "Vuelve a la conversación cuando quieras", "sub": "Cada tema guarda su propio historial de español-chino" }
+      ]
+    },
+    {
+      "heading": "Español-chino, y 185 idiomas más",
+      "sub": "El chino es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "bullets": [
+        { "title": "Útil para viajar o negociar", "sub": "Sirve igual para comprar en un mercado que para cerrar un trato de trabajo" },
+        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para chino hoy y cualquier otro idioma mañana" }
+      ]
+    },
+    {
+      "heading": "Escribe o pega el texto",
+      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o chino.",
+      "bullets": [
+        { "title": "Sin necesidad de escribir caracteres chinos", "sub": "Escribe en español y recibe el texto en chino ya traducido, listo para copiar" },
+        { "title": "Copia el resultado con un toque", "sub": "Lleva la traducción directa a un email, un mensaje o un documento" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por qué esto supera",
+    "titleAccent": "a un traductor de chino típico",
+    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps de traducción típicas",
+    "rows": [
+      { "title": "Cómo empiezas", "us": "Hablas en español o chino y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
+      { "title": "Historial de conversación", "us": "Cada conversación en chino queda guardada como un tema.", "them": "La traducción desaparece en cuanto cierras la app." },
+      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos primero." },
+      { "title": "Ambos sentidos", "us": "Español a chino y chino a español conviven en el mismo hilo.", "them": "Cambiar de sentido suele obligarte a empezar de nuevo." },
+      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en chino en voz alta, con el tono correcto.", "them": "Solo texto, sin pronunciación ni tonos." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas",
+    "headingAccent": "frecuentes",
+    "sub": "Dudas habituales sobre traducir del español al chino.",
+    "items": [
+      { "q": "¿Traduce del español al chino hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en chino como texto, con opción de escucharla." },
+      { "q": "¿Funciona también de chino a español?", "a": "Sí, la misma conversación funciona en ambos sentidos, en el mismo hilo." },
+      { "q": "¿Me ayuda con los tonos del chino?", "a": "Sí, toca el altavoz para escuchar la traducción en voz alta y guiarte con el tono correcto." },
+      { "q": "¿Necesito saber escribir caracteres chinos?", "a": "No, escribes o hablas en español y la traducción en chino aparece ya escrita, lista para copiar." },
+      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para más créditos diarios e historial guardado." },
+      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador, en el móvil o el ordenador." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Empieza tu conversación",
+    "headingAccent": "de español a chino ahora.",
+    "sub": "Habla o escribe, escúchalo en chino — gratis para probar, sin registro.",
+    "ctaLabel": "Pruébalo ahora"
+  }
+}

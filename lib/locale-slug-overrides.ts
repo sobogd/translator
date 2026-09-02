@@ -30,6 +30,18 @@ export function localizedFeatureLinks(
   return links.map((l) => ({ href: featureHref(l.routeKey, locale), label: l.label }));
 }
 
+// Safe locale-switcher href: home stays home, a registered feature route maps
+// to its translated slug, and anything else (pair pages, /pricing) falls back
+// to the target locale's home — never to an untranslated slug that would 404.
+export function localeSwitchHref(pathname: string, locale: string, target: string): string {
+  const seg = pathname.split("/").filter(Boolean);
+  const rest = (seg[0] === locale ? seg.slice(1) : seg).join("/");
+  if (!rest) return localeHome(target);
+  const routeKey = Object.entries(LOCALE_SLUG_OVERRIDES).find(([, m]) => m[locale] === rest)?.[0];
+  const targetSlug = routeKey ? LOCALE_SLUG_OVERRIDES[routeKey][target] : undefined;
+  return targetSlug ? localePath(target, targetSlug) : localeHome(target);
+}
+
 // Swaps the locale segment of a pathname, translating the slug through the
 // map when the path belongs to a registered route. Falls back to a plain
 // locale-prefix swap for anything not yet in the map (i.e. every path today).

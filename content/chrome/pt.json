@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Tradutor de Voz Online Grátis | IQ Translate",
+    "description": "Tradutor de voz online grátis: fale com naturalidade e receba a tradução instantânea, falada ou escrita, em 186 idiomas. Sem transferências, sem conta para experimentar.",
+    "ogTitle": "Tradutor de Voz Online Grátis",
+    "ogDescription": "Tradutor de voz online grátis: fale e receba a tradução instantânea, falada ou escrita, em 186 idiomas.",
+    "twitterTitle": "Tradutor de Voz Online Grátis",
+    "twitterDescription": "Tradutor de voz grátis: tradução falada ou escrita instantânea em 186 idiomas."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funcionalidades",
+    "pricing": "Preços",
+    "mobileApp": "App móvel",
+    "signIn": "Entrar",
+    "logOut": "Sair",
+    "tryItNow": "Experimente agora"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Um tradutor de voz",
+    "titleAccent": "para qualquer conversa",
+    "description": "Fale com naturalidade e receba a tradução instantânea, falada ou escrita, em 186 idiomas. Não é preciso criar conta para experimentar.",
+    "ctaTry": "Experimente agora — grátis",
+    "ctaSignIn": "Entrar com Google",
+    "mockFromLabel": "🇵🇹 Português",
+    "mockFromPhrase": "Olá, tudo bem?",
+    "mockToLabel": "🇬🇧 Inglês",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 idiomas",
+      "sub": "Fale ou escreva, a tradução é instantânea, sem instalar nada"
+    },
+    {
+      "title": "Sem necessidade de conta",
+      "sub": "Experimente diretamente nesta página — entre só para obter mais créditos"
+    },
+    {
+      "title": "Histórico por par de idiomas",
+      "sub": "Cada conversa fica organizada e fácil de encontrar depois"
+    },
+    {
+      "title": "Grátis para começar",
+      "sub": "Desça a página e comece a traduzir agora mesmo"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Tradução de voz instantânea",
+      "sub": "Toque no microfone e fale. A sua voz é transcrita e traduzida em segundos — sem necessidade de escrever.",
+      "bullets": [
+        {
+          "title": "Fale e receba a tradução na hora",
+          "sub": "Um toque inicia a gravação, a tradução aparece logo a seguir"
+        },
+        {
+          "title": "Ouça em voz alta",
+          "sub": "Toque no ícone de som para ouvir a tradução lida em voz alta"
+        },
+        {
+          "title": "Voz ou texto, à escolha",
+          "sub": "Mude de modo a qualquer momento com um único toque"
+        }
+      ]
+    },
+    {
+      "heading": "Também traduz texto",
+      "sub": "Prefere escrever? Mude para o modo teclado e traduza uma mensagem instantaneamente.",
+      "bullets": [
+        {
+          "title": "Alterne entre original e tradução",
+          "sub": "Toque ou deslize numa linha para a ver em qualquer um dos idiomas"
+        },
+        {
+          "title": "Copie com um toque",
+          "sub": "Copie o texto traduzido para colar onde precisar"
+        },
+        {
+          "title": "Mude para voz quando quiser",
+          "sub": "Comece a escrever e depois dite a linha seguinte"
+        }
+      ]
+    },
+    {
+      "heading": "186 idiomas, organizados por conversa",
+      "sub": "Escolha o seu idioma uma vez e depois navegue pelos outros — cada par de idiomas mantém a sua própria conversa guardada.",
+      "bullets": [
+        {
+          "title": "186 idiomas incluídos",
+          "sub": "Sem transferências nem pacotes de idiomas para instalar"
+        },
+        {
+          "title": "As conversas ficam organizadas",
+          "sub": "Cada par de idiomas tem o seu próprio histórico guardado"
+        },
+        {
+          "title": "Limpe ou elimine quando quiser",
+          "sub": "Apague o histórico de uma conversa ou remova-a por completo no menu"
+        }
+      ]
+    },
+    {
+      "heading": "Não é preciso criar conta para começar",
+      "sub": "Experimente diretamente nesta página — sem conta, sem senha. Entre com Google apenas quando quiser mais créditos diários e histórico sincronizado entre dispositivos.",
+      "bullets": [
+        {
+          "title": "Entrada opcional com um toque",
+          "sub": "Sem formulários para preencher, sem senha para memorizar"
+        },
+        {
+          "title": "Só o e-mail, mais nada",
+          "sub": "Apenas o e-mail da conta Google identifica a conta"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por que a voz",
+    "titleAccent": "vem primeiro",
+    "description": "A maioria das apps de tradução limita-se ao texto escrito. Eis o que muda de verdade quando precisa de falar, não escrever.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps típicas",
+    "rows": [
+      {
+        "title": "Tradução de voz",
+        "us": "Um toque grava, transcreve e traduz em segundos.",
+        "them": "Só texto, ou obriga a escrever o que ouviu."
+      },
+      {
+        "title": "Histórico de conversa",
+        "us": "Cada par de idiomas guarda a sua própria conversa.",
+        "them": "O histórico desaparece ao fechar a página."
+      },
+      {
+        "title": "Para começar",
+        "us": "Experimente já, diretamente nesta página — sem conta.",
+        "them": "É preciso criar uma conta com e-mail e senha antes de poder experimentar."
+      },
+      {
+        "title": "Reprodução de voz",
+        "us": "Toque para ouvir a tradução em voz alta.",
+        "them": "Sem som — apenas texto."
+      },
+      {
+        "title": "Idiomas",
+        "us": "186 idiomas disponíveis, sem transferências adicionais.",
+        "them": "Pacotes de idiomas offline limitados."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Perguntas",
+    "headingAccent": "frequentes",
+    "sub": "O que as pessoas perguntam antes de experimentar. Não é preciso criar conta — suba a página e experimente agora mesmo.",
+    "items": [
+      {
+        "q": "Como funciona a tradução de voz?",
+        "a": "Toque no microfone e fale — a sua voz é transcrita e traduzida em poucos segundos, aparece como texto e pode ser ouvida em voz alta. Não é preciso escrever."
+      },
+      {
+        "q": "Quantos idiomas são suportados?",
+        "a": "186 idiomas. Escolha o seu idioma uma vez e comece uma conversa com qualquer outro idioma."
+      },
+      {
+        "q": "É preciso criar conta?",
+        "a": "Não. Experimente diretamente nesta página sem criar conta. Entre com Google apenas se quiser mais créditos diários e histórico sincronizado entre dispositivos."
+      },
+      {
+        "q": "O meu histórico de traduções fica guardado?",
+        "a": "Sim, por par de idiomas, para que as conversas anteriores fiquem organizadas — mesmo sem entrar, o navegador fica reconhecido. Limpe ou elimine qualquer conversa quando quiser, no respetivo menu."
+      },
+      {
+        "q": "Posso usar texto em vez de voz?",
+        "a": "Sim. Mude para o modo teclado quando quiser e escreva a mensagem em vez de a dizer."
+      },
+      {
+        "q": "Funciona para conversas nos dois sentidos?",
+        "a": "Sim. Toque ou deslize numa linha traduzida para alternar entre o original e a tradução, para que os dois lados possam acompanhar a conversa juntos."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Tradução de voz instantânea,",
+    "headingAccent": "pronta em 10 segundos.",
+    "sub": "Experimente diretamente nesta página — sem conta, sem transferências, 186 idiomas incluídos.",
+    "ctaLabel": "Experimente agora"
+  },
+  "footer": {
+    "tagline": "Tradução de voz instantânea, 186 idiomas",
+    "brand": "IQ Translate",
+    "featuresHeading": "Tradutores",
+    "featureLinks": [
+      { "routeKey": "/tradutor-portugues-ingles", "label": "Português–Inglês" },
+      { "routeKey": "/tradutor-portugues-espanhol", "label": "Português–Espanhol" },
+      { "routeKey": "/tradutor-portugues-frances", "label": "Português–Francês" },
+      { "routeKey": "/tradutor-portugues-japones", "label": "Português–Japonês" },
+      { "routeKey": "/tradutor-portugues-italiano", "label": "Português–Italiano" },
+      { "routeKey": "/tradutor-portugues-arabe", "label": "Português–Árabe" }
+    ]
+  },
+  "translator": {
+    "topics": "Temas",
+    "newTopic": "Novo tema",
+    "noTopicsYet": "Ainda não há temas",
+    "deleteTopic": "Eliminar tema",
+    "deleteTopicConfirm": "Eliminar este tema e todas as suas traduções?",
+    "autoDetect": "Deteção automática",
+    "chooseLanguage": "Escolha um idioma",
+    "close": "Fechar",
+    "searchPlaceholder": "Pesquisar um idioma…",
+    "clearHistory": "Limpar histórico",
+    "clearHistoryConfirm": "Limpar todas as traduções deste tema?",
+    "noTranslationsYet": "Ainda não há traduções neste tema.",
+    "translating": "A traduzir…",
+    "typePlaceholder": "Escreva uma mensagem…",
+    "translateAria": "Traduzir",
+    "micDeniedError": "Acesso ao microfone negado",
+    "recording": "A gravar",
+    "recognizing": "A reconhecer…",
+    "recordAria": "Gravar",
+    "stopAria": "Parar",
+    "pricingLink": "Preços",
+    "errors": {
+      "insufficientCredits": "Sem créditos — atualize o seu plano",
+      "textTooLong": "Texto demasiado longo para o seu plano"
+    }
+  },
+  "history": {
+    "emptyState": "Ainda não há nada aqui. Escreva uma mensagem ou grave a sua voz abaixo.",
+    "readAloudAria": "Ler em voz alta",
+    "copyAria": "Copiar"
+  }
+}

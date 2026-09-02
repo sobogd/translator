@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Deutsch-Polnisch Übersetzer mit Sprache | IQ Translate",
+    "description": "Übersetzer Deutsch-Polnisch per Sprache oder Text: sprich oder tippe und hör die Antwort sofort. 186 Sprachen, kostenlos testen, keine Anmeldung.",
+    "ogTitle": "Deutsch-Polnisch Übersetzer mit Sprache",
+    "ogDescription": "Sprich oder tippe auf Deutsch und erhalte die polnische Übersetzung sofort, gesprochen oder geschrieben. Funktioniert in beide Richtungen.",
+    "canonical": "https://translate.iq-factura.com/de/uebersetzer-deutsch-polnisch",
+    "ogLocale": "de_DE"
+  },
+  "hero": {
+    "badgeVoice": "Sprache",
+    "badgeText": "Text",
+    "badgeLanguages": "186 Sprachen",
+    "title": "Übersetzer Deutsch-Polnisch",
+    "titleAccent": "für Arbeit und Alltag",
+    "description": "Sprich oder tippe auf Deutsch und erhalte die polnische Übersetzung in Sekunden, als Text und zum Anhören. Praktisch auf der Baustelle, beim Nachbarn oder im Gespräch mit Kollegen – die Antwort kommt direkt im selben Gespräch zurück.",
+    "ctaTry": "Jetzt kostenlos testen",
+    "ctaSignIn": "Mit Google anmelden",
+    "mockFromLabel": "🇩🇪 Deutsch",
+    "mockFromPhrase": "Sprichst du Deutsch?",
+    "mockToLabel": "🇵🇱 Polnisch",
+    "mockToPhrase": "Czy mówisz po niemiecku?"
+  },
+  "spotlights": [
+    {
+      "heading": "Sprechen statt tippen",
+      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Polnisch, und lies oder hör die Übersetzung.",
+      "bullets": [
+        { "title": "Deutsch wird zu Polnisch", "sub": "Sprich auf Deutsch – die Übersetzung erscheint Sekunden später auf Polnisch" },
+        { "title": "Polnisch laut vorlesen lassen", "sub": "Praktisch, wenn die polnische Aussprache noch ungewohnt ist" }
+      ]
+    },
+    {
+      "heading": "Ein Thema, beide Gesprächsseiten",
+      "sub": "Rede hin und her, etwa auf der Baustelle, mit Kollegen oder Nachbarn – jeder Austausch bleibt gespeichert.",
+      "bullets": [
+        { "title": "Antwort auf Polnisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Polnisch, du liest und hörst es auf Deutsch" },
+        { "title": "Gespräche als Themen gespeichert", "sub": "Das Gespräch mit Kollegen oder Nachbarn bleibt an einem Ort, statt verloren zu gehen" }
+      ]
+    },
+    {
+      "heading": "Deutsch-Polnisch, plus 185 weitere Sprachen",
+      "sub": "Polnisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "bullets": [
+        { "title": "Polnische Sonderzeichen korrekt erkannt", "sub": "Buchstaben wie ł, ż, ą, ę, ś werden richtig verarbeitet, nicht grob geschätzt" },
+        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Polnisch heute und für jede andere Sprache morgen" }
+      ]
+    },
+    {
+      "heading": "Lieber tippen? Geht auch",
+      "sub": "Tippe oder füge polnischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "bullets": [
+        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer polnischen WhatsApp-Nachricht oder E-Mail" },
+        { "title": "Übersetzung kopieren", "sub": "Übernimm den polnischen Text direkt in ein Formular oder eine Nachricht" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Warum das besser ist",
+    "titleAccent": "als ein typischer Polnisch-Übersetzer",
+    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typische Übersetzer-Apps",
+    "rows": [
+      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Polnisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
+      { "title": "Gesprächsverlauf", "us": "Jedes Polnisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
+      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
+      { "title": "Beide Richtungen", "us": "Deutsch nach Polnisch und Polnisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
+      { "title": "Zum Anhören", "us": "Tippe, um dir die polnische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte",
+    "headingAccent": "Fragen",
+    "sub": "Häufige Fragen zum Übersetzer Deutsch-Polnisch.",
+    "items": [
+      { "q": "Kann es gesprochenes Deutsch ins Polnische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die polnische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
+      { "q": "Werden polnische Sonderzeichen korrekt dargestellt?", "a": "Ja, Buchstaben wie ł, ż, ą, ę, ś werden sowohl im Text als auch beim Vorlesen richtig verarbeitet." },
+      { "q": "Kann ich von Polnisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Polnisch und erhalte die deutsche Übersetzung im gleichen Thema." },
+      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
+      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
+      { "q": "Eignet es sich für die Arbeit, etwa auf der Baustelle?", "a": "Ja, kurze Anweisungen oder Fragen lassen sich per Sprache sofort übersetzen, ganz ohne die Hände vom Werkzeug zu nehmen." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starte deinen Deutsch-Polnisch-",
+    "headingAccent": "Übersetzer jetzt.",
+    "sub": "Sprich oder tippe, hör die polnische Antwort – kostenlos testen, keine Anmeldung nötig.",
+    "ctaLabel": "Jetzt testen"
+  }
+}

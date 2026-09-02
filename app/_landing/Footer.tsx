@@ -1,6 +1,7 @@
 import { NARROW } from "./shell";
-import { locales, defaultLocale, type Locale } from "@/lib/locales";
-import { swapLocale, localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
+import { defaultLocale, type Locale } from "@/lib/locales";
+import { localeSwitchHref, localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
+import { READY_LOCALES } from "@/content";
 
 type FooterTexts = {
   tagline: string;
@@ -36,7 +37,6 @@ export function Footer({
   pathname?: string;
   texts?: FooterTexts;
 }) {
-  const otherLocale = locales.find((l) => l !== locale) ?? locale;
   const featureLinks = localizedFeatureLinks(locale, texts.featureLinks ?? []);
 
   return (
@@ -58,15 +58,25 @@ export function Footer({
             </nav>
           </div>
         )}
+        {/* Locale switcher: every shipped locale's home (or the registered
+            translation of the current feature route). Doubles as internal
+            linking to the localized homes. */}
+        <nav className="flex flex-wrap gap-x-3 gap-y-2 text-xs uppercase tracking-wide text-hint">
+          {READY_LOCALES.map((l) =>
+            l === locale ? (
+              <span key={l} className="font-semibold text-text">
+                {l}
+              </span>
+            ) : (
+              <a key={l} href={localeSwitchHref(pathname, locale, l)} className="transition hover:text-text">
+                {l}
+              </a>
+            ),
+          )}
+        </nav>
         <div className="flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <span>{texts.tagline}</span>
-          <a
-            href={swapLocale(pathname, otherLocale)}
-            className="shrink-0 uppercase tracking-wide transition hover:text-text"
-          >
-            {otherLocale}
-          </a>
         </div>
       </div>
     </footer>

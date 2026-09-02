@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traduttore Vocale Italiano-Cinese | IQ Translate",
+    "description": "Parla o scrivi in italiano, traduci in cinese all'istante e ascolta la risposta ad alta voce, nella stessa conversazione. Gratis, senza registrazione.",
+    "ogTitle": "Traduttore Vocale Italiano-Cinese",
+    "ogDescription": "Parla o scrivi in italiano e ottieni la traduzione in cinese all'istante, pronta anche da ascoltare. Funziona in entrambe le direzioni, gratis da provare.",
+    "canonical": "https://translate.iq-factura.com/it/traduttore-italiano-cinese",
+    "ogLocale": "it_IT"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Testo",
+    "badgeLanguages": "186 lingue",
+    "title": "Traduttore italiano-cinese",
+    "titleAccent": "che legge i caratteri per te",
+    "description": "Parla o scrivi in italiano e ricevi la traduzione in cinese in pochi secondi, pronta da leggere o ascoltare. Cambia direzione quando vuoi: parla in cinese e ascolta la risposta in italiano, nella stessa conversazione.",
+    "ctaTry": "Provalo gratis",
+    "ctaSignIn": "Accedi con Google",
+    "mockFromLabel": "🇮🇹 Italiano",
+    "mockFromPhrase": "Possiamo organizzare una videochiamata questa settimana?",
+    "mockToLabel": "🇨🇳 Cinese",
+    "mockToPhrase": "我们这周能安排一次视频通话吗？"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla, senza doverlo scrivere in cinese",
+      "sub": "Tocca il microfono, di' la frase in italiano o in cinese, e ricevi una traduzione da leggere o da ascoltare.",
+      "bullets": [
+        { "title": "Il parlato diventa cinese", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in caratteri cinesi in pochi secondi" },
+        { "title": "Ascolta il cinese ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta, senza dover leggere i caratteri" }
+      ]
+    },
+    {
+      "heading": "Una conversazione, due lingue",
+      "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
+      "bullets": [
+        { "title": "Risponde in cinese, tradotto in italiano", "sub": "Un collega o cliente può scrivere in cinese e tu lo vedrai e ascolterai in italiano" },
+        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in cinese più tardi invece di perdere il filo" }
+      ]
+    },
+    {
+      "heading": "Italiano-cinese, più altre 185 lingue",
+      "sub": "Il cinese è una delle 186 lingue disponibili, in qualsiasi direzione.",
+      "bullets": [
+        { "title": "Utile per lavoro e commercio", "sub": "Email, ordini e trattative con partner o fornitori di lingua cinese" },
+        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per il cinese oggi e per qualsiasi altra lingua domani" }
+      ]
+    },
+    {
+      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in cinese senza toccare il microfono.",
+      "bullets": [
+        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo per un'email o un messaggio di lavoro" },
+        { "title": "Copia la traduzione", "sub": "Copia i caratteri cinesi, già scritti correttamente, e incollali in un documento" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Perché batte",
+    "titleAccent": "un traduttore italiano-cinese qualsiasi",
+    "description": "La maggior parte delle app di traduzione ti fa scrivere per prima cosa e dimentica la conversazione subito dopo. Ecco cosa cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "App di traduzione tradizionali",
+    "rows": [
+      { "title": "Come inizi", "us": "Parla in italiano o in cinese e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire, anche in caratteri che non conosci." },
+      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in cinese si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
+      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
+      { "title": "Entrambe le direzioni", "us": "Italiano-cinese e cinese-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
+      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in cinese letta ad alta voce, senza doverla leggere.", "them": "Solo testo, quindi devi sapere leggere i caratteri cinesi." }
+    ]
+  },
+  "faq": {
+    "heading": "Domande",
+    "headingAccent": "frequenti",
+    "sub": "Domande comuni sulla traduzione dall'italiano al cinese.",
+    "items": [
+      { "q": "Traduce da cinese a italiano anche parlato?", "a": "Sì — tocca il microfono, parla in cinese, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
+      { "q": "Devo saper leggere i caratteri cinesi per usarlo?", "a": "No, la traduzione in cinese può anche essere ascoltata ad alta voce, quindi non serve saperla leggere." },
+      { "q": "Gestisce correttamente i caratteri e i toni del cinese?", "a": "Sì, i caratteri cinesi vengono mostrati e letti ad alta voce con la pronuncia corretta, toni inclusi." },
+      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
+      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
+      { "q": "Posso tradurre anche dal cinese all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in cinese e ricevi la traduzione in italiano nello stesso argomento." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Inizia la tua conversazione",
+    "headingAccent": "italiano-cinese ora.",
+    "sub": "Parla o scrivi, ascolta la risposta in cinese — gratis da provare, senza registrazione.",
+    "ctaLabel": "Provalo gratis"
+  }
+}

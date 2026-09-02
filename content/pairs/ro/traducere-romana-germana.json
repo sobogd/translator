@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traducere Română-Germană cu Voce | IQ Translate",
+    "description": "Traducere română-germană cu voce sau text: vorbește sau scrie și primești răspunsul instant, scris și citit cu voce tare. Utilă la muncă în Germania.",
+    "ogTitle": "Traducere Română-Germană cu Voce",
+    "ogDescription": "Vorbește sau scrie în română și primești traducerea în germană instant, scrisă sau citită cu voce tare. Funcționează în ambele sensuri.",
+    "canonical": "https://translate.iq-factura.com/ro/traducere-romana-germana",
+    "ogLocale": "ro_RO"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Text",
+    "badgeLanguages": "186 de limbi",
+    "title": "Traducător Română-Germană",
+    "titleAccent": "pentru muncă și viața de zi cu zi",
+    "description": "Vorbește sau scrie în română și primești traducerea în germană în câteva secunde, ca text și gata de ascultat. Util la locul de muncă, la birourile din Germania sau Austria, sau în discuția cu colegii — răspunsul vine direct în aceeași conversație.",
+    "ctaTry": "Încearcă gratuit",
+    "ctaSignIn": "Conectează-te cu Google",
+    "mockFromLabel": "🇷🇴 Română",
+    "mockFromPhrase": "Unde este cel mai apropiat spital?",
+    "mockToLabel": "🇩🇪 Germană",
+    "mockToPhrase": "Wo ist das nächste Krankenhaus?"
+  },
+  "spotlights": [
+    {
+      "heading": "Vorbește, nu tasta",
+      "sub": "Apasă pe microfon, spune-o în română sau germană, și citește sau ascultă traducerea.",
+      "bullets": [
+        { "title": "Vocea ta devine germană", "sub": "Spune-o în română — traducerea apare în germană câteva secunde mai târziu" },
+        { "title": "Ascultă germana cu voce tare", "sub": "Util când pronunția germană încă nu e sigură" }
+      ]
+    },
+    {
+      "heading": "Un subiect, ambele sensuri ale discuției",
+      "sub": "Vorbește dus-întors cu un coleg, un angajator sau la ghișeu — fiecare schimb rămâne salvat.",
+      "bullets": [
+        { "title": "Răspuns în germană, tradus în română", "sub": "Interlocutorul vorbește germană, tu vezi și auzi totul în română" },
+        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Discuția cu angajatorul sau cu autoritățile rămâne într-un singur loc" }
+      ]
+    },
+    {
+      "heading": "Română-Germană, plus alte 185 de limbi",
+      "sub": "Germana este una dintre cele 186 de limbi disponibile, în orice direcție.",
+      "bullets": [
+        { "title": "Diacritice recunoscute corect", "sub": "Literele ă, â, î, ș, ț sunt gestionate corect, nu aproximate" },
+        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru germană și mâine pentru orice altă limbă" }
+      ]
+    },
+    {
+      "heading": "Preferi să scrii? Merge și așa",
+      "sub": "Scrie sau lipește text în germană și primești traducerea în română fără microfon.",
+      "bullets": [
+        { "title": "Lipește text în loc să vorbești", "sub": "Util pentru un mesaj de la angajator sau un e-mail oficial" },
+        { "title": "Copiază traducerea", "sub": "Preia textul tradus direct într-un formular sau răspuns" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "De ce e mai bun",
+    "titleAccent": "decât un traducător obișnuit de germană",
+    "description": "Majoritatea aplicațiilor cer să tastezi primul și uită conversația imediat după. Iată diferența.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Aplicațiile obișnuite de traducere",
+    "rows": [
+      { "title": "Cum începi", "us": "Vorbești în română sau germană și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
+      { "title": "Istoricul conversației", "us": "Fiecare conversație română-germană rămâne salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
+      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
+      { "title": "Ambele sensuri", "us": "Română spre germană și germană spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
+      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în germană citită cu voce tare.", "them": "Doar text, deci pronunția rămâne pe cont propriu." }
+    ]
+  },
+  "faq": {
+    "heading": "Întrebări",
+    "headingAccent": "frecvente",
+    "sub": "Întrebări obișnuite despre traducerea română-germană.",
+    "items": [
+      { "q": "Poate traduce germana vorbită în română?", "a": "Da — apasă pe microfon, vorbește în germană, și primești traducerea în română ca text, cu opțiunea de a o asculta." },
+      { "q": "Funcționează și din română în germană?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în germană în același subiect." },
+      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
+      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon." },
+      { "q": "Se potrivește pentru muncă în Germania sau Austria?", "a": "Da, e util la interviuri, la locul de muncă sau în discuții cu angajatorul, medicul sau autoritățile." },
+      { "q": "Pot ține o conversație, nu doar traduceri izolate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în germană rămâne organizată, nu împrăștiată." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Începe traducerea ta",
+    "headingAccent": "română-germană acum.",
+    "sub": "Vorbește sau scrie, ascultă răspunsul în germană — gratuit, fără cont necesar.",
+    "ctaLabel": "Încearcă acum"
+  }
+}

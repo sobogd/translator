@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traducteur Français-Turc Vocal | IQ Translate",
+    "description": "Traduisez du français vers le turc à la voix ou à l'écrit, écoutez le résultat et répondez en turc dans le même fil. 186 langues, gratuit, sans inscription.",
+    "ogTitle": "Traducteur Français-Turc Vocal",
+    "ogDescription": "Parlez ou tapez en français et obtenez une traduction turque instantanée, orale ou écrite. Fonctionne dans les deux sens, gratuit à essayer.",
+    "canonical": "https://translate.iq-factura.com/fr/traducteur-francais-turc",
+    "ogLocale": "fr_FR"
+  },
+  "hero": {
+    "badgeVoice": "Voix",
+    "badgeText": "Texte",
+    "badgeLanguages": "186 langues",
+    "title": "Traducteur français-turc",
+    "titleAccent": "qui répond aussi",
+    "description": "Parlez ou tapez en français et obtenez une traduction turque en quelques secondes, affichée à l'écran et prête à être lue à voix haute. Changez de sens à tout moment : parlez turc et écoutez la réponse en français, dans la même conversation.",
+    "ctaTry": "Essayer gratuitement",
+    "ctaSignIn": "Se connecter avec Google",
+    "mockFromLabel": "🇫🇷 Français",
+    "mockFromPhrase": "Merci beaucoup pour votre aide.",
+    "mockToLabel": "🇹🇷 Turc",
+    "mockToPhrase": "Yardımınız için çok teşekkür ederim."
+  },
+  "spotlights": [
+    {
+      "heading": "Parlez, n'écrivez pas",
+      "sub": "Appuyez sur le micro, dites-le en français ou en turc, et lisez ou écoutez la traduction.",
+      "bullets": [
+        { "title": "Votre voix devient du turc", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en turc quelques secondes plus tard" },
+        { "title": "Écoutez le turc à voix haute", "sub": "Appuyez sur le haut-parleur pour entendre la prononciation des lettres spécifiques au turc" }
+      ]
+    },
+    {
+      "heading": "Un seul fil, les deux côtés de l'échange",
+      "sub": "Discutez dans les deux sens sans repartir de zéro — chaque échange reste dans le même sujet, pratique pour la famille comme pour le travail.",
+      "bullets": [
+        { "title": "Réponse en turc, traduite en français", "sub": "Votre interlocuteur peut parler turc, vous le voyez et l'entendez en français" },
+        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en turc plus tard au lieu de perdre le fil" }
+      ]
+    },
+    {
+      "heading": "Français-turc, plus 184 autres langues",
+      "sub": "Le turc est l'une des 186 langues disponibles, dans les deux sens.",
+      "bullets": [
+        { "title": "Précis avec l'alphabet turc", "sub": "Gère correctement les lettres ç, ş, ğ, ı et ö, à l'écrit comme à l'oral" },
+        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour le turc et demain pour toute autre langue" }
+      ]
+    },
+    {
+      "heading": "Vous préférez taper ? C'est possible aussi",
+      "sub": "Tapez ou collez du texte en français et obtenez la traduction turque sans toucher au micro.",
+      "bullets": [
+        { "title": "Taper plutôt que parler", "sub": "Utile pour traduire un message WhatsApp ou un e-mail écrit" },
+        { "title": "Copier la traduction", "sub": "Récupérez le texte turc pour le coller dans un e-mail ou un message" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Pourquoi c'est mieux",
+    "titleAccent": "qu'un traducteur turc classique",
+    "description": "La plupart des applications de traduction classiques vous font taper d'abord et oublient la conversation ensuite. Voici ce qui change.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Applications de traduction classiques",
+    "rows": [
+      { "title": "Pour commencer", "us": "Parlez en français ou en turc et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire, y compris les lettres turques spéciales." },
+      { "title": "Historique des échanges", "us": "Chaque conversation en turc est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
+      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
+      { "title": "Les deux sens", "us": "Français vers turc et turc vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
+      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction turque lue à voix haute.", "them": "Texte uniquement, la prononciation reste à votre charge." }
+    ]
+  },
+  "faq": {
+    "heading": "Questions",
+    "headingAccent": "fréquentes",
+    "sub": "Les questions courantes sur la traduction du français vers le turc.",
+    "items": [
+      { "q": "Peut-il traduire du français parlé en turc ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction turque sous forme de texte, avec une option pour l'écouter à voix haute." },
+      { "q": "Gère-t-il les caractères spéciaux du turc ?", "a": "Oui, les lettres comme ç, ş, ğ, ı et ö sont gérées correctement, à l'écrit comme à l'oral." },
+      { "q": "Puis-je traduire du turc vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en turc et obtenez la traduction française dans le même sujet." },
+      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
+      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." },
+      { "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?", "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en turc reste au même endroit au lieu de se disperser." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Démarrez votre conversation",
+    "headingAccent": "français-turc maintenant.",
+    "sub": "Parlez ou tapez, écoutez la réponse en turc — gratuit à essayer, sans inscription.",
+    "ctaLabel": "Essayer maintenant"
+  }
+}

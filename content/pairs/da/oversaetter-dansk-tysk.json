@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Oversæt Tysk Dansk – Med Stemme | IQ Translate",
+    "description": "Oversæt tysk til dansk med stemmen — perfekt til grænsehandel, arbejde eller ferie. Tal eller skriv, hør svaret læst højt, gratis at prøve uden konto.",
+    "ogTitle": "Oversæt Tysk Dansk – Med Stemme",
+    "ogDescription": "Tal eller skriv dansk eller tysk og få en oversættelse med det samme — læst højt eller skrevet, begge veje i samme samtale.",
+    "canonical": "https://translate.iq-factura.com/da/oversaetter-dansk-tysk",
+    "ogLocale": "da_DK"
+  },
+  "hero": {
+    "badgeVoice": "Stemme",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 sprog",
+    "title": "Oversæt tysk dansk",
+    "titleAccent": "med stemme, direkte i browseren",
+    "description": "Tal eller skriv på dansk og få en tysk oversættelse på få sekunder — praktisk ved grænsehandel, på arbejdet eller på rejsen. Skift retning når som helst: tal tysk og hør det tilbage på dansk, i samme samtale.",
+    "ctaTry": "Prøv gratis",
+    "ctaSignIn": "Log ind med Google",
+    "mockFromLabel": "🇩🇰 Dansk",
+    "mockFromPhrase": "Hvad koster den her?",
+    "mockToLabel": "🇩🇪 Tysk",
+    "mockToPhrase": "Was kostet das?"
+  },
+  "spotlights": [
+    {
+      "heading": "Tal, og hør det på tysk",
+      "sub": "Tryk på mikrofonen og sig det på dansk eller tysk — få en oversættelse, du kan læse eller høre.",
+      "bullets": [
+        { "title": "Tale omsat til tysk", "sub": "Sig det på dansk — dine ord transskriberes, oversættes og vises på tysk få sekunder efter" },
+        { "title": "Hør tysk læst højt", "sub": "Tryk på højttalerikonet, når du er usikker på den tyske udtale" }
+      ]
+    },
+    {
+      "heading": "Én tråd, hele samtalen begge veje",
+      "sub": "God til forhandlinger og småsnak over grænsen — hver udveksling gemmes i samme emne.",
+      "bullets": [
+        { "title": "Svar på tysk, oversat til dansk", "sub": "Ekspedienten eller kollegaen kan svare på tysk, og du ser og hører det på dansk" },
+        { "title": "Samtaler gemt som emner", "sub": "Find den samme tysk-samtale igen, i stedet for at starte forfra hver gang" }
+      ]
+    },
+    {
+      "heading": "Dansk–tysk, plus 185 sprog til",
+      "sub": "Tysk er ét af 186 sprog — samme værktøj til grænsehandel i dag, ferie i Sydeuropa i morgen.",
+      "bullets": [
+        { "title": "Præcis med tysk grammatik", "sub": "Håndterer sammensatte ord og bøjninger korrekt, ikke et løst gæt" },
+        { "title": "186 sprog i alt", "sub": "Samme app dækker tysk i dag og et hvilket som helst andet sprog senere" }
+      ]
+    },
+    {
+      "heading": "Foretrækker du at skrive? Det virker også",
+      "sub": "Skriv eller indsæt en tekst — fx en prisliste eller en besked — og få den oversat uden at røre mikrofonen.",
+      "bullets": [
+        { "title": "Skriv i stedet for at tale", "sub": "Skift til tastaturet når som helst — praktisk i en larmende butik eller på farten" },
+        { "title": "Kopiér resultatet", "sub": "Kopiér den tyske tekst direkte ud og indsæt den i en besked eller mail" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Hvorfor dette slår",
+    "titleAccent": "en almindelig tysk-dansk oversætter",
+    "description": "De fleste oversættelsesapps kræver, at du skriver først, og glemmer samtalen bagefter. Her er forskellen.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Almindelige oversættelsesapps",
+    "rows": [
+      { "title": "Sådan starter du", "us": "Tal på dansk eller tysk og få en oversættelse med det samme.", "them": "Skriv først det, du vil sige." },
+      { "title": "Samtalehistorik", "us": "Hver tysk-dansk samtale gemmes som sit eget emne, du kan åbne igen.", "them": "Oversættelsen forsvinder, når du lukker appen." },
+      { "title": "Kom i gang", "us": "Åbn den i en browserfane — intet at installere, klar til grænsehandlen.", "them": "Download en app og giv adgang, før du kan bruge den." },
+      { "title": "Begge retninger", "us": "Dansk til tysk og tysk til dansk lever i samme tråd.", "them": "At skifte retning betyder som regel en ny oversættelse." },
+      { "title": "At høre det", "us": "Tryk for at få den tyske oversættelse læst højt.", "them": "Kun tekst — du er overladt til dig selv med udtalen." }
+    ]
+  },
+  "faq": {
+    "heading": "Ofte stillede",
+    "headingAccent": "spørgsmål",
+    "sub": "Almindelige spørgsmål om at oversætte tysk til dansk.",
+    "items": [
+      { "q": "Kan den oversætte talt dansk til tysk?", "a": "Ja — tryk på mikrofonen, tal på dansk, og du får en tysk oversættelse som tekst, med mulighed for at høre den læst højt." },
+      { "q": "Kan jeg oversætte fra tysk tilbage til dansk?", "a": "Ja, samme samtale virker begge veje — tal eller skriv på tysk og få den danske oversættelse i samme tråd." },
+      { "q": "Er det gratis?", "a": "Ja, du kan prøve det gratis uden at oprette en konto. Log ind med Google for flere daglige krediter og gemt historik." },
+      { "q": "Er den god til grænsehandel og arbejde?", "a": "Ja, tal eller skriv, når du handler i Tyskland eller er i dialog med tyske kolleger og kunder, og få svaret oversat med det samme." },
+      { "q": "Skal jeg installere noget?", "a": "Nej, den kører i din browser på computer eller mobil — intet at downloade." },
+      { "q": "Kan jeg holde en løbende samtale i stedet for enkeltoversættelser?", "a": "Ja, oversættelser samles i emner, så en tysk-dansk samtale bliver ét sted i stedet for spredt ud over flere opslag." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start din dansk-tysk",
+    "headingAccent": "samtale nu.",
+    "sub": "Tal eller skriv, hør det tilbage på tysk — gratis at prøve, ingen registrering.",
+    "ctaLabel": "Prøv nu"
+  }
+}

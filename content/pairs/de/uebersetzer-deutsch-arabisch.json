@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Deutsch-Arabisch Übersetzer mit Sprache | IQ Translate",
+    "description": "Deutsch-Arabisch Übersetzer für Alltag und Behörden: sprich oder tippe, hör die Antwort sofort. Arabische Schrift korrekt dargestellt, 186 Sprachen, kostenlos.",
+    "ogTitle": "Deutsch-Arabisch Übersetzer mit Sprache",
+    "ogDescription": "Sprich oder tippe auf Deutsch und erhalte die arabische Übersetzung sofort, gesprochen oder geschrieben. Funktioniert in beide Richtungen.",
+    "canonical": "https://translate.iq-factura.com/de/uebersetzer-deutsch-arabisch",
+    "ogLocale": "de_DE"
+  },
+  "hero": {
+    "badgeVoice": "Sprache",
+    "badgeText": "Text",
+    "badgeLanguages": "186 Sprachen",
+    "title": "Deutsch-Arabisch-Übersetzer",
+    "titleAccent": "für Alltag und Behörden",
+    "description": "Sprich oder tippe auf Deutsch und erhalte die arabische Übersetzung in Sekunden, in arabischer Schrift und zum Anhören. Praktisch beim Arzttermin, auf dem Amt oder im Gespräch mit der Familie – die Antwort kommt direkt im selben Gespräch zurück.",
+    "ctaTry": "Jetzt kostenlos testen",
+    "ctaSignIn": "Mit Google anmelden",
+    "mockFromLabel": "🇩🇪 Deutsch",
+    "mockFromPhrase": "Wo finde ich ein Krankenhaus?",
+    "mockToLabel": "🇸🇦 Arabisch",
+    "mockToPhrase": "أين أجد مستشفى؟"
+  },
+  "spotlights": [
+    {
+      "heading": "Sprechen statt tippen",
+      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Arabisch, und lies oder hör die Übersetzung.",
+      "bullets": [
+        { "title": "Deutsch wird zu Arabisch", "sub": "Sprich auf Deutsch – die arabische Übersetzung erscheint Sekunden später, in arabischer Schrift" },
+        { "title": "Arabisch laut vorlesen lassen", "sub": "Praktisch, wenn du die arabische Aussprache noch nicht sicher beherrschst" }
+      ]
+    },
+    {
+      "heading": "Ein Thema, beide Gesprächsseiten",
+      "sub": "Rede hin und her, etwa mit der Familie, beim Arzt oder auf dem Amt – jeder Austausch bleibt gespeichert.",
+      "bullets": [
+        { "title": "Antwort auf Arabisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Arabisch, du liest und hörst es auf Deutsch" },
+        { "title": "Gespräche als Themen gespeichert", "sub": "Das Gespräch mit dem Amt oder Arzt bleibt an einem Ort, statt verloren zu gehen" }
+      ]
+    },
+    {
+      "heading": "Deutsch-Arabisch, plus 185 weitere Sprachen",
+      "sub": "Arabisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "bullets": [
+        { "title": "Arabische Schrift korrekt dargestellt", "sub": "Text wird von rechts nach links richtig angezeigt, nicht nur in lateinischen Buchstaben umschrieben" },
+        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Arabisch heute und für jede andere Sprache morgen" }
+      ]
+    },
+    {
+      "heading": "Lieber tippen? Geht auch",
+      "sub": "Tippe oder füge arabischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "bullets": [
+        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer arabischen Nachricht per WhatsApp oder E-Mail" },
+        { "title": "Übersetzung kopieren", "sub": "Übernimm den arabischen Text direkt in ein Formular oder eine Nachricht" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Warum das besser ist",
+    "titleAccent": "als ein typischer Arabisch-Übersetzer",
+    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typische Übersetzer-Apps",
+    "rows": [
+      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Arabisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
+      { "title": "Gesprächsverlauf", "us": "Jedes Arabisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
+      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
+      { "title": "Beide Richtungen", "us": "Deutsch nach Arabisch und Arabisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
+      { "title": "Zum Anhören", "us": "Tippe, um dir die arabische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte",
+    "headingAccent": "Fragen",
+    "sub": "Häufige Fragen zum Übersetzer Deutsch-Arabisch.",
+    "items": [
+      { "q": "Kann es gesprochenes Deutsch ins Arabische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die arabische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
+      { "q": "Wird arabische Schrift korrekt dargestellt?", "a": "Ja, arabischer Text wird in seiner eigenen Schrift und von rechts nach links angezeigt, nicht als Umschrift in lateinischen Buchstaben." },
+      { "q": "Kann ich von Arabisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Arabisch und erhalte die deutsche Übersetzung im gleichen Thema." },
+      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
+      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
+      { "q": "Eignet es sich für Behördengänge oder Arzttermine?", "a": "Ja, tippe wichtige Sätze vorher ein oder sprich direkt im Gespräch, und lass dir die arabische Übersetzung anzeigen oder vorlesen." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starte deinen Deutsch-Arabisch-",
+    "headingAccent": "Übersetzer jetzt.",
+    "sub": "Sprich oder tippe, hör die arabische Antwort – kostenlos testen, keine Anmeldung nötig.",
+    "ctaLabel": "Jetzt testen"
+  }
+}

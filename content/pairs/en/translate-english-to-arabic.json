@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Arabic to English Voice Translator | IQ Translate",
+    "description": "Translate Arabic to English or English to Arabic by voice or text, in Arabic script, with the translation read aloud. 186 languages, free to try.",
+    "ogTitle": "Arabic to English Voice Translator",
+    "ogDescription": "Speak or type in Arabic or English and get an instant translation, written in Arabic script and spoken aloud. Works both directions, free to try.",
+    "canonical": "https://translate.iq-factura.com/translate-english-to-arabic",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "English to Arabic translator",
+    "titleAccent": "for voice and text",
+    "description": "Speak or type in English and get a translation in Arabic script within seconds, ready to read or hear read aloud. It works the other way too: speak Arabic and get the English translation in the same conversation.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google",
+    "mockFromLabel": "🇬🇧 English",
+    "mockFromPhrase": "Can you recommend a good restaurant?",
+    "mockToLabel": "🇸🇦 Arabic",
+    "mockToPhrase": "هل يمكنك أن توصي بمطعم جيد؟"
+  },
+  "spotlights": [
+    {
+      "heading": "Speak English, hear it in Arabic",
+      "sub": "Tap the mic and talk — your speech is transcribed, translated, and shown in proper Arabic script.",
+      "bullets": [
+        { "title": "Spoken English becomes written Arabic", "sub": "Say it out loud and see the Arabic translation appear seconds later" },
+        { "title": "Listen to the Arabic translation", "sub": "Tap the speaker for spoken Arabic, useful since the script is unfamiliar to most English speakers" }
+      ]
+    },
+    {
+      "heading": "One conversation, both directions",
+      "sub": "Arabic speakers can reply in Arabic and you'll see and hear it in English, without restarting.",
+      "bullets": [
+        { "title": "Arabic replies translated instantly", "sub": "Whoever's talking to you can speak Arabic and you'll get the English meaning right away" },
+        { "title": "Saved as a topic", "sub": "The whole exchange stays in one history you can reopen later" }
+      ]
+    },
+    {
+      "heading": "Arabic script, done correctly",
+      "sub": "Arabic is one of 186 languages available, written right-to-left as it should be.",
+      "bullets": [
+        { "title": "Proper right-to-left Arabic text", "sub": "Translations render in correct Arabic script, not transliterated letters" },
+        { "title": "186 languages total", "sub": "The same tool covers Arabic today and any other language you need next" }
+      ]
+    },
+    {
+      "heading": "Type it instead, if you prefer",
+      "sub": "Paste or type English text and get an Arabic translation without recording your voice.",
+      "bullets": [
+        { "title": "Type or paste text", "sub": "Good for emails or messages where speaking isn't practical" },
+        { "title": "Copy the Arabic result", "sub": "Copy the translated text straight into a message or document" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a typical Arabic translator",
+    "description": "Most apps make you type first and give you no way to hear it back. Here's what's different.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "How you start", "us": "Speak in English or Arabic and get a translation immediately.", "them": "Type out your sentence letter by letter first." },
+      { "title": "Hearing the pronunciation", "us": "Tap to hear the Arabic translation read aloud.", "them": "Text-only results, no audio to guide pronunciation." },
+      { "title": "Conversation history", "us": "Every Arabic conversation is saved as its own topic.", "them": "Each translation is gone once you close the app." },
+      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
+      { "title": "Both directions", "us": "English to Arabic and Arabic to English in one thread.", "them": "Switching direction usually means starting over." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating between English and Arabic.",
+    "items": [
+      { "q": "Does it handle Arabic script correctly?", "a": "Yes, translations are shown in proper right-to-left Arabic script, not romanized letters." },
+      { "q": "Can it translate spoken Arabic into English?", "a": "Yes — speak Arabic into the mic and you'll get an English translation as text, with audio playback available." },
+      { "q": "Which form of Arabic does it use?", "a": "Translations use standard, widely understood Arabic, suited for everyday conversations, messages, and travel." },
+      { "q": "Can I hear how the Arabic translation is pronounced?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." },
+      { "q": "Is it free to use?", "a": "Yes, try it free without an account. Sign in with Google for more daily credits and saved history." },
+      { "q": "Do I need to install an app or keyboard?", "a": "No, it runs in your browser and displays Arabic script automatically — no special keyboard needed." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start your English to Arabic",
+    "headingAccent": "conversation now.",
+    "sub": "Speak or type, read or hear it in Arabic — free to try, no sign-up.",
+    "ctaLabel": "Try it now"
+  }
+}

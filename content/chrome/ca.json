@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "Traductor de Veu en Línia — Parla i Tradueix | IQ Translate",
+    "description": "Traductor de veu en línia gratuït: parla amb naturalitat i obtén la traducció a l'instant, dita o escrita, en 186 llengües. Sense baixades ni registre.",
+    "ogTitle": "Traductor de Veu en Línia — Parla i Tradueix",
+    "ogDescription": "Traductor de veu en línia gratuït: parla i obtén la traducció a l'instant, dita o escrita, en 186 llengües.",
+    "twitterTitle": "Traductor de Veu en Línia — Parla i Tradueix",
+    "twitterDescription": "Traductor de veu gratuït: traducció dita o escrita a l'instant en 186 llengües."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funcions",
+    "pricing": "Preus",
+    "mobileApp": "App mòbil",
+    "signIn": "Inicia sessió",
+    "logOut": "Tanca sessió",
+    "tryItNow": "Prova-ho ara"
+  },
+  "hero": {
+    "badgeVoice": "Veu",
+    "badgeText": "Text",
+    "badgeLanguages": "186 llengües",
+    "title": "Un traductor de veu",
+    "titleAccent": "per a qualsevol conversa",
+    "description": "Parla amb naturalitat i obtén la traducció a l'instant, dita o escrita, en 186 llengües. No cal registrar-se per provar-ho.",
+    "ctaTry": "Prova-ho ara — gratis",
+    "ctaSignIn": "Inicia sessió amb Google",
+    "mockFromLabel": "🇪🇸 Català",
+    "mockFromPhrase": "Hola, com estàs?",
+    "mockToLabel": "🇬🇧 Anglès",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 llengües",
+      "sub": "Parla o escriu, es tradueix a l'instant, sense baixades addicionals"
+    },
+    {
+      "title": "Sense necessitat de registre",
+      "sub": "Prova-ho directament en aquesta pàgina — inicia sessió només per a més crèdits"
+    },
+    {
+      "title": "Historial per parella de llengües",
+      "sub": "Cada conversa queda organitzada i fàcil de trobar"
+    },
+    {
+      "title": "Gratis per començar",
+      "sub": "Baixa la pàgina i comença a traduir ara mateix"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Traducció de veu a l'instant",
+      "sub": "Toca el micròfon i parla. La teva veu es transcriu i es tradueix en segons — sense necessitat d'escriure.",
+      "bullets": [
+        {
+          "title": "Parla i obtén la traducció a l'instant",
+          "sub": "Un sol toc inicia la gravació, la traducció apareix just després"
+        },
+        {
+          "title": "Escolta-la en veu alta",
+          "sub": "Toca l'altaveu perquè la traducció es llegeixi en veu alta"
+        },
+        {
+          "title": "Veu o text, tu tries",
+          "sub": "Canvia de mode en qualsevol moment amb un sol toc"
+        }
+      ]
+    },
+    {
+      "heading": "També tradueix text",
+      "sub": "Prefereixes escriure? Canvia al mode teclat i tradueix un missatge a l'instant.",
+      "bullets": [
+        {
+          "title": "Alterna original i traducció",
+          "sub": "Toca o llisca una línia per veure-la en qualsevol de les dues llengües"
+        },
+        {
+          "title": "Copia amb un sol toc",
+          "sub": "Agafa el text traduït per enganxar-lo on vulguis"
+        },
+        {
+          "title": "Canvia a veu quan vulguis",
+          "sub": "Comença escrivint i dicta la línia següent"
+        }
+      ]
+    },
+    {
+      "heading": "186 llengües, organitzades per conversa",
+      "sub": "Tria la teva llengua una vegada i navega per les altres — cada parella de llengües guarda el seu propi fil.",
+      "bullets": [
+        {
+          "title": "186 llengües incloses",
+          "sub": "Sense baixades addicionals ni paquets de llengua per instal·lar"
+        },
+        {
+          "title": "Les converses queden organitzades",
+          "sub": "Cada parella de llengües té el seu propi historial guardat"
+        },
+        {
+          "title": "Esborra o elimina quan vulguis",
+          "sub": "Buida l'historial d'un fil o elimina'l del tot des del menú"
+        }
+      ]
+    },
+    {
+      "heading": "No cal registrar-se per començar",
+      "sub": "Prova-ho directament en aquesta pàgina — sense compte, sense contrasenya. Inicia sessió amb Google només si vols més crèdits diaris i historial sincronitzat entre dispositius.",
+      "bullets": [
+        {
+          "title": "Inici de sessió opcional amb un toc",
+          "sub": "Sense formulari de registre, sense contrasenya per recordar"
+        },
+        {
+          "title": "Només el teu correu, res més",
+          "sub": "Només el teu correu de Google identifica el teu compte"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Per què la veu",
+    "titleAccent": "va primer",
+    "description": "La majoria d'apps de traducció es queden en el text escrit. Aquestes són les diferències reals quan necessites parlar, no escriure.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps habituals",
+    "rows": [
+      {
+        "title": "Traducció de veu",
+        "us": "Un sol toc grava, transcriu i tradueix en segons.",
+        "them": "Només text, o t'obliga a escriure el que has sentit."
+      },
+      {
+        "title": "Historial de conversa",
+        "us": "Cada parella de llengües guarda el seu propi fil.",
+        "them": "L'historial desapareix en tancar la pestanya."
+      },
+      {
+        "title": "Per començar",
+        "us": "Prova-ho a l'instant, directament en aquesta pàgina — sense compte.",
+        "them": "Cal crear un compte amb correu i contrasenya abans de poder-ho provar."
+      },
+      {
+        "title": "Reproducció de veu",
+        "us": "Toca per escoltar la traducció en veu alta.",
+        "them": "Sense sortida de veu."
+      },
+      {
+        "title": "Llengües",
+        "us": "186 llengües disponibles, sense baixades addicionals.",
+        "them": "Paquets de llengües sense connexió limitats."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntes",
+    "headingAccent": "freqüents",
+    "sub": "El que la gent pregunta abans de provar-ho. Sense registre — puja i prova-ho tu mateix.",
+    "items": [
+      {
+        "q": "Com funciona la traducció de veu?",
+        "a": "Toca el micròfon i parla — la teva veu es transcriu i es tradueix en pocs segons, es mostra com a text i la pots escoltar en veu alta. No cal escriure."
+      },
+      {
+        "q": "Quantes llengües admet?",
+        "a": "186 llengües. Tria la teva llengua una vegada i comença un fil de conversa amb qualsevol altra."
+      },
+      {
+        "q": "Necessito crear un compte?",
+        "a": "No. Prova-ho directament en aquesta pàgina sense registrar-te. Inicia sessió amb Google només si vols més crèdits diaris i historial sincronitzat entre dispositius."
+      },
+      {
+        "q": "Es guarda el meu historial de traduccions?",
+        "a": "Sí, per cada parella de llengües, així les converses anteriors queden organitzades — fins i tot sense iniciar sessió, el teu navegador queda recordat. Esborra o elimina qualsevol fil quan vulguis des del seu menú."
+      },
+      {
+        "q": "Puc utilitzar text en lloc de veu?",
+        "a": "Sí. Canvia al mode teclat quan vulguis i escriu el teu missatge en lloc de dir-lo."
+      },
+      {
+        "q": "Funciona per a una conversa en tots dos sentits?",
+        "a": "Sí. Toca o llisca una línia traduïda per alternar entre l'original i la traducció, així les dues persones poden seguir la conversa en una sola pantalla."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Traducció de veu a l'instant,",
+    "headingAccent": "llesta en 10 segons.",
+    "sub": "Prova-ho directament en aquesta pàgina — sense registre, sense baixades, 186 llengües incloses.",
+    "ctaLabel": "Prova-ho ara"
+  },
+  "footer": {
+    "tagline": "Traducció de veu a l'instant, 186 llengües",
+    "brand": "IQ Translate",
+    "featuresHeading": "Traductors",
+    "featureLinks": [
+      { "routeKey": "/traductor-catala-angles", "label": "Català–Anglès" },
+      { "routeKey": "/traductor-catala-castella", "label": "Català–Castellà" },
+      { "routeKey": "/traductor-catala-frances", "label": "Català–Francès" }
+    ]
+  },
+  "translator": {
+    "topics": "Temes",
+    "newTopic": "Tema nou",
+    "noTopicsYet": "Encara no hi ha temes",
+    "deleteTopic": "Elimina el tema",
+    "deleteTopicConfirm": "Vols eliminar aquest tema i totes les seves traduccions?",
+    "autoDetect": "Detecció automàtica",
+    "chooseLanguage": "Tria una llengua",
+    "close": "Tanca",
+    "searchPlaceholder": "Cerca una llengua…",
+    "clearHistory": "Esborra l'historial",
+    "clearHistoryConfirm": "Vols esborrar totes les traduccions d'aquest tema?",
+    "noTranslationsYet": "Encara no hi ha traduccions en aquest tema.",
+    "translating": "Traduint…",
+    "typePlaceholder": "Escriu un missatge…",
+    "translateAria": "Tradueix",
+    "micDeniedError": "Accés al micròfon denegat",
+    "recording": "Gravant",
+    "recognizing": "Reconeixent…",
+    "recordAria": "Grava",
+    "stopAria": "Atura",
+    "pricingLink": "Preus",
+    "errors": {
+      "insufficientCredits": "Sense crèdits — millora el teu pla",
+      "textTooLong": "Text massa llarg per al teu pla"
+    }
+  },
+  "history": {
+    "emptyState": "Encara no hi ha res aquí. Escriu un missatge o grava la teva veu a sota.",
+    "readAloudAria": "Llegeix en veu alta",
+    "copyAria": "Copia"
+  }
+}

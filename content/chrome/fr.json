@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "Traducteur Vocal en Ligne — Gratuit | IQ Translate",
+    "description": "Traducteur vocal gratuit en ligne : parlez et obtenez une traduction instantanée, orale ou écrite, en 186 langues. Sans téléchargement, sans inscription pour essayer.",
+    "ogTitle": "Traducteur Vocal en Ligne — Gratuit",
+    "ogDescription": "Traducteur vocal gratuit : parlez et obtenez une traduction instantanée, orale ou écrite, en 186 langues.",
+    "twitterTitle": "Traducteur Vocal en Ligne — Gratuit",
+    "twitterDescription": "Traducteur vocal gratuit : traduction orale ou écrite instantanée en 186 langues."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "mobileApp": "Application mobile",
+    "signIn": "Se connecter",
+    "logOut": "Se déconnecter",
+    "tryItNow": "Essayer maintenant"
+  },
+  "hero": {
+    "badgeVoice": "Voix",
+    "badgeText": "Texte",
+    "badgeLanguages": "186 langues",
+    "title": "Un traducteur vocal",
+    "titleAccent": "pour toutes vos conversations",
+    "description": "Parlez naturellement et obtenez une traduction instantanée, orale ou écrite, en 186 langues. Aucune inscription n'est nécessaire pour essayer.",
+    "ctaTry": "Essayer maintenant — gratuit",
+    "ctaSignIn": "Se connecter avec Google",
+    "mockFromLabel": "🇫🇷 Français",
+    "mockFromPhrase": "Bonjour, comment allez-vous ?",
+    "mockToLabel": "🇬🇧 Anglais",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 langues",
+      "sub": "Parlez ou tapez, traduction instantanée, sans téléchargement supplémentaire"
+    },
+    {
+      "title": "Aucune inscription requise",
+      "sub": "Essayez directement sur cette page — connectez-vous seulement pour plus de crédits"
+    },
+    {
+      "title": "Historique par paire de langues",
+      "sub": "Chaque conversation reste organisée et facile à retrouver"
+    },
+    {
+      "title": "Gratuit pour commencer",
+      "sub": "Faites défiler la page et commencez à traduire tout de suite"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Traduction vocale instantanée",
+      "sub": "Appuyez sur le micro et parlez. Vos paroles sont transcrites et traduites en quelques secondes — sans avoir à taper.",
+      "bullets": [
+        {
+          "title": "Parlez, obtenez la traduction aussitôt",
+          "sub": "Un appui lance l'enregistrement, la traduction apparaît juste après"
+        },
+        {
+          "title": "Écoutez-la à voix haute",
+          "sub": "Appuyez sur le haut-parleur pour faire lire la traduction à voix haute"
+        },
+        {
+          "title": "Voix ou texte, à vous de choisir",
+          "sub": "Changez de mode à tout moment d'un simple appui"
+        }
+      ]
+    },
+    {
+      "heading": "La traduction écrite aussi",
+      "sub": "Vous préférez taper ? Passez en mode clavier et traduisez un message instantanément.",
+      "bullets": [
+        {
+          "title": "Basculez entre original et traduction",
+          "sub": "Appuyez ou glissez sur une ligne pour la voir dans les deux langues"
+        },
+        {
+          "title": "Copiez en un appui",
+          "sub": "Récupérez le texte traduit pour le coller n'importe où"
+        },
+        {
+          "title": "Repassez à la voix à tout moment",
+          "sub": "Commencez à taper, puis dictez la ligne suivante à la place"
+        }
+      ]
+    },
+    {
+      "heading": "186 langues, organisées par conversation",
+      "sub": "Choisissez votre langue une fois, puis parcourez toutes les autres — chaque paire de langues garde son propre fil enregistré.",
+      "bullets": [
+        {
+          "title": "186 langues incluses",
+          "sub": "Aucun téléchargement ni pack de langue supplémentaire à installer"
+        },
+        {
+          "title": "Les conversations restent organisées",
+          "sub": "Chaque paire de langues a son propre historique enregistré"
+        },
+        {
+          "title": "Effacez ou supprimez à tout moment",
+          "sub": "Videz l'historique d'un fil ou supprimez-le entièrement depuis le menu"
+        }
+      ]
+    },
+    {
+      "heading": "Aucune inscription requise pour démarrer",
+      "sub": "Essayez directement sur cette page — sans compte, sans mot de passe. Connectez-vous avec Google seulement pour plus de crédits quotidiens et un historique synchronisé entre vos appareils.",
+      "bullets": [
+        {
+          "title": "Connexion facultative en un appui",
+          "sub": "Aucun formulaire d'inscription, aucun mot de passe à retenir"
+        },
+        {
+          "title": "Seulement votre e-mail, rien de plus",
+          "sub": "Seule votre adresse Google identifie votre compte"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Pourquoi la voix",
+    "titleAccent": "passe en premier",
+    "description": "La plupart des applications de traduction s'arrêtent au texte tapé. Voici ce qui change vraiment quand vous devez parler plutôt que taper.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Applications classiques",
+    "rows": [
+      {
+        "title": "Traduction vocale",
+        "us": "Un appui enregistre, transcrit et traduit en quelques secondes.",
+        "them": "Texte uniquement, ou il faut retaper ce que vous avez entendu."
+      },
+      {
+        "title": "Historique des conversations",
+        "us": "Chaque paire de langues garde son propre fil enregistré.",
+        "them": "L'historique disparaît dès que vous fermez l'onglet."
+      },
+      {
+        "title": "Pour démarrer",
+        "us": "Essayez immédiatement, directement sur cette page — sans compte requis.",
+        "them": "Créer un compte avec e-mail et mot de passe avant de pouvoir essayer."
+      },
+      {
+        "title": "Lecture à voix haute",
+        "us": "Appuyez pour entendre la traduction lue à voix haute.",
+        "them": "Aucune sortie vocale."
+      },
+      {
+        "title": "Langues",
+        "us": "186 langues disponibles, sans téléchargement supplémentaire.",
+        "them": "Packs de langues hors ligne limités."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Questions",
+    "headingAccent": "fréquentes",
+    "sub": "Ce que les utilisateurs demandent avant d'essayer. Aucune inscription requise — faites défiler vers le haut et testez par vous-même.",
+    "items": [
+      {
+        "q": "Comment fonctionne la traduction vocale ?",
+        "a": "Appuyez sur le micro et parlez — votre voix est transcrite et traduite en quelques secondes, affichée sous forme de texte et disponible à l'écoute. Aucune saisie nécessaire."
+      },
+      {
+        "q": "Combien de langues sont prises en charge ?",
+        "a": "186 langues. Choisissez votre propre langue une fois, puis démarrez un fil de conversation avec n'importe quelle autre."
+      },
+      {
+        "q": "Dois-je créer un compte ?",
+        "a": "Non. Essayez directement sur cette page sans inscription. Connectez-vous avec Google seulement si vous voulez plus de crédits quotidiens et un historique synchronisé entre vos appareils."
+      },
+      {
+        "q": "Mon historique de traduction est-il enregistré ?",
+        "a": "Oui, par paire de langues, pour que vos conversations passées restent organisées — même sans connexion, votre navigateur est mémorisé. Videz ou supprimez n'importe quel fil à tout moment depuis son menu."
+      },
+      {
+        "q": "Puis-je utiliser le texte au lieu de la voix ?",
+        "a": "Oui. Passez en mode clavier à tout moment et tapez votre message au lieu de le prononcer."
+      },
+      {
+        "q": "Fonctionne-t-il pour une conversation à deux sens ?",
+        "a": "Oui. Appuyez ou glissez sur une ligne traduite pour basculer entre l'original et la traduction, afin que les deux côtés puissent suivre sur un seul écran."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Traduction vocale instantanée,",
+    "headingAccent": "prête en 10 secondes.",
+    "sub": "Essayez directement sur cette page — sans inscription, sans téléchargement, 186 langues incluses.",
+    "ctaLabel": "Essayer maintenant"
+  },
+  "footer": {
+    "tagline": "Traduction vocale instantanée, 186 langues",
+    "brand": "IQ Translate",
+    "featuresHeading": "Traducteurs",
+    "featureLinks": [
+      { "routeKey": "/traducteur-francais-anglais", "label": "Français–Anglais" },
+      { "routeKey": "/traducteur-francais-espagnol", "label": "Français–Espagnol" },
+      { "routeKey": "/traducteur-francais-arabe", "label": "Français–Arabe" },
+      { "routeKey": "/traducteur-francais-allemand", "label": "Français–Allemand" },
+      { "routeKey": "/traducteur-francais-italien", "label": "Français–Italien" },
+      { "routeKey": "/traducteur-francais-neerlandais", "label": "Français–Néerlandais" },
+      { "routeKey": "/traducteur-francais-portugais", "label": "Français–Portugais" },
+      { "routeKey": "/traducteur-francais-turc", "label": "Français–Turc" }
+    ]
+  },
+  "translator": {
+    "topics": "Sujets",
+    "newTopic": "Nouveau sujet",
+    "noTopicsYet": "Aucun sujet pour l'instant",
+    "deleteTopic": "Supprimer le sujet",
+    "deleteTopicConfirm": "Supprimer ce sujet et toutes ses traductions ?",
+    "autoDetect": "Détection automatique",
+    "chooseLanguage": "Choisir une langue",
+    "close": "Fermer",
+    "searchPlaceholder": "Rechercher une langue…",
+    "clearHistory": "Effacer l'historique",
+    "clearHistoryConfirm": "Effacer toutes les traductions de ce sujet ?",
+    "noTranslationsYet": "Aucune traduction pour l'instant dans ce sujet.",
+    "translating": "Traduction en cours…",
+    "typePlaceholder": "Tapez un message…",
+    "translateAria": "Traduire",
+    "micDeniedError": "Accès au microphone refusé",
+    "recording": "Enregistrement",
+    "recognizing": "Reconnaissance…",
+    "recordAria": "Enregistrer",
+    "stopAria": "Arrêter",
+    "pricingLink": "Tarifs",
+    "errors": {
+      "insufficientCredits": "Crédits épuisés — passez à un forfait supérieur",
+      "textTooLong": "Texte trop long pour votre forfait"
+    }
+  },
+  "history": {
+    "emptyState": "Rien ici pour l'instant. Tapez un message ou enregistrez votre voix ci-dessous.",
+    "readAloudAria": "Lire à voix haute",
+    "copyAria": "Copier"
+  }
+}

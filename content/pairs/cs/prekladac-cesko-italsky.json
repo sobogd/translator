@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Italsko-Český Překladač na Dovolenou | IQ Translate",
+    "description": "Italsko-český překladač online: mluvte nebo pište česky, italský překlad dostanete okamžitě i nahlas. Ideální na dovolenou i do restaurace, 186 jazyků, zdarma.",
+    "ogTitle": "Italsko-Český Překladač na Dovolenou",
+    "ogDescription": "Mluvte nebo pište česky, získejte italský překlad hned, mluvený i psaný. Funguje oběma směry, zdarma k vyzkoušení.",
+    "canonical": "https://translate.iq-factura.com/cs/prekladac-cesko-italsky",
+    "ogLocale": "cs_CZ"
+  },
+  "hero": {
+    "badgeVoice": "Hlas",
+    "badgeText": "Text",
+    "badgeLanguages": "186 jazyků",
+    "title": "Italsko-český překladač",
+    "titleAccent": "na dovolenou i do restaurace",
+    "description": "Mluvte nebo pište česky a během pár vteřin získejte italský překlad, zobrazený na obrazovce a připravený ke čtení nahlas. Poslouží na dovolené, v restauraci i při objednávání ubytování — kdykoli přepněte směr a odpovídejte česky.",
+    "ctaTry": "Vyzkoušet zdarma",
+    "ctaSignIn": "Přihlásit se přes Google",
+    "mockFromLabel": "🇨🇿 Čeština",
+    "mockFromPhrase": "Kde je nejbližší pláž?",
+    "mockToLabel": "🇮🇹 Italština",
+    "mockToPhrase": "Dov'è la spiaggia più vicina?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mluvte, nepište",
+      "sub": "Klepněte na mikrofon, řekněte větu česky nebo italsky a získejte překlad ke čtení i poslechu.",
+      "bullets": [
+        { "title": "Řeč přeložená do italštiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí italsky během pár vteřin" },
+        { "title": "Poslechněte si italštinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností v restauraci" }
+      ]
+    },
+    {
+      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
+      "bullets": [
+        { "title": "Odpověď v italštině přeložená do češtiny", "sub": "Číšník nebo recepční může mluvit italsky a vy to uvidíte i uslyšíte česky" },
+        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné italské konverzaci později, třeba další den dovolené" }
+      ]
+    },
+    {
+      "heading": "Česko-italský pár a 185 dalších jazyků",
+      "sub": "Italština je jeden z 186 dostupných jazyků, v libovolném směru.",
+      "bullets": [
+        { "title": "Zvládá i jídelní lístek a místní výrazy", "sub": "Poradí si s italskými názvy jídel a běžnými frázemi, ne jen slovníkovým základem" },
+        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na italštinu a zítra na kterýkoli jiný jazyk" }
+      ]
+    },
+    {
+      "heading": "Raději píšete? I to funguje",
+      "sub": "Napište nebo vložte český text a získejte italský překlad bez dotyku mikrofonu — třeba zprávu na ubytování.",
+      "bullets": [
+        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici v hlučné restauraci i v klidu pokoje" },
+        { "title": "Zkopírujte překlad", "sub": "Vložte italský text rovnou do zprávy hostiteli nebo do e-mailu" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Proč je to lepší",
+    "titleAccent": "než běžný italský překladač",
+    "description": "Typické aplikace nutí nejdřív psát a konverzaci pak zapomenou. Tady je to, co je jinak.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typické překladatelské aplikace",
+    "rows": [
+      { "title": "Jak začnete", "us": "Mluvte česky nebo italsky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
+      { "title": "Historie rozhovorů", "us": "Každá italská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
+      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
+      { "title": "Obě strany rozhovoru", "us": "Čeština do italštiny i italština do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
+      { "title": "Poslech nahlas", "us": "Klepněte a nechte si italský překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+    ]
+  },
+  "faq": {
+    "heading": "Nejčastější",
+    "headingAccent": "dotazy",
+    "sub": "Časté otázky k překladu z češtiny do italštiny.",
+    "items": [
+      { "q": "Přeloží mluvenou češtinu do italštiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete italský překlad jako text, s možností nechat si ho přečíst nahlas." },
+      { "q": "Poradí si s objednáváním v restauraci?", "a": "Ano, zvládá běžné fráze i položky z jídelního lístku, takže objednávání a domlouvání s obsluhou jde snadno." },
+      { "q": "Můžu překládat i z italštiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište italsky a český překlad dostanete ve stejném vlákně." },
+      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
+      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení, ideální i na cestách." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Začněte svou česko-italskou",
+    "headingAccent": "konverzaci hned.",
+    "sub": "Mluvte nebo pište, odpověď dostanete italsky — zdarma k vyzkoušení, bez registrace.",
+    "ctaLabel": "Vyzkoušet teď"
+  }
+}

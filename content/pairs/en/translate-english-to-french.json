@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "English to French Voice Translator | IQ Translate",
+    "description": "Translate English to French by voice or text, with correct accents, and hear the result read aloud. Works both directions. 186 languages, free to try.",
+    "ogTitle": "English to French Voice Translator",
+    "ogDescription": "Speak or type English, get an instant French translation, spoken aloud or written. Works both directions, free to try.",
+    "canonical": "https://translate.iq-factura.com/translate-english-to-french",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "English to French translator",
+    "titleAccent": "for speaking and typing",
+    "description": "Speak or type in English and get a French translation in seconds, with correct accents and ready to hear read aloud. Reply in French and get the English meaning back, all in one saved conversation.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google",
+    "mockFromLabel": "🇬🇧 English",
+    "mockFromPhrase": "I would like a table for two, please.",
+    "mockToLabel": "🇫🇷 French",
+    "mockToPhrase": "Je voudrais une table pour deux, s'il vous plaît."
+  },
+  "spotlights": [
+    {
+      "heading": "Speak English, hear it in French",
+      "sub": "Tap the mic and talk — your speech becomes a French translation seconds later.",
+      "bullets": [
+        { "title": "Spoken English becomes French text", "sub": "Say it out loud and see the translation appear with correct accents and spelling" },
+        { "title": "Hear the French spoken aloud", "sub": "Tap the speaker for pronunciation help with sounds English doesn't have" }
+      ]
+    },
+    {
+      "heading": "A conversation that stays together",
+      "sub": "Whoever replies in French gets translated back to English instantly, in the same thread.",
+      "bullets": [
+        { "title": "French replies translated back", "sub": "The other person speaks French, you see and hear the English meaning" },
+        { "title": "Saved as a topic", "sub": "Reopen the same French conversation later instead of losing it" }
+      ]
+    },
+    {
+      "heading": "French, with the right tone",
+      "sub": "French is one of 186 languages available, and it reflects the formality of what you're saying.",
+      "bullets": [
+        { "title": "Vous or tu, handled naturally", "sub": "Translations match the formal or casual register of your sentence" },
+        { "title": "186 languages total", "sub": "The same tool covers French today and any other language you need next" }
+      ]
+    },
+    {
+      "heading": "Or just type it",
+      "sub": "Paste or type English text and get a French translation without recording your voice.",
+      "bullets": [
+        { "title": "Type instead of speak", "sub": "Handy for emails, forms, or a quiet room" },
+        { "title": "Copy the French text", "sub": "Copy the result straight into a message or document" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a typical French translator",
+    "description": "Most translator apps make you type first and lose the conversation right after. Here's what's different.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "How you start", "us": "Speak in English or French and get a translation right away.", "them": "Type your sentence out first." },
+      { "title": "Hearing pronunciation", "us": "Tap to hear the French translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
+      { "title": "Conversation history", "us": "Every French conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
+      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
+      { "title": "Both directions", "us": "English to French and French to English in one thread.", "them": "Switching direction usually means starting over." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating between English and French.",
+    "items": [
+      { "q": "Does it handle French accents correctly?", "a": "Yes, letters like é, è, ê, ç, and à appear correctly in both the written translation and what gets spoken aloud." },
+      { "q": "Can it translate spoken French back to English?", "a": "Yes — speak French into the mic and get an English translation as text, with audio playback available." },
+      { "q": "Does it use vous or tu appropriately?", "a": "Yes, it aims to match the formality of your sentence rather than defaulting to one form." },
+      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
+      { "q": "Do I need a French keyboard for accents?", "a": "No, the app handles accented letters automatically — no special keyboard needed." },
+      { "q": "Can I hear how the French translation is pronounced?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start your English to French",
+    "headingAccent": "conversation now.",
+    "sub": "Speak or type, read or hear it in French — free to try, no sign-up.",
+    "ctaLabel": "Try it now"
+  }
+}

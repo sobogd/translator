@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "Balss Tulkotājs Tiešsaistē Bez Maksas | IQ Translate",
+    "description": "Bezmaksas balss tulkotājs tiešsaistē: runā dabiski un saņem tūlītēju tulkojumu — balsī vai rakstiski — 186 valodās. Bez lejupielādēm, izmēģini bez reģistrācijas.",
+    "ogTitle": "Balss Tulkotājs Tiešsaistē Bez Maksas",
+    "ogDescription": "Bezmaksas balss tulkotājs: runā un saņem tūlītēju tulkojumu, balsī vai rakstiski, 186 valodās.",
+    "twitterTitle": "Balss Tulkotājs Tiešsaistē Bez Maksas",
+    "twitterDescription": "Bezmaksas balss tulkotājs: tūlītējs tulkojums balsī vai rakstiski 186 valodās."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Iespējas",
+    "pricing": "Cenas",
+    "mobileApp": "Mobilā lietotne",
+    "signIn": "Pieteikties",
+    "logOut": "Iziet",
+    "tryItNow": "Izmēģini tagad"
+  },
+  "hero": {
+    "badgeVoice": "Balss",
+    "badgeText": "Teksts",
+    "badgeLanguages": "186 valodas",
+    "title": "Balss tulkotājs",
+    "titleAccent": "jebkurai sarunai",
+    "description": "Runā dabiski un saņem tūlītēju tulkojumu — balsī vai rakstiski — 186 valodās. Izmēģināšanai reģistrācija nav nepieciešama.",
+    "ctaTry": "Izmēģini tagad — bez maksas",
+    "ctaSignIn": "Pieteikties ar Google",
+    "mockFromLabel": "🇱🇻 Latviešu",
+    "mockFromPhrase": "Sveiki, kā jums iet?",
+    "mockToLabel": "🇬🇧 Angļu",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 valodas",
+      "sub": "Runā vai raksti — tulkojums parādās uzreiz, bez papildu lejupielādēm"
+    },
+    {
+      "title": "Reģistrācija nav nepieciešama",
+      "sub": "Izmēģini tieši šajā lapā — piesakies tikai papildu kredītiem"
+    },
+    {
+      "title": "Vēsture katram valodu pārim",
+      "sub": "Katra saruna paliek sakārtota un viegli atrodama"
+    },
+    {
+      "title": "Bez maksas sākumā",
+      "sub": "Ritini uz leju un sāc tulkot uzreiz"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Tūlītēja balss tulkošana",
+      "sub": "Pieskaries mikrofonam un runā. Tava runa tiek atpazīta un pārtulkota sekundēs — bez rakstīšanas.",
+      "bullets": [
+        {
+          "title": "Runā un saņem tulkojumu uzreiz",
+          "sub": "Viens pieskāriens sāk ierakstu, tulkojums parādās tūlīt pēc tam"
+        },
+        {
+          "title": "Klausies to skaļi",
+          "sub": "Pieskaries skaļruņa ikonai, lai tulkojums tiktu nolasīts skaļi"
+        },
+        {
+          "title": "Balss vai teksts — tava izvēle",
+          "sub": "Pārslēdz režīmu jebkurā brīdī ar vienu pieskārienu"
+        }
+      ]
+    },
+    {
+      "heading": "Arī teksta tulkošana",
+      "sub": "Vēlies rakstīt? Pārslēdzies uz tastatūras režīmu un pārtulko ziņu uzreiz.",
+      "bullets": [
+        {
+          "title": "Mainīt vietām oriģinālu un tulkojumu",
+          "sub": "Pieskaries vai pavelc rindu, lai redzētu to jebkurā valodā"
+        },
+        {
+          "title": "Kopē ar vienu pieskārienu",
+          "sub": "Paņem pārtulkoto tekstu, lai ielīmētu to jebkur"
+        },
+        {
+          "title": "Pārslēdzies uz balsi jebkurā brīdī",
+          "sub": "Sāc rakstīt, tad nākamo rindu izrunā"
+        }
+      ]
+    },
+    {
+      "heading": "186 valodas, sakārtotas pēc sarunām",
+      "sub": "Izvēlies savu valodu vienreiz, tad pārlūko pārējās — katram valodu pārim ir sava saglabāta pārrunu vēsture.",
+      "bullets": [
+        {
+          "title": "186 valodas iekļautas",
+          "sub": "Bez papildu lejupielādēm vai valodu pakotnēm"
+        },
+        {
+          "title": "Sarunas paliek sakārtotas",
+          "sub": "Katram valodu pārim ir sava saglabāta vēsture"
+        },
+        {
+          "title": "Notīri vai dzēs jebkurā brīdī",
+          "sub": "Iztukšo pavediena vēsturi vai dzēs to pilnībā no izvēlnes"
+        }
+      ]
+    },
+    {
+      "heading": "Reģistrācija sākumā nav nepieciešama",
+      "sub": "Izmēģini tieši šajā lapā — bez konta, bez paroles. Piesakies ar Google tikai tad, kad vēlies vairāk kredītu dienā un vēsturi, kas sinhronizēta starp ierīcēm.",
+      "bullets": [
+        {
+          "title": "Pieteikšanās ar vienu pieskārienu — pēc izvēles",
+          "sub": "Bez reģistrācijas formas, bez paroles, kas jāatceras"
+        },
+        {
+          "title": "Tikai tavs e-pasts, nekas vairāk",
+          "sub": "Tavu kontu identificē tikai Google e-pasts"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Kāpēc balss",
+    "titleAccent": "ir pirmajā vietā",
+    "description": "Vairums tulkošanas lietotņu apstājas pie rakstīta teksta. Zemāk redzams, kas tiešām mainās, kad jārunā, nevis jāraksta.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Parastās lietotnes",
+    "rows": [
+      {
+        "title": "Balss tulkošana",
+        "us": "Viens pieskāriens ieraksta, atpazīst un pārtulko sekundēs.",
+        "them": "Tikai teksts vai jāraksta tas, ko dzirdēji."
+      },
+      {
+        "title": "Sarunu vēsture",
+        "us": "Katram valodu pārim ir sava saglabāta vēsture.",
+        "them": "Vēsture pazūd, aizverot cilni."
+      },
+      {
+        "title": "Sākšana",
+        "us": "Izmēģini uzreiz, tieši šajā lapā — konts nav nepieciešams.",
+        "them": "Pirms izmēģināšanas jāizveido konts ar e-pastu un paroli."
+      },
+      {
+        "title": "Balss atskaņošana",
+        "us": "Pieskaries, lai dzirdētu tulkojumu skaļi nolasītu.",
+        "them": "Bez balss izvades."
+      },
+      {
+        "title": "Valodas",
+        "us": "186 valodas pieejamas bez papildu lejupielādes.",
+        "them": "Ierobežotas bezsaistes valodu pakotnes."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Biežāk uzdotie",
+    "headingAccent": "jautājumi",
+    "sub": "Ko cilvēki jautā pirms izmēģināšanas. Reģistrācija nav nepieciešama — ritini augšup un izmēģini pats.",
+    "items": [
+      {
+        "q": "Kā darbojas balss tulkošana?",
+        "a": "Pieskaries mikrofonam un runā — tava balss tiek atpazīta un pārtulkota dažu sekunžu laikā, parādās kā teksts un to var noklausīties skaļi. Rakstīt nav nepieciešams."
+      },
+      {
+        "q": "Cik daudz valodu ir pieejamas?",
+        "a": "186 valodas. Izvēlies savu valodu vienreiz, tad sāc pārrunu pavedienu ar jebkuru citu valodu."
+      },
+      {
+        "q": "Vai jāizveido konts?",
+        "a": "Nē. Izmēģini tieši šajā lapā bez reģistrācijas. Piesakies ar Google tikai tad, ja vēlies vairāk kredītu dienā un vēsturi, kas sinhronizēta starp ierīcēm."
+      },
+      {
+        "q": "Vai mana tulkojumu vēsture tiek saglabāta?",
+        "a": "Jā, katram valodu pārim atsevišķi, tāpēc iepriekšējās sarunas paliek sakārtotas — pat nepiesakoties, tavs pārlūks tiek atcerēts. Notīri vai dzēs jebkuru pavedienu jebkurā brīdī no tā izvēlnes."
+      },
+      {
+        "q": "Vai varu izmantot tekstu balss vietā?",
+        "a": "Jā. Pārslēdzies uz tastatūras režīmu jebkurā brīdī un raksti ziņu tā vietā, lai runātu."
+      },
+      {
+        "q": "Vai tas darbojas divvirzienu sarunām?",
+        "a": "Jā. Pieskaries vai pavelc pārtulkotu rindu, lai pārslēgtos starp oriģinālu un tulkojumu, tā abas puses var sekot līdzi sarunai vienā ekrānā."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Tūlītēja balss tulkošana,",
+    "headingAccent": "gatava 10 sekundēs.",
+    "sub": "Izmēģini tieši šajā lapā — bez reģistrācijas, bez lejupielādēm, iekļautas 186 valodas.",
+    "ctaLabel": "Izmēģini tagad"
+  },
+  "footer": {
+    "tagline": "Tūlītēja balss tulkošana, 186 valodas",
+    "brand": "IQ Translate",
+    "featuresHeading": "Tulkotāji",
+    "featureLinks": [
+      {
+        "routeKey": "/tulkotajs-latviesu-anglu",
+        "label": "Latviešu–angļu"
+      },
+      {
+        "routeKey": "/tulkotajs-latviesu-krievu",
+        "label": "Latviešu–krievu"
+      }
+    ]
+  },
+  "translator": {
+    "topics": "Tēmas",
+    "newTopic": "Jauna tēma",
+    "noTopicsYet": "Vēl nav tēmu",
+    "deleteTopic": "Dzēst tēmu",
+    "deleteTopicConfirm": "Dzēst šo tēmu un visus tās tulkojumus?",
+    "autoDetect": "Automātiska noteikšana",
+    "chooseLanguage": "Izvēlies valodu",
+    "close": "Aizvērt",
+    "searchPlaceholder": "Meklēt valodu…",
+    "clearHistory": "Notīrīt vēsturi",
+    "clearHistoryConfirm": "Notīrīt visus tulkojumus šajā tēmā?",
+    "noTranslationsYet": "Šajā tēmā vēl nav tulkojumu.",
+    "translating": "Tulko…",
+    "typePlaceholder": "Raksti ziņu…",
+    "translateAria": "Tulkot",
+    "micDeniedError": "Piekļuve mikrofonam liegta",
+    "recording": "Ieraksta",
+    "recognizing": "Atpazīst…",
+    "recordAria": "Ierakstīt",
+    "stopAria": "Apturēt",
+    "pricingLink": "Cenas",
+    "errors": {
+      "insufficientCredits": "Beigušies kredīti — uzlabo savu plānu",
+      "textTooLong": "Teksts par garu tavam plānam"
+    }
+  },
+  "history": {
+    "emptyState": "Šeit vēl nekā nav. Uzraksti ziņu vai ieraksti balsi zemāk.",
+    "readAloudAria": "Nolasīt skaļi",
+    "copyAria": "Kopēt"
+  }
+}

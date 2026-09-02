@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Balso Vertėjas Internete Nemokamai | IQ Translate",
+    "description": "Nemokamas balso vertėjas internete: kalbėkite natūraliai ir akimirksniu gaukite vertimą — balsu ar raštu — 186 kalbomis. Jokių atsisiuntimų, išbandykite be registracijos.",
+    "ogTitle": "Balso Vertėjas Internete Nemokamai",
+    "ogDescription": "Nemokamas balso vertėjas: kalbėkite ir akimirksniu gaukite vertimą, balsu ar raštu, 186 kalbomis.",
+    "twitterTitle": "Balso Vertėjas Internete Nemokamai",
+    "twitterDescription": "Nemokamas balso vertėjas: akimirksniu vertimas balsu ar raštu 186 kalbomis."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Galimybės",
+    "pricing": "Kainos",
+    "mobileApp": "Mobili programėlė",
+    "signIn": "Prisijungti",
+    "logOut": "Atsijungti",
+    "tryItNow": "Išbandyti dabar"
+  },
+  "hero": {
+    "badgeVoice": "Balsas",
+    "badgeText": "Tekstas",
+    "badgeLanguages": "186 kalbų",
+    "title": "Balso vertėjas",
+    "titleAccent": "bet kokiam pokalbiui",
+    "description": "Kalbėkite natūraliai ir akimirksniu gaukite vertimą — balsu ar raštu — 186 kalbomis. Norint išbandyti registruotis nereikia.",
+    "ctaTry": "Išbandykite nemokamai",
+    "ctaSignIn": "Prisijungti su Google",
+    "mockFromLabel": "🇱🇹 Lietuvių",
+    "mockFromPhrase": "Labas, kaip sekasi?",
+    "mockToLabel": "🇬🇧 Anglų",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 kalbų",
+      "sub": "Kalbėkite arba rašykite — vertimas pasirodo akimirksniu, be papildomų atsisiuntimų"
+    },
+    {
+      "title": "Registruotis nereikia",
+      "sub": "Išbandykite tiesiai šiame puslapyje — prisijunkite tik dėl papildomų kreditų"
+    },
+    {
+      "title": "Kiekvienos kalbų poros istorija",
+      "sub": "Kiekvienas pokalbis lieka sutvarkytas ir lengvai randamas"
+    },
+    {
+      "title": "Nemokama pradžiai",
+      "sub": "Slinkite žemyn ir iškart pradėkite versti"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Akimirksniu balso vertimas",
+      "sub": "Palieskite mikrofoną ir kalbėkite. Jūsų kalba atpažįstama ir išverčiama per kelias sekundes — rašyti nereikia.",
+      "bullets": [
+        {
+          "title": "Kalbėkite ir gaukite vertimą iškart",
+          "sub": "Vienas palietimas pradeda įrašymą, vertimas pasirodo iš karto po to"
+        },
+        {
+          "title": "Išgirskite vertimą garsiai",
+          "sub": "Palieskite garsiakalbio ikoną, kad vertimas būtų perskaitytas garsiai"
+        },
+        {
+          "title": "Balsas ar tekstas — jūsų pasirinkimas",
+          "sub": "Bet kada perjunkite režimą vienu palietimu"
+        }
+      ]
+    },
+    {
+      "heading": "Ir teksto vertimas",
+      "sub": "Mėgstate rašyti? Persijunkite į klaviatūros režimą ir iškart išverskite žinutę.",
+      "bullets": [
+        {
+          "title": "Sukeiskite originalą ir vertimą vietomis",
+          "sub": "Palieskite arba braukite eilutę, kad matytumėte ją bet kuria kalba"
+        },
+        {
+          "title": "Kopijuokite vienu palietimu",
+          "sub": "Nukopijuokite išverstą tekstą ir įklijuokite bet kur"
+        },
+        {
+          "title": "Bet kada persijunkite į balsą",
+          "sub": "Pradėkite rašyti, o kitą eilutę tiesiog ištarkite"
+        }
+      ]
+    },
+    {
+      "heading": "186 kalbų, sutvarkytos pagal pokalbius",
+      "sub": "Pasirinkite savo kalbą vieną kartą, tada naršykite kitas — kiekviena kalbų pora turi savo išsaugotą giją.",
+      "bullets": [
+        {
+          "title": "Įtraukta 186 kalbų",
+          "sub": "Jokių papildomų atsisiuntimų ar kalbų paketų"
+        },
+        {
+          "title": "Pokalbiai lieka sutvarkyti",
+          "sub": "Kiekviena kalbų pora turi savo išsaugotą istoriją"
+        },
+        {
+          "title": "Išvalykite arba ištrinkite bet kada",
+          "sub": "Ištrinkite gijos istoriją arba pašalinkite ją visiškai iš meniu"
+        }
+      ]
+    },
+    {
+      "heading": "Registruotis pradžioje nereikia",
+      "sub": "Išbandykite tiesiai šiame puslapyje — be paskyros, be slaptažodžio. Prisijunkite su Google tik tada, kai norėsite daugiau kreditų per dieną ir istorijos, sinchronizuotos tarp įrenginių.",
+      "bullets": [
+        {
+          "title": "Neprivalomas prisijungimas vienu palietimu",
+          "sub": "Jokios registracijos formos, jokio slaptažodžio, kurį reikėtų atsiminti"
+        },
+        {
+          "title": "Tik jūsų el. paštas, nieko daugiau",
+          "sub": "Jūsų paskyrą identifikuoja tik Google el. paštas"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Kodėl balsas",
+    "titleAccent": "svarbiausias",
+    "description": "Dauguma vertimo programėlių sustoja ties įvestu tekstu. Žemiau tai, kas iš tikrųjų skiriasi, kai reikia kalbėti, o ne rašyti.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Įprastos programėlės",
+    "rows": [
+      {
+        "title": "Balso vertimas",
+        "us": "Vienas palietimas įrašo, atpažįsta ir išverčia per kelias sekundes.",
+        "them": "Tik tekstas arba reikia surašyti tai, ką išgirdote."
+      },
+      {
+        "title": "Pokalbių istorija",
+        "us": "Kiekviena kalbų pora turi savo išsaugotą giją.",
+        "them": "Istorija dingsta uždarius skirtuką."
+      },
+      {
+        "title": "Pradžia",
+        "us": "Išbandykite iš karto, tiesiai šiame puslapyje — paskyra nereikalinga.",
+        "them": "Prieš išbandant reikia susikurti paskyrą su el. paštu ir slaptažodžiu."
+      },
+      {
+        "title": "Balso atkūrimas",
+        "us": "Palieskite, kad išgirstumėte vertimą, perskaitytą garsiai.",
+        "them": "Jokio balso išvedimo."
+      },
+      {
+        "title": "Kalbos",
+        "us": "Prieinamos 186 kalbos, be papildomo atsisiuntimo.",
+        "them": "Ribotas neprisijungus veikiančių kalbų paketų pasirinkimas."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Dažniausiai užduodami",
+    "headingAccent": "klausimai",
+    "sub": "Ką žmonės klausia prieš išbandydami. Registruotis nereikia — slinkite aukštyn ir išbandykite patys.",
+    "items": [
+      {
+        "q": "Kaip veikia balso vertimas?",
+        "a": "Palieskite mikrofoną ir kalbėkite — jūsų balsas atpažįstamas ir išverčiamas per kelias sekundes, parodomas kaip tekstas ir gali būti perskaitytas garsiai. Rašyti nereikia."
+      },
+      {
+        "q": "Kiek kalbų palaikoma?",
+        "a": "186 kalbos. Pasirinkite savo kalbą vieną kartą, tada pradėkite pokalbio giją su bet kuria kita kalba."
+      },
+      {
+        "q": "Ar reikia susikurti paskyrą?",
+        "a": "Ne. Išbandykite tiesiai šiame puslapyje be registracijos. Prisijunkite su Google tik jei norite daugiau kreditų per dieną ir istorijos, sinchronizuotos tarp įrenginių."
+      },
+      {
+        "q": "Ar mano vertimų istorija išsaugoma?",
+        "a": "Taip, kiekvienai kalbų porai atskirai, todėl ankstesni pokalbiai lieka sutvarkyti — net neprisijungę, jūsų naršyklė prisimenama. Bet kada išvalykite arba ištrinkite bet kurią giją iš jos meniu."
+      },
+      {
+        "q": "Ar galiu naudoti tekstą vietoj balso?",
+        "a": "Taip. Bet kada persijunkite į klaviatūros režimą ir vietoj kalbėjimo surašykite savo žinutę."
+      },
+      {
+        "q": "Ar tai veikia dvikrypčiam pokalbiui?",
+        "a": "Taip. Palieskite arba braukite išverstą eilutę, kad persijungtumėte tarp originalo ir vertimo — taip abi pusės gali sekti pokalbį viename ekrane."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Akimirksniu balso vertimas,",
+    "headingAccent": "paruoštas per 10 sekundžių.",
+    "sub": "Išbandykite tiesiai šiame puslapyje — be registracijos, be atsisiuntimų, įtraukta 186 kalbų.",
+    "ctaLabel": "Išbandyti dabar"
+  },
+  "footer": {
+    "tagline": "Akimirksniu balso vertimas, 186 kalbų",
+    "brand": "IQ Translate",
+    "featuresHeading": "Vertėjai",
+    "featureLinks": [
+      {
+        "routeKey": "/vertejas-lietuviu-anglu",
+        "label": "Lietuvių–anglų"
+      },
+      {
+        "routeKey": "/vertejas-lietuviu-vokieciu",
+        "label": "Lietuvių–vokiečių"
+      },
+      {
+        "routeKey": "/vertejas-lietuviu-lenku",
+        "label": "Lietuvių–lenkų"
+      }
+    ]
+  },
+  "translator": {
+    "topics": "Temos",
+    "newTopic": "Nauja tema",
+    "noTopicsYet": "Kol kas nėra temų",
+    "deleteTopic": "Ištrinti temą",
+    "deleteTopicConfirm": "Ištrinti šią temą ir visus jos vertimus?",
+    "autoDetect": "Automatinis aptikimas",
+    "chooseLanguage": "Pasirinkite kalbą",
+    "close": "Uždaryti",
+    "searchPlaceholder": "Ieškoti kalbos…",
+    "clearHistory": "Išvalyti istoriją",
+    "clearHistoryConfirm": "Išvalyti visus šios temos vertimus?",
+    "noTranslationsYet": "Šioje temoje kol kas nėra vertimų.",
+    "translating": "Verčiama…",
+    "typePlaceholder": "Rašykite žinutę…",
+    "translateAria": "Versti",
+    "micDeniedError": "Prieiga prie mikrofono uždrausta",
+    "recording": "Įrašoma",
+    "recognizing": "Atpažįstama…",
+    "recordAria": "Įrašyti",
+    "stopAria": "Sustabdyti",
+    "pricingLink": "Kainos",
+    "errors": {
+      "insufficientCredits": "Baigėsi kreditai — atnaujinkite planą",
+      "textTooLong": "Tekstas per ilgas jūsų planui"
+    }
+  },
+  "history": {
+    "emptyState": "Čia dar nieko nėra. Parašykite žinutę arba įrašykite balsą žemiau.",
+    "readAloudAria": "Perskaityti garsiai",
+    "copyAria": "Kopijuoti"
+  }
+}

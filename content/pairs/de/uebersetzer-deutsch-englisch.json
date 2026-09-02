@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Deutsch-Englisch Sprachübersetzer | IQ Translate",
+    "description": "Von Deutsch zu Englisch übersetzen per Sprache oder Text – sofort hörbar oder lesbar. 186 Sprachen, kostenlos testen, keine Anmeldung nötig.",
+    "ogTitle": "Deutsch-Englisch Sprachübersetzer",
+    "ogDescription": "Sprich oder tippe auf Deutsch und erhalte die englische Übersetzung sofort, gesprochen oder geschrieben. Funktioniert in beide Richtungen.",
+    "canonical": "https://translate.iq-factura.com/de/uebersetzer-deutsch-englisch",
+    "ogLocale": "de_DE"
+  },
+  "hero": {
+    "badgeVoice": "Sprache",
+    "badgeText": "Text",
+    "badgeLanguages": "186 Sprachen",
+    "title": "Deutsch-Englisch-Übersetzer",
+    "titleAccent": "der auch antwortet",
+    "description": "Sprich oder tippe auf Deutsch und erhalte die englische Übersetzung in Sekunden – als Text und zum Anhören. Wechsle jederzeit die Richtung: sprich Englisch und hör die deutsche Antwort im selben Gespräch.",
+    "ctaTry": "Jetzt kostenlos testen",
+    "ctaSignIn": "Mit Google anmelden",
+    "mockFromLabel": "🇩🇪 Deutsch",
+    "mockFromPhrase": "Wo ist der nächste Bahnhof?",
+    "mockToLabel": "🇬🇧 Englisch",
+    "mockToPhrase": "Where is the nearest train station?"
+  },
+  "spotlights": [
+    {
+      "heading": "Sprechen statt tippen",
+      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Englisch, und lies oder hör die Übersetzung.",
+      "bullets": [
+        { "title": "Deutsch wird zu Englisch", "sub": "Sprich auf Deutsch – deine Worte werden erkannt, übersetzt und Sekunden später auf Englisch angezeigt" },
+        { "title": "Englisch laut vorlesen lassen", "sub": "Tippe auf das Lautsprecher-Symbol, wenn die Aussprache noch nicht sitzt" }
+      ]
+    },
+    {
+      "heading": "Ein Thema, beide Gesprächsseiten",
+      "sub": "Rede hin und her, ohne von vorn zu beginnen – jeder Austausch bleibt im selben Thema gespeichert.",
+      "bullets": [
+        { "title": "Antwort auf Englisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber kann Englisch sprechen, du siehst und hörst es auf Deutsch" },
+        { "title": "Gespräche als Themen gespeichert", "sub": "Komm später zum selben Englisch-Gespräch zurück, statt den Faden zu verlieren" }
+      ]
+    },
+    {
+      "heading": "Deutsch-Englisch, plus 185 weitere Sprachen",
+      "sub": "Englisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "bullets": [
+        { "title": "Präzise bei Redewendungen", "sub": "Erkennt gängige englische Formulierungen statt Wort für Wort zu übersetzen" },
+        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert heute für Englisch und morgen für jede andere Sprache" }
+      ]
+    },
+    {
+      "heading": "Lieber tippen? Geht auch",
+      "sub": "Tippe oder füge englischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu berühren.",
+      "bullets": [
+        { "title": "Text einfügen statt sprechen", "sub": "Praktisch in einem leisen Meeting oder auf einer lauten Straße" },
+        { "title": "Übersetzung kopieren", "sub": "Übernimm den englischen Text direkt in eine E-Mail oder Nachricht" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Warum das besser ist",
+    "titleAccent": "als ein typischer Englisch-Übersetzer",
+    "description": "Die meisten Übersetzer-Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typische Übersetzer-Apps",
+    "rows": [
+      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Englisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
+      { "title": "Gesprächsverlauf", "us": "Jedes Englisch-Gespräch wird als eigenes Thema gespeichert und lässt sich wieder öffnen.", "them": "Jede Übersetzung verschwindet, sobald die App geschlossen wird." },
+      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
+      { "title": "Beide Richtungen", "us": "Deutsch nach Englisch und Englisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
+      { "title": "Zum Anhören", "us": "Tippe, um dir die englische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte",
+    "headingAccent": "Fragen",
+    "sub": "Häufige Fragen zum Übersetzen von Deutsch nach Englisch.",
+    "items": [
+      { "q": "Kann es gesprochenes Deutsch ins Englische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die englische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
+      { "q": "Wie gut funktioniert es bei umgangssprachlichem Englisch?", "a": "Sehr gut – gängige Redewendungen und lockere Formulierungen werden sinngemäß übersetzt, nicht stur Wort für Wort." },
+      { "q": "Kann ich auch von Englisch zurück auf Deutsch übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Englisch und erhalte die deutsche Übersetzung im gleichen Thema." },
+      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden bringt dir mehr tägliches Guthaben und gespeicherten Verlauf." },
+      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
+      { "q": "Kann ich ein laufendes Gespräch führen statt einzelner Übersetzungen?", "a": "Ja, Übersetzungen werden in Themen gruppiert, sodass ein Englisch-Gespräch an einem Ort bleibt, statt sich über einzelne Anfragen zu verstreuen." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starte dein Deutsch-Englisch-",
+    "headingAccent": "Gespräch jetzt.",
+    "sub": "Sprich oder tippe, hör die englische Antwort – kostenlos testen, keine Anmeldung nötig.",
+    "ctaLabel": "Jetzt testen"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Traducător Vocal Online — Gratuit | IQ Translate",
+    "description": "Traducător vocal online gratuit: vorbește natural și primești traducerea instant, rostită sau scrisă, în 186 de limbi. Fără descărcări, fără cont pentru a încerca.",
+    "ogTitle": "Traducător Vocal Online — Gratuit",
+    "ogDescription": "Traducător vocal online gratuit: vorbește și primești traducerea instant, rostită sau scrisă, în 186 de limbi.",
+    "twitterTitle": "Traducător Vocal Online — Gratuit",
+    "twitterDescription": "Traducător vocal gratuit: traducere instantă, rostită sau scrisă, în 186 de limbi."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funcții",
+    "pricing": "Prețuri",
+    "mobileApp": "Aplicație mobilă",
+    "signIn": "Conectare",
+    "logOut": "Deconectare",
+    "tryItNow": "Încearcă acum"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Text",
+    "badgeLanguages": "186 de limbi",
+    "title": "Un traducător vocal",
+    "titleAccent": "pentru orice conversație",
+    "description": "Vorbește natural și primești o traducere instantă, rostită sau scrisă, în 186 de limbi. Nu ai nevoie de cont pentru a încerca.",
+    "ctaTry": "Încearcă acum — gratuit",
+    "ctaSignIn": "Conectează-te cu Google",
+    "mockFromLabel": "🇷🇴 Română",
+    "mockFromPhrase": "Bună, ce mai faci?",
+    "mockToLabel": "🇬🇧 Engleză",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 de limbi",
+      "sub": "Vorbește sau scrie, tradus instant, fără descărcări suplimentare"
+    },
+    {
+      "title": "Fără cont necesar",
+      "sub": "Încearcă chiar pe această pagină — conectează-te doar pentru mai multe credite"
+    },
+    {
+      "title": "Istoric pe fiecare pereche de limbi",
+      "sub": "Fiecare conversație rămâne organizată și ușor de regăsit"
+    },
+    {
+      "title": "Gratuit de la început",
+      "sub": "Derulează mai jos și începe să traduci imediat"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Traducere vocală instantă",
+      "sub": "Apasă pe microfon și vorbește. Vocea ta este transcrisă și tradusă în câteva secunde — fără să tastezi nimic.",
+      "bullets": [
+        {
+          "title": "Vorbește, primești traducerea instant",
+          "sub": "O atingere pornește înregistrarea, traducerea apare imediat după"
+        },
+        {
+          "title": "Ascult-o cu voce tare",
+          "sub": "Atinge iconița difuzorului pentru a asculta traducerea citită cu voce tare"
+        },
+        {
+          "title": "Voce sau text, alegi tu",
+          "sub": "Schimbă modul oricând, cu o singură atingere"
+        }
+      ]
+    },
+    {
+      "heading": "Traducere și pentru text",
+      "sub": "Preferi să scrii? Treci în modul tastatură și traduci un mesaj instant.",
+      "bullets": [
+        {
+          "title": "Inversează originalul și traducerea",
+          "sub": "Atinge sau glisează o linie pentru a o vedea în oricare dintre limbi"
+        },
+        {
+          "title": "Copiază dintr-o atingere",
+          "sub": "Preia textul tradus pentru a-l lipi oriunde"
+        },
+        {
+          "title": "Treci la voce oricând",
+          "sub": "Începe să scrii, apoi dictează următoarea linie"
+        }
+      ]
+    },
+    {
+      "heading": "186 de limbi, organizate pe conversație",
+      "sub": "Alege-ți limba o singură dată, apoi răsfoiește restul — fiecare pereche de limbi își păstrează propriul fir salvat.",
+      "bullets": [
+        {
+          "title": "186 de limbi incluse",
+          "sub": "Fără descărcări suplimentare sau pachete de limbi de instalat"
+        },
+        {
+          "title": "Conversațiile rămân organizate",
+          "sub": "Fiecare pereche de limbi are propriul istoric salvat"
+        },
+        {
+          "title": "Șterge sau elimină oricând",
+          "sub": "Golește istoricul unui subiect sau elimină-l complet din meniu"
+        }
+      ]
+    },
+    {
+      "heading": "Nu ai nevoie de cont pentru a începe",
+      "sub": "Încearcă chiar pe această pagină — fără cont, fără parolă. Conectează-te cu Google doar când vrei mai multe credite zilnice și istoric sincronizat pe toate dispozitivele.",
+      "bullets": [
+        {
+          "title": "Conectare opțională, dintr-o atingere",
+          "sub": "Fără formular de înregistrare, fără parolă de reținut"
+        },
+        {
+          "title": "Doar e-mailul tău, nimic altceva",
+          "sub": "Doar e-mailul tău Google identifică contul"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "De ce vocea",
+    "titleAccent": "vine prima",
+    "description": "Majoritatea aplicațiilor de traducere se opresc la textul scris. Rândurile de mai jos arată ce contează cu adevărat când vrei să vorbești, nu să tastezi.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Aplicații obișnuite",
+    "rows": [
+      {
+        "title": "Traducere vocală",
+        "us": "O singură atingere înregistrează, transcrie și traduce în câteva secunde.",
+        "them": "Doar text, sau trebuie să tastezi ce ai auzit."
+      },
+      {
+        "title": "Istoricul conversațiilor",
+        "us": "Fiecare pereche de limbi își păstrează propriul fir salvat.",
+        "them": "Istoricul dispare când închizi fila."
+      },
+      {
+        "title": "Primii pași",
+        "us": "Încearcă imediat, chiar pe această pagină — fără cont necesar.",
+        "them": "Trebuie să creezi un cont cu e-mail și parolă înainte să încerci."
+      },
+      {
+        "title": "Redare vocală",
+        "us": "Atinge pentru a asculta traducerea citită cu voce tare.",
+        "them": "Fără redare vocală."
+      },
+      {
+        "title": "Limbi",
+        "us": "186 de limbi disponibile, fără descărcări suplimentare.",
+        "them": "Pachete de limbi offline limitate."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Întrebări",
+    "headingAccent": "frecvente",
+    "sub": "Ce întreabă oamenii înainte să încerce. Nu ai nevoie de cont — derulează mai sus și încearcă chiar tu.",
+    "items": [
+      {
+        "q": "Cum funcționează traducerea vocală?",
+        "a": "Apasă pe microfon și vorbește — vocea ta este transcrisă și tradusă în câteva secunde, afișată ca text și disponibilă pentru a fi ascultată cu voce tare. Nu trebuie să tastezi nimic."
+      },
+      {
+        "q": "Câte limbi sunt disponibile?",
+        "a": "186 de limbi. Alege-ți limba o singură dată, apoi începe un fir de conversație cu oricare altă limbă."
+      },
+      {
+        "q": "Trebuie să îmi creez un cont?",
+        "a": "Nu. Încearcă chiar pe această pagină, fără cont. Conectează-te cu Google doar dacă vrei mai multe credite zilnice și istoric sincronizat pe toate dispozitivele."
+      },
+      {
+        "q": "Este salvat istoricul traducerilor?",
+        "a": "Da, pe fiecare pereche de limbi, astfel încât conversațiile anterioare rămân organizate — chiar și fără conectare, browserul tău este reținut. Șterge sau elimină orice subiect oricând, din meniul lui."
+      },
+      {
+        "q": "Pot folosi text în loc de voce?",
+        "a": "Da. Treci în modul tastatură oricând și scrie mesajul în loc să-l rostești."
+      },
+      {
+        "q": "Funcționează pentru o conversație în ambele sensuri?",
+        "a": "Da. Atinge sau glisează o linie tradusă pentru a comuta între original și traducere, astfel încât ambele persoane pot urmări pe un singur ecran."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Traducere vocală instantă,",
+    "headingAccent": "gata în 10 secunde.",
+    "sub": "Încearcă chiar pe această pagină — fără cont, fără descărcări, 186 de limbi incluse.",
+    "ctaLabel": "Încearcă acum"
+  },
+  "footer": {
+    "tagline": "Traducere vocală instantă, 186 de limbi",
+    "brand": "IQ Translate",
+    "featuresHeading": "Traducătoare",
+    "featureLinks": [
+      { "routeKey": "/traducere-romana-engleza", "label": "Română–Engleză" },
+      { "routeKey": "/traducere-romana-germana", "label": "Română–Germană" },
+      { "routeKey": "/traducere-romana-franceza", "label": "Română–Franceză" },
+      { "routeKey": "/traducere-romana-italiana", "label": "Română–Italiană" },
+      { "routeKey": "/traducere-romana-turca", "label": "Română–Turcă" },
+      { "routeKey": "/traducere-romana-spaniola", "label": "Română–Spaniolă" }
+    ]
+  },
+  "translator": {
+    "topics": "Subiecte",
+    "newTopic": "Subiect nou",
+    "noTopicsYet": "Niciun subiect încă",
+    "deleteTopic": "Șterge subiectul",
+    "deleteTopicConfirm": "Ștergi acest subiect și toate traducerile lui?",
+    "autoDetect": "Detectare automată",
+    "chooseLanguage": "Alege o limbă",
+    "close": "Închide",
+    "searchPlaceholder": "Caută o limbă…",
+    "clearHistory": "Șterge istoricul",
+    "clearHistoryConfirm": "Ștergi toate traducerile din acest subiect?",
+    "noTranslationsYet": "Nicio traducere încă în acest subiect.",
+    "translating": "Se traduce…",
+    "typePlaceholder": "Scrie un mesaj…",
+    "translateAria": "Tradu",
+    "micDeniedError": "Acces la microfon refuzat",
+    "recording": "Se înregistrează",
+    "recognizing": "Se recunoaște…",
+    "recordAria": "Înregistrează",
+    "stopAria": "Oprește",
+    "pricingLink": "Prețuri",
+    "errors": {
+      "insufficientCredits": "Ai rămas fără credite — actualizează planul",
+      "textTooLong": "Text prea lung pentru planul tău"
+    }
+  },
+  "history": {
+    "emptyState": "Nimic aici încă. Scrie un mesaj sau înregistrează-ți vocea mai jos.",
+    "readAloudAria": "Citește cu voce tare",
+    "copyAria": "Copiază"
+  }
+}

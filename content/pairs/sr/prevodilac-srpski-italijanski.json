@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevodilac Srpsko-Italijanski sa Glasom | IQ Translate",
+    "description": "Prevodite sa srpskog na italijanski glasom ili tekstom, čujte prevod naglas i snalazite se na putovanju ili poslu. 186 jezika, besplatno bez registracije.",
+    "ogTitle": "Prevodilac Srpsko-Italijanski sa Glasom",
+    "ogDescription": "Govorite ili kucajte na srpskom, dobijte italijanski prevod za par sekundi i čujte ga izgovorenog naglas.",
+    "canonical": "https://translate.iq-factura.com/sr/prevodilac-srpski-italijanski",
+    "ogLocale": "sr_RS"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Srpsko-italijanski prevodilac",
+    "titleAccent": "koji vam odgovara glasom",
+    "description": "Govorite ili kucajte na srpskom i dobijte italijanski prevod za par sekundi, prikazan na ekranu i spreman da se pročita naglas. Promenite smer kad god želite i čujte odgovor na srpskom, sve u istom razgovoru.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Gde je stanica za voz?",
+    "mockToLabel": "🇮🇹 Italijanski",
+    "mockToPhrase": "Dov'è la stazione ferroviaria?"
+  },
+  "spotlights": [
+    {
+      "heading": "Pričajte, ne kucajte",
+      "sub": "Dodirnite mikrofon i izgovorite rečenicu na srpskom ili italijanskom – prevod stiže za par sekundi.",
+      "bullets": [
+        { "title": "Govor pretvoren u italijanski", "sub": "Recite rečenicu na srpskom – prepoznaje se, prevodi i prikazuje na italijanskom za par sekundi" },
+        { "title": "Čujte italijanski izgovor naglas", "sub": "Dodirnite zvučnik kad niste sigurni kako nešto zvuči na italijanskom" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, ceo razgovor na putovanju ili poslu",
+      "sub": "Razgovor sa hotelskim osobljem, dobavljačem ili prijateljem ostaje sačuvan u istoj temi.",
+      "bullets": [
+        { "title": "Odgovor na italijanskom, preveden na srpski", "sub": "Sagovornik govori italijanski, a vi vidite i čujete prevod na srpskom" },
+        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se na isti razgovor kasnije umesto da ponovo tražite prepisku" }
+      ]
+    },
+    {
+      "heading": "Srpsko-italijanski, plus još 185 jezika",
+      "sub": "Italijanski je samo jedan od 186 dostupnih jezika, u oba smera.",
+      "bullets": [
+        { "title": "Tačno prepoznaje izgovor i dijalekatske razlike", "sub": "Radi pouzdano bez obzira na region ili brzinu govora" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za italijanski danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Više volite da kucate? I to radi",
+      "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte italijanski prevod bez dodirivanja mikrofona.",
+      "bullets": [
+        { "title": "Kucajte umesto da govorite", "sub": "Korisno za poruke na WhatsApp-u, mejlove ili porudžbine" },
+        { "title": "Kopirajte prevod", "sub": "Prekopirajte italijanski tekst pravo u poruku ili dokument" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto ovo pobeđuje",
+    "titleAccent": "uobičajeni srpsko-italijanski prevodilac",
+    "description": "Većina aplikacija za prevođenje traži da prvo otkucate tekst, a onda zaboravi ceo razgovor. Evo šta je drugačije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na srpskom ili italijanskom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
+      { "title": "Istorija razgovora", "us": "Svaki srpsko-italijanski razgovor se čuva kao posebna tema.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dozvole pre prve upotrebe." },
+      { "title": "Oba smera", "us": "Srpsko-italijanski i italijansko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
+      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete italijanski prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate sami da pogađate." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju sa srpskog na italijanski.",
+    "items": [
+      { "q": "Da li prevodi govor sa srpskog na italijanski?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate italijanski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
+      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda." },
+      { "q": "Da li je koristan za putovanje u Italiju?", "a": "Da, pokriva svakodnevne fraze za restoran, hotel i kupovinu, kao i formalniji jezik za poslovne razgovore." },
+      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
+      { "q": "Mogu li da prevedem sa italijanskog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na italijanskom i dobijate prevod na srpskom u istoj temi." },
+      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj srpsko-italijanski",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili kucajte, čujte odgovor na italijanskom – besplatno za probu, bez registracije.",
+    "ctaLabel": "Isprobaj odmah"
+  }
+}

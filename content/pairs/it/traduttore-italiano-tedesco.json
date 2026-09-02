@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traduttore Vocale Italiano-Tedesco | IQ Translate",
+    "description": "Parla o scrivi in italiano, traduci in tedesco all'istante e ascolta la risposta ad alta voce, nella stessa conversazione. Gratis, senza registrazione.",
+    "ogTitle": "Traduttore Vocale Italiano-Tedesco",
+    "ogDescription": "Parla o scrivi in italiano e ottieni la traduzione in tedesco all'istante, pronta anche da ascoltare. Funziona in entrambe le direzioni, gratis da provare.",
+    "canonical": "https://translate.iq-factura.com/it/traduttore-italiano-tedesco",
+    "ogLocale": "it_IT"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Testo",
+    "badgeLanguages": "186 lingue",
+    "title": "Traduttore italiano-tedesco",
+    "titleAccent": "per lavoro e viaggi",
+    "description": "Parla o scrivi in italiano e ricevi la traduzione in tedesco in pochi secondi, pronta da leggere o ascoltare. Cambia direzione quando vuoi: parla in tedesco e ascolta la risposta in italiano, nella stessa conversazione.",
+    "ctaTry": "Provalo gratis",
+    "ctaSignIn": "Accedi con Google",
+    "mockFromLabel": "🇮🇹 Italiano",
+    "mockFromPhrase": "Possiamo fissare una riunione per domani?",
+    "mockToLabel": "🇩🇪 Tedesco",
+    "mockToPhrase": "Können wir morgen ein Meeting vereinbaren?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla, capisci subito",
+      "sub": "Tocca il microfono, di' la frase in italiano o in tedesco, e ricevi una traduzione da leggere o da ascoltare.",
+      "bullets": [
+        { "title": "Il parlato diventa tedesco", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in tedesco in pochi secondi" },
+        { "title": "Ascolta il tedesco ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta" }
+      ]
+    },
+    {
+      "heading": "Una conversazione, due lingue",
+      "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
+      "bullets": [
+        { "title": "Risponde in tedesco, tradotto in italiano", "sub": "Un collega o cliente può scrivere in tedesco e tu lo vedrai e ascolterai in italiano" },
+        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in tedesco più tardi invece di perdere il filo" }
+      ]
+    },
+    {
+      "heading": "Italiano-tedesco, più altre 185 lingue",
+      "sub": "Il tedesco è una delle 186 lingue disponibili, in qualsiasi direzione.",
+      "bullets": [
+        { "title": "Utile per lavoro e affari", "sub": "Email, riunioni e trattative con partner o clienti di lingua tedesca" },
+        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per il tedesco oggi e per qualsiasi altra lingua domani" }
+      ]
+    },
+    {
+      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in tedesco senza toccare il microfono.",
+      "bullets": [
+        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo per un'email di lavoro o un messaggio" },
+        { "title": "Copia la traduzione", "sub": "Copia il testo in tedesco e incollalo direttamente in un documento o un messaggio" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Perché batte",
+    "titleAccent": "un traduttore italiano-tedesco qualsiasi",
+    "description": "La maggior parte delle app di traduzione ti fa scrivere per prima cosa e dimentica la conversazione subito dopo. Ecco cosa cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "App di traduzione tradizionali",
+    "rows": [
+      { "title": "Come inizi", "us": "Parla in italiano o in tedesco e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire." },
+      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in tedesco si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
+      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
+      { "title": "Entrambe le direzioni", "us": "Italiano-tedesco e tedesco-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
+      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in tedesco letta ad alta voce.", "them": "Solo testo, la pronuncia te la devi immaginare." }
+    ]
+  },
+  "faq": {
+    "heading": "Domande",
+    "headingAccent": "frequenti",
+    "sub": "Domande comuni sulla traduzione dall'italiano al tedesco.",
+    "items": [
+      { "q": "Traduce anche il tedesco parlato?", "a": "Sì — tocca il microfono, parla in tedesco, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
+      { "q": "Gestisce parole composte e caratteri come ä, ö, ü ed ß?", "a": "Sì, i caratteri speciali del tedesco e le parole composte lunghe vengono riconosciuti e tradotti correttamente." },
+      { "q": "Posso usarlo per email di lavoro in tedesco?", "a": "Sì, scrivi o incolla il testo in italiano e ottieni una traduzione in tedesco pronta da copiare in un'email o un documento." },
+      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
+      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
+      { "q": "Posso tradurre anche dal tedesco all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in tedesco e ricevi la traduzione in italiano nello stesso argomento." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Inizia la tua conversazione",
+    "headingAccent": "italiano-tedesco ora.",
+    "sub": "Parla o scrivi, ascolta la risposta in tedesco — gratis da provare, senza registrazione.",
+    "ctaLabel": "Provalo gratis"
+  }
+}

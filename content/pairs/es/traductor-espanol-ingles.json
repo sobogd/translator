@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traductor de Español a Inglés con Voz | IQ Translate",
+    "description": "Traduce del español al inglés por voz o texto, escúchalo en voz alta y responde en inglés en el mismo hilo. 186 idiomas, gratis para probar, sin registro.",
+    "ogTitle": "Traductor de Español a Inglés con Voz",
+    "ogDescription": "Habla o escribe en español y recibe la traducción en inglés al instante, hablada o escrita. Funciona también al revés, en el mismo hilo.",
+    "canonical": "https://translate.iq-factura.com/es/traductor-espanol-ingles",
+    "ogLocale": "es_ES"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Traductor de español a inglés",
+    "titleAccent": "que te responde en voz",
+    "description": "Habla o escribe en español y recibe la traducción en inglés en segundos, lista para leer o escuchar. Cambia de sentido cuando quieras: habla en inglés y lo oyes en español, en la misma conversación.",
+    "ctaTry": "Pruébalo gratis",
+    "ctaSignIn": "Iniciar sesión con Google",
+    "mockFromLabel": "🇪🇸 Español",
+    "mockFromPhrase": "¿Dónde está la estación de tren?",
+    "mockToLabel": "🇬🇧 Inglés",
+    "mockToPhrase": "Where is the train station?"
+  },
+  "spotlights": [
+    {
+      "heading": "Habla y escúchalo en inglés",
+      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en inglés, lista para leer o escuchar.",
+      "bullets": [
+        { "title": "Tu voz en inglés al instante", "sub": "Habla en español y en segundos tienes la traducción en inglés, lista para leer o escuchar" },
+        { "title": "Pronunciación resuelta", "sub": "Toca el altavoz y escucha cómo suena en inglés, útil si el acento te frena" }
+      ]
+    },
+    {
+      "heading": "Conversación en dos sentidos, guardada",
+      "sub": "Sigue la charla en inglés y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "bullets": [
+        { "title": "Responde en inglés, tú lo oyes en español", "sub": "La otra persona habla en inglés y ves y escuchas la traducción en español, en el mismo hilo" },
+        { "title": "Cada conversación queda guardada como un tema", "sub": "Vuelve a esa charla en inglés cuando quieras, sin perder el hilo" }
+      ]
+    },
+    {
+      "heading": "Español-inglés, y 185 idiomas más",
+      "sub": "El inglés es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "bullets": [
+        { "title": "El inglés que necesitas para viajar o trabajar", "sub": "Sirve igual para una reunión, un email o pedir algo en un aeropuerto" },
+        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para inglés hoy y cualquier otro idioma mañana" }
+      ]
+    },
+    {
+      "heading": "Escribe o pega el texto",
+      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o inglés.",
+      "bullets": [
+        { "title": "Sin usar el micrófono", "sub": "Escribe o pega un texto en español y recibe la traducción en inglés al instante" },
+        { "title": "Copia el resultado con un toque", "sub": "Pega la traducción en un correo, un WhatsApp o un documento" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por qué esto supera",
+    "titleAccent": "a un traductor de inglés típico",
+    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps de traducción típicas",
+    "rows": [
+      { "title": "Cómo empiezas", "us": "Hablas en español o inglés y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
+      { "title": "Historial de conversación", "us": "Cada conversación en inglés queda guardada como un tema al que puedes volver.", "them": "La traducción desaparece en cuanto cierras la app." },
+      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos antes de usarla." },
+      { "title": "Ambos sentidos", "us": "Español a inglés e inglés a español conviven en el mismo hilo.", "them": "Cambiar de sentido casi siempre implica empezar de cero." },
+      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en inglés en voz alta.", "them": "Solo texto — la pronunciación corre de tu cuenta." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas",
+    "headingAccent": "frecuentes",
+    "sub": "Dudas habituales sobre traducir del español al inglés.",
+    "items": [
+      { "q": "¿Traduce del español al inglés hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en inglés como texto, con opción de escucharla en voz alta." },
+      { "q": "¿Sirve también al revés, de inglés a español?", "a": "Sí, la misma conversación funciona en ambos sentidos: habla o escribe en inglés y recibe la traducción en español en el mismo hilo." },
+      { "q": "¿Es útil para viajar?", "a": "Sí, funciona para pedir indicaciones, hacer una reserva o entenderte en un aeropuerto sin cambiar de app." },
+      { "q": "¿Puedo usarlo para el trabajo o correos en inglés?", "a": "Sí, escribe o pega un texto y copia la traducción para pegarla en un email, un documento o un mensaje." },
+      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para tener más créditos diarios e historial guardado." },
+      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador del móvil o del ordenador." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Empieza tu conversación",
+    "headingAccent": "de español a inglés ahora.",
+    "sub": "Habla o escribe, escúchalo en inglés — gratis para probar, sin registro.",
+    "ctaLabel": "Pruébalo ahora"
+  }
+}

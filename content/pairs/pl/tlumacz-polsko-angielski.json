@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tłumacz Polsko-Angielski Głosowy | IQ Translate",
+    "description": "Tłumacz polsko-angielski online: mów lub pisz po polsku, usłysz tłumaczenie na angielski od razu. Rozmowa w obie strony, 186 języków, za darmo bez rejestracji.",
+    "ogTitle": "Tłumacz Polsko-Angielski Głosowy",
+    "ogDescription": "Mów lub pisz po polsku, otrzymaj tłumaczenie na angielski od razu, mówione lub pisane. Działa w obie strony, za darmo do wypróbowania.",
+    "canonical": "https://translate.iq-factura.com/pl/tlumacz-polsko-angielski",
+    "ogLocale": "pl_PL"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz polsko-angielski",
+    "titleAccent": "który odpowiada głosem",
+    "description": "Mów lub pisz po polsku i w kilka sekund otrzymaj tłumaczenie na angielski, pokazane na ekranie i gotowe do odczytania na głos. W dowolnej chwili zmień kierunek: mów po angielsku i usłysz odpowiedź po polsku, w tej samej rozmowie.",
+    "ctaTry": "Wypróbuj za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Przepraszam, czy mówi pan po angielsku?",
+    "mockToLabel": "🇬🇧 Angielski",
+    "mockToPhrase": "Excuse me, do you speak English?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mów, nie pisz",
+      "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub angielsku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
+      "bullets": [
+        { "title": "Mowa zamieniona na angielski", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po angielsku w kilka sekund" },
+        { "title": "Usłysz angielski na głos", "sub": "Dotknij ikony głośnika, gdy wymowa jeszcze sprawia trudność" }
+      ]
+    },
+    {
+      "heading": "Jeden wątek, obie strony rozmowy",
+      "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
+      "bullets": [
+        { "title": "Odpowiedź po angielsku, przetłumaczona na polski", "sub": "Twój rozmówca może mówić po angielsku, a Ty zobaczysz i usłyszysz to po polsku" },
+        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy po angielsku później, zamiast szukać jej od nowa" }
+      ]
+    },
+    {
+      "heading": "Polsko-angielski i 185 kolejnych języków",
+      "sub": "Angielski to jeden z 186 dostępnych języków, w dowolnym kierunku.",
+      "bullets": [
+        { "title": "Naturalny, potoczny angielski", "sub": "Tłumaczy sensownie, nie dosłownie słowo w słowo" },
+        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do angielskiego, a jutro do dowolnego innego języka" }
+      ]
+    },
+    {
+      "heading": "Wolisz pisać? To też działa",
+      "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na angielski bez dotykania mikrofonu.",
+      "bullets": [
+        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę w cichym biurze albo hałaśliwej ulicy" },
+        { "title": "Skopiuj tłumaczenie", "sub": "Wklej angielski tekst prosto do e-maila albo wiadomości" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego to lepszy",
+    "titleAccent": "tłumacz polsko-angielski",
+    "description": "Typowe aplikacje każą najpierw pisać, a potem zapominają rozmowę. Oto co jest inne.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje do tłumaczenia",
+    "rows": [
+      { "title": "Jak zaczynasz", "us": "Mów po polsku lub angielsku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
+      { "title": "Historia rozmów", "us": "Każda rozmowa po angielsku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
+      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
+      { "title": "Obie strony rozmowy", "us": "Polsko-angielski i angielsko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
+      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć angielskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "Częste pytania o tłumaczenie polsko-angielskie.",
+    "items": [
+      { "q": "Czy tłumaczy mowę z polskiego na angielski?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na angielski jako tekst, z opcją odsłuchania go na głos." },
+      { "q": "Czy tłumaczenie brzmi naturalnie, a nie dosłownie?", "a": "Tak, tłumaczenie oddaje sens zdania po angielsku, a nie tłumaczy słowo po słowie." },
+      { "q": "Czy mogę tłumaczyć z powrotem z angielskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po angielsku i odbierz tłumaczenie na polski w tym samym wątku." },
+      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
+      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." },
+      { "q": "Czy mogę prowadzić dłuższą rozmowę, a nie pojedyncze tłumaczenia?", "a": "Tak, tłumaczenia grupują się w wątki, więc rozmowa po angielsku zostaje w jednym miejscu zamiast rozpraszać się po osobnych wyszukiwaniach." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Zacznij swoją rozmowę",
+    "headingAccent": "polsko-angielską już teraz.",
+    "sub": "Mów lub pisz, usłysz odpowiedź po angielsku — za darmo do wypróbowania, bez rejestracji.",
+    "ctaLabel": "Wypróbuj teraz"
+  }
+}

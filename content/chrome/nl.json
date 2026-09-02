@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Spraakvertaler Online — Gratis Vertalen | IQ Translate",
+    "description": "Gratis online spraakvertaler: spreek gewoon en krijg direct een vertaling, gesproken of geschreven, in 186 talen. Geen downloads, geen registratie om te proberen.",
+    "ogTitle": "Spraakvertaler Online — Gratis Vertalen",
+    "ogDescription": "Gratis online spraakvertaler: spreek en krijg direct een vertaling, gesproken of geschreven, in 186 talen.",
+    "twitterTitle": "Spraakvertaler Online — Gratis Vertalen",
+    "twitterDescription": "Gratis online spraakvertaler: directe gesproken of geschreven vertaling in 186 talen."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "mobileApp": "Mobiele app",
+    "signIn": "Inloggen",
+    "logOut": "Uitloggen",
+    "tryItNow": "Nu proberen"
+  },
+  "hero": {
+    "badgeVoice": "Spraak",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 talen",
+    "title": "Een spraakvertaler",
+    "titleAccent": "voor elk gesprek",
+    "description": "Spreek gewoon zoals je praat en krijg direct een vertaling, gesproken of geschreven, in 186 talen. Geen registratie nodig om het te proberen.",
+    "ctaTry": "Nu proberen — gratis",
+    "ctaSignIn": "Inloggen met Google",
+    "mockFromLabel": "🇳🇱 Nederlands",
+    "mockFromPhrase": "Hallo, hoe gaat het met je?",
+    "mockToLabel": "🇬🇧 Engels",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 talen",
+      "sub": "Spreek of typ, direct vertaald, geen extra downloads"
+    },
+    {
+      "title": "Geen registratie nodig",
+      "sub": "Probeer het direct op deze pagina — log alleen in voor meer credits"
+    },
+    {
+      "title": "Geschiedenis per taalpaar",
+      "sub": "Elk gesprek blijft overzichtelijk en makkelijk terug te vinden"
+    },
+    {
+      "title": "Gratis om te beginnen",
+      "sub": "Scroll naar beneden en begin meteen met vertalen"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Directe spraakvertaling",
+      "sub": "Tik op de microfoon en spreek. Je spraak wordt in enkele seconden getranscribeerd en vertaald — zonder typen.",
+      "bullets": [
+        {
+          "title": "Spreek, krijg direct een vertaling",
+          "sub": "Eén tik start de opname, de vertaling verschijnt meteen daarna"
+        },
+        {
+          "title": "Beluister het hardop",
+          "sub": "Tik op het luidsprekerpictogram om de vertaling hardop te laten voorlezen"
+        },
+        {
+          "title": "Spraak of tekst, jouw keuze",
+          "sub": "Wissel op elk moment met één tik van modus"
+        }
+      ]
+    },
+    {
+      "heading": "Ook tekst vertalen",
+      "sub": "Liever typen? Schakel over naar toetsenbordmodus en vertaal een bericht direct.",
+      "bullets": [
+        {
+          "title": "Wissel origineel en vertaling om",
+          "sub": "Tik of swipe op een regel om deze in beide talen te zien"
+        },
+        {
+          "title": "Kopieer met één tik",
+          "sub": "Kopieer de vertaalde tekst om overal te plakken"
+        },
+        {
+          "title": "Schakel op elk moment naar spraak",
+          "sub": "Begin met typen en dicteer daarna de volgende regel"
+        }
+      ]
+    },
+    {
+      "heading": "186 talen, geordend per gesprek",
+      "sub": "Kies eenmaal je eigen taal en blader daarna door alle andere — elk taalpaar houdt zijn eigen opgeslagen gespreksdraad.",
+      "bullets": [
+        {
+          "title": "186 talen inbegrepen",
+          "sub": "Geen extra downloads of taalpakketten nodig"
+        },
+        {
+          "title": "Gesprekken blijven overzichtelijk",
+          "sub": "Elk taalpaar heeft zijn eigen opgeslagen geschiedenis"
+        },
+        {
+          "title": "Wis of verwijder op elk moment",
+          "sub": "Wis de geschiedenis van een gesprek of verwijder het helemaal via het menu"
+        }
+      ]
+    },
+    {
+      "heading": "Geen registratie nodig om te starten",
+      "sub": "Probeer het direct op deze pagina — geen account, geen wachtwoord. Log alleen in met Google voor meer dagelijkse credits en geschiedenis die wordt gesynchroniseerd tussen apparaten.",
+      "bullets": [
+        {
+          "title": "Optioneel inloggen met één tik",
+          "sub": "Geen registratieformulier, geen wachtwoord om te onthouden"
+        },
+        {
+          "title": "Alleen je e-mailadres, verder niets",
+          "sub": "Alleen je Google-e-mailadres identificeert je account"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Waarom spraak",
+    "titleAccent": "op de eerste plaats komt",
+    "description": "De meeste vertaalapps stoppen bij getypte tekst. Hieronder zie je wat er echt verschilt als je wilt praten in plaats van typen.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Gewone apps",
+    "rows": [
+      {
+        "title": "Spraakvertaling",
+        "us": "Eén tik neemt op, transcribeert en vertaalt in enkele seconden.",
+        "them": "Alleen tekst, of je moet zelf typen wat je hoorde."
+      },
+      {
+        "title": "Gespreksgeschiedenis",
+        "us": "Elk taalpaar houdt zijn eigen opgeslagen gespreksdraad.",
+        "them": "Geschiedenis verdwijnt zodra je het tabblad sluit."
+      },
+      {
+        "title": "Aan de slag",
+        "us": "Probeer het meteen, gewoon op deze pagina — geen account nodig.",
+        "them": "Eerst een account aanmaken met e-mail en wachtwoord voor je iets kunt proberen."
+      },
+      {
+        "title": "Spraakweergave",
+        "us": "Tik om de vertaling hardop te laten voorlezen.",
+        "them": "Geen spraakweergave."
+      },
+      {
+        "title": "Talen",
+        "us": "186 talen beschikbaar, geen extra download nodig.",
+        "them": "Beperkte offline taalpakketten."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Veelgestelde",
+    "headingAccent": "vragen",
+    "sub": "Wat mensen vragen voordat ze het proberen. Geen registratie nodig — scroll naar boven en probeer het zelf.",
+    "items": [
+      {
+        "q": "Hoe werkt spraakvertaling?",
+        "a": "Tik op de microfoon en spreek — je stem wordt binnen enkele seconden getranscribeerd en vertaald, getoond als tekst en beschikbaar om hardop te beluisteren. Typen is niet nodig."
+      },
+      {
+        "q": "Hoeveel talen worden ondersteund?",
+        "a": "186 talen. Kies eenmaal je eigen taal en start daarna een gespreksdraad met wie dan ook."
+      },
+      {
+        "q": "Moet ik een account aanmaken?",
+        "a": "Nee. Probeer het direct op deze pagina zonder registratie. Log alleen in met Google als je meer dagelijkse credits wilt en geschiedenis gesynchroniseerd over apparaten."
+      },
+      {
+        "q": "Wordt mijn vertaalgeschiedenis opgeslagen?",
+        "a": "Ja, per taalpaar, zodat eerdere gesprekken overzichtelijk blijven — zelfs zonder in te loggen wordt je browser onthouden. Wis of verwijder elke gespreksdraad op elk moment via het menu."
+      },
+      {
+        "q": "Kan ik tekst gebruiken in plaats van spraak?",
+        "a": "Ja. Schakel op elk moment over naar toetsenbordmodus en typ je bericht in plaats van te spreken."
+      },
+      {
+        "q": "Werkt het voor een tweerichtingsgesprek?",
+        "a": "Ja. Tik of swipe op een vertaalde regel om te wisselen tussen origineel en vertaling, zodat beide kanten het gesprek op één scherm kunnen volgen."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Directe spraakvertaling,",
+    "headingAccent": "klaar in 10 seconden.",
+    "sub": "Probeer het direct op deze pagina — geen registratie, geen downloads, 186 talen inbegrepen.",
+    "ctaLabel": "Nu proberen"
+  },
+  "footer": {
+    "tagline": "Directe spraakvertaling, 186 talen",
+    "brand": "IQ Translate",
+    "featuresHeading": "Vertalers",
+    "featureLinks": [
+      { "routeKey": "/vertaler-nederlands-engels", "label": "Nederlands–Engels" },
+      { "routeKey": "/vertaler-nederlands-frans", "label": "Nederlands–Frans" },
+      { "routeKey": "/vertaler-nederlands-duits", "label": "Nederlands–Duits" },
+      { "routeKey": "/vertaler-nederlands-spaans", "label": "Nederlands–Spaans" },
+      { "routeKey": "/vertaler-nederlands-italiaans", "label": "Nederlands–Italiaans" },
+      { "routeKey": "/vertaler-nederlands-turks", "label": "Nederlands–Turks" }
+    ]
+  },
+  "translator": {
+    "topics": "Onderwerpen",
+    "newTopic": "Nieuw onderwerp",
+    "noTopicsYet": "Nog geen onderwerpen",
+    "deleteTopic": "Onderwerp verwijderen",
+    "deleteTopicConfirm": "Dit onderwerp en alle vertalingen verwijderen?",
+    "autoDetect": "Automatisch detecteren",
+    "chooseLanguage": "Kies een taal",
+    "close": "Sluiten",
+    "searchPlaceholder": "Zoek een taal…",
+    "clearHistory": "Geschiedenis wissen",
+    "clearHistoryConfirm": "Alle vertalingen in dit onderwerp wissen?",
+    "noTranslationsYet": "Nog geen vertalingen in dit onderwerp.",
+    "translating": "Bezig met vertalen…",
+    "typePlaceholder": "Typ een bericht…",
+    "translateAria": "Vertalen",
+    "micDeniedError": "Toegang tot microfoon geweigerd",
+    "recording": "Opname",
+    "recognizing": "Herkennen…",
+    "recordAria": "Opnemen",
+    "stopAria": "Stoppen",
+    "pricingLink": "Prijzen",
+    "errors": {
+      "insufficientCredits": "Geen credits meer — upgrade je abonnement",
+      "textTooLong": "Tekst te lang voor je abonnement"
+    }
+  },
+  "history": {
+    "emptyState": "Hier staat nog niets. Typ een bericht of neem hieronder je stem op.",
+    "readAloudAria": "Hardop voorlezen",
+    "copyAria": "Kopiëren"
+  }
+}

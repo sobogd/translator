@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traduttore Vocale Italiano-Francese | IQ Translate",
+    "description": "Parla o scrivi in italiano, traduci in francese all'istante e ascolta la risposta ad alta voce, nella stessa conversazione. Gratis, senza registrazione.",
+    "ogTitle": "Traduttore Vocale Italiano-Francese",
+    "ogDescription": "Parla o scrivi in italiano e ottieni la traduzione in francese all'istante, pronta anche da ascoltare. Funziona in entrambe le direzioni, gratis da provare.",
+    "canonical": "https://translate.iq-factura.com/it/traduttore-italiano-francese",
+    "ogLocale": "it_IT"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Testo",
+    "badgeLanguages": "186 lingue",
+    "title": "Traduttore italiano-francese",
+    "titleAccent": "per ogni viaggio in Francia",
+    "description": "Parla o scrivi in italiano e ricevi la traduzione in francese in pochi secondi, pronta da leggere o ascoltare. Cambia direzione quando vuoi: parla in francese e ascolta la risposta in italiano, nella stessa conversazione.",
+    "ctaTry": "Provalo gratis",
+    "ctaSignIn": "Accedi con Google",
+    "mockFromLabel": "🇮🇹 Italiano",
+    "mockFromPhrase": "Quanto costa questo biglietto?",
+    "mockToLabel": "🇫🇷 Francese",
+    "mockToPhrase": "Combien coûte ce billet ?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla in viaggio, capisci subito",
+      "sub": "Tocca il microfono, di' la frase in italiano o in francese, e ricevi una traduzione da leggere o da ascoltare.",
+      "bullets": [
+        { "title": "Il parlato diventa francese", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in francese in pochi secondi" },
+        { "title": "Ascolta il francese ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta, anche con gli accenti" }
+      ]
+    },
+    {
+      "heading": "Una conversazione, due lingue",
+      "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
+      "bullets": [
+        { "title": "Risponde in francese, tradotto in italiano", "sub": "Chi ti parla può usare il francese e tu lo vedrai e ascolterai in italiano" },
+        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in francese più tardi, utile per un intero viaggio" }
+      ]
+    },
+    {
+      "heading": "Italiano-francese, più altre 185 lingue",
+      "sub": "Il francese è una delle 186 lingue disponibili, in qualsiasi direzione.",
+      "bullets": [
+        { "title": "Pensato per turismo e vita quotidiana", "sub": "Ristoranti, hotel, negozi e indicazioni stradali durante un soggiorno in Francia" },
+        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per il francese oggi e per qualsiasi altra lingua domani" }
+      ]
+    },
+    {
+      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in francese senza toccare il microfono.",
+      "bullets": [
+        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo per un messaggio su WhatsApp o un'email" },
+        { "title": "Copia la traduzione", "sub": "Copia il testo in francese e incollalo direttamente dove ti serve" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Perché batte",
+    "titleAccent": "un traduttore italiano-francese qualsiasi",
+    "description": "La maggior parte delle app di traduzione ti fa scrivere per prima cosa e dimentica la conversazione subito dopo. Ecco cosa cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "App di traduzione tradizionali",
+    "rows": [
+      { "title": "Come inizi", "us": "Parla in italiano o in francese e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire." },
+      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in francese si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
+      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
+      { "title": "Entrambe le direzioni", "us": "Italiano-francese e francese-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
+      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in francese letta ad alta voce.", "them": "Solo testo, la pronuncia te la devi immaginare." }
+    ]
+  },
+  "faq": {
+    "heading": "Domande",
+    "headingAccent": "frequenti",
+    "sub": "Domande comuni sulla traduzione dall'italiano al francese.",
+    "items": [
+      { "q": "Traduce anche il francese parlato?", "a": "Sì — tocca il microfono, parla in francese, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
+      { "q": "Gestisce correttamente gli accenti francesi?", "a": "Sì, lettere accentate come é, è, ê, à e ç vengono gestite correttamente sia nel testo che nell'ascolto." },
+      { "q": "Posso tradurre anche dal francese all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in francese e ricevi la traduzione in italiano nello stesso argomento." },
+      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
+      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
+      { "q": "È utile in viaggio, ad esempio in un ristorante?", "a": "Sì, puoi parlare o scrivere sul momento e capire menu, indicazioni o una conversazione al volo." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Inizia la tua conversazione",
+    "headingAccent": "italiano-francese ora.",
+    "sub": "Parla o scrivi, ascolta la risposta in francese — gratis da provare, senza registrazione.",
+    "ctaLabel": "Provalo gratis"
+  }
+}

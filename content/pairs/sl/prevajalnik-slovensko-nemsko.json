@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevajalnik Slovensko-Nemško z Glasom | IQ Translate",
+    "description": "Prevajajte slovensko v nemško z glasom ali besedilom - za delo v Avstriji in Nemčiji ter pogovor z nemškimi gosti. Zgodovina pogovorov shranjena. 186 jezikov, brezplačno.",
+    "ogTitle": "Prevajalnik Slovensko-Nemško z Glasom",
+    "ogDescription": "Prevajajte slovensko v nemško z glasom ali besedilom, poslušajte prevod naglas, s shranjeno zgodovino pogovora.",
+    "canonical": "https://translate.iq-factura.com/sl/prevajalnik-slovensko-nemsko",
+    "ogLocale": "sl_SI"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Besedilo",
+    "badgeLanguages": "186 jezikov",
+    "title": "Prevajalnik slovensko-nemško",
+    "titleAccent": "za delo in pogovor z gosti",
+    "description": "Govorite ali tipkajte v slovenščini in v nekaj sekundah dobite nemški prevod, pripravljen za branje ali poslušanje. Idealno za delo v Avstriji ali Nemčiji in pogovor z nemško govorečimi gosti. Smer kadar koli zamenjajte – vse v isti temi.",
+    "ctaTry": "Preizkusite brezplačno",
+    "ctaSignIn": "Prijava z Googlom",
+    "mockFromLabel": "🇸🇮 Slovenščina",
+    "mockFromPhrase": "Iščem zaposlitev v Avstriji.",
+    "mockToLabel": "🇩🇪 Nemščina",
+    "mockToPhrase": "Ich suche eine Stelle in Österreich."
+  },
+  "spotlights": [
+    {
+      "heading": "Govorite slovensko, slišite nemško takoj",
+      "sub": "Dotaknite se mikrofona in izgovorite stavek v slovenščini ali nemščini – prevod pride v nekaj sekundah, pripravljen za branje ali poslušanje.",
+      "bullets": [
+        { "title": "Govor spremenjen v nemščino", "sub": "Izgovorite stavek v slovenščini – besede se prepišejo, prevedejo in prikažejo v nemščini v nekaj sekundah" },
+        { "title": "Poslušajte nemščino naglas", "sub": "Dotaknite se ikone zvočnika, kadar nemške izgovorjave še niste povsem prepričani" }
+      ]
+    },
+    {
+      "heading": "Ena tema, celoten pogovor",
+      "sub": "Nadaljujte pogovor sem in tja z delodajalcem, sodelavcem ali gostom brez začenjanja znova – vse ostane v isti temi.",
+      "bullets": [
+        { "title": "Odgovor v nemščini, preveden v slovenščino", "sub": "Delodajalec ali gost lahko govori nemško, vi pa to vidite in slišite v slovenščini" },
+        { "title": "Pogovori shranjeni kot teme", "sub": "Kasneje se vrnite k istemu pogovoru o zaposlitvi ali rezervaciji, namesto da izgubite nit" }
+      ]
+    },
+    {
+      "heading": "Slovensko-nemško, plus še 185 jezikov",
+      "sub": "Nemščina je le eden od 186 razpoložljivih jezikov, v katero koli smer.",
+      "bullets": [
+        { "title": "Uporabno za delo v Avstriji in Nemčiji", "sub": "Pogovori z delodajalcem, uradom za delo ali sodelavci prevedeni brez napak" },
+        { "title": "186 jezikov skupaj", "sub": "Isto orodje deluje za nemščino danes in za katerikoli drug jezik jutri" }
+      ]
+    },
+    {
+      "heading": "Raje tipkate? Tudi to je mogoče",
+      "sub": "Vnesite ali prilepite besedilo v slovenščini in dobite nemški prevod brez dotika mikrofona.",
+      "bullets": [
+        { "title": "Tipkajte namesto govora", "sub": "Preklopite na tipkovnico za uradno pogodbo ali e-pošto, ki jo morate prevesti natančno" },
+        { "title": "Kopirajte prevod", "sub": "Nemško besedilo kopirajte neposredno in ga prilepite v e-pošto ali WhatsApp sporočilo" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zakaj je boljši",
+    "titleAccent": "od navadnega nemškega prevajalnika",
+    "description": "Večina prevajalskih aplikacij zahteva, da stavek najprej natipkate, pogovor pa pozabijo takoj, ko jih zaprete. Tukaj je razlika.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Običajne prevajalske aplikacije",
+    "rows": [
+      { "title": "Kako začnete", "us": "Spregovorite v slovenščini ali nemščini in takoj dobite prevod.", "them": "Najprej morate natipkati, kar želite povedati." },
+      { "title": "Zgodovina pogovorov", "us": "Vsak nemški pogovor se shrani kot svoja tema, ki jo lahko znova odprete.", "them": "Prevod izgine takoj, ko zaprete aplikacijo." },
+      { "title": "Namestitev", "us": "Odprite zavihek v brskalniku – nič se ne namešča.", "them": "Prenos aplikacije in dovoljenja, preden jo lahko prvič uporabite." },
+      { "title": "Obe smeri", "us": "Slovensko-nemško in nemško-slovensko sta v isti temi.", "them": "Menjava smeri običajno pomeni nov prevod od začetka." },
+      { "title": "Poslušanje prevoda", "us": "Dotaknite se, da nemški prevod slišite prebranega naglas.", "them": "Samo besedilo, izgovorjava prepuščena vam." }
+    ]
+  },
+  "faq": {
+    "heading": "Pogosta",
+    "headingAccent": "vprašanja",
+    "sub": "Pogosta vprašanja o prevajanju slovenščine v nemščino.",
+    "items": [
+      { "q": "Ali glasovni prevod prevede slovenski govor v nemščino?", "a": "Da – dotaknite se mikrofona, izgovorite stavek v slovenščini in dobili boste nemški prevod kot besedilo, z možnostjo, da ga slišite prebranega naglas." },
+      { "q": "Je uporaben za delo v Avstriji ali Nemčiji?", "a": "Da, odličen je za pogovor z delodajalcem, sodelavci ali uradom za delo – spregovorite slovensko, nemški prevod pa pride v nekaj sekundah." },
+      { "q": "Ali deluje tudi obratno, iz nemščine v slovenščino?", "a": "Da, isti pogovor deluje v obe smeri – nemško govoreči gost ali sodelavec lahko govori nemško, vi pa dobite slovenski prevod v isti temi." },
+      { "q": "Ali je brezplačno?", "a": "Da, lahko ga preizkusite brezplačno brez odpiranja računa. Prijavite se z Googlom za več dnevnega dobroimetja in shranjeno zgodovino." },
+      { "q": "Ali moram kaj namestiti?", "a": "Ne, deluje neposredno v brskalniku na računalniku ali telefonu – nič se ne prenaša." },
+      { "q": "Ali je koristen za nemške turiste v Sloveniji?", "a": "Da, hitro prevede vprašanja nemških gostov o namestitvi, hrani ali poti, odgovor pa dobite v slovenščini v isti temi." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Začnite svoj slovensko-nemški",
+    "headingAccent": "pogovor takoj.",
+    "sub": "Govorite ali tipkajte, odgovor slišite v nemščini – brezplačno za preizkus, brez registracije.",
+    "ctaLabel": "Preizkusite brezplačno"
+  }
+}

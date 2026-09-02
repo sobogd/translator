@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Vertaler Spaans-Nederlands met Spraak | IQ Translate",
+    "description": "Vertaler Spaans-Nederlands via spraak of tekst: spreek of typ en hoor meteen de vertaling terug. Handig op vakantie of emigratie. 186 talen, gratis te proberen.",
+    "ogTitle": "Vertaler Spaans-Nederlands met Spraak",
+    "ogDescription": "Spreek of typ Nederlands en krijg direct een Spaanse vertaling, gesproken of geschreven. Werkt in beide richtingen, gratis te proberen.",
+    "canonical": "https://translate.iq-factura.com/nl/vertaler-nederlands-spaans",
+    "ogLocale": "nl_NL"
+  },
+  "hero": {
+    "badgeVoice": "Spraak",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 talen",
+    "title": "Vertaler Spaans-Nederlands",
+    "titleAccent": "voor vakantie en emigratie",
+    "description": "Spreek of typ in het Nederlands en krijg binnen seconden een Spaanse vertaling, zichtbaar op het scherm en klaar om hardop voor te lezen. Onmisbaar op vakantie, bij een verhuizing naar Spanje of in gesprek met Spaanssprekende buren — in hetzelfde gesprek.",
+    "ctaTry": "Probeer gratis",
+    "ctaSignIn": "Inloggen met Google",
+    "mockFromLabel": "🇳🇱 Nederlands",
+    "mockFromPhrase": "Waar kan ik het beste inchecken?",
+    "mockToLabel": "🇪🇸 Spaans",
+    "mockToPhrase": "¿Dónde es mejor hacer el check-in?"
+  },
+  "spotlights": [
+    {
+      "heading": "Praten in plaats van typen",
+      "sub": "Tik op de microfoon, zeg het in het Nederlands of Spaans, en lees of beluister de vertaling.",
+      "bullets": [
+        { "title": "Spraak wordt Spaanse tekst", "sub": "Zeg het in het Nederlands — je woorden verschijnen enkele seconden later in het Spaans" },
+        { "title": "Beluister het Spaans hardop", "sub": "Tik op het luidsprekerpictogram voor de juiste Spaanse uitspraak" }
+      ]
+    },
+    {
+      "heading": "Eén gespreksdraad, beide kanten",
+      "sub": "Blijf heen en weer praten met Spaanssprekende buren, makelaars of nieuwe vrienden zonder de draad kwijt te raken.",
+      "bullets": [
+        { "title": "Antwoord in het Spaans, vertaald naar het Nederlands", "sub": "Een Spaanssprekende gesprekspartner praat gewoon door, jij ziet en hoort het in het Nederlands" },
+        { "title": "Gesprekken opgeslagen als onderwerp", "sub": "Kom later terug op hetzelfde Spaanse gesprek, handig als je aan het verhuizen bent" }
+      ]
+    },
+    {
+      "heading": "Nederlands–Spaans, plus 185 andere talen",
+      "sub": "Spaans is een van de 186 talen die beschikbaar zijn, in elke richting.",
+      "bullets": [
+        { "title": "Nauwkeurig met accenten en de ñ", "sub": "Verwerkt Spaanse spelling en uitspraak correct, geen ruwe gok" },
+        { "title": "186 talen in totaal", "sub": "Dezelfde tool werkt vandaag voor Spaans en morgen voor elke andere taal" }
+      ]
+    },
+    {
+      "heading": "Liever typen? Dat kan ook",
+      "sub": "Typ of plak Nederlandse tekst en krijg een Spaanse vertaling zonder de microfoon aan te raken.",
+      "bullets": [
+        { "title": "Typen in plaats van spreken", "sub": "Handig voor een e-mail aan de makelaar of een bericht aan de buren" },
+        { "title": "Kopieer de vertaling", "sub": "Kopieer de Spaanse tekst direct om ergens anders te plakken" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Waarom dit beter werkt dan",
+    "titleAccent": "een gewone Spaanse vertaler",
+    "description": "De meeste vertaal-apps laten je eerst typen en vergeten het gesprek daarna. Dit is het verschil.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Gewone vertaal-apps",
+    "rows": [
+      { "title": "Hoe je begint", "us": "Spreek Nederlands of Spaans en krijg meteen een vertaling.", "them": "Eerst typen wat je wilt zeggen." },
+      { "title": "Gespreksgeschiedenis", "us": "Elk Spaans gesprek wordt opgeslagen als eigen onderwerp.", "them": "Elke vertaling verdwijnt zodra je de app sluit." },
+      { "title": "Aan de slag", "us": "Open het in een browsertab — niets te installeren.", "them": "Eerst een app downloaden en rechten toekennen." },
+      { "title": "Beide richtingen", "us": "Nederlands naar Spaans en Spaans naar Nederlands staan in dezelfde gespreksdraad.", "them": "Van richting wisselen betekent meestal opnieuw beginnen." },
+      { "title": "Terugluisteren", "us": "Tik om de Spaanse vertaling hardop te laten voorlezen.", "them": "Alleen tekst, dus de uitspraak zoek je zelf uit." }
+    ]
+  },
+  "faq": {
+    "heading": "Veelgestelde",
+    "headingAccent": "vragen",
+    "sub": "Veelgestelde vragen over vertalen van Nederlands naar Spaans.",
+    "items": [
+      { "q": "Kan het gesproken Nederlands naar het Spaans vertalen?", "a": "Ja — tik op de microfoon, spreek Nederlands, en je krijgt de Spaanse vertaling als tekst, met de optie om die hardop te laten voorlezen." },
+      { "q": "Werkt het ook van Spaans naar Nederlands?", "a": "Ja, hetzelfde gesprek werkt beide kanten op — spreek of typ Spaans en krijg de Nederlandse vertaling in dezelfde gespreksdraad." },
+      { "q": "Is het gratis?", "a": "Ja, je kunt het gratis proberen zonder een account aan te maken. Log in met Google voor meer dagelijkse credits en opgeslagen geschiedenis." },
+      { "q": "Is het handig bij emigratie naar Spanje?", "a": "Ja, van gesprekken met de makelaar tot een praatje met de buren — elk Spaans gesprek blijft bewaard in zijn eigen onderwerp." },
+      { "q": "Moet ik iets installeren?", "a": "Nee, het werkt in je browser op desktop of mobiel — niets om te downloaden." },
+      { "q": "Kan ik het ook gebruiken tijdens een korte vakantie?", "a": "Zeker, spreek of typ onderweg en krijg direct een Spaanse vertaling, zonder account of voorbereiding vooraf." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Begin je Spaans-Nederlands",
+    "headingAccent": "gesprek nu.",
+    "sub": "Spreek of typ, hoor het terug in het Spaans — gratis te proberen, geen registratie.",
+    "ctaLabel": "Nu proberen"
+  }
+}

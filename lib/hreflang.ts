@@ -4,30 +4,32 @@ import { locales } from "./locales";
 import { LOCALE_SLUG_OVERRIDES } from "./locale-slug-overrides";
 import { localePath } from "./locale-paths";
 import { SITE_URL } from "./site";
+import { READY_LOCALES } from "@/content";
 
 const homeUrl = (locale: string) => (locale === "en" ? SITE_URL : `${SITE_URL}/${locale}`);
 
 // Alternates for the per-locale home page. Identical map for every locale.
+// Gated on READY_LOCALES so a mid-rollout build never advertises a 404 home.
 export function homeAlternates(): Record<string, string> {
   const languages: Record<string, string> = { "x-default": homeUrl("en") };
   locales.forEach((locale) => {
-    languages[locale] = homeUrl(locale);
+    if (READY_LOCALES.includes(locale)) languages[locale] = homeUrl(locale);
   });
   return languages;
 }
 
 // Alternates for a feature page, keyed by its shared route (e.g. "/translate-pdf").
-// Unused until the first feature page exists — kept ready so that page's
-// metadata builder can call it on day one without touching this file.
+// Only locales explicitly registered in LOCALE_SLUG_OVERRIDES get an
+// alternate — an unregistered locale has no such page, and a fallback URL
+// would 404.
 export function featureAlternates(routeKey: string): Record<string, string> {
-  const overrideMap = LOCALE_SLUG_OVERRIDES[routeKey];
+  const overrideMap = LOCALE_SLUG_OVERRIDES[routeKey] ?? {};
   const languages: Record<string, string> = {};
   locales.forEach((locale) => {
-    const slug = overrideMap?.[locale] ?? routeKey;
-    languages[locale] = `${SITE_URL}${localePath(locale, slug)}`;
+    const slug = overrideMap[locale];
+    if (slug) languages[locale] = `${SITE_URL}${localePath(locale, slug)}`;
   });
-  const enSlug = overrideMap?.en ?? routeKey;
-  languages["x-default"] = `${SITE_URL}${localePath("en", enSlug)}`;
+  if (overrideMap.en) languages["x-default"] = `${SITE_URL}${localePath("en", overrideMap.en)}`;
   return languages;
 }
 

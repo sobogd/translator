@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tłumacz Polsko-Czeski Głosowy | IQ Translate",
+    "description": "Tłumacz polsko-czeski online: mów lub pisz po polsku, usłysz tłumaczenie na czeski od razu. Przydatny w podróży u sąsiadów, 186 języków, bez rejestracji.",
+    "ogTitle": "Tłumacz Polsko-Czeski Głosowy",
+    "ogDescription": "Mów lub pisz po polsku, otrzymaj tłumaczenie na czeski od razu, mówione lub pisane. Działa w obie strony, za darmo do wypróbowania.",
+    "canonical": "https://translate.iq-factura.com/pl/tlumacz-polsko-czeski",
+    "ogLocale": "pl_PL"
+  },
+  "hero": {
+    "badgeVoice": "Głos",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 języków",
+    "title": "Tłumacz polsko-czeski",
+    "titleAccent": "który odpowiada głosem",
+    "description": "Mów lub pisz po polsku i w kilka sekund otrzymaj tłumaczenie na czeski, pokazane na ekranie i gotowe do odczytania na głos. Polski i czeski brzmią podobnie, ale drobne różnice łatwo prowadzą do nieporozumień — tłumaczenie usuwa wątpliwości od razu, w dowolnym kierunku.",
+    "ctaTry": "Wypróbuj za darmo",
+    "ctaSignIn": "Zaloguj się przez Google",
+    "mockFromLabel": "🇵🇱 Polski",
+    "mockFromPhrase": "Jak dojadę do dworca?",
+    "mockToLabel": "🇨🇿 Czeski",
+    "mockToPhrase": "Jak se dostanu na nádraží?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mów, nie pisz",
+      "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub czesku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
+      "bullets": [
+        { "title": "Mowa zamieniona na czeski", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po czesku w kilka sekund" },
+        { "title": "Usłysz czeski na głos", "sub": "Dotknij ikony głośnika, przydatne, gdy podobieństwo języków zwodzi zamiast pomagać" }
+      ]
+    },
+    {
+      "heading": "Jeden wątek, obie strony rozmowy",
+      "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
+      "bullets": [
+        { "title": "Odpowiedź po czesku, przetłumaczona na polski", "sub": "Rozmówca może mówić po czesku, a Ty zobaczysz i usłyszysz to po polsku" },
+        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy z wycieczki później, zamiast szukać jej od nowa" }
+      ]
+    },
+    {
+      "heading": "Polsko-czeski i 185 kolejnych języków",
+      "sub": "Czeski to jeden z 186 dostępnych języków, w dowolnym kierunku.",
+      "bullets": [
+        { "title": "Rozróżnia fałszywych przyjaciół językowych", "sub": "Nie myli słów, które brzmią podobnie po polsku i czesku, a znaczą co innego" },
+        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do czeskiego, a jutro do dowolnego innego języka" }
+      ]
+    },
+    {
+      "heading": "Wolisz pisać? To też działa",
+      "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na czeski bez dotykania mikrofonu.",
+      "bullets": [
+        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę w cichym pensjonacie albo hałaśliwej piwnicy" },
+        { "title": "Skopiuj tłumaczenie", "sub": "Wklej czeski tekst prosto do e-maila albo wiadomości" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Dlaczego to lepszy",
+    "titleAccent": "tłumacz polsko-czeski",
+    "description": "Typowe aplikacje każą najpierw pisać, a potem zapominają rozmowę. Oto co jest inne.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typowe aplikacje do tłumaczenia",
+    "rows": [
+      { "title": "Jak zaczynasz", "us": "Mów po polsku lub czesku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
+      { "title": "Historia rozmów", "us": "Każda rozmowa po czesku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
+      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
+      { "title": "Obie strony rozmowy", "us": "Polsko-czeski i czesko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
+      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć czeskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+    ]
+  },
+  "faq": {
+    "heading": "Najczęściej zadawane",
+    "headingAccent": "pytania",
+    "sub": "Częste pytania o tłumaczenie polsko-czeskie.",
+    "items": [
+      { "q": "Czy tłumaczy mowę z polskiego na czeski?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na czeski jako tekst, z opcją odsłuchania go na głos." },
+      { "q": "Czy polski i czeski nie są na tyle podobne, że tłumacz jest zbędny?", "a": "Podobieństwo bywa zwodnicze — wiele słów brzmi znajomo, a znaczy co innego, dlatego tłumaczenie pomaga uniknąć nieporozumień." },
+      { "q": "Czy mogę tłumaczyć z powrotem z czeskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po czesku i odbierz tłumaczenie na polski w tym samym wątku." },
+      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
+      { "q": "Przyda się na wycieczce do Czech?", "a": "Tak, sprawdza się w restauracji, na dworcu i w codziennych rozmowach podczas krótkiego wypadu za południową granicę." },
+      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Zacznij swoją rozmowę",
+    "headingAccent": "polsko-czeską już teraz.",
+    "sub": "Mów lub pisz, usłysz odpowiedź po czesku — za darmo do wypróbowania, bez rejestracji.",
+    "ctaLabel": "Wypróbuj teraz"
+  }
+}

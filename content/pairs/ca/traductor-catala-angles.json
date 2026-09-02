@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traductor Català-Anglès amb Veu | IQ Translate",
+    "description": "Tradueix del català a l'anglès per veu o text, escolta-ho en veu alta i respon en anglès al mateix fil. 186 llengües, gratis per provar, sense registre.",
+    "ogTitle": "Traductor Català-Anglès amb Veu",
+    "ogDescription": "Parla o escriu en català i obtén la traducció a l'anglès a l'instant, dita o escrita. Funciona en els dos sentits, gratis per provar.",
+    "canonical": "https://translate.iq-factura.com/ca/traductor-catala-angles",
+    "ogLocale": "ca_ES"
+  },
+  "hero": {
+    "badgeVoice": "Veu",
+    "badgeText": "Text",
+    "badgeLanguages": "186 llengües",
+    "title": "Traductor de català a anglès",
+    "titleAccent": "que et respon en veu alta",
+    "description": "Parla o escriu en català i obtén la traducció a l'anglès en segons, a la pantalla i llesta per escoltar. Canvia de sentit quan vulguis: parla en anglès i escolta-ho en català, tot a la mateixa conversa.",
+    "ctaTry": "Prova-ho gratis",
+    "ctaSignIn": "Inicia sessió amb Google",
+    "mockFromLabel": "🇪🇸 Català",
+    "mockFromPhrase": "On és la parada d'autobús més propera?",
+    "mockToLabel": "🇬🇧 Anglès",
+    "mockToPhrase": "Where's the nearest bus stop?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla i escolta la resposta",
+      "sub": "Toca el micròfon, digues-ho en català o en anglès, i obtén una traducció que pots llegir o escoltar.",
+      "bullets": [
+        { "title": "La teva veu, convertida a l'anglès", "sub": "Ho dius en català — es transcriu, es tradueix i apareix en anglès segons després" },
+        { "title": "Escolta l'anglès en veu alta", "sub": "Toca l'altaveu quan la pronunciació encara et costi" }
+      ]
+    },
+    {
+      "heading": "Un sol fil, els dos costats de la conversa",
+      "sub": "Segueix parlant sense començar de nou — cada intercanvi es queda al mateix tema, ideal per a feina o viatges.",
+      "bullets": [
+        { "title": "Respon en anglès, traduït al català", "sub": "Qui parla amb tu pot fer-ho en anglès i tu ho veuràs i escoltaràs en català" },
+        { "title": "Converses desades com a temes", "sub": "Torna a la mateixa conversa d'anglès més tard sense perdre el fil" }
+      ]
+    },
+    {
+      "heading": "Català–anglès, més 185 llengües",
+      "sub": "L'anglès és una de les 186 llengües disponibles, en qualsevol sentit.",
+      "bullets": [
+        { "title": "Precís amb accents i pronúncia", "sub": "Gestiona bé l'anglès parlat i escrit, no una aproximació" },
+        { "title": "186 llengües en total", "sub": "La mateixa eina et serveix per a l'anglès avui i per a qualsevol altra llengua demà" }
+      ]
+    },
+    {
+      "heading": "Prefereixes escriure? També funciona",
+      "sub": "Escriu o enganxa un text en català i obtén la traducció a l'anglès sense tocar el micròfon.",
+      "bullets": [
+        { "title": "Escriu en lloc de parlar", "sub": "Canvia al teclat quan sigui — útil en una reunió o al carrer" },
+        { "title": "Copia el resultat", "sub": "Copia el text en anglès per enganxar-lo en un correu o missatge" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Per què supera",
+    "titleAccent": "un traductor d'anglès típic",
+    "description": "La majoria d'apps de traducció et fan escriure primer i obliden la conversa després. Això és el que canvia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Aplicacions de traducció habituals",
+    "rows": [
+      { "title": "Com comences", "us": "Parla en català o en anglès i obtén la traducció a l'instant.", "them": "Primer has d'escriure el que vols dir." },
+      { "title": "Historial de conversa", "us": "Cada conversa en anglès es desa com el seu propi tema, llest per reobrir.", "them": "Cada traducció desapareix en tancar l'app." },
+      { "title": "Posada en marxa", "us": "Obre-la en una pestanya del navegador — res a instal·lar.", "them": "Cal baixar una app i acceptar permisos abans de fer-la servir." },
+      { "title": "Els dos sentits", "us": "Català a anglès i anglès a català conviuen al mateix fil.", "them": "Canviar de sentit normalment vol dir començar una traducció nova." },
+      { "title": "Escoltar-ho", "us": "Toca per escoltar la traducció a l'anglès en veu alta.", "them": "Només text, així que la pronúncia depèn de tu." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntes",
+    "headingAccent": "freqüents",
+    "sub": "Dubtes habituals sobre traduir del català a l'anglès.",
+    "items": [
+      { "q": "Pot traduir català parlat a l'anglès?", "a": "Sí — toca el micròfon, parla en català, i obtens la traducció a l'anglès com a text, amb l'opció d'escoltar-la en veu alta." },
+      { "q": "Funciona també per a feina o reunions?", "a": "Sí, funciona igual de bé per a converses informals que per a contextos de feina — la conversa es queda desada com un tema al qual pots tornar." },
+      { "q": "Puc traduir de l'anglès de tornada al català?", "a": "Sí, la mateixa conversa funciona en els dos sentits — parla o escriu en anglès i obtén la traducció al català al mateix fil." },
+      { "q": "És gratuït?", "a": "Sí, pots provar-ho gratis sense crear cap compte. Inicia sessió amb Google per a més crèdits diaris i historial desat." },
+      { "q": "Cal instal·lar alguna cosa?", "a": "No, funciona al navegador, tant a l'ordinador com al mòbil — res per baixar." },
+      { "q": "Puc mantenir una conversa seguida en lloc de traduccions soltes?", "a": "Sí, les traduccions s'agrupen en temes, així una conversa en anglès es queda en un sol lloc en lloc d'escampar-se en cerques separades." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Comença la teva conversa",
+    "headingAccent": "de català a anglès ara.",
+    "sub": "Parla o escriu, escolta la resposta en anglès — gratis per provar, sense registre.",
+    "ctaLabel": "Prova-ho ara"
+  }
+}

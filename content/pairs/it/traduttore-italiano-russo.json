@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traduttore Vocale Italiano-Russo | IQ Translate",
+    "description": "Parla o scrivi in italiano, traduci in russo all'istante e ascolta la risposta ad alta voce, nella stessa conversazione. Gratis, senza registrazione.",
+    "ogTitle": "Traduttore Vocale Italiano-Russo",
+    "ogDescription": "Parla o scrivi in italiano e ottieni la traduzione in russo all'istante, pronta anche da ascoltare. Funziona in entrambe le direzioni, gratis da provare.",
+    "canonical": "https://translate.iq-factura.com/it/traduttore-italiano-russo",
+    "ogLocale": "it_IT"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Testo",
+    "badgeLanguages": "186 lingue",
+    "title": "Traduttore italiano-russo",
+    "titleAccent": "senza dover leggere il cirillico",
+    "description": "Parla o scrivi in italiano e ricevi la traduzione in russo in pochi secondi, pronta da leggere o ascoltare. Cambia direzione quando vuoi: parla in russo e ascolta la risposta in italiano, nella stessa conversazione.",
+    "ctaTry": "Provalo gratis",
+    "ctaSignIn": "Accedi con Google",
+    "mockFromLabel": "🇮🇹 Italiano",
+    "mockFromPhrase": "Quanto tempo ci vuole per arrivare in centro?",
+    "mockToLabel": "🇷🇺 Russo",
+    "mockToPhrase": "Сколько времени нужно, чтобы добраться до центра?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla, senza doverlo scrivere in cirillico",
+      "sub": "Tocca il microfono, di' la frase in italiano o in russo, e ricevi una traduzione da leggere o da ascoltare.",
+      "bullets": [
+        { "title": "Il parlato diventa russo", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in russo in pochi secondi" },
+        { "title": "Ascolta il russo ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta, senza dover leggere il cirillico" }
+      ]
+    },
+    {
+      "heading": "Una conversazione, due lingue",
+      "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
+      "bullets": [
+        { "title": "Risponde in russo, tradotto in italiano", "sub": "Chi ti parla può usare il russo e tu lo vedrai e ascolterai in italiano" },
+        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in russo più tardi invece di perdere il filo" }
+      ]
+    },
+    {
+      "heading": "Italiano-russo, più altre 185 lingue",
+      "sub": "Il russo è una delle 186 lingue disponibili, in qualsiasi direzione.",
+      "bullets": [
+        { "title": "Pensato per viaggi e turismo", "sub": "Hotel, trasporti e indicazioni stradali in un paese di lingua russa" },
+        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per il russo oggi e per qualsiasi altra lingua domani" }
+      ]
+    },
+    {
+      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in russo senza toccare il microfono.",
+      "bullets": [
+        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo per un messaggio su WhatsApp" },
+        { "title": "Copia la traduzione", "sub": "Copia il testo in cirillico, già scritto correttamente, e incollalo dove serve" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Perché batte",
+    "titleAccent": "un traduttore italiano-russo qualsiasi",
+    "description": "La maggior parte delle app di traduzione ti fa scrivere per prima cosa e dimentica la conversazione subito dopo. Ecco cosa cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "App di traduzione tradizionali",
+    "rows": [
+      { "title": "Come inizi", "us": "Parla in italiano o in russo e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire, anche in un alfabeto diverso." },
+      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in russo si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
+      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
+      { "title": "Entrambe le direzioni", "us": "Italiano-russo e russo-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
+      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in russo letta ad alta voce, senza doverla leggere.", "them": "Solo testo, quindi devi sapere leggere il cirillico." }
+    ]
+  },
+  "faq": {
+    "heading": "Domande",
+    "headingAccent": "frequenti",
+    "sub": "Domande comuni sulla traduzione dall'italiano al russo.",
+    "items": [
+      { "q": "Traduce anche il russo parlato?", "a": "Sì — tocca il microfono, parla in russo, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
+      { "q": "Devo saper leggere il cirillico per usarlo?", "a": "No, la traduzione in russo può anche essere ascoltata ad alta voce, quindi non serve saperla leggere." },
+      { "q": "Traduce correttamente nomi e indirizzi in cirillico?", "a": "Sì, il testo russo viene mostrato in cirillico e puoi copiarlo così com'è per usarlo altrove." },
+      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
+      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
+      { "q": "Posso tradurre anche dal russo all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in russo e ricevi la traduzione in italiano nello stesso argomento." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Inizia la tua conversazione",
+    "headingAccent": "italiano-russo ora.",
+    "sub": "Parla o scrivi, ascolta la risposta in russo — gratis da provare, senza registrazione.",
+    "ctaLabel": "Provalo gratis"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Türkçe İspanyolca Çeviri, Sesli | IQ Translate",
+    "description": "Türkçe ve İspanyolca arasında sesli çeviri: konuşun veya yazın, çeviriyi anında dinleyin, aynı sohbette yanıt alın. 186 dil, ücretsiz deneme, kayıt gerekmez.",
+    "ogTitle": "Türkçe İspanyolca Çeviri, Sesli",
+    "ogDescription": "Türkçe konuşun, İspanyolca çeviriyi anında görün ve dinleyin. Seyahat ve gündelik konuşmalar için iki yönlü çalışır.",
+    "canonical": "https://translate.iq-factura.com/tr/ceviri-turkce-ispanyolca",
+    "ogLocale": "tr_TR"
+  },
+  "hero": {
+    "badgeVoice": "Ses",
+    "badgeText": "Metin",
+    "badgeLanguages": "186 dil",
+    "title": "Türkçe-İspanyolca çevirmen",
+    "titleAccent": "sesli yanıt verir",
+    "description": "Türkçe konuşun ya da yazın, İspanyolca çeviriyi saniyeler içinde ekranda görün ve sesli dinleyin. Seyahatte, otelde ya da gündelik bir sohbette karşınızdaki İspanyolca konuşsun, siz Türkçe duyun — hepsi aynı sohbette.",
+    "ctaTry": "Ücretsiz dene",
+    "ctaSignIn": "Google ile giriş yap",
+    "mockFromLabel": "🇹🇷 Türkçe",
+    "mockFromPhrase": "En yakın eczane nerede?",
+    "mockToLabel": "🇪🇸 İspanyolca",
+    "mockToPhrase": "¿Dónde está la farmacia más cercana?"
+  },
+  "spotlights": [
+    {
+      "heading": "Konuşun, İspanyolcayı dinleyin",
+      "sub": "Mikrofona dokunun, Türkçe konuşun, İspanyolca çeviriyi okuyun ya da dinleyin.",
+      "bullets": [
+        { "title": "Konuşmanız anında İspanyolcaya döner", "sub": "Türkçe söyleyin — çeviri saniyeler içinde İspanyolca olarak ekranda belirir" },
+        { "title": "İspanyolcayı sesli dinleyin", "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun" }
+      ]
+    },
+    {
+      "heading": "Seyahat ya da gündelik sohbet için tek konu",
+      "sub": "Otelde, restoranda ya da yeni bir tanışıklıkta tüm alışveriş aynı konuda kalır.",
+      "bullets": [
+        { "title": "İspanyolca yanıt Türkçeye çevrilir", "sub": "Karşınızdaki İspanyolca konuşur, siz Türkçe olarak okur ve duyarsınız" },
+        { "title": "Görüşme konu olarak saklanır", "sub": "Aynı sohbete daha sonra kaldığınız yerden dönün" }
+      ]
+    },
+    {
+      "heading": "Türkçe-İspanyolca, artı 185 dil daha",
+      "sub": "İspanyolca, her yönde kullanılabilen 186 dilden biri.",
+      "bullets": [
+        { "title": "ñ ve aksanlı harfler doğru işlenir", "sub": "İspanyolca yazım ve telaffuz kurallarına uygun çeviri" },
+        { "title": "Toplam 186 dil", "sub": "Bugün İspanyolca, yarın başka bir dil — aynı araç yeterli" }
+      ]
+    },
+    {
+      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "sub": "İspanyolca bir metni yapıştırın ya da Türkçe yazın, mikrofona dokunmadan çeviriyi alın.",
+      "bullets": [
+        { "title": "Gelen mesajı yapıştırın", "sub": "İspanyolca bir mesajı yapıştırın, Türkçe çeviriyi anında okuyun" },
+        { "title": "Çeviriyi kopyalayın", "sub": "İspanyolca metni doğrudan bir e-postaya ya da mesaja yapıştırın" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Neden sıradan bir",
+    "titleAccent": "İspanyolca çeviriden daha iyi",
+    "description": "Çoğu çeviri uygulaması önce yazmanızı ister, sonra sohbeti unutur. İşte fark yaratan noktalar.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Sıradan çeviri uygulamaları",
+    "rows": [
+      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da İspanyolca konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
+      { "title": "Görüşme geçmişi", "us": "Her İspanyolca sohbet ayrı bir konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
+      { "title": "Kuruluma gerek yok", "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.", "them": "Uygulamayı indirip izin vermeniz gerekir." },
+      { "title": "İki yön aynı sohbette", "us": "Türkçe-İspanyolca ve İspanyolca-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
+      { "title": "Sesli dinleme", "us": "İspanyolca çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+    ]
+  },
+  "faq": {
+    "heading": "Sıkça sorulan",
+    "headingAccent": "sorular",
+    "sub": "Türkçe-İspanyolca çeviri hakkında en çok sorulanlar.",
+    "items": [
+      { "q": "Konuşulan Türkçeyi İspanyolcaya çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, İspanyolca çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
+      { "q": "ñ ve aksanlı harfler doğru görünüyor mu?", "a": "Evet, á, é, í, ó, ú ve ñ gibi harfler hem yazılan metinde hem sesli okumada doğru işlenir." },
+      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
+      { "q": "İspanyolcadan Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki İspanyolca konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
+      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." },
+      { "q": "Sürekli bir sohbeti tek yerde tutabilir miyim?", "a": "Evet, çeviriler konu olarak gruplanır, böylece bir İspanyolca sohbet dağınık aramalar yerine tek bir yerde kalır." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Türkçe-İspanyolca sohbetinizi",
+    "headingAccent": "şimdi başlatın.",
+    "sub": "Konuşun ya da yazın, İspanyolca yanıtı sesli dinleyin — ücretsiz, kayıt gerekmez.",
+    "ctaLabel": "Ücretsiz dene"
+  }
+}

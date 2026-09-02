@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Tradução de Português para Francês com Voz | IQ Translate",
+    "description": "Traduza do português para o francês por voz ou texto, ouça a tradução em voz alta e responda em francês na mesma conversa. 186 idiomas, grátis, sem conta.",
+    "ogTitle": "Tradução de Português para Francês com Voz",
+    "ogDescription": "Fale ou escreva em português e receba a tradução em francês na hora, falada ou escrita. Funciona também ao contrário, na mesma conversa.",
+    "canonical": "https://translate.iq-factura.com/pt/tradutor-portugues-frances",
+    "ogLocale": "pt_PT"
+  },
+  "hero": {
+    "badgeVoice": "Voz",
+    "badgeText": "Texto",
+    "badgeLanguages": "186 idiomas",
+    "title": "Tradução de português para francês",
+    "titleAccent": "que responde em voz",
+    "description": "Fale ou escreva em português e receba a tradução em francês em segundos, pronta para ler ou ouvir. Mude de sentido quando quiser: fale em francês e ouça a resposta em português, na mesma conversa.",
+    "ctaTry": "Experimente grátis",
+    "ctaSignIn": "Entrar com Google",
+    "mockFromLabel": "🇵🇹 Português",
+    "mockFromPhrase": "Pode repetir, por favor?",
+    "mockToLabel": "🇫🇷 Francês",
+    "mockToPhrase": "Vous pouvez répéter, s'il vous plaît ?"
+  },
+  "spotlights": [
+    {
+      "heading": "Fale e ouça em francês",
+      "sub": "Toque no microfone, fale em português e em segundos tem a tradução em francês, pronta para ler ou ouvir.",
+      "bullets": [
+        { "title": "A sua voz em francês na hora", "sub": "Fale em português e a tradução em francês aparece em segundos, pronta para ler ou ouvir" },
+        { "title": "Pronúncia resolvida", "sub": "Toque no ícone de som e ouça como soa em francês, mesmo com as nasais e os acentos" }
+      ]
+    },
+    {
+      "heading": "Conversa nos dois sentidos, guardada",
+      "sub": "Continue a conversa em português e francês sem perder o fio — cada troca fica guardada no mesmo tema.",
+      "bullets": [
+        { "title": "Respostas em francês, viram português", "sub": "A outra pessoa fala em francês e a tradução aparece em português, no mesmo tema" },
+        { "title": "Cada conversa fica guardada como um tema", "sub": "Volte a essa conversa em francês mais tarde, sem perder o fio" }
+      ]
+    },
+    {
+      "heading": "Português-francês, e mais 185 idiomas",
+      "sub": "O francês é um dos 186 idiomas disponíveis, em qualquer direção.",
+      "bullets": [
+        { "title": "Acentos e nasais tratados com rigor", "sub": "Reconhece corretamente a pronúncia e a ortografia do francês, sem adivinhações" },
+        { "title": "186 idiomas na mesma app", "sub": "O mesmo tradutor funciona para francês hoje e para qualquer outro idioma amanhã" }
+      ]
+    },
+    {
+      "heading": "Escreva ou cole o texto",
+      "sub": "Traduza sem usar o microfone, escrevendo ou colando um texto em português ou francês.",
+      "bullets": [
+        { "title": "Sem precisar do microfone", "sub": "Escreva ou cole um texto em português e receba a tradução em francês na hora" },
+        { "title": "Copie o resultado com um toque", "sub": "Cole a tradução num e-mail de trabalho ou numa mensagem de WhatsApp" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Por que isto supera",
+    "titleAccent": "um tradutor de francês comum",
+    "description": "A maioria das apps de tradução obriga a escrever primeiro e esquece a conversa depois. Eis o que muda aqui.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Apps de tradução típicas",
+    "rows": [
+      { "title": "Como começa", "us": "Fala em português ou francês e recebe a tradução na hora.", "them": "Tem de escrever antes de traduzir seja o que for." },
+      { "title": "Histórico de conversa", "us": "Cada conversa em francês fica guardada como um tema ao qual pode voltar.", "them": "A tradução desaparece assim que fecha a app." },
+      { "title": "Instalação", "us": "Abre no navegador, não há nada para instalar.", "them": "É preciso transferir uma app e aceitar permissões antes de a usar." },
+      { "title": "Os dois sentidos", "us": "Português para francês e francês para português convivem no mesmo tema.", "them": "Mudar de sentido costuma significar começar do zero." },
+      { "title": "Ouvir a tradução", "us": "Toque no ícone de som e ouça a tradução em francês em voz alta.", "them": "Só texto — a pronúncia fica por sua conta." }
+    ]
+  },
+  "faq": {
+    "heading": "Perguntas",
+    "headingAccent": "frequentes",
+    "sub": "Dúvidas comuns sobre traduzir português para francês.",
+    "items": [
+      { "q": "Traduz português falado para francês?", "a": "Sim, toque no microfone, fale em português e recebe a tradução em francês como texto, com a opção de a ouvir em voz alta." },
+      { "q": "Também traduz de francês para português?", "a": "Sim, a mesma conversa funciona nos dois sentidos: fale ou escreva em francês e receba a tradução em português no mesmo tema." },
+      { "q": "Trata bem os acentos e as nasais do francês?", "a": "Sim, sons como on, an, in e letras acentuadas são reconhecidos corretamente, tanto no texto como na voz." },
+      { "q": "É útil para o trabalho, além de viajar?", "a": "Sim, serve tanto para uma reunião ou um e-mail em francês como para pedir indicações numa viagem." },
+      { "q": "É grátis?", "a": "Sim, pode experimentar grátis sem criar conta. Entre com Google para ter mais créditos diários e histórico guardado." },
+      { "q": "É preciso instalar alguma coisa?", "a": "Não, funciona diretamente no navegador do telemóvel ou do computador." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Comece a sua",
+    "headingAccent": "tradução de português para francês agora.",
+    "sub": "Fale ou escreva, ouça a resposta em francês — grátis para experimentar, sem conta.",
+    "ctaLabel": "Experimente agora"
+  }
+}

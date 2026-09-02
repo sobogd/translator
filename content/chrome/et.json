@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "Häältõlkija Veebis – Tasuta | IQ Translate",
+    "description": "Tasuta häältõlkija veebis: räägi loomulikult ja saad kohese tõlke, kõnena või tekstina, 186 keeles. Ei allalaadimisi, proovimiseks pole registreerimist vaja.",
+    "ogTitle": "Häältõlkija Veebis – Tasuta",
+    "ogDescription": "Tasuta häältõlkija veebis: räägi ja saad kohese tõlke, kõnena või tekstina, 186 keeles.",
+    "twitterTitle": "Häältõlkija Veebis – Tasuta",
+    "twitterDescription": "Tasuta häältõlkija: kohene kõnena või tekstina tõlge 186 keeles."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funktsioonid",
+    "pricing": "Hinnad",
+    "mobileApp": "Mobiilirakendus",
+    "signIn": "Logi sisse",
+    "logOut": "Logi välja",
+    "tryItNow": "Proovi kohe"
+  },
+  "hero": {
+    "badgeVoice": "Hääl",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 keelt",
+    "title": "Häältõlkija",
+    "titleAccent": "iga vestluse jaoks",
+    "description": "Räägi loomulikult ja saad kohese tõlke – kõnena või kirjalikult, 186 keeles. Proovimiseks pole registreerimist vaja.",
+    "ctaTry": "Proovi tasuta",
+    "ctaSignIn": "Logi sisse Google'iga",
+    "mockFromLabel": "🇪🇪 Eesti",
+    "mockFromPhrase": "Tere, kuidas läheb?",
+    "mockToLabel": "🇬🇧 Inglise",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 keelt",
+      "sub": "Räägi või kirjuta, tõlge valmis kohe – lisaallalaadimisi pole vaja"
+    },
+    {
+      "title": "Registreerimist ei vaja",
+      "sub": "Proovi otse sellel lehel – logi sisse ainult lisakrediitide saamiseks"
+    },
+    {
+      "title": "Ajalugu keelepaari kaupa",
+      "sub": "Iga vestlus püsib korras ja on hõlpsasti taasleitav"
+    },
+    {
+      "title": "Tasuta alustada",
+      "sub": "Keri alla ja alusta kohe tõlkimist"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Kohene häältõlge",
+      "sub": "Puuduta mikrofoni ja räägi. Sinu kõne transkribeeritakse ja tõlgitakse sekunditega – kirjutamist pole vaja.",
+      "bullets": [
+        {
+          "title": "Räägi, saad kohese tõlke",
+          "sub": "Üks puudutus alustab salvestust, tõlge ilmub kohe pärast"
+        },
+        {
+          "title": "Kuula seda ette loetuna",
+          "sub": "Puuduta kõlarit, et lasta tõlge ette lugeda"
+        },
+        {
+          "title": "Hääl või tekst, valik on sinu",
+          "sub": "Vaheta režiimi igal ajal ühe puudutusega"
+        }
+      ]
+    },
+    {
+      "heading": "Ka tekstitõlge",
+      "sub": "Eelistad kirjutada? Lülitu klaviatuurirežiimile ja tõlgi sõnum kohe.",
+      "bullets": [
+        {
+          "title": "Vaheta originaali ja tõlke kohti",
+          "sub": "Puuduta või pühi rida, et näha seda kummaski keeles"
+        },
+        {
+          "title": "Kopeeri ühe puudutusega",
+          "sub": "Võta tõlgitud tekst ja kleebi see kuhu iganes"
+        },
+        {
+          "title": "Vaheta häälele igal ajal",
+          "sub": "Alusta kirjutamisega ja dikteeri järgmine rida hoopis"
+        }
+      ]
+    },
+    {
+      "heading": "186 keelt, korraldatud vestluste kaupa",
+      "sub": "Vali oma keel korra ja sirvi seejärel teisi – igal keelepaaril on oma salvestatud jutulõng.",
+      "bullets": [
+        {
+          "title": "186 keelt kaasas",
+          "sub": "Lisaallalaadimisi ega keelepakette pole vaja paigaldada"
+        },
+        {
+          "title": "Vestlused püsivad korras",
+          "sub": "Igal keelepaaril on oma salvestatud ajalugu"
+        },
+        {
+          "title": "Tühjenda või kustuta igal ajal",
+          "sub": "Kustuta teema ajalugu või eemalda see menüüst täielikult"
+        }
+      ]
+    },
+    {
+      "heading": "Alustamiseks pole registreerimist vaja",
+      "sub": "Proovi otse sellel lehel – ei kontot, ei parooli. Logi sisse Google'iga ainult siis, kui soovid rohkem päevaseid krediite ja seadmete vahel sünkroonitud ajalugu.",
+      "bullets": [
+        {
+          "title": "Valikuline sisselogimine ühe puudutusega",
+          "sub": "Registreerimisvormi ega meelde jäetavat parooli pole"
+        },
+        {
+          "title": "Ainult sinu e-post, mitte midagi muud",
+          "sub": "Ainult sinu Google'i e-post tuvastab su konto"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miks hääl",
+    "titleAccent": "tuleb esimesena",
+    "description": "Enamik tõlkerakendusi jääb kirjutatud teksti juurde. Allolevad read näitavad, mis tegelikult muutub, kui pead rääkima, mitte kirjutama.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tavalised rakendused",
+    "rows": [
+      {
+        "title": "Häältõlge",
+        "us": "Üks puudutus salvestab, transkribeerib ja tõlgib sekunditega.",
+        "them": "Ainult tekst või pead ise kirjutama, mida kuulsid."
+      },
+      {
+        "title": "Vestluse ajalugu",
+        "us": "Igal keelepaaril on oma salvestatud jutulõng.",
+        "them": "Ajalugu kaob, kui suled sakk."
+      },
+      {
+        "title": "Alustamine",
+        "us": "Proovi kohe, otse sellel lehel – kontot pole vaja.",
+        "them": "Konto loomine e-posti ja parooliga enne proovimist."
+      },
+      {
+        "title": "Ette lugemine",
+        "us": "Puuduta, et kuulata tõlget ette loetuna.",
+        "them": "Häälväljundit pole."
+      },
+      {
+        "title": "Keeled",
+        "us": "186 keelt saadaval, lisaallalaadimisi pole vaja.",
+        "them": "Piiratud offline-keelepaketid."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Korduma kippuvad",
+    "headingAccent": "küsimused",
+    "sub": "Mida küsitakse enne proovimist. Registreerimist pole vaja – keri üles ja proovi ise.",
+    "items": [
+      {
+        "q": "Kuidas häältõlge töötab?",
+        "a": "Puuduta mikrofoni ja räägi – sinu kõne transkribeeritakse ja tõlgitakse mõne sekundiga, kuvatakse tekstina ja seda saab ka ette lugeda. Kirjutamist pole vaja."
+      },
+      {
+        "q": "Mitut keelt toetatakse?",
+        "a": "186 keelt. Vali oma keel korra ja alusta seejärel jutulõnga kellega iganes teisega."
+      },
+      {
+        "q": "Kas pean looma konto?",
+        "a": "Ei. Proovi otse sellel lehel ilma registreerimiseta. Logi sisse Google'iga ainult siis, kui soovid rohkem päevaseid krediite ja seadmete vahel sünkroonitud ajalugu."
+      },
+      {
+        "q": "Kas mu tõlkeajalugu salvestatakse?",
+        "a": "Jah, keelepaari kaupa, nii et varasemad vestlused püsivad korras – isegi ilma sisse logimata mäletab brauser sind. Kustuta või eemalda mis tahes teema selle menüüst igal ajal."
+      },
+      {
+        "q": "Kas saan kasutada teksti hääle asemel?",
+        "a": "Jah. Lülitu klaviatuurirežiimile igal ajal ja kirjuta oma sõnum rääkimise asemel."
+      },
+      {
+        "q": "Kas see töötab kahepoolse vestluse jaoks?",
+        "a": "Jah. Puuduta või pühi tõlgitud rida, et vahetada originaali ja tõlke kohti, nii et mõlemad pooled saavad samal ekraanil kaasa minna."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Kohene häältõlge,",
+    "headingAccent": "valmis 10 sekundiga.",
+    "sub": "Proovi otse sellel lehel – registreerimist ega allalaadimist pole vaja, 186 keelt kaasas.",
+    "ctaLabel": "Proovi kohe"
+  },
+  "footer": {
+    "tagline": "Kohene häältõlge, 186 keelt",
+    "brand": "IQ Translate",
+    "featuresHeading": "Tõlkijad",
+    "featureLinks": [
+      { "routeKey": "/tolkija-eesti-inglise", "label": "Eesti–Inglise" },
+      { "routeKey": "/tolkija-eesti-soome", "label": "Eesti–Soome" },
+      { "routeKey": "/tolkija-eesti-saksa", "label": "Eesti–Saksa" }
+    ]
+  },
+  "translator": {
+    "topics": "Teemad",
+    "newTopic": "Uus teema",
+    "noTopicsYet": "Teemasid pole veel",
+    "deleteTopic": "Kustuta teema",
+    "deleteTopicConfirm": "Kustutada see teema ja kõik selle tõlked?",
+    "autoDetect": "Tuvasta automaatselt",
+    "chooseLanguage": "Vali keel",
+    "close": "Sulge",
+    "searchPlaceholder": "Otsi keelt…",
+    "clearHistory": "Tühjenda ajalugu",
+    "clearHistoryConfirm": "Tühjendada kõik selle teema tõlked?",
+    "noTranslationsYet": "Selles teemas pole veel tõlkeid.",
+    "translating": "Tõlgin…",
+    "typePlaceholder": "Kirjuta sõnum…",
+    "translateAria": "Tõlgi",
+    "micDeniedError": "Mikrofoni juurdepääs keelatud",
+    "recording": "Salvestan",
+    "recognizing": "Tuvastan…",
+    "recordAria": "Salvesta",
+    "stopAria": "Peata",
+    "pricingLink": "Hinnad",
+    "errors": {
+      "insufficientCredits": "Krediidid otsas – uuenda oma paketti",
+      "textTooLong": "Tekst on sinu paketi jaoks liiga pikk"
+    }
+  },
+  "history": {
+    "emptyState": "Siin pole veel midagi. Kirjuta sõnum või salvesta oma hääl allpool.",
+    "readAloudAria": "Loe ette",
+    "copyAria": "Kopeeri"
+  }
+}

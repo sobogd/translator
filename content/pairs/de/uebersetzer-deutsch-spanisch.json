@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Deutsch-Spanisch Übersetzer mit Sprache | IQ Translate",
+    "description": "Übersetzer Deutsch-Spanisch per Sprache oder Text: sprich oder tippe und hör die Antwort sofort. 186 Sprachen, kostenlos testen, keine Anmeldung.",
+    "ogTitle": "Deutsch-Spanisch Übersetzer mit Sprache",
+    "ogDescription": "Sprich oder tippe auf Deutsch und erhalte die spanische Übersetzung sofort, gesprochen oder geschrieben. Funktioniert in beide Richtungen.",
+    "canonical": "https://translate.iq-factura.com/de/uebersetzer-deutsch-spanisch",
+    "ogLocale": "de_DE"
+  },
+  "hero": {
+    "badgeVoice": "Sprache",
+    "badgeText": "Text",
+    "badgeLanguages": "186 Sprachen",
+    "title": "Übersetzer Deutsch-Spanisch",
+    "titleAccent": "für Reise und Alltag",
+    "description": "Sprich oder tippe auf Deutsch und erhalte die spanische Übersetzung in Sekunden, lesbar und zum Anhören. Praktisch im Restaurant, am Flughafen oder im Gespräch mit spanischsprachigen Freunden – die Antwort kommt im selben Gespräch zurück.",
+    "ctaTry": "Jetzt kostenlos testen",
+    "ctaSignIn": "Mit Google anmelden",
+    "mockFromLabel": "🇩🇪 Deutsch",
+    "mockFromPhrase": "Wie viel kostet das?",
+    "mockToLabel": "🇪🇸 Spanisch",
+    "mockToPhrase": "¿Cuánto cuesta esto?"
+  },
+  "spotlights": [
+    {
+      "heading": "Sprechen statt tippen",
+      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Spanisch, und lies oder hör die Übersetzung.",
+      "bullets": [
+        { "title": "Deutsch wird zu Spanisch", "sub": "Sprich auf Deutsch – die Übersetzung erscheint Sekunden später auf Spanisch" },
+        { "title": "Spanisch laut vorlesen lassen", "sub": "Praktisch, wenn die spanische Aussprache noch schwerfällt" }
+      ]
+    },
+    {
+      "heading": "Ein Thema, beide Gesprächsseiten",
+      "sub": "Rede hin und her, etwa mit spanischsprachigen Freunden oder im Urlaub – jeder Austausch bleibt gespeichert.",
+      "bullets": [
+        { "title": "Antwort auf Spanisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Spanisch, du liest und hörst es auf Deutsch" },
+        { "title": "Gespräche als Themen gespeichert", "sub": "Der Spanien-Urlaub oder das Gespräch mit der Gastfamilie bleibt an einem Ort" }
+      ]
+    },
+    {
+      "heading": "Deutsch-Spanisch, plus 185 weitere Sprachen",
+      "sub": "Spanisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "bullets": [
+        { "title": "Akzente und ñ korrekt erkannt", "sub": "Spanische Rechtschreibung und Aussprache werden richtig verarbeitet, nicht grob geschätzt" },
+        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Spanisch heute und für jede andere Sprache morgen" }
+      ]
+    },
+    {
+      "heading": "Lieber tippen? Geht auch",
+      "sub": "Tippe oder füge spanischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "bullets": [
+        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer spanischen WhatsApp-Nachricht oder E-Mail" },
+        { "title": "Übersetzung kopieren", "sub": "Übernimm den spanischen Text direkt in eine Nachricht oder ein Formular" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Warum das besser ist",
+    "titleAccent": "als ein typischer Spanisch-Übersetzer",
+    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typische Übersetzer-Apps",
+    "rows": [
+      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Spanisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
+      { "title": "Gesprächsverlauf", "us": "Jedes Spanisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
+      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
+      { "title": "Beide Richtungen", "us": "Deutsch nach Spanisch und Spanisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
+      { "title": "Zum Anhören", "us": "Tippe, um dir die spanische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte",
+    "headingAccent": "Fragen",
+    "sub": "Häufige Fragen zum Übersetzer Deutsch-Spanisch.",
+    "items": [
+      { "q": "Kann es gesprochenes Deutsch ins Spanische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die spanische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
+      { "q": "Werden spanische Akzente und Satzzeichen korrekt dargestellt?", "a": "Ja, Buchstaben wie á, é, í, ó, ú und ñ werden sowohl im Text als auch beim Vorlesen richtig verarbeitet." },
+      { "q": "Kann ich von Spanisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Spanisch und erhalte die deutsche Übersetzung im gleichen Thema." },
+      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
+      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
+      { "q": "Eignet es sich für den Spanien-Urlaub?", "a": "Ja, gerade unterwegs ist die Sprachfunktion praktisch: Frage im Restaurant oder an der Rezeption stellen und sofort verstanden werden." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starte deinen Deutsch-Spanisch-",
+    "headingAccent": "Übersetzer jetzt.",
+    "sub": "Sprich oder tippe, hör die spanische Antwort – kostenlos testen, keine Anmeldung nötig.",
+    "ctaLabel": "Jetzt testen"
+  }
+}

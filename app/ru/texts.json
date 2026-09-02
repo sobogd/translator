@@ -1,233 +1,240 @@
 {
   "meta": {
-    "title": "IQ Translate — Instant Voice Translation App",
-    "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
-    "ogTitle": "IQ Translate — Instant Voice Translation App",
-    "ogDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
-    "twitterTitle": "IQ Translate — Instant Voice Translation App",
-    "twitterDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages."
+    "title": "Голосовой Переводчик Онлайн Бесплатно | IQ Translate",
+    "description": "Голосовой переводчик онлайн: говорите естественно и получайте перевод мгновенно, устно или письменно, на 186 языков. Без скачивания и регистрации для пробы.",
+    "ogTitle": "Голосовой Переводчик Онлайн Бесплатно",
+    "ogDescription": "Голосовой переводчик онлайн: говорите и получайте перевод мгновенно, устно или письменно, на 186 языков.",
+    "twitterTitle": "Голосовой Переводчик Онлайн Бесплатно",
+    "twitterDescription": "Бесплатный голосовой переводчик: устный или письменный перевод мгновенно на 186 языков."
   },
   "header": {
     "logo": "Translate",
-    "features": "Features",
-    "pricing": "Pricing",
+    "features": "Возможности",
+    "pricing": "Тарифы",
     "mobileApp": "Приложение",
-    "signIn": "Sign in",
-    "logOut": "Log out",
-    "tryItNow": "Try it now"
+    "signIn": "Войти",
+    "logOut": "Выйти",
+    "tryItNow": "Попробовать"
   },
   "hero": {
-    "badgeVoice": "Voice",
-    "badgeText": "Text",
-    "badgeLanguages": "186 languages",
-    "title": "Instant voice translation",
-    "titleAccent": "for any conversation",
-    "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No sign-up required to try it.",
-    "ctaTry": "Try it now — free",
-    "ctaSignIn": "Sign in with Google",
-    "mockFromLabel": "🇪🇸 Spanish",
-    "mockFromPhrase": "Hola, ¿cómo estás?",
-    "mockToLabel": "🇬🇧 English",
-    "mockToPhrase": "Hello, how are you?"
+    "badgeVoice": "Голос",
+    "badgeText": "Текст",
+    "badgeLanguages": "186 языков",
+    "title": "Голосовой переводчик",
+    "titleAccent": "для любого разговора",
+    "description": "Говорите естественно и получайте перевод мгновенно, устно или письменно, на 186 языков. Регистрация для пробы не нужна.",
+    "ctaTry": "Попробовать бесплатно",
+    "ctaSignIn": "Войти через Google",
+    "mockFromLabel": "🇷🇺 Русский",
+    "mockFromPhrase": "Привет, как дела?",
+    "mockToLabel": "🇪🇸 Испанский",
+    "mockToPhrase": "Hola, ¿cómo estás?"
   },
   "statCards": [
     {
-      "title": "186 languages",
-      "sub": "Speak or type, translated instantly, no extra downloads"
+      "title": "186 языков",
+      "sub": "Говорите или печатайте — перевод мгновенно, без лишних загрузок"
     },
     {
-      "title": "No sign-up needed",
-      "sub": "Try it right on this page — sign in only for more credits"
+      "title": "Без регистрации",
+      "sub": "Попробуйте прямо на этой странице — вход нужен только ради дополнительных кредитов"
     },
     {
-      "title": "History per language pair",
-      "sub": "Every conversation stays organized and easy to find again"
+      "title": "История по каждой языковой паре",
+      "sub": "Каждый разговор остаётся организованным, его легко найти снова"
     },
     {
-      "title": "Free to start",
-      "sub": "Scroll down and start translating right away"
+      "title": "Бесплатно с первого перевода",
+      "sub": "Прокрутите вниз и начните переводить прямо сейчас"
     }
   ],
   "spotlights": [
     {
-      "heading": "Instant voice translation",
-      "sub": "Tap the mic and talk. Your speech is transcribed and translated in seconds — no typing needed.",
+      "heading": "Мгновенный голосовой перевод",
+      "sub": "Нажмите на микрофон и говорите. Речь распознаётся и переводится за секунды — печатать не нужно.",
       "bullets": [
         {
-          "title": "Speak, get instant translation",
-          "sub": "One tap starts recording, translation appears right after"
+          "title": "Говорите — перевод готов сразу",
+          "sub": "Одно нажатие запускает запись, перевод появляется тут же"
         },
         {
-          "title": "Hear it aloud",
-          "sub": "Tap the speaker to have the translation read out loud"
+          "title": "Прослушайте вслух",
+          "sub": "Нажмите на значок динамика — перевод прочитают вслух"
         },
         {
-          "title": "Voice or text, your choice",
-          "sub": "Switch modes anytime with a single tap"
+          "title": "Голос или текст — как удобнее",
+          "sub": "Переключайтесь между режимами одним касанием в любой момент"
         }
       ]
     },
     {
-      "heading": "Text translation too",
-      "sub": "Prefer typing? Switch to keyboard mode and translate a message instantly.",
+      "heading": "Перевод текста тоже есть",
+      "sub": "Удобнее печатать? Переключитесь на клавиатуру и переведите сообщение мгновенно.",
       "bullets": [
         {
-          "title": "Flip original and translation",
-          "sub": "Tap or swipe a line to see it in either language"
+          "title": "Переключайте оригинал и перевод",
+          "sub": "Нажмите или проведите по строке, чтобы увидеть её на любом из языков"
         },
         {
-          "title": "Copy with one tap",
-          "sub": "Grab the translated text to paste anywhere"
+          "title": "Копируйте одним касанием",
+          "sub": "Заберите переведённый текст, чтобы вставить его куда угодно"
         },
         {
-          "title": "Switch to voice anytime",
-          "sub": "Start typing, then dictate the next line instead"
+          "title": "В любой момент вернитесь к голосу",
+          "sub": "Начали печатать — следующую фразу можно продиктовать"
         }
       ]
     },
     {
-      "heading": "186 languages, organized by conversation",
-      "sub": "Pick your language once, then browse everyone else's — each language pair keeps its own saved thread.",
+      "heading": "186 языков, разложенных по разговорам",
+      "sub": "Выберите свой язык один раз, затем переключайтесь между собеседниками — у каждой языковой пары своя сохранённая переписка.",
       "bullets": [
         {
-          "title": "186 languages included",
-          "sub": "No extra downloads or language packs to install"
+          "title": "186 языков уже внутри",
+          "sub": "Никаких дополнительных загрузок и языковых пакетов ставить не нужно"
         },
         {
-          "title": "Conversations stay organized",
-          "sub": "Every language pair has its own saved history"
+          "title": "Разговоры не путаются между собой",
+          "sub": "У каждой языковой пары своя сохранённая история"
         },
         {
-          "title": "Clear or delete anytime",
-          "sub": "Wipe a thread's history or remove it entirely from the menu"
+          "title": "Очищайте или удаляйте, когда захотите",
+          "sub": "Сотрите историю темы или удалите её целиком из меню"
         }
       ]
     },
     {
-      "heading": "No sign-up required to start",
-      "sub": "Try it right on this page — no account, no password. Sign in with Google only when you want more daily credits and history synced across devices.",
+      "heading": "Начать можно без регистрации",
+      "sub": "Попробуйте прямо на этой странице — без аккаунта, без пароля. Войдите через Google, только если хотите больше кредитов в день и синхронизацию истории между устройствами.",
       "bullets": [
         {
-          "title": "Optional one-tap sign-in",
-          "sub": "No registration form, no password to remember"
+          "title": "Вход в один клик — по желанию",
+          "sub": "Никаких форм регистрации и паролей запоминать не нужно"
         },
         {
-          "title": "Your email, nothing else",
-          "sub": "Only your Google email identifies your account"
+          "title": "Только ваш email, больше ничего",
+          "sub": "Аккаунт определяется только по email вашего Google-аккаунта"
         }
       ]
     }
   ],
   "comparison": {
-    "title": "Why voice",
-    "titleAccent": "comes first",
-    "description": "Most translation apps stop at typed text. The rows below are what actually differs when you need to talk, not type.",
+    "title": "Почему голос",
+    "titleAccent": "важнее текста",
+    "description": "Большинство переводчиков умеют только печатный текст. Ниже — то, что реально отличается, когда нужно говорить, а не печатать.",
     "usLabel": "IQ Translate",
-    "themLabel": "Typical apps",
+    "themLabel": "Обычные приложения",
     "rows": [
       {
-        "title": "Voice translation",
-        "us": "One tap records, transcribes and translates in seconds.",
-        "them": "Text-only, or requires typing out what you heard."
+        "title": "Голосовой перевод",
+        "us": "Одно нажатие — запись, распознавание и перевод за секунды.",
+        "them": "Только текст, или нужно печатать то, что услышали."
       },
       {
-        "title": "Conversation history",
-        "us": "Every language pair keeps its own saved thread.",
-        "them": "History disappears when you close the tab."
+        "title": "История разговоров",
+        "us": "У каждой языковой пары своя сохранённая переписка.",
+        "them": "История пропадает, как только закрыта вкладка."
       },
       {
-        "title": "Getting started",
-        "us": "Try it immediately, right on this page — no account required.",
-        "them": "Account creation with email and password before you can try it."
+        "title": "Начало работы",
+        "us": "Пробуйте сразу, прямо на этой странице — аккаунт не нужен.",
+        "them": "Сначала регистрация с email и паролем, и только потом можно попробовать."
       },
       {
-        "title": "Voice playback",
-        "us": "Tap to hear the translation read aloud.",
-        "them": "No voice output."
+        "title": "Озвучка перевода",
+        "us": "Нажмите — и перевод прочитают вслух.",
+        "them": "Голосового вывода нет."
       },
       {
-        "title": "Languages",
-        "us": "186 languages available, no extra download.",
-        "them": "Limited offline language packs."
+        "title": "Языки",
+        "us": "186 языков доступны сразу, без дополнительных загрузок.",
+        "them": "Ограниченные офлайн-пакеты языков."
       }
     ]
   },
   "faq": {
-    "heading": "Frequently asked",
-    "headingAccent": "questions",
-    "sub": "What people ask before trying it. No sign-up needed — scroll up and try it yourself.",
+    "heading": "Частые",
+    "headingAccent": "вопросы",
+    "sub": "Что спрашивают перед тем, как попробовать. Регистрация не нужна — прокрутите наверх и проверьте сами.",
     "items": [
       {
-        "q": "How does voice translation work?",
-        "a": "Tap the mic and speak — your voice is transcribed and translated in a few seconds, shown as text and available to hear read aloud. No typing needed."
+        "q": "Как работает голосовой перевод?",
+        "a": "Нажмите на микрофон и говорите — речь распознаётся и переводится за несколько секунд, перевод показывается текстом и его можно прослушать вслух. Печатать не нужно."
       },
       {
-        "q": "How many languages are supported?",
-        "a": "186 languages. Pick your own language once, then start a conversation thread with anyone else's."
+        "q": "Сколько языков поддерживается?",
+        "a": "186 языков. Выберите свой язык один раз, а затем начинайте переписку с кем угодно на любом из остальных."
       },
       {
-        "q": "Do I need to create an account?",
-        "a": "No. Try it right on this page with no sign-up. Sign in with Google only if you want more daily credits and history synced across devices."
+        "q": "Нужно создавать аккаунт?",
+        "a": "Нет. Попробуйте прямо на этой странице без регистрации. Войдите через Google, только если хотите больше кредитов в день и синхронизацию истории между устройствами."
       },
       {
-        "q": "Is my translation history saved?",
-        "a": "Yes, per language pair, so past conversations stay organized — even without signing in, your browser is remembered. Clear or delete any thread anytime from its menu."
+        "q": "История переводов сохраняется?",
+        "a": "Да, отдельно по каждой языковой паре, так что прошлые разговоры остаются организованными — даже без входа браузер запоминается. Очистить или удалить любую тему можно в любой момент из её меню."
       },
       {
-        "q": "Can I use text instead of voice?",
-        "a": "Yes. Switch to keyboard mode anytime and type your message instead of speaking."
+        "q": "Можно печатать текст вместо голоса?",
+        "a": "Да. Переключитесь на клавиатуру в любой момент и напечатайте сообщение вместо того, чтобы говорить."
       },
       {
-        "q": "Does it work for two-way conversation?",
-        "a": "Yes. Tap or swipe a translated line to flip between the original and the translation, so both sides can follow along on one screen."
+        "q": "Подходит для разговора в обе стороны?",
+        "a": "Да. Нажмите или проведите по переведённой строке, чтобы переключиться между оригиналом и переводом — так оба собеседника видят разговор на одном экране."
       }
     ]
   },
   "finalCta": {
-    "heading": "Instant voice translation,",
-    "headingAccent": "ready in 10 seconds.",
-    "sub": "Try it right on this page — no sign-up, no downloads, 186 languages included.",
-    "ctaLabel": "Try it now"
+    "heading": "Мгновенный голосовой перевод —",
+    "headingAccent": "готов за 10 секунд.",
+    "sub": "Попробуйте прямо на этой странице — без регистрации, без загрузок, 186 языков уже внутри.",
+    "ctaLabel": "Попробовать"
   },
   "footer": {
-    "tagline": "Instant voice translation, 186 languages",
+    "tagline": "Мгновенный голосовой перевод, 186 языков",
     "brand": "IQ Translate",
-    "featuresHeading": "Функции",
+    "featuresHeading": "Переводчики",
     "featureLinks": [
       { "routeKey": "/text-translator", "label": "Перевод текста" },
-      { "routeKey": "/instant-voice-translator", "label": "Голосовой перевод" }
+      { "routeKey": "/instant-voice-translator", "label": "Голосовой перевод" },
+      { "routeKey": "/perevodchik-s-russkogo-na-angliyskiy", "label": "Русско–английский" },
+      { "routeKey": "/perevodchik-s-russkogo-na-nemetskiy", "label": "Русско–немецкий" },
+      { "routeKey": "/perevodchik-s-russkogo-na-ukrainskiy", "label": "Русско–украинский" },
+      { "routeKey": "/perevodchik-s-russkogo-na-polskiy", "label": "Русско–польский" },
+      { "routeKey": "/perevodchik-s-russkogo-na-ispanskiy", "label": "Русско–испанский" },
+      { "routeKey": "/perevodchik-s-russkogo-na-turetskiy", "label": "Русско–турецкий" },
+      { "routeKey": "/perevodchik-s-russkogo-na-arabskiy", "label": "Русско–арабский" }
     ]
   },
   "translator": {
-    "topics": "Topics",
-    "newTopic": "New topic",
-    "noTopicsYet": "No topics yet",
-    "deleteTopic": "Delete topic",
-    "deleteTopicConfirm": "Delete this topic and all its translations?",
+    "topics": "Темы",
+    "newTopic": "Новая тема",
+    "noTopicsYet": "Пока нет тем",
+    "deleteTopic": "Удалить тему",
+    "deleteTopicConfirm": "Удалить эту тему и все переводы в ней?",
     "autoDetect": "Автоопределение",
-    "chooseLanguage": "Choose a language",
-    "close": "Close",
-    "searchPlaceholder": "Search a language…",
-    "clearHistory": "Clear history",
-    "clearHistoryConfirm": "Clear all translations in this topic?",
-    "noTranslationsYet": "No translations yet in this topic.",
-    "translating": "Translating…",
-    "typePlaceholder": "Type a message…",
-    "translateAria": "Translate",
-    "micDeniedError": "Microphone access denied",
-    "recording": "Recording",
-    "recognizing": "Recognizing…",
-    "recordAria": "Record",
-    "stopAria": "Stop",
-    "pricingLink": "Pricing",
+    "chooseLanguage": "Выберите язык",
+    "close": "Закрыть",
+    "searchPlaceholder": "Поиск языка…",
+    "clearHistory": "Очистить историю",
+    "clearHistoryConfirm": "Удалить все переводы в этой теме?",
+    "noTranslationsYet": "В этой теме пока нет переводов.",
+    "translating": "Перевод…",
+    "typePlaceholder": "Введите сообщение…",
+    "translateAria": "Перевести",
+    "micDeniedError": "Доступ к микрофону запрещён",
+    "recording": "Запись",
+    "recognizing": "Распознавание…",
+    "recordAria": "Записать",
+    "stopAria": "Остановить",
+    "pricingLink": "Тарифы",
     "errors": {
-      "insufficientCredits": "Out of credits — upgrade your plan",
-      "textTooLong": "Text too long for your plan"
+      "insufficientCredits": "Кредиты закончились — обновите тариф",
+      "textTooLong": "Текст слишком длинный для вашего тарифа"
     }
   },
   "history": {
-    "emptyState": "Nothing here yet. Type a message or record your voice below.",
-    "readAloudAria": "Read aloud",
-    "copyAria": "Copy"
+    "emptyState": "Здесь пока пусто. Введите сообщение или запишите голос ниже.",
+    "readAloudAria": "Прослушать",
+    "copyAria": "Копировать"
   }
 }

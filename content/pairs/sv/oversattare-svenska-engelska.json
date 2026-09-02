@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Svenska-Engelska Röstöversättare | IQ Translate",
+    "description": "Översätt engelska och svenska med rösten eller text – prata eller skriv, hör svaret direkt. 186 språk, samma tråd åt båda håll, gratis att testa.",
+    "ogTitle": "Svenska-Engelska Röstöversättare",
+    "ogDescription": "Prata eller skriv på svenska, få den engelska översättningen direkt – uttalad eller skriven. Fungerar åt båda håll, gratis att testa.",
+    "canonical": "https://translate.iq-factura.com/sv/oversattare-svenska-engelska",
+    "ogLocale": "sv_SE"
+  },
+  "hero": {
+    "badgeVoice": "Röst",
+    "badgeText": "Text",
+    "badgeLanguages": "186 språk",
+    "title": "Svensk-engelsk översättare",
+    "titleAccent": "som svarar tillbaka",
+    "description": "Prata eller skriv på svenska och få den engelska översättningen på några sekunder — som text och uppläst. Byt riktning när som helst: prata engelska och hör svaret på svenska, i samma samtal.",
+    "ctaTry": "Prova gratis",
+    "ctaSignIn": "Logga in med Google",
+    "mockFromLabel": "🇸🇪 Svenska",
+    "mockFromPhrase": "Var ligger närmaste apotek?",
+    "mockToLabel": "🇬🇧 Engelska",
+    "mockToPhrase": "Where's the nearest pharmacy?"
+  },
+  "spotlights": [
+    {
+      "heading": "Prata istället för att skriva",
+      "sub": "Tryck på mikrofonen, säg det på svenska eller engelska, och läs eller lyssna på översättningen.",
+      "bullets": [
+        { "title": "Tal blir till engelska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på engelska några sekunder senare" },
+        { "title": "Lyssna på engelskan", "sub": "Tryck på högtalarikonen när uttalet inte sitter än" }
+      ]
+    },
+    {
+      "heading": "Ett ämne, båda sidorna av samtalet",
+      "sub": "Fortsätt prata fram och tillbaka utan att börja om — varje utbyte hålls kvar i samma ämne.",
+      "bullets": [
+        { "title": "Svara på engelska, översatt till svenska", "sub": "Den du pratar med kan säga det på engelska och du ser och hör det på svenska" },
+        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma engelska-samtal senare istället för att tappa tråden" }
+      ]
+    },
+    {
+      "heading": "Svenska–engelska, plus 185 språk till",
+      "sub": "Engelska är ett av 186 tillgängliga språk, åt vilket håll du vill.",
+      "bullets": [
+        { "title": "Träffsäker på jobbengelska och vardagsspråk", "sub": "Klarar formella mejl och vardagligt tal, inte bara ordagranna gissningar" },
+        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för engelska idag och vilket annat språk som helst imorgon" }
+      ]
+    },
+    {
+      "heading": "Föredrar du att skriva? Det går också",
+      "sub": "Skriv eller klistra in svensk text och få en engelsk översättning utan att röra mikrofonen.",
+      "bullets": [
+        { "title": "Skriv istället för att prata", "sub": "Byt till tangentbordet när som helst — praktiskt i ett möte eller på en bullrig gata" },
+        { "title": "Kopiera översättningen", "sub": "Kopiera den engelska texten direkt till ett mejl eller meddelande" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Varför det här slår",
+    "titleAccent": "en vanlig engelsk-översättare",
+    "description": "De flesta översättningsappar kräver att du skriver först och glömmer samtalet efteråt. Här är skillnaden.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Vanliga översättningsappar",
+    "rows": [
+      { "title": "Hur du börjar", "us": "Prata på svenska eller engelska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
+      { "title": "Samtalshistorik", "us": "Varje engelska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
+      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
+      { "title": "Båda riktningarna", "us": "Svenska till engelska och engelska till svenska ligger i samma tråd.", "them": "Att byta riktning betyder oftast en ny översättning." },
+      { "title": "Att höra svaret", "us": "Tryck för att få den engelska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+    ]
+  },
+  "faq": {
+    "heading": "Vanliga",
+    "headingAccent": "frågor",
+    "sub": "Vanliga frågor om att översätta mellan svenska och engelska.",
+    "items": [
+      { "q": "Kan den översätta talad svenska till engelska?", "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en engelsk översättning som text, med möjlighet att lyssna på den." },
+      { "q": "Fungerar det bra med vardagligt engelskt tal?", "a": "Ja, vanliga uttryck och talspråk översätts efter innebörd, inte ord för ord." },
+      { "q": "Kan jag översätta tillbaka från engelska till svenska?", "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på engelska och få den svenska översättningen i samma ämne." },
+      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
+      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." },
+      { "q": "Kan jag hålla ett löpande samtal istället för enstaka översättningar?", "a": "Ja, översättningar grupperas i ämnen, så ett engelska-samtal hålls samlat istället för att spridas ut över lösa sökningar." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starta ditt svensk-engelska",
+    "headingAccent": "samtal nu.",
+    "sub": "Prata eller skriv, hör svaret på engelska — gratis att testa, ingen registrering.",
+    "ctaLabel": "Prova gratis"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevodilac Srpsko-Turski sa Glasom | IQ Translate",
+    "description": "Prevodite sa srpskog na turski glasom ili tekstom, korisno za putovanje, kupovinu i gledanje turskih serija. 186 jezika, besplatno za probu, bez registracije.",
+    "ogTitle": "Prevodilac Srpsko-Turski sa Glasom",
+    "ogDescription": "Govorite ili kucajte na srpskom, dobijte turski prevod za par sekundi i čujte ga izgovorenog naglas.",
+    "canonical": "https://translate.iq-factura.com/sr/prevodilac-srpski-turski",
+    "ogLocale": "sr_RS"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Srpsko-turski prevodilac",
+    "titleAccent": "koji vam odgovara glasom",
+    "description": "Govorite ili kucajte na srpskom i dobijte turski prevod za par sekundi, prikazan na ekranu i spreman da se pročita naglas. Promenite smer kad god želite i čujte odgovor na srpskom, sve u istom razgovoru.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava preko Google-a",
+    "mockFromLabel": "🇷🇸 Srpski",
+    "mockFromPhrase": "Kolika je cena sobe?",
+    "mockToLabel": "🇹🇷 Turski",
+    "mockToPhrase": "Oda fiyatı ne kadar?"
+  },
+  "spotlights": [
+    {
+      "heading": "Pričajte, ne kucajte",
+      "sub": "Dodirnite mikrofon i izgovorite rečenicu na srpskom ili turskom – prevod stiže za par sekundi.",
+      "bullets": [
+        { "title": "Govor pretvoren u turski", "sub": "Recite rečenicu na srpskom – prepoznaje se, prevodi i prikazuje na turskom za par sekundi" },
+        { "title": "Čujte turski izgovor naglas", "sub": "Dodirnite zvučnik kad niste sigurni kako nešto zvuči na turskom" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, ceo razgovor na putovanju ili u kupovini",
+      "sub": "Razgovor sa prodavcem, taksistom ili domaćinom ostaje sačuvan u istoj temi.",
+      "bullets": [
+        { "title": "Odgovor na turskom, preveden na srpski", "sub": "Sagovornik govori turski, a vi vidite i čujete prevod na srpskom" },
+        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se na isti razgovor kasnije umesto da ponovo tražite prepisku" }
+      ]
+    },
+    {
+      "heading": "Srpsko-turski, plus još 185 jezika",
+      "sub": "Turski je samo jedan od 186 dostupnih jezika, u oba smera.",
+      "bullets": [
+        { "title": "Tačno prepoznaje turska slova i izgovor", "sub": "Radi pouzdano sa slovima poput ç, ş, ğ i ı" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za turski danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Više volite da kucate? I to radi",
+      "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte turski prevod bez dodirivanja mikrofona – korisno i uz omiljenu tursku seriju.",
+      "bullets": [
+        { "title": "Kucajte umesto da govorite", "sub": "Korisno za poruke na WhatsApp-u, mejlove ili poručivanje robe" },
+        { "title": "Kopirajte prevod", "sub": "Prekopirajte turski tekst pravo u poruku ili dokument" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto ovo pobeđuje",
+    "titleAccent": "uobičajeni srpsko-turski prevodilac",
+    "description": "Većina aplikacija za prevođenje traži da prvo otkucate tekst, a onda zaboravi ceo razgovor. Evo šta je drugačije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na srpskom ili turskom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
+      { "title": "Istorija razgovora", "us": "Svaki srpsko-turski razgovor se čuva kao posebna tema.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dozvole pre prve upotrebe." },
+      { "title": "Oba smera", "us": "Srpsko-turski i tursko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
+      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete turski prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate sami da pogađate." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju sa srpskog na turski.",
+    "items": [
+      { "q": "Da li prevodi govor sa srpskog na turski?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate turski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
+      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda." },
+      { "q": "Da li tačno obrađuje turska slova poput ç, ş i ğ?", "a": "Da, ta slova se ispravno prikazuju i izgovaraju i u tekstu i u audio prevodu." },
+      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
+      { "q": "Mogu li da prevedem sa turskog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na turskom i dobijate prevod na srpskom u istoj temi." },
+      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj srpsko-turski",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili kucajte, čujte odgovor na turskom – besplatno za probu, bez registracije.",
+    "ctaLabel": "Isprobaj odmah"
+  }
+}

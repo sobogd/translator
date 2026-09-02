@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "Hangos Fordító Online – Ingyenes | IQ Translate",
+    "description": "Ingyenes hangos fordító online: beszélj természetesen, és megkapod a fordítást kimondva vagy leírva, 186 nyelven. Letöltés és regisztráció nélkül kipróbálható.",
+    "ogTitle": "Hangos Fordító Online – Ingyenes",
+    "ogDescription": "Ingyenes hangos fordító online: beszélj, és azonnal megkapod a fordítást kimondva vagy leírva, 186 nyelven.",
+    "twitterTitle": "Hangos Fordító Online – Ingyenes",
+    "twitterDescription": "Ingyenes hangos fordító: azonnali kimondott vagy leírt fordítás 186 nyelven."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funkciók",
+    "pricing": "Árak",
+    "mobileApp": "Mobilalkalmazás",
+    "signIn": "Bejelentkezés",
+    "logOut": "Kijelentkezés",
+    "tryItNow": "Próbáld ki most"
+  },
+  "hero": {
+    "badgeVoice": "Hang",
+    "badgeText": "Szöveg",
+    "badgeLanguages": "186 nyelv",
+    "title": "Hangos fordító",
+    "titleAccent": "minden beszélgetéshez",
+    "description": "Beszélj természetesen, és azonnal megkapod a fordítást kimondva vagy leírva, 186 nyelven. Kipróbáláshoz nincs szükség regisztrációra.",
+    "ctaTry": "Próbáld ki most – ingyen",
+    "ctaSignIn": "Bejelentkezés Google-lel",
+    "mockFromLabel": "🇭🇺 Magyar",
+    "mockFromPhrase": "Szia, hogy vagy?",
+    "mockToLabel": "🇬🇧 Angol",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 nyelv",
+      "sub": "Beszélj vagy gépelj, azonnal fordítva, extra letöltés nélkül"
+    },
+    {
+      "title": "Regisztráció nem szükséges",
+      "sub": "Próbáld ki rögtön ezen az oldalon – bejelentkezés csak a több kreditért"
+    },
+    {
+      "title": "Előzmények nyelvpáronként",
+      "sub": "Minden beszélgetés rendezett és könnyen megtalálható marad"
+    },
+    {
+      "title": "Ingyenes a kezdés",
+      "sub": "Görgess le, és azonnal kezdheted a fordítást"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Azonnali hangfordítás",
+      "sub": "Koppints a mikrofonra, és beszélj. A beszéded másodpercek alatt átiratra kerül, és lefordítjuk – gépelés nélkül.",
+      "bullets": [
+        {
+          "title": "Beszélj, azonnal fordítunk",
+          "sub": "Egy koppintás elindítja a felvételt, a fordítás rögtön utána megjelenik"
+        },
+        {
+          "title": "Hallgasd meg hangosan",
+          "sub": "Koppints a hangszóróra, hogy a fordítást felolvassuk"
+        },
+        {
+          "title": "Hang vagy szöveg, te választasz",
+          "sub": "Válts módot bármikor egyetlen koppintással"
+        }
+      ]
+    },
+    {
+      "heading": "Szöveges fordítás is",
+      "sub": "Inkább gépelnél? Válts billentyűzet módra, és azonnal lefordíthatod az üzenetet.",
+      "bullets": [
+        {
+          "title": "Cseréld fel az eredetit és a fordítást",
+          "sub": "Koppints vagy húzd el a sort, hogy bármelyik nyelven lásd"
+        },
+        {
+          "title": "Másold egy koppintással",
+          "sub": "Vedd át a lefordított szöveget, és illeszd be bárhová"
+        },
+        {
+          "title": "Válts hangra bármikor",
+          "sub": "Kezdd gépeléssel, majd mondd tovább a következő sort"
+        }
+      ]
+    },
+    {
+      "heading": "186 nyelv, beszélgetésenként rendezve",
+      "sub": "Válaszd ki a saját nyelved egyszer, majd böngéssz a többi között – minden nyelvpárnak saját mentett szála van.",
+      "bullets": [
+        {
+          "title": "186 nyelv elérhető",
+          "sub": "Nincs szükség extra letöltésre vagy nyelvi csomagra"
+        },
+        {
+          "title": "A beszélgetések rendezettek maradnak",
+          "sub": "Minden nyelvpárnak saját mentett előzménye van"
+        },
+        {
+          "title": "Töröld bármikor",
+          "sub": "Töröld egy szál előzményeit, vagy magát a szálat is a menüből"
+        }
+      ]
+    },
+    {
+      "heading": "Regisztráció nélkül indulhatsz",
+      "sub": "Próbáld ki rögtön ezen az oldalon – fiók és jelszó nélkül. Jelentkezz be Google-lel, ha több napi kreditet és eszközök közötti szinkronizált előzményeket szeretnél.",
+      "bullets": [
+        {
+          "title": "Opcionális, egykattintásos bejelentkezés",
+          "sub": "Nincs regisztrációs űrlap, nincs megjegyzendő jelszó"
+        },
+        {
+          "title": "Csak az e-mail-címed, semmi más",
+          "sub": "Csak a Google e-mail-címed azonosítja a fiókodat"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miért jön",
+    "titleAccent": "előbb a hang",
+    "description": "A legtöbb fordítóalkalmazás megáll a gépelt szövegnél. Az alábbi sorok azt mutatják, mi számít igazán, ha beszélned kell, nem gépelned.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tipikus appok",
+    "rows": [
+      {
+        "title": "Hangfordítás",
+        "us": "Egy koppintás rögzít, átír és fordít másodpercek alatt.",
+        "them": "Csak szöveg, vagy be kell gépelned, amit hallottál."
+      },
+      {
+        "title": "Beszélgetési előzmények",
+        "us": "Minden nyelvpárnak saját mentett szála van.",
+        "them": "Az előzmények eltűnnek, ha bezárod a fület."
+      },
+      {
+        "title": "Kezdés",
+        "us": "Próbáld ki azonnal, rögtön ezen az oldalon – fiók nélkül.",
+        "them": "Fiókot kell létrehoznod e-maillel és jelszóval, mielőtt kipróbálhatnád."
+      },
+      {
+        "title": "Hanglejátszás",
+        "us": "Koppints, hogy meghallgasd a felolvasott fordítást.",
+        "them": "Nincs hangkimenet."
+      },
+      {
+        "title": "Nyelvek",
+        "us": "186 nyelv elérhető, extra letöltés nélkül.",
+        "them": "Korlátozott offline nyelvi csomagok."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Gyakran",
+    "headingAccent": "ismételt kérdések",
+    "sub": "Amit az emberek kipróbálás előtt kérdeznek. Regisztráció nem szükséges – görgess fel, és próbáld ki magad.",
+    "items": [
+      {
+        "q": "Hogyan működik a hangfordítás?",
+        "a": "Koppints a mikrofonra, és beszélj – a hangod néhány másodperc alatt átiratra kerül és lefordítjuk, szövegként megjelenik, és meg is hallgatható. Gépelés nem szükséges."
+      },
+      {
+        "q": "Hány nyelvet támogat?",
+        "a": "186 nyelvet. Válaszd ki egyszer a saját nyelved, majd indíts beszélgetést bárki más nyelvével."
+      },
+      {
+        "q": "Kell fiókot létrehoznom?",
+        "a": "Nem. Próbáld ki rögtön ezen az oldalon regisztráció nélkül. Jelentkezz be Google-lel csak akkor, ha több napi kreditet és eszközök közötti szinkronizált előzményeket szeretnél."
+      },
+      {
+        "q": "Mentésre kerülnek a fordítási előzményeim?",
+        "a": "Igen, nyelvpáronként, így a korábbi beszélgetések rendezettek maradnak – bejelentkezés nélkül is megjegyzi a böngésződet. Bármelyik szál előzményeit törölheted, vagy a szálat is eltávolíthatod a menüből."
+      },
+      {
+        "q": "Használhatok szöveget hang helyett?",
+        "a": "Igen. Válts bármikor billentyűzet módra, és gépeld be az üzeneted beszéd helyett."
+      },
+      {
+        "q": "Működik kétirányú beszélgetéshez?",
+        "a": "Igen. Koppints vagy húzd el a lefordított sort, hogy az eredeti és a fordítás között válts, így mindkét fél követni tudja egy képernyőn."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Azonnali hangfordítás,",
+    "headingAccent": "10 másodperc alatt kész.",
+    "sub": "Próbáld ki rögtön ezen az oldalon – regisztráció és letöltés nélkül, 186 nyelvvel.",
+    "ctaLabel": "Próbáld ki most"
+  },
+  "footer": {
+    "tagline": "Azonnali hangfordítás, 186 nyelven",
+    "brand": "IQ Translate",
+    "featuresHeading": "Fordítók",
+    "featureLinks": [
+      {
+        "routeKey": "/fordito-magyar-angol",
+        "label": "Magyar–Angol"
+      },
+      {
+        "routeKey": "/fordito-magyar-nemet",
+        "label": "Magyar–Német"
+      }
+    ]
+  },
+  "translator": {
+    "topics": "Témák",
+    "newTopic": "Új téma",
+    "noTopicsYet": "Még nincsenek témák",
+    "deleteTopic": "Téma törlése",
+    "deleteTopicConfirm": "Törlöd ezt a témát az összes fordításával együtt?",
+    "autoDetect": "Automatikus felismerés",
+    "chooseLanguage": "Válassz nyelvet",
+    "close": "Bezárás",
+    "searchPlaceholder": "Nyelv keresése…",
+    "clearHistory": "Előzmények törlése",
+    "clearHistoryConfirm": "Törlöd az összes fordítást ebben a témában?",
+    "noTranslationsYet": "Még nincs fordítás ebben a témában.",
+    "translating": "Fordítás…",
+    "typePlaceholder": "Írj egy üzenetet…",
+    "translateAria": "Fordítás",
+    "micDeniedError": "A mikrofon-hozzáférés megtagadva",
+    "recording": "Felvétel",
+    "recognizing": "Felismerés…",
+    "recordAria": "Felvétel",
+    "stopAria": "Leállítás",
+    "pricingLink": "Árak",
+    "errors": {
+      "insufficientCredits": "Elfogyott a kredited – válts csomagot",
+      "textTooLong": "A szöveg túl hosszú a csomagodhoz"
+    }
+  },
+  "history": {
+    "emptyState": "Még nincs itt semmi. Írj egy üzenetet, vagy rögzítsd a hangod lent.",
+    "readAloudAria": "Felolvasás",
+    "copyAria": "Másolás"
+  }
+}

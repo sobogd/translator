@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Polsko-Český Překladač Hlasem | IQ Translate",
+    "description": "Polsko-český překladač online: mluvte nebo pište česky, polský překlad dostanete okamžitě i nahlas. Pro nákupy, práci i výlety za hranice, 186 jazyků, zdarma.",
+    "ogTitle": "Polsko-Český Překladač Hlasem",
+    "ogDescription": "Mluvte nebo pište česky, získejte polský překlad hned, mluvený i psaný. Funguje oběma směry, zdarma k vyzkoušení.",
+    "canonical": "https://translate.iq-factura.com/cs/prekladac-cesko-polsky",
+    "ogLocale": "cs_CZ"
+  },
+  "hero": {
+    "badgeVoice": "Hlas",
+    "badgeText": "Text",
+    "badgeLanguages": "186 jazyků",
+    "title": "Polsko-český překladač",
+    "titleAccent": "pro sousedy i výlety",
+    "description": "Mluvte nebo pište česky a během pár vteřin získejte polský překlad, zobrazený na obrazovce a připravený ke čtení nahlas. Poslouží na nákupy za hranicemi, v práci i na výletě do Polska — kdykoli přepněte směr a odpovídejte česky.",
+    "ctaTry": "Vyzkoušet zdarma",
+    "ctaSignIn": "Přihlásit se přes Google",
+    "mockFromLabel": "🇨🇿 Čeština",
+    "mockFromPhrase": "Kolik to stojí?",
+    "mockToLabel": "🇵🇱 Polština",
+    "mockToPhrase": "Ile to kosztuje?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mluvte, nepište",
+      "sub": "Klepněte na mikrofon, řekněte větu česky nebo polsky a získejte překlad ke čtení i poslechu.",
+      "bullets": [
+        { "title": "Řeč přeložená do polštiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí polsky během pár vteřin" },
+        { "title": "Poslechněte si polštinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností" }
+      ]
+    },
+    {
+      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
+      "bullets": [
+        { "title": "Odpověď v polštině přeložená do češtiny", "sub": "Prodavač nebo obchodní partner může mluvit polsky a vy to uvidíte i uslyšíte česky" },
+        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné polské konverzaci později, místo abyste ji hledali znovu" }
+      ]
+    },
+    {
+      "heading": "Česko-polský pár a 185 dalších jazyků",
+      "sub": "Polština je jeden z 186 dostupných jazyků, v libovolném směru.",
+      "bullets": [
+        { "title": "Rozezná polská slova přesně", "sub": "Přeloží i tam, kde se čeština a polština liší víc, než se zdá" },
+        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na polštinu a zítra na kterýkoli jiný jazyk" }
+      ]
+    },
+    {
+      "heading": "Raději píšete? I to funguje",
+      "sub": "Napište nebo vložte český text a získejte polský překlad bez dotyku mikrofonu — třeba zprávu obchodnímu partnerovi.",
+      "bullets": [
+        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici v hlučném obchodě i v tiché kanceláři" },
+        { "title": "Zkopírujte překlad", "sub": "Vložte polský text rovnou do e-mailu nebo zprávy" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Proč je to lepší",
+    "titleAccent": "než běžný polský překladač",
+    "description": "Typické aplikace nutí nejdřív psát a konverzaci pak zapomenou. Tady je to, co je jinak.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typické překladatelské aplikace",
+    "rows": [
+      { "title": "Jak začnete", "us": "Mluvte česky nebo polsky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
+      { "title": "Historie rozhovorů", "us": "Každá polská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
+      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
+      { "title": "Obě strany rozhovoru", "us": "Čeština do polštiny i polština do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
+      { "title": "Poslech nahlas", "us": "Klepněte a nechte si polský překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+    ]
+  },
+  "faq": {
+    "heading": "Nejčastější",
+    "headingAccent": "dotazy",
+    "sub": "Časté otázky k překladu z češtiny do polštiny.",
+    "items": [
+      { "q": "Přeloží mluvenou češtinu do polštiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete polský překlad jako text, s možností nechat si ho přečíst nahlas." },
+      { "q": "Proč překladač, když jsou si jazyky podobné?", "a": "Protože podobnost svádí k omylu — spousta slov zní stejně, ale znamená něco jiného, a překladač tomu předejde." },
+      { "q": "Můžu překládat i z polštiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište polsky a český překlad dostanete ve stejném vlákně." },
+      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
+      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Začněte svou česko-polskou",
+    "headingAccent": "konverzaci hned.",
+    "sub": "Mluvte nebo pište, odpověď dostanete polsky — zdarma k vyzkoušení, bez registrace.",
+    "ctaLabel": "Vyzkoušet teď"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "title": "Sesli Çeviri Online, Ücretsiz | IQ Translate",
+    "description": "Ücretsiz sesli çeviri: doğal şekilde konuşun, saniyeler içinde 186 dilde yazılı veya sesli çeviri alın. İndirme yok, denemek için kayıt gerekmez.",
+    "ogTitle": "Sesli Çeviri Online, Ücretsiz",
+    "ogDescription": "Ücretsiz sesli çeviri: konuşun ve saniyeler içinde 186 dilde sesli veya yazılı çeviri alın.",
+    "twitterTitle": "Sesli Çeviri Online, Ücretsiz",
+    "twitterDescription": "186 dilde anında sesli veya yazılı çeviri — ücretsiz, kayıt gerekmez."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
+    "mobileApp": "Mobil uygulama",
+    "signIn": "Giriş yap",
+    "logOut": "Çıkış yap",
+    "tryItNow": "Hemen dene"
+  },
+  "hero": {
+    "badgeVoice": "Ses",
+    "badgeText": "Metin",
+    "badgeLanguages": "186 dil",
+    "title": "Her konuşma için",
+    "titleAccent": "sesli çeviri",
+    "description": "Doğal şekilde konuşun, saniyeler içinde 186 dilde yazılı veya sesli çeviri alın. Denemek için kayıt gerekmez.",
+    "ctaTry": "Hemen dene — ücretsiz",
+    "ctaSignIn": "Google ile giriş yap",
+    "mockFromLabel": "🇹🇷 Türkçe",
+    "mockFromPhrase": "Merhaba, nasılsın?",
+    "mockToLabel": "🇬🇧 İngilizce",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 dil",
+      "sub": "Konuşun ya da yazın, ek bir şey indirmeden anında çevrilsin"
+    },
+    {
+      "title": "Kayıt gerekmez",
+      "sub": "Bu sayfada hemen deneyin — daha fazla kredi için giriş yapın"
+    },
+    {
+      "title": "Dil çiftine göre geçmiş",
+      "sub": "Her konuşma düzenli kalır, kolayca tekrar bulunur"
+    },
+    {
+      "title": "Ücretsiz başlayın",
+      "sub": "Aşağı kaydırın ve hemen çevirmeye başlayın"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Anında sesli çeviri",
+      "sub": "Mikrofona dokunun ve konuşun. Konuşmanız saniyeler içinde yazıya dökülür ve çevrilir — yazmaya gerek yok.",
+      "bullets": [
+        {
+          "title": "Konuşun, anında çeviri alın",
+          "sub": "Tek dokunuşla kayıt başlar, hemen ardından çeviri görünür"
+        },
+        {
+          "title": "Sesli dinleyin",
+          "sub": "Çeviriyi sesli dinlemek için hoparlör simgesine dokunun"
+        },
+        {
+          "title": "Ses ya da metin, seçim sizin",
+          "sub": "Tek dokunuşla istediğiniz zaman modu değiştirin"
+        }
+      ]
+    },
+    {
+      "heading": "Metin çevirisi de var",
+      "sub": "Yazmayı mı tercih edersiniz? Klavye moduna geçin ve bir mesajı anında çevirin.",
+      "bullets": [
+        {
+          "title": "Orijinali ve çeviriyi değiştirin",
+          "sub": "Bir satıra dokunun veya kaydırın, her iki dilde de görün"
+        },
+        {
+          "title": "Tek dokunuşla kopyalayın",
+          "sub": "Çevrilen metni alın, istediğiniz yere yapıştırın"
+        },
+        {
+          "title": "İstediğiniz an sese geçin",
+          "sub": "Yazmaya başlayın, sonraki satırı sesli söyleyin"
+        }
+      ]
+    },
+    {
+      "heading": "186 dil, konuşmaya göre düzenli",
+      "sub": "Dilinizi bir kez seçin, sonra diğerlerine göz atın — her dil çifti kendi kayıtlı geçmişini tutar.",
+      "bullets": [
+        {
+          "title": "186 dil dahil",
+          "sub": "Ek indirme veya dil paketi gerekmez"
+        },
+        {
+          "title": "Konuşmalar düzenli kalır",
+          "sub": "Her dil çiftinin kendi kayıtlı geçmişi vardır"
+        },
+        {
+          "title": "İstediğiniz an temizleyin veya silin",
+          "sub": "Bir konuşmanın geçmişini menüden temizleyin ya da tamamen kaldırın"
+        }
+      ]
+    },
+    {
+      "heading": "Başlamak için kayıt gerekmez",
+      "sub": "Bu sayfada hemen deneyin — hesap yok, şifre yok. Daha fazla günlük kredi ve cihazlar arası senkronize geçmiş için Google ile giriş yapın.",
+      "bullets": [
+        {
+          "title": "İsteğe bağlı tek dokunuşla giriş",
+          "sub": "Kayıt formu yok, hatırlanacak şifre yok"
+        },
+        {
+          "title": "Sadece e-postanız, başka hiçbir şey",
+          "sub": "Hesabınızı yalnızca Google e-postanız tanımlar"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Neden önce",
+    "titleAccent": "ses gelir",
+    "description": "Çoğu çeviri uygulaması yazılı metinde kalır. Aşağıdaki satırlar, yazmak değil konuşmak istediğinizde gerçekten fark yaratan noktalar.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Sıradan uygulamalar",
+    "rows": [
+      {
+        "title": "Sesli çeviri",
+        "us": "Tek dokunuş kaydeder, yazıya döker ve saniyeler içinde çevirir.",
+        "them": "Yalnızca metin, ya da duyduğunuzu yazmanız gerekir."
+      },
+      {
+        "title": "Konuşma geçmişi",
+        "us": "Her dil çifti kendi kayıtlı konuşmasını tutar.",
+        "them": "Sekmeyi kapattığınızda geçmiş kaybolur."
+      },
+      {
+        "title": "Başlarken",
+        "us": "Bu sayfada hemen deneyin — hesap gerekmez.",
+        "them": "Denemeden önce e-posta ve şifreyle hesap oluşturmanız gerekir."
+      },
+      {
+        "title": "Sesli okuma",
+        "us": "Çeviriyi sesli dinlemek için dokunun.",
+        "them": "Sesli çıktı yok."
+      },
+      {
+        "title": "Diller",
+        "us": "Ek indirme yapmadan 186 dil kullanılabilir.",
+        "them": "Sınırlı çevrimdışı dil paketleri."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Sıkça sorulan",
+    "headingAccent": "sorular",
+    "sub": "İnsanların denemeden önce sorduğu sorular. Kayıt gerekmez — yukarı kaydırıp kendiniz deneyin.",
+    "items": [
+      {
+        "q": "Sesli çeviri nasıl çalışır?",
+        "a": "Mikrofona dokunun ve konuşun — sesiniz birkaç saniyede yazıya dökülür ve çevrilir, hem metin olarak gösterilir hem de sesli dinlenebilir. Yazmaya gerek yok."
+      },
+      {
+        "q": "Kaç dil destekleniyor?",
+        "a": "186 dil. Kendi dilinizi bir kez seçin, ardından başka herhangi biriyle bir konuşma başlatın."
+      },
+      {
+        "q": "Hesap oluşturmam gerekiyor mu?",
+        "a": "Hayır. Bu sayfada kayıt olmadan hemen deneyebilirsiniz. Daha fazla günlük kredi ve cihazlar arası senkronize geçmiş için Google ile giriş yapabilirsiniz."
+      },
+      {
+        "q": "Çeviri geçmişim kaydediliyor mu?",
+        "a": "Evet, dil çiftine göre kaydedilir, böylece geçmiş konuşmalar düzenli kalır — giriş yapmasanız bile tarayıcınız hatırlanır. Herhangi bir konuşmayı menüsünden istediğiniz an temizleyebilir veya silebilirsiniz."
+      },
+      {
+        "q": "Ses yerine metin kullanabilir miyim?",
+        "a": "Evet. İstediğiniz an klavye moduna geçip konuşmak yerine mesajınızı yazabilirsiniz."
+      },
+      {
+        "q": "İki yönlü konuşma için uygun mu?",
+        "a": "Evet. Çevrilen bir satıra dokunun veya kaydırın, orijinal ile çeviri arasında geçiş yapın, böylece her iki taraf da aynı ekrandan takip edebilir."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Anında sesli çeviri,",
+    "headingAccent": "10 saniyede hazır.",
+    "sub": "Bu sayfada hemen deneyin — kayıt yok, indirme yok, 186 dil dahil.",
+    "ctaLabel": "Hemen dene"
+  },
+  "footer": {
+    "tagline": "Anında sesli çeviri, 186 dil",
+    "brand": "IQ Translate",
+    "featuresHeading": "Çevirmenler",
+    "featureLinks": [
+      { "routeKey": "/ceviri-turkce-ingilizce", "label": "Türkçe–İngilizce" },
+      { "routeKey": "/ceviri-turkce-arapca", "label": "Türkçe–Arapça" },
+      { "routeKey": "/ceviri-turkce-almanca", "label": "Türkçe–Almanca" },
+      { "routeKey": "/ceviri-turkce-rusca", "label": "Türkçe–Rusça" },
+      { "routeKey": "/ceviri-turkce-fransizca", "label": "Türkçe–Fransızca" },
+      { "routeKey": "/ceviri-turkce-ispanyolca", "label": "Türkçe–İspanyolca" },
+      { "routeKey": "/ceviri-turkce-farsca", "label": "Türkçe–Farsça" }
+    ]
+  },
+  "translator": {
+    "topics": "Konular",
+    "newTopic": "Yeni konu",
+    "noTopicsYet": "Henüz konu yok",
+    "deleteTopic": "Konuyu sil",
+    "deleteTopicConfirm": "Bu konu ve tüm çevirileri silinsin mi?",
+    "autoDetect": "Otomatik algıla",
+    "chooseLanguage": "Dil seçin",
+    "close": "Kapat",
+    "searchPlaceholder": "Dil ara…",
+    "clearHistory": "Geçmişi temizle",
+    "clearHistoryConfirm": "Bu konudaki tüm çeviriler silinsin mi?",
+    "noTranslationsYet": "Bu konuda henüz çeviri yok.",
+    "translating": "Çevriliyor…",
+    "typePlaceholder": "Bir mesaj yazın…",
+    "translateAria": "Çevir",
+    "micDeniedError": "Mikrofon erişimi reddedildi",
+    "recording": "Kaydediliyor",
+    "recognizing": "Tanınıyor…",
+    "recordAria": "Kaydet",
+    "stopAria": "Durdur",
+    "pricingLink": "Fiyatlandırma",
+    "errors": {
+      "insufficientCredits": "Krediniz bitti — planınızı yükseltin",
+      "textTooLong": "Metin planınız için çok uzun"
+    }
+  },
+  "history": {
+    "emptyState": "Henüz bir şey yok. Aşağıdan bir mesaj yazın veya sesinizi kaydedin.",
+    "readAloudAria": "Sesli oku",
+    "copyAria": "Kopyala"
+  }
+}

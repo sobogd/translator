@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Suomi-Espanja-kääntäjä matkalle ja lomille | IQ Translate",
+    "description": "Käännä suomesta espanjaksi puhumalla tai kirjoittamalla, kuuntele käännös ääneen ja jatka samaa keskustelua lomalla. Ilmainen kokeilla, ei rekisteröitymistä.",
+    "ogTitle": "Suomi-Espanja-kääntäjä matkalle ja lomille",
+    "ogDescription": "Puhu tai kirjoita suomeksi, saat espanjankielisen käännöksen heti – tekstinä ja ääneen luettuna. Toimii molempiin suuntiin.",
+    "canonical": "https://translate.iq-factura.com/fi/kaantaja-suomi-espanja",
+    "ogLocale": "fi_FI"
+  },
+  "hero": {
+    "badgeVoice": "Puhe",
+    "badgeText": "Teksti",
+    "badgeLanguages": "186 kieltä",
+    "title": "Käännä suomesta espanjaksi",
+    "titleAccent": "puhumalla tai kirjoittamalla",
+    "description": "Puhu tai kirjoita suomeksi ja saat espanjankielisen käännöksen sekunneissa – näytöllä tekstinä ja valmiina luettavaksi ääneen. Sopii lomamatkoille, talvehtimiseen Espanjassa ja arjen asioimiseen, ja toimii aina molempiin suuntiin samassa keskustelussa.",
+    "ctaTry": "Kokeile ilmaiseksi",
+    "ctaSignIn": "Kirjaudu Googlella",
+    "mockFromLabel": "🇫🇮 Suomi",
+    "mockFromPhrase": "Onko tämä huoneisto vapaana koko talveksi?",
+    "mockToLabel": "🇪🇸 Espanja",
+    "mockToPhrase": "¿Este apartamento está disponible todo el invierno?"
+  },
+  "spotlights": [
+    {
+      "heading": "Puhu suomea, kuuntele espanjaa",
+      "sub": "Napauta mikrofonia ja sano asiasi suomeksi lomalla tai talvehtiessasi Espanjassa – käännös näkyy tekstinä ja kuuluu ääneen espanjaksi.",
+      "bullets": [
+        { "title": "Puheesi muuttuu espanjaksi hetkessä", "sub": "Sano se suomeksi ravintolassa tai apteekissa – käännös tulee sekunneissa" },
+        { "title": "Kuuntele oikea espanjankielinen ääntäminen", "sub": "Napauta kaiutinta, kun oma espanjasi ei vielä riitä ääntämiseen" }
+      ]
+    },
+    {
+      "heading": "Sama aihe koko loman ajaksi",
+      "sub": "Vuokraisäntä tai naapuri vastaa espanjaksi ja näet sen suomeksi – kaikki tallentuu samaan keskusteluun koko oleskelusi ajaksi.",
+      "bullets": [
+        { "title": "Vastaus espanjaksi näkyy suomeksi", "sub": "Paikallinen puhuu tai kirjoittaa espanjaa ja sinä luet sen suomeksi" },
+        { "title": "Yksi aihe koko talvehtimisen ajaksi", "sub": "Palaa samaan Espanja-keskusteluun sen sijaan, että aloitat joka kerta alusta" }
+      ]
+    },
+    {
+      "heading": "Suomi–espanja ja 185 muuta kieltä",
+      "sub": "Espanja on yksi 186 kielestä, jotka toimivat samalla työkalulla mihin tahansa suuntaan.",
+      "bullets": [
+        { "title": "Tarkka espanjan aksenteille ja taivutuksille", "sub": "Käsittelee á, é, í, ó, ú ja ñ oikein tekstissä ja puheessa" },
+        { "title": "186 kieltä samalla työkalulla", "sub": "Sama sovellus toimii espanjan lisäksi mille tahansa muulle kielelle" }
+      ]
+    },
+    {
+      "heading": "Kirjoita, jos mikrofoni ei sovi tilanteeseen",
+      "sub": "Liitä tai kirjoita suomenkielinen viesti vaikka vuokrasopimuksesta ja saat espanjankielisen käännöksen ilman puhumista.",
+      "bullets": [
+        { "title": "Liitä teksti sähköpostista tai vuokrasopimuksesta", "sub": "Kirjoita tai liitä viesti ja saat käännöksen heti näytölle" },
+        { "title": "Kopioi käännös yhdellä napautuksella", "sub": "Vie espanjankielinen teksti suoraan takaisin viestiin tai lomakkeeseen" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miksi tämä on parempi kuin",
+    "titleAccent": "tavallinen suomi-espanja-sovellus",
+    "description": "Useimmat käännössovellukset vaativat kirjoittamista etkä pysty jatkamaan samaa keskustelua koko lomasi ajan. Tässä on ero.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tavalliset käännössovellukset",
+    "rows": [
+      { "title": "Aloittaminen", "us": "Puhu suomeksi tai espanjaksi ja saat käännöksen heti.", "them": "Kirjoita ensin se, mitä haluat sanoa." },
+      { "title": "Keskusteluhistoria", "us": "Koko lomasi tai talvehtimisesi keskustelu tallentuu yhdeksi aiheeksi.", "them": "Käännös katoaa, kun suljet sovelluksen." },
+      { "title": "Käyttöönotto", "us": "Avaa selaimessa hotellin tai vuokra-asunnon wifissä – ei asennettavaa.", "them": "Lataa sovellus ja hyväksy käyttöoikeudet ennen käyttöä." },
+      { "title": "Molemmat suunnat", "us": "Suomesta espanjaan ja espanjasta suomeen samassa aiheessa.", "them": "Suunnan vaihtaminen aloittaa yleensä uuden käännöksen." },
+      { "title": "Ääneen kuunteleminen", "us": "Napauta ja kuule espanjankielinen käännös luettuna ääneen.", "them": "Vain tekstiä, ääntäminen jää arvailun varaan." }
+    ]
+  },
+  "faq": {
+    "heading": "Usein kysytyt",
+    "headingAccent": "kysymykset",
+    "sub": "Näihin kysytään vastauksia ennen suomi-espanja-kääntäjän kokeilua.",
+    "items": [
+      { "q": "Kääntääkö se puhutun suomen espanjaksi?", "a": "Kyllä – napauta mikrofonia, puhu suomeksi, ja saat espanjankielisen käännöksen tekstinä sekä mahdollisuuden kuunnella se ääneen." },
+      { "q": "Sopiiko se talvehtimiseen Espanjassa?", "a": "Kyllä, keskustelu tallentuu aiheeksi, johon voit palata koko oleskelusi ajan – naapureiden, vuokraisännän tai lääkärin kanssa asioidessa." },
+      { "q": "Toimiiko se myös espanjasta suomeen?", "a": "Kyllä, sama keskustelu toimii molempiin suuntiin – paikallinen puhuu tai kirjoittaa espanjaa ja sinä näet sen suomeksi." },
+      { "q": "Onko se ilmainen?", "a": "Kyllä, voit kokeilla ilmaiseksi ilman tiliä. Kirjaudu Googlella saadaksesi lisää päivittäisiä krediittejä ja tallennetun historian." },
+      { "q": "Näkyvätkö espanjan erikoismerkit, kuten ñ, oikein?", "a": "Kyllä, á, é, í, ó, ú ja ñ käsitellään oikein sekä tekstissä että ääneen luettuna." },
+      { "q": "Tarvitseeko asentaa mitään?", "a": "Ei, se toimii selaimessa tietokoneella tai puhelimella – ei ladattavaa." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Aloita suomesta espanjaksi",
+    "headingAccent": "-keskustelusi nyt.",
+    "sub": "Puhu tai kirjoita, kuuntele käännös espanjaksi – ilmainen kokeilla, ei rekisteröitymistä.",
+    "ctaLabel": "Kokeile nyt"
+  }
+}

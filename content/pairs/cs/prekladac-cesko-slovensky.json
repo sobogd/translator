@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Česko-Slovenský Překladač Hlasem | IQ Translate",
+    "description": "Česko-slovenský překladač online: mluvte nebo pište česky, slovenský překlad dostanete okamžitě i nahlas. Pro rodinu, práci i výlety, 186 jazyků, zdarma.",
+    "ogTitle": "Česko-Slovenský Překladač Hlasem",
+    "ogDescription": "Mluvte nebo pište česky, získejte slovenský překlad hned, mluvený i psaný. Funguje oběma směry, zdarma k vyzkoušení.",
+    "canonical": "https://translate.iq-factura.com/cs/prekladac-cesko-slovensky",
+    "ogLocale": "cs_CZ"
+  },
+  "hero": {
+    "badgeVoice": "Hlas",
+    "badgeText": "Text",
+    "badgeLanguages": "186 jazyků",
+    "title": "Česko-slovenský překladač",
+    "titleAccent": "rychlý jako běžná řeč",
+    "description": "Mluvte nebo pište česky a během pár vteřin získejte slovenský překlad, zobrazený na obrazovce a připravený ke čtení nahlas. Užitečný na rodinné návštěvy, pracovní cesty i výlety na Slovensko — kdykoli přepněte směr a odpovídejte česky.",
+    "ctaTry": "Vyzkoušet zdarma",
+    "ctaSignIn": "Přihlásit se přes Google",
+    "mockFromLabel": "🇨🇿 Čeština",
+    "mockFromPhrase": "Můžeš mi, prosím, pomoct s kufrem?",
+    "mockToLabel": "🇸🇰 Slovenština",
+    "mockToPhrase": "Môžeš mi, prosím, pomôcť s kufrom?"
+  },
+  "spotlights": [
+    {
+      "heading": "Mluvte, nepište",
+      "sub": "Klepněte na mikrofon, řekněte větu česky nebo slovensky a získejte překlad ke čtení i poslechu.",
+      "bullets": [
+        { "title": "Řeč přeložená do slovenštiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí slovensky během pár vteřin" },
+        { "title": "Poslechněte si slovenštinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí neznámým slovem" }
+      ]
+    },
+    {
+      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
+      "bullets": [
+        { "title": "Odpověď ve slovenštině přeložená do češtiny", "sub": "Příbuzný nebo kolega ze Slovenska může mluvit slovensky a vy to uvidíte i uslyšíte česky" },
+        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné slovenské konverzaci později, místo abyste ji hledali znovu" }
+      ]
+    },
+    {
+      "heading": "Česko-slovenský pár a 185 dalších jazyků",
+      "sub": "Slovenština je jeden z 186 dostupných jazyků, v libovolném směru.",
+      "bullets": [
+        { "title": "Rozpozná slovenská slova přesně", "sub": "Nejde o hádání podle podobnosti — překlad sedí i tam, kde se jazyky liší" },
+        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na slovenštinu a zítra na kterýkoli jiný jazyk" }
+      ]
+    },
+    {
+      "heading": "Raději píšete? I to funguje",
+      "sub": "Napište nebo vložte český text a získejte slovenský překlad bez dotyku mikrofonu — třeba zprávu příbuzným na WhatsAppu.",
+      "bullets": [
+        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici kdykoli, i v hlučném prostředí" },
+        { "title": "Zkopírujte překlad", "sub": "Vložte slovenský text rovnou do zprávy nebo e-mailu" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Proč je to lepší",
+    "titleAccent": "než běžný slovenský překladač",
+    "description": "Typické aplikace nutí nejdřív psát a konverzaci pak zapomenou. Tady je to, co je jinak.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typické překladatelské aplikace",
+    "rows": [
+      { "title": "Jak začnete", "us": "Mluvte česky nebo slovensky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
+      { "title": "Historie rozhovorů", "us": "Každá slovenská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
+      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
+      { "title": "Obě strany rozhovoru", "us": "Čeština do slovenštiny i slovenština do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
+      { "title": "Poslech nahlas", "us": "Klepněte a nechte si slovenský překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+    ]
+  },
+  "faq": {
+    "heading": "Nejčastější",
+    "headingAccent": "dotazy",
+    "sub": "Časté otázky k překladu z češtiny do slovenštiny.",
+    "items": [
+      { "q": "Přeloží mluvenou češtinu do slovenštiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete slovenský překlad jako text, s možností nechat si ho přečíst nahlas." },
+      { "q": "Proč používat překladač, když jsou jazyky tak podobné?", "a": "Protože ne každé slovo je stejné — pomůže u odborných výrazů, nářečí i tam, kde by si dvě podobná slova mohla znamenat něco jiného." },
+      { "q": "Můžu překládat i ze slovenštiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište slovensky a český překlad dostanete ve stejném vlákně." },
+      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
+      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Začněte svou česko-slovenskou",
+    "headingAccent": "konverzaci hned.",
+    "sub": "Mluvte nebo pište, odpověď dostanete slovensky — zdarma k vyzkoušení, bez registrace.",
+    "ctaLabel": "Vyzkoušet teď"
+  }
+}

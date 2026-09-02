@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Svenska-Finska Röstöversättare | IQ Translate",
+    "description": "Finsk och svensk översättare med röst och text – till hjälp när finskan är svårare än de nordiska grannspråken. Prata eller skriv, hör svaret direkt.",
+    "ogTitle": "Svenska-Finska Röstöversättare",
+    "ogDescription": "Prata eller skriv på svenska, få den finska översättningen direkt – uttalad eller skriven, åt båda håll.",
+    "canonical": "https://translate.iq-factura.com/sv/oversattare-svenska-finska",
+    "ogLocale": "sv_SE"
+  },
+  "hero": {
+    "badgeVoice": "Röst",
+    "badgeText": "Text",
+    "badgeLanguages": "186 språk",
+    "title": "Svensk-finsk översättare",
+    "titleAccent": "för Finlandskontakterna",
+    "description": "Finska är inget grannspråk som danska eller norska — orden liknar sällan varandra. Prata eller skriv på svenska och få den finska översättningen på några sekunder — som text och uppläst, åt båda håll.",
+    "ctaTry": "Prova gratis",
+    "ctaSignIn": "Logga in med Google",
+    "mockFromLabel": "🇸🇪 Svenska",
+    "mockFromPhrase": "Hej, hur mår du?",
+    "mockToLabel": "🇫🇮 Finska",
+    "mockToPhrase": "Hei, mitä kuuluu?"
+  },
+  "spotlights": [
+    {
+      "heading": "Prata istället för att skriva",
+      "sub": "Tryck på mikrofonen, säg det på svenska eller finska, och läs eller lyssna på översättningen.",
+      "bullets": [
+        { "title": "Tal blir till finska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på finska några sekunder senare" },
+        { "title": "Lyssna på finskan", "sub": "Tryck på högtalarikonen för att höra ordet eller frasen uttalad rätt" }
+      ]
+    },
+    {
+      "heading": "Ett ämne, båda sidorna av samtalet",
+      "sub": "Perfekt för kontakt med släkt, vänner eller kollegor i Finland — hela samtalet hamnar i samma ämne.",
+      "bullets": [
+        { "title": "Svara på finska, översatt till svenska", "sub": "Den du pratar med kan säga det på finska och du ser och hör det på svenska" },
+        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma Finland-tråd nästa gång ni hörs, i mejl eller WhatsApp" }
+      ]
+    },
+    {
+      "heading": "Svenska–finska, plus 185 språk till",
+      "sub": "Finska är ett av 186 tillgängliga språk, åt vilket håll du vill — praktiskt även om du redan pratar finlandssvenska hemma.",
+      "bullets": [
+        { "title": "Klarar ett helt annat språk, inte bara ett grannspråk", "sub": "Finskan har annan grammatik och andra ord än svenskan, så en riktig översättning gör skillnad" },
+        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för finska idag och vilket annat språk som helst imorgon" }
+      ]
+    },
+    {
+      "heading": "Föredrar du att skriva? Det går också",
+      "sub": "Skriv eller klistra in svensk text och få en finsk översättning utan att röra mikrofonen.",
+      "bullets": [
+        { "title": "Skriv istället för att prata", "sub": "Praktiskt för ett mejl till en finsk myndighet eller ett meddelande till släkten" },
+        { "title": "Kopiera översättningen", "sub": "Kopiera den finska texten direkt till mejlet eller meddelandet" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Varför det här slår",
+    "titleAccent": "en vanlig finsk översättare",
+    "description": "Finskan går inte att gissa sig till som de andra nordiska språken. Här är vad som faktiskt skiljer.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Vanliga översättningsappar",
+    "rows": [
+      { "title": "Hur du börjar", "us": "Prata på svenska eller finska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
+      { "title": "Ett riktigt annat språk", "us": "Klarar finskans egen grammatik, inte bara utbytbara ord som mellan de nordiska språken.", "them": "Bygger ofta på ordbyten som fungerar sämre ju mer språken skiljer sig åt." },
+      { "title": "Samtalshistorik", "us": "Varje finska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
+      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
+      { "title": "Att höra svaret", "us": "Tryck för att få den finska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+    ]
+  },
+  "faq": {
+    "heading": "Vanliga",
+    "headingAccent": "frågor",
+    "sub": "Vanliga frågor om att översätta mellan svenska och finska.",
+    "items": [
+      { "q": "Varför är finska svårare att översätta än danska eller norska?", "a": "Finska tillhör en helt annan språkfamilj än svenskan, med annan grammatik och ordförråd, så en riktig översättning behövs — det räcker inte att gissa utifrån stavningen." },
+      { "q": "Kan den översätta talad svenska till finska?", "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en finsk översättning som text, med möjlighet att lyssna på den." },
+      { "q": "Kan jag översätta tillbaka från finska till svenska?", "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på finska och få den svenska översättningen i samma ämne." },
+      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
+      { "q": "Fungerar den även om jag redan pratar finlandssvenska?", "a": "Ja, den är till för det finska språket specifikt, som ett komplement även om svenska redan pratas i familjen eller på orten." },
+      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Starta ditt svensk-finska",
+    "headingAccent": "samtal nu.",
+    "sub": "Prata eller skriv, hör svaret på finska — gratis att testa, perfekt för kontakten med Finland.",
+    "ctaLabel": "Prova gratis"
+  }
+}

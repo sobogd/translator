@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Korean to English Voice Translator | IQ Translate",
+    "description": "Translate Korean to English or English to Korean by voice or text, in Hangul, with the translation read aloud. 186 languages, free to try, no sign-up.",
+    "ogTitle": "Korean to English Voice Translator",
+    "ogDescription": "Speak or type in Korean or English and get an instant translation in Hangul, spoken aloud or written. Works both directions, free to try.",
+    "canonical": "https://translate.iq-factura.com/translate-english-to-korean",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "English to Korean translator",
+    "titleAccent": "built for real conversations",
+    "description": "Speak or type in English and get a Korean translation in Hangul within seconds, ready to read or hear aloud. Reply in Korean and get the English meaning back, all in one saved conversation.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google",
+    "mockFromLabel": "🇬🇧 English",
+    "mockFromPhrase": "What time does the bus leave?",
+    "mockToLabel": "🇰🇷 Korean",
+    "mockToPhrase": "버스가 몇 시에 출발해요?"
+  },
+  "spotlights": [
+    {
+      "heading": "Speak English, get Korean back",
+      "sub": "Tap the mic and talk — your speech is turned into a Korean translation in Hangul.",
+      "bullets": [
+        { "title": "Spoken English becomes Hangul text", "sub": "Say it out loud and see the Korean translation appear seconds later" },
+        { "title": "Hear the Korean spoken aloud", "sub": "Tap the speaker for pronunciation, useful since Korean sounds don't map directly to English letters" }
+      ]
+    },
+    {
+      "heading": "One thread, both sides of the chat",
+      "sub": "Whoever replies in Korean gets translated back to English automatically, in the same conversation.",
+      "bullets": [
+        { "title": "Korean replies translated instantly", "sub": "The other person speaks Korean, you see and hear the English meaning" },
+        { "title": "Saved as a topic", "sub": "Reopen the same Korean conversation later instead of losing it" }
+      ]
+    },
+    {
+      "heading": "Korean, with everyday phrasing",
+      "sub": "Korean is one of 186 languages available, shown in proper Hangul rather than romanized text.",
+      "bullets": [
+        { "title": "Natural, everyday Korean", "sub": "Translations aim for phrasing you'd actually hear in a conversation, not a stiff textbook line" },
+        { "title": "186 languages total", "sub": "The same tool covers Korean today and any other language you need next" }
+      ]
+    },
+    {
+      "heading": "Or just type it out",
+      "sub": "Paste or type English text and get a Korean translation without speaking a word.",
+      "bullets": [
+        { "title": "Type instead of speak", "sub": "Handy for messages or a quiet room" },
+        { "title": "Copy the Korean text", "sub": "Copy the result straight into a chat app or document" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a typical Korean translator",
+    "description": "Most translator apps make you type first and give you no way to check pronunciation. Here's what's different.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "How you start", "us": "Speak in English or Korean and get a translation right away.", "them": "Type your sentence out first." },
+      { "title": "Checking pronunciation", "us": "Tap to hear the Korean translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
+      { "title": "Conversation history", "us": "Every Korean conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
+      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
+      { "title": "Both directions", "us": "English to Korean and Korean to English in one thread.", "them": "Switching direction usually means starting over." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating between English and Korean.",
+    "items": [
+      { "q": "Does it write Korean in Hangul, not romanized letters?", "a": "Yes, translations appear in proper Hangul script, ready to read or copy." },
+      { "q": "Can it translate spoken Korean back to English?", "a": "Yes — speak Korean into the mic and get an English translation as text, with audio playback available." },
+      { "q": "Does it handle polite and casual Korean speech?", "a": "It aims for natural, commonly used phrasing suited to everyday conversations, whether you're chatting casually or need something more polite." },
+      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
+      { "q": "Do I need a Korean keyboard installed?", "a": "No, the app displays Hangul automatically — no separate keyboard or input method needed." },
+      { "q": "Can I hear how to pronounce the Korean translation?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start your English to Korean",
+    "headingAccent": "conversation now.",
+    "sub": "Speak or type, read or hear it in Korean — free to try, no sign-up.",
+    "ctaLabel": "Try it now"
+  }
+}

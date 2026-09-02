@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Traduttore Vocale Italiano-Inglese | IQ Translate",
+    "description": "Parla o scrivi in italiano, traduci in inglese all'istante e ascolta la risposta ad alta voce, nella stessa conversazione. Gratis, senza registrazione.",
+    "ogTitle": "Traduttore Vocale Italiano-Inglese",
+    "ogDescription": "Parla o scrivi in italiano e ottieni la traduzione in inglese all'istante, pronta anche da ascoltare. Funziona in entrambe le direzioni, gratis da provare.",
+    "canonical": "https://translate.iq-factura.com/it/traduttore-italiano-inglese",
+    "ogLocale": "it_IT"
+  },
+  "hero": {
+    "badgeVoice": "Voce",
+    "badgeText": "Testo",
+    "badgeLanguages": "186 lingue",
+    "title": "Traduttore italiano-inglese",
+    "titleAccent": "che ti risponde a voce",
+    "description": "Parla o scrivi in italiano e ricevi la traduzione in inglese in pochi secondi, mostrata a schermo e pronta per essere ascoltata. Cambia direzione quando vuoi: parla in inglese e ascolta la risposta in italiano, nella stessa conversazione.",
+    "ctaTry": "Provalo gratis",
+    "ctaSignIn": "Accedi con Google",
+    "mockFromLabel": "🇮🇹 Italiano",
+    "mockFromPhrase": "Dov'è la fermata dell'autobus più vicina?",
+    "mockToLabel": "🇬🇧 Inglese",
+    "mockToPhrase": "Where's the nearest bus stop?"
+  },
+  "spotlights": [
+    {
+      "heading": "Parla e ascolta la risposta",
+      "sub": "Tocca il microfono, di' la frase in italiano o in inglese, e ricevi una traduzione da leggere o da ascoltare.",
+      "bullets": [
+        { "title": "Il parlato diventa inglese", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in inglese in pochi secondi" },
+        { "title": "Ascolta l'inglese ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta" }
+      ]
+    },
+    {
+      "heading": "Un'unica conversazione, entrambe le lingue",
+      "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
+      "bullets": [
+        { "title": "Risponde in inglese, tradotto in italiano", "sub": "Chi ti parla può usare l'inglese e tu lo vedrai e ascolterai in italiano" },
+        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in inglese più tardi invece di perdere il filo" }
+      ]
+    },
+    {
+      "heading": "Italiano-inglese, più altre 185 lingue",
+      "sub": "L'inglese è una delle 186 lingue disponibili, in qualsiasi direzione.",
+      "bullets": [
+        { "title": "Utile per lavoro e viaggi", "sub": "Riunioni, email, colloqui con colleghi o conversazioni durante un viaggio" },
+        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per l'inglese oggi e per qualsiasi altra lingua domani" }
+      ]
+    },
+    {
+      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in inglese senza toccare il microfono.",
+      "bullets": [
+        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo su WhatsApp o via email" },
+        { "title": "Copia la traduzione", "sub": "Copia il testo in inglese e incollalo direttamente in un messaggio o un'email" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Perché batte",
+    "titleAccent": "un traduttore italiano-inglese qualsiasi",
+    "description": "La maggior parte delle app di traduzione ti fa scrivere per prima cosa e dimentica la conversazione subito dopo. Ecco cosa cambia.",
+    "usLabel": "IQ Translate",
+    "themLabel": "App di traduzione tradizionali",
+    "rows": [
+      { "title": "Come inizi", "us": "Parla in italiano o in inglese e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire." },
+      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in inglese si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
+      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
+      { "title": "Entrambe le direzioni", "us": "Italiano-inglese e inglese-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
+      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in inglese letta ad alta voce.", "them": "Solo testo, la pronuncia te la devi immaginare." }
+    ]
+  },
+  "faq": {
+    "heading": "Domande",
+    "headingAccent": "frequenti",
+    "sub": "Domande comuni sulla traduzione dall'italiano all'inglese.",
+    "items": [
+      { "q": "Traduce anche l'inglese parlato?", "a": "Sì — tocca il microfono, parla in inglese, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
+      { "q": "Va bene anche per un colloquio di lavoro in inglese?", "a": "Sì, funziona per conversazioni di lavoro, email e riunioni: parla o scrivi e ricevi subito la traduzione nell'altra lingua." },
+      { "q": "Posso tradurre anche dall'inglese all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in inglese e ricevi la traduzione in italiano nello stesso argomento." },
+      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
+      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
+      { "q": "Posso tenere una conversazione continua invece di traduzioni singole?", "a": "Sì, le traduzioni si raggruppano in argomenti, così una conversazione in inglese resta in un unico posto invece di disperdersi." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Inizia la tua conversazione",
+    "headingAccent": "italiano-inglese ora.",
+    "sub": "Parla o scrivi, ascolta la risposta in inglese — gratis da provare, senza registrazione.",
+    "ctaLabel": "Provalo gratis"
+  }
+}

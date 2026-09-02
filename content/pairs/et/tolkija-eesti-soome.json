@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Soome-Eesti Häältõlkija | IQ Translate",
+    "description": "Tõlgi eesti keelest soome keelde häälega või kirjutades, kuula tõlge ette ja jätka samas vestluses. Sobib tööks Soomes. 186 keelt, tasuta proovida.",
+    "ogTitle": "Soome-Eesti Häältõlkija",
+    "ogDescription": "Räägi või kirjuta eesti keeles, saad kohe soomekeelse tõlke – kõnena või tekstina. Töötab mõlemas suunas, tasuta proovida.",
+    "canonical": "https://translate.iq-factura.com/et/tolkija-eesti-soome",
+    "ogLocale": "et_EE"
+  },
+  "hero": {
+    "badgeVoice": "Hääl",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 keelt",
+    "title": "Eesti-Soome tõlkija",
+    "titleAccent": "mis räägib sinuga kaasa",
+    "description": "Räägi või kirjuta eesti keeles ja saad soomekeelse tõlke sekunditega – kuvatuna ekraanil ja valmis ette lugemiseks. Sobib tööks Soomes, pendelrändajale praamil või vestluseks tööandjaga. Vaheta suunda igal ajal – räägi soome keeles ja kuula vastust eesti keeles, kõik samas vestluses.",
+    "ctaTry": "Proovi tasuta",
+    "ctaSignIn": "Logi sisse Google'iga",
+    "mockFromLabel": "🇪🇪 Eesti",
+    "mockFromPhrase": "Millal järgmine praam Helsingisse läheb?",
+    "mockToLabel": "🇫🇮 Soome",
+    "mockToPhrase": "Milloin seuraava lautta lähtee Helsinkiin?"
+  },
+  "spotlights": [
+    {
+      "heading": "Räägi, ära kirjuta",
+      "sub": "Puuduta mikrofoni, ütle see eesti või soome keeles, ja saad tõlke, mida saab lugeda või kuulata.",
+      "bullets": [
+        { "title": "Kõne muutub soomekeelseks tekstiks", "sub": "Ütle see eesti keeles – sõnad transkribeeritakse, tõlgitakse ja kuvatakse soome keeles sekundite pärast" },
+        { "title": "Kuula õiget hääldust", "sub": "Puuduta kõlarit ja kuula tõlget ette loetuna, kui oma soome keele hääldus veel ei kanna" }
+      ]
+    },
+    {
+      "heading": "Üks jutulõng, kogu vestlus",
+      "sub": "Kolleeg või tööandja saab vastata soome keeles ja sina näed kohe eestikeelset tõlget – kõik salvestub samasse teemasse.",
+      "bullets": [
+        { "title": "Vastus soome keeles jõuab sinuni eesti keeles", "sub": "Teine osapool räägib või kirjutab soome keeles ja sina loed seda eesti keeles" },
+        { "title": "Vestlused salvestuvad teemadena", "sub": "Naase sama töövestluse juurde järgmisel praamisõidul, selle asemel et otsast alustada" }
+      ]
+    },
+    {
+      "heading": "Eesti–soome ja 185 muud keelt",
+      "sub": "Soome keel on üks 186 keelest, mis kõik töötavad sama tööriistaga mõlemas suunas.",
+      "bullets": [
+        { "title": "Täpne ka eesti täishäälikutele", "sub": "Käsitleb õ, ä, ö ja ü tähti ning käändeid õigesti, mitte umbkaudset oletust" },
+        { "title": "186 keelt sama tööriistaga", "sub": "Sama rakendus sobib soome keele kõrval ka igale teisele keelele" }
+      ]
+    },
+    {
+      "heading": "Kirjuta, kui rääkida ei saa",
+      "sub": "Kirjuta või kleebi eestikeelne tekst ja saad soomekeelse tõlke ilma mikrofonita.",
+      "bullets": [
+        { "title": "Kleebi tekst tööalasest sõnumist või e-kirjast", "sub": "Kirjuta või kleebi sõnum ja saad tõlke kohe ekraanile" },
+        { "title": "Kopeeri tõlge ühe puudutusega", "sub": "Vii soomekeelne tekst otse tagasi sõnumisse või e-kirja" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Miks see on parem kui",
+    "titleAccent": "tavaline eesti-soome tõlkija",
+    "description": "Enamik tõlkerakendusi nõuab kirjutamist ja unustab vestluse kohe pärast. Siin on vahe.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Tavalised tõlkerakendused",
+    "rows": [
+      { "title": "Alustamine", "us": "Räägi eesti või soome keeles ja saad tõlke kohe.", "them": "Kirjuta esmalt see, mida öelda tahad." },
+      { "title": "Vestluse ajalugu", "us": "Iga eesti-soome vestlus salvestub omaette teemana.", "them": "Tõlge kaob, kui rakenduse suled." },
+      { "title": "Kasutuselevõtt", "us": "Ava brauseris – midagi ei pea paigaldama.", "them": "Laadi rakendus alla ja luba juurdepääsud enne kasutamist." },
+      { "title": "Mõlemad suunad", "us": "Eesti-soome ja soome-eesti samas jutulõngas.", "them": "Suuna vahetamine tähendab tavaliselt uut tõlget." },
+      { "title": "Ette lugemine", "us": "Puuduta ja kuula soomekeelset tõlget ette loetuna.", "them": "Ainult tekst, hääldus jääb enda arvata." }
+    ]
+  },
+  "faq": {
+    "heading": "Korduma kippuvad",
+    "headingAccent": "küsimused",
+    "sub": "Neid küsitakse enne eesti-soome tõlkija proovimist.",
+    "items": [
+      { "q": "Kas see tõlgib räägitud eesti keele soome keelde?", "a": "Jah – puuduta mikrofoni, räägi eesti keeles ja saad soomekeelse tõlke tekstina ning võimaluse kuulata seda ette loetuna." },
+      { "q": "Kas see töötab ka soome keelest eesti keelde?", "a": "Jah, sama vestlus toimib mõlemas suunas – räägi või kirjuta soome keeles ja saad tõlke eesti keeles samas teemas." },
+      { "q": "Kas sobib töösuhtluseks Soomes?", "a": "Jah, kasuta seda tööandjaga suhtlemiseks ning sõnumite ja e-kirjade tõlkimiseks – kleebi tekst või räägi otse mikrofoni." },
+      { "q": "Kas see on tasuta?", "a": "Jah, saad proovida tasuta ilma kontota. Logi sisse Google'iga, et saada rohkem päevaseid krediite ja salvestatud ajalugu." },
+      { "q": "Kas midagi tuleb paigaldada?", "a": "Ei, see töötab brauseris nii arvutis kui telefonis – midagi alla laadida pole vaja, sobib kasutamiseks ka praamil." },
+      { "q": "Kas eesti tähed õ, ä, ö ja ü kuvatakse õigesti?", "a": "Jah, need tähed käsitletakse õigesti nii tekstis kui ka ette lugemisel." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Alusta oma eesti-soome",
+    "headingAccent": "vestlust kohe.",
+    "sub": "Räägi või kirjuta, kuula tõlget soome keeles – tasuta proovida, registreerimist ei vaja.",
+    "ctaLabel": "Proovi kohe"
+  }
+}

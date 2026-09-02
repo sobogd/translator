@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "IQ Translate — Instant Voice Translation App",
-    "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
-    "ogTitle": "IQ Translate — Instant Voice Translation App",
-    "ogDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no passwords.",
-    "twitterTitle": "IQ Translate — Instant Voice Translation App",
-    "twitterDescription": "Speak naturally and get an instant translation, spoken or written, in 186 languages."
+    "title": "Voice Translator Online — Speak & Translate Free | IQ Translate",
+    "description": "Free online voice translator: speak naturally and get an instant translation, spoken or written, in 186 languages. No downloads, no sign-up to try.",
+    "ogTitle": "Voice Translator Online — Speak & Translate Free",
+    "ogDescription": "Free online voice translator: speak and get an instant translation, spoken or written, in 186 languages.",
+    "twitterTitle": "Voice Translator Online — Speak & Translate Free",
+    "twitterDescription": "Free online voice translator: instant spoken or written translation in 186 languages."
   },
   "header": {
     "logo": "Translate",
@@ -20,7 +20,7 @@
     "badgeVoice": "Voice",
     "badgeText": "Text",
     "badgeLanguages": "186 languages",
-    "title": "Instant voice translation",
+    "title": "A voice translator",
     "titleAccent": "for any conversation",
     "description": "Speak naturally and get an instant translation, spoken or written, in 186 languages. No sign-up required to try it.",
     "ctaTry": "Try it now — free",
@@ -194,8 +194,62 @@
     "brand": "IQ Translate",
     "featuresHeading": "Features",
     "featureLinks": [
-      { "routeKey": "/text-translator", "label": "Text translator" },
-      { "routeKey": "/instant-voice-translator", "label": "Voice translator" }
+      {
+        "routeKey": "/text-translator",
+        "label": "Text translator"
+      },
+      {
+        "routeKey": "/instant-voice-translator",
+        "label": "Voice translator"
+      },
+      {
+        "routeKey": "/translate-english-to-spanish",
+        "label": "English to Spanish"
+      },
+      {
+        "routeKey": "/translate-english-to-arabic",
+        "label": "English to Arabic"
+      },
+      {
+        "routeKey": "/translate-english-to-chinese",
+        "label": "English to Chinese"
+      },
+      {
+        "routeKey": "/translate-english-to-korean",
+        "label": "English to Korean"
+      },
+      {
+        "routeKey": "/translate-english-to-japanese",
+        "label": "English to Japanese"
+      },
+      {
+        "routeKey": "/translate-english-to-polish",
+        "label": "English to Polish"
+      },
+      {
+        "routeKey": "/translate-english-to-russian",
+        "label": "English to Russian"
+      },
+      {
+        "routeKey": "/translate-english-to-german",
+        "label": "English to German"
+      },
+      {
+        "routeKey": "/translate-english-to-french",
+        "label": "English to French"
+      },
+      {
+        "routeKey": "/translate-english-to-italian",
+        "label": "English to Italian"
+      },
+      {
+        "routeKey": "/translate-english-to-portuguese",
+        "label": "English to Portuguese"
+      },
+      {
+        "routeKey": "/translate-english-to-turkish",
+        "label": "English to Turkish"
+      }
     ]
   },
   "translator": {

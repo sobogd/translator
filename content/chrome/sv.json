@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "title": "Röstöversättare Online – Prova Gratis | IQ Translate",
+    "description": "Gratis röstöversättare online: prata naturligt och få en direktöversättning, uttalad eller skriven, på 186 språk. Inga nedladdningar, ingen registrering för att testa.",
+    "ogTitle": "Röstöversättare Online – Prova Gratis",
+    "ogDescription": "Gratis röstöversättare online: prata och få en direktöversättning, uttalad eller skriven, på 186 språk.",
+    "twitterTitle": "Röstöversättare Online – Prova Gratis",
+    "twitterDescription": "Gratis röstöversättare online: direktöversättning, uttalad eller skriven, på 186 språk."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "mobileApp": "Mobilapp",
+    "signIn": "Logga in",
+    "logOut": "Logga ut",
+    "tryItNow": "Prova nu"
+  },
+  "hero": {
+    "badgeVoice": "Röst",
+    "badgeText": "Text",
+    "badgeLanguages": "186 språk",
+    "title": "En röstöversättare",
+    "titleAccent": "för alla samtal",
+    "description": "Prata naturligt och få en direktöversättning, uttalad eller skriven, på 186 språk. Ingen registrering krävs för att testa.",
+    "ctaTry": "Prova nu — gratis",
+    "ctaSignIn": "Logga in med Google",
+    "mockFromLabel": "🇸🇪 Svenska",
+    "mockFromPhrase": "Hej, hur mår du?",
+    "mockToLabel": "🇬🇧 Engelska",
+    "mockToPhrase": "Hello, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 språk",
+      "sub": "Prata eller skriv, översatt direkt, inga extra nedladdningar"
+    },
+    {
+      "title": "Ingen registrering krävs",
+      "sub": "Prova direkt på den här sidan — logga in bara för fler krediter"
+    },
+    {
+      "title": "Historik per språkpar",
+      "sub": "Varje samtal hålls organiserat och lätt att hitta igen"
+    },
+    {
+      "title": "Gratis att börja",
+      "sub": "Scrolla ner och börja översätta direkt"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Direktöversättning med rösten",
+      "sub": "Tryck på mikrofonen och prata. Din röst transkriberas och översätts på några sekunder — inget skrivande behövs.",
+      "bullets": [
+        {
+          "title": "Prata, få en direktöversättning",
+          "sub": "Ett tryck startar inspelningen, översättningen visas direkt efteråt"
+        },
+        {
+          "title": "Lyssna på den",
+          "sub": "Tryck på högtalarikonen för att få översättningen uppläst"
+        },
+        {
+          "title": "Röst eller text, ditt val",
+          "sub": "Byt läge när som helst med ett tryck"
+        }
+      ]
+    },
+    {
+      "heading": "Även textöversättning",
+      "sub": "Föredrar du att skriva? Byt till tangentbordsläge och översätt ett meddelande direkt.",
+      "bullets": [
+        {
+          "title": "Växla original och översättning",
+          "sub": "Tryck eller svep på en rad för att se den på båda språken"
+        },
+        {
+          "title": "Kopiera med ett tryck",
+          "sub": "Hämta den översatta texten för att klistra in var som helst"
+        },
+        {
+          "title": "Byt till röst när som helst",
+          "sub": "Börja skriva och diktera sedan nästa rad istället"
+        }
+      ]
+    },
+    {
+      "heading": "186 språk, ordnade efter samtal",
+      "sub": "Välj ditt eget språk en gång och bläddra sedan bland alla andra — varje språkpar har sin egen sparade tråd.",
+      "bullets": [
+        {
+          "title": "186 språk ingår",
+          "sub": "Inga extra nedladdningar eller språkpaket att installera"
+        },
+        {
+          "title": "Samtalen hålls organiserade",
+          "sub": "Varje språkpar har sin egen sparade historik"
+        },
+        {
+          "title": "Rensa eller ta bort när som helst",
+          "sub": "Rensa en tråds historik eller ta bort den helt från menyn"
+        }
+      ]
+    },
+    {
+      "heading": "Ingen registrering krävs för att börja",
+      "sub": "Prova direkt på den här sidan — inget konto, inget lösenord. Logga in med Google bara när du vill ha fler dagliga krediter och historik synkad mellan enheter.",
+      "bullets": [
+        {
+          "title": "Valfri inloggning med ett tryck",
+          "sub": "Inget registreringsformulär, inget lösenord att komma ihåg"
+        },
+        {
+          "title": "Bara din e-post, inget annat",
+          "sub": "Bara din Google-e-post identifierar ditt konto"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Varför röst",
+    "titleAccent": "kommer först",
+    "description": "De flesta översättningsappar stannar vid skriven text. Raderna nedan visar vad som faktiskt skiljer när du behöver prata, inte skriva.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Vanliga appar",
+    "rows": [
+      {
+        "title": "Röstöversättning",
+        "us": "Ett tryck spelar in, transkriberar och översätter på några sekunder.",
+        "them": "Bara text, eller så måste du skriva det du hörde."
+      },
+      {
+        "title": "Samtalshistorik",
+        "us": "Varje språkpar har sin egen sparade tråd.",
+        "them": "Historiken försvinner när du stänger fliken."
+      },
+      {
+        "title": "Komma igång",
+        "us": "Prova direkt, precis på den här sidan — inget konto krävs.",
+        "them": "Kontoskapande med e-post och lösenord innan du kan prova."
+      },
+      {
+        "title": "Röstuppspelning",
+        "us": "Tryck för att få översättningen uppläst.",
+        "them": "Ingen röstuppspelning."
+      },
+      {
+        "title": "Språk",
+        "us": "186 språk tillgängliga, ingen extra nedladdning.",
+        "them": "Begränsade offline-språkpaket."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Vanliga",
+    "headingAccent": "frågor",
+    "sub": "Det folk undrar innan de provar. Ingen registrering krävs — scrolla upp och prova själv.",
+    "items": [
+      {
+        "q": "Hur fungerar röstöversättning?",
+        "a": "Tryck på mikrofonen och prata — din röst transkriberas och översätts på några sekunder, visas som text och kan läsas upp. Inget skrivande behövs."
+      },
+      {
+        "q": "Hur många språk stöds?",
+        "a": "186 språk. Välj ditt eget språk en gång och starta sedan en samtalstråd med vem som helst."
+      },
+      {
+        "q": "Behöver jag skapa ett konto?",
+        "a": "Nej. Prova direkt på den här sidan utan registrering. Logga in med Google bara om du vill ha fler dagliga krediter och historik synkad mellan enheter."
+      },
+      {
+        "q": "Sparas min översättningshistorik?",
+        "a": "Ja, per språkpar, så tidigare samtal hålls organiserade — även utan inloggning känns din webbläsare igen. Rensa eller ta bort valfri tråd när som helst från dess meny."
+      },
+      {
+        "q": "Kan jag använda text istället för röst?",
+        "a": "Ja. Byt till tangentbordsläge när som helst och skriv ditt meddelande istället för att prata."
+      },
+      {
+        "q": "Fungerar det för samtal åt båda håll?",
+        "a": "Ja. Tryck eller svep på en översatt rad för att växla mellan original och översättning, så att båda parter kan följa med på samma skärm."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Direktöversättning med rösten,",
+    "headingAccent": "klar på 10 sekunder.",
+    "sub": "Prova direkt på den här sidan — ingen registrering, inga nedladdningar, 186 språk ingår.",
+    "ctaLabel": "Prova nu"
+  },
+  "footer": {
+    "tagline": "Direktöversättning med rösten, 186 språk",
+    "brand": "IQ Translate",
+    "featuresHeading": "Översättare",
+    "featureLinks": [
+      { "routeKey": "/oversattare-svenska-engelska", "label": "Svenska–Engelska" },
+      { "routeKey": "/oversattare-svenska-tyska", "label": "Svenska–Tyska" },
+      { "routeKey": "/oversattare-svenska-spanska", "label": "Svenska–Spanska" },
+      { "routeKey": "/oversattare-svenska-franska", "label": "Svenska–Franska" },
+      { "routeKey": "/oversattare-svenska-danska", "label": "Svenska–Danska" },
+      { "routeKey": "/oversattare-svenska-norska", "label": "Svenska–Norska" },
+      { "routeKey": "/oversattare-svenska-finska", "label": "Svenska–Finska" }
+    ]
+  },
+  "translator": {
+    "topics": "Ämnen",
+    "newTopic": "Nytt ämne",
+    "noTopicsYet": "Inga ämnen än",
+    "deleteTopic": "Ta bort ämne",
+    "deleteTopicConfirm": "Ta bort det här ämnet och alla dess översättningar?",
+    "autoDetect": "Automatisk identifiering",
+    "chooseLanguage": "Välj ett språk",
+    "close": "Stäng",
+    "searchPlaceholder": "Sök ett språk…",
+    "clearHistory": "Rensa historik",
+    "clearHistoryConfirm": "Rensa alla översättningar i det här ämnet?",
+    "noTranslationsYet": "Inga översättningar än i det här ämnet.",
+    "translating": "Översätter…",
+    "typePlaceholder": "Skriv ett meddelande…",
+    "translateAria": "Översätt",
+    "micDeniedError": "Mikrofonåtkomst nekad",
+    "recording": "Spelar in",
+    "recognizing": "Känner igen…",
+    "recordAria": "Spela in",
+    "stopAria": "Stoppa",
+    "pricingLink": "Priser",
+    "errors": {
+      "insufficientCredits": "Slut på krediter — uppgradera ditt abonnemang",
+      "textTooLong": "Texten är för lång för ditt abonnemang"
+    }
+  },
+  "history": {
+    "emptyState": "Inget här än. Skriv ett meddelande eller spela in din röst nedan.",
+    "readAloudAria": "Läs upp",
+    "copyAria": "Kopiera"
+  }
+}

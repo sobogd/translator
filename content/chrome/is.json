@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "title": "Raddþýðandi Á Netinu – Prófaðu Frítt | IQ Translate",
+    "description": "Ókeypis raddþýðandi á netinu: talaðu eðlilega og fáðu þýðingu samstundis, lesna upphátt eða skrifaða, á 186 tungumálum. Ekkert niðurhal, engin skráning.",
+    "ogTitle": "Raddþýðandi Á Netinu – Prófaðu Frítt",
+    "ogDescription": "Ókeypis raddþýðandi á netinu: talaðu og fáðu þýðingu samstundis, lesna upphátt eða skrifaða, á 186 tungumálum.",
+    "twitterTitle": "Raddþýðandi Á Netinu – Prófaðu Frítt",
+    "twitterDescription": "Ókeypis raddþýðandi á netinu: þýðing samstundis, lesin upphátt eða skrifuð, á 186 tungumálum."
+  },
+  "header": {
+    "logo": "Translate",
+    "features": "Eiginleikar",
+    "pricing": "Verð",
+    "mobileApp": "Farsímaforrit",
+    "signIn": "Skrá inn",
+    "logOut": "Skrá út",
+    "tryItNow": "Prófa núna"
+  },
+  "hero": {
+    "badgeVoice": "Rödd",
+    "badgeText": "Texti",
+    "badgeLanguages": "186 tungumál",
+    "title": "Raddþýðandi",
+    "titleAccent": "fyrir öll samtöl",
+    "description": "Talaðu eðlilega og fáðu þýðingu samstundis, lesna upphátt eða skrifaða, á 186 tungumálum. Engin skráning þarf til að prófa.",
+    "ctaTry": "Prófa núna — frítt",
+    "ctaSignIn": "Skrá inn með Google",
+    "mockFromLabel": "🇮🇸 Íslenska",
+    "mockFromPhrase": "Hæ, hvernig hefurðu það?",
+    "mockToLabel": "🇬🇧 Enska",
+    "mockToPhrase": "Hi, how are you?"
+  },
+  "statCards": [
+    {
+      "title": "186 tungumál",
+      "sub": "Talaðu eða skrifaðu, þýtt samstundis, ekkert aukalega að sækja"
+    },
+    {
+      "title": "Engin skráning nauðsynleg",
+      "sub": "Prófaðu beint á þessari síðu — skráðu þig aðeins inn fyrir fleiri inneignir"
+    },
+    {
+      "title": "Saga eftir tungumálapari",
+      "sub": "Hvert samtal helst skipulagt og auðfundið aftur"
+    },
+    {
+      "title": "Frítt að byrja",
+      "sub": "Skrunaðu niður og byrjaðu að þýða strax"
+    }
+  ],
+  "spotlights": [
+    {
+      "heading": "Samstundis raddþýðing",
+      "sub": "Ýttu á hljóðnemann og talaðu. Talið þitt er umritað og þýtt á nokkrum sekúndum — engin skrif nauðsynleg.",
+      "bullets": [
+        {
+          "title": "Talaðu, fáðu þýðingu samstundis",
+          "sub": "Ein snerting hefur upptöku, þýðing birtist rétt á eftir"
+        },
+        {
+          "title": "Hlustaðu á hana upphátt",
+          "sub": "Ýttu á hátalaratáknið til að láta lesa þýðinguna upphátt"
+        },
+        {
+          "title": "Rödd eða texti, þú velur",
+          "sub": "Skiptu um ham hvenær sem er með einni snertingu"
+        }
+      ]
+    },
+    {
+      "heading": "Textaþýðing líka í boði",
+      "sub": "Viltu frekar skrifa? Skiptu yfir í lyklaborðsham og þýddu skilaboð samstundis.",
+      "bullets": [
+        {
+          "title": "Skiptu milli frumtexta og þýðingar",
+          "sub": "Ýttu eða strjúktu línu til að sjá hana á báðum tungumálum"
+        },
+        {
+          "title": "Afritaðu með einni snertingu",
+          "sub": "Náðu í þýdda textann til að líma hvar sem er"
+        },
+        {
+          "title": "Skiptu yfir í rödd hvenær sem er",
+          "sub": "Byrjaðu að skrifa og talaðu svo næstu línu í staðinn"
+        }
+      ]
+    },
+    {
+      "heading": "186 tungumál, skipulögð eftir samtali",
+      "sub": "Veldu þitt tungumál einu sinni og skoðaðu svo öll hin — hvert tungumálapar heldur sinni eigin vistuðu sögu.",
+      "bullets": [
+        {
+          "title": "186 tungumál innifalin",
+          "sub": "Engin aukaleg niðurhal eða tungumálapakkar að setja upp"
+        },
+        {
+          "title": "Samtöl haldast skipulögð",
+          "sub": "Hvert tungumálapar á sína eigin vistuðu sögu"
+        },
+        {
+          "title": "Hreinsaðu eða eyddu hvenær sem er",
+          "sub": "Hreinsaðu sögu samtals eða eyddu því alveg úr valmyndinni"
+        }
+      ]
+    },
+    {
+      "heading": "Engin skráning nauðsynleg til að byrja",
+      "sub": "Prófaðu beint á þessari síðu — enginn reikningur, ekkert lykilorð. Skráðu þig inn með Google aðeins þegar þú vilt fleiri daglegar inneignir og samstillta sögu milli tækja.",
+      "bullets": [
+        {
+          "title": "Valfrjáls innskráning með einni snertingu",
+          "sub": "Ekkert skráningarform, ekkert lykilorð að muna"
+        },
+        {
+          "title": "Aðeins tölvupósturinn þinn, ekkert annað",
+          "sub": "Aðeins Google-tölvupósturinn þinn auðkennir reikninginn þinn"
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Þess vegna kemur rödd",
+    "titleAccent": "fyrst",
+    "description": "Flest þýðingarforrit stoppa við skrifaðan texta. Línurnar hér að neðan sýna raunverulegan mun þegar þú þarft að tala, ekki skrifa.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Venjuleg forrit",
+    "rows": [
+      {
+        "title": "Raddþýðing",
+        "us": "Ein snerting tekur upp, umritar og þýðir á nokkrum sekúndum.",
+        "them": "Aðeins texti, eða þú þarft að skrifa það sem þú heyrðir."
+      },
+      {
+        "title": "Samtalasaga",
+        "us": "Hvert tungumálapar heldur sinni eigin vistuðu sögu.",
+        "them": "Sagan hverfur þegar þú lokar flipanum."
+      },
+      {
+        "title": "Að byrja",
+        "us": "Prófaðu strax, beint á þessari síðu — enginn reikningur nauðsynlegur.",
+        "them": "Stofna þarf reikning með tölvupósti og lykilorði áður en hægt er að prófa."
+      },
+      {
+        "title": "Raddafspilun",
+        "us": "Ýttu til að hlusta á þýðinguna lesna upphátt.",
+        "them": "Ekkert hljóð í boði."
+      },
+      {
+        "title": "Tungumál",
+        "us": "186 tungumál í boði, ekkert aukalega að sækja.",
+        "them": "Takmarkaðir ótengdir tungumálapakkar."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Algengar",
+    "headingAccent": "spurningar",
+    "sub": "Það sem fólk spyr áður en það prófar. Engin skráning nauðsynleg — skrunaðu upp og prófaðu sjálf(ur).",
+    "items": [
+      {
+        "q": "Hvernig virkar raddþýðing?",
+        "a": "Ýttu á hljóðnemann og talaðu — rödd þín er umrituð og þýdd á nokkrum sekúndum, sýnd sem texti og hægt er að hlusta á hana upphátt. Engin skrif nauðsynleg."
+      },
+      {
+        "q": "Hversu mörg tungumál eru í boði?",
+        "a": "186 tungumál. Veldu þitt eigið tungumál einu sinni og byrjaðu svo samtal við hvern sem er á öðru tungumáli."
+      },
+      {
+        "q": "Þarf ég að stofna reikning?",
+        "a": "Nei. Prófaðu beint á þessari síðu án skráningar. Skráðu þig inn með Google aðeins ef þú vilt fleiri daglegar inneignir og samstillta sögu milli tækja."
+      },
+      {
+        "q": "Er þýðingarsagan mín vistuð?",
+        "a": "Já, eftir tungumálapari, svo fyrri samtöl haldast skipulögð — jafnvel án innskráningar man vafrinn þinn eftir þér. Hreinsaðu eða eyddu hvaða samtali sem er hvenær sem er úr valmyndinni."
+      },
+      {
+        "q": "Get ég notað texta í stað raddar?",
+        "a": "Já. Skiptu yfir í lyklaborðsham hvenær sem er og skrifaðu skilaboðin þín í staðinn fyrir að tala."
+      },
+      {
+        "q": "Virkar þetta fyrir samtal í báðar áttir?",
+        "a": "Já. Ýttu eða strjúktu þýdda línu til að skipta milli frumtexta og þýðingar, svo báðir aðilar geti fylgst með á einum skjá."
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": "Samstundis raddþýðing,",
+    "headingAccent": "tilbúin á 10 sekúndum.",
+    "sub": "Prófaðu beint á þessari síðu — engin skráning, ekkert niðurhal, 186 tungumál innifalin.",
+    "ctaLabel": "Prófa núna"
+  },
+  "footer": {
+    "tagline": "Samstundis raddþýðing, 186 tungumál",
+    "brand": "IQ Translate",
+    "featuresHeading": "Þýðendur",
+    "featureLinks": [
+      { "routeKey": "/thydandi-islensku-enska", "label": "Íslenska–Enska" }
+    ]
+  },
+  "translator": {
+    "topics": "Umræður",
+    "newTopic": "Ný umræða",
+    "noTopicsYet": "Engar umræður enn",
+    "deleteTopic": "Eyða umræðu",
+    "deleteTopicConfirm": "Eyða þessari umræðu og öllum þýðingum í henni?",
+    "autoDetect": "Sjálfvirk greining",
+    "chooseLanguage": "Veldu tungumál",
+    "close": "Loka",
+    "searchPlaceholder": "Leita að tungumáli…",
+    "clearHistory": "Hreinsa sögu",
+    "clearHistoryConfirm": "Hreinsa allar þýðingar í þessari umræðu?",
+    "noTranslationsYet": "Engar þýðingar enn í þessari umræðu.",
+    "translating": "Þýði…",
+    "typePlaceholder": "Skrifaðu skilaboð…",
+    "translateAria": "Þýða",
+    "micDeniedError": "Aðgangi að hljóðnema hafnað",
+    "recording": "Tek upp",
+    "recognizing": "Greini…",
+    "recordAria": "Taka upp",
+    "stopAria": "Stöðva",
+    "pricingLink": "Verð",
+    "errors": {
+      "insufficientCredits": "Inneign búin — uppfærðu áskriftina þína",
+      "textTooLong": "Textinn er of langur fyrir áskriftina þína"
+    }
+  },
+  "history": {
+    "emptyState": "Ekkert hér enn. Skrifaðu skilaboð eða taktu upp röddina þína hér fyrir neðan.",
+    "readAloudAria": "Lesa upphátt",
+    "copyAria": "Afrita"
+  }
+}

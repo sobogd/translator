@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Oversættelse Fransk Dansk – Med Stemme | IQ Translate",
+    "description": "Oversættelse fransk dansk med stemmen — perfekt til rejsen, arbejdet eller franske mails. Tal eller skriv, hør svaret læst højt, gratis at prøve uden konto.",
+    "ogTitle": "Oversættelse Fransk Dansk – Med Stemme",
+    "ogDescription": "Tal eller skriv dansk eller fransk og få en oversættelse med det samme — læst højt eller skrevet, begge veje i samme samtale.",
+    "canonical": "https://translate.iq-factura.com/da/oversaetter-dansk-fransk",
+    "ogLocale": "da_DK"
+  },
+  "hero": {
+    "badgeVoice": "Stemme",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 sprog",
+    "title": "Oversættelse fransk dansk",
+    "titleAccent": "der taler med dig på rejsen",
+    "description": "Tal eller skriv på dansk og få en fransk oversættelse på få sekunder — til rejsen, arbejdet eller den franske mailkorrespondance. Skift retning når som helst: tal fransk og hør det tilbage på dansk, i samme samtale.",
+    "ctaTry": "Prøv gratis",
+    "ctaSignIn": "Log ind med Google",
+    "mockFromLabel": "🇩🇰 Dansk",
+    "mockFromPhrase": "Hvor er nærmeste togstation?",
+    "mockToLabel": "🇫🇷 Fransk",
+    "mockToPhrase": "Où est la gare la plus proche ?"
+  },
+  "spotlights": [
+    {
+      "heading": "Tal, og hør det på fransk",
+      "sub": "Tryk på mikrofonen og sig det på dansk eller fransk — få en oversættelse, du kan læse eller høre.",
+      "bullets": [
+        { "title": "Tale omsat til fransk", "sub": "Sig det på dansk — dine ord transskriberes, oversættes og vises på fransk få sekunder efter" },
+        { "title": "Hør fransk læst højt", "sub": "Tryk på højttalerikonet, når den franske udtale er svær at ramme selv" }
+      ]
+    },
+    {
+      "heading": "Én tråd, hele samtalen begge veje",
+      "sub": "Praktisk på hotellet, restauranten eller i mailen til en fransk kollega — hver udveksling gemmes i samme emne.",
+      "bullets": [
+        { "title": "Svar på fransk, oversat til dansk", "sub": "Den, du taler med, kan svare på fransk, og du ser og hører det på dansk" },
+        { "title": "Samtaler gemt som emner", "sub": "Vend tilbage til den samme franske samtale senere i stedet for at miste tråden" }
+      ]
+    },
+    {
+      "heading": "Dansk–fransk, plus 185 sprog til",
+      "sub": "Fransk er ét af 186 sprog — samme værktøj virker for enhver anden kombination i morgen.",
+      "bullets": [
+        { "title": "Præcis med fransk udtale og stavning", "sub": "Håndterer accenter og fransk grammatik korrekt, ikke et løst gæt" },
+        { "title": "186 sprog i alt", "sub": "Samme app dækker fransk i dag og et hvilket som helst andet sprog senere" }
+      ]
+    },
+    {
+      "heading": "Foretrækker du at skrive? Det virker også",
+      "sub": "Skriv eller indsæt en tekst — fx en mail eller en menu — og få den oversat uden at røre mikrofonen.",
+      "bullets": [
+        { "title": "Skriv i stedet for at tale", "sub": "Skift til tastaturet når som helst — praktisk i et støjende tog eller på kontoret" },
+        { "title": "Kopiér resultatet", "sub": "Kopiér den franske tekst direkte ud og indsæt den i en mail eller besked" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Hvorfor dette slår",
+    "titleAccent": "en almindelig fransk-dansk oversætter",
+    "description": "De fleste oversættelsesapps kræver, at du skriver først, og glemmer samtalen bagefter. Her er forskellen.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Almindelige oversættelsesapps",
+    "rows": [
+      { "title": "Sådan starter du", "us": "Tal på dansk eller fransk og få en oversættelse med det samme.", "them": "Skriv først det, du vil sige." },
+      { "title": "Samtalehistorik", "us": "Hver fransk-dansk samtale gemmes som sit eget emne, du kan åbne igen.", "them": "Oversættelsen forsvinder, når du lukker appen." },
+      { "title": "Kom i gang", "us": "Åbn den i en browserfane — intet at installere.", "them": "Download en app og giv adgang, før du kan bruge den." },
+      { "title": "Begge retninger", "us": "Dansk til fransk og fransk til dansk lever i samme tråd.", "them": "At skifte retning betyder som regel en ny oversættelse." },
+      { "title": "At høre det", "us": "Tryk for at få den franske oversættelse læst højt.", "them": "Kun tekst — du er overladt til dig selv med udtalen." }
+    ]
+  },
+  "faq": {
+    "heading": "Ofte stillede",
+    "headingAccent": "spørgsmål",
+    "sub": "Almindelige spørgsmål om at oversætte fransk til dansk.",
+    "items": [
+      { "q": "Kan den oversætte talt dansk til fransk?", "a": "Ja — tryk på mikrofonen, tal på dansk, og du får en fransk oversættelse som tekst, med mulighed for at høre den læst højt." },
+      { "q": "Håndterer den franske accenter korrekt?", "a": "Ja, bogstaver som é, è, ê, ç og accenter generelt håndteres korrekt, både i det du læser, og i det der læses højt." },
+      { "q": "Kan jeg oversætte fra fransk tilbage til dansk?", "a": "Ja, samme samtale virker begge veje — tal eller skriv på fransk og få den danske oversættelse i samme tråd." },
+      { "q": "Er det gratis?", "a": "Ja, du kan prøve det gratis uden at oprette en konto. Log ind med Google for flere daglige krediter og gemt historik." },
+      { "q": "Er den god til rejse og arbejde?", "a": "Ja, brug den på restauranten, hotellet eller i mailen til en fransk kollega, og få svaret oversat med det samme." },
+      { "q": "Skal jeg installere noget?", "a": "Nej, den kører i din browser på computer eller mobil — intet at downloade." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start din dansk-fransk",
+    "headingAccent": "samtale nu.",
+    "sub": "Tal eller skriv, hør det tilbage på fransk — gratis at prøve, ingen registrering.",
+    "ctaLabel": "Prøv nu"
+  }
+}

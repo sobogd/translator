@@ -26,6 +26,13 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
     [Globe2, Languages],
     [RefreshCw, History],
   ],
+  // Pair pages carry 4 sub-feature cards (vs 3 on the generic feature pages).
+  pair: [
+    [Mic, Volume2],
+    [RefreshCw, History],
+    [Globe2, Languages],
+    [Keyboard, Copy],
+  ],
 };
 
 // Shared template for every SEO feature page (text translator, voice
@@ -39,13 +46,18 @@ export function FeatureLanding({
   content,
   icons,
   pathname,
+  presetSource,
+  presetTarget,
 }: {
   signedIn: boolean;
   locale: Locale;
   chrome: TranslatorTexts;
   content: FeatureContent;
-  icons: "text" | "voice";
+  icons: "text" | "voice" | "pair";
   pathname: string;
+  /** Language-pair preset for the translator widget (pair pages only). */
+  presetSource?: string;
+  presetTarget?: string;
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,7 +84,7 @@ export function FeatureLanding({
       />
       <Container>
         <Band id="app">
-          <Translator texts={chrome} />
+          <Translator texts={chrome} presetSource={presetSource} presetTarget={presetTarget} />
         </Band>
         <Band>
           <Hero texts={content.hero} />

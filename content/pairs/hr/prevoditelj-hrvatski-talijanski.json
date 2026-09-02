@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Prevoditelj Hrvatski-Talijanski s Glasom | IQ Translate",
+    "description": "Prevodite hrvatski na talijanski i obrnuto glasom ili tekstom - idealno za turiste u Istri i svakodnevni razgovor. 186 jezika, besplatno, bez registracije.",
+    "ogTitle": "Prevoditelj Hrvatski-Talijanski s Glasom",
+    "ogDescription": "Prevodite hrvatski na talijanski glasom ili tekstom, čujte prijevod naglas, uz spremljenu povijest razgovora.",
+    "canonical": "https://translate.iq-factura.com/hr/prevoditelj-hrvatski-talijanski",
+    "ogLocale": "hr_HR"
+  },
+  "hero": {
+    "badgeVoice": "Glas",
+    "badgeText": "Tekst",
+    "badgeLanguages": "186 jezika",
+    "title": "Prevoditelj hrvatski-talijanski",
+    "titleAccent": "za Istru i svaki razgovor",
+    "description": "Govorite ili tipkajte na hrvatskom i dobijte talijanski prijevod u sekundama, spreman za čitanje ili slušanje. Idealno za turiste u Istri, restorane i svakodnevne situacije. Promijenite smjer u bilo kojem trenutku – sve u istoj temi.",
+    "ctaTry": "Isprobaj besplatno",
+    "ctaSignIn": "Prijava putem Googlea",
+    "mockFromLabel": "🇭🇷 Hrvatski",
+    "mockFromPhrase": "Imate li stol za dvoje?",
+    "mockToLabel": "🇮🇹 Talijanski",
+    "mockToPhrase": "Avete un tavolo per due?"
+  },
+  "spotlights": [
+    {
+      "heading": "Govorite hrvatski, čujte talijanski odmah",
+      "sub": "Dodirnite mikrofon i recite rečenicu na hrvatskom ili talijanskom – prijevod stiže za nekoliko sekundi, spreman za čitanje ili slušanje.",
+      "bullets": [
+        { "title": "Govor pretvoren u talijanski", "sub": "Recite rečenicu na hrvatskom – riječi se prepoznaju, prevode i prikazuju na talijanskom za nekoliko sekundi" },
+        { "title": "Čujte prijevod naglas", "sub": "Dodirnite ikonu zvučnika kad talijanski izgovor još niste sigurni" }
+      ]
+    },
+    {
+      "heading": "Jedna tema, cijeli razgovor",
+      "sub": "Nastavite razgovor naprijed-natrag s gostima ili partnerima bez počinjanja iznova – sve ostaje u istoj temi.",
+      "bullets": [
+        { "title": "Odgovor na talijanskom, preveden na hrvatski", "sub": "Gost ili partner mogu govoriti talijanski, a vi ćete to vidjeti i čuti na hrvatskom" },
+        { "title": "Razgovori spremljeni kao teme", "sub": "Vratite se istom razgovoru o rezervaciji ili narudžbi kasnije, umjesto da izgubite nit" }
+      ]
+    },
+    {
+      "heading": "Hrvatsko-talijanski, plus još 185 jezika",
+      "sub": "Talijanski je samo jedan od 186 dostupnih jezika, u bilo kojem smjeru.",
+      "bullets": [
+        { "title": "Korisno za turizam u Istri i na obali", "sub": "Rečenice za goste, restorane i smještaj prevedene bez grešaka" },
+        { "title": "186 jezika ukupno", "sub": "Isti alat radi za talijanski danas i za bilo koji drugi jezik sutra" }
+      ]
+    },
+    {
+      "heading": "Radije tipkate? I to je moguće",
+      "sub": "Upišite ili zalijepite tekst na hrvatskom i dobijte prijevod na talijanski bez dodirivanja mikrofona.",
+      "bullets": [
+        { "title": "Tipkajte umjesto govora", "sub": "Prebacite se na tipkovnicu kada je restoran bučan ili trebate poslati poruku" },
+        { "title": "Kopirajte prijevod", "sub": "Kopirajte talijanski tekst izravno i zalijepite ga u e-mail ili WhatsApp poruku" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Zašto je bolji",
+    "titleAccent": "od običnog talijanskog prevoditelja",
+    "description": "Većina prevoditeljskih aplikacija traži da prvo utipkate rečenicu, a razgovor zaboravi čim ga zatvorite. Evo što je drukčije.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Uobičajene aplikacije za prevođenje",
+    "rows": [
+      { "title": "Kako počinjete", "us": "Govorite na hrvatskom ili talijanskom i odmah dobijete prijevod.", "them": "Prvo morate utipkati što želite reći." },
+      { "title": "Povijest razgovora", "us": "Svaki talijanski razgovor sprema se kao zasebna tema koju možete ponovno otvoriti.", "them": "Prijevod nestaje čim zatvorite aplikaciju." },
+      { "title": "Postavljanje", "us": "Otvorite karticu u pregledniku – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dopuštenja prije prve upotrebe." },
+      { "title": "Oba smjera", "us": "Hrvatski na talijanski i talijanski na hrvatski žive u istoj temi.", "them": "Promjena smjera obično znači novi prijevod od nule." },
+      { "title": "Slušanje prijevoda", "us": "Dodirnite da čujete talijanski prijevod pročitan naglas.", "them": "Samo tekst, izgovor prepušten vama." }
+    ]
+  },
+  "faq": {
+    "heading": "Često postavljana",
+    "headingAccent": "pitanja",
+    "sub": "Uobičajena pitanja o prevođenju hrvatskog na talijanski.",
+    "items": [
+      { "q": "Prevodi li glasovni prijevod hrvatski govor na talijanski?", "a": "Da – dodirnite mikrofon, recite rečenicu na hrvatskom i dobit ćete prijevod na talijanski kao tekst, uz mogućnost da ga čujete pročitanog naglas." },
+      { "q": "Je li koristan za turiste u Istri?", "a": "Da, savršen je za razgovor s gostima, u restoranu ili smještaju – govorite hrvatski, a talijanski prijevod stiže u sekundama." },
+      { "q": "Radi li i obrnuto, s talijanskog na hrvatski?", "a": "Da, isti razgovor radi u oba smjera – gost ili partner mogu govoriti talijanski, a vi dobijete hrvatski prijevod u istoj temi." },
+      { "q": "Je li besplatno?", "a": "Da, možete ga isprobati besplatno bez otvaranja računa. Prijavite se putem Googlea za više dnevnih kredita i spremljenu povijest." },
+      { "q": "Trebam li nešto instalirati?", "a": "Ne, radi izravno u pregledniku na računalu ili mobitelu – ništa se ne preuzima." },
+      { "q": "Mogu li voditi razgovor umjesto pojedinačnih prijevoda?", "a": "Da, prijevodi se grupiraju u teme, tako da razgovor na talijanskom ostaje na jednom mjestu umjesto raspršen po zasebnim pretragama." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Započnite svoj hrvatsko-talijanski",
+    "headingAccent": "razgovor odmah.",
+    "sub": "Govorite ili tipkajte, čujte odgovor na talijanskom – besplatno za isprobavanje, bez registracije.",
+    "ctaLabel": "Isprobaj sada"
+  }
+}
