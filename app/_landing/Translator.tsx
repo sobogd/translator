@@ -545,7 +545,7 @@ export function Translator({
   // Language pair half of the omnibar — source, reverse, target. Pickers
   // stay disabled once the pair locks.
   const pairRow = (
-    <div className="flex items-stretch border-b border-border sm:border-b-0 sm:border-r">
+    <div className="flex items-stretch border-b border-border">
       <button onClick={() => setPickerFor("source")} disabled={pairLocked} className={langBtnClass}>
         <span className="truncate">{sourceLanguage ? sourceLanguage.nameNative : t.autoDetect}</span>
       </button>
@@ -565,100 +565,100 @@ export function Translator({
 
   return (
     <div className="flex flex-col gap-4">
-    {/* Topics + chat unfold above the omnibar once there is a first turn, so
-        the composer stays pinned to the bottom edge the way a chat reads. */}
-    {!compactMode && (
-    <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[2fr_3fr]`}>
-      {/* Mirrors the Hero card horizontally: tinted panel first (~40%,
-          same hue as the hero's art panel), functional column second — a
-          scrollable list of topics instead of a device mockup. */}
-      <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:min-h-0">
-        <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-        {topics.length > 0 && (
-          <button
-            onClick={newTopic}
-            className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
-          >
-            <Plus size={16} /> {t.newTopic}
-          </button>
-        )}
-        <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
-          {topics.length === 0 ? (
-            <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
-          ) : (
-            topics.map((tp) => (
-              <div key={tp.id} className="flex items-center gap-1">
-                <button
-                  onClick={() => switchTopic(tp.id)}
-                  className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
-                    tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
-                  }`}
-                >
-                  <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
-                </button>
-                <button
-                  onClick={() => deleteTopic(tp.id)}
-                  aria-label={t.deleteTopic}
-                  className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
-                >
-                  <Trash2 size={14} />
-                </button>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-
-      {/* No background — clear-history bar pinned top, chat scrolls below.
-          The composer is no longer in here; it lives in the omnibar. */}
-      <div className="flex flex-col lg:h-full lg:min-h-0">
-        {rows.length > 0 && (
-          <div className="flex shrink-0 items-center justify-end border-b border-border px-4 py-2 sm:px-5">
-            <button
-              onClick={clearHistory}
-              aria-label={t.clearHistory}
-              className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-hint transition hover:text-text active:scale-95"
-            >
-              <Eraser size={14} /> {t.clearHistory}
-            </button>
-          </div>
-        )}
-
-        {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
-            actually shrink instead of pushing the composer off-screen) */}
-        <div ref={chatScrollRef} className="flex-1 overflow-y-auto p-4 sm:p-6 lg:min-h-0">
-          {loadingTopic ? (
-            <div className="flex justify-center py-10 text-hint">
-              <Loader2 size={20} className="animate-spin" />
-            </div>
-          ) : (
-            <History
-              rows={rows}
-              langA={topic?.sourceLang ?? ""}
-              langB={topic?.targetLang ?? ""}
-              texts={texts.history}
-            />
-          )}
-          {pending && (
-            <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-              <Loader2 size={15} className="animate-spin" /> {t.translating}
-            </div>
-          )}
-        </div>
-      </div>
-
-    </div>
-    )}
-
-      {/* Omnibar: language pair, text field, mic and translate CTA on one
-          row. On mobile the pair wraps onto its own row above the input —
-          three clusters never fit a phone width. */}
+    {compactMode ? (
+      /* Nothing to manage on the very first visit — just the omnibar. */
       <div className={`${CARD} overflow-hidden`}>
         <div className="flex flex-col sm:flex-row">
           {pairRow}
           {composerRow}
         </div>
       </div>
+    ) : (
+      /* One card: topics sidebar fixed to the same width as the language
+          selectors above the chat (22.5rem = lg:w-40 × 2 + the w-10 swap
+          button), so the two columns line up. The composer sits pinned to
+          the bottom of the right column, under the chat. */
+      <div className={`${CARD} flex flex-col overflow-hidden lg:h-[27rem] lg:flex-row`}>
+        <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:w-[22.5rem] lg:shrink-0 lg:min-h-0">
+          <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+          {topics.length > 0 && (
+            <button
+              onClick={newTopic}
+              className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
+            >
+              <Plus size={16} /> {t.newTopic}
+            </button>
+          )}
+          <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
+            {topics.length === 0 ? (
+              <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
+            ) : (
+              topics.map((tp) => (
+                <div key={tp.id} className="flex items-center gap-1">
+                  <button
+                    onClick={() => switchTopic(tp.id)}
+                    className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
+                      tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
+                    }`}
+                  >
+                    <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
+                  </button>
+                  <button
+                    onClick={() => deleteTopic(tp.id)}
+                    aria-label={t.deleteTopic}
+                    className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Right column: language pair up top, chat scrolling in the
+            middle, composer pinned to the bottom. */}
+        <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0 lg:flex-1">
+          {pairRow}
+
+          {rows.length > 0 && (
+            <div className="flex shrink-0 items-center justify-end border-b border-border px-4 py-2 sm:px-5">
+              <button
+                onClick={clearHistory}
+                aria-label={t.clearHistory}
+                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-hint transition hover:text-text active:scale-95"
+              >
+                <Eraser size={14} /> {t.clearHistory}
+              </button>
+            </div>
+          )}
+
+          {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
+              actually shrink instead of pushing the composer off-screen) */}
+          <div ref={chatScrollRef} className="flex-1 overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+            {loadingTopic ? (
+              <div className="flex justify-center py-10 text-hint">
+                <Loader2 size={20} className="animate-spin" />
+              </div>
+            ) : (
+              <History
+                rows={rows}
+                langA={topic?.sourceLang ?? ""}
+                langB={topic?.targetLang ?? ""}
+                texts={texts.history}
+              />
+            )}
+            {pending && (
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
+                <Loader2 size={15} className="animate-spin" /> {t.translating}
+              </div>
+            )}
+          </div>
+
+          <div className="shrink-0 border-t border-border">{composerRow}</div>
+        </div>
+      </div>
+    )}
 
       {error && (
         <Modal
