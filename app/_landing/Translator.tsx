@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRightLeft, Eraser, Loader2, Mic, Plus, Send, Square, Trash2, X } from "lucide-react";
+import { ArrowRightLeft, Eraser, Loader2, Mic, Plus, Send, Square, Trash2 } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -9,6 +9,7 @@ import type { Topic, TopicDetail } from "@/lib/types";
 import type { InitialTopics } from "@/lib/topics-server";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
+import { Modal } from "./Modal";
 import { QUOTA_EVENT } from "./AccountControls";
 import type { TranslatorTexts } from "./types";
 
@@ -57,59 +58,41 @@ function LanguagePickerModal({
   const list = LANGUAGES.filter((l) => matchesQuery(l, query));
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
-      onClick={onClose}
-    >
-      <div
-        className="flex max-h-[85dvh] w-full max-w-lg flex-col gap-3 overflow-hidden rounded-t-3xl border p-4 shadow-xl sm:rounded-2xl"
-        style={{ background: "var(--card)", borderColor: "var(--border)" }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">{texts.chooseLanguage}</h2>
+    <Modal title={texts.chooseLanguage} onClose={onClose} closeAria={texts.close} maxWidth="max-w-lg">
+      {/* Flush full-width search: no box, no fill — just a bottom border,
+          sticky over the list, text aligned with the option rows below. */}
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        autoFocus
+        placeholder={texts.searchPlaceholder}
+        className="sticky top-0 z-10 w-full shrink-0 border-b border-border px-5 py-3.5 text-base outline-none placeholder:text-hint"
+        style={{ background: "var(--card)" }}
+      />
+      <div className="p-2">
+        {forSource && (
           <button
-            onClick={onClose}
-            aria-label={texts.close}
-            className="rounded-lg p-1.5 transition active:scale-90"
-            style={{ color: "var(--hint)" }}
+            onClick={() => onSelect(null)}
+            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
+            style={current === null ? { background: "var(--bg)" } : undefined}
           >
-            <X size={18} />
+            <span className="text-xl">🌐</span>
+            <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
           </button>
-        </div>
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-          placeholder={texts.searchPlaceholder}
-          className="w-full rounded-xl border px-3 py-2.5 text-base outline-none transition focus-visible:ring-2 focus-visible:ring-button/30"
-          style={{ background: "var(--bg)", borderColor: "var(--border)" }}
-        />
-        <div className="flex-1 overflow-y-auto">
-          {forSource && (
-            <button
-              onClick={() => onSelect(null)}
-              className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
-              style={current === null ? { background: "var(--bg)" } : undefined}
-            >
-              <span className="text-xl">🌐</span>
-              <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
-            </button>
-          )}
-          {list.map((l) => (
-            <button
-              key={l.code}
-              onClick={() => onSelect(l.code)}
-              className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
-              style={l.code === current ? { background: "var(--bg)" } : undefined}
-            >
-              <span className="text-xl">{l.flag}</span>
-              <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
-            </button>
-          ))}
-        </div>
+        )}
+        {list.map((l) => (
+          <button
+            key={l.code}
+            onClick={() => onSelect(l.code)}
+            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
+            style={l.code === current ? { background: "var(--bg)" } : undefined}
+          >
+            <span className="text-xl">{l.flag}</span>
+            <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
+          </button>
+        ))}
       </div>
-    </div>
+    </Modal>
   );
 }
 

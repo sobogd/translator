@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import { Loader2, Mic, Type, X } from "lucide-react";
+import { Modal } from "./Modal";
+import { Loader2, Mic, Type } from "lucide-react";
 import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
 import type { TranslatorTexts } from "./types";
@@ -145,27 +145,38 @@ export function AuthButton({
         </a>
       )}
 
-      {modalOpen &&
-        createPortal(
-        <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
-          onClick={() => setModalOpen(false)}
-        >
-          <div
-            className="flex w-full max-w-md flex-col gap-4 rounded-t-3xl border p-5 shadow-xl sm:rounded-2xl"
-            style={{ background: "var(--card)", borderColor: "var(--border)" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">{accountTexts.title}</h2>
+      {modalOpen && (
+        <Modal
+          title={accountTexts.title}
+          onClose={() => setModalOpen(false)}
+          footer={
+            <>
+              {isPaid ? (
+                <button
+                  onClick={openPortal}
+                  disabled={portalBusy}
+                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
+                >
+                  {portalBusy ? <Loader2 size={16} className="animate-spin" /> : accountTexts.manageSubscription}
+                </button>
+              ) : (
+                <a
+                  href={pricingHref}
+                  className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
+                >
+                  {accountTexts.upgrade}
+                </a>
+              )}
               <button
-                onClick={() => setModalOpen(false)}
-                className="rounded-lg p-1.5 transition active:scale-90"
-                style={{ color: "var(--hint)" }}
+                onClick={logout}
+                className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg border border-border px-4 text-sm font-semibold transition-all hover:bg-bg active:scale-[0.99]"
               >
-                <X size={18} />
+                {texts.logOut}
               </button>
-            </div>
+            </>
+          }
+        >
+          <div className="flex flex-col gap-4 px-5 py-4">
             {quota?.email && <p className="break-all text-sm text-hint">{quota.email}</p>}
             <div className="flex flex-col gap-2 rounded-xl border border-border p-4 text-sm">
               <div className="flex items-center justify-between gap-3">
@@ -183,31 +194,8 @@ export function AuthButton({
                 <span className="font-semibold">{quota ? nf.format(quota.chars) : "…"}</span>
               </div>
             </div>
-            {isPaid ? (
-              <button
-                onClick={openPortal}
-                disabled={portalBusy}
-                className={`inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
-              >
-                {portalBusy ? <Loader2 size={16} className="animate-spin" /> : accountTexts.manageSubscription}
-              </button>
-            ) : (
-              <a
-                href={pricingHref}
-                className={`inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
-              >
-                {accountTexts.upgrade}
-              </a>
-            )}
-            <button
-              onClick={logout}
-              className="text-sm font-semibold text-hint transition-opacity hover:opacity-70"
-            >
-              {texts.logOut}
-            </button>
           </div>
-        </div>,
-        document.body,
+        </Modal>
       )}
     </>
   );
