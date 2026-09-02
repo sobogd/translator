@@ -251,9 +251,9 @@
     "languagesHeading": "Languages"
   },
   "translator": {
-    "topics": "Topics",
+    "topics": "History",
     "newTopic": "New topic",
-    "noTopicsYet": "No topics yet",
+    "noTopicsYet": "History is empty",
     "deleteTopic": "Delete topic",
     "deleteTopicConfirm": "Delete this topic and all its translations?",
     "autoDetect": "Auto-detect",

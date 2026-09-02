@@ -1,7 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Language, LANGUAGES, getLanguage } from "./languages";
 
-export const MODEL = "gemini-2.5-flash"; // fast + ~10-20x cheaper; thinking disabled below
+// 2.5 Flash retires 2026-10-16 — 3.5 Flash-Lite is the same $0.30/$2.50 per
+// 1M token price point, so FREE_TRIAL's cost math doesn't need to change.
+export const MODEL = "gemini-3.5-flash-lite";
 
 let client: GoogleGenAI | null = null;
 function ai(): GoogleGenAI {

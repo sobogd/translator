@@ -1,13 +1,9 @@
 "use client";
 
-import { getFingerprint } from "./fingerprint";
-
-// Every request carries the browser fingerprint as a fallback identity — the
-// server only falls back to it when there is no valid session cookie (see
-// resolveIdentity in lib/auth.ts), so this is a no-op for signed-in users.
+// Thin fetch wrapper — kept as the one call site every component already
+// uses. Anonymous identity no longer rides along on the client at all: the
+// server derives it straight from the request's own IP/User-Agent/
+// Accept-Language (see computeFingerprint in lib/auth.ts).
 export async function apiFetch(input: string, init: RequestInit = {}) {
-  const fingerprint = await getFingerprint();
-  const headers = new Headers(init.headers);
-  if (!headers.has("x-fingerprint")) headers.set("x-fingerprint", fingerprint);
-  return fetch(input, { ...init, headers });
+  return fetch(input, init);
 }

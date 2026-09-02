@@ -76,8 +76,33 @@ export async function resolveOwner(req: Request): Promise<string | null> {
 
 export type Identity = { ownerKey: string; kind: "account" | "anonymous" };
 
+// Server-computed anonymous id — no client library, no localStorage, no
+// cookie round-trip. Hashes signals the browser sends on every request
+// regardless of privacy mode (IP, User-Agent, Accept-Language): unlike
+// canvas/audio/WebGL entropy, incognito doesn't randomize these, so this id
+// stays stable across incognito windows being closed and reopened, which a
+// client-side fingerprinting library (FingerprintJS) doesn't reliably do —
+// browsers deliberately add noise to that kind of signal in private mode.
+// Trade-off: an IP shared by many people (office NAT, mobile carrier CGNAT)
+// on the same browser/OS/language combo collides into one pool — acceptable
+// for a free-trial abuse guard, not meant to be a hard identity.
+// Accepts both a plain Headers (Route Handlers) and Next's ReadonlyHeaders
+// (Server Components via next/headers) — same `.get()` shape, different type.
+type HeaderReader = { get(name: string): string | null };
+
+function clientIp(headers: HeaderReader): string {
+  const xff = headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  return headers.get("x-real-ip")?.trim() || "unknown";
+}
+
+export function computeFingerprint(headers: HeaderReader): string {
+  const material = [clientIp(headers), headers.get("user-agent") || "", headers.get("accept-language") || ""].join("|");
+  return crypto.createHash("sha256").update(material).digest("hex").slice(0, 32);
+}
+
 // Unified identity for chat/translate endpoints: a verified Google session
-// ("account", ownerKey = email) or, absent one, a client-supplied browser
+// ("account", ownerKey = email) or, absent one, the request's own computed
 // fingerprint ("anonymous", ownerKey = "fp:<fingerprint>") so the landing's
 // embedded translator works without signing in. Chat.ownerKey is a plain
 // string either way, so both kinds share the exact same chat/translation
@@ -87,8 +112,7 @@ export async function resolveIdentity(req: Request): Promise<Identity | null> {
   if (owner) {
     return isAllowed(owner) ? { ownerKey: owner, kind: "account" } : null;
   }
-  const fingerprint = req.headers.get("x-fingerprint")?.trim();
-  return fingerprint ? { ownerKey: `fp:${fingerprint}`, kind: "anonymous" } : null;
+  return { ownerKey: `fp:${computeFingerprint(req.headers)}`, kind: "anonymous" };
 }
 
 // Server-Component-friendly variant using next/headers cookies().

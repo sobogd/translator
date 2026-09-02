@@ -10,8 +10,9 @@ export type Plan = {
   popular?: boolean;
 };
 
-// Quotas sized off Gemini 2.5 Flash unit costs (text in $0.30/M tok, out
-// $2.50/M tok, audio in $1.00/M tok @ 32 tok/s): ~$1.3 per 1M translated
+// Quotas sized off Gemini 3.5 Flash-Lite unit costs — same price point as
+// 2.5 Flash, which it replaces (retires 2026-10-16): text in $0.30/M tok, out
+// $2.50/M tok, audio in $1.00/M tok @ 32 tok/s. ~$1.3 per 1M translated
 // characters, ~$0.0025 per STT minute. Each plan's fully-drained quota costs
 // ≤ 1/3 of its price — a 3x floor on margin; real utilization sits far lower.
 // A dictated message is charged twice by design, both legs inside
@@ -48,10 +49,15 @@ export const PLANS: Record<PlanId, Plan> = {
 export const PLAN_ORDER: PlanId[] = ["STARTER", "PRO", "ULTIMATE"];
 
 // The free tier is the product without a subscription — anonymous fingerprint
-// or signed-in account alike. Lifetime (not renewing) trial pool costing
-// ~$0.01 in Gemini spend: 2 voice minutes (~$0.005) + 4k chars (~$0.005).
+// or signed-in account alike. Lifetime (not renewing) trial pool, sized to
+// stay under $0.01 in Gemini spend even in the worst realistic case: lots of
+// short messages, each paying the ~100-token fixed prompt overhead
+// (lib/gemini-translate.ts's instruction text) on top of its own content —
+// that overhead is invisible in a naive $/char estimate but dominates when
+// messages are short. 500 chars + 30s voice ≈ $0.008 worst case, leaving
+// margin for CJK languages (fewer chars per token than Latin scripts).
 export const FREE_TRIAL = {
-  chars: 4_000,
-  seconds: 120,
-  maxCharsPerRequest: 1000,
+  chars: 500,
+  seconds: 30,
+  maxCharsPerRequest: 500,
 };

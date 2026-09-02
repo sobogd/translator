@@ -87,7 +87,7 @@ export function Footer({
             )}
           </nav>
         </div>
-        <div className="mt-2 flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <span>{texts.tagline}</span>
         </div>

@@ -1,5 +1,5 @@
 import { prisma } from "./prisma";
-import { getServerSessionEmail } from "./auth";
+import { getServerSessionEmail, computeFingerprint } from "./auth";
 import type { Topic, TopicDetail } from "./types";
 
 export type InitialTopics = {
@@ -10,20 +10,19 @@ export type InitialTopics = {
 // SSR twin of GET /api/topics + GET /api/topics/:id — the translator widget
 // renders with its topic list and the last-opened thread already in the HTML
 // (no bootstrap fetch, no loader). Identity comes from the session cookie or,
-// for anonymous visitors, the iqt_fp cookie mirrored by lib/fingerprint.ts;
-// the iqt_last_topic cookie (written client-side on topic switch) picks which
-// thread to hydrate, falling back to the most recently used. Returns null on
-// a first-ever anonymous visit (no fp cookie yet) — the widget then boots
-// client-side exactly as before.
+// for anonymous visitors, the same request-derived fingerprint resolveIdentity
+// uses (see computeFingerprint in lib/auth.ts); the iqt_last_topic cookie
+// (written client-side on topic switch) picks which thread to hydrate,
+// falling back to the most recently used.
 export async function getServerTopics(): Promise<InitialTopics | null> {
   const email = await getServerSessionEmail();
-  let ownerKey: string | null = email;
-  if (!ownerKey) {
-    const { cookies } = await import("next/headers");
-    const fp = (await cookies()).get("iqt_fp")?.value?.trim();
-    ownerKey = fp ? `fp:${fp}` : null;
+  let ownerKey: string;
+  if (email) {
+    ownerKey = email;
+  } else {
+    const { headers } = await import("next/headers");
+    ownerKey = `fp:${computeFingerprint(await headers())}`;
   }
-  if (!ownerKey) return null;
 
   const rows = await prisma.topic.findMany({
     where: { ownerKey },

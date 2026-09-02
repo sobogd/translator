@@ -58,7 +58,7 @@ export function Landing({
         initialQuota={initialQuota}
         featureLinks={texts.footer.featureLinks}
       />
-      <Container className="py-6">
+      <Container>
         <Band id="app">
           <Translator
             initialData={initialTopics}

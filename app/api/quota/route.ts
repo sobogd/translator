@@ -7,7 +7,7 @@ import { FREE_TRIAL } from "@/lib/plans";
 export const runtime = "nodejs";
 
 // Remaining quota for the header badge / account modal. Anonymous visitors
-// resolve via the x-fingerprint header (lifetime trial pool); signed-in users
+// resolve via the request-derived fingerprint (lifetime trial pool); signed-in users
 // via their account balances (fingerprint deliberately unused).
 export async function GET(req: NextRequest) {
   const identity = await resolveIdentity(req);

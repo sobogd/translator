@@ -1,5 +1,5 @@
 import { prisma } from "./prisma";
-import { getServerSessionEmail } from "./auth";
+import { getServerSessionEmail, computeFingerprint } from "./auth";
 import { getAccountUsage } from "./credits";
 import { FREE_TRIAL } from "./plans";
 
@@ -15,8 +15,8 @@ export type Quota = {
 // SSR twin of GET /api/quota: computes the remaining quota during the server
 // render so the header badge paints with data instead of waiting for a client
 // fetch. Signed-in users resolve via the session cookie; anonymous visitors
-// via the iqt_fp cookie the fingerprint lib mirrors (absent on the very first
-// visit — the badge then fills in from the client poll).
+// via the same request-derived fingerprint resolveIdentity uses (see
+// computeFingerprint in lib/auth.ts) — no client id, no cookie needed.
 export async function getServerQuota(): Promise<Quota | null> {
   const email = await getServerSessionEmail();
   if (email) {
@@ -30,9 +30,8 @@ export async function getServerQuota(): Promise<Quota | null> {
       seconds: Math.max(0, account.secondsBalance),
     };
   }
-  const { cookies } = await import("next/headers");
-  const fingerprint = (await cookies()).get("iqt_fp")?.value?.trim();
-  if (!fingerprint) return null;
+  const { headers } = await import("next/headers");
+  const fingerprint = computeFingerprint(await headers());
   const row = await prisma.anonymousCredit.findUnique({ where: { fingerprint } });
   return {
     kind: "anonymous",

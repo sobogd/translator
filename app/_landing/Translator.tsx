@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRightLeft, Loader2, Mic, PanelLeft, Plus, Send, Square, Trash2, X } from "lucide-react";
+import { ArrowRightLeft, ArrowUp, Loader2, Mic, PanelLeft, Plus, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -129,11 +129,14 @@ export function Translator({
   const [topics, setTopics] = useState<Topic[]>(initialData?.topics ?? []);
   // SSR hydrates the last-opened thread regardless of which pair page it
   // is — discard it up front if it doesn't match this page's fixed pair.
+  // Only pair pages hydrate their last thread on load — home always starts
+  // as a blank draft. A topic only ever lands there once the user actually
+  // sends something in this session (see translateText/stopRec), so the
+  // hero picker never ends up showing some unrelated pair from a cookie.
   const [topic, setTopic] = useState<TopicDetail | null>(() => {
+    if (presetSource === undefined || presetTarget === undefined) return null;
     const t0 = initialData?.topic ?? null;
-    if (t0 && presetSource !== undefined && presetTarget !== undefined) {
-      if (t0.sourceLang !== presetSource || t0.targetLang !== presetTarget) return null;
-    }
+    if (t0 && (t0.sourceLang !== presetSource || t0.targetLang !== presetTarget)) return null;
     return t0;
   });
   // Source language chosen before a topic exists yet — carried into the
@@ -208,10 +211,10 @@ export function Translator({
         const res = await apiFetch("/api/topics");
         const list: Topic[] = res.ok ? await res.json() : [];
         setTopics(list);
-        // Pair pages only auto-open a topic that actually matches their
-        // fixed pair — a Spanish thread has no business opening on an
-        // English↔Russian page just because it's the most recent overall.
-        const match = fixedPair ? list.find((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget) : list[0];
+        // Pair pages auto-open the topic matching their fixed pair; home
+        // never auto-opens anything — it only ever gets a topic once the
+        // user actually sends something in this session.
+        const match = fixedPair ? list.find((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget) : undefined;
         if (match) await loadTopic(match.id);
       } catch {
         setTopic(null);
@@ -257,10 +260,14 @@ export function Translator({
     const remaining = topics.filter((tp) => tp.id !== id);
     setTopics(remaining);
     if (id === topic?.id) {
-      if (remaining.length > 0) {
+      // Next one up has to match this same pair — falling back to some
+      // other pair's topic just because it's first in the global list would
+      // silently switch the conversation the user is looking at.
+      const next = remaining.find(matchesPair);
+      if (next) {
         setLoadingTopic(true);
         try {
-          await loadTopic(remaining[0].id);
+          await loadTopic(next.id);
         } finally {
           setLoadingTopic(false);
         }
@@ -275,38 +282,20 @@ export function Translator({
   // the other side — a same-language pair is resolved by falling back the
   // source to auto-detect (target always stays a concrete language; only
   // the source can mean "figure it out from the text").
-  async function selectSource(code: string | null) {
+  // Only ever triggered from the hero picker (home) — always resets to a
+  // fresh draft, never mutates whatever topic happens to be loaded.
+  function selectSource(code: string | null) {
     setPickerFor(null);
-    if (!topic) {
-      // Draft state, nothing to PATCH yet — carried into the topic created
-      // on first send.
-      setDraftSourceLang(code !== null && code === defaultTarget ? null : code);
-      return;
-    }
-    const nextSource = code !== null && code === topic.targetLang ? null : code;
-    setTopic({ ...topic, sourceLang: nextSource });
-    await apiFetch(`/api/topics/${topic.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sourceLang: nextSource }),
-    });
+    setTopic(null);
+    setDraftSourceLang(code !== null && code === defaultTarget ? null : code);
   }
 
-  async function selectTarget(code: string) {
+  function selectTarget(code: string) {
     setPickerFor(null);
     localStorage.setItem(TO_KEY, code);
     setDefaultTarget(code);
-    if (!topic) {
-      setDraftSourceLang((prev) => (prev === code ? null : prev));
-      return;
-    }
-    const nextSource = topic.sourceLang === code ? null : topic.sourceLang;
-    setTopic({ ...topic, sourceLang: nextSource, targetLang: code });
-    await apiFetch(`/api/topics/${topic.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sourceLang: nextSource, targetLang: code }),
-    });
+    setTopic(null);
+    setDraftSourceLang((prev) => (prev === code ? null : prev));
   }
 
   // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2 (16px).
@@ -439,14 +428,7 @@ export function Translator({
   const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   const currentSourceCode = topic ? topic.sourceLang : draftSourceLang;
-  const sourceLanguage = useMemo(() => (currentSourceCode ? getLanguage(currentSourceCode) : undefined), [currentSourceCode]);
   const targetLanguage = useMemo(() => getLanguage(topic?.targetLang ?? defaultTarget), [topic?.targetLang, defaultTarget]);
-  // Once a message has locked the pair (topic.sourceLang set), it stays
-  // fixed for the rest of the topic — no re-picking, no resetting back to
-  // auto-detect. Later turns can come from either side of that pair (see
-  // translatePair server-side); the picker only ever applied to a draft or
-  // a topic still waiting on its first message.
-  const pairLocked = !!topic && topic.sourceLang !== null;
   // Pair pages bake both languages into the slug/SEO copy — nothing to pick,
   // ever. Only the home widget (no presets) offers the source/target picker.
   const fixedPair = presetSource !== undefined && presetTarget !== undefined;
@@ -454,14 +436,15 @@ export function Translator({
 
   // Topics belong to a language pair — only show/auto-open the ones that
   // match this page's pair (fixed for pair pages; the current draft pick on
-  // home). Auto-detect (a === null) matches on either side of the pair.
+  // home). While the source side is still "auto-detect" the pair isn't
+  // known yet (the flow is: send → server detects the source language →
+  // that gets plugged into the selector), so topics stay hidden entirely
+  // until then.
   const pairA = fixedPair ? (presetSource as string) : currentSourceCode;
   const pairB = fixedPair ? (presetTarget as string) : (targetLanguage?.code ?? defaultTarget);
-  const pairTopics = topics.filter((tp) =>
-    pairA === null
-      ? tp.sourceLang === pairB || tp.targetLang === pairB
-      : (tp.sourceLang === pairA && tp.targetLang === pairB) || (tp.sourceLang === pairB && tp.targetLang === pairA),
-  );
+  const pairKnown = pairA !== null;
+  const matchesPair = (tp: Topic) => (tp.sourceLang === pairA && tp.targetLang === pairB) || (tp.sourceLang === pairB && tp.targetLang === pairA);
+  const pairTopics = pairKnown ? topics.filter(matchesPair) : [];
 
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the card edge (the card's
@@ -470,7 +453,7 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border p-1.5">
+    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-2.5">
       {status !== "idle" ? (
         <div className="flex min-h-9 flex-1 items-center gap-3 px-2.5 text-sm text-hint">
           {status === "recording" ? (
@@ -517,7 +500,7 @@ export function Translator({
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -529,7 +512,7 @@ export function Translator({
           textBusy ? (
             <Loader2 size={18} className="animate-spin" />
           ) : (
-            <Send size={18} />
+            <ArrowUp size={18} />
           )
         ) : (
           <Mic size={18} />
@@ -543,25 +526,25 @@ export function Translator({
   const langBtnClass =
     "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none";
 
-  // Language pair half of the omnibar — source, reverse, target. Pickers
-  // stay disabled once the pair locks.
-  const pairButtons = (
-    <>
-      <button onClick={() => setPickerFor("source")} disabled={pairLocked || fixedPair} className={langBtnClass}>
-        <span className="truncate">{sourceLanguage ? sourceLanguage.nameNative : t.autoDetect}</span>
+  // Standalone pill — sits under the hero headline on the home widget,
+  // pre-loading the pair the composer on the right will use. Shows the
+  // DRAFT pair, never whatever topic happens to be loaded (e.g. hydrated
+  // from a previous visit to a different pair page) — clicking only opens
+  // the picker, nothing changes until an actual selection is made inside it.
+  const heroPairRow = (
+    <div className="flex items-stretch overflow-hidden rounded-xl border border-border bg-card">
+      <button onClick={() => setPickerFor("source")} className={langBtnClass}>
+        <span className="truncate">
+          {currentSourceCode ? (getLanguage(currentSourceCode)?.nameNative ?? currentSourceCode) : t.autoDetect}
+        </span>
       </button>
       <span className="flex w-10 shrink-0 items-center justify-center text-hint">
         <ArrowRightLeft size={16} />
       </span>
-      <button onClick={() => setPickerFor("target")} disabled={pairLocked || fixedPair} className={langBtnClass}>
+      <button onClick={() => setPickerFor("target")} className={langBtnClass}>
         <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
       </button>
-    </>
-  );
-  // Standalone pill — sits under the hero headline on the home widget,
-  // pre-loading the pair the composer on the right will use.
-  const heroPairRow = (
-    <div className="flex items-stretch overflow-hidden rounded-xl border border-border bg-card">{pairButtons}</div>
+    </div>
   );
 
   // Topic rows only — no background fill, active = bold text. Shared between
@@ -600,7 +583,7 @@ export function Translator({
           exists yet; the widget on the right is always fully live —
           topics live behind a toggle + sliding drawer, anchored to the
           widget itself, same on every breakpoint. */}
-      <div className="flex flex-col gap-4 lg:grid lg:min-h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
+      <div className="flex flex-col gap-4 lg:grid lg:h-[calc(95vh_-_89px)] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
         <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
           <div className="my-auto flex min-w-0 flex-col gap-4">
             <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
@@ -616,22 +599,16 @@ export function Translator({
           </div>
         </div>
 
-        <div className="relative order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
-          {pairTopics.length > 0 && (
-            <div className="flex min-h-11 shrink-0 items-center border-b border-border px-2">
-              <button
-                onClick={() => setTopicsOpen((v) => !v)}
-                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
-              >
-                <PanelLeft size={16} />
-                <span className="max-w-[10rem] truncate">{topic?.title || t.newTopic}</span>
-              </button>
-            </div>
-          )}
-
-          {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
-              actually shrink instead of pushing the composer off-screen) */}
-          <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+        <div className="relative order-1 flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0">
+          {/* Chat spans the full height and scrolls behind the two
+              islands — they're overlaid (absolute), not flex siblings, so
+              they never shrink the scroll area. Padding on the scroll box
+              matches each island's own box height so content never sits
+              underneath one. */}
+          <div
+            ref={chatScrollRef}
+            className={`absolute inset-0 z-0 flex flex-col overflow-y-auto px-4 pb-28 sm:px-6 ${pairKnown ? "pt-20" : "pt-4"}`}
+          >
             {loadingTopic ? (
               <div className="flex justify-center py-10 text-hint">
                 <Loader2 size={20} className="animate-spin" />
@@ -646,9 +623,19 @@ export function Translator({
             )}
           </div>
 
-          <div className="shrink-0 p-3">
-            {composerRow}
-          </div>
+          {pairKnown && (
+            <div className="absolute inset-x-0 top-0 z-10 p-3 pb-0">
+              <button
+                onClick={() => setTopicsOpen((v) => !v)}
+                className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+              >
+                <PanelLeft size={16} />
+                <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+              </button>
+            </div>
+          )}
+
+          <div className="absolute inset-x-0 bottom-0 z-10 p-3">{composerRow}</div>
 
           {/* Always mounted (not conditionally) so the transform/opacity
               transitions actually animate instead of popping in. Backdrop
