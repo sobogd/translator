@@ -35,7 +35,7 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
   return (
     <div className={`flex ${fromA ? "justify-end" : "justify-start"}`}>
       <div
-        className={`w-full max-w-[85%] rounded-2xl p-3.5 ${
+        className={`w-full max-w-[85%] rounded-lg p-3.5 ${
           fromA
             ? "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white"
             : "border border-border bg-card"
@@ -83,7 +83,7 @@ export function History({
   if (rows.length === 0) {
     return (
       <div
-        className="flex flex-1 min-h-[14rem] flex-col items-center justify-center gap-3 text-center text-base opacity-50"
+        className="flex flex-1 min-h-[14rem] max-w-[300px] flex-col items-center justify-center gap-3 self-center text-center text-base opacity-50"
         style={{ color: "var(--hint)" }}
       >
         <MessageSquare size={36} />

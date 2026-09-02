@@ -157,8 +157,6 @@ export function Translator({
   const taRef = useRef<HTMLTextAreaElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
 
-  const pending = textBusy || status === "processing";
-
   useEffect(() => {
     // A pair page's preset wins over the last-used target from localStorage.
     if (presetTarget) return;
@@ -311,20 +309,23 @@ export function Translator({
     });
   }
 
+  // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2 (16px).
+  const TEXTAREA_MAX_H = 88;
   function autosize() {
     const el = taRef.current;
     if (!el) return;
     el.style.height = "auto";
-    el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
+    el.style.height = `${Math.min(el.scrollHeight, TEXTAREA_MAX_H)}px`;
   }
 
   async function translateText() {
     if (!text.trim() || textBusy) return;
     setError(null);
     setTextBusy(true);
+    // Text stays in the input while busy (not cleared up front) — that's
+    // what keeps the composer CTA showing its spinner instead of falling
+    // back to the mic icon (showSend needs non-empty text).
     const sent = text;
-    setText("");
-    requestAnimationFrame(autosize);
     try {
       // First send with no topic yet: create one now, carrying over
       // whatever source/target were picked in draft state.
@@ -336,6 +337,8 @@ export function Translator({
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
+      setText("");
+      requestAnimationFrame(autosize);
       await loadTopic(topicId);
       await loadTopics();
       window.dispatchEvent(new Event(QUOTA_EVENT));
@@ -343,7 +346,6 @@ export function Translator({
       const msg = e instanceof Error ? e.message : "Error";
       if (msg === "insufficient_credits") setQuotaModal(true);
       else setError(friendlyError(msg, t));
-      setText(sent);
     } finally {
       setTextBusy(false);
     }
@@ -468,9 +470,9 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-stretch">
+    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border p-1.5">
       {status !== "idle" ? (
-        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-sm text-hint">
+        <div className="flex min-h-9 flex-1 items-center gap-3 px-2.5 text-sm text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -507,14 +509,15 @@ export function Translator({
           data-1p-ignore
           data-bwignore
           data-form-type="other"
-          className="max-h-[120px] min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-4 py-2.5 text-base leading-6 outline-none"
+          style={{ maxHeight: TEXTAREA_MAX_H }}
+          className="min-h-9 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-2 text-base leading-6 outline-none"
         />
       )}
       <button
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -614,15 +617,17 @@ export function Translator({
         </div>
 
         <div className="relative order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
-          <div className="flex min-h-11 shrink-0 items-center border-b border-border px-2">
-            <button
-              onClick={() => setTopicsOpen((v) => !v)}
-              className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
-            >
-              <PanelLeft size={16} />
-              <span className="max-w-[10rem] truncate">{topic?.title || (pairTopics.length > 0 ? t.newTopic : t.topics)}</span>
-            </button>
-          </div>
+          {pairTopics.length > 0 && (
+            <div className="flex min-h-11 shrink-0 items-center border-b border-border px-2">
+              <button
+                onClick={() => setTopicsOpen((v) => !v)}
+                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+              >
+                <PanelLeft size={16} />
+                <span className="max-w-[10rem] truncate">{topic?.title || t.newTopic}</span>
+              </button>
+            </div>
+          )}
 
           {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
               actually shrink instead of pushing the composer off-screen) */}
@@ -639,14 +644,11 @@ export function Translator({
                 texts={texts.history}
               />
             )}
-            {pending && (
-              <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-                <Loader2 size={15} className="animate-spin" /> {t.translating}
-              </div>
-            )}
           </div>
 
-          <div className="shrink-0 border-t border-border">{composerRow}</div>
+          <div className="shrink-0 p-3">
+            {composerRow}
+          </div>
 
           {/* Always mounted (not conditionally) so the transform/opacity
               transitions actually animate instead of popping in. Backdrop
