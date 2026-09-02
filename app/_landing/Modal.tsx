@@ -57,14 +57,14 @@ export function Modal({
 
   return createPortal(
     <div
-      className={`fixed inset-0 z-[60] flex items-end justify-center bg-black/40 backdrop-blur-sm transition-opacity duration-200 sm:items-center sm:p-4 ${
+      className={`fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm transition-opacity duration-200 ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       onClick={close}
     >
       <div
-        className={`flex max-h-[85dvh] w-full ${maxWidth} flex-col overflow-hidden rounded-t-3xl border shadow-xl transition-all duration-200 sm:rounded-2xl ${
-          visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-6 opacity-0 sm:translate-y-2 sm:scale-95"
+        className={`flex max-h-[85dvh] w-full ${maxWidth} flex-col overflow-hidden rounded-2xl border shadow-xl transition-all duration-200 ${
+          visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-2 scale-95 opacity-0"
         }`}
         style={{ background: "var(--card)", borderColor: "var(--border)" }}
         onClick={(e) => e.stopPropagation()}

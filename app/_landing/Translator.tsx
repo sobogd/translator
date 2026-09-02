@@ -652,17 +652,25 @@ export function Translator({
           {pairRow}
           {composerRow}
         </div>
-        {error && (
-          <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2.5 text-sm text-red-600 dark:text-red-400">
-            <span>{error}</span>
-            {error === t.errors.insufficientCredits && (
-              <a href={pricingHref} className="shrink-0 font-medium underline">
-                {t.pricingLink}
-              </a>
-            )}
-          </div>
-        )}
       </div>
+
+      {error && (
+        <Modal
+          title={error}
+          onClose={() => setError(null)}
+          closeAria={t.close}
+          footer={
+            <button
+              onClick={() => setError(null)}
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+            >
+              {t.close}
+            </button>
+          }
+        >
+          {null}
+        </Modal>
+      )}
 
       {quotaModal && (
         <Modal
