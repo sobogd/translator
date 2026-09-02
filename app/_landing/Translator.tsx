@@ -503,6 +503,12 @@ export function Translator({
           }}
           placeholder={t.typePlaceholder}
           rows={1}
+          name="translator-source-text"
+          autoComplete="off"
+          data-lpignore="true"
+          data-1p-ignore
+          data-bwignore
+          data-form-type="other"
           className="max-h-[120px] min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-4 py-2.5 text-base leading-6 outline-none"
         />
       )}
