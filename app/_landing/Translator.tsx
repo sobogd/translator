@@ -10,6 +10,7 @@ import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
 import { Modal } from "./Modal";
 import { QUOTA_EVENT, useSession } from "./session";
+import { analytics } from "@/lib/analytics";
 import { useTurnstileGate } from "./Turnstile";
 import type { TranslatorTexts } from "./types";
 
@@ -33,6 +34,14 @@ const DEFAULT_TO = "es";
 
 type RecStatus = "idle" | "recording" | "processing";
 type WidgetTexts = TranslatorTexts["translator"];
+
+/** Error codes reach the name field, which the server validates against a
+ *  tight character set — anything unexpected would take the whole batch down
+ *  with it, so clamp here. */
+function trackError(code: string): string {
+  const slug = code.replace(/[^A-Za-z0-9_-]+/g, "_").slice(0, 40);
+  return slug || "unknown";
+}
 
 function friendlyError(code: string, texts: WidgetTexts): string {
   if (code === "insufficient_credits") return texts.errors.insufficientCredits;
@@ -258,6 +267,7 @@ export function Translator({
   }, [turnCount, topic?.id]);
 
   async function switchTopic(id: string) {
+    analytics.track("Click", "Topic switch");
     rememberTopic(id);
     setText("");
     setError(null);
@@ -269,6 +279,7 @@ export function Translator({
   // No API call — just clears the view back to a draft. The topic itself
   // is only created once the user actually sends something (translateText).
   function newTopic() {
+    analytics.track("Click", "Topic new");
     setTopic(null);
     setDraftSourceLang(null);
     setText("");
@@ -277,6 +288,7 @@ export function Translator({
 
   async function deleteTopic(id: string) {
     if (!confirm(t.deleteTopicConfirm)) return;
+    analytics.track("Click", "Topic delete");
     await apiFetch(`/api/topics/${id}`, { method: "DELETE" });
     const remaining = topics.filter((tp) => tp.id !== id);
     setTopics(remaining);
@@ -306,12 +318,14 @@ export function Translator({
   // Only ever triggered from the hero picker (home) — always resets to a
   // fresh draft, never mutates whatever topic happens to be loaded.
   function selectSource(code: string | null) {
+    analytics.track("Click", `Language source ${code ?? "auto"}`);
     setPickerFor(null);
     setTopic(null);
     setDraftSourceLang(code !== null && code === defaultTarget ? null : code);
   }
 
   function selectTarget(code: string) {
+    analytics.track("Click", `Language target ${code}`);
     setPickerFor(null);
     localStorage.setItem(TO_KEY, code);
     setDefaultTarget(code);
@@ -330,6 +344,8 @@ export function Translator({
 
   async function translateText() {
     if (!text.trim() || textBusy) return;
+    const pair = trackPair();
+    analytics.track("Click", "Send text");
     setError(null);
     setTextBusy(true);
     // Text stays in the input while busy (not cleared up front) — that's
@@ -359,19 +375,24 @@ export function Translator({
       if (!res.ok) throw new Error(data.error || "error");
       setText("");
       requestAnimationFrame(autosize);
+      analytics.track("Translate", `Text ${pair}`);
       await loadTopic(topicId);
       await loadTopics();
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Error";
       if (msg === "insufficient_credits") setQuotaModal(true);
-      else setError(friendlyError(msg, t));
+      else {
+        analytics.track("Show", `Translate error text: ${trackError(msg)}`);
+        setError(friendlyError(msg, t));
+      }
     } finally {
       setTextBusy(false);
     }
   }
 
   async function startRec() {
+    analytics.track("Click", "Mic start");
     setError(null);
     try {
       const res = await apiFetch("/api/quota");
@@ -395,6 +416,7 @@ export function Translator({
       // is sent the pass is usually already there.
       void ensurePass();
     } catch {
+      analytics.track("Show", "Mic denied");
       setError(t.micDeniedError);
     }
   }
@@ -402,6 +424,7 @@ export function Translator({
   // Out of seconds mid-recording: drop the take (sending it would just 402)
   // and surface the quota modal instead.
   async function cancelRec() {
+    analytics.track("Show", "Recording cut: out of seconds");
     const rec = recRef.current;
     recRef.current = null;
     setStatus("idle");
@@ -420,6 +443,8 @@ export function Translator({
   async function stopRec() {
     const rec = recRef.current;
     if (!rec) return;
+    const pair = trackPair();
+    analytics.track("Click", "Mic stop");
     setStatus("processing");
     try {
       const blob = await rec.stop();
@@ -438,13 +463,17 @@ export function Translator({
       }
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
+      analytics.track("Translate", `Voice ${pair}`);
       await loadTopic(topicId);
       await loadTopics();
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Error";
       if (msg === "insufficient_credits") setQuotaModal(true);
-      else setError(friendlyError(msg, t));
+      else {
+        analytics.track("Show", `Translate error voice: ${trackError(msg)}`);
+        setError(friendlyError(msg, t));
+      }
     } finally {
       setStatus("idle");
     }
@@ -467,6 +496,24 @@ export function Translator({
   }, [status]);
 
   const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+
+  // Language pair of whatever is about to be sent, as one locale-stable token
+  // ("es-en", "auto-fr") — the analytics name, never a translated label.
+  const trackPair = () =>
+    `${topic?.sourceLang ?? draftSourceLang ?? "auto"}-${topic?.targetLang ?? defaultTarget}`;
+
+  // Stamp every event fired from here with the conversation it happened in;
+  // the server drops the id unless the caller really owns that topic.
+  useEffect(() => {
+    analytics.setTopic(topic?.id ?? null);
+    return () => analytics.setTopic(null);
+  }, [topic?.id]);
+
+  // One event wherever the out-of-quota modal comes up — it is opened from
+  // four places (text, voice, mic start, mid-recording cut).
+  useEffect(() => {
+    if (quotaModal) analytics.track("Show", "Quota modal");
+  }, [quotaModal]);
 
   const currentSourceCode = topic ? topic.sourceLang : draftSourceLang;
   const targetLanguage = useMemo(() => getLanguage(topic?.targetLang ?? defaultTarget), [topic?.targetLang, defaultTarget]);
@@ -577,7 +624,13 @@ export function Translator({
   // the picker, nothing changes until an actual selection is made inside it.
   const heroPairRow = (
     <div className="flex items-stretch overflow-hidden rounded-xl border border-border bg-card">
-      <button onClick={() => setPickerFor("source")} className={langBtnClass}>
+      <button
+        onClick={() => {
+          analytics.track("Click", "Language picker source");
+          setPickerFor("source");
+        }}
+        className={langBtnClass}
+      >
         <span className="truncate">
           {currentSourceCode ? (getLanguage(currentSourceCode)?.nameNative ?? currentSourceCode) : t.autoDetect}
         </span>
@@ -585,7 +638,13 @@ export function Translator({
       <span className="flex w-10 shrink-0 items-center justify-center text-hint">
         <ArrowRightLeft size={16} />
       </span>
-      <button onClick={() => setPickerFor("target")} className={langBtnClass}>
+      <button
+        onClick={() => {
+          analytics.track("Click", "Language picker target");
+          setPickerFor("target");
+        }}
+        className={langBtnClass}
+      >
         <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
       </button>
     </div>
@@ -671,7 +730,10 @@ export function Translator({
           {pairKnown && (
             <div className="absolute inset-x-0 top-0 z-10 p-3 pb-0">
               <button
-                onClick={() => setTopicsOpen((v) => !v)}
+                onClick={() => {
+                  analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
+                  setTopicsOpen((v) => !v);
+                }}
                 className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
               >
                 <PanelLeft size={16} />
@@ -755,6 +817,10 @@ export function Translator({
           footer={
             <a
               href={pricingHref}
+              onClick={() => {
+                analytics.track("Click", "Quota modal upgrade");
+                analytics.flush();
+              }}
               className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.pricingLink}

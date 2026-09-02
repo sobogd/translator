@@ -32,4 +32,8 @@ export interface Quota {
   planName?: string | null;
   chars: number;
   seconds: number;
+  /** Opens the admin traffic screens in the account modal. Server-decided
+   *  (ANALYTICS_ADMIN_EMAILS) — the endpoints re-check it, this only paints
+   *  the button. */
+  isAdmin?: boolean;
 }

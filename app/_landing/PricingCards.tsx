@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { CARD, PRIMARY_BTN, OUTLINE_BTN } from "./shell";
 import { PLAN_ORDER, PLANS, type PlanId } from "@/lib/plans";
+import { analytics } from "@/lib/analytics";
 import type { TranslatorTexts } from "./types";
 
 type PricingTexts = TranslatorTexts["pricing"];
@@ -14,12 +15,22 @@ async function startCheckout(plan: PlanId) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ plan }),
   });
+  // Every branch below leaves the document, so the buffer has to go out with
+  // the event still in it.
   if (res.status === 401) {
+    analytics.track("Show", `Checkout needs sign in ${plan}`);
+    analytics.flush();
     window.location.href = "/api/auth/google/start";
     return;
   }
   const data = await res.json();
-  if (data.redirectUrl) window.location.href = data.redirectUrl;
+  if (data.redirectUrl) {
+    analytics.track("Click", `Checkout redirect ${plan}`);
+    analytics.flush();
+    window.location.href = data.redirectUrl;
+  } else {
+    analytics.track("Show", `Checkout failed ${plan}`);
+  }
 }
 
 function price(id: PlanId): string {
@@ -42,6 +53,7 @@ export function PricingCards({
   const [loading, setLoading] = useState<PlanId | null>(null);
 
   async function onSelect(plan: PlanId) {
+    analytics.track("Click", `Plan ${plan}`);
     setLoading(plan);
     try {
       await startCheckout(plan);

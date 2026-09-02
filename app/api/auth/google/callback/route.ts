@@ -10,6 +10,7 @@ import {
   parseCookie,
 } from "@/lib/auth";
 import { SIGNED_IN_COOKIE } from "@/lib/cookies";
+import { trackServerEvent } from "@/lib/analytics/server-event";
 
 export const runtime = "nodejs";
 
@@ -60,9 +61,23 @@ export async function GET(req: Request) {
       return bounce();
     }
 
+    // Read before the new row is written: no earlier session for this address
+    // means this is the very first sign-in, i.e. a registration. Sessions are
+    // never deleted on logout, so the count survives sign-out/sign-in cycles.
+    const priorSessions = await prisma.session.count({ where: { email } });
+
     const token = generateSessionToken();
     const tokenHash = hashSessionToken(token);
     await prisma.session.create({ data: { email, tokenHash, expiresAt: null } });
+
+    // Awaited, not fired and forgotten: the response is a redirect, and work
+    // left running after it may be cut short. It stitches the anonymous visit
+    // that led here onto the account, so it has to land on the same visit.
+    await trackServerEvent(req.headers, email, {
+      page: "Auth",
+      action: priorSessions === 0 ? "Register" : "Sign in",
+      name: "Google",
+    });
 
     const res = NextResponse.redirect(new URL("/", origin), 302);
     res.cookies.set(STATE_COOKIE, "", { path: "/", maxAge: 0 });

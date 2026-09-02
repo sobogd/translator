@@ -34,7 +34,7 @@ export function Landing({
   ]);
 
   return (
-    <SessionProvider locale={locale}>
+    <SessionProvider locale={locale} page="Home">
       <main className={PAGE}>
         <script
           type="application/ld+json"
@@ -48,7 +48,7 @@ export function Landing({
           featureLinks={texts.footer.featureLinks}
         />
         <Container>
-          <Band id="app">
+          <Band id="app" section="widget">
             <Translator
               texts={texts}
               heroTexts={texts.hero}
@@ -56,16 +56,16 @@ export function Landing({
               pricingHref={localePath(locale, "pricing")}
             />
           </Band>
-          <Band>
+          <Band section="stats">
             <StatCards items={texts.statCards} />
           </Band>
-          <Band id="features">
+          <Band id="features" section="features">
             <Spotlights items={texts.spotlights} />
           </Band>
-          <Band id="comparison">
+          <Band id="comparison" section="comparison">
             <Comparison texts={texts.comparison} />
           </Band>
-          <Band id="faq">
+          <Band id="faq" section="faq">
             <Faq
               heading={texts.faq.heading}
               headingAccent={texts.faq.headingAccent}
@@ -73,7 +73,7 @@ export function Landing({
               items={texts.faq.items}
             />
           </Band>
-          <Band>
+          <Band section="final_cta">
             {/* On the home page itself a bare "/" link is a no-op — anchor the
                 CTA to the header (#top) so it scrolls all the way up. */}
             <FinalCta

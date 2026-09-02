@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { PRIMARY_BTN } from "./shell";
+import { TrackedNavLink } from "./TrackedLink";
 
 // Same layout as iq-rest's FinalCta: one plain bordered block, left-aligned
 // (not centered), heading/sub/CTA row stacked in one column, no gradient on
@@ -27,9 +27,9 @@ export function FinalCta({
       </h2>
       <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
-        <Link href={ctaHref} className={PRIMARY_BTN}>
+        <TrackedNavLink href={ctaHref} track="Final CTA" className={PRIMARY_BTN}>
           {ctaLabel}
-        </Link>
+        </TrackedNavLink>
       </div>
     </div>
   );

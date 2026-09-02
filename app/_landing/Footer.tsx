@@ -1,4 +1,5 @@
 import { NARROW } from "./shell";
+import { TrackedLink } from "./TrackedLink";
 import { defaultLocale, type Locale } from "@/lib/locales";
 import { localeSwitchHref, localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { READY_LOCALES } from "@/content";
@@ -44,7 +45,7 @@ export function Footer({
   const featureLinks = localizedFeatureLinks(locale, texts.featureLinks ?? []);
 
   return (
-    <footer className="border-t border-border py-8">
+    <footer data-section="footer" className="border-t border-border py-8">
       <div className={`${NARROW} flex flex-col gap-6`}>
         {featureLinks.length > 0 && (
           <div className="flex flex-col gap-2">
@@ -56,9 +57,14 @@ export function Footer({
                     {l.label}
                   </span>
                 ) : (
-                  <a key={l.href} href={l.href} className="text-sm text-hint transition-colors hover:text-text">
+                  <TrackedLink
+                    key={l.href}
+                    href={l.href}
+                    track={`Footer feature: ${l.routeKey}`}
+                    className="text-sm text-hint transition-colors hover:text-text"
+                  >
                     {l.label}
-                  </a>
+                  </TrackedLink>
                 ),
               )}
             </nav>
@@ -76,13 +82,14 @@ export function Footer({
                   {getLanguage(l)?.nameNative ?? l}
                 </span>
               ) : (
-                <a
+                <TrackedLink
                   key={l}
                   href={localeSwitchHref(pathname, locale, l)}
+                  track={`Footer locale: ${l}`}
                   className="text-sm text-hint transition-colors hover:text-text"
                 >
                   {getLanguage(l)?.nameNative ?? l}
-                </a>
+                </TrackedLink>
               ),
             )}
           </nav>
@@ -92,12 +99,12 @@ export function Footer({
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-            <a href="/privacy" className="transition-colors hover:text-text">
+            <TrackedLink href="/privacy" track="Footer privacy" className="transition-colors hover:text-text">
               Privacy
-            </a>
-            <a href="/terms" className="transition-colors hover:text-text">
+            </TrackedLink>
+            <TrackedLink href="/terms" track="Footer terms" className="transition-colors hover:text-text">
               Terms
-            </a>
+            </TrackedLink>
           </nav>
           <span>{texts.tagline}</span>
         </div>

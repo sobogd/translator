@@ -30,8 +30,11 @@ export type FeatureLinkDef = { routeKey: string; label: string };
 export function localizedFeatureLinks(
   locale: string,
   links: FeatureLinkDef[],
-): { href: string; label: string }[] {
-  return links.map((l) => ({ href: featureHref(l.routeKey, locale), label: l.label }));
+): { href: string; label: string; routeKey: string }[] {
+  // `routeKey` rides along because it is the only locale-stable name these
+  // links have — analytics event names must not vary by language, or one
+  // funnel becomes 30 (see lib/analytics.ts).
+  return links.map((l) => ({ href: featureHref(l.routeKey, locale), label: l.label, routeKey: l.routeKey }));
 }
 
 // Safe locale-switcher href: home stays home, a registered feature route maps

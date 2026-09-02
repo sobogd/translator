@@ -31,7 +31,7 @@ export function PricingPage({
     breadcrumbLd(locale, { name: `${p.heading} ${p.headingAccent}`.trim(), url: `${SITE_URL}${pathname}` }),
   ]);
   return (
-    <SessionProvider locale={locale}>
+    <SessionProvider locale={locale} page="Pricing">
       <main className={PAGE}>
         <script
           type="application/ld+json"
@@ -45,7 +45,7 @@ export function PricingPage({
           featureLinks={chrome.footer.featureLinks}
         />
         <Container>
-          <Band>
+          <Band section="plans">
             {/* One card at every breakpoint (unlike the feature hero, which
                 splits into two on mobile): filled half carries the SEO copy,
                 bare half the plans — flat with dividers, no card in a card. */}
@@ -66,7 +66,7 @@ export function PricingPage({
               </div>
             </div>
           </Band>
-          <Band id="faq">
+          <Band id="faq" section="faq">
             <Faq
               heading={p.faq.heading}
               headingAccent={p.faq.headingAccent}
@@ -74,7 +74,7 @@ export function PricingPage({
               items={p.faq.items}
             />
           </Band>
-          <Band>
+          <Band section="final_cta">
             <FinalCta
               heading={p.finalCta.heading}
               headingAccent={p.finalCta.headingAccent}

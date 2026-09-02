@@ -32,7 +32,7 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     paragraphs: [
       `Last updated: ${LEGAL_LAST_UPDATED}`,
       `This Privacy Policy explains how ${OPERATOR.brand} — a service operated by ${OPERATOR.legalName}, ${OPERATOR.status}, with fiscal address at ${OPERATOR.fiscalAddress} (Tax ID: ${OPERATOR.taxId}) ("${OPERATOR.brand}", "we", "us") — collects, uses, stores and protects your personal data when you use the translator at ${OPERATOR.domain}.`,
-      `The short version: your conversations live in our own database on our own server in the European Union, we run no analytics or advertising trackers of any kind, and the audio you record is never stored — it is transcribed and immediately discarded.`,
+      `The short version: your conversations live in our own database on our own server in the European Union, the audio you record is never stored — it is transcribed and immediately discarded — and the only usage measurement we run is our own, cookieless one: no third-party analytics, no advertising trackers, and nothing stored on your device.`,
       `We comply with the General Data Protection Regulation (GDPR), the Spanish Organic Law on Data Protection and Guarantee of Digital Rights (LOPDGDD), and the ePrivacy Directive.`,
     ],
   },
@@ -54,7 +54,7 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
       `Voice recordings — audio is transmitted for speech recognition and discarded as soon as the transcript comes back. We do not store audio files.`,
       `Billing data — if you subscribe: your plan, its status, the renewal date and your Stripe customer and subscription identifiers. Payment cards are handled entirely by Stripe; we never see or store card details.`,
       `Support — the content of messages you exchange with us by email.`,
-      `No usage tracking — unlike most sites, this one runs no analytics at all: no Google Analytics, no first-party event log, no advertising pixel, no session recording.`,
+      `Usage measurement — our own, cookieless. For each visit we store which pages were opened and which actions were taken (an event is a page, an action and a short English label such as "Home / Click / Header pricing"), the interface language, the device type and operating system, the browser's language header, the approximate location (country, region, city) derived on our server from the IP address, and where the visit came from (a "?from=" campaign tag or the search engine that referred it). The visit itself is identified by a salted hash of your IP address, browser user agent and language header. The raw IP address and the raw user agent are never stored, the salt is replaced every day and the old one destroyed — which makes visits from different days impossible to link back together — and once you sign in the visit is attributed to your email address so we can see how the product is actually used.`,
     ],
   },
   {
@@ -62,7 +62,7 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     paragraphs: [
       `Each category is processed under one of the legal bases in GDPR Article 6:`,
       `Contract performance (Art. 6(1)(b)) — account data, authentication data, translation content, billing data, support messages. Required to provide the Service you asked for.`,
-      `Legitimate interest (Art. 6(1)(f)) — the anonymous usage identifier, the anti-abuse check, and short-term operational logs, all of which protect the free allowance and the availability of the Service. Balanced against your rights; you can object at any time by emailing ${OPERATOR.contactEmail}.`,
+      `Legitimate interest (Art. 6(1)(f)) — the anonymous usage identifier, the anti-abuse check, short-term operational logs, and the cookieless usage measurement described above, which protect the free allowance and the availability of the Service and tell us which parts of it people actually use. Balanced against your rights: the measurement stores no direct identifier of a signed-out visitor, builds no cross-site profile and is never shared or sold. You can object at any time by emailing ${OPERATOR.contactEmail}, and we will delete the visits concerned.`,
       `Legal obligation (Art. 6(1)(c)) — invoicing data we are required to retain by Spanish tax law.`,
     ],
   },
@@ -79,16 +79,18 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     ],
   },
   {
-    heading: "5. No analytics and no advertising trackers",
+    heading: "5. Analytics: our own, cookieless, no advertising",
     paragraphs: [
-      `We do not use Google Analytics, PostHog, Facebook Pixel, Hotjar, session recording, retargeting pixels, or any other third-party analytics or advertising tracker, and we run no first-party event tracking either. No profile of your behaviour is built anywhere.`,
+      `We do not use Google Analytics, PostHog, Facebook Pixel, Hotjar, session recording, retargeting pixels, or any other third-party analytics or advertising tracker. Nothing about your visit leaves our server, and no advertising network is told anything about you.`,
+      `What we do run is our own measurement of how the Service is used, described in section 2. It works without cookies and without any identifier stored on your device: a visit is recognised by a hash that our server recomputes from the request itself, using a secret that is thrown away and replaced every day. That is also its limit — after a day, visits can no longer be connected to one another unless you are signed in.`,
+      `It does not follow you across other websites, it is never used for advertising or for automated decisions about you, and no profile of your behaviour is built anywhere.`,
       `We do not sell, rent or share your personal data with anyone for their own purposes, and your translations are never used to train AI models.`,
     ],
   },
   {
     heading: "6. Cookies and local storage",
     paragraphs: [
-      `The Service sets only strictly necessary cookies, which do not require consent under Article 5(3) of the ePrivacy Directive — hence no cookie banner.`,
+      `The Service sets only strictly necessary cookies, which do not require consent under Article 5(3) of the ePrivacy Directive — hence no cookie banner. Our usage measurement deliberately sets none: it stores nothing on your device at all, not a cookie, not a local-storage entry, not a device identifier.`,
       `The cookies we use:`,
       `• iqt_session — keeps you signed in`,
       `• iqt_signed_in — a yes/no flag, readable by the page so the header renders in the right state; it carries no credential`,
@@ -129,6 +131,7 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
       `Voice recordings — not retained at all: discarded as soon as the transcript is produced.`,
       `Account data — for as long as your account exists. Within 30 days of account deletion all personal data is permanently removed from our database, and backups are overwritten within 90 days.`,
       `Anonymous quota counters — kept for as long as the lifetime free allowance they track applies. They contain no name or email.`,
+      `Usage measurement (visits and events) — kept for 12 months, then deleted. The daily salt that produced a visit's hash is destroyed after a day, so older visits cannot be traced back to a device even by us.`,
       `Invoicing data — retained for 6 years as required by Spanish tax law (Ley General Tributaria).`,
       `Support messages — retained for 24 months after the last reply.`,
     ],
@@ -229,7 +232,7 @@ export const TERMS_SECTIONS: LegalSection[] = [
   {
     heading: "6. Data, privacy and hosting",
     paragraphs: [
-      `Your account, conversations and translations are stored in our own database on our own server in the European Union, under our direct control. We run no third-party analytics or advertising trackers.`,
+      `Your account, conversations and translations are stored in our own database on our own server in the European Union, under our direct control. We run no third-party analytics and no advertising trackers; usage is measured only by our own cookieless system, described in the Privacy Policy.`,
       `The content you submit is processed by Google's Gemini API to produce the transcript and translation, and payments are processed by Stripe. Audio is never stored.`,
       `For full details, see our Privacy Policy, which forms part of these Terms.`,
     ],

@@ -26,15 +26,20 @@ export function Container({
 
 export function Band({
   id,
+  section,
   className = "",
   children,
 }: {
   id?: string;
+  /** Analytics hook: the scroll tracker names a scroll after the section the
+   *  page came to rest on (see app/_landing/PageTracker.tsx). Separate from
+   *  `id`, which is an anchor target and not always present. */
+  section?: string;
   className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={className}>
+    <section id={id} data-section={section} className={className}>
       {children}
     </section>
   );

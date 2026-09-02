@@ -1,11 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { Modal } from "./Modal";
 import { Loader2, Mic, Type } from "lucide-react";
 import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
 import { useSession } from "./session";
+import { analytics } from "@/lib/analytics";
+
+// Admin-only screen: pulled in on demand so its markup and helpers never ride
+// along in the bundle every visitor downloads.
+const AdminTraffic = dynamic(() => import("./AdminTraffic"), { ssr: false });
 import type { TranslatorTexts } from "./types";
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -64,25 +70,34 @@ export function AuthButton({
   // header badge — the modal only asks for a refresh when it opens.
   const { signedIn, quota, refreshQuota } = useSession();
   const [modalOpen, setModalOpen] = useState(false);
+  const [trafficOpen, setTrafficOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
 
   function openModal() {
+    analytics.track("Click", "Account modal");
     setModalOpen(true);
     refreshQuota();
   }
 
   async function openPortal() {
+    analytics.track("Click", "Manage subscription");
     setPortalBusy(true);
     try {
       const res = await apiFetch("/api/billing/portal", { method: "POST" });
       const data = await res.json();
-      if (data.url) window.location.href = data.url;
+      if (data.url) {
+        // Leaving for Stripe — the buffer would not survive the navigation.
+        analytics.flush();
+        window.location.href = data.url;
+      }
     } finally {
       setPortalBusy(false);
     }
   }
 
   async function logout() {
+    analytics.track("Click", "Log out");
+    analytics.flush();
     await fetch("/api/auth/logout", { method: "POST" });
     window.location.reload();
   }
@@ -98,7 +113,15 @@ export function AuthButton({
           {texts.account}
         </button>
       ) : (
-        <a href="/api/auth/google/start" className={btnClass}>
+        <a
+          href="/api/auth/google/start"
+          onClick={() => {
+            analytics.track("Click", "Sign in with Google");
+            // Full navigation to Google — flush or the click is lost.
+            analytics.flush();
+          }}
+          className={btnClass}
+        >
           {texts.signIn}
         </a>
       )}
@@ -120,6 +143,10 @@ export function AuthButton({
               ) : (
                 <a
                   href={pricingHref}
+                  onClick={() => {
+                    analytics.track("Click", "Upgrade");
+                    analytics.flush();
+                  }}
                   className={`inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL}`}
                 >
                   {accountTexts.upgrade}
@@ -136,6 +163,17 @@ export function AuthButton({
         >
           <div className="flex flex-col gap-4 px-5 py-4">
             {quota?.email && <p className="break-all text-sm text-hint">{quota.email}</p>}
+            {quota?.isAdmin && (
+              <button
+                onClick={() => {
+                  analytics.track("Click", "Admin traffic");
+                  setTrafficOpen(true);
+                }}
+                className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-lg border border-border px-4 text-sm font-semibold transition-all hover:bg-bg active:scale-[0.99]"
+              >
+                Traffic
+              </button>
+            )}
             <div className="flex flex-col gap-2 rounded-xl border border-border p-4 text-sm">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-hint">{accountTexts.planLabel}</span>
@@ -155,6 +193,8 @@ export function AuthButton({
           </div>
         </Modal>
       )}
+
+      {trafficOpen && <AdminTraffic onClose={() => setTrafficOpen(false)} />}
     </>
   );
 }

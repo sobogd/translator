@@ -1,0 +1,243 @@
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { analytics, isValidPageLabel, searchReferrerHost, type TrackCtx } from "@/lib/analytics";
+import { sectionLabel } from "@/lib/track-sections";
+
+// Pageview + scroll tracking for one route. Mounted once per page by
+// SessionProvider, which every page component already wraps around itself.
+//
+// Ported from iq-rest (apps/landing/app/_landing/components/page-tracker.tsx),
+// minus the paid-click collection: this site runs no advertising.
+
+const FROM_REGEX = /^[A-Za-z0-9_.-]{1,64}$/;
+
+// Document-scoped (not pageview-scoped) facts. They describe the visit, not the
+// route, so re-sending them on every client-side navigation would inflate the
+// counts without adding information. Module scope is exactly the lifetime we
+// want: reset on a real document load, kept across soft navigations.
+let documentCtxSent = false;
+
+/** Collect visit attribution (?from=, search referrer, colour scheme) and the
+ *  Stripe return marker, then strip the ENTIRE query string so a reload does
+ *  not re-send them. Must run before any other tracking on the page. */
+function collectCtxAndCleanUrl(): { ctx?: TrackCtx; billing: string | null } {
+  const ctx: TrackCtx = {};
+  const sp = new URLSearchParams(window.location.search);
+
+  const from = sp.get("from");
+  if (from && FROM_REGEX.test(from)) ctx.from = from;
+  const ref = searchReferrerHost();
+  if (ref) ctx.ref = ref;
+  if (window.matchMedia) {
+    ctx.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  // Where Stripe Checkout dropped the visitor back (app/api/billing/checkout).
+  const raw = sp.get("billing");
+  const billing = raw === "success" || raw === "canceled" ? raw : null;
+
+  if ([...sp.keys()].length > 0) {
+    // Preserve the existing state object. Passing a fresh {} overwrites the App
+    // Router's internal history state, and Back onto this entry then finds
+    // nothing to restore and falls back to a full document reload.
+    window.history.replaceState(
+      window.history.state,
+      "",
+      window.location.pathname + window.location.hash,
+    );
+  }
+  return { ctx: Object.keys(ctx).length > 0 ? ctx : undefined, billing };
+}
+
+/** `?from=` only ever comes from a fresh entry URL, so seeing one means a
+ *  genuinely new attribution — worth sending even mid-visit. `ref` is derived
+ *  from document.referrer, which survives soft navigations and would otherwise
+ *  re-attribute the visit on every route change. */
+function hasFreshAttribution(ctx: TrackCtx): boolean {
+  return Boolean(ctx.from);
+}
+
+/** How long the page must sit still before a scroll counts as finished. Long
+ *  enough to ride out momentum scrolling on a phone, short enough that two
+ *  deliberate swipes are two events. */
+const SCROLL_SETTLE_MS = 500;
+/** Hard cap per pageview. Someone flicking up and down a long page produces
+ *  real transitions, but not an unbounded number of rows. */
+const MAX_SCROLL_EVENTS = 40;
+
+/**
+ * Scroll as movement between sections: every time the page settles somewhere
+ * new, one event — "Scroll down" / "Scroll up" for the action, the section it
+ * came to rest on for the name.
+ *
+ * Direction is the action rather than part of the name so the two can be
+ * counted separately, and only the destination is named: the section it left is
+ * the destination of the event before it.
+ */
+function createScrollTracker() {
+  let settled: string | null = null;
+  let settledY = 0;
+  let sent = 0;
+  let timer: ReturnType<typeof setTimeout> | null = null;
+
+  /** The section the viewport is looking at = the one containing its middle.
+   *  Using the centre rather than the top edge keeps the answer stable while a
+   *  section boundary drifts past the top of the screen. */
+  const currentSection = (): string | null => {
+    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-section]")).filter(
+      (el) => el.dataset.section,
+    );
+    if (els.length === 0) return null;
+
+    // At the very bottom, name the last section outright. A short footer never
+    // reaches the middle of the screen, so the centre rule alone would report
+    // the block above it as the end of every scroll to the end of the page.
+    const scrollable = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    if (window.scrollY + window.innerHeight >= scrollable - 2) {
+      const last = els[els.length - 1].dataset.section;
+      return last ? sectionLabel(last) : null;
+    }
+
+    const centre = window.scrollY + window.innerHeight / 2;
+    let best: string | null = null;
+    let bestTop = -Infinity;
+    for (const el of els) {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      if (top > centre) continue;
+      // Sections are laid out in document order, but a nested one can appear
+      // later with a smaller top — take the lowest section that starts above
+      // the centre.
+      if (top > bestTop) {
+        bestTop = top;
+        best = sectionLabel(el.dataset.section!);
+      }
+    }
+    // Scrolled above the first section (rubber-banding, sticky header offset).
+    return best ?? sectionLabel(els[0].dataset.section!);
+  };
+
+  const settle = () => {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    // A modal locks body scroll, which collapses the scrollable height to about
+    // one viewport while scrollY keeps its old value — the bottom-of-page rule
+    // above would then read as "reached the footer" from wherever the visitor
+    // happened to be. Nothing done inside a modal is a scroll gesture.
+    if (document.body.style.overflow === "hidden") return;
+    const now = currentSection();
+    const y = window.scrollY;
+    if (!now) return;
+    if (settled && now !== settled && sent < MAX_SCROLL_EVENTS) {
+      sent += 1;
+      analytics.track(y >= settledY ? "Scroll down" : "Scroll up", now);
+    }
+    settled = now;
+    settledY = y;
+  };
+
+  /** Called on every (coalesced) scroll frame: restart the settle countdown. */
+  const onMove = () => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(settle, SCROLL_SETTLE_MS);
+  };
+
+  /** Where the visitor entered the page — an anchor link or a restored position
+   *  means that is not necessarily the top. */
+  const begin = () => {
+    settled = currentSection();
+    settledY = window.scrollY;
+  };
+
+  /** The pageview is ending: close any scroll still in flight and push it out.
+   *
+   *  The flush is not optional. The transport registers its own pagehide /
+   *  visibilitychange handlers when the module loads, i.e. BEFORE this
+   *  component mounts, so on the way out it drains the queue first and an event
+   *  queued here would sit on a document that is already gone. */
+  const finish = () => {
+    settle();
+    analytics.flush();
+  };
+
+  return { begin, onMove, finish };
+}
+
+/** Page label with a guaranteed-valid result — an empty or malformed one is
+ *  rejected by the server per-batch, taking every unrelated event in the batch
+ *  down with it. */
+function toPageLabel(page: string): string {
+  return isValidPageLabel(page) ? page : "Home";
+}
+
+export function PageTracker({ page }: { page: string }) {
+  // Keyed on the real pathname, not on `page`: many routes share a page key
+  // (every locale home is "Home", every pair page is "Pair"), and a `page`-only
+  // dependency would skip the second pageview and leave the scroll listener
+  // measuring the unmounted route.
+  const pathname = usePathname();
+
+  useEffect(() => {
+    analytics.setPage(toPageLabel(page));
+    analytics.setLocale(document.documentElement.lang || "");
+
+    const { ctx, billing } = collectCtxAndCleanUrl();
+    const attribution = ctx && (!documentCtxSent || hasFreshAttribution(ctx)) ? ctx : undefined;
+    documentCtxSent = true;
+    // The pageview carries the attribution ctx — the server applies it to the
+    // visit first-write-wins. Instant: it must not sit out the 2s buffer — a
+    // quick bounce would lose the whole visit, and the response carries the
+    // visit token every later batch wants.
+    analytics.track("Show", "Pageview", attribution, { instant: true });
+    if (billing) analytics.track("Show", billing === "success" ? "Checkout success" : "Checkout canceled");
+
+    const scroll = createScrollTracker();
+    scroll.begin();
+    // rAF-coalesced: a scroll fires dozens of events per second, and there is no
+    // point restarting the settle countdown more than once per frame.
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        scroll.onMove();
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // Three exits, and all three are needed. On mobile a tab is usually swiped
+    // away or backgrounded, which fires visibilitychange and often no pagehide
+    // at all; desktop link-outs fire pagehide; a soft navigation fires neither
+    // and only unmounts.
+    const onHide = () => {
+      if (document.visibilityState === "hidden") scroll.finish();
+    };
+    window.addEventListener("pagehide", scroll.finish);
+    document.addEventListener("visibilitychange", onHide);
+    // Back-navigation restores the page from bfcache: the document is reused, so
+    // this effect never re-runs and the return visit would otherwise leave no
+    // trace at all. The attribution ctx is deliberately not re-sent — the visit
+    // already carries it.
+    const onShow = (event: PageTransitionEvent) => {
+      if (!event.persisted) return;
+      analytics.setPage(toPageLabel(page));
+      analytics.setLocale(document.documentElement.lang || "");
+      analytics.track("Show", "Pageview", undefined, { instant: true });
+      scroll.begin();
+    };
+    window.addEventListener("pageshow", onShow);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("pagehide", scroll.finish);
+      window.removeEventListener("pageshow", onShow);
+      document.removeEventListener("visibilitychange", onHide);
+      scroll.finish();
+    };
+  }, [page, pathname]);
+
+  return null;
+}

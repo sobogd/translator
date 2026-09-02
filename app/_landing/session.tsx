@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/lib/client";
 import { LOCALE_COOKIE, SIGNED_IN_COOKIE } from "@/lib/cookies";
+import { PageTracker } from "./PageTracker";
 import type { Quota } from "@/lib/types";
 
 // Client-side session/quota state for the whole page.
@@ -42,10 +43,15 @@ const readCookie = (name: string): string | null => {
 
 export function SessionProvider({
   locale,
+  page,
   children,
 }: {
   /** Remembered so a later visit to "/" lands on the language actually used (proxy.ts). */
   locale: string;
+  /** Locale-stable analytics page key ("Home", "Pair", "Pricing", "Legal").
+   *  Every page component wraps itself in this provider, which makes it the one
+   *  place the pageview/scroll tracker has to be mounted. */
+  page: string;
   children: React.ReactNode;
 }) {
   const [quota, setQuota] = useState<Quota | null>(null);
@@ -79,5 +85,10 @@ export function SessionProvider({
   }, [locale]);
 
   const value = useMemo(() => ({ quota, signedIn, refreshQuota }), [quota, signedIn, refreshQuota]);
-  return <SessionContext.Provider value={value}>{children}</SessionContext.Provider>;
+  return (
+    <SessionContext.Provider value={value}>
+      <PageTracker page={page} />
+      {children}
+    </SessionContext.Provider>
+  );
 }

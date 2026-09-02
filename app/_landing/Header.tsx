@@ -9,6 +9,7 @@ import { LogoIcon } from "./LogoIcon";
 import { AuthButton, QuotaBadge } from "./AccountControls";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
+import { analytics } from "@/lib/analytics";
 import { defaultLocale, type Locale } from "@/lib/locales";
 
 type HeaderTexts = {
@@ -171,6 +172,7 @@ export function Header({
       <div className={`${NARROW} flex h-14 items-center justify-between gap-3 sm:h-16`}>
         <Link
           href={homeHref}
+          onClick={() => analytics.track("Click", "Header logo")}
           className="flex shrink-0 items-center gap-1.5 text-lg font-semibold tracking-tight sm:text-xl"
         >
           <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
@@ -187,7 +189,10 @@ export function Header({
               <button
                 type="button"
                 aria-expanded={featuresOpen}
-                onClick={() => setFeaturesOpen((v) => !v)}
+                onClick={() => {
+                  analytics.track("Click", `Header features ${featuresOpen ? "close" : "open"}`);
+                  setFeaturesOpen((v) => !v);
+                }}
                 className="flex cursor-pointer items-center gap-1 transition-opacity hover:opacity-70"
               >
                 {texts.features}
@@ -195,11 +200,19 @@ export function Header({
               </button>
             </div>
           ) : (
-            <Link href={`${homeHref}#features`} className="transition-opacity hover:opacity-70">
+            <Link
+              href={`${homeHref}#features`}
+              onClick={() => analytics.track("Click", "Header features")}
+              className="transition-opacity hover:opacity-70"
+            >
               {texts.features}
             </Link>
           )}
-          <Link href={localePath(locale, "pricing")} className="transition-opacity hover:opacity-70">
+          <Link
+            href={localePath(locale, "pricing")}
+            onClick={() => analytics.track("Click", "Header pricing")}
+            className="transition-opacity hover:opacity-70"
+          >
             {texts.pricing}
           </Link>
         </nav>
@@ -227,7 +240,10 @@ export function Header({
             type="button"
             aria-label={texts.features}
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => {
+              analytics.track("Click", `Header menu ${menuOpen ? "close" : "open"}`);
+              setMenuOpen((v) => !v);
+            }}
             className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-transparent text-text transition-all hover:bg-card active:scale-[0.99]"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -258,7 +274,10 @@ export function Header({
               <Link
                 href={localePath(locale, "pricing")}
                 className="block rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  analytics.track("Click", "Mobile menu pricing");
+                  setMenuOpen(false);
+                }}
               >
                 {texts.pricing}
               </Link>
@@ -271,7 +290,10 @@ export function Header({
                     key={l.href}
                     href={l.href}
                     className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      analytics.track("Click", `Mobile menu feature: ${l.routeKey}`);
+                      setMenuOpen(false);
+                    }}
                   >
                     {l.label}
                   </Link>
@@ -280,7 +302,10 @@ export function Header({
                 <Link
                   href={`${homeHref}#features`}
                   className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    analytics.track("Click", "Mobile menu features");
+                    setMenuOpen(false);
+                  }}
                 >
                   {texts.features}
                 </Link>
@@ -291,7 +316,10 @@ export function Header({
                   <Link
                     href={anyLanguage.href}
                     className="rounded-lg px-3 py-2 text-sm font-semibold text-hint transition-opacity hover:opacity-70"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      analytics.track("Click", "Mobile menu all languages");
+                      setMenuOpen(false);
+                    }}
                   >
                     {anyLanguage.label}
                   </Link>
@@ -339,7 +367,10 @@ export function Header({
               key={l.href}
               href={l.href}
               className="px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-70"
-              onClick={() => setFeaturesOpen(false)}
+              onClick={() => {
+                analytics.track("Click", `Header feature: ${l.routeKey}`);
+                setFeaturesOpen(false);
+              }}
             >
               {l.label}
             </Link>
@@ -350,7 +381,10 @@ export function Header({
               <Link
                 href={anyLanguage.href}
                 className="px-4 py-2.5 text-sm font-semibold text-hint transition-opacity hover:opacity-70"
-                onClick={() => setFeaturesOpen(false)}
+                onClick={() => {
+                  analytics.track("Click", "Header all languages");
+                  setFeaturesOpen(false);
+                }}
               >
                 {anyLanguage.label}
               </Link>

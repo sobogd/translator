@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { getAccountUsage } from "@/lib/credits";
 import { FREE_TRIAL } from "@/lib/plans";
+import { isAnalyticsAdmin } from "@/lib/analytics/identity";
 
 export const runtime = "nodejs";
 
@@ -32,5 +33,8 @@ export async function GET(req: NextRequest) {
     planName: plan?.name ?? null,
     chars: Math.max(0, account.charsBalance),
     seconds: Math.max(0, account.secondsBalance),
+    // Rides along with the quota the account modal already polls, so the admin
+    // button needs no request of its own.
+    isAdmin: isAnalyticsAdmin(account.email),
   });
 }

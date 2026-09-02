@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef } from "react";
+import { analytics } from "@/lib/analytics";
 
 // Client half of the Turnstile gate (server half: lib/turnstile.ts). The
 // widget is rendered explicitly and in "execute" mode with the
@@ -119,21 +120,32 @@ export function useTurnstileGate(siteKey: string | null, enabled: boolean): Turn
   const ensurePass = useCallback(async (): Promise<boolean> => {
     if (!enabled || !siteKey) return true;
     if (Date.now() < passUntilRef.current) return true;
+    // Only the solves that actually happen are worth an event — the cached-pass
+    // path above is the common case and says nothing.
+    analytics.track("Show", "Turnstile check");
     const token = await solve();
-    if (!token) return false;
+    if (!token) {
+      analytics.track("Show", "Turnstile failed");
+      return false;
+    }
     try {
       const res = await fetch("/api/turnstile/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
       });
-      if (!res.ok) return false;
+      if (!res.ok) {
+        analytics.track("Show", "Turnstile rejected");
+        return false;
+      }
       const data = (await res.json()) as { ttl?: number };
       const ttl = typeof data.ttl === "number" ? data.ttl : 0;
       // Expire the local pass a minute early — see passUntilRef.
       passUntilRef.current = Date.now() + Math.max(0, ttl - 60) * 1000;
+      analytics.track("Show", "Turnstile passed");
       return true;
     } catch {
+      analytics.track("Show", "Turnstile failed");
       return false;
     }
   }, [enabled, siteKey, solve]);

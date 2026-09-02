@@ -66,6 +66,14 @@ jobs:
             STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}"
             TS_SITE="${{ secrets.TS_SITE }}"
             TS_SECRET="${{ secrets.TS_SECRET }}"
+            # Cookieless analytics. The token secret signs the visit
+            # continuation token (lib/analytics/visit-token.ts) — empty just
+            # disables that token, the pipeline still works off the hash.
+            # The two email lists default to support@iq-rest.com in code, so an
+            # unset secret is not a broken deploy.
+            ANALYTICS_TOKEN_SECRET="${{ secrets.ANALYTICS_TOKEN_SECRET }}"
+            ANALYTICS_ADMIN_EMAILS="${{ secrets.ANALYTICS_ADMIN_EMAILS }}"
+            ANALYTICS_EXCLUDE_EMAILS="${{ secrets.ANALYTICS_EXCLUDE_EMAILS }}"
             PORT="8200"
             EOF
 

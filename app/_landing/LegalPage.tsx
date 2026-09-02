@@ -31,7 +31,7 @@ export function LegalPage({
     .filter((s) => s.heading || s.paragraphs.length > 0);
 
   return (
-    <SessionProvider locale="en">
+    <SessionProvider locale="en" page="Legal">
       <main className={PAGE}>
         <Header
           homeHref="/"
@@ -41,7 +41,7 @@ export function LegalPage({
           featureLinks={chrome.footer.featureLinks}
         />
         <Container>
-          <Band>
+          <Band section="legal">
             <article
               lang="en"
               dir="ltr"

@@ -71,7 +71,7 @@ export function FeatureLanding({
   ]);
 
   return (
-    <SessionProvider locale={locale}>
+    <SessionProvider locale={locale} page="Pair">
       <main className={PAGE}>
         <script
           type="application/ld+json"
@@ -85,7 +85,7 @@ export function FeatureLanding({
           featureLinks={chrome.footer.featureLinks}
         />
         <Container>
-          <Band id="app">
+          <Band id="app" section="widget">
             <Translator
               texts={chrome}
               heroTexts={content.hero}
@@ -94,16 +94,16 @@ export function FeatureLanding({
               pricingHref={localePath(locale, "pricing")}
             />
           </Band>
-          <Band>
+          <Band section="stats">
             <StatCards items={chrome.statCards} />
           </Band>
-          <Band id="features">
+          <Band id="features" section="features">
             <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
           </Band>
-          <Band id="comparison">
+          <Band id="comparison" section="comparison">
             <Comparison texts={content.comparison} />
           </Band>
-          <Band id="faq">
+          <Band id="faq" section="faq">
             <Faq
               heading={content.faq.heading}
               headingAccent={content.faq.headingAccent}
@@ -111,7 +111,7 @@ export function FeatureLanding({
               items={content.faq.items}
             />
           </Band>
-          <Band>
+          <Band section="final_cta">
             <FinalCta
               heading={content.finalCta.heading}
               headingAccent={content.finalCta.headingAccent}
