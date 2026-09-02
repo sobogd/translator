@@ -120,11 +120,16 @@ export function Header({
   }, [hasFeatureLinks, featuresOpen]);
 
   const [menuOpen, setMenuOpen] = useState(false);
-  // Burger's nested "Features" accordion — collapsed by default so the pair
-  // links don't flood the menu; resets whenever the burger closes.
-  const [burgerFeaturesOpen, setBurgerFeaturesOpen] = useState(false);
+  // Lock page scroll while the panel is open — swipes inside the panel then
+  // scroll the panel only (its own overflow + overscroll-contain), never the
+  // page behind it.
   useEffect(() => {
-    if (!menuOpen) setBurgerFeaturesOpen(false);
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
   }, [menuOpen]);
   const menuRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -237,37 +242,31 @@ export function Header({
           />
           <div
             ref={panelRef}
-            className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
+            className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto overscroll-contain border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
               menuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
               {hasFeatureLinks ? (
                 <>
-                  <button
-                    type="button"
-                    aria-expanded={burgerFeaturesOpen}
-                    onClick={() => setBurgerFeaturesOpen((v) => !v)}
-                    className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
-                  >
+                  {/* Always-expanded section: a plain heading over the full
+                      link list (the panel itself scrolls), so nothing —
+                      including the universal all-languages link at the end —
+                      hides behind a nested collapse. */}
+                  <span className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-hint">
                     {texts.features}
-                    <ChevronDown
-                      className={`h-4 w-4 text-hint transition-transform ${burgerFeaturesOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
-                  {burgerFeaturesOpen && (
-                    <div className="flex max-h-64 flex-col overflow-y-auto pl-3">
-                      {links.map((l) => (
-                        <Link
-                          key={l.href}
-                          href={l.href}
-                          className="rounded-lg px-3 py-2 text-sm font-medium transition-opacity hover:opacity-70"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          {l.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  </span>
+                  <div className="flex flex-col pl-3">
+                    {links.map((l) => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="rounded-lg px-3 py-2 text-sm font-medium transition-opacity hover:opacity-70"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
                 </>
               ) : (
                 <Link
