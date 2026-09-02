@@ -131,6 +131,10 @@ export function Translator({
   const [status, setStatus] = useState<RecStatus>("idle");
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [quotaModal, setQuotaModal] = useState(false);
+  // Remaining voice seconds, fetched when recording starts — the ticking
+  // timer stops the mic the moment the free/plan pool would run out.
+  const secondsLeftRef = useRef<number | null>(null);
 
   const recRef = useRef<WavRecorder | null>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -322,7 +326,9 @@ export function Translator({
       await loadTopics();
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
-      setError(e instanceof Error ? friendlyError(e.message, t) : "Error");
+      const msg = e instanceof Error ? e.message : "Error";
+      if (msg === "insufficient_credits") setQuotaModal(true);
+      else setError(friendlyError(msg, t));
       setText(sent);
     } finally {
       setTextBusy(false);
@@ -331,6 +337,19 @@ export function Translator({
 
   async function startRec() {
     setError(null);
+    try {
+      const res = await apiFetch("/api/quota");
+      if (res.ok) {
+        const q = await res.json();
+        secondsLeftRef.current = typeof q.seconds === "number" ? q.seconds : null;
+        if (q.seconds <= 0) {
+          setQuotaModal(true);
+          return;
+        }
+      }
+    } catch {
+      secondsLeftRef.current = null;
+    }
     try {
       const rec = new WavRecorder();
       await rec.start();
@@ -341,6 +360,24 @@ export function Translator({
     }
   }
 
+  // Out of seconds mid-recording: drop the take (sending it would just 402)
+  // and surface the quota modal instead.
+  async function cancelRec() {
+    const rec = recRef.current;
+    recRef.current = null;
+    setStatus("idle");
+    if (rec) {
+      try {
+        await rec.stop();
+      } catch {
+        /* already stopped */
+      }
+    }
+    setQuotaModal(true);
+  }
+
+  // Stop = send: the recording goes straight through STT + translation in
+  // one request (no intermediate editable transcript step).
   async function stopRec() {
     const rec = recRef.current;
     if (!rec) return;
@@ -348,17 +385,20 @@ export function Translator({
     try {
       const blob = await rec.stop();
       recRef.current = null;
+      const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
       const fd = new FormData();
       fd.append("audio", blob, "speech.wav");
-      if (topic) fd.append("topicId", topic.id);
-      const res = await apiFetch("/api/transcribe", { method: "POST", body: fd });
+      fd.append("topicId", topicId);
+      const res = await apiFetch("/api/translate-voice", { method: "POST", body: fd });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
-      setText((prev) => (prev ? `${prev} ${data.transcript}` : data.transcript));
-      requestAnimationFrame(autosize);
+      await loadTopic(topicId);
+      await loadTopics();
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
-      setError(e instanceof Error ? friendlyError(e.message, t) : "Error");
+      const msg = e instanceof Error ? e.message : "Error";
+      if (msg === "insufficient_credits") setQuotaModal(true);
+      else setError(friendlyError(msg, t));
     } finally {
       setStatus("idle");
     }
@@ -367,11 +407,17 @@ export function Translator({
   useEffect(() => {
     if (status !== "recording") return;
     const start = Date.now();
-    const tick = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 250);
+    const tick = setInterval(() => {
+      const secs = Math.floor((Date.now() - start) / 1000);
+      setElapsed(secs);
+      const left = secondsLeftRef.current;
+      if (left !== null && secs >= left) cancelRec();
+    }, 250);
     return () => {
       clearInterval(tick);
       setElapsed(0);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -409,8 +455,75 @@ export function Translator({
     });
   }
 
+  // Progressive disclosure: until the very first translation exists there is
+  // nothing to manage — show just the input row; the full topics/chat card
+  // unfolds once the first turn lands.
+  const compactMode = topics.length === 0 && rows.length === 0;
+
+  // Composer — one flush row: text field, a mic separated by a left border,
+  // and the accent translate CTA hugging the card edge (the card's
+  // overflow-hidden supplies its only rounded corner).
+  const composerRow = (
+    <div className={`flex shrink-0 items-stretch ${compactMode ? "" : "border-t border-border"}`}>
+      {status !== "idle" ? (
+        <div className="flex min-h-11 flex-1 items-center gap-2 px-4 text-sm text-hint">
+          {status === "recording" ? (
+            <>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/60" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
+              </span>
+              {t.recording} · {fmtTime(elapsed)}
+            </>
+          ) : (
+            <>
+              <Loader2 size={14} className="animate-spin" /> {t.recognizing}
+            </>
+          )}
+        </div>
+      ) : (
+        <textarea
+          ref={taRef}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onInput={autosize}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
+          }}
+          placeholder={t.typePlaceholder}
+          rows={1}
+          className="max-h-[120px] min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-4 py-2.5 text-base leading-6 outline-none"
+        />
+      )}
+      <button
+        onClick={status === "recording" ? stopRec : startRec}
+        disabled={status === "processing"}
+        aria-label={status === "recording" ? t.stopAria : t.recordAria}
+        className={`flex w-12 shrink-0 items-center justify-center border-l border-border transition active:scale-95 disabled:opacity-40 ${
+          status === "recording" ? "text-red-500" : "text-hint hover:text-text"
+        }`}
+      >
+        {status === "processing" ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : status === "recording" ? (
+          <Square size={14} fill="currentColor" />
+        ) : (
+          <Mic size={18} />
+        )}
+      </button>
+      <button
+        onClick={status === "recording" ? stopRec : translateText}
+        disabled={status === "processing" || (status === "idle" && (!text.trim() || textBusy))}
+        aria-label={t.translateAria}
+        className="flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-40"
+      >
+        {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
+      </button>
+    </div>
+  );
+
   const langBtnClass =
-    "flex flex-1 items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold transition active:scale-[0.99] hover:bg-bg disabled:pointer-events-none";
+    "flex h-9 flex-1 items-center justify-center gap-2 self-center rounded-lg px-3 text-sm font-semibold transition active:scale-[0.99] hover:bg-bg disabled:pointer-events-none";
 
   return (
     <div className="flex flex-col gap-4">
@@ -438,7 +551,7 @@ export function Translator({
           onClick={swapPair}
           disabled={!canSwap}
           aria-label="⇄"
-          className="flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-border text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
+          className="flex h-9 w-9 shrink-0 items-center justify-center self-center rounded-full text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
         >
           <ArrowRightLeft size={16} />
         </button>
@@ -452,18 +565,30 @@ export function Translator({
         </button>
       </div>
 
-    <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[34rem] lg:grid-cols-[2fr_3fr]`}>
+    {compactMode ? (
+      <div className={`${CARD} overflow-hidden`}>
+        {composerRow}
+        {error && (
+          <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2.5 text-sm text-red-600 dark:text-red-400">
+            <span>{error}</span>
+          </div>
+        )}
+      </div>
+    ) : (
+    <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[2fr_3fr]`}>
       {/* Mirrors the Hero card horizontally: tinted panel first (~40%,
           same hue as the hero's art panel), functional column second — a
           scrollable list of topics instead of a device mockup. */}
       <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:min-h-0">
         <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-        <button
-          onClick={newTopic}
-          className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
-        >
-          <Plus size={16} /> {t.newTopic}
-        </button>
+        {topics.length > 0 && (
+          <button
+            onClick={newTopic}
+            className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
+          >
+            <Plus size={16} /> {t.newTopic}
+          </button>
+        )}
         <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
           {topics.length === 0 ? (
             <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
@@ -538,57 +663,29 @@ export function Translator({
           )}
         </div>
 
-        {/* composer — text input plus the two buttons (voice, send) */}
-        <div className="shrink-0 border-t border-border p-4 sm:p-5">
-          <div className="flex flex-wrap items-end gap-2">
-            <textarea
-              ref={taRef}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              onInput={autosize}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) translateText();
-              }}
-              placeholder={t.typePlaceholder}
-              rows={1}
-              className="max-h-[120px] min-h-[2.5rem] flex-1 resize-none border-0 bg-transparent px-2 py-2 text-base leading-relaxed outline-none"
-            />
-            <button
-              onClick={status === "recording" ? stopRec : startRec}
-              disabled={status === "processing"}
-              aria-label={status === "recording" ? t.stopAria : t.recordAria}
-              className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition active:scale-90 disabled:opacity-40 ${
-                status === "recording" ? "bg-red-500 text-white hover:bg-red-400" : "text-hint hover:text-text"
-              }`}
-            >
-              {status === "recording" && (
-                <span className="absolute inset-0 animate-ping rounded-full bg-red-500/40" />
-              )}
-              {status === "processing" ? (
-                <Loader2 size={16} className="animate-spin" />
-              ) : status === "recording" ? (
-                <Square size={14} fill="currentColor" />
-              ) : (
-                <Mic size={18} />
-              )}
-            </button>
-            <button
-              onClick={translateText}
-              disabled={!text.trim() || textBusy}
-              aria-label={t.translateAria}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-button text-button-text transition hover:opacity-90 active:scale-90 disabled:opacity-40"
-            >
-              {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-            </button>
-          </div>
-          {status === "recording" && (
-            <span className="text-xs text-hint">{t.recording} · {fmtTime(elapsed)}</span>
-          )}
-          {status === "processing" && <span className="text-xs text-hint">{t.recognizing}</span>}
-        </div>
+        {composerRow}
       </div>
 
     </div>
+    )}
+
+      {quotaModal && (
+        <Modal
+          title={texts.account.upgrade}
+          onClose={() => setQuotaModal(false)}
+          closeAria={t.close}
+          footer={
+            <a
+              href={pricingHref}
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+            >
+              {t.pricingLink}
+            </a>
+          }
+        >
+          <div className="px-5 py-4 text-sm text-hint">{t.errors.insufficientCredits}</div>
+        </Modal>
+      )}
 
       {pickerFor && (
         <LanguagePickerModal
