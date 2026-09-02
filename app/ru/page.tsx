@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getServerSessionEmail } from "@/lib/auth";
 import { getServerQuota } from "@/lib/quota-server";
+import { getServerTopics } from "@/lib/topics-server";
 import { Landing } from "../_landing/Landing";
 import { homeAlternates } from "@/lib/hreflang";
 import { SITE_URL } from "@/lib/site";
@@ -31,7 +32,8 @@ export const metadata: Metadata = {
 export default async function RuHomePage() {
   const email = await getServerSessionEmail();
   const initialQuota = await getServerQuota();
+  const initialTopics = await getServerTopics();
   return (
-    <Landing signedIn={!!email} initialQuota={initialQuota} locale="ru" texts={texts} homeHref="/ru" pathname="/ru" />
+    <Landing signedIn={!!email} initialQuota={initialQuota} initialTopics={initialTopics} locale="ru" texts={texts} homeHref="/ru" pathname="/ru" />
   );
 }

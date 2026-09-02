@@ -6,12 +6,18 @@ import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
 import type { Topic, TopicDetail } from "@/lib/types";
+import type { InitialTopics } from "@/lib/topics-server";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
 import { QUOTA_EVENT } from "./AccountControls";
 import type { TranslatorTexts } from "./types";
 
 const TO_KEY = "translator_to_lang";
+// Which thread SSR should hydrate next time (see lib/topics-server.ts).
+const LAST_TOPIC_COOKIE = "iqt_last_topic";
+const rememberTopic = (id: string) => {
+  document.cookie = `${LAST_TOPIC_COOKIE}=${id}; path=/; max-age=${400 * 86400}; samesite=lax`;
+};
 const DEFAULT_TO = "es";
 
 type RecStatus = "idle" | "recording" | "processing";
@@ -113,6 +119,7 @@ export function Translator({
   presetTarget,
   initialTarget,
   pricingHref = "/pricing",
+  initialData = null,
 }: {
   texts: TranslatorTexts;
   /** Pair-page preset: pre-picked source language for the draft state. */
@@ -123,16 +130,18 @@ export function Translator({
   initialTarget?: string;
   /** Locale-local pricing path for the out-of-quota error link. */
   pricingHref?: string;
+  /** SSR-preloaded topic list + last-opened thread (lib/topics-server.ts). */
+  initialData?: InitialTopics | null;
 }) {
   const t = texts.translator;
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
-  const [topics, setTopics] = useState<Topic[]>([]);
-  const [topic, setTopic] = useState<TopicDetail | null>(null);
+  const [topics, setTopics] = useState<Topic[]>(initialData?.topics ?? []);
+  const [topic, setTopic] = useState<TopicDetail | null>(initialData?.topic ?? null);
   // Source language chosen before a topic exists yet — carried into the
   // topic created on first send. Mirrors topic.sourceLang's semantics
   // (null = auto-detect).
   const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? null);
-  const [loadingTopic, setLoadingTopic] = useState(true);
+  const [loadingTopic, setLoadingTopic] = useState(!initialData);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [text, setText] = useState("");
   const [textBusy, setTextBusy] = useState(false);
@@ -179,6 +188,7 @@ export function Translator({
       if (!res.ok) throw new Error(created.error || "error");
       await loadTopics();
       await loadTopic(created.id);
+      rememberTopic(created.id as string);
       return created.id as string;
     },
     [loadTopics, loadTopic],
@@ -188,6 +198,8 @@ export function Translator({
   // in draft state (topic=null) — a session is only created once the user
   // actually sends something to translate, not just for opening the page.
   useEffect(() => {
+    // SSR already delivered the list + last thread — nothing to fetch.
+    if (initialData) return;
     (async () => {
       setLoadingTopic(true);
       try {
@@ -216,6 +228,7 @@ export function Translator({
   }, [turnCount, topic?.id]);
 
   async function switchTopic(id: string) {
+    rememberTopic(id);
     setText("");
     setError(null);
     setLoadingTopic(true);

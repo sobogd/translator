@@ -12,6 +12,7 @@ import { Container, Band, PAGE } from "./shell";
 import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import type { Quota } from "@/lib/quota-server";
+import type { InitialTopics } from "@/lib/topics-server";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
 // Icon set for a feature page's 3 spotlight cards, keyed by which feature
@@ -44,6 +45,7 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
 export function FeatureLanding({
   signedIn,
   initialQuota = null,
+  initialTopics = null,
   locale,
   chrome,
   content,
@@ -54,6 +56,7 @@ export function FeatureLanding({
 }: {
   signedIn: boolean;
   initialQuota?: Quota | null;
+  initialTopics?: InitialTopics | null;
   locale: Locale;
   chrome: TranslatorTexts;
   content: FeatureContent;
@@ -91,6 +94,7 @@ export function FeatureLanding({
       <Container>
         <Band id="app">
           <Translator
+            initialData={initialTopics}
             texts={chrome}
             presetSource={presetSource}
             presetTarget={presetTarget}

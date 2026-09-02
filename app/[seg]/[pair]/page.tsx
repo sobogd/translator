@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
 import { getServerQuota } from "@/lib/quota-server";
+import { getServerTopics } from "@/lib/topics-server";
 import type { Locale } from "@/lib/locales";
 import { localePath } from "@/lib/locale-paths";
 import { buildFeatureMetadata } from "@/lib/build-feature-metadata";
@@ -36,9 +37,10 @@ export default async function LocalePairPage({ params }: { params: Promise<{ seg
   if (!def || !content || !chrome) notFound();
   const email = await getServerSessionEmail();
   const initialQuota = await getServerQuota();
+  const initialTopics = await getServerTopics();
   return (
     <FeatureLanding
-      signedIn={!!email} initialQuota={initialQuota}
+      signedIn={!!email} initialQuota={initialQuota} initialTopics={initialTopics}
       locale={seg as Locale}
       chrome={chrome}
       content={content}

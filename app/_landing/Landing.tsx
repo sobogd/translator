@@ -11,11 +11,13 @@ import { Container, Band, PAGE } from "./shell";
 import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import type { Quota } from "@/lib/quota-server";
+import type { InitialTopics } from "@/lib/topics-server";
 import type { TranslatorTexts } from "./types";
 
 export function Landing({
   signedIn,
   initialQuota = null,
+  initialTopics = null,
   locale,
   texts,
   homeHref,
@@ -23,6 +25,7 @@ export function Landing({
 }: {
   signedIn: boolean;
   initialQuota?: Quota | null;
+  initialTopics?: InitialTopics | null;
   locale: Locale;
   texts: TranslatorTexts;
   homeHref: string;
@@ -58,7 +61,7 @@ export function Landing({
       />
       <Container className="py-6">
         <Band id="app">
-          <Translator texts={texts} initialTarget={locale} pricingHref={localePath(locale, "pricing")} />
+          <Translator initialData={initialTopics} texts={texts} initialTarget={locale} pricingHref={localePath(locale, "pricing")} />
         </Band>
         <Band>
           <Hero texts={texts.hero} />
