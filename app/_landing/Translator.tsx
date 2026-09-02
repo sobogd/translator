@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Eraser, Loader2, Mic, Plus, Send, Square, Trash2, X } from "lucide-react";
+import { ArrowRightLeft, Eraser, Loader2, Mic, Plus, Send, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -404,7 +404,71 @@ export function Translator({
   const pairLocked = !!topic && topic.sourceLang !== null;
   const rows = topic ? [...topic.translations].reverse() : [];
 
+  // Reverse the pair. Only while it is still editable and the source is
+  // concrete — auto-detect has no "other side" to swap to, and a locked
+  // topic already translates both directions.
+  const canSwap = !pairLocked && !!currentSourceCode;
+  async function swapPair() {
+    if (!canSwap || !currentSourceCode) return;
+    const newSource = topic ? topic.targetLang : defaultTarget;
+    const newTarget = currentSourceCode;
+    localStorage.setItem(TO_KEY, newTarget);
+    setDefaultTarget(newTarget);
+    if (!topic) {
+      setDraftSourceLang(newSource);
+      return;
+    }
+    setTopic({ ...topic, sourceLang: newSource, targetLang: newTarget });
+    await apiFetch(`/api/topics/${topic.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sourceLang: newSource, targetLang: newTarget }),
+    });
+  }
+
+  const langBtnClass =
+    "flex flex-1 items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold transition active:scale-[0.99] hover:bg-bg disabled:pointer-events-none";
+
   return (
+    <div className="flex flex-col gap-4">
+      {/* Full-width pair card: source on one side, target on the other,
+          reverse in the middle. Pickers stay disabled once the pair locks. */}
+      <div className={`${CARD} flex items-stretch gap-1 p-2 sm:gap-2 sm:p-3`}>
+        <button
+          onClick={() => setPickerFor("source")}
+          disabled={pairLocked}
+          className={langBtnClass}
+        >
+          {sourceLanguage ? (
+            <>
+              <span className="text-lg">{sourceLanguage.flag}</span>
+              <span className="truncate">{sourceLanguage.nameNative}</span>
+            </>
+          ) : (
+            <>
+              <span className="text-lg">🌐</span>
+              <span className="truncate">{t.autoDetect}</span>
+            </>
+          )}
+        </button>
+        <button
+          onClick={swapPair}
+          disabled={!canSwap}
+          aria-label="⇄"
+          className="flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-full border border-border text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
+        >
+          <ArrowRightLeft size={16} />
+        </button>
+        <button
+          onClick={() => setPickerFor("target")}
+          disabled={pairLocked}
+          className={langBtnClass}
+        >
+          <span className="text-lg">{targetLanguage?.flag ?? "🌐"}</span>
+          <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
+        </button>
+      </div>
+
     <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[34rem] lg:grid-cols-[2fr_3fr]`}>
       {/* Mirrors the Hero card horizontally: tinted panel first (~40%,
           same hue as the hero's art panel), functional column second — a
@@ -447,64 +511,17 @@ export function Translator({
       {/* No background — language selectors pinned top, chat scrolls in the
           middle, composer pinned bottom. */}
       <div className="flex flex-col lg:h-full lg:min-h-0">
-        <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border p-4 sm:p-5">
-          {pairLocked ? (
-            <span className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint">
-              {sourceLanguage ? (
-                <>
-                  <span className="text-sm">{sourceLanguage.flag}</span>
-                  {sourceLanguage.nameNative}
-                </>
-              ) : (
-                <>
-                  <span className="text-sm">🌐</span>
-                  {t.autoDetect}
-                </>
-              )}
-            </span>
-          ) : (
-            <button
-              onClick={() => setPickerFor("source")}
-              className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-hint transition active:scale-95"
-            >
-              {sourceLanguage ? (
-                <>
-                  <span className="text-sm">{sourceLanguage.flag}</span>
-                  {sourceLanguage.nameNative}
-                </>
-              ) : (
-                <>
-                  <span className="text-sm">🌐</span>
-                  {t.autoDetect}
-                </>
-              )}
-            </button>
-          )}
-          <span className="text-hint">⇄</span>
-          {pairLocked ? (
-            <span className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium">
-              <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
-              {targetLanguage?.nameNative ?? defaultTarget}
-            </span>
-          ) : (
-            <button
-              onClick={() => setPickerFor("target")}
-              className="flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium transition active:scale-95"
-            >
-              <span className="text-sm">{targetLanguage?.flag ?? "🌐"}</span>
-              {targetLanguage?.nameNative ?? defaultTarget}
-            </button>
-          )}
-          {rows.length > 0 && (
+        {rows.length > 0 && (
+          <div className="flex shrink-0 items-center justify-end border-b border-border px-4 py-2 sm:px-5">
             <button
               onClick={clearHistory}
               aria-label={t.clearHistory}
-              className="ml-auto flex items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium text-hint transition hover:text-text active:scale-95"
+              className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-hint transition hover:text-text active:scale-95"
             >
               <Eraser size={14} /> {t.clearHistory}
             </button>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
             actually shrink instead of pushing the composer off-screen) */}
@@ -587,6 +604,8 @@ export function Translator({
           {status === "processing" && <span className="text-xs text-hint">{t.recognizing}</span>}
         </div>
       </div>
+
+    </div>
 
       {pickerFor && (
         <LanguagePickerModal
