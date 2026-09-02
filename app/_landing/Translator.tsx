@@ -433,12 +433,10 @@ export function Translator({
   // translatePair server-side); the picker only ever applied to a draft or
   // a topic still waiting on its first message.
   const pairLocked = !!topic && topic.sourceLang !== null;
+  // Pair pages bake both languages into the slug/SEO copy — nothing to pick,
+  // ever. Only the home widget (no presets) offers the source/target picker.
+  const fixedPair = presetSource !== undefined && presetTarget !== undefined;
   const rows = topic ? [...topic.translations].reverse() : [];
-
-  // Progressive disclosure: until the very first translation exists there is
-  // nothing to manage — show just the omnibar; the topics/chat card unfolds
-  // above it once the first turn lands.
-  const compactMode = topics.length === 0 && rows.length === 0;
 
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the card edge (the card's
@@ -521,18 +519,23 @@ export function Translator({
 
   // Language pair half of the omnibar — source, reverse, target. Pickers
   // stay disabled once the pair locks.
-  const pairRow = (
-    <div className="flex items-stretch border-b border-border">
-      <button onClick={() => setPickerFor("source")} disabled={pairLocked} className={langBtnClass}>
+  const pairButtons = (
+    <>
+      <button onClick={() => setPickerFor("source")} disabled={pairLocked || fixedPair} className={langBtnClass}>
         <span className="truncate">{sourceLanguage ? sourceLanguage.nameNative : t.autoDetect}</span>
       </button>
       <span className="flex w-10 shrink-0 items-center justify-center text-hint">
         <ArrowRightLeft size={16} />
       </span>
-      <button onClick={() => setPickerFor("target")} disabled={pairLocked} className={langBtnClass}>
+      <button onClick={() => setPickerFor("target")} disabled={pairLocked || fixedPair} className={langBtnClass}>
         <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
       </button>
-    </div>
+    </>
+  );
+  // Standalone pill — sits under the hero headline on the home widget,
+  // pre-loading the pair the composer on the right will use.
+  const heroPairRow = (
+    <div className="flex items-stretch overflow-hidden rounded-xl border border-border bg-card">{pairButtons}</div>
   );
 
   // Topic rows only — no background fill, active = bold text. Shared between
@@ -567,136 +570,104 @@ export function Translator({
 
   return (
     <div className="flex flex-col gap-4">
-      {compactMode ? (
-        /* Nothing to manage yet — hero grid: SEO headline on the left,
-            the live widget on the right. */
-        <div className="flex flex-col gap-4 lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
-          <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
-            <div className="my-auto flex min-w-0 flex-col gap-4">
-              <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
-                {heroTexts.title}{" "}
-                <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
-                  {heroTexts.titleAccent}
-                </span>
-              </h1>
-              <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
-            </div>
-          </div>
-          <div className="order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
-            {pairRow}
-            <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
-              {loadingTopic ? (
-                <div className="flex justify-center py-10 text-hint">
-                  <Loader2 size={20} className="animate-spin" />
-                </div>
-              ) : (
-                <History
-                  rows={rows}
-                  langA={topic?.sourceLang ?? ""}
-                  langB={topic?.targetLang ?? ""}
-                  texts={texts.history}
-                />
-              )}
-              {pending && (
-                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-                  <Loader2 size={15} className="animate-spin" /> {t.translating}
-                </div>
-              )}
-            </div>
-            <div className="shrink-0 border-t border-border">{composerRow}</div>
+      {/* SEO hero text always shows on the left, whether or not a topic
+          exists yet; the widget on the right is always fully live —
+          topics live behind a toggle + sliding drawer, anchored to the
+          widget itself, same on every breakpoint. */}
+      <div className="flex flex-col gap-4 lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
+        <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
+          <div className="my-auto flex min-w-0 flex-col gap-4">
+            <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
+              {heroTexts.title}{" "}
+              <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
+                {heroTexts.titleAccent}
+              </span>
+            </h1>
+            <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
+            {/* Pre-loads the composer on the right — home only, pair
+                pages have nothing to pick, it's fixed by the slug. */}
+            {!fixedPair && heroPairRow}
           </div>
         </div>
-      ) : (
-        /* Once there's a topic: a permanent sidebar column on desktop, same
-            as before; on phones that column becomes a toggle + drawer
-            instead (no room for a fixed sidebar there). */
-        <div className="relative flex flex-col overflow-hidden rounded-2xl border border-border lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr]">
-          <div className="hidden flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:flex lg:h-full lg:min-h-0">
+
+        <div className="relative order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
+          <div className="flex shrink-0 items-center border-b border-border px-2">
+            <button
+              onClick={() => setTopicsOpen((v) => !v)}
+              className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+            >
+              <PanelLeft size={16} />
+              <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+            </button>
+          </div>
+
+          {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
+              actually shrink instead of pushing the composer off-screen) */}
+          <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+            {loadingTopic ? (
+              <div className="flex justify-center py-10 text-hint">
+                <Loader2 size={20} className="animate-spin" />
+              </div>
+            ) : (
+              <History
+                rows={rows}
+                langA={topic?.sourceLang ?? ""}
+                langB={topic?.targetLang ?? ""}
+                texts={texts.history}
+              />
+            )}
+            {pending && (
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
+                <Loader2 size={15} className="animate-spin" /> {t.translating}
+              </div>
+            )}
+          </div>
+
+          <div className="shrink-0 border-t border-border">{composerRow}</div>
+
+          {/* Always mounted (not conditionally) so the transform/opacity
+              transitions actually animate instead of popping in. Backdrop
+              blurs the chat behind it — blur fades with the opacity since
+              it rides the same element. */}
+          <div
+            className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+              topicsOpen ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+            onClick={() => setTopicsOpen(false)}
+          />
+          <div
+            className={`absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:p-5 ${
+              topicsOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
             <div className="flex shrink-0 items-center justify-between">
               <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-              <button
-                onClick={newTopic}
-                aria-label={t.newTopic}
-                className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
-              >
-                <Plus size={16} />
-              </button>
-            </div>
-            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">{topicsList(() => {})}</div>
-          </div>
-
-          <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0">
-            <div className="flex shrink-0 items-center border-b border-border px-2 lg:hidden">
-              <button
-                onClick={() => setTopicsOpen(true)}
-                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
-              >
-                <PanelLeft size={16} />
-                <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
-              </button>
-            </div>
-
-            {pairRow}
-
-            {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
-                actually shrink instead of pushing the composer off-screen) */}
-            <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
-              {loadingTopic ? (
-                <div className="flex justify-center py-10 text-hint">
-                  <Loader2 size={20} className="animate-spin" />
-                </div>
-              ) : (
-                <History
-                  rows={rows}
-                  langA={topic?.sourceLang ?? ""}
-                  langB={topic?.targetLang ?? ""}
-                  texts={texts.history}
-                />
-              )}
-              {pending && (
-                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-                  <Loader2 size={15} className="animate-spin" /> {t.translating}
-                </div>
-              )}
-            </div>
-
-            <div className="shrink-0 border-t border-border">{composerRow}</div>
-          </div>
-
-          {topicsOpen && (
-            <div className="lg:hidden">
-              <div className="absolute inset-0 z-20 bg-black/40" onClick={() => setTopicsOpen(false)} />
-              <div className="absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-[hsl(32_44%_92%)] p-4 shadow-xl dark:bg-[hsl(32_14%_14%)] sm:p-5">
-                <div className="flex shrink-0 items-center justify-between">
-                  <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => {
-                        newTopic();
-                        setTopicsOpen(false);
-                      }}
-                      aria-label={t.newTopic}
-                      className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
-                    >
-                      <Plus size={16} />
-                    </button>
-                    <button
-                      onClick={() => setTopicsOpen(false)}
-                      aria-label={t.close}
-                      className="rounded-lg p-1.5 text-hint transition active:scale-90"
-                    >
-                      <X size={16} />
-                    </button>
-                  </div>
-                </div>
-                <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-                  {topicsList(() => setTopicsOpen(false))}
-                </div>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => {
+                    newTopic();
+                    setTopicsOpen(false);
+                  }}
+                  aria-label={t.newTopic}
+                  className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+                >
+                  <Plus size={16} />
+                </button>
+                <button
+                  onClick={() => setTopicsOpen(false)}
+                  aria-label={t.close}
+                  className="rounded-lg p-1.5 text-hint transition active:scale-90"
+                >
+                  <X size={16} />
+                </button>
               </div>
             </div>
-          )}
+            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+              {topicsList(() => setTopicsOpen(false))}
+            </div>
+          </div>
         </div>
-      )}
+      </div>
 
       {error && (
         <Modal

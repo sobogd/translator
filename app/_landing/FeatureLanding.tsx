@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Translator } from "./Translator";
+import { StatCards } from "./StatCards";
 import { Spotlights } from "./Spotlights";
 import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
@@ -38,9 +39,8 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
 };
 
 // Shared template for every SEO feature page (text translator, voice
-// translator, ...). Same section order as the home page's Landing.tsx minus
-// StatCards (redundant with hero copy on a single-feature page) — mirrors
-// iq-rest's FeatureLandingTemplate for digital-menu-for-restaurants.
+// translator, ...). Same section order as the home page's Landing.tsx —
+// mirrors iq-rest's FeatureLandingTemplate for digital-menu-for-restaurants.
 export function FeatureLanding({
   signedIn,
   initialQuota = null,
@@ -100,6 +100,9 @@ export function FeatureLanding({
             presetTarget={presetTarget}
             pricingHref={localePath(locale, "pricing")}
           />
+        </Band>
+        <Band>
+          <StatCards items={chrome.statCards} />
         </Band>
         <Band id="features">
           <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
