@@ -8,6 +8,7 @@ import {
   hashSessionToken,
   isAllowed,
   parseCookie,
+  SESSION_TTL_MS,
 } from "@/lib/auth";
 import { SIGNED_IN_COOKIE } from "@/lib/cookies";
 import { trackServerEvent } from "@/lib/analytics/server-event";
@@ -68,7 +69,13 @@ export async function GET(req: Request) {
 
     const token = generateSessionToken();
     const tokenHash = hashSessionToken(token);
-    await prisma.session.create({ data: { email, tokenHash, expiresAt: null } });
+    // Sessions used to be created with `expiresAt: null` — valid forever, so a
+    // cookie that leaked once stayed a working credential with no way to age it
+    // out. The cookie itself is refreshed on every request (proxy.ts), so an
+    // account in daily use never notices the ceiling.
+    await prisma.session.create({
+      data: { email, tokenHash, expiresAt: new Date(Date.now() + SESSION_TTL_MS) },
+    });
 
     // Awaited, not fired and forgotten: the response is a redirect, and work
     // left running after it may be cut short. It stitches the anonymous visit

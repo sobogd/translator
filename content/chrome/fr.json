@@ -360,7 +360,10 @@
     "errors": {
       "insufficientCredits": "Quota épuisé — passez à un forfait supérieur",
       "textTooLong": "Texte trop long pour votre forfait",
-      "turnstileFailed": "Échec de la vérification — rechargez la page et réessayez"
+      "turnstileFailed": "Échec de la vérification — rechargez la page et réessayez",
+      "notRecognized": "Impossible de reconnaître — réessaie",
+      "rateLimited": "Trop de requêtes — patiente un instant",
+      "generic": "Une erreur est survenue — réessaie"
     }
   },
   "history": {

@@ -33,7 +33,13 @@ async function getOrCreateProductId(): Promise<string> {
     productId = found.data[0].id;
     return productId;
   }
-  const created = await stripe.products.create({ name: PRODUCT_NAME, metadata: { app: APP_TAG } });
+  // Stripe's search index is eventually consistent, so a product created
+  // seconds ago is not findable yet: key the creation on the name so two cold
+  // starts racing each other converge on one product instead of two.
+  const created = await stripe.products.create(
+    { name: PRODUCT_NAME, metadata: { app: APP_TAG } },
+    { idempotencyKey: `product:${APP_TAG}:${PRODUCT_NAME}` },
+  );
   productId = created.id;
   return productId;
 }
@@ -48,10 +54,21 @@ export async function getOrCreatePriceId(planId: PlanId): Promise<string> {
   const unitAmount = Math.round(plan.priceMonthly * 100);
 
   const existing = await stripe.prices.list({ product, active: true, limit: 100 });
-  const match = existing.data.find(
+  const sameShape = existing.data.filter(
     (p) => p.unit_amount === unitAmount && p.currency === "usd" && p.recurring?.interval === "month",
   );
-  if (match) return match.id;
+  // The webhook resolves the plan from the PRICE's metadata (a subscription's
+  // own metadata is written once at checkout and never updated when the price
+  // changes in the billing portal), so a price without it is a plan the
+  // webhook would read back as "FREE". Prefer a tagged one; tag an untagged
+  // match rather than minting a second identical price.
+  const tagged = sameShape.find((p) => p.metadata?.plan === planId);
+  if (tagged) return tagged.id;
+  const untagged = sameShape[0];
+  if (untagged) {
+    await stripe.prices.update(untagged.id, { metadata: { plan: planId, app: APP_TAG } });
+    return untagged.id;
+  }
 
   const created = await stripe.prices.create(
     {
@@ -82,4 +99,15 @@ export function mapStripeStatus(status: Stripe.Subscription.Status): string {
     default:
       return "INACTIVE";
   }
+}
+
+/** Statuses that mean "this customer already has a subscription": starting a
+ *  second checkout on top of one of these bills them twice for the same
+ *  product, and only the newest of the two stays visible to the app. */
+const LIVE_STATUSES: Stripe.Subscription.Status[] = ["active", "trialing", "past_due", "unpaid"];
+
+export async function findLiveSubscription(customerId: string): Promise<Stripe.Subscription | null> {
+  const stripe = getStripe();
+  const subs = await stripe.subscriptions.list({ customer: customerId, status: "all", limit: 20 });
+  return subs.data.find((s) => LIVE_STATUSES.includes(s.status)) ?? null;
 }

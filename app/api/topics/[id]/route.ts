@@ -25,8 +25,8 @@ export async function GET(
     }
     return NextResponse.json(topic);
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("[topics] request failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }
 
@@ -68,8 +68,8 @@ export async function PATCH(
     const updated = await prisma.topic.update({ where: { id }, data });
     return NextResponse.json(updated);
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("[topics] request failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }
 
@@ -89,7 +89,7 @@ export async function DELETE(
     await prisma.topic.delete({ where: { id } });
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("[topics] request failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }

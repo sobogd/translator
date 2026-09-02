@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Quota esgotada — millora el teu pla",
       "textTooLong": "Text massa llarg per al teu pla",
-      "turnstileFailed": "La verificació ha fallat — torna a carregar la pàgina i prova-ho de nou"
+      "turnstileFailed": "La verificació ha fallat — torna a carregar la pàgina i prova-ho de nou",
+      "notRecognized": "No s'ha pogut reconèixer — torna-ho a provar",
+      "rateLimited": "Massa sol·licituds — espera un moment",
+      "generic": "Alguna cosa ha anat malament — torna-ho a provar"
     }
   },
   "history": {

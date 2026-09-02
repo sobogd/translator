@@ -120,6 +120,12 @@ export interface TranslatorTexts {
       insufficientCredits: string;
       textTooLong: string;
       turnstileFailed: string;
+      notRecognized: string;
+      rateLimited: string;
+      /** Fallback for every server code the widget has no copy for. Server
+       *  routes answer with opaque codes now, so this is what an unexpected
+       *  one renders as — it used to be the raw message. */
+      generic: string;
     };
   };
   history: {

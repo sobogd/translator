@@ -30,6 +30,9 @@ export interface Quota {
   email?: string;
   plan: string;
   planName?: string | null;
+  /** Raw subscription state ("ACTIVE" | "PAST_DUE" | ...). `plan` above is the
+   *  ENTITLED plan, which reads FREE while a payment is failing. */
+  subscriptionStatus?: string;
   chars: number;
   seconds: number;
   /** Opens the admin traffic screens in the account modal. Server-decided

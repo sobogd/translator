@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Kvota išnaudota — atnaujinkite planą",
       "textTooLong": "Tekstas per ilgas jūsų planui",
-      "turnstileFailed": "Patikra nepavyko — perkraukite puslapį ir bandykite dar kartą"
+      "turnstileFailed": "Patikra nepavyko — perkraukite puslapį ir bandykite dar kartą",
+      "notRecognized": "Nepavyko atpažinti — bandyk dar kartą",
+      "rateLimited": "Per daug užklausų — palauk akimirką",
+      "generic": "Kažkas nepavyko — bandyk dar kartą"
     }
   },
   "history": {

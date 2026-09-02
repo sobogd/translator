@@ -352,7 +352,10 @@
     "errors": {
       "insufficientCredits": "Mesečni limit je iskorišćen – nadogradite plan",
       "textTooLong": "Tekst je predugačak za vaš plan",
-      "turnstileFailed": "Provera nije uspela — osvežite stranicu i pokušajte ponovo"
+      "turnstileFailed": "Provera nije uspela — osvežite stranicu i pokušajte ponovo",
+      "notRecognized": "Nije moguće prepoznati — pokušaj ponovo",
+      "rateLimited": "Previše zahteva — sačekaj trenutak",
+      "generic": "Nešto je pošlo naopako — pokušaj ponovo"
     }
   },
   "history": {

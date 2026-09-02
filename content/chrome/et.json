@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Limiit on täis – uuenda oma paketti",
       "textTooLong": "Tekst on sinu paketi jaoks liiga pikk",
-      "turnstileFailed": "Kontroll ebaõnnestus — laadi leht uuesti ja proovi veel kord"
+      "turnstileFailed": "Kontroll ebaõnnestus — laadi leht uuesti ja proovi veel kord",
+      "notRecognized": "Ei õnnestunud tuvastada — proovi uuesti",
+      "rateLimited": "Liiga palju päringuid — oota hetk",
+      "generic": "Midagi läks valesti — proovi uuesti"
     }
   },
   "history": {

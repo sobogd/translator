@@ -2,8 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { getLanguage } from "@/lib/languages";
+import { allowRequest } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
+
+// Creating a topic costs nothing and required nothing — no Turnstile, no
+// quota, no limit — which made it the cheapest way to grow this database from
+// the outside. A person accumulates conversations slowly; this is the ceiling
+// that only an automated caller ever meets.
+const MAX_TOPICS_PER_OWNER = 200;
 
 export async function GET(req: NextRequest) {
   try {
@@ -26,8 +33,8 @@ export async function GET(req: NextRequest) {
     }));
     return NextResponse.json(result);
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("[topics] list failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }
 
@@ -37,8 +44,11 @@ export async function POST(req: NextRequest) {
   try {
     const identity = await resolveIdentity(req);
     if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    if (!allowRequest("topic", identity.quotaKey)) {
+      return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+    }
 
-    const body = await req.json();
+    const body = await req.json().catch(() => ({}));
     const targetLang = typeof body.targetLang === "string" ? body.targetLang.trim() : "";
     if (!getLanguage(targetLang)) {
       return NextResponse.json({ error: "unknown language" }, { status: 400 });
@@ -53,13 +63,18 @@ export async function POST(req: NextRequest) {
       sourceLang = body.sourceLang;
     }
 
+    const existing = await prisma.topic.count({ where: { ownerKey: identity.ownerKey } });
+    if (existing >= MAX_TOPICS_PER_OWNER) {
+      return NextResponse.json({ error: "too_many_topics" }, { status: 409 });
+    }
+
     const topic = await prisma.topic.create({
       data: { ownerKey: identity.ownerKey, targetLang, ...(sourceLang ? { sourceLang } : {}) },
     });
 
     return NextResponse.json(topic);
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    console.error("[topics] create failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }

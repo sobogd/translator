@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveOwner, getOrigin } from "@/lib/auth";
-import { getStripe, getOrCreatePriceId, APP_TAG } from "@/lib/stripe";
+import { getStripe, getOrCreatePriceId, findLiveSubscription, APP_TAG } from "@/lib/stripe";
 import { PLAN_ORDER, type PlanId } from "@/lib/plans";
+import { allowRequest } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -10,7 +11,13 @@ export async function POST(req: NextRequest) {
   const owner = await resolveOwner(req);
   if (!owner) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  const body = await req.json();
+  // Every call here hits the Stripe API several times; without a limit one
+  // account can drive that loop as fast as the network allows.
+  if (!allowRequest("checkout", owner)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
+
+  const body = await req.json().catch(() => ({}));
   const plan = body.plan as PlanId;
   if (!PLAN_ORDER.includes(plan)) {
     return NextResponse.json({ error: "invalid plan" }, { status: 400 });
@@ -28,6 +35,21 @@ export async function POST(req: NextRequest) {
     const customer = await stripe.customers.create({ email: owner, metadata: { app: APP_TAG } });
     customerId = customer.id;
     await prisma.account.update({ where: { email: owner }, data: { stripeCustomerId: customerId } });
+  }
+
+  // A second checkout on top of a live subscription creates a SECOND
+  // subscription on the same customer: both bill, but only the newest one is
+  // ever written back to the account, so the first becomes invisible and
+  // uncancellable from inside the product. Two tabs or an impatient double
+  // click was enough. Send them to the portal instead — that is also where a
+  // plan change belongs.
+  const live = await findLiveSubscription(customerId);
+  if (live) {
+    const portal = await stripe.billingPortal.sessions.create({
+      customer: customerId,
+      return_url: `${getOrigin(req)}/#app`,
+    });
+    return NextResponse.json({ redirectUrl: portal.url, reason: "already_subscribed" });
   }
 
   const priceId = await getOrCreatePriceId(plan);

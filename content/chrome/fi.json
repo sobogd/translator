@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Kiintiö käytetty – päivitä tilauksesi",
       "textTooLong": "Teksti on liian pitkä tilaukseesi",
-      "turnstileFailed": "Vahvistus epäonnistui — lataa sivu uudelleen ja yritä uudestaan"
+      "turnstileFailed": "Vahvistus epäonnistui — lataa sivu uudelleen ja yritä uudestaan",
+      "notRecognized": "Tunnistus ei onnistunut — yritä uudelleen",
+      "rateLimited": "Liian monta pyyntöä — odota hetki",
+      "generic": "Jokin meni pieleen — yritä uudelleen"
     }
   },
   "history": {

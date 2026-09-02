@@ -356,7 +356,10 @@
     "errors": {
       "insufficientCredits": "Limit vyčerpán — přejděte na vyšší plán",
       "textTooLong": "Text je pro váš plán příliš dlouhý",
-      "turnstileFailed": "Ověření se nezdařilo — obnovte stránku a zkuste to znovu"
+      "turnstileFailed": "Ověření se nezdařilo — obnovte stránku a zkuste to znovu",
+      "notRecognized": "Nepodařilo se rozpoznat — zkuste to znovu",
+      "rateLimited": "Příliš mnoho požadavků — chvíli počkejte",
+      "generic": "Něco se pokazilo — zkuste to znovu"
     }
   },
   "history": {

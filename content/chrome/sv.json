@@ -356,7 +356,10 @@
     "errors": {
       "insufficientCredits": "Kvoten är slut — uppgradera ditt abonnemang",
       "textTooLong": "Texten är för lång för ditt abonnemang",
-      "turnstileFailed": "Verifieringen misslyckades — ladda om sidan och försök igen"
+      "turnstileFailed": "Verifieringen misslyckades — ladda om sidan och försök igen",
+      "notRecognized": "Kunde inte kännas igen — försök igen",
+      "rateLimited": "För många förfrågningar — vänta en stund",
+      "generic": "Något gick fel — försök igen"
     }
   },
   "history": {

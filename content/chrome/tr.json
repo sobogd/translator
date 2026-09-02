@@ -356,7 +356,10 @@
     "errors": {
       "insufficientCredits": "Kotanız doldu — planınızı yükseltin",
       "textTooLong": "Metin planınız için çok uzun",
-      "turnstileFailed": "Doğrulama başarısız — sayfayı yenileyip tekrar deneyin"
+      "turnstileFailed": "Doğrulama başarısız — sayfayı yenileyip tekrar deneyin",
+      "notRecognized": "Tanınamadı — tekrar dene",
+      "rateLimited": "Çok fazla istek — biraz bekle",
+      "generic": "Bir şeyler ters gitti — tekrar dene"
     }
   },
   "history": {

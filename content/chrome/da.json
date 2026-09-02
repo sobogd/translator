@@ -348,7 +348,10 @@
     "errors": {
       "insufficientCredits": "Kvote opbrugt — opgrader din plan",
       "textTooLong": "Teksten er for lang til din plan",
-      "turnstileFailed": "Verificeringen mislykkedes — genindlæs siden, og prøv igen"
+      "turnstileFailed": "Verificeringen mislykkedes — genindlæs siden, og prøv igen",
+      "notRecognized": "Kunne ikke genkendes — prøv igen",
+      "rateLimited": "For mange forespørgsler — vent et øjeblik",
+      "generic": "Noget gik galt — prøv igen"
     }
   },
   "history": {

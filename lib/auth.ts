@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import { prisma } from "./prisma";
+import { SITE_URL } from "./site";
 
 // Resolve the owner of a request into the verified, lowercased Google email
 // address for the signed-in session. Identity is established via Google OAuth
@@ -7,6 +8,10 @@ import { prisma } from "./prisma";
 // the database. Returns null when no valid session is present.
 
 export const SESSION_COOKIE = "translator_session";
+
+/** Hard ceiling on a session's life. It used to be `expiresAt: null` — never —
+ *  which made a leaked cookie valid forever with no way to age it out. */
+export const SESSION_TTL_MS = 400 * 86_400_000;
 
 export function generateSessionToken(): string {
   return crypto.randomBytes(32).toString("hex");
@@ -27,6 +32,19 @@ export function isAllowed(email: string): boolean {
   return list.includes(email.trim().toLowerCase());
 }
 
+const SITE_HOST = new URL(SITE_URL).host;
+
+function isLocalHost(host: string): boolean {
+  const name = host.split(":")[0];
+  return (
+    name === "localhost" ||
+    name === "127.0.0.1" ||
+    name === "[::1]" ||
+    name.endsWith(".local") ||
+    name.startsWith("192.168.")
+  );
+}
+
 // Reconstruct the externally-visible origin behind the nginx TLS-terminating
 // reverse proxy. req.url reflects the plain-HTTP connection Node actually
 // sees (127.0.0.1:8200), not the public https:// origin, so building a
@@ -34,11 +52,18 @@ export function isAllowed(email: string): boolean {
 // rejects it with redirect_uri_mismatch. nginx forwards the real
 // scheme/host via X-Forwarded-Proto/X-Forwarded-Host; fall back to req.url
 // for local dev (no proxy in front there).
+//
+// nginx does NOT overwrite X-Forwarded-Host, so that header is whatever the
+// caller decided to send. It feeds the OAuth redirect_uri, Stripe's
+// success/cancel/return URLs and the auth callback's bounce redirect — all of
+// which must point at us. Anything that is not this site (or a dev host) falls
+// back to the canonical origin instead of being trusted.
 export function getOrigin(req: Request): string {
   const url = new URL(req.url);
   const proto = req.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
   const host = req.headers.get("x-forwarded-host") || req.headers.get("host") || url.host;
-  return `${proto}://${host}`;
+  if (isLocalHost(host)) return `${proto}://${host}`;
+  return host === SITE_HOST ? `${proto}://${host}` : SITE_URL;
 }
 
 // Parse a raw `cookie` header value by hand and return the named cookie's
@@ -74,7 +99,13 @@ export async function resolveOwner(req: Request): Promise<string | null> {
   return verifySessionToken(token);
 }
 
-export type Identity = { ownerKey: string; kind: "account" | "anonymous" };
+export type Identity = {
+  /** Who owns the topics and their stored translations. */
+  ownerKey: string;
+  /** Which free/plan pool the request spends from (lib/credits.ts). */
+  quotaKey: string;
+  kind: "account" | "anonymous";
+};
 
 // Server-computed anonymous id — no client library, no localStorage, no
 // cookie round-trip. Hashes signals the browser sends on every request
@@ -86,6 +117,12 @@ export type Identity = { ownerKey: string; kind: "account" | "anonymous" };
 // Trade-off: an IP shared by many people (office NAT, mobile carrier CGNAT)
 // on the same browser/OS/language combo collides into one pool — acceptable
 // for a free-trial abuse guard, not meant to be a hard identity.
+//
+// Which is exactly why it is no longer what OWNS anything: it used to be the
+// topic's ownerKey too, so a collision handed two strangers behind one NAT
+// read and delete access to each other's translated texts. Ownership now
+// rides on the anonymous id cookie below; the fingerprint keeps only the job
+// it was designed for, rationing the free pool.
 // Accepts both a plain Headers (Route Handlers) and Next's ReadonlyHeaders
 // (Server Components via next/headers) — same `.get()` shape, different type.
 type HeaderReader = { get(name: string): string | null };
@@ -101,18 +138,35 @@ export function computeFingerprint(headers: HeaderReader): string {
   return crypto.createHash("sha256").update(material).digest("hex").slice(0, 32);
 }
 
-// Unified identity for chat/translate endpoints: a verified Google session
-// ("account", ownerKey = email) or, absent one, the request's own computed
-// fingerprint ("anonymous", ownerKey = "fp:<fingerprint>") so the landing's
-// embedded translator works without signing in. Chat.ownerKey is a plain
-// string either way, so both kinds share the exact same chat/translation
-// rows and code paths — only credit consumption (lib/credits.ts) branches.
+/** Opaque per-browser id for signed-out visitors, minted by proxy.ts on the
+ *  first page view. 128 random bits, stored nowhere: holding it IS the claim,
+ *  the same way the session token is for accounts. */
+export const ANON_COOKIE = "iqt_anon";
+const ANON_ID_REGEX = /^[a-f0-9]{32}$/;
+
+export function anonIdFrom(headers: HeaderReader): string | null {
+  const raw = parseCookie(headers.get("cookie"), ANON_COOKIE);
+  return raw && ANON_ID_REGEX.test(raw) ? raw : null;
+}
+
+// Unified identity for topic/translate endpoints: a verified Google session
+// ("account", ownerKey = email) or, absent one, the browser's anonymous id
+// ("anonymous", ownerKey = "an:<id>") so the landing's embedded translator
+// works without signing in. Topic.ownerKey is a plain string either way, so
+// both kinds share the exact same topic/translation rows and code paths.
+//
+// A visitor who blocks cookies outright still gets an identity — the old
+// fingerprint one ("fp:<hash>") — rather than a broken widget; that path keeps
+// the collision caveat above, which is why it is the fallback and not the rule.
 export async function resolveIdentity(req: Request): Promise<Identity | null> {
   const owner = await resolveOwner(req);
   if (owner) {
-    return isAllowed(owner) ? { ownerKey: owner, kind: "account" } : null;
+    if (!isAllowed(owner)) return null;
+    return { ownerKey: owner, quotaKey: owner, kind: "account" };
   }
-  return { ownerKey: `fp:${computeFingerprint(req.headers)}`, kind: "anonymous" };
+  const quotaKey = `fp:${computeFingerprint(req.headers)}`;
+  const anonId = anonIdFrom(req.headers);
+  return { ownerKey: anonId ? `an:${anonId}` : quotaKey, quotaKey, kind: "anonymous" };
 }
 
 // Server-Component-friendly variant using next/headers cookies().

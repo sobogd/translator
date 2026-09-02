@@ -344,7 +344,10 @@
     "errors": {
       "insufficientCredits": "Kvoten er brukt opp — oppgrader abonnementet ditt",
       "textTooLong": "Teksten er for lang for abonnementet ditt",
-      "turnstileFailed": "Verifiseringen mislyktes — last inn siden på nytt og prøv igjen"
+      "turnstileFailed": "Verifiseringen mislyktes — last inn siden på nytt og prøv igjen",
+      "notRecognized": "Kunne ikke gjenkjennes — prøv igjen",
+      "rateLimited": "For mange forespørsler — vent litt",
+      "generic": "Noe gikk galt — prøv igjen"
     }
   },
   "history": {

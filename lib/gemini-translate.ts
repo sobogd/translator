@@ -23,13 +23,45 @@ export type GeminiResult = {
 
 export type RecentTurn = { sourceLang: string; transcript: string; translation: string };
 
+// The recent-turns block is resent with every request and is not charged to
+// anyone's quota — only the new message is. Six turns of a 100 000-character
+// PRO message would therefore put 600 000 uncharged characters into the
+// prompt. Cap the block and keep the newest turns, which are the ones that
+// actually carry the naming/consistency context.
+const CONTEXT_MAX_CHARS = 2000;
+
+// Output is not charged either, and the schema constrains the SHAPE of the
+// answer, not its length: text that talks the model into producing as much as
+// it can (the input is attacker-supplied by definition here) is billed to us at
+// the output rate. Budget it from the input instead, generously enough that a
+// real translation plus its echoed transcript always fits: ~1 token per
+// character in the worst script, times two for transcript + translation, plus
+// slack for the JSON envelope.
+const MAX_OUTPUT_TOKENS = 65536;
+const MIN_OUTPUT_TOKENS = 2048;
+/** Fixed budget for speech-to-text: a minute of speech is ~150 words. */
+const TRANSCRIBE_OUTPUT_TOKENS = 8192;
+
+function outputBudget(inputChars: number): number {
+  return Math.min(MAX_OUTPUT_TOKENS, Math.max(MIN_OUTPUT_TOKENS, Math.ceil(inputChars * 3) + 1024));
+}
+
 // Recent turns so the model disambiguates names/domain terms and stays
 // consistent across a topic (e.g. "Foxy" is an animal's name, not "лиса").
 export function contextBlock(recent: RecentTurn[]): string {
   if (recent.length === 0) return "";
-  const lines = recent
-    .map((t) => `- (${t.sourceLang}) "${t.transcript}" => "${t.translation}"`)
-    .join("\n");
+  // Newest first while budgeting, oldest first in the prompt.
+  const kept: string[] = [];
+  let budget = CONTEXT_MAX_CHARS;
+  for (let i = recent.length - 1; i >= 0; i--) {
+    const t = recent[i];
+    const line = `- (${t.sourceLang}) "${t.transcript}" => "${t.translation}"`;
+    if (line.length > budget) break;
+    budget -= line.length;
+    kept.unshift(line);
+  }
+  if (kept.length === 0) return "";
+  const lines = kept.join("\n");
   return (
     "\n\nThis is part of an ongoing translation conversation. Use the RECENT TURNS " +
     "below to disambiguate proper names, domain terms and entities (a word may be " +
@@ -61,11 +93,12 @@ function detectSchema() {
   };
 }
 
-function genConfig(schema: object) {
+function genConfig(schema: object, maxOutputTokens: number) {
   return {
     temperature: 0.2,
     responseMimeType: "application/json",
     responseSchema: schema,
+    maxOutputTokens,
     // 2.5 Flash let thinkingBudget:0 turn thinking off entirely; 3.5
     // Flash-Lite 400s on that (INVALID_ARGUMENT) — its default thinkingLevel
     // is already "minimal", which is what we want anyway, so just omit it.
@@ -94,7 +127,7 @@ Keep meaning, tone and register. If the text is empty, return empty strings.`;
     contents: [
       { role: "user", parts: [{ text: `${prompt}${contextBlock(recent)}\n\nTEXT:\n${text}` }] },
     ],
-    config: genConfig(sourceLang ? fixedSchema() : detectSchema()),
+    config: genConfig(sourceLang ? fixedSchema() : detectSchema(), outputBudget(text.length)),
   });
   const parsed = JSON.parse(response.text ?? "{}");
   return {
@@ -139,7 +172,7 @@ Keep meaning, tone and register. If the text is empty, return empty strings.`;
     contents: [
       { role: "user", parts: [{ text: `${prompt}${contextBlock(recent)}\n\nTEXT:\n${text}` }] },
     ],
-    config: genConfig(pairSchema(langA, langB)),
+    config: genConfig(pairSchema(langA, langB), outputBudget(text.length)),
   });
   const parsed = JSON.parse(response.text ?? "{}");
   const source_lang = parsed.source_lang === langB.code ? langB.code : langA.code;
@@ -180,7 +213,7 @@ If the audio is empty or unintelligible, return an empty transcript.`;
         parts: [{ text: prompt }, { inlineData: { mimeType: audioMime, data: audioBuf.toString("base64") } }],
       },
     ],
-    config: genConfig(schema),
+    config: genConfig(schema, TRANSCRIBE_OUTPUT_TOKENS),
   });
   const parsed = JSON.parse(response.text ?? "{}");
   const detected = sourceLang ? sourceLang.code : parsed.source_lang;

@@ -52,11 +52,17 @@ function trackError(code: string): string {
   return slug || "unknown";
 }
 
+// Server routes answer with opaque codes: printing an unrecognised one used to
+// mean printing whatever the server threw (Prisma messages included), and the
+// one hardcoded Russian string reached every locale untranslated.
 function friendlyError(code: string, texts: WidgetTexts): string {
-  if (code === "insufficient_credits") return texts.errors.insufficientCredits;
-  if (code === "text too long for your plan") return texts.errors.textTooLong;
-  if (code === "turnstile_required" || code === "turnstile_failed") return texts.errors.turnstileFailed;
-  return code;
+  const e = texts.errors;
+  if (code === "insufficient_credits") return e.insufficientCredits;
+  if (code === "text_too_long" || code === "audio_too_long") return e.textTooLong;
+  if (code === "turnstile_required" || code === "turnstile_failed") return e.turnstileFailed;
+  if (code === "not_recognized" || code === "bad_audio") return e.notRecognized;
+  if (code === "rate_limited") return e.rateLimited;
+  return e.generic;
 }
 
 function matchesQuery(l: { nameRu: string; nameNative: string }, q: string): boolean {

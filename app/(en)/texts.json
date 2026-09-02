@@ -325,7 +325,10 @@
     "errors": {
       "insufficientCredits": "Quota used up — upgrade your plan",
       "textTooLong": "Text too long for your plan",
-      "turnstileFailed": "Verification failed — reload the page and try again"
+      "turnstileFailed": "Verification failed — reload the page and try again",
+      "notRecognized": "Couldn't recognise that — please try again",
+      "rateLimited": "Too many requests — wait a moment and try again",
+      "generic": "Something went wrong — please try again"
     }
   },
   "history": {

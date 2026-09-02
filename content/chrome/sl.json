@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Kvota je porabljena – nadgradite paket",
       "textTooLong": "Besedilo je predolgo za vaš paket",
-      "turnstileFailed": "Preverjanje ni uspelo — osvežite stran in poskusite znova"
+      "turnstileFailed": "Preverjanje ni uspelo — osvežite stran in poskusite znova",
+      "notRecognized": "Ni bilo mogoče prepoznati — poskusi znova",
+      "rateLimited": "Preveč zahtev — počakaj trenutek",
+      "generic": "Nekaj je šlo narobe — poskusi znova"
     }
   },
   "history": {

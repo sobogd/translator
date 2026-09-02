@@ -82,6 +82,13 @@ async function emailForToken(token: string): Promise<string | null> {
   return email;
 }
 
+/** Drop a token from the memo the moment its session is destroyed — otherwise
+ *  a signed-out visitor keeps being attributed to the account for up to
+ *  TOKEN_TTL_MS. Attribution only, but it is one line. */
+export function forgetToken(token: string): void {
+  tokens.delete(hashSessionToken(token));
+}
+
 /** Resolve once per ingest batch, never per event. */
 export async function resolveIdentity(h: HeaderReader): Promise<VisitIdentity> {
   const token = parseCookie(h.get("cookie"), SESSION_COOKIE);

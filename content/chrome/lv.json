@@ -336,7 +336,10 @@
     "errors": {
       "insufficientCredits": "Limits ir izmantots — uzlabo savu plānu",
       "textTooLong": "Teksts par garu tavam plānam",
-      "turnstileFailed": "Pārbaude neizdevās — pārlādējiet lapu un mēģiniet vēlreiz"
+      "turnstileFailed": "Pārbaude neizdevās — pārlādējiet lapu un mēģiniet vēlreiz",
+      "notRecognized": "Neizdevās atpazīt — mēģini vēlreiz",
+      "rateLimited": "Pārāk daudz pieprasījumu — uzgaidi brīdi",
+      "generic": "Kaut kas nogāja greizi — mēģini vēlreiz"
     }
   },
   "history": {

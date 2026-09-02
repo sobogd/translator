@@ -352,7 +352,10 @@
     "errors": {
       "insufficientCredits": "Cota esgotada — atualize o seu plano",
       "textTooLong": "Texto demasiado longo para o seu plano",
-      "turnstileFailed": "Falha na verificação — recarregue a página e tente novamente"
+      "turnstileFailed": "Falha na verificação — recarregue a página e tente novamente",
+      "notRecognized": "Não foi possível reconhecer — tenta novamente",
+      "rateLimited": "Demasiados pedidos — aguarda um momento",
+      "generic": "Algo correu mal — tenta novamente"
     }
   },
   "history": {

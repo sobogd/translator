@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Kvota je iskorištena – nadogradite plan",
       "textTooLong": "Tekst je predugačak za vaš plan",
-      "turnstileFailed": "Provjera nije uspjela — ponovno učitajte stranicu i pokušajte opet"
+      "turnstileFailed": "Provjera nije uspjela — ponovno učitajte stranicu i pokušajte opet",
+      "notRecognized": "Nije bilo moguće prepoznati — pokušaj ponovno",
+      "rateLimited": "Previše zahtjeva — pričekaj trenutak",
+      "generic": "Nešto je pošlo po zlu — pokušaj ponovno"
     }
   },
   "history": {

@@ -332,7 +332,10 @@
     "errors": {
       "insufficientCredits": "Kvótinn búinn — uppfærðu áskriftina þína",
       "textTooLong": "Textinn er of langur fyrir áskriftina þína",
-      "turnstileFailed": "Staðfesting mistókst — endurhlaðið síðuna og reynið aftur"
+      "turnstileFailed": "Staðfesting mistókst — endurhlaðið síðuna og reynið aftur",
+      "notRecognized": "Tókst ekki að greina — reyndu aftur",
+      "rateLimited": "Of margar beiðnir — bíddu augnablik",
+      "generic": "Eitthvað fór úrskeiðis — reyndu aftur"
     }
   },
   "history": {

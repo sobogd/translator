@@ -368,7 +368,10 @@
     "errors": {
       "insufficientCredits": "Kontingent aufgebraucht – Plan upgraden",
       "textTooLong": "Text zu lang für deinen Plan",
-      "turnstileFailed": "Überprüfung fehlgeschlagen — Seite neu laden und erneut versuchen"
+      "turnstileFailed": "Überprüfung fehlgeschlagen — Seite neu laden und erneut versuchen",
+      "notRecognized": "Konnte nicht erkannt werden — bitte erneut versuchen",
+      "rateLimited": "Zu viele Anfragen — warte einen Moment",
+      "generic": "Etwas ist schiefgelaufen — bitte erneut versuchen"
     }
   },
   "history": {

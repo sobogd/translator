@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import { computeFingerprint, parseCookie, type Identity } from "./auth";
+import { SITE_URL } from "./site";
 
 // Cloudflare Turnstile gate for the endpoints that actually spend Gemini
 // tokens (/api/translate, /api/translate-voice). Only anonymous identities
@@ -19,6 +20,8 @@ export const TURNSTILE_PASS_COOKIE = "iqt_ts_pass";
 // 30 minutes: long enough that a normal conversation never re-challenges,
 // short enough that a stolen cookie is worth little.
 export const PASS_TTL_SECONDS = 30 * 60;
+
+const SITE_HOST = new URL(SITE_URL).host.split(":")[0];
 
 function secret(): string {
   return process.env.TS_SECRET || "";
@@ -40,6 +43,18 @@ function clientIp(req: Request): string | null {
   return req.headers.get("x-real-ip")?.trim() || null;
 }
 
+/** Cloudflare reports which site the widget actually ran on. Accepting any
+ *  hostname would accept a token minted on someone else's page against the
+ *  same site key. */
+function hostnameAllowed(hostname: string | undefined): boolean {
+  if (!hostname) return false;
+  if (hostname === SITE_HOST) return true;
+  return (
+    process.env.NODE_ENV !== "production" &&
+    (hostname === "localhost" || hostname === "127.0.0.1" || hostname.startsWith("192.168."))
+  );
+}
+
 export async function verifyTurnstileToken(token: string, req: Request): Promise<boolean> {
   if (!token || !secret()) return false;
   const form = new URLSearchParams({ secret: secret(), response: token });
@@ -52,18 +67,47 @@ export async function verifyTurnstileToken(token: string, req: Request): Promise
       body: form.toString(),
     });
     if (!res.ok) return false;
-    const data = (await res.json()) as { success?: boolean };
-    return data.success === true;
+    const data = (await res.json()) as {
+      success?: boolean;
+      hostname?: string;
+      "error-codes"?: string[];
+    };
+    if (data.success !== true) {
+      // Reused/expired tokens and a wrong secret all look the same from the
+      // outside; the codes are the only way to tell them apart later.
+      console.warn("[turnstile] rejected", data["error-codes"]);
+      return false;
+    }
+    if (!hostnameAllowed(data.hostname)) {
+      console.warn("[turnstile] foreign hostname", data.hostname);
+      return false;
+    }
+    return true;
   } catch {
     return false;
   }
 }
 
-// Pass value: "<expiry-ms>.<hmac>", signed with TS_SECRET over the request's
-// own fingerprint — the cookie is worthless from another IP/UA/language
-// combination, so it can't be handed around to bypass the challenge.
+// Pass value: "<expiry-ms>.<hmac>", signed over the request's own fingerprint
+// — the cookie is worthless from another IP/UA/language combination, so it
+// can't be handed around to bypass the challenge.
+//
+// The signing key is DERIVED from TS_SECRET rather than being TS_SECRET: one
+// secret doing two unrelated jobs (talking to Cloudflare, signing our own
+// cookie) is how a leak in one place quietly becomes a forgery in the other.
+let passKey: Buffer | null = null;
+let passKeyFor = "";
+function signingKey(): Buffer {
+  const s = secret();
+  if (!passKey || passKeyFor !== s) {
+    passKey = crypto.createHmac("sha256", s).update("iqt-turnstile-pass-v1").digest();
+    passKeyFor = s;
+  }
+  return passKey;
+}
+
 function sign(fingerprint: string, expiresAt: number): string {
-  return crypto.createHmac("sha256", secret()).update(`${fingerprint}.${expiresAt}`).digest("hex");
+  return crypto.createHmac("sha256", signingKey()).update(`${fingerprint}.${expiresAt}`).digest("hex");
 }
 
 export function issuePass(req: Request): string {

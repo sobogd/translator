@@ -340,7 +340,10 @@
     "errors": {
       "insufficientCredits": "Kvóta je vyčerpaná — vylepšite svoj plán",
       "textTooLong": "Text je pre váš plán príliš dlhý",
-      "turnstileFailed": "Overenie zlyhalo — obnovte stránku a skúste to znova"
+      "turnstileFailed": "Overenie zlyhalo — obnovte stránku a skúste to znova",
+      "notRecognized": "Nepodarilo sa rozpoznať — skúste to znova",
+      "rateLimited": "Príliš veľa požiadaviek — chvíľu počkajte",
+      "generic": "Niečo sa pokazilo — skúste to znova"
     }
   },
   "history": {

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { SESSION_COOKIE, hashSessionToken, parseCookie } from "@/lib/auth";
 import { SIGNED_IN_COOKIE } from "@/lib/cookies";
+import { forgetToken } from "@/lib/analytics/identity";
 
 export const runtime = "nodejs";
 
@@ -15,6 +16,7 @@ export async function POST(req: Request) {
     // Session row isn't actually deleted, the cookie must not be cleared,
     // otherwise a captured raw token would remain valid indefinitely.
     await prisma.session.deleteMany({ where: { tokenHash } });
+    forgetToken(token);
   }
 
   const res = NextResponse.json({ ok: true });

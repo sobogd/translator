@@ -49,6 +49,12 @@ model Account {
   charsBalance         Int       @default(4000)
   secondsBalance       Int       @default(120)
   quotaResetAt         DateTime  @default(now())
+  // What was already granted for the current paid period, so one period can
+  // only ever hand out its allowance once. Without this, PRO -> STARTER -> PRO
+  // in the billing portal re-granted the full monthly quota every round trip
+  // (the downgrade is credited back, so the loop was free).
+  grantedPlan          String?
+  grantedPeriodEnd     DateTime?
   createdAt            DateTime  @default(now())
   updatedAt            DateTime  @updatedAt
 

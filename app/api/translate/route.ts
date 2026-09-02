@@ -3,25 +3,44 @@ import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { hasValidPass, requiresTurnstile } from "@/lib/turnstile";
 import { getLanguage } from "@/lib/languages";
-import { consumeChars, maxCharsForIdentity } from "@/lib/credits";
+import { chargeChars, refundChars } from "@/lib/credits";
 import { translateText, translatePair } from "@/lib/gemini-translate";
+import { allowRequest } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
+// nginx allows 25 MB on this vhost because voice uploads need the room. A text
+// translation never does, and the body is parsed in full before text.length can
+// be looked at — so the cheap guard has to come off the header first.
+const MAX_BODY_BYTES = 256 * 1024;
+
 export async function POST(req: NextRequest) {
+  const identity = await resolveIdentity(req);
+  if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  // Quotas bound how much gets translated, never how fast: 500 free characters
+  // spent one character at a time is 500 Gemini calls, each paying the fixed
+  // prompt overhead again.
+  if (!allowRequest("translate", identity.quotaKey)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
+
+  // Anonymous traffic must carry a valid Turnstile pass before anything
+  // reaches Gemini — checked ahead of credit consumption so a rejected
+  // request never burns quota.
+  if (requiresTurnstile(identity) && !hasValidPass(req)) {
+    return NextResponse.json({ error: "turnstile_required" }, { status: 403 });
+  }
+
+  const declared = Number(req.headers.get("content-length") || 0);
+  if (declared > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "text_too_long" }, { status: 413 });
+  }
+
+  let charged = 0;
   try {
-    const identity = await resolveIdentity(req);
-    if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-    // Anonymous traffic must carry a valid Turnstile pass before anything
-    // reaches Gemini — checked ahead of credit consumption so a rejected
-    // request never burns quota.
-    if (requiresTurnstile(identity) && !hasValidPass(req)) {
-      return NextResponse.json({ error: "turnstile_required" }, { status: 403 });
-    }
-
-    const body = await req.json();
+    const body = await req.json().catch(() => ({}));
     const text = typeof body.text === "string" ? body.text.trim() : "";
     const topicId = typeof body.topicId === "string" ? body.topicId : "";
     if (!text) return NextResponse.json({ error: "no text" }, { status: 400 });
@@ -35,17 +54,19 @@ export async function POST(req: NextRequest) {
     const targetLang = getLanguage(topic.targetLang);
     const sourceLang = topic.sourceLang ? (getLanguage(topic.sourceLang) ?? null) : null;
     if (!targetLang || (topic.sourceLang && !sourceLang)) {
-      return NextResponse.json({ error: "unknown topic languages" }, { status: 500 });
+      return NextResponse.json({ error: "server_error" }, { status: 500 });
     }
 
-    const maxChars = await maxCharsForIdentity(identity);
-    if (text.length > maxChars) {
-      return NextResponse.json({ error: "text too long for your plan" }, { status: 413 });
+    // One pass over the account: the per-request length cap and the charge used
+    // to be two calls, each re-reading and re-writing the same row.
+    const charge = await chargeChars(identity, text.length);
+    if (charge === "too_long") {
+      return NextResponse.json({ error: "text_too_long" }, { status: 413 });
     }
-    const hasCredits = await consumeChars(identity, text.length);
-    if (!hasCredits) {
+    if (charge === "insufficient") {
       return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
     }
+    charged = text.length;
 
     // last 6 turns, oldest first, for conversational consistency
     const recent = (
@@ -72,7 +93,10 @@ export async function POST(req: NextRequest) {
       ? await translatePair(sourceLang, targetLang, text, recent)
       : await translateText(null, targetLang, text, recent);
     if (!result.translation) {
-      return NextResponse.json({ error: "Не удалось распознать" }, { status: 422 });
+      // Nothing was produced, so nothing should have been paid for.
+      await refundChars(identity, charged);
+      charged = 0;
+      return NextResponse.json({ error: "not_recognized" }, { status: 422 });
     }
 
     const row = await prisma.translation.create({
@@ -95,7 +119,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ...result, id: row.id });
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    if (charged) await refundChars(identity, charged);
+    // The raw message used to go back to the browser, which meant Prisma
+    // errors handed out table and column names — and the widget prints an
+    // unrecognised code verbatim.
+    console.error("[translate] failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }

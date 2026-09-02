@@ -336,7 +336,10 @@
     "errors": {
       "insufficientCredits": "Elfogyott a kereted – válts csomagot",
       "textTooLong": "A szöveg túl hosszú a csomagodhoz",
-      "turnstileFailed": "Az ellenőrzés sikertelen — töltse újra az oldalt, és próbálja újra"
+      "turnstileFailed": "Az ellenőrzés sikertelen — töltse újra az oldalt, és próbálja újra",
+      "notRecognized": "Nem sikerült felismerni — próbáld újra",
+      "rateLimited": "Túl sok kérés — várj egy kicsit",
+      "generic": "Valami hiba történt — próbáld újra"
     }
   },
   "history": {

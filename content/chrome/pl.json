@@ -360,7 +360,10 @@
     "errors": {
       "insufficientCredits": "Limit wyczerpany — ulepsz plan",
       "textTooLong": "Tekst zbyt długi dla Twojego planu",
-      "turnstileFailed": "Weryfikacja nie powiodła się — odśwież stronę i spróbuj ponownie"
+      "turnstileFailed": "Weryfikacja nie powiodła się — odśwież stronę i spróbuj ponownie",
+      "notRecognized": "Nie udało się rozpoznać — spróbuj ponownie",
+      "rateLimited": "Zbyt wiele żądań — poczekaj chwilę",
+      "generic": "Coś poszło nie tak — spróbuj ponownie"
     }
   },
   "history": {

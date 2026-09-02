@@ -360,7 +360,10 @@
     "errors": {
       "insufficientCredits": "Cuota agotada — mejora tu plan",
       "textTooLong": "Texto demasiado largo para tu plan",
-      "turnstileFailed": "La verificación ha fallado — recarga la página e inténtalo de nuevo"
+      "turnstileFailed": "La verificación ha fallado — recarga la página e inténtalo de nuevo",
+      "notRecognized": "No se ha podido reconocer — inténtalo de nuevo",
+      "rateLimited": "Demasiadas solicitudes — espera un momento",
+      "generic": "Algo ha salido mal — inténtalo de nuevo"
     }
   },
   "history": {

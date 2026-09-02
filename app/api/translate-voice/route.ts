@@ -3,33 +3,42 @@ import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { hasValidPass, requiresTurnstile } from "@/lib/turnstile";
 import { getLanguage } from "@/lib/languages";
-import { consumeChars, consumeSeconds } from "@/lib/credits";
+import { chargeChars, chargeSeconds, refundChars, refundSeconds } from "@/lib/credits";
 import { transcribeAudio, translateText, translatePair } from "@/lib/gemini-translate";
+import { allowRequest } from "@/lib/rate-limit";
+import { MAX_AUDIO_BYTES, parseWav } from "@/lib/wav";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-// 16 kHz mono 16-bit PCM WAV with a fixed 44-byte header (see lib/recorder.ts).
-function wavDurationSeconds(buf: Buffer): number {
-  return Math.max(0, (buf.length - 44) / 32000);
-}
-
-// One-shot voice flow: audio in → STT → translate → saved turn. Replaces the
-// old two-step transcribe-then-edit path — the composer sends the recording
-// straight here. Charges seconds for the STT leg and characters for the
-// translation of the transcript (same split the pricing math assumes).
+// One-shot voice flow: audio in -> STT -> translate -> saved turn. Charges
+// seconds for the STT leg and characters for the translation of the transcript
+// (same split the pricing math assumes). Both legs are refunded if the request
+// dies between them — the seconds used to be gone for good on an empty
+// transcript or an out-of-characters account.
 export async function POST(req: NextRequest) {
+  const identity = await resolveIdentity(req);
+  if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  if (!allowRequest("translate", identity.quotaKey)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
+
+  // Anonymous traffic must carry a valid Turnstile pass before anything
+  // reaches Gemini — checked ahead of credit consumption so a rejected
+  // request never burns quota.
+  if (requiresTurnstile(identity) && !hasValidPass(req)) {
+    return NextResponse.json({ error: "turnstile_required" }, { status: 403 });
+  }
+
+  const declared = Number(req.headers.get("content-length") || 0);
+  if (declared > MAX_AUDIO_BYTES + 4096) {
+    return NextResponse.json({ error: "audio_too_long" }, { status: 413 });
+  }
+
+  let seconds = 0;
+  let chars = 0;
   try {
-    const identity = await resolveIdentity(req);
-    if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-    // Anonymous traffic must carry a valid Turnstile pass before anything
-    // reaches Gemini — checked ahead of credit consumption so a rejected
-    // request never burns quota.
-    if (requiresTurnstile(identity) && !hasValidPass(req)) {
-      return NextResponse.json({ error: "turnstile_required" }, { status: 403 });
-    }
-
     const form = await req.formData();
     const file = form.get("audio");
     const topicId = String(form.get("topicId") || "");
@@ -43,21 +52,40 @@ export async function POST(req: NextRequest) {
     const targetLang = getLanguage(topic.targetLang);
     const sourceLang = topic.sourceLang ? (getLanguage(topic.sourceLang) ?? null) : null;
     if (!targetLang || (topic.sourceLang && !sourceLang)) {
-      return NextResponse.json({ error: "unknown topic languages" }, { status: 500 });
+      return NextResponse.json({ error: "server_error" }, { status: 500 });
     }
 
     const audioBuf = Buffer.from(await file.arrayBuffer());
-    const audioMime = file.type || "audio/wav";
+    if (audioBuf.length > MAX_AUDIO_BYTES) {
+      return NextResponse.json({ error: "audio_too_long" }, { status: 413 });
+    }
+    // Duration comes from the container, not from the byte count, and the mime
+    // type we hand Gemini is ours, not the uploader's.
+    const wav = parseWav(audioBuf);
+    if (!wav) return NextResponse.json({ error: "bad_audio" }, { status: 400 });
 
-    const hasSeconds = await consumeSeconds(identity, wavDurationSeconds(audioBuf));
-    if (!hasSeconds) return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    if ((await chargeSeconds(identity, wav.seconds)) !== "ok") {
+      return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    }
+    seconds = wav.seconds;
 
-    const stt = await transcribeAudio(sourceLang, audioBuf, audioMime);
+    const stt = await transcribeAudio(sourceLang, audioBuf, "audio/wav");
     const transcript = (stt.transcript ?? "").trim();
-    if (!transcript) return NextResponse.json({ error: "Не удалось распознать" }, { status: 422 });
+    if (!transcript) {
+      await refundSeconds(identity, seconds);
+      seconds = 0;
+      return NextResponse.json({ error: "not_recognized" }, { status: 422 });
+    }
 
-    const hasChars = await consumeChars(identity, transcript.length);
-    if (!hasChars) return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    const charge = await chargeChars(identity, transcript.length);
+    if (charge !== "ok") {
+      await refundSeconds(identity, seconds);
+      seconds = 0;
+      return charge === "too_long"
+        ? NextResponse.json({ error: "text_too_long" }, { status: 413 })
+        : NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    }
+    chars = transcript.length;
 
     // last 6 turns, oldest first, for conversational consistency
     const recent = (
@@ -70,7 +98,11 @@ export async function POST(req: NextRequest) {
       ? await translatePair(sourceLang, targetLang, transcript, recent)
       : await translateText(null, targetLang, transcript, recent);
     if (!result.translation) {
-      return NextResponse.json({ error: "Не удалось распознать" }, { status: 422 });
+      await refundSeconds(identity, seconds);
+      await refundChars(identity, chars);
+      seconds = 0;
+      chars = 0;
+      return NextResponse.json({ error: "not_recognized" }, { status: 422 });
     }
 
     const row = await prisma.translation.create({
@@ -91,7 +123,9 @@ export async function POST(req: NextRequest) {
     });
     return NextResponse.json({ ...result, id: row.id });
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    if (seconds) await refundSeconds(identity, seconds);
+    if (chars) await refundChars(identity, chars);
+    console.error("[translate-voice] failed", err);
+    return NextResponse.json({ error: "server_error" }, { status: 500 });
   }
 }

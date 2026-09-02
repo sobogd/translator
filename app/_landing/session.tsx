@@ -70,12 +70,22 @@ export function SessionProvider({
     }
   }, []);
 
+  // The poll pauses with the tab. It runs on every page of the site, so a
+  // forgotten background tab used to keep a request every 10 seconds going
+  // forever — and for a signed-in visitor each one of those touched the
+  // account row. A tab coming back to the foreground refreshes immediately,
+  // so nothing is stale by the time it is looked at.
   useEffect(() => {
-    refreshQuota();
-    const timer = setInterval(refreshQuota, 10_000);
+    const tick = () => {
+      if (!document.hidden) refreshQuota();
+    };
+    tick();
+    const timer = setInterval(tick, 10_000);
+    document.addEventListener("visibilitychange", tick);
     window.addEventListener(QUOTA_EVENT, refreshQuota);
     return () => {
       clearInterval(timer);
+      document.removeEventListener("visibilitychange", tick);
       window.removeEventListener(QUOTA_EVENT, refreshQuota);
     };
   }, [refreshQuota]);
