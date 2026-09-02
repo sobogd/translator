@@ -510,11 +510,9 @@ export function Translator({
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`flex shrink-0 items-center justify-center px-5 text-sm font-semibold transition active:scale-95 disabled:opacity-40 ${
-          status === "recording" || (status === "idle" && !showSend)
-            ? "w-12 border-l border-border text-hint hover:text-text"
-            : "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white hover:opacity-90"
-        } ${status === "recording" ? "text-red-500" : ""}`}
+        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+          status === "recording" ? "animate-pulse-ring" : ""
+        }`}
       >
         {status === "processing" ? (
           <Loader2 size={18} className="animate-spin" />

@@ -10,6 +10,7 @@
   --color-button: var(--button);
   --color-button-text: var(--button-text);
   --animate-wave: wave 1s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite;
 }
 
 @keyframes wave {
@@ -19,6 +20,18 @@
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 hsl(9 100% 58% / 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsl(9 100% 58% / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(9 100% 58% / 0);
   }
 }
 
