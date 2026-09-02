@@ -42,11 +42,7 @@ export function Faq({
   items?: FaqItem[];
 }) {
   return (
-    <div
-      itemScope
-      itemType="https://schema.org/FAQPage"
-      className="grid grid-cols-1 rounded-2xl border border-border lg:grid-cols-[2fr_3fr]"
-    >
+    <div className="grid grid-cols-1 rounded-2xl border border-border lg:grid-cols-[2fr_3fr]">
       <div className="rounded-t-2xl bg-[hsl(28_48%_93%)] dark:bg-[hsl(28_15%_13%)] lg:rounded-t-none lg:rounded-l-2xl">
         <div className="flex flex-col items-start gap-3 p-5 text-start sm:p-6 lg:sticky lg:top-16">
           <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
@@ -58,15 +54,9 @@ export function Faq({
 
       <div className="flex flex-col gap-8 p-5 sm:p-6">
         {items.map((item) => (
-          <div key={item.q} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-            <h3 itemProp="name" className="mb-2 text-base font-medium tracking-tight sm:text-lg">
-              {item.q}
-            </h3>
-            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-              <p itemProp="text" className="text-sm leading-relaxed text-hint">
-                {item.a}
-              </p>
-            </div>
+          <div key={item.q}>
+            <h3 className="mb-2 text-base font-medium tracking-tight sm:text-lg">{item.q}</h3>
+            <p className="text-sm leading-relaxed text-hint">{item.a}</p>
           </div>
         ))}
       </div>

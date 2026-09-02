@@ -2,7 +2,7 @@
 // three describe the same entity instead of three slightly different ones.
 import { PLANS, PLAN_ORDER } from "./plans";
 import { SITE_URL } from "./site";
-import { localeHome } from "./locale-paths";
+import { localeHome, localePath } from "./locale-paths";
 import { OG_LOCALES } from "./og-locales";
 
 const ORG_ID = `${SITE_URL}/#organization`;
@@ -34,7 +34,9 @@ export function webSiteLd(locale: string) {
   };
 }
 
-export function softwareApplicationLd(description: string) {
+// `offers` defaults to the whole-catalogue AggregateOffer. /pricing passes
+// per-plan Offers instead — see planOffersLd.
+export function softwareApplicationLd(description: string, offers?: object) {
   return {
     "@type": ["SoftwareApplication", "WebApplication"],
     "@id": APP_ID,
@@ -46,7 +48,7 @@ export function softwareApplicationLd(description: string) {
     url: SITE_URL,
     description,
     publisher: { "@id": ORG_ID },
-    offers: {
+    offers: offers ?? {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
       // Free tier (no sign-up) through the top plan — see lib/plans.ts.
@@ -54,6 +56,50 @@ export function softwareApplicationLd(description: string) {
       highPrice: prices[prices.length - 1].toFixed(2),
       offerCount: prices.length + 1,
     },
+  };
+}
+
+// One Offer per plan, for /pricing only — that is the one page where the
+// three tariffs are actually on screen. Emitting them site-wide would be
+// markup describing content the visitor cannot see, which is exactly what
+// the structured-data guidelines call out.
+export function planOffersLd(locale: string) {
+  const url = `${SITE_URL}${localePath(locale, "pricing")}`;
+  return PLAN_ORDER.map((id) => {
+    const plan = PLANS[id];
+    const price = plan.priceMonthly.toFixed(2);
+    return {
+      "@type": "Offer",
+      name: plan.name,
+      url,
+      price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      // Subscriptions need the billing period spelled out, otherwise the
+      // price reads as a one-off purchase.
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price,
+        priceCurrency: "USD",
+        billingDuration: 1,
+        billingIncrement: 1,
+        unitCode: "MON",
+      },
+    };
+  });
+}
+
+// FAQPage as JSON-LD. The questions used to be marked up with microdata
+// attributes inside Faq.tsx; one format in one place is easier to keep valid,
+// and it keeps every node of the page in the same @graph.
+export function faqPageLd(items: { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 }
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PricingPage } from "../../_landing/PricingPage";
 import { pricingAlternates } from "@/lib/hreflang";
-import { OG_IMAGE, SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "@/lib/site";
 import { CHROME } from "@/content";
 
 const chrome = CHROME.en;
@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     title: chrome.pricing.meta.title,
     description: chrome.pricing.meta.description,
     images: [OG_IMAGE],
+  },
+  twitter: {
+    ...TWITTER_CARD,
+    title: chrome.pricing.meta.title,
+    description: chrome.pricing.meta.description,
   },
 };
 

@@ -9,7 +9,7 @@ import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
-import { graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
+import { faqPageLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
 import { SessionProvider } from "./session";
 import type { TranslatorTexts } from "./types";
 
@@ -31,6 +31,7 @@ export function Landing({
     organizationLd(),
     webSiteLd(locale),
     softwareApplicationLd(texts.meta.description),
+    faqPageLd(texts.faq.items),
   ]);
 
   return (

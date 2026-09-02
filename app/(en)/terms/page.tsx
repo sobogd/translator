@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../../_landing/LegalPage";
 import { OPERATOR, TERMS_SECTIONS, TERMS_TITLE } from "../../_landing/legal-content";
-import { OG_IMAGE, SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${TERMS_TITLE} | IQ Translate`,
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     title: TERMS_TITLE,
     description: "Free allowance, subscriptions and billing, acceptable use, and the limits of an automated translation.",
     images: [OG_IMAGE],
+  },
+  twitter: {
+    ...TWITTER_CARD,
+    title: TERMS_TITLE,
+    description: "Free allowance, subscriptions and billing, acceptable use, and the limits of an automated translation.",
   },
 };
 

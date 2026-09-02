@@ -11,6 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # Full history: the IndexNow step below diffs this push against the
+          # previous one to work out which pages changed. The default
+          # shallow clone has no such range and would force a full submit
+          # on every release.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -83,3 +89,31 @@ jobs:
             # PORT must be a real env var — next start ignores PORT from .env file
             PORT=8200 pm2 restart translator --update-env || PORT=8200 pm2 start npm --name "translator" -- start
             pm2 save
+
+      # IndexNow: tell Bing (and Yandex/Seznam/Naver, one endpoint fans out)
+      # what this deploy changed, instead of waiting for the next crawl.
+      # Bing's index is what search inside ChatGPT runs on, so this is the
+      # cheapest lever on AI visibility we have.
+      #
+      # Runs on the runner, not the VPS: the script needs git history, and
+      # only the built .next is shipped to the server.
+      - name: Wait for prod to answer
+        continue-on-error: true
+        run: |
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' https://iq-translate.com/sitemap.xml || true)
+            if [ "$code" = "200" ]; then echo "prod up after ${i}s"; exit 0; fi
+            sleep 1
+          done
+          echo "prod did not answer 200 in 30s"
+          exit 1
+
+      - name: Ping IndexNow
+        # Never fails the release: the deploy already succeeded and indexing
+        # is not release-critical.
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          BEFORE_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: node scripts/indexnow-submit.mjs

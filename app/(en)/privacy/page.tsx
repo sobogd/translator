@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../../_landing/LegalPage";
 import { OPERATOR, PRIVACY_SECTIONS, PRIVACY_TITLE } from "../../_landing/legal-content";
-import { OG_IMAGE, SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `${PRIVACY_TITLE} | IQ Translate`,
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     title: PRIVACY_TITLE,
     description: "What we collect, who processes it, how long we keep it, and how to have it deleted.",
     images: [OG_IMAGE],
+  },
+  twitter: {
+    ...TWITTER_CARD,
+    title: PRIVACY_TITLE,
+    description: "What we collect, who processes it, how long we keep it, and how to have it deleted.",
   },
 };
 

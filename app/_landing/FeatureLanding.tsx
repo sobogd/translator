@@ -11,7 +11,7 @@ import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
-import { breadcrumbLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
+import { breadcrumbLd, faqPageLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
 import { SessionProvider } from "./session";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
@@ -68,6 +68,7 @@ export function FeatureLanding({
       name: `${content.hero.title} ${content.hero.titleAccent}`.trim(),
       url: content.meta.canonical,
     }),
+    faqPageLd(content.faq.items),
   ]);
 
   return (

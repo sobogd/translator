@@ -7,7 +7,7 @@ import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import { SITE_URL } from "@/lib/site";
-import { breadcrumbLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
+import { breadcrumbLd, faqPageLd, graphLd, organizationLd, planOffersLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
 import { SessionProvider } from "./session";
 import type { TranslatorTexts } from "./types";
 
@@ -27,8 +27,11 @@ export function PricingPage({
   const jsonLd = graphLd([
     organizationLd(),
     webSiteLd(locale),
-    softwareApplicationLd(p.meta.description),
+    // The one page that lists the plans, so it carries the per-plan Offers
+    // instead of the site-wide AggregateOffer.
+    softwareApplicationLd(p.meta.description, planOffersLd(locale)),
     breadcrumbLd(locale, { name: `${p.heading} ${p.headingAccent}`.trim(), url: `${SITE_URL}${pathname}` }),
+    faqPageLd(p.faq.items),
   ]);
   return (
     <SessionProvider locale={locale} page="Pricing">
