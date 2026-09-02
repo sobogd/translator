@@ -224,7 +224,8 @@
         "label": "الترجمة إلى أي لغة"
       }
     ],
-    "languagesHeading": "اللغات"
+    "languagesHeading": "اللغات",
+    "pairsHeading": "أزواج لغات أخرى"
   },
   "account": {
     "title": "الحساب",

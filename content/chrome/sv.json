@@ -228,7 +228,8 @@
         "label": "Översätt till valfritt språk"
       }
     ],
-    "languagesHeading": "Språk"
+    "languagesHeading": "Språk",
+    "pairsHeading": "Fler språkpar"
   },
   "account": {
     "title": "Konto",

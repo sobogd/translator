@@ -212,7 +212,8 @@
         "label": "翻译成任何语言"
       }
     ],
-    "languagesHeading": "语言"
+    "languagesHeading": "语言",
+    "pairsHeading": "更多语言对"
   },
   "account": {
     "title": "账户",

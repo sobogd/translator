@@ -212,7 +212,8 @@
         "label": "Vertimas į bet kurią kalbą"
       }
     ],
-    "languagesHeading": "Kalbos"
+    "languagesHeading": "Kalbos",
+    "pairsHeading": "Daugiau kalbų porų"
   },
   "account": {
     "title": "Paskyra",

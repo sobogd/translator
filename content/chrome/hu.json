@@ -208,7 +208,8 @@
         "label": "Fordítás bármely nyelvre"
       }
     ],
-    "languagesHeading": "Nyelvek"
+    "languagesHeading": "Nyelvek",
+    "pairsHeading": "További nyelvpárok"
   },
   "account": {
     "title": "Fiók",

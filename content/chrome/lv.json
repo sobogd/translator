@@ -208,7 +208,8 @@
         "label": "Tulkojums jebkurā valodā"
       }
     ],
-    "languagesHeading": "Valodas"
+    "languagesHeading": "Valodas",
+    "pairsHeading": "Vairāk valodu pāru"
   },
   "account": {
     "title": "Konts",

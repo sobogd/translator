@@ -291,3 +291,21 @@ export const pairsForLocale = (locale: string): PairDef[] =>
 
 export const findPair = (locale: string, slug: string): PairDef | undefined =>
   PAIRS.find((p) => p.locale === locale && p.slug === slug);
+
+// Sibling pair pages to cross-link from a pair page's body, within the same
+// locale only: a ru page linking an en page would hand a Russian reader an
+// English destination, and the two are not translations of each other.
+//
+// The reverse direction comes first where it exists (only the en locale
+// carries both, e.g. english-to-spanish <-> spanish-to-english) — it is the
+// single most relevant other page for someone who landed on the wrong way
+// round. The rest follow registry order, which is Keyword Planner demand
+// order, so the highest-volume siblings get the links.
+export function relatedPairs(locale: string, slug: string, limit = 6): PairDef[] {
+  const current = findPair(locale, slug);
+  if (!current) return [];
+  const siblings = PAIRS.filter((p) => p.locale === locale && p.slug !== slug);
+  const reverse = siblings.filter((p) => p.from === current.to && p.to === current.from);
+  const rest = siblings.filter((p) => !reverse.includes(p));
+  return [...reverse, ...rest].slice(0, limit);
+}

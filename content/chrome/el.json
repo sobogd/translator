@@ -220,7 +220,8 @@
         "label": "Μετάφραση σε οποιαδήποτε γλώσσα"
       }
     ],
-    "languagesHeading": "Γλώσσες"
+    "languagesHeading": "Γλώσσες",
+    "pairsHeading": "Περισσότεροι γλωσσικοί συνδυασμοί"
   },
   "account": {
     "title": "Λογαριασμός",

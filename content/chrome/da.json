@@ -220,7 +220,8 @@
         "label": "Oversættelse til ethvert sprog"
       }
     ],
-    "languagesHeading": "Sprog"
+    "languagesHeading": "Sprog",
+    "pairsHeading": "Flere sprogpar"
   },
   "account": {
     "title": "Konto",

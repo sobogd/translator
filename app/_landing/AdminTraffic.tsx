@@ -13,6 +13,7 @@ import {
   type TrafficSession,
   type TrafficSessionDetail,
   type TrafficSessionList,
+  refChannel,
 } from "./traffic-shared";
 
 // Admin-only traffic browser, opened from the account modal. Two stacked
@@ -59,6 +60,15 @@ export default function AdminTraffic({ onClose }: { onClose: () => void }) {
 
   const sessions = data?.sessions ?? [];
 
+  // Acquisition-channel split for the window. AI is called out on its own:
+  // it is the number that says whether the assistants are sending anyone, and
+  // it stayed invisible while the referrer filter dropped their hosts.
+  const channels = sessions.reduce<Record<string, number>>((acc, s) => {
+    const c = refChannel(s);
+    acc[c] = (acc[c] ?? 0) + 1;
+    return acc;
+  }, {});
+
   return (
     <>
       <Modal
@@ -87,6 +97,22 @@ export default function AdminTraffic({ onClose }: { onClose: () => void }) {
         )}
         {!error && !loading && sessions.length === 0 && (
           <p className="px-5 py-6 text-center text-sm text-hint">No visits in this window.</p>
+        )}
+        {sessions.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 border-b border-border px-5 py-3 text-xs">
+            {(["ai", "search", "campaign", "direct"] as const).map((c) => (
+              <span
+                key={c}
+                className={`rounded-lg px-2 py-1 ${
+                  c === "ai" && (channels.ai ?? 0) > 0
+                    ? "bg-[hsl(28_48%_93%)] font-semibold text-text dark:bg-[hsl(28_15%_13%)]"
+                    : "text-hint"
+                }`}
+              >
+                {c} {channels[c] ?? 0}
+              </span>
+            ))}
+          </div>
         )}
         {sessions.map((s) => (
           <SessionRow key={s.id} session={s} onOpen={() => setOpenId(s.id)} />

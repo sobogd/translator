@@ -228,7 +228,8 @@
         "label": "Traduzione in qualsiasi lingua"
       }
     ],
-    "languagesHeading": "Lingue"
+    "languagesHeading": "Lingue",
+    "pairsHeading": "Altre combinazioni linguistiche"
   },
   "account": {
     "title": "Account",

@@ -216,7 +216,8 @@
         "label": "Oversettelse til ethvert språk"
       }
     ],
-    "languagesHeading": "Språk"
+    "languagesHeading": "Språk",
+    "pairsHeading": "Flere språkpar"
   },
   "account": {
     "title": "Konto",

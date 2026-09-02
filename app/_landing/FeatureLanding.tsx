@@ -7,9 +7,12 @@ import { StatCards } from "./StatCards";
 import { Spotlights } from "./Spotlights";
 import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
+import { Breadcrumbs } from "./Breadcrumbs";
+import { RelatedPairs } from "./RelatedPairs";
 import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
+import { relatedPairs } from "@/lib/pairs";
 import type { Locale } from "@/lib/locales";
 import { breadcrumbLd, faqPageLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
 import { SessionProvider } from "./session";
@@ -59,15 +62,22 @@ export function FeatureLanding({
   presetSource?: string;
   presetTarget?: string;
 }) {
+  // Anchor text is looked up in the locale's own link list rather than
+  // rebuilt from the slug, so it stays translated and stays in sync.
+  const labelFor = (slug: string) =>
+    chrome.footer.featureLinks.find((l) => l.routeKey.replace(/^\//, "") === slug)?.label;
+  const related = relatedPairs(locale, pathname.replace(/^\/([a-z]{2}\/)?/, ""))
+    .map((p) => ({ href: localePath(p.locale, p.slug), label: labelFor(p.slug) }))
+    .filter((l): l is { href: string; label: string } => Boolean(l.label));
+
   const jsonLd = graphLd([
     organizationLd(),
     webSiteLd(locale),
     softwareApplicationLd(content.meta.description),
     // Home > this page: the pair pages are one level deep in every locale.
-    breadcrumbLd(locale, {
-      name: `${content.hero.title} ${content.hero.titleAccent}`.trim(),
-      url: content.meta.canonical,
-    }),
+    // `name` is exactly the label the <Breadcrumbs> below renders — the
+    // accent half of the hero title is marketing tail, not a page name.
+    breadcrumbLd(locale, { name: content.hero.title, url: content.meta.canonical }),
     faqPageLd(content.faq.items),
   ]);
 
@@ -98,8 +108,18 @@ export function FeatureLanding({
           <Band section="stats">
             <StatCards items={chrome.statCards} />
           </Band>
+          <Band section="breadcrumbs">
+            <Breadcrumbs
+              homeHref={localeHome(locale)}
+              homeLabel={chrome.footer.brand}
+              current={content.hero.title}
+            />
+          </Band>
           <Band id="features" section="features">
             <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
+          </Band>
+          <Band section="related">
+            <RelatedPairs heading={chrome.footer.pairsHeading} links={related} />
           </Band>
           <Band id="comparison" section="comparison">
             <Comparison texts={content.comparison} />

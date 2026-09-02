@@ -5,14 +5,24 @@ import { LOCALE_SLUG_OVERRIDES } from "@/lib/locale-slug-overrides";
 import { PAIRS } from "@/lib/pairs";
 import { PAIR_CONTENT, READY_LOCALES, CHROME } from "@/content";
 import { SITE_URL } from "@/lib/site";
+import LAST_MODIFIED from "@/content/last-modified.json";
 
-// Fixed snapshot date, not `new Date()` — matches iq-rest's convention of not
-// faking freshness on every deploy. Bump when the home page copy changes.
-const HOME_LAST_MODIFIED = "2026-09-01";
-const FEATURE_LAST_MODIFIED = "2026-09-01";
-const PAIR_LAST_MODIFIED = "2026-09-01";
-const PRICING_LAST_MODIFIED = "2026-09-02";
-const LEGAL_LAST_MODIFIED = "2026-09-02";
+// Real commit dates, not `new Date()` and no longer a hand-bumped constant:
+// content/last-modified.json is regenerated from git history on every build
+// by scripts/gen-lastmod.mjs. A constant nobody remembers to bump is exactly
+// the synthetic freshness signal search engines learn to ignore.
+//
+// The fallback only applies to a key the generator has never seen (a brand
+// new file in a build with no git history).
+const FALLBACK_LAST_MODIFIED = "2026-09-02";
+// The JSON import is typed as its literal key set; widen it, the keys are
+// computed at runtime from the pair registry.
+const DATES: Record<string, string> = LAST_MODIFIED;
+const lastMod = (key: string) => DATES[key] ?? FALLBACK_LAST_MODIFIED;
+
+// A locale's chrome file carries both its home page and its /pricing copy,
+// so the two share a date by construction.
+const homeKey = (locale: string) => `home:${locale}`;
 
 // Same form as the canonical tags: the English home is SITE_URL with no
 // trailing slash, so the sitemap must not advertise a second, slashed variant.
@@ -23,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const homeLanguages = homeAlternates();
   const homeEntries: MetadataRoute.Sitemap = READY_LOCALES.map((locale) => ({
     url: url(locale),
-    lastModified: HOME_LAST_MODIFIED,
+    lastModified: lastMod(homeKey(locale)),
     changeFrequency: "weekly",
     priority: locale === "en" ? 1 : 0.9,
     alternates: { languages: homeLanguages },
@@ -35,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const languages = featureAlternates(routeKey);
       return Object.keys(slugMap).map((locale) => ({
         url: url(locale, slugMap[locale]),
-        lastModified: FEATURE_LAST_MODIFIED,
+        lastModified: FALLBACK_LAST_MODIFIED,
         changeFrequency: "weekly" as const,
         priority: 0.8,
         alternates: { languages },
@@ -49,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (p) => PAIR_CONTENT[`${p.locale}/${p.slug}`],
   ).map((p) => ({
     url: url(p.locale, p.slug),
-    lastModified: PAIR_LAST_MODIFIED,
+    lastModified: lastMod(`${p.locale}/${p.slug}`),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -60,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pricingEntries: MetadataRoute.Sitemap = READY_LOCALES.filter((l) => CHROME[l]?.pricing).map(
     (locale) => ({
       url: url(locale, "pricing"),
-      lastModified: PRICING_LAST_MODIFIED,
+      lastModified: lastMod(homeKey(locale)),
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: { languages: pricingLanguages },
@@ -70,7 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // English-only legal pages (app/(en)/privacy, app/(en)/terms).
   const legalEntries: MetadataRoute.Sitemap = ["privacy", "terms"].map((slug) => ({
     url: url("en", slug),
-    lastModified: LEGAL_LAST_MODIFIED,
+    lastModified: lastMod("legal"),
     changeFrequency: "yearly" as const,
     priority: 0.3,
   }));

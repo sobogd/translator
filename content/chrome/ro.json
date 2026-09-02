@@ -224,7 +224,8 @@
         "label": "Traducere în orice limbă"
       }
     ],
-    "languagesHeading": "Limbi"
+    "languagesHeading": "Limbi",
+    "pairsHeading": "Alte perechi de limbi"
   },
   "account": {
     "title": "Cont",

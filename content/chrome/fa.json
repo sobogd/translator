@@ -216,7 +216,8 @@
         "label": "ترجمه به هر زبانی"
       }
     ],
-    "languagesHeading": "زبان‌ها"
+    "languagesHeading": "زبان‌ها",
+    "pairsHeading": "جفت‌های زبانی بیشتر"
   },
   "account": {
     "title": "حساب کاربری",

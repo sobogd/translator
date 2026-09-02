@@ -1,6 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Faq } from "./Faq";
+import { Breadcrumbs } from "./Breadcrumbs";
 import { FinalCta } from "./FinalCta";
 import { PricingCards } from "./PricingCards";
 import { Container, Band, PAGE } from "./shell";
@@ -30,7 +31,9 @@ export function PricingPage({
     // The one page that lists the plans, so it carries the per-plan Offers
     // instead of the site-wide AggregateOffer.
     softwareApplicationLd(p.meta.description, planOffersLd(locale)),
-    breadcrumbLd(locale, { name: `${p.heading} ${p.headingAccent}`.trim(), url: `${SITE_URL}${pathname}` }),
+    // Same string the visible crumb renders — the nav label, not the hero
+    // heading, which reads as a sentence rather than a page name.
+    breadcrumbLd(locale, { name: chrome.header.pricing, url: `${SITE_URL}${pathname}` }),
     faqPageLd(p.faq.items),
   ]);
   return (
@@ -68,6 +71,13 @@ export function PricingPage({
                 <PricingCards texts={p} variant="flat" />
               </div>
             </div>
+          </Band>
+          <Band section="breadcrumbs">
+            <Breadcrumbs
+              homeHref={localeHome(locale)}
+              homeLabel={chrome.footer.brand}
+              current={chrome.header.pricing}
+            />
           </Band>
           <Band id="faq" section="faq">
             <Faq

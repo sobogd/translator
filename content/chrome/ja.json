@@ -216,7 +216,8 @@
         "label": "あらゆる言語への翻訳"
       }
     ],
-    "languagesHeading": "言語"
+    "languagesHeading": "言語",
+    "pairsHeading": "他の言語ペア"
   },
   "account": {
     "title": "アカウント",

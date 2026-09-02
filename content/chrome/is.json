@@ -204,7 +204,8 @@
         "label": "Þýðing á hvaða tungumál sem er"
       }
     ],
-    "languagesHeading": "Tungumál"
+    "languagesHeading": "Tungumál",
+    "pairsHeading": "Fleiri tungumálapör"
   },
   "account": {
     "title": "Aðgangur",

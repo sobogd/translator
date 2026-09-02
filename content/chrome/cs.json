@@ -228,7 +228,8 @@
         "label": "Překlad do jakéhokoli jazyka"
       }
     ],
-    "languagesHeading": "Jazyky"
+    "languagesHeading": "Jazyky",
+    "pairsHeading": "Další jazykové páry"
   },
   "account": {
     "title": "Účet",

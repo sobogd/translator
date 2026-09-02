@@ -228,7 +228,8 @@
         "label": "Her dile çeviri"
       }
     ],
-    "languagesHeading": "Diller"
+    "languagesHeading": "Diller",
+    "pairsHeading": "Diğer dil çiftleri"
   },
   "account": {
     "title": "Hesap",

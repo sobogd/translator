@@ -216,7 +216,8 @@
         "label": "모든 언어로 번역"
       }
     ],
-    "languagesHeading": "언어"
+    "languagesHeading": "언어",
+    "pairsHeading": "다른 언어 조합"
   },
   "account": {
     "title": "계정",

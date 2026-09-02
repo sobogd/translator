@@ -240,7 +240,8 @@
         "label": "Übersetzung in jede Sprache"
       }
     ],
-    "languagesHeading": "Sprachen"
+    "languagesHeading": "Sprachen",
+    "pairsHeading": "Weitere Sprachpaare"
   },
   "account": {
     "title": "Konto",

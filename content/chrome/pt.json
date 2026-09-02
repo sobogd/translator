@@ -224,7 +224,8 @@
         "label": "Tradução para qualquer idioma"
       }
     ],
-    "languagesHeading": "Idiomas"
+    "languagesHeading": "Idiomas",
+    "pairsHeading": "Outros pares de idiomas"
   },
   "account": {
     "title": "Conta",

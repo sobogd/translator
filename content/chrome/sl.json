@@ -212,7 +212,8 @@
         "label": "Prevod v kateri koli jezik"
       }
     ],
-    "languagesHeading": "Jeziki"
+    "languagesHeading": "Jeziki",
+    "pairsHeading": "Več jezikovnih parov"
   },
   "account": {
     "title": "Račun",

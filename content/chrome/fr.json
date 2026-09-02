@@ -232,7 +232,8 @@
         "label": "Traduction vers n'importe quelle langue"
       }
     ],
-    "languagesHeading": "Langues"
+    "languagesHeading": "Langues",
+    "pairsHeading": "Autres paires de langues"
   },
   "account": {
     "title": "Compte",

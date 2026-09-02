@@ -212,7 +212,8 @@
         "label": "Käännös mille tahansa kielelle"
       }
     ],
-    "languagesHeading": "Kielet"
+    "languagesHeading": "Kielet",
+    "pairsHeading": "Lisää kielipareja"
   },
   "account": {
     "title": "Tili",

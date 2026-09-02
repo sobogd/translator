@@ -228,7 +228,8 @@
         "label": "Переклад будь-якою мовою"
       }
     ],
-    "languagesHeading": "Мови"
+    "languagesHeading": "Мови",
+    "pairsHeading": "Інші мовні пари"
   },
   "account": {
     "title": "Акаунт",

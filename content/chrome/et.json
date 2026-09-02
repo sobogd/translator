@@ -212,7 +212,8 @@
         "label": "Tõlge mis tahes keelde"
       }
     ],
-    "languagesHeading": "Keeled"
+    "languagesHeading": "Keeled",
+    "pairsHeading": "Rohkem keelepaare"
   },
   "account": {
     "title": "Konto",

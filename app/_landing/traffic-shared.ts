@@ -91,7 +91,28 @@ export function deviceShort(device: string | null, os: string | null): string {
 }
 
 /** Where the visit came from, as one short chip label. */
+// Same host list as lib/analytics.ts, duplicated on purpose: that module is
+// client-only and importing it here would pull the whole tracker into the
+// admin bundle. Keep the two in sync when an assistant is added.
+const AI_REFERRER_HOSTS =
+  /(?:^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|anthropic\.com|gemini\.google\.com|bard\.google\.com|copilot\.microsoft\.com|you\.com|phind\.com|poe\.com)$/i;
+
+export type RefChannel = "ai" | "search" | "campaign" | "direct";
+
+/** Acquisition channel of a visit. "ai" is the one worth watching: assistants
+ *  cite pages without sending a click, so any referred traffic at all from
+ *  them means the citation is landing. */
+export function refChannel(s: Pick<TrafficSession, "from" | "ref">): RefChannel {
+  if (s.ref && AI_REFERRER_HOSTS.test(s.ref)) return "ai";
+  if (s.from) return "campaign";
+  if (s.ref) return "search";
+  return "direct";
+}
+
 export function sourceLabel(s: Pick<TrafficSession, "from" | "ref">): string | null {
+  // An AI referrer outranks a campaign tag: the tag says how the link was
+  // built, the referrer says where the visitor actually came from.
+  if (s.ref && AI_REFERRER_HOSTS.test(s.ref)) return `AI · ${s.ref.replace(/^www\./, "")}`;
   if (s.from) return s.from;
   if (s.ref) return s.ref.replace(/^www\./, "");
   return null;

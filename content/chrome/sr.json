@@ -224,7 +224,8 @@
         "label": "Prevod na bilo koji jezik"
       }
     ],
-    "languagesHeading": "Jezici"
+    "languagesHeading": "Jezici",
+    "pairsHeading": "Više jezičkih parova"
   },
   "account": {
     "title": "Nalog",

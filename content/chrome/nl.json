@@ -224,7 +224,8 @@
         "label": "Vertalen naar elke taal"
       }
     ],
-    "languagesHeading": "Talen"
+    "languagesHeading": "Talen",
+    "pairsHeading": "Meer taalcombinaties"
   },
   "account": {
     "title": "Account",

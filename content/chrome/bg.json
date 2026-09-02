@@ -216,7 +216,8 @@
         "label": "Превод на всеки език"
       }
     ],
-    "languagesHeading": "Езици"
+    "languagesHeading": "Езици",
+    "pairsHeading": "Още езикови двойки"
   },
   "account": {
     "title": "Профил",

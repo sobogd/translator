@@ -15,6 +15,16 @@ const CONTENT_TYPE = "text/plain;charset=UTF-8";
 const SEARCH_HOST_REGEX =
   /(?:^|\.)(google|bing|yandex|duckduckgo|yahoo|baidu|ecosia|qwant|startpage|mojeek|brave)\.[a-z.]+$/i;
 
+// Assistants that send real referred traffic. Kept apart from the search list
+// because they are a different acquisition channel, and because this regex has
+// to be tested FIRST: gemini.google.com and copilot.microsoft.com would
+// otherwise be swallowed by the search pattern and counted as Google/Bing.
+//
+// Most assistants strip or shorten the referrer, so what lands here is a floor
+// on the channel, never the whole of it — the rest shows up as direct.
+const AI_HOST_REGEX =
+  /(?:^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|anthropic\.com|gemini\.google\.com|bard\.google\.com|copilot\.microsoft\.com|you\.com|phind\.com|poe\.com)$/i;
+
 // Mirrors the server-side validation. An event that fails it rejects the WHOLE
 // batch, so a bad page label would silently kill unrelated events — clamp at
 // the source instead.
@@ -53,11 +63,16 @@ export function setTrackTopic(topicId: string | null | undefined): void {
   currentTopic = topicId && /^[a-z0-9]{20,40}$/.test(topicId) ? topicId : undefined;
 }
 
+/** Referrer host, kept only when it is a search engine or an AI assistant.
+ *  Anything else (social, our own domain, random sites) stays out of the DB —
+ *  the column is an acquisition-channel signal, not a full referrer log. */
 export function searchReferrerHost(): string | null {
   try {
     const ref = document.referrer;
     if (!ref) return null;
     const host = new URL(ref).hostname;
+    // AI first: gemini.google.com matches the search pattern too.
+    if (AI_HOST_REGEX.test(host)) return host;
     return SEARCH_HOST_REGEX.test(host) ? host : null;
   } catch {
     return null;

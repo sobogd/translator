@@ -73,6 +73,8 @@ export interface TranslatorTexts {
     tagline: string;
     brand: string;
     featuresHeading: string;
+    /** Heading of the in-body related-pairs block on the pair pages. */
+    pairsHeading: string;
     featureLinks: { routeKey: string; label: string }[];
   };
   // The /pricing page, localized. Quota numbers live inside the translated

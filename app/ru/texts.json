@@ -228,7 +228,8 @@
         "label": "Перевод на любой язык"
       }
     ],
-    "languagesHeading": "Языки"
+    "languagesHeading": "Языки",
+    "pairsHeading": "Другие языковые пары"
   },
   "account": {
     "title": "Аккаунт",
