@@ -348,7 +348,8 @@
     "pricingLink": "الأسعار",
     "errors": {
       "insufficientCredits": "استُنفدت حصتك — قم بترقية خطتك",
-      "textTooLong": "النص طويل جدًا لخطتك"
+      "textTooLong": "النص طويل جدًا لخطتك",
+      "turnstileFailed": "فشل التحقق — أعد تحميل الصفحة وحاول مرة أخرى"
     }
   },
   "history": {

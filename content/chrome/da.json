@@ -344,7 +344,8 @@
     "pricingLink": "Priser",
     "errors": {
       "insufficientCredits": "Kvote opbrugt — opgrader din plan",
-      "textTooLong": "Teksten er for lang til din plan"
+      "textTooLong": "Teksten er for lang til din plan",
+      "turnstileFailed": "Verificeringen mislykkedes — genindlæs siden, og prøv igen"
     }
   },
   "history": {

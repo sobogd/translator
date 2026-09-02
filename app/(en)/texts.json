@@ -274,7 +274,8 @@
     "pricingLink": "Pricing",
     "errors": {
       "insufficientCredits": "Quota used up — upgrade your plan",
-      "textTooLong": "Text too long for your plan"
+      "textTooLong": "Text too long for your plan",
+      "turnstileFailed": "Verification failed — reload the page and try again"
     }
   },
   "history": {

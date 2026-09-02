@@ -340,7 +340,8 @@
     "pricingLink": "요금제",
     "errors": {
       "insufficientCredits": "월 한도를 다 썼어요 — 플랜을 업그레이드하세요",
-      "textTooLong": "텍스트가 너무 길어요, 현재 플랜의 한도를 초과했어요"
+      "textTooLong": "텍스트가 너무 길어요, 현재 플랜의 한도를 초과했어요",
+      "turnstileFailed": "확인에 실패했습니다 — 페이지를 새로 고친 뒤 다시 시도하세요"
     }
   },
   "history": {

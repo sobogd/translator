@@ -348,7 +348,8 @@
     "pricingLink": "Cene",
     "errors": {
       "insufficientCredits": "Mesečni limit je iskorišćen – nadogradite plan",
-      "textTooLong": "Tekst je predugačak za vaš plan"
+      "textTooLong": "Tekst je predugačak za vaš plan",
+      "turnstileFailed": "Provera nije uspela — osvežite stranicu i pokušajte ponovo"
     }
   },
   "history": {

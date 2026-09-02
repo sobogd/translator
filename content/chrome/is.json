@@ -328,7 +328,8 @@
     "pricingLink": "Verð",
     "errors": {
       "insufficientCredits": "Kvótinn búinn — uppfærðu áskriftina þína",
-      "textTooLong": "Textinn er of langur fyrir áskriftina þína"
+      "textTooLong": "Textinn er of langur fyrir áskriftina þína",
+      "turnstileFailed": "Staðfesting mistókst — endurhlaðið síðuna og reynið aftur"
     }
   },
   "history": {

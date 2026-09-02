@@ -348,7 +348,8 @@
     "pricingLink": "Prijzen",
     "errors": {
       "insufficientCredits": "Quotum verbruikt — upgrade je abonnement",
-      "textTooLong": "Tekst te lang voor je abonnement"
+      "textTooLong": "Tekst te lang voor je abonnement",
+      "turnstileFailed": "Verificatie mislukt — herlaad de pagina en probeer het opnieuw"
     }
   },
   "history": {

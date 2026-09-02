@@ -336,7 +336,8 @@
     "pricingLink": "Preus",
     "errors": {
       "insufficientCredits": "Quota esgotada — millora el teu pla",
-      "textTooLong": "Text massa llarg per al teu pla"
+      "textTooLong": "Text massa llarg per al teu pla",
+      "turnstileFailed": "La verificació ha fallat — torna a carregar la pàgina i prova-ho de nou"
     }
   },
   "history": {

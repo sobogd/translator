@@ -336,7 +336,8 @@
     "pricingLink": "Cenník",
     "errors": {
       "insufficientCredits": "Kvóta je vyčerpaná — vylepšite svoj plán",
-      "textTooLong": "Text je pre váš plán príliš dlhý"
+      "textTooLong": "Text je pre váš plán príliš dlhý",
+      "turnstileFailed": "Overenie zlyhalo — obnovte stránku a skúste to znova"
     }
   },
   "history": {

@@ -348,7 +348,8 @@
     "pricingLink": "Prețuri",
     "errors": {
       "insufficientCredits": "Cotă epuizată — actualizează planul",
-      "textTooLong": "Text prea lung pentru planul tău"
+      "textTooLong": "Text prea lung pentru planul tău",
+      "turnstileFailed": "Verificarea a eșuat — reîncarcă pagina și încearcă din nou"
     }
   },
   "history": {

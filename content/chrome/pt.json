@@ -348,7 +348,8 @@
     "pricingLink": "Preços",
     "errors": {
       "insufficientCredits": "Cota esgotada — atualize o seu plano",
-      "textTooLong": "Texto demasiado longo para o seu plano"
+      "textTooLong": "Texto demasiado longo para o seu plano",
+      "turnstileFailed": "Falha na verificação — recarregue a página e tente novamente"
     }
   },
   "history": {

@@ -11,6 +11,7 @@ import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
 import { Modal } from "./Modal";
 import { QUOTA_EVENT } from "./AccountControls";
+import { useTurnstileGate } from "./Turnstile";
 import type { TranslatorTexts } from "./types";
 
 const TO_KEY = "translator_to_lang";
@@ -27,6 +28,7 @@ type WidgetTexts = TranslatorTexts["translator"];
 function friendlyError(code: string, texts: WidgetTexts): string {
   if (code === "insufficient_credits") return texts.errors.insufficientCredits;
   if (code === "text too long for your plan") return texts.errors.textTooLong;
+  if (code === "turnstile_required" || code === "turnstile_failed") return texts.errors.turnstileFailed;
   return code;
 }
 
@@ -109,6 +111,8 @@ export function Translator({
   initialTarget,
   pricingHref = "/pricing",
   initialData = null,
+  signedIn = false,
+  turnstileSiteKey = null,
 }: {
   texts: TranslatorTexts;
   /** SEO headline shown left of the widget until the first topic exists. */
@@ -123,6 +127,10 @@ export function Translator({
   pricingHref?: string;
   /** SSR-preloaded topic list + last-opened thread (lib/topics-server.ts). */
   initialData?: InitialTopics | null;
+  /** Signed-in visitors are never bot-challenged (see lib/turnstile.ts). */
+  signedIn?: boolean;
+  /** Turnstile site key (TS_SITE), null when the gate is not configured. */
+  turnstileSiteKey?: string | null;
 }) {
   const t = texts.translator;
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
@@ -155,6 +163,14 @@ export function Translator({
   // Remaining voice seconds, fetched when recording starts — the ticking
   // timer stops the mic the moment the free/plan pool would run out.
   const secondsLeftRef = useRef<number | null>(null);
+
+  // Bot gate in front of the Gemini-spending endpoints. Anonymous visitors
+  // only: an account's requests are never challenged server-side, so the
+  // widget script isn't even loaded for them.
+  const { containerRef: turnstileRef, ensurePass, invalidatePass } = useTurnstileGate(
+    turnstileSiteKey,
+    !signedIn,
+  );
 
   const recRef = useRef<WavRecorder | null>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -318,12 +334,22 @@ export function Translator({
     try {
       // First send with no topic yet: create one now, carrying over
       // whatever source/target were picked in draft state.
+      if (!(await ensurePass())) throw new Error("turnstile_failed");
       const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
-      const res = await apiFetch("/api/translate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: sent, topicId }),
-      });
+      const send = () =>
+        apiFetch("/api/translate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: sent, topicId }),
+        });
+      let res = await send();
+      // The pass cookie expired between the local check and the request:
+      // solve once more and resend rather than surfacing an error.
+      if (res.status === 403) {
+        invalidatePass();
+        if (!(await ensurePass())) throw new Error("turnstile_failed");
+        res = await send();
+      }
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
       setText("");
@@ -360,6 +386,9 @@ export function Translator({
       await rec.start();
       recRef.current = rec;
       setStatus("recording");
+      // Solve while the user is still speaking — by the time the recording
+      // is sent the pass is usually already there.
+      void ensurePass();
     } catch {
       setError(t.micDeniedError);
     }
@@ -390,11 +419,18 @@ export function Translator({
     try {
       const blob = await rec.stop();
       recRef.current = null;
+      if (!(await ensurePass())) throw new Error("turnstile_failed");
       const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
       const fd = new FormData();
       fd.append("audio", blob, "speech.wav");
       fd.append("topicId", topicId);
-      const res = await apiFetch("/api/translate-voice", { method: "POST", body: fd });
+      const send = () => apiFetch("/api/translate-voice", { method: "POST", body: fd });
+      let res = await send();
+      if (res.status === 403) {
+        invalidatePass();
+        if (!(await ensurePass())) throw new Error("turnstile_failed");
+        res = await send();
+      }
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "error");
       await loadTopic(topicId);
@@ -454,6 +490,9 @@ export function Translator({
 
   const composerRow = (
     <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-2.5">
+      {/* Turnstile render target. Empty (zero-height) unless Cloudflare
+          decides this visitor has to interact with the challenge. */}
+      <div ref={turnstileRef} className="empty:hidden" />
       {status !== "idle" ? (
         <div className="flex min-h-9 flex-1 items-center gap-3 px-2.5 text-sm text-hint">
           {status === "recording" ? (

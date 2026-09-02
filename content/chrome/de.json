@@ -364,7 +364,8 @@
     "pricingLink": "Preise",
     "errors": {
       "insufficientCredits": "Kontingent aufgebraucht – Plan upgraden",
-      "textTooLong": "Text zu lang für deinen Plan"
+      "textTooLong": "Text zu lang für deinen Plan",
+      "turnstileFailed": "Überprüfung fehlgeschlagen — Seite neu laden und erneut versuchen"
     }
   },
   "history": {

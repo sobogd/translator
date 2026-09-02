@@ -352,7 +352,8 @@
     "pricingLink": "Priser",
     "errors": {
       "insufficientCredits": "Kvoten är slut — uppgradera ditt abonnemang",
-      "textTooLong": "Texten är för lång för ditt abonnemang"
+      "textTooLong": "Texten är för lång för ditt abonnemang",
+      "turnstileFailed": "Verifieringen misslyckades — ladda om sidan och försök igen"
     }
   },
   "history": {

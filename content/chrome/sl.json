@@ -336,7 +336,8 @@
     "pricingLink": "Cenik",
     "errors": {
       "insufficientCredits": "Kvota je porabljena – nadgradite paket",
-      "textTooLong": "Besedilo je predolgo za vaš paket"
+      "textTooLong": "Besedilo je predolgo za vaš paket",
+      "turnstileFailed": "Preverjanje ni uspelo — osvežite stran in poskusite znova"
     }
   },
   "history": {

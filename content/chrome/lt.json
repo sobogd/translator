@@ -336,7 +336,8 @@
     "pricingLink": "Kainos",
     "errors": {
       "insufficientCredits": "Kvota išnaudota — atnaujinkite planą",
-      "textTooLong": "Tekstas per ilgas jūsų planui"
+      "textTooLong": "Tekstas per ilgas jūsų planui",
+      "turnstileFailed": "Patikra nepavyko — perkraukite puslapį ir bandykite dar kartą"
     }
   },
   "history": {

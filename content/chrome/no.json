@@ -340,7 +340,8 @@
     "pricingLink": "Priser",
     "errors": {
       "insufficientCredits": "Kvoten er brukt opp — oppgrader abonnementet ditt",
-      "textTooLong": "Teksten er for lang for abonnementet ditt"
+      "textTooLong": "Teksten er for lang for abonnementet ditt",
+      "turnstileFailed": "Verifiseringen mislyktes — last inn siden på nytt og prøv igjen"
     }
   },
   "history": {

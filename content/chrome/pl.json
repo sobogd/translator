@@ -356,7 +356,8 @@
     "pricingLink": "Cennik",
     "errors": {
       "insufficientCredits": "Limit wyczerpany — ulepsz plan",
-      "textTooLong": "Tekst zbyt długi dla Twojego planu"
+      "textTooLong": "Tekst zbyt długi dla Twojego planu",
+      "turnstileFailed": "Weryfikacja nie powiodła się — odśwież stronę i spróbuj ponownie"
     }
   },
   "history": {

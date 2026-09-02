@@ -352,7 +352,8 @@
     "pricingLink": "Fiyatlandırma",
     "errors": {
       "insufficientCredits": "Kotanız doldu — planınızı yükseltin",
-      "textTooLong": "Metin planınız için çok uzun"
+      "textTooLong": "Metin planınız için çok uzun",
+      "turnstileFailed": "Doğrulama başarısız — sayfayı yenileyip tekrar deneyin"
     }
   },
   "history": {

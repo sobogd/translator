@@ -356,7 +356,8 @@
     "pricingLink": "Tarifs",
     "errors": {
       "insufficientCredits": "Quota épuisé — passez à un forfait supérieur",
-      "textTooLong": "Texte trop long pour votre forfait"
+      "textTooLong": "Texte trop long pour votre forfait",
+      "turnstileFailed": "Échec de la vérification — rechargez la page et réessayez"
     }
   },
   "history": {

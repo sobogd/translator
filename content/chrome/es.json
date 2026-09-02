@@ -356,7 +356,8 @@
     "pricingLink": "Precios",
     "errors": {
       "insufficientCredits": "Cuota agotada — mejora tu plan",
-      "textTooLong": "Texto demasiado largo para tu plan"
+      "textTooLong": "Texto demasiado largo para tu plan",
+      "turnstileFailed": "La verificación ha fallado — recarga la página e inténtalo de nuevo"
     }
   },
   "history": {

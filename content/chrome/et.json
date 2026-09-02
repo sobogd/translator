@@ -336,7 +336,8 @@
     "pricingLink": "Hinnad",
     "errors": {
       "insufficientCredits": "Limiit on täis – uuenda oma paketti",
-      "textTooLong": "Tekst on sinu paketi jaoks liiga pikk"
+      "textTooLong": "Tekst on sinu paketi jaoks liiga pikk",
+      "turnstileFailed": "Kontroll ebaõnnestus — laadi leht uuesti ja proovi veel kord"
     }
   },
   "history": {

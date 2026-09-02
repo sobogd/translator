@@ -336,7 +336,8 @@
     "pricingLink": "价格",
     "errors": {
       "insufficientCredits": "额度已用完，请升级套餐",
-      "textTooLong": "文本超出当前套餐限制"
+      "textTooLong": "文本超出当前套餐限制",
+      "turnstileFailed": "验证失败 — 请刷新页面后重试"
     }
   },
   "history": {

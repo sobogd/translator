@@ -332,7 +332,8 @@
     "pricingLink": "Árak",
     "errors": {
       "insufficientCredits": "Elfogyott a kereted – válts csomagot",
-      "textTooLong": "A szöveg túl hosszú a csomagodhoz"
+      "textTooLong": "A szöveg túl hosszú a csomagodhoz",
+      "turnstileFailed": "Az ellenőrzés sikertelen — töltse újra az oldalt, és próbálja újra"
     }
   },
   "history": {

@@ -340,7 +340,8 @@
     "pricingLink": "料金",
     "errors": {
       "insufficientCredits": "月間利用枠を使い切りました。プランをアップグレードしてください",
-      "textTooLong": "テキストが長すぎます。現在のプランの上限を超えています"
+      "textTooLong": "テキストが長すぎます。現在のプランの上限を超えています",
+      "turnstileFailed": "確認に失敗しました — ページを再読み込みしてもう一度お試しください"
     }
   },
   "history": {

@@ -336,7 +336,8 @@
     "pricingLink": "Hinnoittelu",
     "errors": {
       "insufficientCredits": "Kiintiö käytetty – päivitä tilauksesi",
-      "textTooLong": "Teksti on liian pitkä tilaukseesi"
+      "textTooLong": "Teksti on liian pitkä tilaukseesi",
+      "turnstileFailed": "Vahvistus epäonnistui — lataa sivu uudelleen ja yritä uudestaan"
     }
   },
   "history": {

@@ -92,6 +92,8 @@ export function FeatureLanding({
       />
       <Container>
         <Band id="app">
+          {/* TS_SITE is public by design; read here (server component)
+              instead of renaming it to NEXT_PUBLIC_*. */}
           <Translator
             initialData={initialTopics}
             texts={chrome}
@@ -99,6 +101,8 @@ export function FeatureLanding({
             presetSource={presetSource}
             presetTarget={presetTarget}
             pricingHref={localePath(locale, "pricing")}
+            signedIn={signedIn}
+            turnstileSiteKey={process.env.TS_SITE ?? null}
           />
         </Band>
         <Band>

@@ -60,6 +60,8 @@ jobs:
             ALLOWED_GOOGLE_EMAILS="${{ secrets.ALLOWED_GOOGLE_EMAILS }}"
             STRIPE_SECRET_KEY="${{ secrets.STRIPE_SECRET_KEY }}"
             STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}"
+            TS_SITE="${{ secrets.TS_SITE }}"
+            TS_SECRET="${{ secrets.TS_SECRET }}"
             PORT="8200"
             EOF
 

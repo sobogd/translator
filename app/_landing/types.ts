@@ -115,6 +115,7 @@ export interface TranslatorTexts {
     errors: {
       insufficientCredits: string;
       textTooLong: string;
+      turnstileFailed: string;
     };
   };
   history: {

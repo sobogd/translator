@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
+import { hasValidPass, requiresTurnstile } from "@/lib/turnstile";
 import { getLanguage } from "@/lib/languages";
 import { consumeChars, maxCharsForIdentity } from "@/lib/credits";
 import { translateText, translatePair } from "@/lib/gemini-translate";
@@ -12,6 +13,13 @@ export async function POST(req: NextRequest) {
   try {
     const identity = await resolveIdentity(req);
     if (!identity) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+    // Anonymous traffic must carry a valid Turnstile pass before anything
+    // reaches Gemini — checked ahead of credit consumption so a rejected
+    // request never burns quota.
+    if (requiresTurnstile(identity) && !hasValidPass(req)) {
+      return NextResponse.json({ error: "turnstile_required" }, { status: 403 });
+    }
 
     const body = await req.json();
     const text = typeof body.text === "string" ? body.text.trim() : "";

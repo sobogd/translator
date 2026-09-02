@@ -60,12 +60,16 @@ export function Landing({
       />
       <Container>
         <Band id="app">
+          {/* TS_SITE is public by design; read here (server component)
+              instead of renaming it to NEXT_PUBLIC_*. */}
           <Translator
             initialData={initialTopics}
             texts={texts}
             heroTexts={texts.hero}
             initialTarget={locale}
             pricingHref={localePath(locale, "pricing")}
+            signedIn={signedIn}
+            turnstileSiteKey={process.env.TS_SITE ?? null}
           />
         </Band>
         <Band>
