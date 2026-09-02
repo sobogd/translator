@@ -66,7 +66,9 @@ function genConfig(schema: object) {
     temperature: 0.2,
     responseMimeType: "application/json",
     responseSchema: schema,
-    thinkingConfig: { thinkingBudget: 0 },
+    // 2.5 Flash let thinkingBudget:0 turn thinking off entirely; 3.5
+    // Flash-Lite 400s on that (INVALID_ARGUMENT) — its default thinkingLevel
+    // is already "minimal", which is what we want anyway, so just omit it.
   };
 }
 
