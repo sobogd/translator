@@ -1,48 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from "./Modal";
 import { Loader2, Mic, Type } from "lucide-react";
 import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
+import { useSession } from "./session";
 import type { TranslatorTexts } from "./types";
 
-import type { Quota } from "@/lib/quota-server";
-
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-
-// Fired by the translator widget right after a successful translate /
-// transcribe so the badge refreshes immediately instead of waiting out the
-// 10s poll.
-export const QUOTA_EVENT = "iqt:quota";
-
-// Starts from the SSR-computed value (no extra request on page load), then
-// refreshes every 10s and instantly on QUOTA_EVENT. Only fetches upfront
-// when SSR had nothing (first-ever anonymous visit — no fp cookie yet).
-function useQuota(initial: Quota | null = null) {
-  const [quota, setQuota] = useState<Quota | null>(initial);
-  useEffect(() => {
-    let alive = true;
-    const refresh = async () => {
-      try {
-        const res = await apiFetch("/api/quota");
-        if (alive && res.ok) setQuota(await res.json());
-      } catch {
-        /* keep the last known value */
-      }
-    };
-    if (!initial) refresh();
-    const timer = setInterval(refresh, 10_000);
-    window.addEventListener(QUOTA_EVENT, refresh);
-    return () => {
-      alive = false;
-      clearInterval(timer);
-      window.removeEventListener(QUOTA_EVENT, refresh);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return quota;
-}
 
 // Live remaining-quota badge: voice seconds (m:ss) + characters — the
 // anonymous fingerprint pool or the signed-in account balance.
@@ -50,16 +16,14 @@ export function QuotaBadge({
   locale,
   accountTexts,
   compact = false,
-  initialQuota = null,
 }: {
   locale: string;
   accountTexts: TranslatorTexts["account"];
   /** Tighter paddings/gaps so the badge fits a narrow mobile header row. */
   compact?: boolean;
-  /** SSR-computed starting value (lib/quota-server.ts) — no load-time fetch. */
-  initialQuota?: Quota | null;
 }) {
-  const quota = useQuota(initialQuota);
+  // Fetched + polled once per page by SessionProvider (app/_landing/session.tsx).
+  const { quota } = useSession();
   if (!quota) return null;
   const nf = new Intl.NumberFormat(locale);
   return (
@@ -84,33 +48,27 @@ export function QuotaBadge({
 // The one combined auth button: "Sign up / Sign in" for visitors, "Account"
 // (opening the settings modal) once signed in.
 export function AuthButton({
-  signedIn,
   locale,
   texts,
   accountTexts,
   pricingHref,
   fullWidth = false,
 }: {
-  signedIn: boolean;
   locale: string;
   texts: TranslatorTexts["header"];
   accountTexts: TranslatorTexts["account"];
   pricingHref: string;
   fullWidth?: boolean;
 }) {
-  // The modal fetches fresh numbers when it opens — no polling of its own.
-  const [quota, setQuota] = useState<Quota | null>(null);
+  // Session state (signed-in flag + the polled quota) is shared with the
+  // header badge — the modal only asks for a refresh when it opens.
+  const { signedIn, quota, refreshQuota } = useSession();
   const [modalOpen, setModalOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
 
-  async function openModal() {
+  function openModal() {
     setModalOpen(true);
-    try {
-      const res = await apiFetch("/api/quota");
-      if (res.ok) setQuota(await res.json());
-    } catch {
-      /* rows show placeholders */
-    }
+    refreshQuota();
   }
 
   async function openPortal() {

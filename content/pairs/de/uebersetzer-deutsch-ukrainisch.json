@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Ukrainisch, und lies oder hör die Übersetzung.",
+      "heading": "Ukrainisch ist nicht Russisch",
+      "sub": "Eigene Buchstaben, eigenes Vokabular — und genau da gehen Automatiken daneben.",
       "bullets": [
-        { "title": "Deutsch wird zu Ukrainisch", "sub": "Sprich auf Deutsch – die kyrillische Übersetzung erscheint Sekunden später" },
-        { "title": "Ukrainisch laut vorlesen lassen", "sub": "Praktisch, wenn die ukrainische Aussprache noch ungewohnt ist" }
+        { "title": "Ї, є, ґ und Apostroph", "sub": "Text so einfügen, wie er geschrieben wurde, ohne Verluste" },
+        { "title": "Sprache direkt als Text", "sub": "Nimm den Satz auf und lies ihn auf Deutsch, ohne nachzufragen" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa mit der Schule, beim Arzt oder auf dem Amt – jeder Austausch bleibt gespeichert.",
+      "heading": "Ankommen im Alltag",
+      "sub": "Schule, Arzt, Amt, Wohnung — Gespräche, die nicht warten können.",
       "bullets": [
-        { "title": "Antwort auf Ukrainisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Ukrainisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Das Gespräch mit der Schule oder dem Amt bleibt an einem Ort, statt verloren zu gehen" }
+        { "title": "Beide Richtungen", "sub": "Sie sprechen Ukrainisch, du liest Deutsch; du antwortest deutsch, sie hören Ukrainisch" },
+        { "title": "Jede Person, ein Thema", "sub": "Das Gespräch geht beim nächsten Mal genau dort weiter" }
       ]
     },
     {
-      "heading": "Deutsch-Ukrainisch, plus 185 weitere Sprachen",
-      "sub": "Ukrainisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Formulare und Bescheide",
+      "sub": "Amtsdeutsch in die eine, ukrainische Unterlagen in die andere Richtung.",
       "bullets": [
-        { "title": "Ukrainische Schrift korrekt erkannt", "sub": "Kyrillische Buchstaben wie і, ї und є werden richtig verarbeitet, nicht mit dem Russischen verwechselt" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Ukrainisch heute und für jede andere Sprache morgen" }
+        { "title": "Ganzes Dokument einfügen", "sub": "Eine komplette Seite statt Zeile für Zeile" },
+        { "title": "Übersetzung kopieren", "sub": "Direkt in die Notizen oder in die Antwort übernehmen" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge ukrainischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Auch gesprochen umgangssprachlich",
+      "sub": "Alltagssprache und gemischte Redeweise klingen anders als im Lehrbuch.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einem Brief vom Amt oder einer Nachricht aus der Schule" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den ukrainischen Text direkt in ein Formular oder eine Nachricht" }
+        { "title": "Im Kontext gelesen", "sub": "Der Satz entscheidet, nicht der Eintrag im Wörterbuch" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede andere Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Ukrainisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Ukrainisch mit einem Russisch-Werkzeug zu übersetzen geht regelmäßig schief.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Ukrainisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Ukrainisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Ukrainisch und Ukrainisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die ukrainische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht Ukrainisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Kyrillisch tippen, das du nicht hast." },
+      { "title": "Eigene Buchstaben", "us": "ї, є, ґ und Apostroph bleiben erhalten.", "them": "Werden verschluckt oder ersetzt." },
+      { "title": "Antworten", "us": "Deutsch rein, Ukrainisch raus.", "them": "Zweite Übersetzung nötig." },
+      { "title": "Verlauf", "us": "Gespräche bleiben als Themen.", "them": "Nichts wird gespeichert." },
+      { "title": "Start", "us": "Browser und Mikrofon.", "them": "App plus Tastaturlayout." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Ukrainisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Ukrainisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Ukrainische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die ukrainische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Wird ukrainische Schrift korrekt dargestellt, nicht als Russisch?", "a": "Ja, ukrainischer Text wird in seiner eigenen kyrillischen Schrift mit Buchstaben wie і, ї und є angezeigt, nicht mit dem Russischen vermischt." },
-      { "q": "Kann ich von Ukrainisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Ukrainisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für Behördengänge, Schule oder Arzttermine?", "a": "Ja, tippe wichtige Sätze vorher ein oder sprich direkt im Gespräch, und lass dir die ukrainische Übersetzung anzeigen oder vorlesen." }
+      { "q": "Ist Ukrainisch dasselbe wie Russisch?", "a": "Nein, und genau deshalb wird hier tatsächlich Ukrainisch übersetzt, inklusive ї, є, ґ und Apostroph." },
+      { "q": "Brauche ich eine kyrillische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein." },
+      { "q": "Übersetzt es gesprochenes Ukrainisch?", "a": "Ja, der deutsche Text steht ein paar Sekunden nach dem Satz da." },
+      { "q": "Kann ich Formulare übersetzen?", "a": "Ja, füge das komplette Dokument ein und lies es auf Deutsch." },
+      { "q": "Funktioniert es in beide Richtungen?", "a": "Ja, dasselbe Gespräch läuft von Deutsch nach Ukrainisch und zurück." },
+      { "q": "Ist es kostenlos?", "a": "Ja, mit Gratis-Kontingent ohne Konto und mehr Volumen nach dem Google-Login." }
     ]
   },
   "finalCta": {

@@ -10,20 +10,29 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
     { media: "(prefers-color-scheme: dark)", color: "#1a1612" },
   ],
-  // iOS Safari auto-zooms on focus into any input under 16px — the
-  // composer textarea is smaller than that, so pin the viewport instead.
-  maximumScale: 1,
-  userScalable: false,
+  // No maximumScale/userScalable here on purpose: blocking pinch-zoom is an
+  // accessibility failure (Lighthouse a11y). The iOS focus-zoom it used to
+  // work around is already handled the correct way — every input/textarea in
+  // the widget is `text-base` (16px), which iOS Safari never auto-zooms.
 };
 
+// No `title.template` — every page's own title (locale homes, pair pages,
+// /pricing, legal) already carries the brand, so a template appended a second
+// "| IQ Translate" to all 211 of them.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "IQ Translate — Instant Voice Translation App",
-    template: "%s | IQ Translate",
-  },
+  title: "IQ Translate — Instant Voice Translation App",
   description:
     "Speak naturally and get an instant translation, spoken or written, in 186 languages. Sign in with Google, no downloads, no passwords.",
+  // Site-wide social preview. Pages may override the copy, but never need to
+  // repeat the image (public/og.png, 1200x630 — see scripts/gen-og-image.py).
+  openGraph: {
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IQ Translate" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og.png"],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

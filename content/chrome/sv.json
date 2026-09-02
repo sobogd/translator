@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Röstöversättare Online – Prova Gratis | IQ Translate",
-    "description": "Gratis röstöversättare online: prata naturligt och få en direktöversättning, uttalad eller skriven, på 186 språk. Inga nedladdningar, ingen registrering för att testa.",
+    "description": "Gratis röstöversättare online: prata naturligt och få översättningen direkt, uttalad eller skriven, på 186 språk. Inga nedladdningar, ingen registrering.",
     "ogTitle": "Röstöversättare Online – Prova Gratis",
     "ogDescription": "Gratis röstöversättare online: prata och få en direktöversättning, uttalad eller skriven, på 186 språk.",
     "twitterTitle": "Röstöversättare Online – Prova Gratis",
@@ -227,7 +227,8 @@
         "routeKey": "/",
         "label": "Översätt till valfritt språk"
       }
-    ]
+    ],
+    "languagesHeading": "Språk"
   },
   "account": {
     "title": "Konto",
@@ -240,7 +241,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Priser – Planer för Röst & Text",
+      "title": "Priser – Planer för Röst & Text | IQ Translate",
       "description": "Tre enkla månadsabonnemang med röstminuter och textecken ingår, för alla 186 språk. Prova gratis direkt utan registrering — inget kort krävs."
     },
     "heading": "Enkla månatliga",

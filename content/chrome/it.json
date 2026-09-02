@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Traduttore Vocale Online — Parla e Traduci | IQ Translate",
-    "description": "Traduttore vocale online gratuito: parla naturalmente e ottieni una traduzione istantanea, parlata o scritta, in 186 lingue. Nessun download, nessuna registrazione per provare.",
+    "description": "Traduttore vocale online gratuito: parla naturalmente e ottieni la traduzione all'istante, parlata o scritta, in 186 lingue. Senza download né registrazione.",
     "ogTitle": "Traduttore Vocale Online — Parla e Traduci",
     "ogDescription": "Traduttore vocale online gratuito: parla e ottieni una traduzione istantanea, parlata o scritta, in 186 lingue.",
     "twitterTitle": "Traduttore Vocale Online — Parla e Traduci",
@@ -227,7 +227,8 @@
         "routeKey": "/",
         "label": "Traduzione in qualsiasi lingua"
       }
-    ]
+    ],
+    "languagesHeading": "Lingue"
   },
   "account": {
     "title": "Account",
@@ -240,7 +241,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prezzi — Piani di traduzione vocale e testo",
+      "title": "Prezzi — Piani di traduzione vocale e testo | IQ Translate",
       "description": "Tre semplici piani mensili, ciascuno con minuti vocali e caratteri di testo inclusi. Provalo gratis senza registrazione — non serve alcuna carta."
     },
     "heading": "Prezzi mensili",

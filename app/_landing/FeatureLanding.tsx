@@ -11,8 +11,8 @@ import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
-import type { Quota } from "@/lib/quota-server";
-import type { InitialTopics } from "@/lib/topics-server";
+import { breadcrumbLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } from "@/lib/structured-data";
+import { SessionProvider } from "./session";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
 // Icon set for a feature page's 3 spotlight cards, keyed by which feature
@@ -42,9 +42,6 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
 // translator, ...). Same section order as the home page's Landing.tsx —
 // mirrors iq-rest's FeatureLandingTemplate for digital-menu-for-restaurants.
 export function FeatureLanding({
-  signedIn,
-  initialQuota = null,
-  initialTopics = null,
   locale,
   chrome,
   content,
@@ -53,9 +50,6 @@ export function FeatureLanding({
   presetSource,
   presetTarget,
 }: {
-  signedIn: boolean;
-  initialQuota?: Quota | null;
-  initialTopics?: InitialTopics | null;
   locale: Locale;
   chrome: TranslatorTexts;
   content: FeatureContent;
@@ -65,74 +59,70 @@ export function FeatureLanding({
   presetSource?: string;
   presetTarget?: string;
 }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "IQ Translate",
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Web",
-    description: content.meta.description,
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  };
+  const jsonLd = graphLd([
+    organizationLd(),
+    webSiteLd(locale),
+    softwareApplicationLd(content.meta.description),
+    // Home > this page: the pair pages are one level deep in every locale.
+    breadcrumbLd(locale, {
+      name: `${content.hero.title} ${content.hero.titleAccent}`.trim(),
+      url: content.meta.canonical,
+    }),
+  ]);
 
   return (
-    <main className={PAGE}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Header
-        signedIn={signedIn}
-        homeHref={locale === "en" ? "/" : `/${locale}`}
-        locale={locale}
-        texts={chrome.header}
-        accountTexts={chrome.account}
-        initialQuota={initialQuota}
-        featureLinks={chrome.footer.featureLinks}
-      />
-      <Container>
-        <Band id="app">
-          {/* TS_SITE is public by design; read here (server component)
-              instead of renaming it to NEXT_PUBLIC_*. */}
-          <Translator
-            initialData={initialTopics}
-            texts={chrome}
-            heroTexts={content.hero}
-            presetSource={presetSource}
-            presetTarget={presetTarget}
-            pricingHref={localePath(locale, "pricing")}
-            signedIn={signedIn}
-            turnstileSiteKey={process.env.TS_SITE ?? null}
-          />
-        </Band>
-        <Band>
-          <StatCards items={chrome.statCards} />
-        </Band>
-        <Band id="features">
-          <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
-        </Band>
-        <Band id="comparison">
-          <Comparison texts={content.comparison} />
-        </Band>
-        <Band id="faq">
-          <Faq
-            heading={content.faq.heading}
-            headingAccent={content.faq.headingAccent}
-            sub={content.faq.sub}
-            items={content.faq.items}
-          />
-        </Band>
-        <Band>
-          <FinalCta
-            heading={content.finalCta.heading}
-            headingAccent={content.finalCta.headingAccent}
-            sub={content.finalCta.sub}
-            ctaLabel={content.finalCta.ctaLabel}
-            ctaHref={localeHome(locale)}
-          />
-        </Band>
-      </Container>
-      <Footer locale={locale} pathname={pathname} texts={chrome.footer} />
-    </main>
+    <SessionProvider locale={locale}>
+      <main className={PAGE}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Header
+          homeHref={locale === "en" ? "/" : `/${locale}`}
+          locale={locale}
+          texts={chrome.header}
+          accountTexts={chrome.account}
+          featureLinks={chrome.footer.featureLinks}
+        />
+        <Container>
+          <Band id="app">
+            <Translator
+              texts={chrome}
+              heroTexts={content.hero}
+              presetSource={presetSource}
+              presetTarget={presetTarget}
+              pricingHref={localePath(locale, "pricing")}
+            />
+          </Band>
+          <Band>
+            <StatCards items={chrome.statCards} />
+          </Band>
+          <Band id="features">
+            <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
+          </Band>
+          <Band id="comparison">
+            <Comparison texts={content.comparison} />
+          </Band>
+          <Band id="faq">
+            <Faq
+              heading={content.faq.heading}
+              headingAccent={content.faq.headingAccent}
+              sub={content.faq.sub}
+              items={content.faq.items}
+            />
+          </Band>
+          <Band>
+            <FinalCta
+              heading={content.finalCta.heading}
+              headingAccent={content.finalCta.headingAccent}
+              sub={content.finalCta.sub}
+              ctaLabel={content.finalCta.ctaLabel}
+              ctaHref={localeHome(locale)}
+            />
+          </Band>
+        </Container>
+        <Footer locale={locale} pathname={pathname} texts={chrome.footer} />
+      </main>
+    </SessionProvider>
   );
 }

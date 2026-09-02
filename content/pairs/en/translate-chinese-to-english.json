@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Chinese to English Voice Translator | IQ Translate",
+    "description": "Translate Chinese to English by voice or text: speak or paste characters, read and hear the English at once, reply back in Chinese. Free, no sign-up.",
+    "ogTitle": "Chinese to English Voice Translator",
+    "ogDescription": "Speak or paste Chinese and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Chinese.",
+    "canonical": "https://iq-translate.com/translate-chinese-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Chinese to English translator",
+    "titleAccent": "characters and speech alike",
+    "description": "Chinese writes without spaces and speaks in tones, so neither half is easy to look up by hand. Record it or paste it and read the English, then answer in English and send it back in Chinese.",
+    "mockFromLabel": "🇨🇳 Chinese",
+    "mockFromPhrase": "请问洗手间在哪里？",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Excuse me, where is the bathroom?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Characters you can't type",
+      "sub": "Paste them instead — no input method, no pinyin guessing, no drawing strokes.",
+      "bullets": [
+        { "title": "Spoken Mandarin into English", "sub": "Record the sentence and read the meaning a couple of seconds later" },
+        { "title": "Paste simplified or traditional", "sub": "Copy the message exactly as it arrived and read it in English" }
+      ]
+    },
+    {
+      "heading": "Answer in the same thread",
+      "sub": "English in, Chinese out, ready to play aloud for the other person.",
+      "bullets": [
+        { "title": "Both directions", "sub": "One conversation instead of two separate translations" },
+        { "title": "Saved as topics", "sub": "Reopen the thread when the next message comes in" }
+      ]
+    },
+    {
+      "heading": "Tones and no spaces",
+      "sub": "Where one word ends and the next begins is a judgement call — made from the whole sentence, not letter by letter.",
+      "bullets": [
+        { "title": "Word boundaries resolved", "sub": "Chinese runs characters together; the sentence decides how they group" },
+        { "title": "Hear it read aloud", "sub": "Play the Chinese back when you need the tones, which pinyin on paper never gives you" }
+      ]
+    },
+    {
+      "heading": "Or paste the text",
+      "sub": "A WeChat message, a product page, an email — paste the Chinese and read the English.",
+      "bullets": [
+        { "title": "Whole messages at once", "sub": "A full paragraph rather than character by character" },
+        { "title": "Copy the English out", "sub": "Into your reply, your notes or a document" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a character dictionary",
+    "description": "Looking up characters one at a time gives you pieces, not a sentence.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Mandarin", "us": "Record it and read the English.", "them": "Type characters you don't have an input method for." },
+      { "title": "No spaces between words", "us": "Grouped from the whole sentence.", "them": "Split wrongly, so the meaning changes." },
+      { "title": "Replying", "us": "English in, Chinese out, same thread.", "them": "A second lookup the other way." },
+      { "title": "History", "us": "Conversations kept as topics.", "them": "Lost when you close it." },
+      { "title": "Setup", "us": "Browser tab, no install.", "them": "App and an input method first." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Chinese into English.",
+    "items": [
+      { "q": "Do I need a Chinese input method?", "a": "No. Speak into the mic or paste the characters you were sent — you never type Chinese yourself." },
+      { "q": "Does it handle simplified and traditional characters?", "a": "Yes, paste either and the English comes back the same way." },
+      { "q": "Can it translate spoken Mandarin?", "a": "Yes. Record the sentence and the English appears a couple of seconds after the speaker stops." },
+      { "q": "Can I reply in English?", "a": "Yes, the reply is translated into Chinese in the same thread and can be read aloud so tones are audible." },
+      { "q": "Are conversations saved?", "a": "Each is kept as a topic you can reopen, delete or clear entirely at any time." },
+      { "q": "Is it free?", "a": "Yes, with a free allowance you can use without an account; signing in with Google increases the monthly quota and syncs history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the Chinese",
+    "headingAccent": "in English.",
+    "sub": "Record it or paste it — the meaning is seconds away, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

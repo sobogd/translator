@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Traducció a qualsevol idioma"
       }
-    ]
+    ],
+    "languagesHeading": "Idiomes"
   },
   "account": {
     "title": "Compte",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Preus — Plans de Traducció de Veu i Text",
+      "title": "Preus — Plans de Traducció de Veu i Text | IQ Translate",
       "description": "Tres plans mensuals senzills amb minuts de veu i caràcters de text inclosos. Prova-ho gratis sense registrar-te — no cal targeta."
     },
     "heading": "Preus mensuals",

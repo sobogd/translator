@@ -7,7 +7,6 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { AuthButton, QuotaBadge } from "./AccountControls";
-import type { Quota } from "@/lib/quota-server";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
 import { defaultLocale, type Locale } from "@/lib/locales";
@@ -54,13 +53,12 @@ const DEFAULT_ACCOUNT_TEXTS: AccountTexts = {
   upgrade: "Upgrade",
 };
 
-// `signedIn` is resolved server-side (getServerSessionEmail in page.tsx) and
-// passed down, so the sign-in/log-out state is correct on first paint —
-// no client fetch, no flash between the two.
+// Sign-in state and quota come from SessionProvider (app/_landing/session.tsx),
+// not from props: the pages are prerendered, so nothing personalized can be
+// resolved during render.
 //
 // `texts`/`homeHref`/`locale` default to English literals so the
-// not-yet-localized /pricing page can keep calling <Header signedIn={...} />
-// unchanged.
+// not-yet-localized /pricing page can keep calling <Header /> unchanged.
 //
 // Same dropdown/burger logic as iq-rest's LandingHeader: a hover-opened
 // "Features" panel on desktop (open instantly, close after a short delay so
@@ -68,22 +66,17 @@ const DEFAULT_ACCOUNT_TEXTS: AccountTexts = {
 // on mobile that closes on outside click / Escape — scaled to this app's
 // single nav group (no separate products/pricing/guide split).
 export function Header({
-  signedIn,
   homeHref = "/",
   locale = defaultLocale,
   texts = DEFAULT_TEXTS,
   accountTexts = DEFAULT_ACCOUNT_TEXTS,
   featureLinks = [],
-  initialQuota = null,
 }: {
-  signedIn: boolean;
   homeHref?: string;
   locale?: Locale;
   texts?: HeaderTexts;
   accountTexts?: AccountTexts;
   featureLinks?: FeatureLinkDef[];
-  /** SSR-computed quota for the badge (lib/quota-server.ts). */
-  initialQuota?: Quota | null;
 }) {
   // The catch-all "/" entry ("Translate to any language") is split off and
   // rendered last, under a divider: the pair links above it are only a
@@ -215,9 +208,8 @@ export function Header({
             only the badge stays in the bar — the button lives inside the
             slide-in burger panel. */}
         <div className="hidden shrink-0 items-center gap-3 sm:flex">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} initialQuota={initialQuota} />
+          <QuotaBadge locale={locale} accountTexts={accountTexts} />
           <AuthButton
-            signedIn={signedIn}
             locale={locale}
             texts={texts}
             accountTexts={accountTexts}
@@ -229,7 +221,7 @@ export function Header({
             outer justify-between. Burger is outline, not the primary fill —
             the bar carries no filled CTA on mobile. */}
         <div className="flex min-w-0 items-center gap-2 sm:hidden">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} initialQuota={initialQuota} compact />
+          <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
           <div className="relative" ref={menuRef}>
           <button
             type="button"
@@ -308,7 +300,6 @@ export function Header({
             </div>
             <div className="shrink-0 border-t border-border pt-3">
               <AuthButton
-                signedIn={signedIn}
                 locale={locale}
                 texts={texts}
                 accountTexts={accountTexts}

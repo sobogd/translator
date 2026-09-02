@@ -18,6 +18,18 @@ export function homeAlternates(): Record<string, string> {
   return languages;
 }
 
+// Alternates for the /pricing cluster: one page per shipped locale
+// (/pricing for en, /<locale>/pricing for the rest — see
+// app/[seg]/pricing/page.tsx, which generates exactly those).
+export function pricingAlternates(): Record<string, string> {
+  const url = (locale: string) => `${SITE_URL}${localePath(locale, "pricing")}`;
+  const languages: Record<string, string> = { "x-default": url("en") };
+  locales.forEach((locale) => {
+    if (READY_LOCALES.includes(locale)) languages[locale] = url(locale);
+  });
+  return languages;
+}
+
 // Alternates for a feature page, keyed by its shared route (e.g. "/translate-pdf").
 // Only locales explicitly registered in LOCALE_SLUG_OVERRIDES get an
 // alternate — an unregistered locale has no such page, and a fallback URL

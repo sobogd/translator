@@ -25,6 +25,10 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Public half of the Turnstile gate. Must be present at BUILD time:
+          # the pages are statically prerendered, so a NEXT_PUBLIC_* value is
+          # inlined here, not read from the server's .env at runtime.
+          NEXT_PUBLIC_TS_SITE: ${{ secrets.TS_SITE }}
 
       - name: Copy build to server
         uses: appleboy/scp-action@v0.1.7

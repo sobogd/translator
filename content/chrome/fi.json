@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Puhekääntäjä Netissä – Ilmainen | IQ Translate",
-    "description": "Ilmainen puhekääntäjä netissä: puhu luonnollisesti ja saat käännöksen heti, puhuttuna tai kirjoitettuna, 186 kielellä. Ei latauksia, ei rekisteröitymistä kokeiluun.",
+    "description": "Ilmainen puhekääntäjä netissä: puhu luonnollisesti ja saat käännöksen heti, puhuttuna tai kirjoitettuna, 186 kielellä. Ei latauksia, ei rekisteröitymistä.",
     "ogTitle": "Puhekääntäjä Netissä – Ilmainen",
     "ogDescription": "Ilmainen puhekääntäjä netissä: puhu ja saat käännöksen heti, puhuttuna tai kirjoitettuna, 186 kielellä.",
     "twitterTitle": "Puhekääntäjä Netissä – Ilmainen",
@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Käännös mille tahansa kielelle"
       }
-    ]
+    ],
+    "languagesHeading": "Kielet"
   },
   "account": {
     "title": "Tili",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Hinnoittelu – Puhe- ja tekstikäännössuunnitelmat",
+      "title": "Hinnat – puhe- ja tekstikäännöspaketit | IQ Translate",
       "description": "Kolme yksinkertaista kuukausisuunnitelmaa, joissa on puheminuutteja ja tekstimerkkejä. Kokeile ilmaiseksi ilman rekisteröitymistä – ei korttia tarvita."
     },
     "heading": "Yksinkertainen kuukausittainen",

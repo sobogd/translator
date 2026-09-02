@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Tõlge mis tahes keelde"
       }
-    ]
+    ],
+    "languagesHeading": "Keeled"
   },
   "account": {
     "title": "Konto",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Hinnad — Hääle ja teksti paketid",
+      "title": "Hinnad — Hääle ja teksti paketid | IQ Translate",
       "description": "Kolm lihtsat kuupaketti häälminutite ja tekstimärkidega. Proovi tasuta ilma registreerimiseta — krediitkaarti pole vaja."
     },
     "heading": "Lihtsad kuu",

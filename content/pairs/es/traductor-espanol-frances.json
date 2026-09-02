@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Habla y escúchalo en francés",
-      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en francés, lista para leer o escuchar.",
+      "heading": "El francés que no se pronuncia",
+      "sub": "Las liaisons unen las palabras y las terminaciones no suenan: por eso cuesta separarlas de oído.",
       "bullets": [
-        { "title": "Tu voz, traducida al francés", "sub": "Habla con naturalidad y la traducción aparece como texto al momento" },
-        { "title": "Resuelve la pronunciación francesa", "sub": "Toca el altavoz y escucha cómo suena, útil con los acentos y las liaisons" }
+        { "title": "Graba y léelo en español", "sub": "La transcripción divide la frase en palabras aunque tú no las oigas" },
+        { "title": "Escucha la versión francesa", "sub": "Toca el altavoz antes de decirlo tú y evita la mitad de los malentendidos" }
       ]
     },
     {
-      "heading": "Conversación en dos sentidos, guardada",
-      "sub": "Sigue la charla en francés y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "heading": "Tu o vous, según toque",
+      "sub": "El francés marca la distancia con la persona y confundirlo suena mal en cualquier contexto.",
       "bullets": [
-        { "title": "Responde en francés, tú lo oyes en español", "sub": "La otra persona habla o escribe en francés y ves la traducción en español al instante" },
-        { "title": "Vuelve a la conversación cuando quieras", "sub": "Cada tema guarda su propio historial de español-francés" }
+        { "title": "El registro se mantiene", "sub": "Una frase de vous sigue siendo formal en español, no un tuteo seco" },
+        { "title": "Responde en el mismo hilo", "sub": "Escribes en español y sale en francés listo para leer en voz alta" }
       ]
     },
     {
-      "heading": "Español-francés, y 185 idiomas más",
-      "sub": "El francés es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "heading": "Trámites en Francia",
+      "sub": "Préfecture, CAF, contrato de alquiler: papeles que hay que entender a la primera.",
       "bullets": [
-        { "title": "Útil para viajar o trabajar", "sub": "Sirve igual para pedir en un restaurante que para un correo o una reunión" },
-        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para francés hoy y cualquier otro idioma mañana" }
+        { "title": "Pega el documento", "sub": "Un escrito administrativo completo, traducido de una vez" },
+        { "title": "Copia lo que necesitas", "sub": "Llévate el texto en español a tus notas o a la respuesta" }
       ]
     },
     {
-      "heading": "Escribe o pega el texto",
-      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o francés.",
+      "heading": "Falsos amigos del francés",
+      "sub": "Constipé, embrasser, salir: parecen españoles y significan otra cosa.",
       "bullets": [
-        { "title": "Ideal para correos y mensajes", "sub": "Pega un párrafo en español y consigue la versión en francés en segundos" },
-        { "title": "Copia el resultado con un toque", "sub": "Lleva la traducción directa a un email, un WhatsApp o un documento" }
+        { "title": "Se traduce la frase", "sub": "El sentido lo da el contexto, no el parecido entre las dos palabras" },
+        { "title": "186 idiomas incluidos", "sub": "El mismo hilo vale para cualquier otro idioma que necesites" }
       ]
     }
   ],
   "comparison": {
     "title": "Por qué esto supera",
     "titleAccent": "a un traductor de francés típico",
-    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "description": "Con el francés el problema es oírlo y escribirlo. Esto resuelve las dos cosas.",
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Cómo empiezas", "us": "Hablas en español o francés y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
-      { "title": "Historial de conversación", "us": "Cada conversación en francés queda guardada como un tema.", "them": "La traducción desaparece en cuanto cierras la app." },
-      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos primero." },
-      { "title": "Ambos sentidos", "us": "Español a francés y francés a español conviven en el mismo hilo.", "them": "Cambiar de sentido suele obligarte a empezar de nuevo." },
-      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en francés en voz alta.", "them": "Solo texto, sin pronunciación." }
+      { "title": "No pillas la frase", "us": "La grabas y la lees en español.", "them": "Tienes que escribirla como creas que se escribe." },
+      { "title": "Pronunciación", "us": "Escuchas la frase en francés en voz alta.", "them": "Solo texto, sin audio." },
+      { "title": "Tuteo y formalidad", "us": "El registro se conserva en la traducción.", "them": "Todo sale igual de plano." },
+      { "title": "Historial", "us": "Cada conversación queda como un tema.", "them": "Se pierde al cerrar." },
+      { "title": "Empezar", "us": "Navegador y micrófono, nada más.", "them": "App instalada y cuenta creada." }
     ]
   },
   "faq": {
     "heading": "Preguntas",
     "headingAccent": "frecuentes",
-    "sub": "Dudas habituales sobre traducir del español al francés.",
+    "sub": "Dudas frecuentes al traducir del español al francés.",
     "items": [
-      { "q": "¿Traduce del español al francés hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en francés como texto, con opción de escucharla." },
-      { "q": "¿Funciona también de francés a español?", "a": "Sí, la misma conversación funciona en ambos sentidos, en el mismo hilo." },
-      { "q": "¿Me ayuda con la pronunciación francesa?", "a": "Sí, toca el altavoz para escuchar la traducción en voz alta y guiarte con el sonido." },
-      { "q": "¿Sirve para viajar a Francia?", "a": "Sí, funciona para pedir indicaciones, reservar una mesa o entenderte sin cambiar de app." },
-      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para más créditos diarios e historial guardado." },
-      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador, en el móvil o el ordenador." }
+      { "q": "¿Entiende francés hablado rápido?", "a": "Sí. Graba la frase y en un par de segundos la tienes en español, con las palabras separadas aunque suenen unidas." },
+      { "q": "¿Respeta el tu y el vous?", "a": "La traducción sigue el registro de la frase, así que un mensaje formal no se convierte en un tuteo brusco." },
+      { "q": "¿Puedo pegar un documento administrativo?", "a": "Sí, pega el texto completo con sus acentos y cedillas y léelo en español." },
+      { "q": "¿Funciona de francés a español?", "a": "Sí, el mismo hilo va en los dos sentidos y cualquier versión se puede escuchar." },
+      { "q": "¿Y el francés de Quebec?", "a": "Se traduce la frase entera en su contexto, así que el vocabulario propio se lee por lo que significa allí." },
+      { "q": "¿Es gratis?", "a": "Sí, hay margen gratuito sin registro; con Google aumentas la cuota mensual y guardas el historial." }
     ]
   },
   "finalCta": {

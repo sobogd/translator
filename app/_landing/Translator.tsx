@@ -6,20 +6,29 @@ import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
 import type { Topic, TopicDetail } from "@/lib/types";
-import type { InitialTopics } from "@/lib/topics-server";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
 import { Modal } from "./Modal";
-import { QUOTA_EVENT } from "./AccountControls";
+import { QUOTA_EVENT, useSession } from "./session";
 import { useTurnstileGate } from "./Turnstile";
 import type { TranslatorTexts } from "./types";
 
 const TO_KEY = "translator_to_lang";
-// Which thread SSR should hydrate next time (see lib/topics-server.ts).
-const LAST_TOPIC_COOKIE = "iqt_last_topic";
+// Last thread the visitor had open, restored on the next visit to the same
+// pair page (the topic list itself is fetched after hydration — every page
+// here is prerendered, so nothing personalized exists during render).
+const LAST_TOPIC_KEY = "iqt_last_topic";
 const rememberTopic = (id: string) => {
-  document.cookie = `${LAST_TOPIC_COOKIE}=${id}; path=/; max-age=${400 * 86400}; samesite=lax`;
+  try {
+    localStorage.setItem(LAST_TOPIC_KEY, id);
+  } catch {
+    /* private mode — the list still opens, just without the memory */
+  }
 };
+// Turnstile's public site key. Inlined at build time (NEXT_PUBLIC_*) instead
+// of read on the server, so the pages stay statically prerendered — the
+// secret half (TS_SECRET) never leaves lib/turnstile.ts.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TS_SITE ?? null;
 const DEFAULT_TO = "es";
 
 type RecStatus = "idle" | "recording" | "processing";
@@ -110,9 +119,6 @@ export function Translator({
   presetTarget,
   initialTarget,
   pricingHref = "/pricing",
-  initialData = null,
-  signedIn = false,
-  turnstileSiteKey = null,
 }: {
   texts: TranslatorTexts;
   /** SEO headline shown left of the widget until the first topic exists. */
@@ -125,33 +131,23 @@ export function Translator({
   initialTarget?: string;
   /** Locale-local pricing path for the out-of-quota error link. */
   pricingHref?: string;
-  /** SSR-preloaded topic list + last-opened thread (lib/topics-server.ts). */
-  initialData?: InitialTopics | null;
-  /** Signed-in visitors are never bot-challenged (see lib/turnstile.ts). */
-  signedIn?: boolean;
-  /** Turnstile site key (TS_SITE), null when the gate is not configured. */
-  turnstileSiteKey?: string | null;
 }) {
   const t = texts.translator;
+  // Signed-in visitors are never bot-challenged (see lib/turnstile.ts).
+  const { signedIn } = useSession();
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
-  const [topics, setTopics] = useState<Topic[]>(initialData?.topics ?? []);
-  // SSR hydrates the last-opened thread regardless of which pair page it
-  // is — discard it up front if it doesn't match this page's fixed pair.
-  // Only pair pages hydrate their last thread on load — home always starts
-  // as a blank draft. A topic only ever lands there once the user actually
-  // sends something in this session (see translateText/stopRec), so the
-  // hero picker never ends up showing some unrelated pair from a cookie.
-  const [topic, setTopic] = useState<TopicDetail | null>(() => {
-    if (presetSource === undefined || presetTarget === undefined) return null;
-    const t0 = initialData?.topic ?? null;
-    if (t0 && (t0.sourceLang !== presetSource || t0.targetLang !== presetTarget)) return null;
-    return t0;
-  });
+  const [topics, setTopics] = useState<Topic[]>([]);
+  // Only pair pages auto-open a thread (the matching one, fetched below);
+  // home always starts as a blank draft. A topic only ever lands there once
+  // the user actually sends something in this session (see
+  // translateText/stopRec), so the hero picker never ends up showing some
+  // unrelated pair.
+  const [topic, setTopic] = useState<TopicDetail | null>(null);
   // Source language chosen before a topic exists yet — carried into the
   // topic created on first send. Mirrors topic.sourceLang's semantics
   // (null = auto-detect).
   const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? null);
-  const [loadingTopic, setLoadingTopic] = useState(!initialData);
+  const [loadingTopic, setLoadingTopic] = useState(true);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [topicsOpen, setTopicsOpen] = useState(false);
   const [text, setText] = useState("");
@@ -168,7 +164,7 @@ export function Translator({
   // only: an account's requests are never challenged server-side, so the
   // widget script isn't even loaded for them.
   const { containerRef: turnstileRef, ensurePass, invalidatePass } = useTurnstileGate(
-    turnstileSiteKey,
+    TURNSTILE_SITE_KEY,
     !signedIn,
   );
 
@@ -219,18 +215,27 @@ export function Translator({
   // in draft state (topic=null) — a session is only created once the user
   // actually sends something to translate, not just for opening the page.
   useEffect(() => {
-    // SSR already delivered the list + last thread — nothing to fetch.
-    if (initialData) return;
     (async () => {
       setLoadingTopic(true);
       try {
         const res = await apiFetch("/api/topics");
         const list: Topic[] = res.ok ? await res.json() : [];
         setTopics(list);
-        // Pair pages auto-open the topic matching their fixed pair; home
-        // never auto-opens anything — it only ever gets a topic once the
-        // user actually sends something in this session.
-        const match = fixedPair ? list.find((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget) : undefined;
+        // Pair pages auto-open the topic matching their fixed pair — the one
+        // last used here if it still exists, otherwise the most recent (the
+        // list arrives ordered by lastUsedAt). Home never auto-opens
+        // anything: it only ever gets a topic once the user actually sends
+        // something in this session.
+        const candidates = fixedPair
+          ? list.filter((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget)
+          : [];
+        let remembered: string | null = null;
+        try {
+          remembered = localStorage.getItem(LAST_TOPIC_KEY);
+        } catch {
+          /* private mode */
+        }
+        const match = candidates.find((tp) => tp.id === remembered) ?? candidates[0];
         if (match) await loadTopic(match.id);
       } catch {
         setTopic(null);
@@ -693,7 +698,10 @@ export function Translator({
             }`}
           >
             <div className="flex shrink-0 items-center justify-between">
-              <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+              {/* Not a heading: this is the widget's sidebar label, and as an
+                  <h2> it landed above every real section heading in the
+                  document outline. */}
+              <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => {

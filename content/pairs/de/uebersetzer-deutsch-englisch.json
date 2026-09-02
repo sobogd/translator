@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Englisch, und lies oder hör die Übersetzung.",
+      "heading": "Englisch, wie es gesprochen wird",
+      "sub": "Geschrieben und gesprochen sind zwei Paar Schuhe — nimm den Satz auf und lies ihn auf Deutsch.",
       "bullets": [
-        { "title": "Deutsch wird zu Englisch", "sub": "Sprich auf Deutsch – deine Worte werden erkannt, übersetzt und Sekunden später auf Englisch angezeigt" },
-        { "title": "Englisch laut vorlesen lassen", "sub": "Tippe auf das Lautsprecher-Symbol, wenn die Aussprache noch nicht sitzt" }
+        { "title": "Akzente inklusive", "sub": "Schottisch, irisch, indisch: die Transkription trennt die Wörter, auch wenn dein Ohr es nicht tut" },
+        { "title": "Aussprache anhören", "sub": "Tipp auf den Lautsprecher, bevor du den Satz selbst sagst" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, ohne von vorn zu beginnen – jeder Austausch bleibt im selben Thema gespeichert.",
+      "heading": "Beruf und Meetings",
+      "sub": "Mails, Calls, Verträge — dort, wo ein missverstandener Satz teuer wird.",
       "bullets": [
-        { "title": "Antwort auf Englisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber kann Englisch sprechen, du siehst und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Komm später zum selben Englisch-Gespräch zurück, statt den Faden zu verlieren" }
+        { "title": "Ganze Mails auf einmal", "sub": "Füg den kompletten Text ein statt Zeile für Zeile" },
+        { "title": "Antwort auf Deutsch", "sub": "Du schreibst deutsch, raus geht Englisch, fertig zum Kopieren" }
       ]
     },
     {
-      "heading": "Deutsch-Englisch, plus 185 weitere Sprachen",
-      "sub": "Englisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Phrasal Verbs und falsche Freunde",
+      "sub": "Become heißt nicht bekommen, eventually nicht eventuell.",
       "bullets": [
-        { "title": "Präzise bei Redewendungen", "sub": "Erkennt gängige englische Formulierungen statt Wort für Wort zu übersetzen" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert heute für Englisch und morgen für jede andere Sprache" }
+        { "title": "Der Satz zählt, nicht das Wort", "sub": "Get over oder put up with werden nach Bedeutung übersetzt" },
+        { "title": "Falsche Freunde entschärft", "sub": "Ähnlich klingende Wörter werden aus dem Zusammenhang gelesen" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge englischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu berühren.",
+      "heading": "Britisch oder amerikanisch",
+      "sub": "Gleiche Sprache, andere Wörter — flat oder apartment, lorry oder truck.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch in einem leisen Meeting oder auf einer lauten Straße" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den englischen Text direkt in eine E-Mail oder Nachricht" }
+        { "title": "Kontext entscheidet", "sub": "Übersetzt wird, was gemeint war" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread hilft morgen bei jeder anderen Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Englisch-Übersetzer",
-    "description": "Die meisten Übersetzer-Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Beim Englischen ist das Hören das Problem, nicht das Tippen.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Englisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Englisch-Gespräch wird als eigenes Thema gespeichert und lässt sich wieder öffnen.", "them": "Jede Übersetzung verschwindet, sobald die App geschlossen wird." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Englisch und Englisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die englische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht schnell", "us": "Aufnehmen und auf Deutsch mitlesen.", "them": "Tippen, was du verstanden zu haben glaubst." },
+      { "title": "Aussprache", "us": "Jeden Satz laut anhören.", "them": "Nur Text, Aussprache bleibt Ratespiel." },
+      { "title": "Phrasal Verbs", "us": "Nach Bedeutung übersetzt.", "them": "Wort für Wort, Sinn verloren." },
+      { "title": "Verlauf", "us": "Jedes Gespräch bleibt als Thema gespeichert.", "them": "Weg, sobald du schließt." },
+      { "title": "Start", "us": "Browser-Tab, keine Installation.", "them": "App laden, dann registrieren." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzen von Deutsch nach Englisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Englisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Englische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die englische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Wie gut funktioniert es bei umgangssprachlichem Englisch?", "a": "Sehr gut – gängige Redewendungen und lockere Formulierungen werden sinngemäß übersetzt, nicht stur Wort für Wort." },
-      { "q": "Kann ich auch von Englisch zurück auf Deutsch übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Englisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden bringt dir mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Kann ich ein laufendes Gespräch führen statt einzelner Übersetzungen?", "a": "Ja, Übersetzungen werden in Themen gruppiert, sodass ein Englisch-Gespräch an einem Ort bleibt, statt sich über einzelne Anfragen zu verstreuen." }
+      { "q": "Versteht es schnell gesprochenes Englisch mit Akzent?", "a": "Ja. Nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch da — auch bei Akzenten, die schwer zu folgen sind." },
+      { "q": "Taugt es für berufliche Mails?", "a": "Ja: ganze Mail einfügen, auf Deutsch lesen, Antwort auf Deutsch schreiben und auf Englisch verschicken." },
+      { "q": "Wie werden Phrasal Verbs übersetzt?", "a": "Der komplette Satz wird übersetzt, deshalb werden get over oder put up with nach ihrer Bedeutung gelesen und nicht in Einzelteile zerlegt." },
+      { "q": "Kann ich die Aussprache hören?", "a": "Ja, tipp bei jeder Übersetzung auf den Lautsprecher." },
+      { "q": "Funktioniert es auch von Englisch nach Deutsch?", "a": "Ja, derselbe Thread läuft in beide Richtungen." },
+      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Anmeldung. Mit Google-Login gibt es mehr Monatsvolumen und gespeicherten Verlauf." }
     ]
   },
   "finalCta": {

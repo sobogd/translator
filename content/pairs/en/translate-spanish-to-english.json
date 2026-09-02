@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Spanish to English Voice Translator | IQ Translate",
+    "description": "Translate Spanish to English by voice or text: speak or paste Spanish, read and hear the English instantly, reply back in Spanish. Free, no sign-up.",
+    "ogTitle": "Spanish to English Voice Translator",
+    "ogDescription": "Speak or paste Spanish and get the English meaning in seconds, read aloud or written. Reply in English and it goes back in Spanish.",
+    "canonical": "https://iq-translate.com/translate-spanish-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Spanish to English translator",
+    "titleAccent": "that keeps up with real speech",
+    "description": "Point the mic at fast, everyday Spanish and read the English a couple of seconds later, or paste a message you were sent. Answer in English and the other person hears it in Spanish, in the same saved thread.",
+    "mockFromLabel": "🇪🇸 Spanish",
+    "mockFromPhrase": "¿Me puedes echar una mano con esto?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Can you give me a hand with this?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Understand spoken Spanish, not just written",
+      "sub": "Hold the mic up to a conversation or a voice note and read what was actually said.",
+      "bullets": [
+        { "title": "Fast, run-together speech", "sub": "Spanish is spoken quickly and words blur into each other — the transcript catches them so you don't have to ask twice" },
+        { "title": "Hear the English read back", "sub": "Tap the speaker if you'd rather listen than read while the conversation carries on" }
+      ]
+    },
+    {
+      "heading": "Answer without switching apps",
+      "sub": "Type or say your reply in English and it goes out in Spanish, in the same thread.",
+      "bullets": [
+        { "title": "Both directions, one conversation", "sub": "Spanish in, English out, English in, Spanish out — nothing to flip or restart" },
+        { "title": "Threads you can reopen", "sub": "The exchange stays saved as a topic, so tomorrow's message lands in the same place" }
+      ]
+    },
+    {
+      "heading": "Spain, Mexico or Argentina",
+      "sub": "The same Spanish word can mean different things by country — the translation follows the sentence, not a phrasebook.",
+      "bullets": [
+        { "title": "Regional vocabulary handled", "sub": "Coger, guagua, plata, chévere — read in the sense the speaker meant, not the dictionary's first entry" },
+        { "title": "Accents, ñ and inverted punctuation", "sub": "Paste Spanish text as it was written and nothing gets mangled on the way in" }
+      ]
+    },
+    {
+      "heading": "Or paste it and read it",
+      "sub": "A WhatsApp message, an email from a landlord, a form — paste the Spanish and read the English.",
+      "bullets": [
+        { "title": "Long messages at once", "sub": "Paste a whole paragraph instead of feeding it in line by line" },
+        { "title": "Copy the English out", "sub": "Take the result straight into your reply, notes or a document" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a plain Spanish dictionary app",
+    "description": "Word lookups fall apart the moment someone speaks a full sentence. Here's the difference.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone is talking to you", "us": "Tap the mic and read the English as they speak.", "them": "Ask them to stop and write it down first." },
+      { "title": "Slang and regional words", "us": "Translated in the sense the sentence gives them.", "them": "Literal word-by-word output that misses the meaning." },
+      { "title": "Replying", "us": "Answer in English, it goes out in Spanish in the same thread.", "them": "Start a second translation the other way round." },
+      { "title": "Keeping the conversation", "us": "Every exchange is saved as its own topic.", "them": "Cleared the moment you close the tab." },
+      { "title": "Getting started", "us": "Open a browser tab and talk — no install, no account.", "them": "Download an app and sign up first." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Spanish into English.",
+    "items": [
+      { "q": "Can it translate spoken Spanish in real time?", "a": "Tap the mic, let the person speak, and the English appears within a couple of seconds of them finishing. It is not a live subtitle feed, but it keeps pace with a normal back-and-forth conversation." },
+      { "q": "Does it handle Latin American as well as European Spanish?", "a": "Yes. The translation follows the whole sentence, so regional vocabulary from Mexico, Argentina, Colombia or Spain is read in context rather than looked up word by word." },
+      { "q": "Can I paste a Spanish message instead of speaking?", "a": "Yes — switch to the keyboard and paste a message, an email or a whole paragraph, and read the English underneath it." },
+      { "q": "Can I reply in English and have it sent in Spanish?", "a": "Yes. The same thread works both ways: your English is translated into Spanish and can be read aloud for the other person." },
+      { "q": "Is my Spanish conversation saved?", "a": "Each conversation is kept as a topic you can reopen, and you can delete any thread or clear the whole history whenever you like." },
+      { "q": "Is it free?", "a": "Yes, there is a free allowance you can use straight away without an account. Signing in with Google raises the monthly quota and syncs your history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Understand the Spanish",
+    "headingAccent": "in front of you.",
+    "sub": "Speak, paste or type — the English comes back in seconds, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

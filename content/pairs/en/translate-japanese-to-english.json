@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Japanese to English Voice Translator | IQ Translate",
+    "description": "Translate Japanese to English by voice or text: speak or paste kanji and kana, read and hear the English at once, reply in Japanese. Free, no sign-up.",
+    "ogTitle": "Japanese to English Voice Translator",
+    "ogDescription": "Speak or paste Japanese and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Japanese.",
+    "canonical": "https://iq-translate.com/translate-japanese-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Japanese to English translator",
+    "titleAccent": "kanji, kana and speech",
+    "description": "Japanese mixes three writing systems and puts the verb last, which makes a partial reading useless. Record or paste it and read the whole English sentence, then reply in English and send it back in Japanese.",
+    "mockFromLabel": "🇯🇵 Japanese",
+    "mockFromPhrase": "すみません、これはいくらですか？",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Excuse me, how much is this?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Three scripts, one translation",
+      "sub": "Kanji, hiragana and katakana arrive mixed in the same sentence — paste it exactly as written.",
+      "bullets": [
+        { "title": "Spoken Japanese into English", "sub": "Record what was said and read the meaning right after" },
+        { "title": "No kanji lookup by hand", "sub": "Stop hunting characters by radical or stroke count just to read one line" }
+      ]
+    },
+    {
+      "heading": "Reply in the same conversation",
+      "sub": "Your English goes out in Japanese and can be played aloud.",
+      "bullets": [
+        { "title": "Both directions", "sub": "Japanese in, English out, English in, Japanese out, one thread" },
+        { "title": "Threads that stay", "sub": "Each conversation is saved as a topic to continue later" }
+      ]
+    },
+    {
+      "heading": "Politeness levels preserved",
+      "sub": "Keigo and casual speech say the same thing in very different ways, and the difference matters.",
+      "bullets": [
+        { "title": "Formal stays formal", "sub": "A polite request reads as polite English rather than as a demand" },
+        { "title": "Verb-final sentences", "sub": "The whole sentence is translated at once, so the meaning does not hinge on a half-read line" }
+      ]
+    },
+    {
+      "heading": "Or paste and read",
+      "sub": "A LINE message, an email, a form — paste the Japanese and read the English.",
+      "bullets": [
+        { "title": "Whole messages", "sub": "A full paragraph in one go" },
+        { "title": "Copy the English", "sub": "Take it into your reply or your notes" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a kanji dictionary",
+    "description": "Reading characters one by one still leaves you without the sentence.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Japanese", "us": "Record it and read the English.", "them": "Type a script you can't produce." },
+      { "title": "Politeness", "us": "Register kept in the English.", "them": "Flattened into one blunt tone." },
+      { "title": "Replying", "us": "English in, Japanese out, same thread.", "them": "Start over the other way." },
+      { "title": "History", "us": "Saved as topics.", "them": "Nothing kept." },
+      { "title": "Setup", "us": "A browser tab and a mic.", "them": "App plus a Japanese keyboard." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Japanese into English.",
+    "items": [
+      { "q": "Do I need a Japanese keyboard?", "a": "No. Speak the sentence or paste the text you received; kanji, hiragana and katakana all come through as written." },
+      { "q": "Can it translate spoken Japanese?", "a": "Yes. Record it and the English appears a couple of seconds after the speaker finishes." },
+      { "q": "Does it keep polite forms?", "a": "The register of the sentence is carried into the English, so a keigo request does not come out sounding like an order." },
+      { "q": "Can I answer in English?", "a": "Yes, your reply is translated into Japanese in the same thread and can be read aloud." },
+      { "q": "Is my history saved?", "a": "Conversations are kept as topics you can reopen, delete individually or clear completely." },
+      { "q": "Is it free?", "a": "Yes, a free allowance is available without an account, and signing in with Google raises the monthly quota and syncs your history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the Japanese",
+    "headingAccent": "in English.",
+    "sub": "Speak it or paste it — the sentence comes back in seconds, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

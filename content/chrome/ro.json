@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Traducător Vocal Online — Gratuit | IQ Translate",
-    "description": "Traducător vocal online gratuit: vorbește natural și primești traducerea instant, rostită sau scrisă, în 186 de limbi. Fără descărcări, fără cont pentru a încerca.",
+    "description": "Traducător vocal online gratuit: vorbește natural și primești traducerea instant, rostită sau scrisă, în 186 de limbi. Fără descărcări și fără cont.",
     "ogTitle": "Traducător Vocal Online — Gratuit",
     "ogDescription": "Traducător vocal online gratuit: vorbește și primești traducerea instant, rostită sau scrisă, în 186 de limbi.",
     "twitterTitle": "Traducător Vocal Online — Gratuit",
@@ -223,7 +223,8 @@
         "routeKey": "/",
         "label": "Traducere în orice limbă"
       }
-    ]
+    ],
+    "languagesHeading": "Limbi"
   },
   "account": {
     "title": "Cont",
@@ -236,7 +237,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prețuri – Planuri de Traducere Vocală și Text",
+      "title": "Prețuri – Planuri de Traducere Vocală și Text | IQ Translate",
       "description": "Trei planuri lunare simple cu minute vocale și caractere de text incluse. Încearcă gratuit fără cont — nu ai nevoie de card."
     },
     "heading": "Prețuri lunare",

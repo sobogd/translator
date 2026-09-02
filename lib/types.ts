@@ -21,3 +21,15 @@ export interface HistoryRow {
 export interface TopicDetail extends Topic {
   translations: HistoryRow[];
 }
+
+// Remaining free/plan quota for the current visitor, as returned by
+// GET /api/quota. Anonymous visitors are keyed by request fingerprint, signed-in
+// ones by their account email (see lib/credits.ts).
+export interface Quota {
+  kind: "anonymous" | "account";
+  email?: string;
+  plan: string;
+  planName?: string | null;
+  chars: number;
+  seconds: number;
+}

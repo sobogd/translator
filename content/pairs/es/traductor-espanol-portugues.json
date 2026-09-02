@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Habla y escúchalo en portugués",
-      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en portugués, lista para leer o escuchar.",
+      "heading": "Brasil y Portugal no hablan igual",
+      "sub": "Mismo idioma, distinta pronunciación y distinto vocabulario según el lado.",
       "bullets": [
-        { "title": "Tu voz, traducida al portugués", "sub": "Habla con naturalidad y la traducción aparece como texto al momento" },
-        { "title": "Resuelve la pronunciación", "sub": "Toca el altavoz y escucha cómo suena, útil para no mezclarlo con el español" }
+        { "title": "Los dos, sin configurar nada", "sub": "La frase decide la variante, no un ajuste que se te olvida cambiar" },
+        { "title": "Vocales cerradas del portugués europeo", "sub": "La transcripción las separa aunque tú no las distingas de oído" }
       ]
     },
     {
-      "heading": "Conversación en dos sentidos, guardada",
-      "sub": "Sigue la charla en portugués y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "heading": "Falsos amigos que duelen",
+      "sub": "Embaraçada no es embarazada y exquisito no es exquisito.",
       "bullets": [
-        { "title": "Responde en portugués, tú lo oyes en español", "sub": "La otra persona habla o escribe en portugués y ves la traducción en español al instante" },
-        { "title": "Vuelve a la conversación cuando quieras", "sub": "Cada tema guarda su propio historial de español-portugués" }
+        { "title": "Traducción por contexto", "sub": "Se lee la frase entera, que es donde el falso amigo se cae" },
+        { "title": "Escúchalo antes de decirlo", "sub": "Toca el altavoz y comprueba cómo suena de verdad" }
       ]
     },
     {
-      "heading": "Español-portugués, y 185 idiomas más",
-      "sub": "El portugués es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "heading": "Vecinos, trabajo y trámites",
+      "sub": "Del otro lado de la raya o al otro lado del Atlántico, la conversación es diaria.",
       "bullets": [
-        { "title": "Útil para viajar o trabajar", "sub": "Sirve igual para un viaje a Portugal o Brasil que para un correo de trabajo" },
-        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para portugués hoy y cualquier otro idioma mañana" }
+        { "title": "Responde en el mismo hilo", "sub": "Escribes en español y sale en portugués, listo para enviar" },
+        { "title": "Conversaciones guardadas", "sub": "Cada persona tiene su tema y se retoma donde lo dejaste" }
       ]
     },
     {
-      "heading": "Escribe o pega el texto",
-      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o portugués.",
+      "heading": "O pega el texto",
+      "sub": "Un contrato, una factura, un mensaje largo de WhatsApp.",
       "bullets": [
-        { "title": "Sin confundir el portugués con el español", "sub": "Traduce el significado real, evitando los falsos amigos entre ambos idiomas" },
-        { "title": "Copia el resultado con un toque", "sub": "Lleva la traducción directa a un WhatsApp, un email o un documento" }
+        { "title": "Párrafos enteros", "sub": "De una vez, no línea a línea" },
+        { "title": "186 idiomas más", "sub": "El mismo hilo vale para cualquier otro idioma" }
       ]
     }
   ],
   "comparison": {
     "title": "Por qué esto supera",
     "titleAccent": "a un traductor de portugués típico",
-    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "description": "Entenderse a medias en portuñol es justo lo que falla en lo importante.",
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Cómo empiezas", "us": "Hablas en español o portugués y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
-      { "title": "Historial de conversación", "us": "Cada conversación en portugués queda guardada como un tema.", "them": "La traducción desaparece en cuanto cierras la app." },
-      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos primero." },
-      { "title": "Ambos sentidos", "us": "Español a portugués y portugués a español conviven en el mismo hilo.", "them": "Cambiar de sentido suele obligarte a empezar de nuevo." },
-      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en portugués en voz alta.", "them": "Solo texto, sin pronunciación." }
+      { "title": "Te mandan un audio", "us": "Lo reproduces al micro y lo lees en español.", "them": "Lo transcribes tú a mano." },
+      { "title": "Brasil o Portugal", "us": "Ambos se manejan desde la propia frase.", "them": "Se asume una variante y falla la otra." },
+      { "title": "Falsos amigos", "us": "Se traducen por su sentido real.", "them": "Se traducen por parecido." },
+      { "title": "Historial", "us": "Guardado como temas.", "them": "No queda nada." },
+      { "title": "Empezar", "us": "Abres una pestaña y hablas.", "them": "Instalar y registrarse." }
     ]
   },
   "faq": {
     "heading": "Preguntas",
     "headingAccent": "frecuentes",
-    "sub": "Dudas habituales sobre traducir del español al portugués.",
+    "sub": "Dudas frecuentes al traducir del español al portugués.",
     "items": [
-      { "q": "¿Traduce del español al portugués hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en portugués como texto, con opción de escucharla." },
-      { "q": "¿Funciona también de portugués a español?", "a": "Sí, la misma conversación funciona en ambos sentidos, en el mismo hilo." },
-      { "q": "¿Distingue bien el portugués del español?", "a": "Sí, traduce por significado, evitando los falsos amigos típicos entre ambos idiomas." },
-      { "q": "¿Sirve para viajar a Portugal o Brasil?", "a": "Sí, funciona para pedir indicaciones, reservar algo o entenderte sin cambiar de app." },
-      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para más créditos diarios e historial guardado." },
-      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador, en el móvil o el ordenador." }
+      { "q": "¿Funciona con portugués de Brasil y de Portugal?", "a": "Sí, los dos. La variante se deduce de la propia frase, incluidas las diferencias de vocabulario." },
+      { "q": "¿Puedo traducir un audio de WhatsApp?", "a": "Reprodúcelo cerca del micrófono y tendrás la transcripción en español un par de segundos después." },
+      { "q": "¿Evita los falsos amigos?", "a": "Se traduce la frase completa, que es donde palabras como embaraçada o esquisito revelan su sentido real." },
+      { "q": "¿Va de portugués a español también?", "a": "Sí, la misma conversación funciona en los dos sentidos." },
+      { "q": "¿Se puede escuchar la traducción?", "a": "Sí, toca el altavoz en cualquier frase para oírla en portugués." },
+      { "q": "¿Es gratis?", "a": "Sí, hay margen gratuito sin registro y más cuota mensual con la cuenta de Google." }
     ]
   },
   "finalCta": {

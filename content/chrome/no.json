@@ -215,7 +215,8 @@
         "routeKey": "/",
         "label": "Oversettelse til ethvert språk"
       }
-    ]
+    ],
+    "languagesHeading": "Språk"
   },
   "account": {
     "title": "Konto",
@@ -228,7 +229,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Priser – Planer for Tale & Tekst",
+      "title": "Priser – Planer for Tale & Tekst | IQ Translate",
       "description": "Tre enkle månedlige planer med taleminutter og tegn inkludert, for alle 186 språk. Prøv gratis direkte uten registrering — ikke noe kort kreves."
     },
     "heading": "Enkle månedlige",

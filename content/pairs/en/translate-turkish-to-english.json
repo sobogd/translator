@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Turkish to English Voice Translator | IQ Translate",
+    "description": "Translate Turkish to English by voice or text: speak or paste Turkish, read and hear the English at once, reply back in Turkish. Free, no sign-up.",
+    "ogTitle": "Turkish to English Voice Translator",
+    "ogDescription": "Speak or paste Turkish and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Turkish.",
+    "canonical": "https://iq-translate.com/translate-turkish-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Turkish to English translator",
+    "titleAccent": "that unpacks one long word",
+    "description": "Turkish builds a whole clause into a single word with suffix after suffix. Record it or paste it and read the English sentence it actually is, then reply in English and send it back in Turkish.",
+    "mockFromLabel": "🇹🇷 Turkish",
+    "mockFromPhrase": "Yarın görüşebilir miyiz?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Could we meet tomorrow?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "One word, a full sentence",
+      "sub": "Turkish stacks suffixes where English uses separate words — the translation unpacks them.",
+      "bullets": [
+        { "title": "Spoken Turkish into English", "sub": "Record it and read what the sentence means, not what its pieces are" },
+        { "title": "Suffix chains resolved", "sub": "Tense, person, negation and question all live inside one word and all come through" }
+      ]
+    },
+    {
+      "heading": "Answer without leaving the thread",
+      "sub": "Your English goes out in Turkish and can be read aloud.",
+      "bullets": [
+        { "title": "Both directions", "sub": "Turkish in, English out and back, in one saved conversation" },
+        { "title": "Topics that persist", "sub": "Reopen the thread the next time this person writes" }
+      ]
+    },
+    {
+      "heading": "Turkish letters, no keyboard",
+      "sub": "ı, İ, ğ, ş, ç, ö and ü never have to come from your own keyboard.",
+      "bullets": [
+        { "title": "Paste it as written", "sub": "The dotted and dotless i survive the trip, which changes what a word means" },
+        { "title": "Polite forms kept", "sub": "A formal siz sentence stays polite in English instead of turning blunt" }
+      ]
+    },
+    {
+      "heading": "Or paste the message",
+      "sub": "A WhatsApp thread, an email, a form — paste the Turkish and read the English.",
+      "bullets": [
+        { "title": "Whole messages", "sub": "A full paragraph at once, not sentence by sentence" },
+        { "title": "Copy the result", "sub": "Take the English into your reply or your notes" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a word-lookup Turkish translator",
+    "description": "A dictionary can't split a word that contains an entire sentence.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks", "us": "Record it and read the English.", "them": "Type a word you can't break apart." },
+      { "title": "Suffix stacking", "us": "Unpacked into a normal English sentence.", "them": "One fragment translated, the rest dropped." },
+      { "title": "Replying", "us": "English in, Turkish out, same thread.", "them": "Start again the other way." },
+      { "title": "History", "us": "Saved as topics.", "them": "Cleared on close." },
+      { "title": "Setup", "us": "A browser tab, nothing installed.", "them": "App download and sign-up." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Turkish into English.",
+    "items": [
+      { "q": "Can it handle Turkish's long suffixed words?", "a": "Yes — the whole word is read as the clause it represents, so tense, negation and questions built into the suffixes all appear in the English." },
+      { "q": "Do I need Turkish characters on my keyboard?", "a": "No. Speak the sentence or paste the message; ı, ğ, ş, ç, ö and ü come through exactly as written." },
+      { "q": "Can it translate spoken Turkish?", "a": "Yes. Record it and the English shows up a couple of seconds after the speaker finishes." },
+      { "q": "Can I answer in English?", "a": "Yes, your reply is translated into Turkish in the same thread and can be played aloud for the other person." },
+      { "q": "Is my conversation saved?", "a": "Each conversation is kept as a topic you can reopen, delete or clear at any time." },
+      { "q": "Is it free?", "a": "Yes, with a free allowance available without an account; signing in with Google raises the monthly quota and syncs your history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Unpack the Turkish",
+    "headingAccent": "into English.",
+    "sub": "Record it or paste it — the sentence comes back in seconds, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Korean to English Voice Translator | IQ Translate",
+    "description": "Translate Korean to English by voice or text: speak or paste Hangul, read and hear the English at once, reply back in Korean. Free, no sign-up.",
+    "ogTitle": "Korean to English Voice Translator",
+    "ogDescription": "Speak or paste Korean and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Korean.",
+    "canonical": "https://iq-translate.com/translate-korean-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Korean to English translator",
+    "titleAccent": "Hangul in, English out",
+    "description": "Korean puts the verb last and marks who is speaking to whom in the ending, so half a sentence tells you nothing. Record or paste it and read the English, then reply in English and send it back in Korean.",
+    "mockFromLabel": "🇰🇷 Korean",
+    "mockFromPhrase": "혹시 영어 하실 수 있나요?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Do you happen to speak English?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Hangul you don't have to type",
+      "sub": "Paste the message as it arrived or say it into the mic — no Korean keyboard involved.",
+      "bullets": [
+        { "title": "Spoken Korean into English", "sub": "Record it and read the meaning a couple of seconds later" },
+        { "title": "Paste Hangul directly", "sub": "Copy a KakaoTalk message or a web page line and read the English underneath" }
+      ]
+    },
+    {
+      "heading": "Answer without switching",
+      "sub": "English goes in and Korean comes out, playable aloud.",
+      "bullets": [
+        { "title": "Both directions", "sub": "One saved thread carries the whole exchange" },
+        { "title": "Topics kept", "sub": "Reopen the conversation when the reply arrives" }
+      ]
+    },
+    {
+      "heading": "Honorifics carried across",
+      "sub": "Korean endings encode respect and distance, which plain word lookup throws away.",
+      "bullets": [
+        { "title": "Polite speech stays polite", "sub": "A formal request reads as one in English instead of sounding abrupt" },
+        { "title": "Verb-final word order", "sub": "The full sentence is translated at once, so the ending is not lost" }
+      ]
+    },
+    {
+      "heading": "Or paste the text",
+      "sub": "A message, a listing, an email — paste the Korean and read the English.",
+      "bullets": [
+        { "title": "Full messages", "sub": "A whole paragraph in one step" },
+        { "title": "Copy the result", "sub": "Move the English into your notes or your reply" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a Hangul lookup tool",
+    "description": "Sounding out Hangul letter by letter still doesn't tell you what was said.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Korean", "us": "Record it and read the English.", "them": "Type Hangul you can't produce." },
+      { "title": "Honorifics", "us": "Register kept in the translation.", "them": "Dropped entirely." },
+      { "title": "Replying", "us": "English in, Korean out, one thread.", "them": "A second, separate translation." },
+      { "title": "History", "us": "Conversations saved as topics.", "them": "Cleared on close." },
+      { "title": "Setup", "us": "Browser tab, no install.", "them": "App plus a Korean keyboard." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Korean into English.",
+    "items": [
+      { "q": "Do I need a Korean keyboard?", "a": "No. Speak the sentence into the mic or paste the Hangul you were sent — nothing has to be typed by you." },
+      { "q": "Can it translate spoken Korean?", "a": "Yes. Record it and the English appears a couple of seconds after the person stops speaking." },
+      { "q": "Does it keep polite and casual speech apart?", "a": "The honorific level of the sentence is carried into the English, so a polite question does not come out sounding curt." },
+      { "q": "Can I reply in English?", "a": "Yes, your answer is translated into Korean in the same conversation and can be played aloud." },
+      { "q": "Are conversations saved?", "a": "Each is stored as a topic you can reopen, delete or clear whenever you want." },
+      { "q": "Is it free?", "a": "Yes, there is a free allowance without an account; signing in with Google raises the monthly quota and syncs your history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the Korean",
+    "headingAccent": "in English.",
+    "sub": "Record it or paste it — the English is seconds away, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

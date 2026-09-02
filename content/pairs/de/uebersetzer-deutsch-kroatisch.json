@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Kroatisch, und lies oder hör die Übersetzung.",
+      "heading": "Urlaub an der Adria",
+      "sub": "Vermieter, Hafen, Restaurant, Werkstatt — kurze Gespräche, die schnell gehen müssen.",
       "bullets": [
-        { "title": "Deutsch wird zu Kroatisch", "sub": "Sprich auf Deutsch – die Übersetzung erscheint Sekunden später auf Kroatisch" },
-        { "title": "Kroatisch laut vorlesen lassen", "sub": "Praktisch, wenn die kroatische Aussprache im Restaurant noch fehlt" }
+        { "title": "In Sekunden übersetzt", "sub": "Aufnehmen, lesen, weiterreden" },
+        { "title": "Nichts installieren", "sub": "Läuft im Browser des Handys, auch ohne Konto" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa mit kroatischen Freunden oder im Urlaub an der Küste – jeder Austausch bleibt gespeichert.",
+      "heading": "Fälle und Endungen",
+      "sub": "Kroatisch markiert mit Endungen, wer was tut, und lässt die Wortstellung frei.",
       "bullets": [
-        { "title": "Antwort auf Kroatisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Kroatisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Der Kroatien-Urlaub oder das Gespräch mit der Gastfamilie bleibt an einem Ort" }
+        { "title": "Ganzer Satz auf einmal", "sub": "Der Zusammenhang bleibt erhalten statt in Einzelteile zu zerfallen" },
+        { "title": "Č, ć, š, ž und đ", "sub": "Text so einfügen, wie er geschrieben wurde" }
       ]
     },
     {
-      "heading": "Deutsch-Kroatisch, plus 185 weitere Sprachen",
-      "sub": "Kroatisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Nicht dasselbe wie Serbisch",
+      "sub": "Verwandt, aber mit eigenem Wortschatz und eigener Schreibung.",
       "bullets": [
-        { "title": "Kroatische Sonderzeichen korrekt erkannt", "sub": "Buchstaben wie č, ć, š, ž, đ werden richtig verarbeitet, nicht grob geschätzt" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Kroatisch heute und für jede andere Sprache morgen" }
+        { "title": "Kroatisch bleibt Kroatisch", "sub": "Kruh statt hleb, siječanj statt januar" },
+        { "title": "Dialekte im Kontext", "sub": "Küstennahe Ausdrücke werden nach Bedeutung gelesen" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge kroatischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Oder tippen",
+      "sub": "Nachricht an den Vermieter, Vertrag, Anfrage.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer kroatischen Speisekarte oder Nachricht" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den kroatischen Text direkt in eine Nachricht oder E-Mail" }
+        { "title": "Ganzer Absatz", "sub": "Ein kompletter Text auf einmal" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede weitere Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Kroatisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Ein Reise-Sprachführer endet dort, wo das Gespräch anfängt.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Kroatisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Kroatisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Kroatisch und Kroatisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die kroatische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht Kroatisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Im Buch nach einem Satz suchen, den es nicht gibt." },
+      { "title": "Grammatik", "us": "Ganzer Satz, Endungen aufgelöst.", "them": "Wort für Wort, Sinn verschoben." },
+      { "title": "Antworten", "us": "Deutsch rein, Kroatisch raus.", "them": "Zweite Übersetzung nötig." },
+      { "title": "Verlauf", "us": "Gespräche bleiben als Themen.", "them": "Nichts bleibt." },
+      { "title": "Start", "us": "Browser-Tab und Mikrofon.", "them": "App installieren und anmelden." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Kroatisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Kroatisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Kroatische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die kroatische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Werden kroatische Sonderzeichen korrekt dargestellt?", "a": "Ja, Buchstaben wie č, ć, š, ž, đ werden sowohl im Text als auch beim Vorlesen richtig verarbeitet." },
-      { "q": "Kann ich von Kroatisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Kroatisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für den Kroatien-Urlaub?", "a": "Ja, gerade im Restaurant, auf dem Campingplatz oder an der Rezeption ist die Sprachfunktion praktisch, um sofort verstanden zu werden." }
+      { "q": "Übersetzt es gesprochenes Kroatisch?", "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch." },
+      { "q": "Ist das dasselbe wie Serbisch?", "a": "Nein. Kroatisch hat eigenen Wortschatz und eigene Schreibung, und genau der wird hier übersetzt." },
+      { "q": "Bleiben č, ć, š, ž und đ erhalten?", "a": "Ja, in beide Richtungen, egal ob du Text einfügst oder eine Antwort übersetzen lässt." },
+      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht im selben Thread auf Kroatisch raus und lässt sich vorlesen." },
+      { "q": "Bleiben die Gespräche gespeichert?", "a": "Jedes bleibt als Thema, das du wieder öffnest oder löschst." },
+      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen." }
     ]
   },
   "finalCta": {

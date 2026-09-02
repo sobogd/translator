@@ -39,6 +39,22 @@ export const PAIRS: PairDef[] = [
     ["pt", "translate-english-to-portuguese"],
     ["tr", "translate-english-to-turkish"],
   ]),
+  // The other direction, for English speakers who need to understand what was
+  // said TO them: "spanish to english" and friends are their own search, not a
+  // synonym of the pages above, so they get their own page (source = the
+  // foreign language, target = English).
+  ...P("en", "es", [["en", "translate-spanish-to-english"]]),
+  ...P("en", "fr", [["en", "translate-french-to-english"]]),
+  ...P("en", "de", [["en", "translate-german-to-english"]]),
+  ...P("en", "it", [["en", "translate-italian-to-english"]]),
+  ...P("en", "pt", [["en", "translate-portuguese-to-english"]]),
+  ...P("en", "ru", [["en", "translate-russian-to-english"]]),
+  ...P("en", "pl", [["en", "translate-polish-to-english"]]),
+  ...P("en", "tr", [["en", "translate-turkish-to-english"]]),
+  ...P("en", "ar", [["en", "translate-arabic-to-english"]]),
+  ...P("en", "zh", [["en", "translate-chinese-to-english"]]),
+  ...P("en", "ja", [["en", "translate-japanese-to-english"]]),
+  ...P("en", "ko", [["en", "translate-korean-to-english"]]),
   ...P("es", "es", [
     ["en", "traductor-espanol-ingles"],
     ["ca", "traductor-espanol-catalan"],

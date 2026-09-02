@@ -227,7 +227,8 @@
         "routeKey": "/",
         "label": "Překlad do jakéhokoli jazyka"
       }
-    ]
+    ],
+    "languagesHeading": "Jazyky"
   },
   "account": {
     "title": "Účet",
@@ -240,7 +241,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Ceník – Plány pro hlasový a textový překlad",
+      "title": "Ceník – Plány pro hlasový a textový překlad | IQ Translate",
       "description": "Tři jednoduché měsíční plány s hlasovými minutami a textovými znaky pro překlad. Vyzkoušejte zdarma bez registrace na hlavní stránce — karta není potřeba."
     },
     "heading": "Jednoduchý měsíční",

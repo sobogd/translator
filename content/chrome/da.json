@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Stemmeoversætter Online – Prøv Gratis | IQ Translate",
-    "description": "Gratis stemmeoversætter online: tal naturligt og få en øjeblikkelig oversættelse, talt eller skrevet, på 186 sprog. Ingen downloads, ingen registrering for at prøve.",
+    "description": "Gratis stemmeoversætter online: tal naturligt og få en øjeblikkelig oversættelse, talt eller skrevet, på 186 sprog. Uden download og uden oprettelse.",
     "ogTitle": "Stemmeoversætter Online – Prøv Gratis",
     "ogDescription": "Gratis stemmeoversætter online: tal og få en øjeblikkelig oversættelse, talt eller skrevet, på 186 sprog.",
     "twitterTitle": "Stemmeoversætter Online – Prøv Gratis",
@@ -219,7 +219,8 @@
         "routeKey": "/",
         "label": "Oversættelse til ethvert sprog"
       }
-    ]
+    ],
+    "languagesHeading": "Sprog"
   },
   "account": {
     "title": "Konto",
@@ -232,7 +233,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Priser – Planer for Stemme & Tekst",
+      "title": "Priser – Planer for Stemme & Tekst | IQ Translate",
       "description": "Tre enkle månedlige planer med stemmeminutter og tegn inkluderet, til alle 186 sprog. Prøv gratis direkte uden registrering — intet kort krævet."
     },
     "heading": "Enkle månedlige",

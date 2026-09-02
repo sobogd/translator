@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Hlasový Prekladač Online Zdarma | IQ Translate",
-    "description": "Bezplatný hlasový prekladač online: hovorte prirodzene a okamžite získajte preklad, hovorený aj písaný, v 186 jazykoch. Bez sťahovania, vyskúšanie bez registrácie.",
+    "description": "Bezplatný hlasový prekladač online: hovorte prirodzene a získajte preklad okamžite, hovorený aj písaný, v 186 jazykoch. Bez sťahovania a registrácie.",
     "ogTitle": "Hlasový Prekladač Online Zdarma",
     "ogDescription": "Bezplatný hlasový prekladač: hovorte a hneď získajte preklad, hovorený aj písaný, v 186 jazykoch.",
     "twitterTitle": "Hlasový Prekladač Online Zdarma",
@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Preklad do akéhokoľvek jazyka"
       }
-    ]
+    ],
+    "languagesHeading": "Jazyky"
   },
   "account": {
     "title": "Účet",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Cenník — Plány pre hlas a text",
+      "title": "Cenník — Plány pre hlas a text | IQ Translate",
       "description": "Tri jednoduché mesačné plány s hlasovými minútami a textovými znakmi. Vyskúšajte zadarmo bez registrácie — karta nie je potrebná."
     },
     "heading": "Jednoduchý mesačný",

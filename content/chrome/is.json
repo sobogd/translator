@@ -203,7 +203,8 @@
         "routeKey": "/",
         "label": "Þýðing á hvaða tungumál sem er"
       }
-    ]
+    ],
+    "languagesHeading": "Tungumál"
   },
   "account": {
     "title": "Aðgangur",
@@ -216,7 +217,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Verð — Áskriftarleiðir fyrir Rödd og Texta",
+      "title": "Verð — Áskriftarleiðir fyrir Rödd og Texta | IQ Translate",
       "description": "Þrjár einfaldar mánaðarlegar áskriftir með rödd-mínútum og texta-stöfum innifalið. Prófaðu frítt án skráningar — ekkert kort þarf."
     },
     "heading": "Einfalt mánaðarlegt",

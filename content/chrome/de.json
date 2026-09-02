@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sprachübersetzer Online – Kostenlos | IQ Translate",
-    "description": "Kostenloser Sprachübersetzer online: Sprich einfach los und erhalte die Übersetzung sofort, gesprochen oder geschrieben, in 186 Sprachen. Ohne Download, ohne Anmeldung zum Testen.",
+    "description": "Kostenloser Sprachübersetzer online: sprich einfach los und erhalte die Übersetzung sofort, gesprochen oder geschrieben, in 186 Sprachen. Ohne Anmeldung.",
     "ogTitle": "Sprachübersetzer Online – Kostenlos",
     "ogDescription": "Kostenloser Sprachübersetzer online: Sprich los und erhalte die Übersetzung sofort, gesprochen oder geschrieben, in 186 Sprachen.",
     "twitterTitle": "Sprachübersetzer Online – Kostenlos",
@@ -239,7 +239,8 @@
         "routeKey": "/",
         "label": "Übersetzung in jede Sprache"
       }
-    ]
+    ],
+    "languagesHeading": "Sprachen"
   },
   "account": {
     "title": "Konto",
@@ -252,7 +253,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Preise — Tarife für Sprach- und Textübersetzung",
+      "title": "Preise für Sprach- und Textübersetzung | IQ Translate",
       "description": "Drei einfache Monatstarife, jeweils mit Sprachminuten und Textzeichen inklusive. Teste es kostenlos ohne Anmeldung — es ist keine Kreditkarte nötig."
     },
     "heading": "Einfache monatliche",

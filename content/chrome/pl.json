@@ -231,7 +231,8 @@
         "routeKey": "/",
         "label": "Tłumaczenie na dowolny język"
       }
-    ]
+    ],
+    "languagesHeading": "Języki"
   },
   "account": {
     "title": "Konto",
@@ -244,7 +245,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Cennik – minuty głosowe i znaki tekstowe",
+      "title": "Cennik – minuty głosowe i znaki tekstowe | IQ Translate",
       "description": "Trzy proste miesięczne plany z minutami głosowymi i znakami tekstowymi w cenie, dla 186 języków. Wypróbuj za darmo bez rejestracji — karta niepotrzebna."
     },
     "heading": "Proste miesięczne",

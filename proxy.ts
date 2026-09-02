@@ -1,23 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SESSION_COOKIE } from "@/lib/auth";
+import { LOCALE_COOKIE } from "@/lib/cookies";
 import { locales, defaultLocale, type Locale } from "@/lib/locales";
-import { PAIRS } from "@/lib/pairs";
 
 // Note: Next.js 16 renamed the `middleware` file convention to `proxy`
 // (see next.js upgrade guide) — this file is the `proxy.ts` equivalent of
 // the classic `middleware.ts`, and only one is supported per project, so the
 // locale redirect below lives in the same function as the session refresh.
-
-const localeRegex = new RegExp(`^/(${locales.join("|")})(/|$)`);
-
-// Paths that stay English and unprefixed regardless of browser locale:
-// /pricing has no localized tree yet (see translator i18n migration notes), and
-// the English pair pages live at the root by design — prefixing them would
-// point at /<locale>/<english-slug>, which does not exist and 404s.
-const EN_ONLY_PATHS = new Set([
-  "/pricing",
-  ...PAIRS.filter((p) => p.locale === "en").map((p) => `/${p.slug}`),
-]);
 
 function isAssetPath(pathname: string): boolean {
   return (
@@ -70,16 +59,27 @@ export function proxy(req: NextRequest) {
     return response;
   }
 
-  if (!isAssetPath(pathname) && !EN_ONLY_PATHS.has(pathname) && !localeRegex.test(pathname)) {
-    const preferred = req.cookies.get("NEXT_LOCALE")?.value as Locale | undefined;
+  // Only the bare root is language-routed. Anything else unprefixed is either
+  // an English-only path (handled above) or simply not a page: redirecting
+  // those to /<locale><path> only turned one 404 into a 302 + 404 chain.
+  if (pathname === "/") {
+    const preferred = req.cookies.get(LOCALE_COOKIE)?.value as Locale | undefined;
     const target = preferred && locales.includes(preferred) ? preferred : detectLocale(req);
     if (target !== defaultLocale) {
-      const redirectUrl = new URL(pathname === "/" ? `/${target}` : `/${target}${pathname}`, req.url);
+      const redirectUrl = new URL(`/${target}`, req.url);
       redirectUrl.search = req.nextUrl.search;
       const response = NextResponse.redirect(redirectUrl, 302);
+      // The response varies by the request headers/cookie the choice is made
+      // from — without this any shared cache (CDN, reverse proxy) would serve
+      // one visitor's language to the next.
+      response.headers.set("Vary", "Accept-Language, Cookie");
       refreshSession(req, response);
       return response;
     }
+    const res = NextResponse.next();
+    res.headers.set("Vary", "Accept-Language, Cookie");
+    refreshSession(req, res);
+    return res;
   }
 
   const res = NextResponse.next();

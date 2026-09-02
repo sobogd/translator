@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Arabic to English Voice Translator | IQ Translate",
+    "description": "Translate Arabic to English by voice or text: speak or paste Arabic script, read and hear the English at once, reply in Arabic. Free, no sign-up.",
+    "ogTitle": "Arabic to English Voice Translator",
+    "ogDescription": "Speak or paste Arabic and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Arabic.",
+    "canonical": "https://iq-translate.com/translate-arabic-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Arabic to English translator",
+    "titleAccent": "script and dialect included",
+    "description": "Arabic writing gives you no vowels and every region speaks its own way. Record the sentence or paste the text and read the English, then answer in English and let it go back in Arabic.",
+    "mockFromLabel": "🇸🇦 Arabic",
+    "mockFromPhrase": "ممكن تساعدني من فضلك؟",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Could you help me, please?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Right-to-left, handled for you",
+      "sub": "Paste Arabic exactly as it was written — no keyboard, no transliteration, no broken letter shapes.",
+      "bullets": [
+        { "title": "Spoken Arabic into English", "sub": "Record what was said and read the meaning seconds later" },
+        { "title": "Script preserved", "sub": "Connected letters and right-to-left order stay intact on the way in and out" }
+      ]
+    },
+    {
+      "heading": "Reply in the same conversation",
+      "sub": "English goes in and Arabic comes out, ready to play aloud.",
+      "bullets": [
+        { "title": "Both directions", "sub": "One thread carries the whole exchange instead of two separate lookups" },
+        { "title": "Threads that stay", "sub": "Saved as topics, so the next message continues the same conversation" }
+      ]
+    },
+    {
+      "heading": "Dialect or Modern Standard",
+      "sub": "Egyptian, Levantine, Gulf or Maghrebi speech differs sharply from the written standard.",
+      "bullets": [
+        { "title": "Everyday speech read in context", "sub": "Spoken dialect is translated for what it means, not matched against a formal dictionary" },
+        { "title": "Formal Arabic too", "sub": "Official letters and news-style Modern Standard Arabic come through as clear English" }
+      ]
+    },
+    {
+      "heading": "Or paste the document",
+      "sub": "A message, a contract, an official notice — paste the Arabic and read the English.",
+      "bullets": [
+        { "title": "Long text in one piece", "sub": "A full paragraph rather than a line at a time" },
+        { "title": "Copy the English", "sub": "Move it straight into your notes or a reply" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a transliteration tool",
+    "description": "Rewriting Arabic in Latin letters tells you how it might sound, not what it says.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Arabic", "us": "Record it and read the English.", "them": "Type a script you can't produce." },
+      { "title": "Dialects", "us": "Read in context, not forced into Modern Standard.", "them": "Only formal Arabic understood." },
+      { "title": "Replying", "us": "English in, Arabic out, one thread.", "them": "A second translation the other way." },
+      { "title": "History", "us": "Conversations saved as topics.", "them": "Nothing kept." },
+      { "title": "Setup", "us": "Browser tab and a mic.", "them": "App plus an Arabic keyboard." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Arabic into English.",
+    "items": [
+      { "q": "Do I need an Arabic keyboard?", "a": "No. Speak the sentence into the mic or paste the Arabic text you were sent; nothing has to be typed by you." },
+      { "q": "Does it understand spoken dialects?", "a": "Everyday spoken Arabic is translated in context rather than being matched to Modern Standard Arabic word by word, which is where most tools go wrong." },
+      { "q": "Is the Arabic script displayed correctly?", "a": "Yes, right-to-left text and connected letter forms are preserved both when you paste Arabic and when a reply is translated back into it." },
+      { "q": "Can I reply in English?", "a": "Yes, your English is translated into Arabic in the same thread and can be read aloud for the other person." },
+      { "q": "Are my conversations saved?", "a": "Each one is stored as a topic you can reopen; delete a single thread or clear the whole history whenever you like." },
+      { "q": "Is it free?", "a": "Yes, there is a free allowance without an account, and signing in with Google raises the monthly quota and keeps your history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the Arabic",
+    "headingAccent": "in English.",
+    "sub": "Speak it or paste it — the meaning comes back in seconds, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

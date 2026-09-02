@@ -215,7 +215,8 @@
         "routeKey": "/",
         "label": "모든 언어로 번역"
       }
-    ]
+    ],
+    "languagesHeading": "언어"
   },
   "account": {
     "title": "계정",
@@ -228,7 +229,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "요금제 — 음성 분과 텍스트 글자 수 플랜",
+      "title": "요금제 — 음성 분과 텍스트 글자 수 플랜 | IQ Translate",
       "description": "매달 음성 분과 텍스트 글자 수가 포함된 간단한 3가지 요금제예요. 가입이나 카드 등록 없이 무료로 체험해 보세요."
     },
     "heading": "간단한 월간",

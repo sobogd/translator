@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Traductor de Voz Online Gratis | IQ Translate",
-    "description": "Traductor de voz online gratis: habla con naturalidad y recibe la traducción al instante, hablada o escrita, en 186 idiomas. Sin descargas ni registro para probarlo.",
+    "description": "Traductor de voz online gratis: habla con naturalidad y recibe la traducción al instante, hablada o escrita, en 186 idiomas. Sin descargas ni registro.",
     "ogTitle": "Traductor de Voz Online Gratis",
     "ogDescription": "Traductor de voz online gratis: habla y recibe la traducción al instante, hablada o escrita, en 186 idiomas.",
     "twitterTitle": "Traductor de Voz Online Gratis",
@@ -231,7 +231,8 @@
         "routeKey": "/",
         "label": "Traducción a cualquier idioma"
       }
-    ]
+    ],
+    "languagesHeading": "Idiomas"
   },
   "account": {
     "title": "Cuenta",
@@ -244,7 +245,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Precios — Planes de traducción de voz y texto",
+      "title": "Precios — Planes de traducción de voz y texto | IQ Translate",
       "description": "Tres planes mensuales sencillos, cada uno con minutos de voz y caracteres de texto incluidos. Pruébalo gratis sin registrarte — no hace falta tarjeta."
     },
     "heading": "Precios mensuales",

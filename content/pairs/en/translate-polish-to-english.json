@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Polish to English Voice Translator | IQ Translate",
+    "description": "Translate Polish to English by voice or text: speak or paste Polish, read and hear the English at once, reply back in Polish. Free, no sign-up.",
+    "ogTitle": "Polish to English Voice Translator",
+    "ogDescription": "Speak or paste Polish and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Polish.",
+    "canonical": "https://iq-translate.com/translate-polish-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Polish to English translator",
+    "titleAccent": "for words you can't spell yet",
+    "description": "Polish spelling is the hardest part to reproduce from memory, so don't. Record the sentence or paste the message and read the English, then answer in English and let it go out in Polish.",
+    "mockFromLabel": "🇵🇱 Polish",
+    "mockFromPhrase": "Czy mógłbyś powtórzyć trochę wolniej?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Could you repeat that a bit more slowly?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "No spelling required",
+      "sub": "Consonant clusters like szcz are impossible to type from memory — speak or paste instead.",
+      "bullets": [
+        { "title": "Spoken Polish into English", "sub": "Record it and read the meaning a couple of seconds later" },
+        { "title": "Paste the message as-is", "sub": "Every ą, ę, ł, ń, ś, ż and ź arrives intact, with no keyboard layout to install" }
+      ]
+    },
+    {
+      "heading": "Answer in the same thread",
+      "sub": "English goes in, Polish comes out, ready to be played aloud.",
+      "bullets": [
+        { "title": "Both directions", "sub": "No second app, no starting the translation over the other way" },
+        { "title": "Conversations kept", "sub": "Each thread is saved as a topic so a later reply lands in context" }
+      ]
+    },
+    {
+      "heading": "Seven cases, one sentence",
+      "sub": "Polish endings carry the grammar, so meaning only survives if the sentence is translated whole.",
+      "bullets": [
+        { "title": "Endings read correctly", "sub": "Who did what to whom stays intact instead of collapsing into word soup" },
+        { "title": "Formal pan and pani", "sub": "Polite address stays polite in the English rather than flattening to you" }
+      ]
+    },
+    {
+      "heading": "Or paste the paperwork",
+      "sub": "A landlord message, a contract, a note from an office — paste it and read what it wants.",
+      "bullets": [
+        { "title": "Full text at once", "sub": "A whole paragraph rather than one sentence at a time" },
+        { "title": "Copy the English", "sub": "Move it straight into your reply or notes" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a typing-first Polish translator",
+    "description": "If you can't spell the word, a text box is a dead end. This starts from sound.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Polish", "us": "Record it, read the English.", "them": "Spell out what you think you heard." },
+      { "title": "Grammar", "us": "Whole sentence, cases resolved.", "them": "Word-by-word output that loses the subject." },
+      { "title": "Replying", "us": "English in, Polish out, one thread.", "them": "Separate translation each way." },
+      { "title": "History", "us": "Kept as topics you can reopen.", "them": "Nothing saved." },
+      { "title": "Setup", "us": "Browser tab, no install, no account.", "them": "Download, register, then translate." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Polish into English.",
+    "items": [
+      { "q": "Do I need to type Polish?", "a": "No. Speak the sentence into the mic or paste the message you received — the special characters never have to come from your keyboard." },
+      { "q": "Can it translate fast spoken Polish?", "a": "Yes. Record it and the English appears a couple of seconds after the person stops speaking." },
+      { "q": "Does it handle the case system?", "a": "The complete sentence is translated at once, so endings that mark subject and object are read correctly instead of being lost word by word." },
+      { "q": "Can I reply in English?", "a": "Yes, your reply is translated into Polish in the same conversation and can be played aloud." },
+      { "q": "Are conversations saved?", "a": "Each one is stored as a topic you can reopen, delete individually or clear entirely." },
+      { "q": "Is it free?", "a": "There is a free allowance you can use straight away, and signing in with Google gives a larger monthly quota and synced history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the Polish",
+    "headingAccent": "without spelling it.",
+    "sub": "Speak it or paste it — the English is seconds away, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

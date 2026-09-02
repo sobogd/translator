@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Türkisch, und lies oder hör die Übersetzung.",
+      "heading": "Ein Wort, ein ganzer Satz",
+      "sub": "Türkisch hängt Endung an Endung, wo Deutsch mehrere Wörter braucht.",
       "bullets": [
-        { "title": "Deutsch wird zu Türkisch", "sub": "Sprich auf Deutsch – die Übersetzung erscheint Sekunden später auf Türkisch" },
-        { "title": "Türkisch laut vorlesen lassen", "sub": "Praktisch, wenn die türkische Aussprache noch ungewohnt ist" }
+        { "title": "Endungsketten aufgelöst", "sub": "Zeit, Person, Verneinung und Frage stecken im Wort und landen alle in der Übersetzung" },
+        { "title": "Sprache direkt als Text", "sub": "Nimm den Satz auf und lies, was er insgesamt bedeutet" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa beim Elternabend, mit der Familie oder auf der Arbeit – jeder Austausch bleibt gespeichert.",
+      "heading": "Familie, Nachbarn, Termine",
+      "sub": "Alltagsgespräche, bei denen niemand übersetzt.",
       "bullets": [
-        { "title": "Antwort auf Türkisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Türkisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Der Familienchat oder das Gespräch mit der Schule bleibt an einem Ort" }
+        { "title": "Beide Richtungen", "sub": "Du antwortest auf Deutsch, dein Gegenüber hört Türkisch" },
+        { "title": "Gespräch bleibt erhalten", "sub": "Als Thema gespeichert, für die nächste Nachricht" }
       ]
     },
     {
-      "heading": "Deutsch-Türkisch, plus 185 weitere Sprachen",
-      "sub": "Türkisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Türkische Buchstaben ohne Tastatur",
+      "sub": "ı, İ, ğ, ş, ç, ö und ü musst du nie selbst tippen.",
       "bullets": [
-        { "title": "Türkische Sonderzeichen korrekt erkannt", "sub": "Buchstaben wie ş, ğ, ı, ö, ü werden richtig verarbeitet, nicht grob geschätzt" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Türkisch heute und für jede andere Sprache morgen" }
+        { "title": "Text so einfügen, wie er kam", "sub": "Der Punkt auf dem i ändert das Wort — hier geht er nicht verloren" },
+        { "title": "Vokalharmonie berücksichtigt", "sub": "Endungen richten sich nach dem Wort, und die Übersetzung liest sie als Ganzes" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge türkischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Oder tippen",
+      "sub": "WhatsApp-Nachricht, Vertrag, Anzeige.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer türkischen WhatsApp-Nachricht oder einem Brief" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den türkischen Text direkt in ein Formular oder eine Nachricht" }
+        { "title": "Ganzer Absatz", "sub": "Der komplette Text auf einmal" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für die nächste Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Türkisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Ein Wörterbuch kann kein Wort zerlegen, in dem ein ganzer Satz steckt.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Türkisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Türkisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Türkisch und Türkisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die türkische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Ein Wort tippen, das sich nicht trennen lässt." },
+      { "title": "Endungen", "us": "Zu einem normalen Satz aufgelöst.", "them": "Nur der Wortstamm, der Rest fällt weg." },
+      { "title": "Antworten", "us": "Deutsch rein, Türkisch raus, ein Thread.", "them": "In der Gegenrichtung neu anfangen." },
+      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Beim Schließen weg." },
+      { "title": "Start", "us": "Browser, nichts installieren.", "them": "App und Anmeldung." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Türkisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Türkisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Türkische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die türkische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Werden türkische Sonderzeichen korrekt dargestellt?", "a": "Ja, Buchstaben wie ş, ğ, ı, ö, ü werden sowohl im Text als auch beim Vorlesen richtig verarbeitet." },
-      { "q": "Kann ich von Türkisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Türkisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für Elterngespräche oder Behördengänge?", "a": "Ja, tippe wichtige Sätze vorher ein oder sprich direkt im Gespräch, und lass dir die türkische Übersetzung anzeigen oder vorlesen." }
+      { "q": "Kommt es mit langen türkischen Wörtern zurecht?", "a": "Ja. Das Wort wird als der Satz gelesen, der es ist — Zeit, Verneinung und Frage aus den Endungen tauchen im Deutschen auf." },
+      { "q": "Brauche ich türkische Sonderzeichen auf der Tastatur?", "a": "Nein. Sprich oder füge den Text ein; ı, ğ, ş, ç, ö und ü kommen unverändert an." },
+      { "q": "Übersetzt es gesprochenes Türkisch?", "a": "Ja, ein paar Sekunden nachdem dein Gegenüber fertig ist, steht der deutsche Text da." },
+      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht im selben Thread auf Türkisch raus und lässt sich vorlesen." },
+      { "q": "Bleibt das Gespräch gespeichert?", "a": "Jedes bleibt als Thema, das du wieder öffnen oder löschen kannst." },
+      { "q": "Ist es kostenlos?", "a": "Ja, mit Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und Verlauf." }
     ]
   },
   "finalCta": {

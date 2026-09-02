@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Habla y escúchalo en inglés",
-      "sub": "Toca el micrófono, habla en español y en segundos tienes la traducción en inglés, lista para leer o escuchar.",
+      "heading": "El inglés hablado, entendido a la primera",
+      "sub": "El inglés no se pronuncia como se escribe: habla o graba lo que te dijeron y léelo en español.",
       "bullets": [
-        { "title": "Tu voz en inglés al instante", "sub": "Habla en español y en segundos tienes la traducción en inglés, lista para leer o escuchar" },
-        { "title": "Pronunciación resuelta", "sub": "Toca el altavoz y escucha cómo suena en inglés, útil si el acento te frena" }
+        { "title": "Acentos que cuestan", "sub": "Escocés, irlandés o del sur de EE. UU.: la transcripción los separa en palabras por ti" },
+        { "title": "Escúchalo pronunciado", "sub": "Toca el altavoz para oír cómo suena realmente la frase antes de decirla tú" }
       ]
     },
     {
-      "heading": "Conversación en dos sentidos, guardada",
-      "sub": "Sigue la charla en inglés y español sin perder el hilo — cada conversación se guarda como un tema.",
+      "heading": "Para trabajo y entrevistas",
+      "sub": "Correos, reuniones y pruebas técnicas donde una frase mal entendida cuesta cara.",
       "bullets": [
-        { "title": "Responde en inglés, tú lo oyes en español", "sub": "La otra persona habla en inglés y ves y escuchas la traducción en español, en el mismo hilo" },
-        { "title": "Cada conversación queda guardada como un tema", "sub": "Vuelve a esa charla en inglés cuando quieras, sin perder el hilo" }
+        { "title": "Correos largos de una vez", "sub": "Pega el email entero y léelo en español sin ir línea por línea" },
+        { "title": "Responde en español", "sub": "Escribes en español y sale en inglés, listo para copiar en tu respuesta" }
       ]
     },
     {
-      "heading": "Español-inglés, y 185 idiomas más",
-      "sub": "El inglés es uno de los 186 idiomas disponibles, en cualquier dirección.",
+      "heading": "Phrasal verbs y falsos amigos",
+      "sub": "Get over, put up with, actually, eventually: lo literal es justo lo que falla.",
       "bullets": [
-        { "title": "El inglés que necesitas para viajar o trabajar", "sub": "Sirve igual para una reunión, un email o pedir algo en un aeropuerto" },
-        { "title": "186 idiomas en la misma app", "sub": "El mismo traductor funciona para inglés hoy y cualquier otro idioma mañana" }
+        { "title": "Traducción por frase, no por palabra", "sub": "Los verbos compuestos se leen por lo que significan, no por sus piezas" },
+        { "title": "Falsos amigos detectados", "sub": "Actually no es actualmente y eventually no es eventualmente: el contexto decide" }
       ]
     },
     {
-      "heading": "Escribe o pega el texto",
-      "sub": "Traduce sin usar el micrófono, escribiendo o pegando un texto en español o inglés.",
+      "heading": "Británico o americano",
+      "sub": "Mismo idioma, distinto vocabulario según el otro lado de la conversación.",
       "bullets": [
-        { "title": "Sin usar el micrófono", "sub": "Escribe o pega un texto en español y recibe la traducción en inglés al instante" },
-        { "title": "Copia el resultado con un toque", "sub": "Pega la traducción en un correo, un WhatsApp o un documento" }
+        { "title": "Vocabulario según el contexto", "sub": "Flat o apartment, lorry o truck: se traduce lo que se quiso decir" },
+        { "title": "186 idiomas incluidos", "sub": "El mismo hilo te sirve mañana para cualquier otro idioma" }
       ]
     }
   ],
   "comparison": {
     "title": "Por qué esto supera",
     "titleAccent": "a un traductor de inglés típico",
-    "description": "La mayoría de apps de traducción te hacen escribir primero y olvidan la conversación después. Esto es lo que cambia.",
+    "description": "La dificultad del inglés está en oírlo, no en escribirlo. Ahí está la diferencia.",
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Cómo empiezas", "us": "Hablas en español o inglés y obtienes la traducción al momento.", "them": "Tienes que escribir antes de traducir nada." },
-      { "title": "Historial de conversación", "us": "Cada conversación en inglés queda guardada como un tema al que puedes volver.", "them": "La traducción desaparece en cuanto cierras la app." },
-      { "title": "Instalación", "us": "Se abre en el navegador, no hay nada que instalar.", "them": "Hay que descargar una app y aceptar permisos antes de usarla." },
-      { "title": "Ambos sentidos", "us": "Español a inglés e inglés a español conviven en el mismo hilo.", "them": "Cambiar de sentido casi siempre implica empezar de cero." },
-      { "title": "Escuchar la traducción", "us": "Toca el altavoz y oye la traducción en inglés en voz alta.", "them": "Solo texto — la pronunciación corre de tu cuenta." }
+      { "title": "Te hablan rápido", "us": "Grabas la frase y la lees en español al momento.", "them": "Tienes que escribir lo que creíste oír." },
+      { "title": "Pronunciación", "us": "Escuchas cualquier frase en inglés en voz alta.", "them": "Solo texto, la pronunciación te la imaginas." },
+      { "title": "Phrasal verbs", "us": "Se traducen por su significado real.", "them": "Palabra por palabra, y el sentido se pierde." },
+      { "title": "Historial", "us": "Cada conversación en inglés queda como un tema.", "them": "Se borra al cerrar la app." },
+      { "title": "Empezar", "us": "Abres una pestaña y hablas, sin instalar nada.", "them": "Descargar app y registrarse antes de nada." }
     ]
   },
   "faq": {
     "heading": "Preguntas",
     "headingAccent": "frecuentes",
-    "sub": "Dudas habituales sobre traducir del español al inglés.",
+    "sub": "Dudas frecuentes al traducir del español al inglés.",
     "items": [
-      { "q": "¿Traduce del español al inglés hablado?", "a": "Sí, toca el micrófono, habla en español y obtienes la traducción en inglés como texto, con opción de escucharla en voz alta." },
-      { "q": "¿Sirve también al revés, de inglés a español?", "a": "Sí, la misma conversación funciona en ambos sentidos: habla o escribe en inglés y recibe la traducción en español en el mismo hilo." },
-      { "q": "¿Es útil para viajar?", "a": "Sí, funciona para pedir indicaciones, hacer una reserva o entenderte en un aeropuerto sin cambiar de app." },
-      { "q": "¿Puedo usarlo para el trabajo o correos en inglés?", "a": "Sí, escribe o pega un texto y copia la traducción para pegarla en un email, un documento o un mensaje." },
-      { "q": "¿Es gratis?", "a": "Sí, puedes probarlo gratis sin crear una cuenta. Inicia sesión con Google para tener más créditos diarios e historial guardado." },
-      { "q": "¿Hace falta instalar algo?", "a": "No, funciona directamente en el navegador del móvil o del ordenador." }
+      { "q": "¿Entiende el inglés hablado rápido o con acento?", "a": "Sí. Graba la frase y en un par de segundos la tienes en español, incluidos acentos británicos, irlandeses o estadounidenses que cuesta seguir de oído." },
+      { "q": "¿Sirve para correos de trabajo?", "a": "Sí: pega el correo completo y léelo en español, y escribe tu respuesta en español para enviarla en inglés." },
+      { "q": "¿Cómo traduce los phrasal verbs?", "a": "Se traduce la frase entera, así que get over o put up with se leen por lo que significan y no por la suma de sus palabras." },
+      { "q": "¿Puedo escuchar la pronunciación?", "a": "Sí, toca el altavoz en cualquier traducción para oírla antes de decirla tú." },
+      { "q": "¿Distingue inglés británico y americano?", "a": "El vocabulario se interpreta por el contexto de la conversación, que es donde se nota la diferencia." },
+      { "q": "¿Es gratis?", "a": "Sí, hay un margen gratuito sin registrarte. Con la cuenta de Google tienes más cuota mensual y el historial guardado." }
     ]
   },
   "finalCta": {

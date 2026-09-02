@@ -87,8 +87,18 @@ export function Footer({
             )}
           </nav>
         </div>
+        {/* Legal pages are English-only (see app/_landing/legal-content.ts),
+            so their labels are too — every locale links to the same two. */}
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
+          <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <a href="/privacy" className="transition-colors hover:text-text">
+              Privacy
+            </a>
+            <a href="/terms" className="transition-colors hover:text-text">
+              Terms
+            </a>
+          </nav>
           <span>{texts.tagline}</span>
         </div>
       </div>

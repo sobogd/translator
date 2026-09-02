@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Traducteur Vocal en Ligne — Gratuit | IQ Translate",
-    "description": "Traducteur vocal gratuit en ligne : parlez et obtenez une traduction instantanée, orale ou écrite, en 186 langues. Sans téléchargement, sans inscription pour essayer.",
+    "description": "Traducteur vocal gratuit en ligne : parlez et obtenez une traduction instantanée, orale ou écrite, en 186 langues. Sans téléchargement ni inscription.",
     "ogTitle": "Traducteur Vocal en Ligne — Gratuit",
     "ogDescription": "Traducteur vocal gratuit : parlez et obtenez une traduction instantanée, orale ou écrite, en 186 langues.",
     "twitterTitle": "Traducteur Vocal en Ligne — Gratuit",
@@ -231,7 +231,8 @@
         "routeKey": "/",
         "label": "Traduction vers n'importe quelle langue"
       }
-    ]
+    ],
+    "languagesHeading": "Langues"
   },
   "account": {
     "title": "Compte",
@@ -244,7 +245,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Tarifs — Formules de traduction vocale et texte",
+      "title": "Tarifs de traduction vocale et écrite | IQ Translate",
       "description": "Trois formules mensuelles simples avec minutes vocales et caractères de texte inclus. Essayez gratuitement sans inscription — sans carte bancaire."
     },
     "heading": "Des tarifs mensuels",

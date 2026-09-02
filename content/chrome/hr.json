@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Glasovni Prevoditelj Online – Besplatno | IQ Translate",
-    "description": "Besplatan glasovni prevoditelj online: govorite prirodno i dobijte trenutni prijevod, izgovoren ili napisan, na 186 jezika. Bez preuzimanja, bez registracije za isprobavanje.",
+    "description": "Besplatan glasovni prevoditelj online: govorite prirodno i dobijte prijevod odmah, izgovoren ili napisan, na 186 jezika. Bez preuzimanja i registracije.",
     "ogTitle": "Glasovni Prevoditelj Online – Besplatno",
     "ogDescription": "Besplatan glasovni prevoditelj online: govorite i dobijte trenutni prijevod, izgovoren ili napisan, na 186 jezika.",
     "twitterTitle": "Glasovni Prevoditelj Online – Besplatno",
@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Prijevod na bilo koji jezik"
       }
-    ]
+    ],
+    "languagesHeading": "Jezici"
   },
   "account": {
     "title": "Račun",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Cijene — Planovi za glas i tekst",
+      "title": "Cijene — Planovi za glas i tekst | IQ Translate",
       "description": "Tri jednostavna mjesečna plana s glasovnim minutama i tekstualnim znakovima. Isprobajte besplatno izravno na početnoj stranici — bez registracije, bez kartice."
     },
     "heading": "Jednostavne mjesečne",

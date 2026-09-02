@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Russisch, und lies oder hör die Übersetzung.",
+      "heading": "Kyrillisch, ohne es zu lernen",
+      "sub": "Keine russische Tastatur, keine Umschrift: sprechen oder einfügen reicht.",
       "bullets": [
-        { "title": "Deutsch wird zu Russisch", "sub": "Sprich auf Deutsch – die kyrillische Übersetzung erscheint Sekunden später" },
-        { "title": "Russisch laut vorlesen lassen", "sub": "Praktisch, wenn die russische Aussprache noch ungewohnt ist" }
+        { "title": "Kyrillischen Text einfügen", "sub": "Nachricht kopieren und direkt darunter auf Deutsch lesen" },
+        { "title": "Laut vorlesen lassen", "sub": "Tipp auf den Lautsprecher, wenn Hören leichter ist als Entziffern" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa mit Familie, Nachbarn oder Kollegen – jeder Austausch bleibt gespeichert.",
+      "heading": "Fälle und freie Wortstellung",
+      "sub": "Russisch markiert mit Endungen, wer was tut, und stellt die Wörter frei um.",
       "bullets": [
-        { "title": "Antwort auf Russisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Russisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Das Gespräch mit dem Amt oder der Familie bleibt an einem Ort, statt verloren zu gehen" }
+        { "title": "Ganzer Satz auf einmal", "sub": "Wer wem was tut bleibt erhalten statt in Wortsalat zu zerfallen" },
+        { "title": "Keine Artikel zu raten", "sub": "Das fehlende der, die, das ergibt sich aus dem Zusammenhang" }
       ]
     },
     {
-      "heading": "Deutsch-Russisch, plus 185 weitere Sprachen",
-      "sub": "Russisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Arbeit, Behörde, Familie",
+      "sub": "Kurze Gespräche und lange Dokumente an derselben Stelle.",
       "bullets": [
-        { "title": "Kyrillische Schrift korrekt erkannt", "sub": "Text und Aussprache werden richtig verarbeitet, nicht nur transliteriert" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Russisch heute und für jede andere Sprache morgen" }
+        { "title": "Antwort auf Deutsch", "sub": "Sie geht auf Russisch raus, zum Lesen oder Anhören" },
+        { "title": "Jedes Gespräch bleibt", "sub": "Als Thema gespeichert, wenn die nächste Nachricht kommt" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge russischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Oder Text einfügen",
+      "sub": "Vertrag, Mail, Formular auf Russisch.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer russischen WhatsApp-Nachricht oder E-Mail vom Amt" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den russischen Text direkt in ein Formular oder eine Nachricht" }
+        { "title": "Ganze Absätze", "sub": "Ein langer Text in einem Schritt" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread taugt für die nächste Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Russisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Kyrillisch in lateinische Buchstaben umzuschreiben zeigt den Klang, nicht den Sinn.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Russisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Russisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Russisch und Russisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die russische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht Russisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Kyrillisch tippen, das du nicht hast." },
+      { "title": "Grammatik", "us": "Ganzer Satz mit Fällen.", "them": "Wort für Wort, Subjekt verloren." },
+      { "title": "Antworten", "us": "Deutsch rein, Russisch raus, ein Thread.", "them": "Zwei getrennte Abfragen." },
+      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Nach dem Schließen weg." },
+      { "title": "Start", "us": "Tab und Mikrofon.", "them": "App plus russisches Tastaturlayout." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Russisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Russisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Russische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die russische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Wird kyrillische Schrift korrekt dargestellt?", "a": "Ja, russischer Text wird in kyrillischer Schrift angezeigt und kann korrekt vorgelesen werden, keine Transliteration in lateinische Buchstaben." },
-      { "q": "Kann ich von Russisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Russisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für Behördengänge oder Arzttermine?", "a": "Ja, tippe wichtige Sätze vorher ein oder sprich direkt im Gespräch, und lass dir die russische Übersetzung anzeigen oder vorlesen." }
+      { "q": "Brauche ich eine kyrillische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein — du musst nie Russisch tippen." },
+      { "q": "Übersetzt es gesprochenes Russisch?", "a": "Ja, nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch." },
+      { "q": "Stimmt die Grammatik?", "a": "Der komplette Satz wird übersetzt, deshalb bleiben Fallendungen und freie Wortstellung erhalten statt zu verrutschen." },
+      { "q": "Geht es auch von Russisch nach Deutsch?", "a": "Ja, derselbe Thread läuft in beide Richtungen und lässt sich vorlesen." },
+      { "q": "Bleibt der Verlauf erhalten?", "a": "Jedes Gespräch bleibt als Thema, das du wieder öffnen, löschen oder komplett leeren kannst." },
+      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und synchronisierter Verlauf." }
     ]
   },
   "finalCta": {

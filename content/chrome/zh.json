@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "翻译成任何语言"
       }
-    ]
+    ],
+    "languagesHeading": "语言"
   },
   "account": {
     "title": "账户",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "价格 — 语音分钟与文字字符套餐",
+      "title": "价格 — 语音分钟与文字字符套餐 | IQ Translate",
       "description": "三档简单月度套餐，均包含语音分钟与文字字符额度。无需注册、无需绑卡即可免费试用。"
     },
     "heading": "简单的月度",

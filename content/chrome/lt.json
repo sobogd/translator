@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Balso Vertėjas Internete Nemokamai | IQ Translate",
-    "description": "Nemokamas balso vertėjas internete: kalbėkite natūraliai ir akimirksniu gaukite vertimą — balsu ar raštu — 186 kalbomis. Jokių atsisiuntimų, išbandykite be registracijos.",
+    "description": "Nemokamas balso vertėjas internete: kalbėkite natūraliai ir gaukite vertimą iškart — balsu ar raštu — 186 kalbomis. Be atsisiuntimų ir registracijos.",
     "ogTitle": "Balso Vertėjas Internete Nemokamai",
     "ogDescription": "Nemokamas balso vertėjas: kalbėkite ir akimirksniu gaukite vertimą, balsu ar raštu, 186 kalbomis.",
     "twitterTitle": "Balso Vertėjas Internete Nemokamai",
@@ -211,7 +211,8 @@
         "routeKey": "/",
         "label": "Vertimas į bet kurią kalbą"
       }
-    ]
+    ],
+    "languagesHeading": "Kalbos"
   },
   "account": {
     "title": "Paskyra",
@@ -224,7 +225,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Kainos — Balso ir Teksto Vertimo Planai",
+      "title": "Kainos — Balso ir Teksto Vertimo Planai | IQ Translate",
       "description": "Trys paprasti mėnesiniai planai su balso minutėmis ir teksto simboliais. Išbandykite nemokamai be registracijos — kortelė nereikalinga."
     },
     "heading": "Paprastos mėnesinės",

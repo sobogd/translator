@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Russian to English Voice Translator | IQ Translate",
+    "description": "Translate Russian to English by voice or text: speak or paste Cyrillic, read and hear the English at once, reply back in Russian. Free, no sign-up.",
+    "ogTitle": "Russian to English Voice Translator",
+    "ogDescription": "Speak or paste Russian and get the English meaning in seconds, spoken or written. Reply in English and it goes back in Russian.",
+    "canonical": "https://iq-translate.com/translate-russian-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "Russian to English translator",
+    "titleAccent": "no Cyrillic keyboard required",
+    "description": "You don't need to read Cyrillic to know what was said. Record the sentence or paste the text and the English appears, then answer in English and let it go back in Russian in the same thread.",
+    "mockFromLabel": "🇷🇺 Russian",
+    "mockFromPhrase": "Подскажите, где здесь ближайшая аптека?",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "Could you tell me where the nearest pharmacy is?",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Cyrillic you don't have to read",
+      "sub": "Speak it or paste it — the script is never something you have to type yourself.",
+      "bullets": [
+        { "title": "Spoken Russian into English", "sub": "Record what was said and read the meaning seconds later" },
+        { "title": "Paste Cyrillic straight in", "sub": "Copy a message as it is; no transliteration, no keyboard layout to install" }
+      ]
+    },
+    {
+      "heading": "Reply without a second app",
+      "sub": "English goes in, Russian comes out, in the same conversation.",
+      "bullets": [
+        { "title": "Both directions", "sub": "Your answer is translated back and can be played aloud for the other person" },
+        { "title": "Threads that stay", "sub": "Each conversation is saved as a topic and reopens where you left it" }
+      ]
+    },
+    {
+      "heading": "Cases and word order, sorted out",
+      "sub": "Russian marks who did what with endings and moves words freely — meaning survives the trip only if the whole sentence is translated at once.",
+      "bullets": [
+        { "title": "Endings carry the grammar", "sub": "A word-by-word lookup loses who is doing what to whom; a full sentence keeps it" },
+        { "title": "No articles to guess", "sub": "The missing a and the are filled in from context, not left as broken English" }
+      ]
+    },
+    {
+      "heading": "Or paste the document",
+      "sub": "A message, a contract clause, an official reply — paste it and read what it says.",
+      "bullets": [
+        { "title": "Long text in one go", "sub": "A whole paragraph rather than a line at a time" },
+        { "title": "Copy the English", "sub": "Move it into your notes or your answer immediately" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a transliteration tool",
+    "description": "Turning Cyrillic into Latin letters tells you how it sounds, not what it means.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "Someone speaks Russian", "us": "Record it and read the English.", "them": "Type Cyrillic you can't produce." },
+      { "title": "Grammar", "us": "The whole sentence is translated, cases included.", "them": "Word-by-word output that inverts the meaning." },
+      { "title": "Replying", "us": "English in, Russian out, one thread.", "them": "Two separate lookups." },
+      { "title": "History", "us": "Saved as topics you can reopen.", "them": "Gone on close." },
+      { "title": "Setup", "us": "A browser tab and a microphone.", "them": "App install plus a keyboard layout." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating Russian into English.",
+    "items": [
+      { "q": "Do I need a Cyrillic keyboard?", "a": "No. Speak into the mic or paste the text you were sent — you never have to type Russian yourself." },
+      { "q": "Can it translate spoken Russian?", "a": "Yes. Record the sentence and the English transcript appears a couple of seconds after the speaker stops." },
+      { "q": "Does it get the grammar right?", "a": "The full sentence is translated at once, so case endings and free word order are resolved instead of producing scrambled word-by-word English." },
+      { "q": "Can I reply in English and send Russian?", "a": "Yes, the same thread runs both ways and the Russian can be read aloud." },
+      { "q": "Is my history kept?", "a": "Conversations are saved as topics, and you can delete any thread or clear everything whenever you want." },
+      { "q": "Is it free to use?", "a": "Yes, with a free allowance available immediately. Signing in with Google raises the monthly quota and syncs your history across devices." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Understand the Russian",
+    "headingAccent": "without the alphabet.",
+    "sub": "Record it or paste it — the English comes back in seconds, free to try.",
+    "ctaLabel": "Try it now"
+  }
+}

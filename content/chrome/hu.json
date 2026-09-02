@@ -207,7 +207,8 @@
         "routeKey": "/",
         "label": "Fordítás bármely nyelvre"
       }
-    ]
+    ],
+    "languagesHeading": "Nyelvek"
   },
   "account": {
     "title": "Fiók",
@@ -220,7 +221,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Árak – Hangos és Szöveges Fordítási Csomagok",
+      "title": "Árak – Hangos és Szöveges Fordítási Csomagok | IQ Translate",
       "description": "Három egyszerű havi csomag hangperccel és szöveges karakterekkel. Próbáld ki ingyen regisztráció nélkül — bankkártya nem szükséges."
     },
     "heading": "Egyszerű havi",

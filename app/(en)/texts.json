@@ -244,6 +244,54 @@
         "label": "English to Turkish"
       },
       {
+        "routeKey": "/translate-spanish-to-english",
+        "label": "Spanish to English"
+      },
+      {
+        "routeKey": "/translate-french-to-english",
+        "label": "French to English"
+      },
+      {
+        "routeKey": "/translate-german-to-english",
+        "label": "German to English"
+      },
+      {
+        "routeKey": "/translate-italian-to-english",
+        "label": "Italian to English"
+      },
+      {
+        "routeKey": "/translate-portuguese-to-english",
+        "label": "Portuguese to English"
+      },
+      {
+        "routeKey": "/translate-russian-to-english",
+        "label": "Russian to English"
+      },
+      {
+        "routeKey": "/translate-polish-to-english",
+        "label": "Polish to English"
+      },
+      {
+        "routeKey": "/translate-turkish-to-english",
+        "label": "Turkish to English"
+      },
+      {
+        "routeKey": "/translate-arabic-to-english",
+        "label": "Arabic to English"
+      },
+      {
+        "routeKey": "/translate-chinese-to-english",
+        "label": "Chinese to English"
+      },
+      {
+        "routeKey": "/translate-japanese-to-english",
+        "label": "Japanese to English"
+      },
+      {
+        "routeKey": "/translate-korean-to-english",
+        "label": "Korean to English"
+      },
+      {
         "routeKey": "/",
         "label": "Translate to any language"
       }
@@ -294,7 +342,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing — Voice & Text Translation Plans",
+      "title": "Pricing — Voice & Text Translation Plans | IQ Translate",
       "description": "Three simple monthly plans with voice minutes and text characters included. Try it free without signing up — no card required."
     },
     "heading": "Simple monthly",

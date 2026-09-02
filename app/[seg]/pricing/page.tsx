@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getServerSessionEmail } from "@/lib/auth";
-import { getServerQuota } from "@/lib/quota-server";
 import type { Locale } from "@/lib/locales";
+import { pricingAlternates } from "@/lib/hreflang";
+import { OG_LOCALES } from "@/lib/og-locales";
 import { SITE_URL } from "@/lib/site";
 import { CHROME, READY_LOCALES } from "@/content";
 import { PricingPage } from "../../_landing/PricingPage";
@@ -21,10 +21,19 @@ export async function generateMetadata({ params }: { params: Promise<{ seg: stri
   const { seg } = await params;
   const chrome = CHROME[seg];
   if (!chrome) return {};
+  const url = `${SITE_URL}/${seg}/pricing`;
   return {
     title: chrome.pricing.meta.title,
     description: chrome.pricing.meta.description,
-    alternates: { canonical: `${SITE_URL}/${seg}/pricing` },
+    alternates: { canonical: url, languages: pricingAlternates() },
+    openGraph: {
+      type: "website",
+      url,
+      siteName: chrome.footer.brand,
+      locale: OG_LOCALES[seg],
+      title: chrome.pricing.meta.title,
+      description: chrome.pricing.meta.description,
+    },
   };
 }
 
@@ -32,7 +41,5 @@ export default async function LocalePricingPage({ params }: { params: Promise<{ 
   const { seg } = await params;
   const chrome = CHROME[seg];
   if (!chrome) notFound();
-  const email = await getServerSessionEmail();
-  const initialQuota = await getServerQuota();
-  return <PricingPage signedIn={!!email} initialQuota={initialQuota} locale={seg as Locale} chrome={chrome} />;
+  return <PricingPage locale={seg as Locale} chrome={chrome} />;
 }

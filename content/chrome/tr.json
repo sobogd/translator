@@ -227,7 +227,8 @@
         "routeKey": "/",
         "label": "Her dile çeviri"
       }
-    ]
+    ],
+    "languagesHeading": "Diller"
   },
   "account": {
     "title": "Hesap",
@@ -240,7 +241,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Fiyatlandırma – Sesli ve Metin Çeviri Planları",
+      "title": "Sesli ve Metin Çeviri Fiyatları | IQ Translate",
       "description": "Ses dakikaları ve metin karakterleri içeren üç basit aylık plan sunuyoruz. Kayıt olmadan ücretsiz deneyin — kredi kartı bilgisi gerekmez."
     },
     "heading": "Basit aylık",

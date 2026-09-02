@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Italienisch, und lies oder hör die Übersetzung.",
+      "heading": "Fast verstanden ist nicht verstanden",
+      "sub": "Italienisch klingt vertraut, und genau dort passieren die Missverständnisse.",
       "bullets": [
-        { "title": "Deutsch wird zu Italienisch", "sub": "Sprich auf Deutsch – die Übersetzung erscheint Sekunden später auf Italienisch" },
-        { "title": "Italienisch laut vorlesen lassen", "sub": "Praktisch, wenn die italienische Aussprache im Restaurant noch fehlt" }
+        { "title": "Falsche Freunde", "sub": "Burro ist Butter, salire heißt hinaufgehen: übersetzt wird der Sinn" },
+        { "title": "Vorher anhören", "sub": "Sag den Satz erst, nachdem du ihn einmal gehört hast" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa mit italienischen Freunden oder im Urlaub – jeder Austausch bleibt gespeichert.",
+      "heading": "Urlaub in Italien",
+      "sub": "Restaurant, Zug, Unterkunft — kurze Gespräche in hohem Tempo.",
       "bullets": [
-        { "title": "Antwort auf Italienisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Italienisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Der Italien-Urlaub oder das Gespräch mit der Gastfamilie bleibt an einem Ort" }
+        { "title": "In Sekunden übersetzt", "sub": "Aufnehmen, lesen, weiterreden, ohne das Gespräch zu stoppen" },
+        { "title": "Nichts zu installieren", "sub": "Öffnet sich im Browser, ohne Konto zum Ausprobieren" }
       ]
     },
     {
-      "heading": "Deutsch-Italienisch, plus 185 weitere Sprachen",
-      "sub": "Italienisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Dialekte und Doppelkonsonanten",
+      "sub": "Vom Venetischen bis zum Neapolitanischen klingt Italienisch selten wie im Lehrbuch.",
       "bullets": [
-        { "title": "Akzente korrekt erkannt", "sub": "Buchstaben wie à, è, ì, ò, ù werden richtig verarbeitet, nicht grob geschätzt" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Italienisch heute und für jede andere Sprache morgen" }
+        { "title": "Redewendungen im Kontext", "sub": "Sie werden nach Bedeutung gelesen, nicht Wort für Wort" },
+        { "title": "Nonno oder nono", "sub": "Doppelte Konsonanten ändern das Wort — der Satz entscheidet, welches gemeint war" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge italienischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Oder tippen",
+      "sub": "Nachricht an den Vermieter, Mail an den Lieferanten, Bewertung.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer italienischen Speisekarte oder Nachricht" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den italienischen Text direkt in eine Nachricht oder E-Mail" }
+        { "title": "Ganzer Text am Stück", "sub": "Ein kompletter Absatz auf einmal" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread hilft bei der nächsten Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Italienisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Die Hälfte zu verstehen ist beim Italienischen das Problem, nicht die Lösung.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Italienisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Italienisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Italienisch und Italienisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die italienische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Es geht schnell", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Tippen, was du zu hören glaubst." },
+      { "title": "Falsche Freunde", "us": "Nach echter Bedeutung übersetzt.", "them": "Nach Ähnlichkeit, und es kippt." },
+      { "title": "Aussprache", "us": "Jeden Satz anhören.", "them": "Nur Text." },
+      { "title": "Verlauf", "us": "Gespräche bleiben gespeichert.", "them": "Beim Schließen weg." },
+      { "title": "Start", "us": "Browser-Tab, sonst nichts.", "them": "App laden und registrieren." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Italienisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Italienisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Italienische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die italienische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Werden italienische Akzente korrekt dargestellt?", "a": "Ja, Buchstaben wie à, è, ì, ò, ù werden sowohl im Text als auch beim Vorlesen richtig verarbeitet." },
-      { "q": "Kann ich von Italienisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Italienisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für den Italien-Urlaub?", "a": "Ja, gerade im Restaurant oder an der Hotelrezeption ist die Sprachfunktion praktisch, um sofort verstanden zu werden." }
+      { "q": "Übersetzt es gesprochenes Italienisch?", "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch." },
+      { "q": "Werden falsche Freunde richtig übersetzt?", "a": "Der ganze Satz wird übersetzt, deshalb werden Wörter wie burro, salire oder largo in ihrer italienischen Bedeutung gelesen." },
+      { "q": "Kommt es mit Dialekten zurecht?", "a": "Standarditalienisch aus dem Norden wie dem Süden klappt gut; bei starkem Dialekt hilft etwas langsameres Sprechen." },
+      { "q": "Kann ich die Übersetzung anhören?", "a": "Ja, tipp auf den Lautsprecher bei jedem Satz." },
+      { "q": "Geht es auch von Italienisch nach Deutsch?", "a": "Ja, im selben Thread, ohne neu anzufangen." },
+      { "q": "Ist es kostenlos?", "a": "Ja, Gratis-Kontingent ohne Konto, mehr Monatsvolumen mit Google-Login." }
     ]
   },
   "finalCta": {

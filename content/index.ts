@@ -76,6 +76,8 @@ import pair_el_metafrastisEllinikaGallika from "./pairs/el/metafrastis-ellinika-
 import pair_el_metafrastisEllinikaGermanika from "./pairs/el/metafrastis-ellinika-germanika.json";
 import pair_el_metafrastisEllinikaIspanika from "./pairs/el/metafrastis-ellinika-ispanika.json";
 import pair_el_metafrastisEllinikaItalika from "./pairs/el/metafrastis-ellinika-italika.json";
+import pair_en_translateArabicToEnglish from "./pairs/en/translate-arabic-to-english.json";
+import pair_en_translateChineseToEnglish from "./pairs/en/translate-chinese-to-english.json";
 import pair_en_translateEnglishToArabic from "./pairs/en/translate-english-to-arabic.json";
 import pair_en_translateEnglishToChinese from "./pairs/en/translate-english-to-chinese.json";
 import pair_en_translateEnglishToFrench from "./pairs/en/translate-english-to-french.json";
@@ -88,6 +90,16 @@ import pair_en_translateEnglishToPortuguese from "./pairs/en/translate-english-t
 import pair_en_translateEnglishToRussian from "./pairs/en/translate-english-to-russian.json";
 import pair_en_translateEnglishToSpanish from "./pairs/en/translate-english-to-spanish.json";
 import pair_en_translateEnglishToTurkish from "./pairs/en/translate-english-to-turkish.json";
+import pair_en_translateFrenchToEnglish from "./pairs/en/translate-french-to-english.json";
+import pair_en_translateGermanToEnglish from "./pairs/en/translate-german-to-english.json";
+import pair_en_translateItalianToEnglish from "./pairs/en/translate-italian-to-english.json";
+import pair_en_translateJapaneseToEnglish from "./pairs/en/translate-japanese-to-english.json";
+import pair_en_translateKoreanToEnglish from "./pairs/en/translate-korean-to-english.json";
+import pair_en_translatePolishToEnglish from "./pairs/en/translate-polish-to-english.json";
+import pair_en_translatePortugueseToEnglish from "./pairs/en/translate-portuguese-to-english.json";
+import pair_en_translateRussianToEnglish from "./pairs/en/translate-russian-to-english.json";
+import pair_en_translateSpanishToEnglish from "./pairs/en/translate-spanish-to-english.json";
+import pair_en_translateTurkishToEnglish from "./pairs/en/translate-turkish-to-english.json";
 import pair_es_traductorEspanolArabe from "./pairs/es/traductor-espanol-arabe.json";
 import pair_es_traductorEspanolCatalan from "./pairs/es/traductor-espanol-catalan.json";
 import pair_es_traductorEspanolChino from "./pairs/es/traductor-espanol-chino.json";
@@ -295,6 +307,8 @@ export const PAIR_CONTENT: Record<string, FeatureContent> = {
   "el/metafrastis-ellinika-germanika": pair_el_metafrastisEllinikaGermanika as unknown as FeatureContent,
   "el/metafrastis-ellinika-ispanika": pair_el_metafrastisEllinikaIspanika as unknown as FeatureContent,
   "el/metafrastis-ellinika-italika": pair_el_metafrastisEllinikaItalika as unknown as FeatureContent,
+  "en/translate-arabic-to-english": pair_en_translateArabicToEnglish as unknown as FeatureContent,
+  "en/translate-chinese-to-english": pair_en_translateChineseToEnglish as unknown as FeatureContent,
   "en/translate-english-to-arabic": pair_en_translateEnglishToArabic as unknown as FeatureContent,
   "en/translate-english-to-chinese": pair_en_translateEnglishToChinese as unknown as FeatureContent,
   "en/translate-english-to-french": pair_en_translateEnglishToFrench as unknown as FeatureContent,
@@ -307,6 +321,16 @@ export const PAIR_CONTENT: Record<string, FeatureContent> = {
   "en/translate-english-to-russian": pair_en_translateEnglishToRussian as unknown as FeatureContent,
   "en/translate-english-to-spanish": pair_en_translateEnglishToSpanish as unknown as FeatureContent,
   "en/translate-english-to-turkish": pair_en_translateEnglishToTurkish as unknown as FeatureContent,
+  "en/translate-french-to-english": pair_en_translateFrenchToEnglish as unknown as FeatureContent,
+  "en/translate-german-to-english": pair_en_translateGermanToEnglish as unknown as FeatureContent,
+  "en/translate-italian-to-english": pair_en_translateItalianToEnglish as unknown as FeatureContent,
+  "en/translate-japanese-to-english": pair_en_translateJapaneseToEnglish as unknown as FeatureContent,
+  "en/translate-korean-to-english": pair_en_translateKoreanToEnglish as unknown as FeatureContent,
+  "en/translate-polish-to-english": pair_en_translatePolishToEnglish as unknown as FeatureContent,
+  "en/translate-portuguese-to-english": pair_en_translatePortugueseToEnglish as unknown as FeatureContent,
+  "en/translate-russian-to-english": pair_en_translateRussianToEnglish as unknown as FeatureContent,
+  "en/translate-spanish-to-english": pair_en_translateSpanishToEnglish as unknown as FeatureContent,
+  "en/translate-turkish-to-english": pair_en_translateTurkishToEnglish as unknown as FeatureContent,
   "es/traductor-espanol-arabe": pair_es_traductorEspanolArabe as unknown as FeatureContent,
   "es/traductor-espanol-catalan": pair_es_traductorEspanolCatalan as unknown as FeatureContent,
   "es/traductor-espanol-chino": pair_es_traductorEspanolChino as unknown as FeatureContent,

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "French to English Voice Translator | IQ Translate",
+    "description": "Translate French to English by voice or text: speak or paste French, read and hear the English instantly, answer back in French. Free, no sign-up.",
+    "ogTitle": "French to English Voice Translator",
+    "ogDescription": "Speak or paste French and get the English meaning in seconds, spoken or written. Answer in English and it goes back in French.",
+    "canonical": "https://iq-translate.com/translate-french-to-english",
+    "ogLocale": "en_US"
+  },
+  "hero": {
+    "badgeVoice": "Voice",
+    "badgeText": "Text",
+    "badgeLanguages": "186 languages",
+    "title": "French to English translator",
+    "titleAccent": "for the sentences you can't catch",
+    "description": "French runs its words together and drops half its endings — say it into the mic or paste it in and read the English straight away. Reply in English and it comes out in French, in one saved thread.",
+    "mockFromLabel": "🇫🇷 French",
+    "mockFromPhrase": "Il faut que je vous rappelle demain matin.",
+    "mockToLabel": "🇬🇧 English",
+    "mockToPhrase": "I'll have to call you back tomorrow morning.",
+    "ctaTry": "Try it now — free",
+    "ctaSignIn": "Sign in with Google"
+  },
+  "spotlights": [
+    {
+      "heading": "Catch what was actually said",
+      "sub": "Liaisons and silent endings make French hard to split into words by ear — the transcript does it for you.",
+      "bullets": [
+        { "title": "Spoken French into English text", "sub": "Record a sentence or a voice note and read the meaning seconds later" },
+        { "title": "Listen instead of reading", "sub": "Tap the speaker to hear the English while you keep watching the person talking" }
+      ]
+    },
+    {
+      "heading": "Reply without breaking the conversation",
+      "sub": "Your English answer goes out in French, in the same thread, and can be played aloud.",
+      "bullets": [
+        { "title": "One thread, both directions", "sub": "French in and English out, then the other way round, without starting again" },
+        { "title": "Picked up where you left it", "sub": "Conversations are saved as topics, so a follow-up tomorrow keeps its context" }
+      ]
+    },
+    {
+      "heading": "Formal or informal, as written",
+      "sub": "French draws a hard line between tu and vous, and administrative French is a language of its own.",
+      "bullets": [
+        { "title": "Polite forms kept intact", "sub": "A vous sentence stays polite in English rather than flattening into something blunt" },
+        { "title": "Accents and cedillas", "sub": "Paste é, è, ê or ç exactly as written and nothing is lost on the way in" }
+      ]
+    },
+    {
+      "heading": "Paste the letter, read the English",
+      "sub": "Admin mail, a rental contract, a message from a colleague — paste it and read what it wants from you.",
+      "bullets": [
+        { "title": "Whole paragraphs at once", "sub": "Handles a full letter instead of one line at a time" },
+        { "title": "Copy the result", "sub": "Take the English into your notes or your reply in one tap" }
+      ]
+    }
+  ],
+  "comparison": {
+    "title": "Why this beats",
+    "titleAccent": "a text-only French translator",
+    "description": "Typing out French you didn't quite hear is the hard part. That's the part this removes.",
+    "usLabel": "IQ Translate",
+    "themLabel": "Typical translator apps",
+    "rows": [
+      { "title": "You didn't catch the sentence", "us": "Record it and read the English.", "them": "You have to spell out what you think you heard." },
+      { "title": "Pronunciation", "us": "Play any translation aloud, in either language.", "them": "Text results only." },
+      { "title": "Answering back", "us": "Reply in English, it goes out in French in the same thread.", "them": "A second, separate translation." },
+      { "title": "History", "us": "Every French conversation is kept as its own topic.", "them": "Gone when the tab closes." },
+      { "title": "Setup", "us": "A browser tab, no install and no account to try it.", "them": "App download and sign-up first." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked",
+    "headingAccent": "questions",
+    "sub": "Common questions about translating French into English.",
+    "items": [
+      { "q": "Can it understand fast, spoken French?", "a": "Yes — that is what the mic is for. Record the sentence and the English appears a couple of seconds after the speaker stops, including the words that ran together." },
+      { "q": "Does it keep the difference between tu and vous?", "a": "The translation follows the register of the sentence, so a formal vous message reads as polite English rather than as a blunt one-liner." },
+      { "q": "Can I paste French text instead of speaking?", "a": "Yes. Switch to the keyboard and paste a message, an email or a full page of administrative French." },
+      { "q": "Can I answer in English and send it in French?", "a": "Yes. The same conversation works in both directions, and your French reply can be read aloud for the other person." },
+      { "q": "Does it handle Quebec French?", "a": "Yes. The whole sentence is translated in context, so regional vocabulary is read the way it was meant instead of looked up in isolation." },
+      { "q": "Is it free to use?", "a": "Yes, with a free allowance you can use immediately and without an account. Sign in with Google for a larger monthly quota and synced history." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Read the French",
+    "headingAccent": "in plain English.",
+    "sub": "Speak it, paste it or type it — the English is a couple of seconds away.",
+    "ctaLabel": "Try it now"
+  }
+}

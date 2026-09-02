@@ -9,6 +9,7 @@ import {
   isAllowed,
   parseCookie,
 } from "@/lib/auth";
+import { SIGNED_IN_COOKIE } from "@/lib/cookies";
 
 export const runtime = "nodejs";
 
@@ -67,6 +68,16 @@ export async function GET(req: Request) {
     res.cookies.set(STATE_COOKIE, "", { path: "/", maxAge: 0 });
     res.cookies.set(SESSION_COOKIE, token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 400,
+    });
+    // Readable-by-JS twin of the session cookie: carries no credential, only
+    // the yes/no the prerendered header needs to paint "Account" instead of
+    // "Sign in" before /api/quota answers (see app/_landing/session.tsx).
+    res.cookies.set(SIGNED_IN_COOKIE, "1", {
+      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",

@@ -23,63 +23,63 @@
   },
   "spotlights": [
     {
-      "heading": "Sprechen statt tippen",
-      "sub": "Tippe aufs Mikrofon, sag es auf Deutsch oder Arabisch, und lies oder hör die Übersetzung.",
+      "heading": "Schrift von rechts nach links",
+      "sub": "Keine arabische Tastatur, keine Umschrift: sprechen oder einfügen.",
       "bullets": [
-        { "title": "Deutsch wird zu Arabisch", "sub": "Sprich auf Deutsch – die arabische Übersetzung erscheint Sekunden später, in arabischer Schrift" },
-        { "title": "Arabisch laut vorlesen lassen", "sub": "Praktisch, wenn du die arabische Aussprache noch nicht sicher beherrschst" }
+        { "title": "Arabisch so einfügen, wie es kam", "sub": "Verbundene Buchstaben und Leserichtung bleiben erhalten" },
+        { "title": "Sprechen, arabisch herausbekommen", "sub": "Dein deutscher Satz erscheint in arabischer Schrift, zum Senden oder Vorlesen" }
       ]
     },
     {
-      "heading": "Ein Thema, beide Gesprächsseiten",
-      "sub": "Rede hin und her, etwa mit der Familie, beim Arzt oder auf dem Amt – jeder Austausch bleibt gespeichert.",
+      "heading": "Dialekt oder Hocharabisch",
+      "sub": "Ägyptisch, levantinisch oder Golfarabisch klingen anders als die Schriftsprache.",
       "bullets": [
-        { "title": "Antwort auf Arabisch, übersetzt ins Deutsche", "sub": "Dein Gegenüber spricht Arabisch, du liest und hörst es auf Deutsch" },
-        { "title": "Gespräche als Themen gespeichert", "sub": "Das Gespräch mit dem Amt oder Arzt bleibt an einem Ort, statt verloren zu gehen" }
+        { "title": "Alltagssprache im Kontext", "sub": "Übersetzt wird, was gemeint war, nicht der Wörterbucheintrag" },
+        { "title": "Auch Hocharabisch", "sub": "Amtliche Schreiben kommen als klares Deutsch zurück" }
       ]
     },
     {
-      "heading": "Deutsch-Arabisch, plus 185 weitere Sprachen",
-      "sub": "Arabisch ist eine von 186 verfügbaren Sprachen, in jede Richtung.",
+      "heading": "Nachbarschaft, Ehrenamt, Behörde",
+      "sub": "Gespräche, in denen kein Dolmetscher danebensteht und es trotzdem klappen muss.",
       "bullets": [
-        { "title": "Arabische Schrift korrekt dargestellt", "sub": "Text wird von rechts nach links richtig angezeigt, nicht nur in lateinischen Buchstaben umschrieben" },
-        { "title": "186 Sprachen insgesamt", "sub": "Dasselbe Werkzeug funktioniert für Arabisch heute und für jede andere Sprache morgen" }
+        { "title": "Beide Richtungen", "sub": "Sie sprechen Arabisch, du liest Deutsch; du antwortest deutsch, sie hören Arabisch" },
+        { "title": "Jede Person, ein Thema", "sub": "Das Gespräch bleibt und geht beim nächsten Mal weiter" }
       ]
     },
     {
-      "heading": "Lieber tippen? Geht auch",
-      "sub": "Tippe oder füge arabischen Text ein und erhalte die deutsche Übersetzung, ohne das Mikrofon zu nutzen.",
+      "heading": "Oder Dokument einfügen",
+      "sub": "Nachricht, Bescheinigung, Schreiben.",
       "bullets": [
-        { "title": "Text einfügen statt sprechen", "sub": "Praktisch bei einer arabischen Nachricht per WhatsApp oder E-Mail" },
-        { "title": "Übersetzung kopieren", "sub": "Übernimm den arabischen Text direkt in ein Formular oder eine Nachricht" }
+        { "title": "Langer Text am Stück", "sub": "Ein ganzer Absatz statt Satz für Satz" },
+        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede Sprache" }
       ]
     }
   ],
   "comparison": {
     "title": "Warum das besser ist",
     "titleAccent": "als ein typischer Arabisch-Übersetzer",
-    "description": "Die meisten Apps verlangen erst Tippen und vergessen das Gespräch danach. Das hier macht den Unterschied.",
+    "description": "Arabisch in lateinischen Buchstaben sagt dir, wie es klingt, nicht was es heißt.",
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Wie du startest", "us": "Sprich auf Deutsch oder Arabisch und erhalte sofort eine Übersetzung.", "them": "Erst musst du eintippen, was du sagen willst." },
-      { "title": "Gesprächsverlauf", "us": "Jedes Arabisch-Gespräch wird als eigenes Thema gespeichert.", "them": "Jede Übersetzung verschwindet nach dem Schließen der App." },
-      { "title": "Einrichtung", "us": "Im Browser-Tab öffnen – nichts zu installieren.", "them": "App herunterladen und Berechtigungen erteilen, bevor es losgeht." },
-      { "title": "Beide Richtungen", "us": "Deutsch nach Arabisch und Arabisch nach Deutsch laufen im selben Thema.", "them": "Die Richtung zu wechseln bedeutet meist, eine neue Übersetzung zu starten." },
-      { "title": "Zum Anhören", "us": "Tippe, um dir die arabische Übersetzung vorlesen zu lassen.", "them": "Nur Text – bei der Aussprache bist du auf dich gestellt." }
+      { "title": "Jemand spricht Arabisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Eine Schrift tippen, die du nicht hast." },
+      { "title": "Dialekte", "us": "Im Kontext gelesen.", "them": "Nur Hocharabisch verstanden." },
+      { "title": "Antworten", "us": "Deutsch rein, Arabisch raus.", "them": "Eine zweite Übersetzung." },
+      { "title": "Verlauf", "us": "Gespräche als Themen gespeichert.", "them": "Nichts bleibt." },
+      { "title": "Start", "us": "Browser und Mikrofon.", "them": "App plus arabische Tastatur." }
     ]
   },
   "faq": {
     "heading": "Häufig gestellte",
     "headingAccent": "Fragen",
-    "sub": "Häufige Fragen zum Übersetzer Deutsch-Arabisch.",
+    "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Arabisch.",
     "items": [
-      { "q": "Kann es gesprochenes Deutsch ins Arabische übersetzen?", "a": "Ja – tippe aufs Mikrofon, sprich auf Deutsch, und du erhältst die arabische Übersetzung als Text, mit der Option, sie dir vorlesen zu lassen." },
-      { "q": "Wird arabische Schrift korrekt dargestellt?", "a": "Ja, arabischer Text wird in seiner eigenen Schrift und von rechts nach links angezeigt, nicht als Umschrift in lateinischen Buchstaben." },
-      { "q": "Kann ich von Arabisch zurück ins Deutsche übersetzen?", "a": "Ja, dasselbe Gespräch funktioniert in beide Richtungen – sprich oder tippe auf Arabisch und erhalte die deutsche Übersetzung im gleichen Thema." },
-      { "q": "Ist es kostenlos?", "a": "Ja, du kannst es kostenlos ausprobieren, ganz ohne Konto. Mit Google anmelden gibt es mehr tägliches Guthaben und gespeicherten Verlauf." },
-      { "q": "Muss ich etwas installieren?", "a": "Nein, es läuft direkt im Browser, auf Desktop oder Handy – nichts zum Herunterladen." },
-      { "q": "Eignet es sich für Behördengänge oder Arzttermine?", "a": "Ja, tippe wichtige Sätze vorher ein oder sprich direkt im Gespräch, und lass dir die arabische Übersetzung anzeigen oder vorlesen." }
+      { "q": "Brauche ich eine arabische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein; tippen musst du nichts." },
+      { "q": "Versteht es Dialekte?", "a": "Gesprochenes Alltagsarabisch wird im Kontext übersetzt, statt es aufs Hocharabische zu zwingen — daran scheitern die meisten Tools." },
+      { "q": "Wird die arabische Schrift korrekt angezeigt?", "a": "Ja, Leserichtung und verbundene Buchstaben bleiben beim Einfügen wie bei der Rückübersetzung erhalten." },
+      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, deine Antwort geht im selben Thread auf Arabisch raus und lässt sich vorlesen." },
+      { "q": "Kann ich ein Schreiben übersetzen?", "a": "Ja, füge den kompletten Text ein und lies ihn auf Deutsch." },
+      { "q": "Ist es kostenlos?", "a": "Ja, Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen und gespeicherter Verlauf." }
     ]
   },
   "finalCta": {

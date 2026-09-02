@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Balss Tulkotājs Tiešsaistē Bez Maksas | IQ Translate",
-    "description": "Bezmaksas balss tulkotājs tiešsaistē: runā dabiski un saņem tūlītēju tulkojumu — balsī vai rakstiski — 186 valodās. Bez lejupielādēm, izmēģini bez reģistrācijas.",
+    "description": "Bezmaksas balss tulkotājs tiešsaistē: runā dabiski un saņem tulkojumu uzreiz — balsī vai rakstiski — 186 valodās. Bez lejupielādēm un reģistrācijas.",
     "ogTitle": "Balss Tulkotājs Tiešsaistē Bez Maksas",
     "ogDescription": "Bezmaksas balss tulkotājs: runā un saņem tūlītēju tulkojumu, balsī vai rakstiski, 186 valodās.",
     "twitterTitle": "Balss Tulkotājs Tiešsaistē Bez Maksas",
@@ -207,7 +207,8 @@
         "routeKey": "/",
         "label": "Tulkojums jebkurā valodā"
       }
-    ]
+    ],
+    "languagesHeading": "Valodas"
   },
   "account": {
     "title": "Konts",
@@ -220,7 +221,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Cenas — Balss un teksta plāni",
+      "title": "Cenas — Balss un teksta plāni | IQ Translate",
       "description": "Trīs vienkārši ikmēneša plāni ar balss minūtēm un teksta rakstzīmēm. Izmēģini bez maksas bez reģistrācijas — karte nav nepieciešama."
     },
     "heading": "Vienkāršas ikmēneša",

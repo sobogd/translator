@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Spraakvertaler Online — Gratis Vertalen | IQ Translate",
-    "description": "Gratis online spraakvertaler: spreek gewoon en krijg direct een vertaling, gesproken of geschreven, in 186 talen. Geen downloads, geen registratie om te proberen.",
+    "description": "Gratis online spraakvertaler: spreek gewoon en krijg direct een vertaling, gesproken of geschreven, in 186 talen. Geen download, geen registratie.",
     "ogTitle": "Spraakvertaler Online — Gratis Vertalen",
     "ogDescription": "Gratis online spraakvertaler: spreek en krijg direct een vertaling, gesproken of geschreven, in 186 talen.",
     "twitterTitle": "Spraakvertaler Online — Gratis Vertalen",
@@ -223,7 +223,8 @@
         "routeKey": "/",
         "label": "Vertalen naar elke taal"
       }
-    ]
+    ],
+    "languagesHeading": "Talen"
   },
   "account": {
     "title": "Account",
@@ -236,7 +237,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen – Abonnementen voor Spraak & Tekst",
+      "title": "Prijzen – Abonnementen voor Spraak & Tekst | IQ Translate",
       "description": "Drie eenvoudige maandelijkse abonnementen met spraakminuten en tekstkarakters inbegrepen. Probeer het gratis zonder registratie — geen kaart nodig."
     },
     "heading": "Eenvoudige maandelijkse",
