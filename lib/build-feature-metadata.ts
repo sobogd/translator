@@ -5,8 +5,15 @@ import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "./site";
 
 // Mirrors iq-rest's build-feature-metadata.ts so every feature page emits
 // identical metadata structure without repeating boilerplate per page.tsx.
-export function buildFeatureMetadata(content: FeatureContent): Metadata {
+/** `ogImagePath` is the pair page's own social card (public/og/<locale>/<slug>.png,
+ *  see scripts/gen-og-pairs.py). Without it every one of the 259 URLs shared
+ *  the same generic preview, so a link to a specific pair looked like a link
+ *  to the home page. */
+export function buildFeatureMetadata(content: FeatureContent, ogImagePath?: string): Metadata {
   const routeKey = routeKeyFromCanonical(content.meta.canonical);
+  const image = ogImagePath
+    ? { url: ogImagePath, width: 1200, height: 630, alt: content.meta.ogTitle }
+    : { ...OG_IMAGE, alt: content.meta.ogTitle };
   const languages = routeKey ? featureAlternates(routeKey) : undefined;
 
   return {
@@ -22,10 +29,11 @@ export function buildFeatureMetadata(content: FeatureContent): Metadata {
       locale: content.meta.ogLocale,
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
-      images: [{ ...OG_IMAGE, alt: content.meta.ogTitle }],
+      images: [image],
     },
     twitter: {
       ...TWITTER_CARD,
+      images: [image.url],
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },

@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ seg: stri
     };
   }
   const content = PAIR_CONTENT[`en/${seg}`];
-  return content ? buildFeatureMetadata(content) : {};
+  return content ? buildFeatureMetadata(content, `/og/en/${seg}.png`) : {};
 }
 
 export default async function SegPage({ params }: { params: Promise<{ seg: string }> }) {

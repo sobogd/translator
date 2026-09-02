@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ seg: string; pair: string }> }): Promise<Metadata> {
   const { seg, pair } = await params;
   const content = PAIR_CONTENT[`${seg}/${pair}`];
-  return content ? buildFeatureMetadata(content) : {};
+  return content ? buildFeatureMetadata(content, `/og/${seg}/${pair}.png`) : {};
 }
 
 export default async function LocalePairPage({ params }: { params: Promise<{ seg: string; pair: string }> }) {
