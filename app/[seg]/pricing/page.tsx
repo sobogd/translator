@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
-import { rtlLocales, type Locale } from "@/lib/locales";
+import type { Locale } from "@/lib/locales";
 import { SITE_URL } from "@/lib/site";
 import { CHROME, READY_LOCALES } from "@/content";
 import { PricingPage } from "../../_landing/PricingPage";
@@ -32,7 +32,5 @@ export default async function LocalePricingPage({ params }: { params: Promise<{ 
   const chrome = CHROME[seg];
   if (!chrome) notFound();
   const email = await getServerSessionEmail();
-  const dir = (rtlLocales as readonly string[]).includes(seg) ? "rtl" : undefined;
-  const page = <PricingPage signedIn={!!email} locale={seg as Locale} chrome={chrome} />;
-  return dir ? <div dir={dir}>{page}</div> : page;
+  return <PricingPage signedIn={!!email} locale={seg as Locale} chrome={chrome} />;
 }

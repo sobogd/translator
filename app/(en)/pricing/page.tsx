@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getServerSessionEmail } from "@/lib/auth";
-import { PricingPage } from "../_landing/PricingPage";
+import { PricingPage } from "../../_landing/PricingPage";
 import { SITE_URL } from "@/lib/site";
 import { CHROME } from "@/content";
 

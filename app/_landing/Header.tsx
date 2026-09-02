@@ -6,7 +6,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { InstallAppButton } from "./InstallAppButton";
-import { AccountControls } from "./AccountControls";
+import { AuthButton, QuotaBadge } from "./AccountControls";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
 import { defaultLocale, type Locale } from "@/lib/locales";
@@ -184,10 +184,13 @@ export function Header({
           </Link>
           <InstallAppButton label={texts.mobileApp} className="transition-opacity hover:opacity-70" />
         </nav>
-        {/* Quota badge + the one combined auth button ("Sign up / Sign in",
-            or "Account" opening the settings modal once signed in). */}
+        {/* Desktop: quota badge + the one combined auth button ("Sign up /
+            Sign in", or "Account" opening the settings modal). On mobile
+            only the badge stays in the bar — the button lives inside the
+            slide-in burger panel. */}
         <div className="hidden shrink-0 items-center gap-3 sm:flex">
-          <AccountControls
+          <QuotaBadge locale={locale} accountTexts={accountTexts} />
+          <AuthButton
             signedIn={signedIn}
             locale={locale}
             texts={texts}
@@ -195,15 +198,8 @@ export function Header({
             pricingHref={localePath(locale, "pricing")}
           />
         </div>
-        <div className="flex shrink-0 items-center gap-2 sm:hidden">
-          <AccountControls
-            signedIn={signedIn}
-            locale={locale}
-            texts={texts}
-            accountTexts={accountTexts}
-            pricingHref={localePath(locale, "pricing")}
-            compact
-          />
+        <div className="flex shrink-0 items-center sm:hidden">
+          <QuotaBadge locale={locale} accountTexts={accountTexts} />
         </div>
 
         {/* Mobile burger — the nav row above is sm:flex only, so small
@@ -218,8 +214,20 @@ export function Header({
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-          {menuOpen ? (
-            <div className="absolute right-0 top-full z-50 mt-2 flex min-w-[220px] flex-col rounded-2xl border border-border bg-bg p-2 shadow-xl">
+          {/* Slide-in side panel: pinned below the (sticky) header — from its
+              bottom edge to the bottom of the viewport, never covering the
+              bar itself — with a dimmed backdrop over the page content. */}
+          <div
+            className={`fixed inset-x-0 bottom-0 top-14 z-40 bg-black/30 transition-opacity duration-200 ${
+              menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+            onClick={() => setMenuOpen(false)}
+          />
+          <div
+            className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
+              menuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
               {hasFeatureLinks ? (
                 <>
                   <button
@@ -269,8 +277,17 @@ export function Header({
                 className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               />
+            <div className="mt-auto pt-3">
+              <AuthButton
+                signedIn={signedIn}
+                locale={locale}
+                texts={texts}
+                accountTexts={accountTexts}
+                pricingHref={localePath(locale, "pricing")}
+                fullWidth
+              />
             </div>
-          ) : null}
+          </div>
         </div>
       </div>
 

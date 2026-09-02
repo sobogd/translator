@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
-import { rtlLocales, type Locale } from "@/lib/locales";
+import type { Locale } from "@/lib/locales";
 import { localePath } from "@/lib/locale-paths";
 import { buildFeatureMetadata } from "@/lib/build-feature-metadata";
 import { findPair } from "@/lib/pairs";
@@ -34,8 +34,7 @@ export default async function LocalePairPage({ params }: { params: Promise<{ seg
   const chrome = CHROME[seg];
   if (!def || !content || !chrome) notFound();
   const email = await getServerSessionEmail();
-  const dir = (rtlLocales as readonly string[]).includes(seg) ? "rtl" : undefined;
-  const page = (
+  return (
     <FeatureLanding
       signedIn={!!email}
       locale={seg as Locale}
@@ -47,5 +46,4 @@ export default async function LocalePairPage({ params }: { params: Promise<{ seg
       presetTarget={def.to}
     />
   );
-  return dir ? <div dir={dir}>{page}</div> : page;
 }

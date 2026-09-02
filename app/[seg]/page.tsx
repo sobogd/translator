@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
-import { locales, rtlLocales, type Locale } from "@/lib/locales";
+import { locales, type Locale } from "@/lib/locales";
 import { localeHome } from "@/lib/locale-paths";
 import { homeAlternates } from "@/lib/hreflang";
 import { buildFeatureMetadata } from "@/lib/build-feature-metadata";
@@ -61,8 +61,7 @@ export default async function SegPage({ params }: { params: Promise<{ seg: strin
   const email = await getServerSessionEmail();
 
   if (isReadyLocale(seg)) {
-    const dir = (rtlLocales as readonly string[]).includes(seg) ? "rtl" : undefined;
-    const page = (
+    return (
       <Landing
         signedIn={!!email}
         locale={seg}
@@ -71,7 +70,6 @@ export default async function SegPage({ params }: { params: Promise<{ seg: strin
         pathname={`/${seg}`}
       />
     );
-    return dir ? <div dir={dir}>{page}</div> : page;
   }
 
   const pair = findPair("en", seg);

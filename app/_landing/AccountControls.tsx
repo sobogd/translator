@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Loader2, Mic, Type, X } from "lucide-react";
 import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
@@ -17,41 +17,74 @@ type Quota = {
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-// Right side of the header: a live remaining-quota badge (voice seconds +
-// characters — anonymous fingerprint pool or the signed-in account balance)
-// next to one combined "Sign up / Sign in" button, which becomes "Account"
+function useQuota() {
+  const [quota, setQuota] = useState<Quota | null>(null);
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const res = await apiFetch("/api/quota");
+        if (alive && res.ok) setQuota(await res.json());
+      } catch {
+        /* badge just stays hidden */
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+  return quota;
+}
+
+// Live remaining-quota badge: voice seconds (m:ss) + characters — the
+// anonymous fingerprint pool or the signed-in account balance.
+export function QuotaBadge({
+  locale,
+  accountTexts,
+}: {
+  locale: string;
+  accountTexts: TranslatorTexts["account"];
+}) {
+  const quota = useQuota();
+  if (!quota) return null;
+  const nf = new Intl.NumberFormat(locale);
+  return (
+    <span
+      className="flex shrink-0 items-center gap-2.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-hint"
+      title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
+    >
+      <span className="flex items-center gap-1">
+        <Mic className="h-3.5 w-3.5" aria-label={accountTexts.minutesLeft} />
+        {fmtSeconds(quota.seconds)}
+      </span>
+      <span className="flex items-center gap-1">
+        <Type className="h-3.5 w-3.5" aria-label={accountTexts.charsLeft} />
+        {nf.format(quota.chars)}
+      </span>
+    </span>
+  );
+}
+
+// The one combined auth button: "Sign up / Sign in" for visitors, "Account"
 // (opening the settings modal) once signed in.
-export function AccountControls({
+export function AuthButton({
   signedIn,
   locale,
   texts,
   accountTexts,
   pricingHref,
-  compact = false,
+  fullWidth = false,
 }: {
   signedIn: boolean;
   locale: string;
   texts: TranslatorTexts["header"];
   accountTexts: TranslatorTexts["account"];
   pricingHref: string;
-  compact?: boolean;
+  fullWidth?: boolean;
 }) {
-  const [quota, setQuota] = useState<Quota | null>(null);
+  const quota = useQuota();
   const [modalOpen, setModalOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
-
-  const loadQuota = useCallback(async () => {
-    try {
-      const res = await apiFetch("/api/quota");
-      if (res.ok) setQuota(await res.json());
-    } catch {
-      /* badge just stays hidden */
-    }
-  }, []);
-
-  useEffect(() => {
-    loadQuota();
-  }, [loadQuota]);
 
   async function openPortal() {
     setPortalBusy(true);
@@ -70,39 +103,17 @@ export function AccountControls({
   }
 
   const nf = new Intl.NumberFormat(locale);
-  const badge = quota && (
-    <span
-      className={`flex shrink-0 items-center gap-2.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-hint ${compact ? "" : "sm:gap-3"}`}
-      title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
-    >
-      <span className="flex items-center gap-1">
-        <Mic className="h-3.5 w-3.5" aria-label={accountTexts.minutesLeft} />
-        {fmtSeconds(quota.seconds)}
-      </span>
-      <span className="flex items-center gap-1">
-        <Type className="h-3.5 w-3.5" aria-label={accountTexts.charsLeft} />
-        {nf.format(quota.chars)}
-      </span>
-    </span>
-  );
-
   const isPaid = quota?.kind === "account" && quota.plan !== "FREE";
+  const btnClass = `h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL} ${fullWidth ? "flex w-full" : "inline-flex"}`;
 
   return (
     <>
-      {badge}
       {signedIn ? (
-        <button
-          onClick={() => setModalOpen(true)}
-          className={`h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL} ${compact ? "inline-flex" : "hidden sm:inline-flex"}`}
-        >
+        <button onClick={() => setModalOpen(true)} className={btnClass}>
           {texts.account}
         </button>
       ) : (
-        <a
-          href="/api/auth/google/start"
-          className={`h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99] ${PRIMARY_FILL} ${compact ? "inline-flex" : "hidden sm:inline-flex"}`}
-        >
+        <a href="/api/auth/google/start" className={btnClass}>
           {texts.signIn}
         </a>
       )}
