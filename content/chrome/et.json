@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Tõlkijad",
     "featureLinks": [
-      { "routeKey": "/tolkija-eesti-inglise", "label": "Eesti–Inglise" },
-      { "routeKey": "/tolkija-eesti-soome", "label": "Eesti–Soome" },
-      { "routeKey": "/tolkija-eesti-saksa", "label": "Eesti–Saksa" }
+      {
+        "routeKey": "/tolkija-eesti-inglise",
+        "label": "Eesti–Inglise"
+      },
+      {
+        "routeKey": "/tolkija-eesti-soome",
+        "label": "Eesti–Soome"
+      },
+      {
+        "routeKey": "/tolkija-eesti-saksa",
+        "label": "Eesti–Saksa"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 keelt"
+      }
     ]
   },
   "translator": {

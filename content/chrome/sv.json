@@ -194,13 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Översättare",
     "featureLinks": [
-      { "routeKey": "/oversattare-svenska-engelska", "label": "Svenska–Engelska" },
-      { "routeKey": "/oversattare-svenska-tyska", "label": "Svenska–Tyska" },
-      { "routeKey": "/oversattare-svenska-spanska", "label": "Svenska–Spanska" },
-      { "routeKey": "/oversattare-svenska-franska", "label": "Svenska–Franska" },
-      { "routeKey": "/oversattare-svenska-danska", "label": "Svenska–Danska" },
-      { "routeKey": "/oversattare-svenska-norska", "label": "Svenska–Norska" },
-      { "routeKey": "/oversattare-svenska-finska", "label": "Svenska–Finska" }
+      {
+        "routeKey": "/oversattare-svenska-engelska",
+        "label": "Svenska–Engelska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-tyska",
+        "label": "Svenska–Tyska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-spanska",
+        "label": "Svenska–Spanska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-franska",
+        "label": "Svenska–Franska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-danska",
+        "label": "Svenska–Danska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-norska",
+        "label": "Svenska–Norska"
+      },
+      {
+        "routeKey": "/oversattare-svenska-finska",
+        "label": "Svenska–Finska"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 språk"
+      }
     ]
   },
   "translator": {

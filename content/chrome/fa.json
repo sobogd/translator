@@ -194,10 +194,26 @@
     "brand": "IQ Translate",
     "featuresHeading": "مترجم‌ها",
     "featureLinks": [
-      { "routeKey": "/motarjem-farsi-arabi", "label": "فارسی–عربی" },
-      { "routeKey": "/motarjem-farsi-torki", "label": "فارسی–ترکی" },
-      { "routeKey": "/motarjem-farsi-englisi", "label": "فارسی–انگلیسی" },
-      { "routeKey": "/motarjem-farsi-almani", "label": "فارسی–آلمانی" }
+      {
+        "routeKey": "/motarjem-farsi-arabi",
+        "label": "فارسی–عربی"
+      },
+      {
+        "routeKey": "/motarjem-farsi-torki",
+        "label": "فارسی–ترکی"
+      },
+      {
+        "routeKey": "/motarjem-farsi-englisi",
+        "label": "فارسی–انگلیسی"
+      },
+      {
+        "routeKey": "/motarjem-farsi-almani",
+        "label": "فارسی–آلمانی"
+      },
+      {
+        "routeKey": "/",
+        "label": "۱۸۶ زبان"
+      }
     ]
   },
   "translator": {

@@ -201,6 +201,10 @@
       {
         "routeKey": "/tulkotajs-latviesu-krievu",
         "label": "Latviešu–krievu"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 valodas"
       }
     ]
   },

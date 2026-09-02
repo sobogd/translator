@@ -194,13 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Перекладачі",
     "featureLinks": [
-      { "routeKey": "/perekladach-z-ukrainskoi-na-anhliysku", "label": "Українсько–англійський" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-polsku", "label": "Українсько–польський" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-nimetsku", "label": "Українсько–німецький" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-rosiysku", "label": "Українсько–російський" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-italiysku", "label": "Українсько–італійський" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-chesku", "label": "Українсько–чеський" },
-      { "routeKey": "/perekladach-z-ukrainskoi-na-ispansku", "label": "Українсько–іспанський" }
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-anhliysku",
+        "label": "Українсько–англійський"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-polsku",
+        "label": "Українсько–польський"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-nimetsku",
+        "label": "Українсько–німецький"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-rosiysku",
+        "label": "Українсько–російський"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-italiysku",
+        "label": "Українсько–італійський"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-chesku",
+        "label": "Українсько–чеський"
+      },
+      {
+        "routeKey": "/perekladach-z-ukrainskoi-na-ispansku",
+        "label": "Українсько–іспанський"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 мов"
+      }
     ]
   },
   "translator": {

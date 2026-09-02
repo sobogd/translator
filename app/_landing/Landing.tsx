@@ -24,6 +24,9 @@ export function Landing({
   homeHref: string;
   pathname: string;
 }) {
+  // The home widget defaults its target to the page's own language (a /lv
+  // visitor most likely translates INTO Latvian's pair, not Spanish); a
+  // previously saved localStorage choice still wins over this soft default.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -49,7 +52,7 @@ export function Landing({
       />
       <Container className="py-6">
         <Band id="app">
-          <Translator texts={texts} />
+          <Translator texts={texts} initialTarget={locale} />
         </Band>
         <Band>
           <Hero texts={texts.hero} />

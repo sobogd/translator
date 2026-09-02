@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Prevoditelji",
     "featureLinks": [
-      { "routeKey": "/prevoditelj-hrvatski-engleski", "label": "Hrvatsko–engleski" },
-      { "routeKey": "/prevoditelj-hrvatski-njemacki", "label": "Hrvatsko–njemački" },
-      { "routeKey": "/prevoditelj-hrvatski-talijanski", "label": "Hrvatsko–talijanski" }
+      {
+        "routeKey": "/prevoditelj-hrvatski-engleski",
+        "label": "Hrvatsko–engleski"
+      },
+      {
+        "routeKey": "/prevoditelj-hrvatski-njemacki",
+        "label": "Hrvatsko–njemački"
+      },
+      {
+        "routeKey": "/prevoditelj-hrvatski-talijanski",
+        "label": "Hrvatsko–talijanski"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 jezika"
+      }
     ]
   },
   "translator": {

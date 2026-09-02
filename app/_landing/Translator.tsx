@@ -110,15 +110,18 @@ export function Translator({
   texts,
   presetSource,
   presetTarget,
+  initialTarget,
 }: {
   texts: TranslatorTexts;
   /** Pair-page preset: pre-picked source language for the draft state. */
   presetSource?: string;
   /** Pair-page preset: pre-picked target language; wins over localStorage. */
   presetTarget?: string;
+  /** Soft default target (locale homes): initial value only, localStorage wins. */
+  initialTarget?: string;
 }) {
   const t = texts.translator;
-  const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? DEFAULT_TO);
+  const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [topic, setTopic] = useState<TopicDetail | null>(null);
   // Source language chosen before a topic exists yet — carried into the

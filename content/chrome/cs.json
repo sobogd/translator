@@ -194,13 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Překladače",
     "featureLinks": [
-      { "routeKey": "/prekladac-cesko-anglicky", "label": "Česko–anglický" },
-      { "routeKey": "/prekladac-cesko-nemecky", "label": "Česko–německý" },
-      { "routeKey": "/prekladac-cesko-slovensky", "label": "Česko–slovenský" },
-      { "routeKey": "/prekladac-cesko-italsky", "label": "Česko–italský" },
-      { "routeKey": "/prekladac-cesko-francouzsky", "label": "Česko–francouzský" },
-      { "routeKey": "/prekladac-cesko-polsky", "label": "Česko–polský" },
-      { "routeKey": "/prekladac-cesko-ukrajinsky", "label": "Česko–ukrajinský" }
+      {
+        "routeKey": "/prekladac-cesko-anglicky",
+        "label": "Česko–anglický"
+      },
+      {
+        "routeKey": "/prekladac-cesko-nemecky",
+        "label": "Česko–německý"
+      },
+      {
+        "routeKey": "/prekladac-cesko-slovensky",
+        "label": "Česko–slovenský"
+      },
+      {
+        "routeKey": "/prekladac-cesko-italsky",
+        "label": "Česko–italský"
+      },
+      {
+        "routeKey": "/prekladac-cesko-francouzsky",
+        "label": "Česko–francouzský"
+      },
+      {
+        "routeKey": "/prekladac-cesko-polsky",
+        "label": "Česko–polský"
+      },
+      {
+        "routeKey": "/prekladac-cesko-ukrajinsky",
+        "label": "Česko–ukrajinský"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 jazyků"
+      }
     ]
   },
   "translator": {

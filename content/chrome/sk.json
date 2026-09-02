@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Prekladače",
     "featureLinks": [
-      { "routeKey": "/prekladac-slovensko-anglicky", "label": "Slovensko–anglický" },
-      { "routeKey": "/prekladac-slovensko-cesky", "label": "Slovensko–český" },
-      { "routeKey": "/prekladac-slovensko-nemecky", "label": "Slovensko–nemecký" }
+      {
+        "routeKey": "/prekladac-slovensko-anglicky",
+        "label": "Slovensko–anglický"
+      },
+      {
+        "routeKey": "/prekladac-slovensko-cesky",
+        "label": "Slovensko–český"
+      },
+      {
+        "routeKey": "/prekladac-slovensko-nemecky",
+        "label": "Slovensko–nemecký"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 jazykov"
+      }
     ]
   },
   "translator": {

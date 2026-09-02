@@ -194,10 +194,26 @@
     "brand": "IQ Translate",
     "featuresHeading": "Преводачи",
     "featureLinks": [
-      { "routeKey": "/prevodach-bulgarski-angliyski", "label": "Българско–английски" },
-      { "routeKey": "/prevodach-bulgarski-ruski", "label": "Българско–руски" },
-      { "routeKey": "/prevodach-bulgarski-turski", "label": "Българско–турски" },
-      { "routeKey": "/prevodach-bulgarski-nemski", "label": "Българско–немски" }
+      {
+        "routeKey": "/prevodach-bulgarski-angliyski",
+        "label": "Българско–английски"
+      },
+      {
+        "routeKey": "/prevodach-bulgarski-ruski",
+        "label": "Българско–руски"
+      },
+      {
+        "routeKey": "/prevodach-bulgarski-turski",
+        "label": "Българско–турски"
+      },
+      {
+        "routeKey": "/prevodach-bulgarski-nemski",
+        "label": "Българско–немски"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 езика"
+      }
     ]
   },
   "translator": {

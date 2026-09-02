@@ -194,14 +194,42 @@
     "brand": "IQ Translate",
     "featuresHeading": "Traducteurs",
     "featureLinks": [
-      { "routeKey": "/traducteur-francais-anglais", "label": "Français–Anglais" },
-      { "routeKey": "/traducteur-francais-espagnol", "label": "Français–Espagnol" },
-      { "routeKey": "/traducteur-francais-arabe", "label": "Français–Arabe" },
-      { "routeKey": "/traducteur-francais-allemand", "label": "Français–Allemand" },
-      { "routeKey": "/traducteur-francais-italien", "label": "Français–Italien" },
-      { "routeKey": "/traducteur-francais-neerlandais", "label": "Français–Néerlandais" },
-      { "routeKey": "/traducteur-francais-portugais", "label": "Français–Portugais" },
-      { "routeKey": "/traducteur-francais-turc", "label": "Français–Turc" }
+      {
+        "routeKey": "/traducteur-francais-anglais",
+        "label": "Français–Anglais"
+      },
+      {
+        "routeKey": "/traducteur-francais-espagnol",
+        "label": "Français–Espagnol"
+      },
+      {
+        "routeKey": "/traducteur-francais-arabe",
+        "label": "Français–Arabe"
+      },
+      {
+        "routeKey": "/traducteur-francais-allemand",
+        "label": "Français–Allemand"
+      },
+      {
+        "routeKey": "/traducteur-francais-italien",
+        "label": "Français–Italien"
+      },
+      {
+        "routeKey": "/traducteur-francais-neerlandais",
+        "label": "Français–Néerlandais"
+      },
+      {
+        "routeKey": "/traducteur-francais-portugais",
+        "label": "Français–Portugais"
+      },
+      {
+        "routeKey": "/traducteur-francais-turc",
+        "label": "Français–Turc"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 langues"
+      }
     ]
   },
   "translator": {

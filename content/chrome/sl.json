@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Prevajalniki",
     "featureLinks": [
-      { "routeKey": "/prevajalnik-slovensko-anglesko", "label": "Slovensko–angleški" },
-      { "routeKey": "/prevajalnik-slovensko-nemsko", "label": "Slovensko–nemški" },
-      { "routeKey": "/prevajalnik-slovensko-italijansko", "label": "Slovensko–italijanski" }
+      {
+        "routeKey": "/prevajalnik-slovensko-anglesko",
+        "label": "Slovensko–angleški"
+      },
+      {
+        "routeKey": "/prevajalnik-slovensko-nemsko",
+        "label": "Slovensko–nemški"
+      },
+      {
+        "routeKey": "/prevajalnik-slovensko-italijansko",
+        "label": "Slovensko–italijanski"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 jezikov"
+      }
     ]
   },
   "translator": {

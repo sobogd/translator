@@ -194,14 +194,42 @@
     "brand": "IQ Translate",
     "featuresHeading": "Tłumacze",
     "featureLinks": [
-      { "routeKey": "/tlumacz-polsko-angielski", "label": "Polsko–angielski" },
-      { "routeKey": "/tlumacz-polsko-niemiecki", "label": "Polsko–niemiecki" },
-      { "routeKey": "/tlumacz-polsko-chinski", "label": "Polsko–chiński" },
-      { "routeKey": "/tlumacz-polsko-hiszpanski", "label": "Polsko–hiszpański" },
-      { "routeKey": "/tlumacz-polsko-rosyjski", "label": "Polsko–rosyjski" },
-      { "routeKey": "/tlumacz-polsko-ukrainski", "label": "Polsko–ukraiński" },
-      { "routeKey": "/tlumacz-polsko-francuski", "label": "Polsko–francuski" },
-      { "routeKey": "/tlumacz-polsko-czeski", "label": "Polsko–czeski" }
+      {
+        "routeKey": "/tlumacz-polsko-angielski",
+        "label": "Polsko–angielski"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-niemiecki",
+        "label": "Polsko–niemiecki"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-chinski",
+        "label": "Polsko–chiński"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-hiszpanski",
+        "label": "Polsko–hiszpański"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-rosyjski",
+        "label": "Polsko–rosyjski"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-ukrainski",
+        "label": "Polsko–ukraiński"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-francuski",
+        "label": "Polsko–francuski"
+      },
+      {
+        "routeKey": "/tlumacz-polsko-czeski",
+        "label": "Polsko–czeski"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 języków"
+      }
     ]
   },
   "translator": {

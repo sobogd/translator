@@ -205,6 +205,10 @@
       {
         "routeKey": "/vertejas-lietuviu-lenku",
         "label": "Lietuvių–lenkų"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 kalbų"
       }
     ]
   },

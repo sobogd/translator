@@ -194,12 +194,34 @@
     "brand": "IQ Translate",
     "featuresHeading": "Prevodioci",
     "featureLinks": [
-      { "routeKey": "/prevodilac-srpski-engleski", "label": "Srpsko–engleski" },
-      { "routeKey": "/prevodilac-srpski-nemacki", "label": "Srpsko–nemački" },
-      { "routeKey": "/prevodilac-srpski-spanski", "label": "Srpsko–španski" },
-      { "routeKey": "/prevodilac-srpski-italijanski", "label": "Srpsko–italijanski" },
-      { "routeKey": "/prevodilac-srpski-turski", "label": "Srpsko–turski" },
-      { "routeKey": "/prevodilac-srpski-ruski", "label": "Srpsko–ruski" }
+      {
+        "routeKey": "/prevodilac-srpski-engleski",
+        "label": "Srpsko–engleski"
+      },
+      {
+        "routeKey": "/prevodilac-srpski-nemacki",
+        "label": "Srpsko–nemački"
+      },
+      {
+        "routeKey": "/prevodilac-srpski-spanski",
+        "label": "Srpsko–španski"
+      },
+      {
+        "routeKey": "/prevodilac-srpski-italijanski",
+        "label": "Srpsko–italijanski"
+      },
+      {
+        "routeKey": "/prevodilac-srpski-turski",
+        "label": "Srpsko–turski"
+      },
+      {
+        "routeKey": "/prevodilac-srpski-ruski",
+        "label": "Srpsko–ruski"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 jezika"
+      }
     ]
   },
   "translator": {

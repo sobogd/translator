@@ -209,6 +209,10 @@
       {
         "routeKey": "/honyaku-nihongo-furansugo",
         "label": "日本語–フランス語"
+      },
+      {
+        "routeKey": "/",
+        "label": "186言語"
       }
     ]
   },

@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Traductors",
     "featureLinks": [
-      { "routeKey": "/traductor-catala-angles", "label": "Català–Anglès" },
-      { "routeKey": "/traductor-catala-castella", "label": "Català–Castellà" },
-      { "routeKey": "/traductor-catala-frances", "label": "Català–Francès" }
+      {
+        "routeKey": "/traductor-catala-angles",
+        "label": "Català–Anglès"
+      },
+      {
+        "routeKey": "/traductor-catala-castella",
+        "label": "Català–Castellà"
+      },
+      {
+        "routeKey": "/traductor-catala-frances",
+        "label": "Català–Francès"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 llengües"
+      }
     ]
   },
   "translator": {

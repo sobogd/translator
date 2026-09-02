@@ -194,12 +194,34 @@
     "brand": "IQ Translate",
     "featuresHeading": "Traducătoare",
     "featureLinks": [
-      { "routeKey": "/traducere-romana-engleza", "label": "Română–Engleză" },
-      { "routeKey": "/traducere-romana-germana", "label": "Română–Germană" },
-      { "routeKey": "/traducere-romana-franceza", "label": "Română–Franceză" },
-      { "routeKey": "/traducere-romana-italiana", "label": "Română–Italiană" },
-      { "routeKey": "/traducere-romana-turca", "label": "Română–Turcă" },
-      { "routeKey": "/traducere-romana-spaniola", "label": "Română–Spaniolă" }
+      {
+        "routeKey": "/traducere-romana-engleza",
+        "label": "Română–Engleză"
+      },
+      {
+        "routeKey": "/traducere-romana-germana",
+        "label": "Română–Germană"
+      },
+      {
+        "routeKey": "/traducere-romana-franceza",
+        "label": "Română–Franceză"
+      },
+      {
+        "routeKey": "/traducere-romana-italiana",
+        "label": "Română–Italiană"
+      },
+      {
+        "routeKey": "/traducere-romana-turca",
+        "label": "Română–Turcă"
+      },
+      {
+        "routeKey": "/traducere-romana-spaniola",
+        "label": "Română–Spaniolă"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 de limbi"
+      }
     ]
   },
   "translator": {

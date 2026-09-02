@@ -194,10 +194,26 @@
     "brand": "IQ Translate",
     "featuresHeading": "Oversettere",
     "featureLinks": [
-      { "routeKey": "/oversetter-norsk-engelsk", "label": "Norsk–Engelsk" },
-      { "routeKey": "/oversetter-norsk-spansk", "label": "Norsk–Spansk" },
-      { "routeKey": "/oversetter-norsk-tysk", "label": "Norsk–Tysk" },
-      { "routeKey": "/oversetter-norsk-svensk", "label": "Norsk–Svensk" }
+      {
+        "routeKey": "/oversetter-norsk-engelsk",
+        "label": "Norsk–Engelsk"
+      },
+      {
+        "routeKey": "/oversetter-norsk-spansk",
+        "label": "Norsk–Spansk"
+      },
+      {
+        "routeKey": "/oversetter-norsk-tysk",
+        "label": "Norsk–Tysk"
+      },
+      {
+        "routeKey": "/oversetter-norsk-svensk",
+        "label": "Norsk–Svensk"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 språk"
+      }
     ]
   },
   "translator": {

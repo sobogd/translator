@@ -194,12 +194,34 @@
     "brand": "IQ Translate",
     "featuresHeading": "Vertalers",
     "featureLinks": [
-      { "routeKey": "/vertaler-nederlands-engels", "label": "Nederlands–Engels" },
-      { "routeKey": "/vertaler-nederlands-frans", "label": "Nederlands–Frans" },
-      { "routeKey": "/vertaler-nederlands-duits", "label": "Nederlands–Duits" },
-      { "routeKey": "/vertaler-nederlands-spaans", "label": "Nederlands–Spaans" },
-      { "routeKey": "/vertaler-nederlands-italiaans", "label": "Nederlands–Italiaans" },
-      { "routeKey": "/vertaler-nederlands-turks", "label": "Nederlands–Turks" }
+      {
+        "routeKey": "/vertaler-nederlands-engels",
+        "label": "Nederlands–Engels"
+      },
+      {
+        "routeKey": "/vertaler-nederlands-frans",
+        "label": "Nederlands–Frans"
+      },
+      {
+        "routeKey": "/vertaler-nederlands-duits",
+        "label": "Nederlands–Duits"
+      },
+      {
+        "routeKey": "/vertaler-nederlands-spaans",
+        "label": "Nederlands–Spaans"
+      },
+      {
+        "routeKey": "/vertaler-nederlands-italiaans",
+        "label": "Nederlands–Italiaans"
+      },
+      {
+        "routeKey": "/vertaler-nederlands-turks",
+        "label": "Nederlands–Turks"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 talen"
+      }
     ]
   },
   "translator": {

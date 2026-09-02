@@ -194,16 +194,50 @@
     "brand": "IQ Translate",
     "featuresHeading": "Übersetzer",
     "featureLinks": [
-      { "routeKey": "/uebersetzer-deutsch-englisch", "label": "Deutsch–Englisch" },
-      { "routeKey": "/uebersetzer-deutsch-spanisch", "label": "Deutsch–Spanisch" },
-      { "routeKey": "/uebersetzer-deutsch-russisch", "label": "Deutsch–Russisch" },
-      { "routeKey": "/uebersetzer-deutsch-italienisch", "label": "Deutsch–Italienisch" },
-      { "routeKey": "/uebersetzer-deutsch-arabisch", "label": "Deutsch–Arabisch" },
-      { "routeKey": "/uebersetzer-deutsch-tuerkisch", "label": "Deutsch–Türkisch" },
-      { "routeKey": "/uebersetzer-deutsch-polnisch", "label": "Deutsch–Polnisch" },
-      { "routeKey": "/uebersetzer-deutsch-ukrainisch", "label": "Deutsch–Ukrainisch" },
-      { "routeKey": "/uebersetzer-deutsch-rumaenisch", "label": "Deutsch–Rumänisch" },
-      { "routeKey": "/uebersetzer-deutsch-kroatisch", "label": "Deutsch–Kroatisch" }
+      {
+        "routeKey": "/uebersetzer-deutsch-englisch",
+        "label": "Deutsch–Englisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-spanisch",
+        "label": "Deutsch–Spanisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-russisch",
+        "label": "Deutsch–Russisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-italienisch",
+        "label": "Deutsch–Italienisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-arabisch",
+        "label": "Deutsch–Arabisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-tuerkisch",
+        "label": "Deutsch–Türkisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-polnisch",
+        "label": "Deutsch–Polnisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-ukrainisch",
+        "label": "Deutsch–Ukrainisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-rumaenisch",
+        "label": "Deutsch–Rumänisch"
+      },
+      {
+        "routeKey": "/uebersetzer-deutsch-kroatisch",
+        "label": "Deutsch–Kroatisch"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 Sprachen"
+      }
     ]
   },
   "translator": {

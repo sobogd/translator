@@ -194,11 +194,30 @@
     "brand": "IQ Translate",
     "featuresHeading": "Μεταφραστές",
     "featureLinks": [
-      { "routeKey": "/metafrastis-ellinika-agglika", "label": "Ελληνικά–Αγγλικά" },
-      { "routeKey": "/metafrastis-ellinika-gallika", "label": "Ελληνικά–Γαλλικά" },
-      { "routeKey": "/metafrastis-ellinika-italika", "label": "Ελληνικά–Ιταλικά" },
-      { "routeKey": "/metafrastis-ellinika-germanika", "label": "Ελληνικά–Γερμανικά" },
-      { "routeKey": "/metafrastis-ellinika-ispanika", "label": "Ελληνικά–Ισπανικά" }
+      {
+        "routeKey": "/metafrastis-ellinika-agglika",
+        "label": "Ελληνικά–Αγγλικά"
+      },
+      {
+        "routeKey": "/metafrastis-ellinika-gallika",
+        "label": "Ελληνικά–Γαλλικά"
+      },
+      {
+        "routeKey": "/metafrastis-ellinika-italika",
+        "label": "Ελληνικά–Ιταλικά"
+      },
+      {
+        "routeKey": "/metafrastis-ellinika-germanika",
+        "label": "Ελληνικά–Γερμανικά"
+      },
+      {
+        "routeKey": "/metafrastis-ellinika-ispanika",
+        "label": "Ελληνικά–Ισπανικά"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 γλώσσες"
+      }
     ]
   },
   "translator": {

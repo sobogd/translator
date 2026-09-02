@@ -194,13 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Traduttori",
     "featureLinks": [
-      { "routeKey": "/traduttore-italiano-inglese", "label": "Italiano–Inglese" },
-      { "routeKey": "/traduttore-italiano-francese", "label": "Italiano–Francese" },
-      { "routeKey": "/traduttore-italiano-tedesco", "label": "Italiano–Tedesco" },
-      { "routeKey": "/traduttore-italiano-arabo", "label": "Italiano–Arabo" },
-      { "routeKey": "/traduttore-italiano-russo", "label": "Italiano–Russo" },
-      { "routeKey": "/traduttore-italiano-cinese", "label": "Italiano–Cinese" },
-      { "routeKey": "/traduttore-italiano-giapponese", "label": "Italiano–Giapponese" }
+      {
+        "routeKey": "/traduttore-italiano-inglese",
+        "label": "Italiano–Inglese"
+      },
+      {
+        "routeKey": "/traduttore-italiano-francese",
+        "label": "Italiano–Francese"
+      },
+      {
+        "routeKey": "/traduttore-italiano-tedesco",
+        "label": "Italiano–Tedesco"
+      },
+      {
+        "routeKey": "/traduttore-italiano-arabo",
+        "label": "Italiano–Arabo"
+      },
+      {
+        "routeKey": "/traduttore-italiano-russo",
+        "label": "Italiano–Russo"
+      },
+      {
+        "routeKey": "/traduttore-italiano-cinese",
+        "label": "Italiano–Cinese"
+      },
+      {
+        "routeKey": "/traduttore-italiano-giapponese",
+        "label": "Italiano–Giapponese"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 lingue"
+      }
     ]
   },
   "translator": {

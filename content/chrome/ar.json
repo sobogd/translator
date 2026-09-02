@@ -194,12 +194,34 @@
     "brand": "IQ Translate",
     "featuresHeading": "المترجمون",
     "featureLinks": [
-      { "routeKey": "/motarjem-arabi-injlizi", "label": "عربي–إنجليزي" },
-      { "routeKey": "/motarjem-arabi-turki", "label": "عربي–تركي" },
-      { "routeKey": "/motarjem-arabi-faransi", "label": "عربي–فرنسي" },
-      { "routeKey": "/motarjem-arabi-isbani", "label": "عربي–إسباني" },
-      { "routeKey": "/motarjem-arabi-almani", "label": "عربي–ألماني" },
-      { "routeKey": "/motarjem-arabi-rusi", "label": "عربي–روسي" }
+      {
+        "routeKey": "/motarjem-arabi-injlizi",
+        "label": "عربي–إنجليزي"
+      },
+      {
+        "routeKey": "/motarjem-arabi-turki",
+        "label": "عربي–تركي"
+      },
+      {
+        "routeKey": "/motarjem-arabi-faransi",
+        "label": "عربي–فرنسي"
+      },
+      {
+        "routeKey": "/motarjem-arabi-isbani",
+        "label": "عربي–إسباني"
+      },
+      {
+        "routeKey": "/motarjem-arabi-almani",
+        "label": "عربي–ألماني"
+      },
+      {
+        "routeKey": "/motarjem-arabi-rusi",
+        "label": "عربي–روسي"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 لغة"
+      }
     ]
   },
   "translator": {

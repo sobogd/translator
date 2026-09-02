@@ -201,6 +201,10 @@
       {
         "routeKey": "/fordito-magyar-nemet",
         "label": "Magyar–Német"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 nyelv"
       }
     ]
   },

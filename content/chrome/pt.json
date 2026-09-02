@@ -194,12 +194,34 @@
     "brand": "IQ Translate",
     "featuresHeading": "Tradutores",
     "featureLinks": [
-      { "routeKey": "/tradutor-portugues-ingles", "label": "Português–Inglês" },
-      { "routeKey": "/tradutor-portugues-espanhol", "label": "Português–Espanhol" },
-      { "routeKey": "/tradutor-portugues-frances", "label": "Português–Francês" },
-      { "routeKey": "/tradutor-portugues-japones", "label": "Português–Japonês" },
-      { "routeKey": "/tradutor-portugues-italiano", "label": "Português–Italiano" },
-      { "routeKey": "/tradutor-portugues-arabe", "label": "Português–Árabe" }
+      {
+        "routeKey": "/tradutor-portugues-ingles",
+        "label": "Português–Inglês"
+      },
+      {
+        "routeKey": "/tradutor-portugues-espanhol",
+        "label": "Português–Espanhol"
+      },
+      {
+        "routeKey": "/tradutor-portugues-frances",
+        "label": "Português–Francês"
+      },
+      {
+        "routeKey": "/tradutor-portugues-japones",
+        "label": "Português–Japonês"
+      },
+      {
+        "routeKey": "/tradutor-portugues-italiano",
+        "label": "Português–Italiano"
+      },
+      {
+        "routeKey": "/tradutor-portugues-arabe",
+        "label": "Português–Árabe"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 idiomas"
+      }
     ]
   },
   "translator": {

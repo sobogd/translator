@@ -194,14 +194,42 @@
     "brand": "IQ Translate",
     "featuresHeading": "Traductores",
     "featureLinks": [
-      { "routeKey": "/traductor-espanol-ingles", "label": "Español–Inglés" },
-      { "routeKey": "/traductor-espanol-catalan", "label": "Español–Catalán" },
-      { "routeKey": "/traductor-espanol-frances", "label": "Español–Francés" },
-      { "routeKey": "/traductor-espanol-italiano", "label": "Español–Italiano" },
-      { "routeKey": "/traductor-espanol-chino", "label": "Español–Chino" },
-      { "routeKey": "/traductor-espanol-portugues", "label": "Español–Portugués" },
-      { "routeKey": "/traductor-espanol-arabe", "label": "Español–Árabe" },
-      { "routeKey": "/traductor-espanol-ruso", "label": "Español–Ruso" }
+      {
+        "routeKey": "/traductor-espanol-ingles",
+        "label": "Español–Inglés"
+      },
+      {
+        "routeKey": "/traductor-espanol-catalan",
+        "label": "Español–Catalán"
+      },
+      {
+        "routeKey": "/traductor-espanol-frances",
+        "label": "Español–Francés"
+      },
+      {
+        "routeKey": "/traductor-espanol-italiano",
+        "label": "Español–Italiano"
+      },
+      {
+        "routeKey": "/traductor-espanol-chino",
+        "label": "Español–Chino"
+      },
+      {
+        "routeKey": "/traductor-espanol-portugues",
+        "label": "Español–Portugués"
+      },
+      {
+        "routeKey": "/traductor-espanol-arabe",
+        "label": "Español–Árabe"
+      },
+      {
+        "routeKey": "/traductor-espanol-ruso",
+        "label": "Español–Ruso"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 idiomas"
+      }
     ]
   },
   "translator": {

@@ -14,10 +14,7 @@ const DEFAULT_TEXTS: FooterTexts = {
   tagline: "Instant voice translation, 186 languages",
   brand: "IQ Translate",
   featuresHeading: "Features",
-  featureLinks: [
-    { routeKey: "/text-translator", label: "Text translator" },
-    { routeKey: "/instant-voice-translator", label: "Voice translator" },
-  ],
+  featureLinks: [{ routeKey: "/", label: "All 186 languages" }],
 };
 
 // `locale`/`pathname`/`texts` default to English/home so the not-yet-localized

@@ -194,15 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Переводчики",
     "featureLinks": [
-      { "routeKey": "/text-translator", "label": "Перевод текста" },
-      { "routeKey": "/instant-voice-translator", "label": "Голосовой перевод" },
-      { "routeKey": "/perevodchik-s-russkogo-na-angliyskiy", "label": "Русско–английский" },
-      { "routeKey": "/perevodchik-s-russkogo-na-nemetskiy", "label": "Русско–немецкий" },
-      { "routeKey": "/perevodchik-s-russkogo-na-ukrainskiy", "label": "Русско–украинский" },
-      { "routeKey": "/perevodchik-s-russkogo-na-polskiy", "label": "Русско–польский" },
-      { "routeKey": "/perevodchik-s-russkogo-na-ispanskiy", "label": "Русско–испанский" },
-      { "routeKey": "/perevodchik-s-russkogo-na-turetskiy", "label": "Русско–турецкий" },
-      { "routeKey": "/perevodchik-s-russkogo-na-arabskiy", "label": "Русско–арабский" }
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-angliyskiy",
+        "label": "Русско–английский"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-nemetskiy",
+        "label": "Русско–немецкий"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-ukrainskiy",
+        "label": "Русско–украинский"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-polskiy",
+        "label": "Русско–польский"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-ispanskiy",
+        "label": "Русско–испанский"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-turetskiy",
+        "label": "Русско–турецкий"
+      },
+      {
+        "routeKey": "/perevodchik-s-russkogo-na-arabskiy",
+        "label": "Русско–арабский"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 языков"
+      }
     ]
   },
   "translator": {

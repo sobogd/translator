@@ -194,13 +194,38 @@
     "brand": "IQ Translate",
     "featuresHeading": "Çevirmenler",
     "featureLinks": [
-      { "routeKey": "/ceviri-turkce-ingilizce", "label": "Türkçe–İngilizce" },
-      { "routeKey": "/ceviri-turkce-arapca", "label": "Türkçe–Arapça" },
-      { "routeKey": "/ceviri-turkce-almanca", "label": "Türkçe–Almanca" },
-      { "routeKey": "/ceviri-turkce-rusca", "label": "Türkçe–Rusça" },
-      { "routeKey": "/ceviri-turkce-fransizca", "label": "Türkçe–Fransızca" },
-      { "routeKey": "/ceviri-turkce-ispanyolca", "label": "Türkçe–İspanyolca" },
-      { "routeKey": "/ceviri-turkce-farsca", "label": "Türkçe–Farsça" }
+      {
+        "routeKey": "/ceviri-turkce-ingilizce",
+        "label": "Türkçe–İngilizce"
+      },
+      {
+        "routeKey": "/ceviri-turkce-arapca",
+        "label": "Türkçe–Arapça"
+      },
+      {
+        "routeKey": "/ceviri-turkce-almanca",
+        "label": "Türkçe–Almanca"
+      },
+      {
+        "routeKey": "/ceviri-turkce-rusca",
+        "label": "Türkçe–Rusça"
+      },
+      {
+        "routeKey": "/ceviri-turkce-fransizca",
+        "label": "Türkçe–Fransızca"
+      },
+      {
+        "routeKey": "/ceviri-turkce-ispanyolca",
+        "label": "Türkçe–İspanyolca"
+      },
+      {
+        "routeKey": "/ceviri-turkce-farsca",
+        "label": "Türkçe–Farsça"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 dil"
+      }
     ]
   },
   "translator": {

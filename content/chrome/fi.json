@@ -194,9 +194,22 @@
     "brand": "IQ Translate",
     "featuresHeading": "Kääntäjät",
     "featureLinks": [
-      { "routeKey": "/kaantaja-suomi-englanti", "label": "Suomi–Englanti" },
-      { "routeKey": "/kaantaja-suomi-espanja", "label": "Suomi–Espanja" },
-      { "routeKey": "/kaantaja-suomi-saksa", "label": "Suomi–Saksa" }
+      {
+        "routeKey": "/kaantaja-suomi-englanti",
+        "label": "Suomi–Englanti"
+      },
+      {
+        "routeKey": "/kaantaja-suomi-espanja",
+        "label": "Suomi–Espanja"
+      },
+      {
+        "routeKey": "/kaantaja-suomi-saksa",
+        "label": "Suomi–Saksa"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 kieltä"
+      }
     ]
   },
   "translator": {

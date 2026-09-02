@@ -194,7 +194,14 @@
     "brand": "IQ Translate",
     "featuresHeading": "Þýðendur",
     "featureLinks": [
-      { "routeKey": "/thydandi-islensku-enska", "label": "Íslenska–Enska" }
+      {
+        "routeKey": "/thydandi-islensku-enska",
+        "label": "Íslenska–Enska"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 tungumál"
+      }
     ]
   },
   "translator": {

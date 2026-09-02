@@ -195,14 +195,6 @@
     "featuresHeading": "Features",
     "featureLinks": [
       {
-        "routeKey": "/text-translator",
-        "label": "Text translator"
-      },
-      {
-        "routeKey": "/instant-voice-translator",
-        "label": "Voice translator"
-      },
-      {
         "routeKey": "/translate-english-to-spanish",
         "label": "English to Spanish"
       },
@@ -249,6 +241,10 @@
       {
         "routeKey": "/translate-english-to-turkish",
         "label": "English to Turkish"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 languages"
       }
     ]
   },

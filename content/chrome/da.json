@@ -194,11 +194,30 @@
     "brand": "IQ Translate",
     "featuresHeading": "Oversættere",
     "featureLinks": [
-      { "routeKey": "/oversaetter-dansk-engelsk", "label": "Dansk–Engelsk" },
-      { "routeKey": "/oversaetter-dansk-tysk", "label": "Dansk–Tysk" },
-      { "routeKey": "/oversaetter-dansk-spansk", "label": "Dansk–Spansk" },
-      { "routeKey": "/oversaetter-dansk-svensk", "label": "Dansk–Svensk" },
-      { "routeKey": "/oversaetter-dansk-fransk", "label": "Dansk–Fransk" }
+      {
+        "routeKey": "/oversaetter-dansk-engelsk",
+        "label": "Dansk–Engelsk"
+      },
+      {
+        "routeKey": "/oversaetter-dansk-tysk",
+        "label": "Dansk–Tysk"
+      },
+      {
+        "routeKey": "/oversaetter-dansk-spansk",
+        "label": "Dansk–Spansk"
+      },
+      {
+        "routeKey": "/oversaetter-dansk-svensk",
+        "label": "Dansk–Svensk"
+      },
+      {
+        "routeKey": "/oversaetter-dansk-fransk",
+        "label": "Dansk–Fransk"
+      },
+      {
+        "routeKey": "/",
+        "label": "186 sprog"
+      }
     ]
   },
   "translator": {

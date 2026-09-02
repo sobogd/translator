@@ -205,6 +205,10 @@
       {
         "routeKey": "/fanyi-zhongwen-ewen",
         "label": "中文–俄文"
+      },
+      {
+        "routeKey": "/",
+        "label": "186种语言"
       }
     ]
   },

@@ -209,6 +209,10 @@
       {
         "routeKey": "/beonyeok-hangugeo-dogileo",
         "label": "한국어–독일어"
+      },
+      {
+        "routeKey": "/",
+        "label": "186개 언어"
       }
     ]
   },

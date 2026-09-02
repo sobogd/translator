@@ -7,13 +7,17 @@ import { localeHome, localePath } from "./locale-paths";
 // footer locale switcher already read from this map so a future feature page
 // only ever needs one registration, not a change in four places.
 export const LOCALE_SLUG_OVERRIDES: Record<string, Record<string, string>> = {
-  "/text-translator": { en: "text-translator", ru: "perevod-teksta-onlayn" },
-  "/instant-voice-translator": { en: "instant-voice-translator", ru: "perevodchik-rechi-v-tekst" },
+  // Empty since 2026-09-02: the two original feature pages (text /
+  // instant-voice) were removed in favour of the language-pair pages, which
+  // are locale-unique and deliberately NOT registered here (no hreflang).
 };
 
 // Resolves a shared route key (e.g. "/text-translator") to its localized
 // href for one locale, falling back to the key itself when unregistered.
 export function featureHref(routeKey: string, locale: string): string {
+  // "/" is the universal "all languages" link — the locale's home, where the
+  // unrestricted translator lives.
+  if (routeKey === "/") return localeHome(locale);
   const slug = LOCALE_SLUG_OVERRIDES[routeKey]?.[locale] ?? routeKey;
   return localePath(locale, slug);
 }
