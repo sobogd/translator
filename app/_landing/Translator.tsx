@@ -618,12 +618,13 @@ export function Translator({
 
   return (
     <div className="flex flex-col gap-4">
-      {/* SEO hero text always shows on the left, whether or not a topic
-          exists yet; the widget on the right is always fully live —
+      {/* SEO hero text comes first everywhere — above the widget on mobile,
+          left of it on desktop — whether or not a topic exists yet; the
+          widget is always fully live —
           topics live behind a toggle + sliding drawer, anchored to the
           widget itself, same on every breakpoint. */}
       <div className="flex flex-col gap-4 lg:grid lg:h-[calc(95vh_-_89px)] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
-        <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
+        <div className="flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:h-full lg:rounded-none lg:border-0">
           <div className="my-auto flex min-w-0 flex-col gap-4">
             <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
               {heroTexts.title}{" "}
@@ -638,7 +639,7 @@ export function Translator({
           </div>
         </div>
 
-        <div className="relative order-1 flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0">
+        <div className="relative flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0">
           {/* Chat spans the full height and scrolls behind the two
               islands — they're overlaid (absolute), not flex siblings, so
               they never shrink the scroll area. Padding on the scroll box

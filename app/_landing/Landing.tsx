@@ -7,7 +7,7 @@ import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
-import { localePath } from "@/lib/locale-paths";
+import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import type { Quota } from "@/lib/quota-server";
 import type { InitialTopics } from "@/lib/topics-server";
@@ -90,11 +90,14 @@ export function Landing({
           />
         </Band>
         <Band>
+          {/* On the home page itself a bare "/" link is a no-op — anchor the
+              CTA to the header (#top) so it scrolls all the way up. */}
           <FinalCta
             heading={texts.finalCta.heading}
             headingAccent={texts.finalCta.headingAccent}
             sub={texts.finalCta.sub}
             ctaLabel={texts.finalCta.ctaLabel}
+            ctaHref={`${localeHome(locale)}#top`}
           />
         </Band>
       </Container>

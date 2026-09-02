@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PRIMARY_BTN } from "./shell";
 
 // Same layout as iq-rest's FinalCta: one plain bordered block, left-aligned
@@ -8,12 +9,15 @@ export function FinalCta({
   headingAccent = "ready in 10 seconds.",
   sub = "Try it right on this page — no sign-up, no downloads, 186 languages included.",
   ctaLabel = "Try it now",
-  ctaHref = "#app",
+  ctaHref = "/",
 }: {
   heading?: string;
   headingAccent?: string;
   sub?: string;
   ctaLabel?: string;
+  /** Always the locale's home page: the widget sits at the top of it, so the
+   *  CTA lands on it from every page (and scrolls to top on the home page
+   *  itself — Link's default scroll behaviour). */
   ctaHref?: string;
 }) {
   return (
@@ -23,9 +27,9 @@ export function FinalCta({
       </h2>
       <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
-        <a href={ctaHref} className={PRIMARY_BTN}>
+        <Link href={ctaHref} className={PRIMARY_BTN}>
           {ctaLabel}
-        </a>
+        </Link>
       </div>
     </div>
   );

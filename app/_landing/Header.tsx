@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { NARROW, PRIMARY_FILL } from "./shell";
+import { NARROW } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { AuthButton, QuotaBadge } from "./AccountControls";
 import type { Quota } from "@/lib/quota-server";
@@ -85,12 +85,17 @@ export function Header({
   /** SSR-computed quota for the badge (lib/quota-server.ts). */
   initialQuota?: Quota | null;
 }) {
-  // Drop the catch-all "/" entry (home link) — redundant in a features
-  // dropdown; it still renders in the footer's own list.
+  // The catch-all "/" entry ("Translate to any language") is split off and
+  // rendered last, under a divider: the pair links above it are only a
+  // sample, so the list has to say out loud that every language is covered.
   const links = localizedFeatureLinks(
     locale,
     featureLinks.filter((l) => l.routeKey !== "/"),
   );
+  const anyLanguage = localizedFeatureLinks(
+    locale,
+    featureLinks.filter((l) => l.routeKey === "/"),
+  )[0];
   const hasFeatureLinks = links.length > 0;
 
   const [featuresOpen, setFeaturesOpen] = useState(false);
@@ -167,6 +172,7 @@ export function Header({
   return (
     <header
       ref={headerRef}
+      id="top"
       className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md"
     >
       <div className={`${NARROW} flex h-14 items-center justify-between gap-3 sm:h-16`}>
@@ -218,19 +224,19 @@ export function Header({
             pricingHref={localePath(locale, "pricing")}
           />
         </div>
-        <div className="flex min-w-0 items-center sm:hidden">
+        {/* Mobile: quota badge and burger travel together on the right edge
+            (own gap), instead of the badge drifting to mid-row under the
+            outer justify-between. Burger is outline, not the primary fill —
+            the bar carries no filled CTA on mobile. */}
+        <div className="flex min-w-0 items-center gap-2 sm:hidden">
           <QuotaBadge locale={locale} accountTexts={accountTexts} initialQuota={initialQuota} compact />
-        </div>
-
-        {/* Mobile burger — the nav row above is sm:flex only, so small
-            screens need their own way into features/pricing/faq/auth. */}
-        <div className="relative sm:hidden" ref={menuRef}>
+          <div className="relative" ref={menuRef}>
           <button
             type="button"
             aria-label={texts.features}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${PRIMARY_FILL} transition-all hover:opacity-90 active:scale-[0.99]`}
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-transparent text-text transition-all hover:bg-card active:scale-[0.99]"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -249,18 +255,24 @@ export function Header({
           />
           <div
             ref={panelRef}
-            className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto overscroll-contain border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
+            className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
               menuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
+            {/* Pinned top (pricing) and bottom (auth) — only the feature
+                list in between scrolls, so both stay visible however long
+                that list gets. */}
+            <div className="shrink-0">
               <Link
                 href={localePath(locale, "pricing")}
-                className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                className="block rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
                 onClick={() => setMenuOpen(false)}
               >
                 {texts.pricing}
               </Link>
               <div className="my-2 border-t border-border" />
+            </div>
+            <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain">
               {hasFeatureLinks ? (
                 links.map((l) => (
                   <Link
@@ -281,7 +293,20 @@ export function Header({
                   {texts.features}
                 </Link>
               )}
-            <div className="mt-auto pt-3">
+              {anyLanguage && (
+                <>
+                  <div className="my-2 border-t border-border" />
+                  <Link
+                    href={anyLanguage.href}
+                    className="rounded-lg px-3 py-2 text-sm font-semibold text-hint transition-opacity hover:opacity-70"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {anyLanguage.label}
+                  </Link>
+                </>
+              )}
+            </div>
+            <div className="shrink-0 border-t border-border pt-3">
               <AuthButton
                 signedIn={signedIn}
                 locale={locale}
@@ -295,6 +320,7 @@ export function Header({
               </div>,
               document.body,
             )}
+          </div>
         </div>
       </div>
 
@@ -327,6 +353,18 @@ export function Header({
               {l.label}
             </Link>
           ))}
+          {anyLanguage && (
+            <>
+              <div className="my-2 border-t border-border" />
+              <Link
+                href={anyLanguage.href}
+                className="px-4 py-2.5 text-sm font-semibold text-hint transition-opacity hover:opacity-70"
+                onClick={() => setFeaturesOpen(false)}
+              >
+                {anyLanguage.label}
+              </Link>
+            </>
+          )}
         </div>
       )}
     </header>
