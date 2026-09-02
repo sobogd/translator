@@ -1,5 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
 import { SITE_URL } from "@/lib/site";
+
+// Global CSS must live on the ROOT layout: it used to be imported only by the
+// (en)/ and ru/ nested layouts, which left every route outside those groups
+// (/pricing, the [seg] locale homes and all pair pages) rendering unstyled.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1612" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
