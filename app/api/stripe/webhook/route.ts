@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { prisma } from "@/lib/prisma";
-import { getStripe, mapStripeStatus } from "@/lib/stripe";
+import { getStripe, mapStripeStatus, APP_TAG } from "@/lib/stripe";
 import { PLANS, type PlanId } from "@/lib/plans";
 
 export const runtime = "nodejs";
@@ -13,11 +13,25 @@ function planFromSubscription(sub: Stripe.Subscription): PlanId | "FREE" {
   return (price?.metadata?.plan as PlanId | undefined) ?? "FREE";
 }
 
+// The Stripe account is shared with iq-rest, and Stripe fans every event out to
+// every endpoint of the account, so foreign subscriptions land here too. Match
+// by email only for subscriptions tagged as ours (APP_TAG) — the same person
+// can be a customer in both products. Anything else must already be linked to a
+// local row (subscriptions created before the tag existed); if it is not, the
+// event belongs to another app and we ignore it.
+async function resolveAccount(sub: Stripe.Subscription, email: string | null) {
+  const customerId = typeof sub.customer === "string" ? sub.customer : sub.customer.id;
+  const linked = await prisma.account.findFirst({
+    where: { OR: [{ stripeSubscriptionId: sub.id }, { stripeCustomerId: customerId }] },
+  });
+  if (linked) return linked;
+  if (sub.metadata?.app !== APP_TAG) return null;
+  return email ? prisma.account.findUnique({ where: { email } }) : null;
+}
+
 async function applySubscription(sub: Stripe.Subscription, email: string | null) {
   const customerId = typeof sub.customer === "string" ? sub.customer : sub.customer.id;
-  const account = email
-    ? await prisma.account.findUnique({ where: { email } })
-    : await prisma.account.findFirst({ where: { stripeCustomerId: customerId } });
+  const account = await resolveAccount(sub, email);
   if (!account) return;
 
   const item = sub.items.data[0];
@@ -69,6 +83,8 @@ export async function POST(req: NextRequest) {
     switch (event.type) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
+        // Skip the subscription fetch for checkouts that are plainly not ours.
+        if (session.metadata?.app && session.metadata.app !== APP_TAG) break;
         if (typeof session.subscription === "string") {
           const sub = await stripe.subscriptions.retrieve(session.subscription);
           await applySubscription(sub, (session.metadata?.email as string) || null);

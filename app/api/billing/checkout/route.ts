@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { resolveOwner, getOrigin } from "@/lib/auth";
-import { getStripe, getOrCreatePriceId } from "@/lib/stripe";
+import { getStripe, getOrCreatePriceId, APP_TAG } from "@/lib/stripe";
 import { PLAN_ORDER, type PlanId } from "@/lib/plans";
 
 export const runtime = "nodejs";
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
   let customerId = account.stripeCustomerId;
   if (!customerId) {
-    const customer = await stripe.customers.create({ email: owner });
+    const customer = await stripe.customers.create({ email: owner, metadata: { app: APP_TAG } });
     customerId = customer.id;
     await prisma.account.update({ where: { email: owner }, data: { stripeCustomerId: customerId } });
   }
@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
     line_items: [{ price: priceId, quantity: 1 }],
     success_url: `${origin}/?billing=success#app`,
     cancel_url: `${origin}/pricing?billing=canceled`,
-    metadata: { email: owner, plan },
-    subscription_data: { metadata: { email: owner, plan } },
+    metadata: { email: owner, plan, app: APP_TAG },
+    subscription_data: { metadata: { email: owner, plan, app: APP_TAG } },
   });
 
   return NextResponse.json({ redirectUrl: session.url });

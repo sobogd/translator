@@ -3,6 +3,13 @@ import { PLANS, type PlanId } from "./plans";
 
 const PRODUCT_NAME = "IQ Translate";
 
+// One Stripe account is shared with the other sobogd apps (iq-rest), and Stripe
+// fans every event out to every webhook endpoint of the account. Everything we
+// create carries this tag so our webhook can tell our own events from iq-rest's
+// instead of guessing from the customer email (the same person can be a
+// customer in both products).
+export const APP_TAG = "iq-translate";
+
 let stripeClient: Stripe | null = null;
 
 export function getStripe(): Stripe {
@@ -26,7 +33,7 @@ async function getOrCreateProductId(): Promise<string> {
     productId = found.data[0].id;
     return productId;
   }
-  const created = await stripe.products.create({ name: PRODUCT_NAME });
+  const created = await stripe.products.create({ name: PRODUCT_NAME, metadata: { app: APP_TAG } });
   productId = created.id;
   return productId;
 }
@@ -52,7 +59,7 @@ export async function getOrCreatePriceId(planId: PlanId): Promise<string> {
       product,
       unit_amount: unitAmount,
       recurring: { interval: "month" },
-      metadata: { plan: planId },
+      metadata: { plan: planId, app: APP_TAG },
     },
     { idempotencyKey: `price:usd:${unitAmount}:month:${planId}` },
   );
