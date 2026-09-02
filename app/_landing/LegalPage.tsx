@@ -2,28 +2,34 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Container, Band, PAGE } from "./shell";
 import { SessionProvider } from "./session";
+import type { LegalSection } from "./legal-content";
 import { CHROME } from "@/content";
 
-export type LegalSection = { heading: string; body: string[] };
-
-// Plain document template for /privacy and /terms. English-only on purpose:
-// these are the operator's legal texts, and a machine-translated legal page is
-// worth less than an accurate one — the rest of the chrome stays localized.
+// Single legal document (Privacy / Terms) in the standard chrome. Same big
+// card as the FAQ block and as iq-rest's LegalDocument: tinted sticky 40%
+// column on the left (title + revision date), plain 60% column on the right.
+//
+// English-only on purpose — the body is the binding version, and translating
+// legal text needs lawyer review — hence the explicit lang/dir on the card,
+// since the surrounding <html> is English here anyway but the footer's
+// language switcher can take a visitor to a localized page next.
 export function LegalPage({
   title,
-  updated,
-  intro,
   sections,
   pathname,
 }: {
   title: string;
-  /** ISO date shown under the title, e.g. "2026-09-02". */
-  updated: string;
-  intro: string;
   sections: LegalSection[];
   pathname: string;
 }) {
   const chrome = CHROME.en;
+  const lastUpdated = sections
+    .flatMap((s) => s.paragraphs)
+    .find((p) => p.startsWith("Last updated:"));
+  const body = sections
+    .map((s) => ({ ...s, paragraphs: s.paragraphs.filter((p) => !p.startsWith("Last updated:")) }))
+    .filter((s) => s.heading || s.paragraphs.length > 0);
+
   return (
     <SessionProvider locale="en">
       <main className={PAGE}>
@@ -36,22 +42,32 @@ export function LegalPage({
         />
         <Container>
           <Band>
-            <article className="mx-auto flex w-full max-w-3xl flex-col gap-8">
-              <header className="flex flex-col gap-3">
-                <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">{title}</h1>
-                <p className="text-sm text-hint">Last updated: {updated}</p>
-                <p className="text-sm leading-relaxed text-hint sm:text-base">{intro}</p>
-              </header>
-              {sections.map((s) => (
-                <section key={s.heading} className="flex flex-col gap-3">
-                  <h2 className="text-xl font-medium tracking-tight sm:text-2xl">{s.heading}</h2>
-                  {s.body.map((paragraph) => (
-                    <p key={paragraph} className="text-sm leading-relaxed text-hint sm:text-base">
-                      {paragraph}
-                    </p>
-                  ))}
-                </section>
-              ))}
+            <article
+              lang="en"
+              dir="ltr"
+              className="grid grid-cols-1 rounded-2xl border border-border lg:grid-cols-[2fr_3fr]"
+            >
+              <div className="rounded-t-2xl bg-[hsl(28_48%_93%)] dark:bg-[hsl(28_15%_13%)] lg:rounded-t-none lg:rounded-l-2xl">
+                <div className="flex flex-col items-start gap-3 p-5 text-start sm:p-6 lg:sticky lg:top-16">
+                  <h1 className="text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl">{title}</h1>
+                  {lastUpdated && <p className="text-sm text-hint/80">{lastUpdated}</p>}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-8 p-5 sm:p-6">
+                {body.map((section, i) => (
+                  <section key={section.heading ?? `intro-${i}`} className="flex flex-col gap-2">
+                    {section.heading && (
+                      <h2 className="text-base font-medium tracking-tight sm:text-lg">{section.heading}</h2>
+                    )}
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="text-sm leading-relaxed text-hint">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </section>
+                ))}
+              </div>
             </article>
           </Band>
         </Container>
