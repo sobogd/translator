@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW, PRIMARY_FILL } from "./shell";
 import { LogoIcon } from "./LogoIcon";
-import { InstallAppButton } from "./InstallAppButton";
 import { AuthButton, QuotaBadge } from "./AccountControls";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
@@ -195,7 +194,6 @@ export function Header({
           <Link href={localePath(locale, "pricing")} className="transition-opacity hover:opacity-70">
             {texts.pricing}
           </Link>
-          <InstallAppButton label={texts.mobileApp} className="transition-opacity hover:opacity-70" />
         </nav>
         {/* Desktop: quota badge + the one combined auth button ("Sign up /
             Sign in", or "Account" opening the settings modal). On mobile
@@ -246,28 +244,25 @@ export function Header({
               menuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
+              <Link
+                href={localePath(locale, "pricing")}
+                className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                onClick={() => setMenuOpen(false)}
+              >
+                {texts.pricing}
+              </Link>
+              <div className="my-2 border-t border-border" />
               {hasFeatureLinks ? (
-                <>
-                  {/* Always-expanded section: a plain heading over the full
-                      link list (the panel itself scrolls), so nothing —
-                      including the universal all-languages link at the end —
-                      hides behind a nested collapse. */}
-                  <span className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-hint">
-                    {texts.features}
-                  </span>
-                  <div className="flex flex-col pl-3">
-                    {links.map((l) => (
-                      <Link
-                        key={l.href}
-                        href={l.href}
-                        className="rounded-lg px-3 py-2 text-sm font-medium transition-opacity hover:opacity-70"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {l.label}
-                      </Link>
-                    ))}
-                  </div>
-                </>
+                links.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {l.label}
+                  </Link>
+                ))
               ) : (
                 <Link
                   href={`${homeHref}#features`}
@@ -277,18 +272,6 @@ export function Header({
                   {texts.features}
                 </Link>
               )}
-              <Link
-                href={localePath(locale, "pricing")}
-                className="rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                onClick={() => setMenuOpen(false)}
-              >
-                {texts.pricing}
-              </Link>
-              <InstallAppButton
-                label={texts.mobileApp}
-                className="rounded-lg px-3 py-2 text-left text-sm font-semibold transition-opacity hover:opacity-70"
-                onClick={() => setMenuOpen(false)}
-              />
             <div className="mt-auto pt-3">
               <AuthButton
                 signedIn={signedIn}
