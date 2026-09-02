@@ -53,8 +53,8 @@ export function QuotaBadge({
   const nf = new Intl.NumberFormat(locale);
   return (
     <span
-      className={`flex items-center rounded-full border border-border font-medium text-hint ${
-        compact ? "gap-1.5 px-2 py-1 text-[11px]" : "shrink-0 gap-2.5 px-3 py-1.5 text-xs"
+      className={`flex h-9 items-center rounded-lg bg-card font-medium text-hint ${
+        compact ? "gap-2 px-2.5 text-[11px]" : "shrink-0 gap-2.5 px-3 text-xs"
       }`}
       title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
     >

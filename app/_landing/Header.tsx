@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { NARROW } from "./shell";
+import { NARROW, PRIMARY_FILL } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { InstallAppButton } from "./InstallAppButton";
 import { AuthButton, QuotaBadge } from "./AccountControls";
@@ -218,7 +218,7 @@ export function Header({
             aria-label={texts.features}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-card"
+            className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${PRIMARY_FILL} transition-all hover:opacity-90 active:scale-[0.99]`}
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
