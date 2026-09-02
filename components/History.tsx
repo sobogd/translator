@@ -34,13 +34,16 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
 
   return (
     <div className={`flex ${fromA ? "justify-end" : "justify-start"}`}>
-      {/* Own side vs the other side is a fill difference, not an accent one:
-          the sand tone is the hero column's background (see Translator.tsx).
-          The gradient it replaced turned a long thread into a wall of orange,
-          which left nothing for the actual accent — the send button — to say. */}
+      {/* Both sides are the same shape — a flat tinted fill, no outline. The
+          two tones are the first and third of the spotlight tint rotation
+          (app/_landing/Spotlights.tsx): near enough to belong to one thread,
+          far enough apart to tell the speakers apart. Neither is the accent —
+          a long thread of that left nothing for the send button to say. */}
       <div
         className={`w-full max-w-[85%] rounded-lg p-3.5 ${
-          fromA ? "bg-[hsl(32_44%_92%)] dark:bg-[hsl(32_14%_14%)]" : "border border-border bg-card"
+          fromA
+            ? "bg-[hsl(32_44%_92%)] dark:bg-[hsl(32_14%_14%)]"
+            : "bg-[hsl(45_44%_92%)] dark:bg-[hsl(45_14%_14%)]"
         }`}
       >
         {/* Original (small, muted) above the translation (larger, primary) —

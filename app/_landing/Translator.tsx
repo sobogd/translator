@@ -368,8 +368,11 @@ export function Translator({
     setDraftSourceLang((prev) => (prev === code ? null : prev));
   }
 
-  // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2 (16px).
-  const TEXTAREA_MAX_H = 88;
+  // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-1.5 (12px).
+  // One line is 36px, which — with the island's p-1 and its border — makes the
+  // resting composer exactly as tall as the pair row above it (min-h-11 + 1px
+  // borders). Anything longer grows the island from there.
+  const TEXTAREA_MAX_H = 84;
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -576,7 +579,7 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-2.5">
+    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-1">
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
@@ -619,14 +622,16 @@ export function Translator({
           data-bwignore
           data-form-type="other"
           style={{ maxHeight: TEXTAREA_MAX_H }}
-          className="min-h-9 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-2 text-base leading-6 outline-none"
+          className="min-h-9 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-1.5 text-base leading-6 outline-none"
         />
       )}
+      {/* Square, sized off the header's CTA (h-9) so the two accent buttons on
+          screen read as the same control at the same weight. */}
       <button
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >

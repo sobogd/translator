@@ -36,7 +36,10 @@ export function AppPage({
           accountTexts={texts.account}
           featureLinks={texts.footer.featureLinks}
         />
-        <div className="min-h-0 flex-1">
+        {/* Container on desktop only: full-bleed on phones (the widget IS the
+            screen there), reined in to the site's column once there is room
+            for the chat to look like a column instead of a banner. */}
+        <div className="mx-auto min-h-0 w-full flex-1 sm:max-w-[1000px] sm:px-6">
           <Translator
             variant="app"
             texts={texts}
