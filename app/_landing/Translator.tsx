@@ -99,8 +99,11 @@ function LanguagePickerModal({
   );
 }
 
+export type HeroTexts = { title: string; titleAccent: string; description: string };
+
 export function Translator({
   texts,
+  heroTexts,
   presetSource,
   presetTarget,
   initialTarget,
@@ -108,6 +111,8 @@ export function Translator({
   initialData = null,
 }: {
   texts: TranslatorTexts;
+  /** SEO headline shown left of the widget until the first topic exists. */
+  heroTexts: HeroTexts;
   /** Pair-page preset: pre-picked source language for the draft state. */
   presetSource?: string;
   /** Pair-page preset: pre-picked target language; wins over localStorage. */
@@ -558,59 +563,65 @@ export function Translator({
 
   return (
     <div className="flex flex-col gap-4">
-    {compactMode ? (
-      /* Nothing to manage on the very first visit — just the omnibar, pair
-          row always full-width on its own line above the composer. */
-      <div className={`${CARD} overflow-hidden`}>
-        <div className="flex flex-col">
-          {pairRow}
-          {composerRow}
-        </div>
-      </div>
-    ) : (
-      /* One card: topics sidebar full height on the left; language pair,
-          scrolling chat, and composer stacked in the right column. */
-      <div className={`${CARD} flex flex-col overflow-hidden lg:h-[27rem] lg:flex-row`}>
-        <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:w-[22.5rem] lg:shrink-0 lg:min-h-0">
-          <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-          {topics.length > 0 && (
-            <button
-              onClick={newTopic}
-              className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
-            >
-              <Plus size={16} /> {t.newTopic}
-            </button>
-          )}
-          <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
-            {topics.length === 0 ? (
-              <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
-            ) : (
-              topics.map((tp) => (
-                <div key={tp.id} className="flex items-center gap-1">
-                  <button
-                    onClick={() => switchTopic(tp.id)}
-                    className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
-                      tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
-                    }`}
-                  >
-                    <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
-                  </button>
-                  <button
-                    onClick={() => deleteTopic(tp.id)}
-                    aria-label={t.deleteTopic}
-                    className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
-                  >
-                    <Trash2 size={14} />
-                  </button>
-                </div>
-              ))
-            )}
+      {/* Hero card: SEO headline on the left until the first topic exists,
+          then the topics list takes over that column. The right column is
+          always the full live widget — pair row, chat, composer — never a
+          reduced/marketing-only variant. */}
+      <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[11fr_9fr]`}>
+        {compactMode ? (
+          <div className="flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8 lg:h-full">
+            <div className="my-auto flex min-w-0 flex-col gap-4">
+              <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
+                {heroTexts.title}{" "}
+                <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
+                  {heroTexts.titleAccent}
+                </span>
+              </h1>
+              <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:min-h-0">
+            <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+            {topics.length > 0 && (
+              <button
+                onClick={newTopic}
+                className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
+              >
+                <Plus size={16} /> {t.newTopic}
+              </button>
+            )}
+            <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
+              {topics.length === 0 ? (
+                <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
+              ) : (
+                topics.map((tp) => (
+                  <div key={tp.id} className="flex items-center gap-1">
+                    <button
+                      onClick={() => switchTopic(tp.id)}
+                      className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
+                        tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
+                      }`}
+                    >
+                      <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
+                    </button>
+                    <button
+                      onClick={() => deleteTopic(tp.id)}
+                      aria-label={t.deleteTopic}
+                      className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Right column: language pair up top, chat scrolling in the
-            middle, composer pinned to the bottom. */}
-        <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0 lg:flex-1">
+            middle, composer pinned to the bottom — always live. */}
+        <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0">
           {pairRow}
 
           {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
@@ -638,7 +649,6 @@ export function Translator({
           <div className="shrink-0 border-t border-border">{composerRow}</div>
         </div>
       </div>
-    )}
 
       {error && (
         <Modal

@@ -2,7 +2,6 @@ import { Mic, Volume2, Keyboard, Copy, Globe2, Languages, RefreshCw, History, Fi
 import type { LucideIcon } from "lucide-react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Hero } from "./Hero";
 import { Translator } from "./Translator";
 import { Spotlights } from "./Spotlights";
 import { Comparison } from "./Comparison";
@@ -96,13 +95,11 @@ export function FeatureLanding({
           <Translator
             initialData={initialTopics}
             texts={chrome}
+            heroTexts={content.hero}
             presetSource={presetSource}
             presetTarget={presetTarget}
             pricingHref={localePath(locale, "pricing")}
           />
-        </Band>
-        <Band>
-          <Hero texts={content.hero} />
         </Band>
         <Band id="features">
           <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />

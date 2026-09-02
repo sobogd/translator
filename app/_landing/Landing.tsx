@@ -1,6 +1,5 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Hero } from "./Hero";
 import { Translator } from "./Translator";
 import { StatCards } from "./StatCards";
 import { Spotlights } from "./Spotlights";
@@ -61,10 +60,13 @@ export function Landing({
       />
       <Container className="py-6">
         <Band id="app">
-          <Translator initialData={initialTopics} texts={texts} initialTarget={locale} pricingHref={localePath(locale, "pricing")} />
-        </Band>
-        <Band>
-          <Hero texts={texts.hero} />
+          <Translator
+            initialData={initialTopics}
+            texts={texts}
+            heroTexts={texts.hero}
+            initialTarget={locale}
+            pricingHref={localePath(locale, "pricing")}
+          />
         </Band>
         <Band>
           <StatCards items={texts.statCards} />
