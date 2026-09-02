@@ -20,7 +20,7 @@ function speak(text: string, lang: string) {
 // in Translator.tsx so history labels read correctly in every locale.
 function langLabel(code: string) {
   const l = getLanguage(code);
-  return l ? `${l.flag} ${l.nameNative}` : code;
+  return l ? l.nameNative : code;
 }
 
 // Once a topic's pair is locked, `langA` (topic.sourceLang, whoever's first

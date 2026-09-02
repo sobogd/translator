@@ -14,8 +14,9 @@ export type Plan = {
 // $2.50/M tok, audio in $1.00/M tok @ 32 tok/s): ~$1.3 per 1M translated
 // characters, ~$0.0025 per STT minute. Each plan's fully-drained quota costs
 // ≤ 1/3 of its price — a 3x floor on margin; real utilization sits far lower.
-// A dictated message is charged twice by design: its seconds at /api/transcribe,
-// then its characters when the edited transcript goes through /api/translate.
+// A dictated message is charged twice by design, both legs inside
+// /api/translate-voice: its seconds for the STT, then its characters for the
+// translation of the resulting transcript.
 export const PLANS: Record<PlanId, Plan> = {
   STARTER: {
     id: "STARTER",

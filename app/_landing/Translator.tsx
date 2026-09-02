@@ -69,6 +69,9 @@ function LanguagePickerModal({
         className="sticky top-0 z-10 w-full shrink-0 border-b border-border px-5 py-3.5 text-base outline-none placeholder:text-hint"
         style={{ background: "var(--card)" }}
       />
+      {/* No flags anywhere in the widget — the ISO code carries the same
+          "which language is this" cue without implying a country, and keeps
+          a 180-row list scannable. */}
       <div className="p-2">
         {forSource && (
           <button
@@ -76,7 +79,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={current === null ? { background: "var(--bg)" } : undefined}
           >
-            <span className="text-xl">🌐</span>
+            <span className="w-8 shrink-0 text-xs font-medium text-hint">—</span>
             <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
           </button>
         )}
@@ -87,7 +90,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={l.code === current ? { background: "var(--bg)" } : undefined}
           >
-            <span className="text-xl">{l.flag}</span>
+            <span className="w-8 shrink-0 font-mono text-xs uppercase text-hint">{l.code}</span>
             <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
           </button>
         ))}
@@ -456,15 +459,15 @@ export function Translator({
   }
 
   // Progressive disclosure: until the very first translation exists there is
-  // nothing to manage — show just the input row; the full topics/chat card
-  // unfolds once the first turn lands.
+  // nothing to manage — show just the omnibar; the topics/chat card unfolds
+  // above it once the first turn lands.
   const compactMode = topics.length === 0 && rows.length === 0;
 
-  // Composer — one flush row: text field, a mic separated by a left border,
-  // and the accent translate CTA hugging the card edge (the card's
+  // Composer half of the omnibar — text field, a mic separated by a left
+  // border, and the accent translate CTA hugging the card edge (the card's
   // overflow-hidden supplies its only rounded corner).
   const composerRow = (
-    <div className={`flex shrink-0 items-stretch ${compactMode ? "" : "border-t border-border"}`}>
+    <div className="flex min-w-0 flex-1 items-stretch">
       {status !== "idle" ? (
         <div className="flex min-h-11 flex-1 items-center gap-2 px-4 text-sm text-hint">
           {status === "recording" ? (
@@ -522,59 +525,37 @@ export function Translator({
     </div>
   );
 
+  // Language buttons: full-width halves on mobile (their own row), capped
+  // on desktop so the text field keeps the lion's share of the omnibar.
   const langBtnClass =
-    "flex h-9 flex-1 items-center justify-center gap-2 self-center rounded-lg px-3 text-sm font-semibold transition active:scale-[0.99] hover:bg-bg disabled:pointer-events-none";
+    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none sm:w-32 sm:flex-none lg:w-40";
+
+  // Language pair half of the omnibar — source, reverse, target. Pickers
+  // stay disabled once the pair locks.
+  const pairRow = (
+    <div className="flex items-stretch border-b border-border sm:border-b-0 sm:border-r">
+      <button onClick={() => setPickerFor("source")} disabled={pairLocked} className={langBtnClass}>
+        <span className="truncate">{sourceLanguage ? sourceLanguage.nameNative : t.autoDetect}</span>
+      </button>
+      <button
+        onClick={swapPair}
+        disabled={!canSwap}
+        aria-label="⇄"
+        className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
+      >
+        <ArrowRightLeft size={16} />
+      </button>
+      <button onClick={() => setPickerFor("target")} disabled={pairLocked} className={langBtnClass}>
+        <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
+      </button>
+    </div>
+  );
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Full-width pair card: source on one side, target on the other,
-          reverse in the middle. Pickers stay disabled once the pair locks. */}
-      <div className={`${CARD} flex items-stretch gap-1 p-2 sm:gap-2 sm:p-3`}>
-        <button
-          onClick={() => setPickerFor("source")}
-          disabled={pairLocked}
-          className={langBtnClass}
-        >
-          {sourceLanguage ? (
-            <>
-              <span className="text-lg">{sourceLanguage.flag}</span>
-              <span className="truncate">{sourceLanguage.nameNative}</span>
-            </>
-          ) : (
-            <>
-              <span className="text-lg">🌐</span>
-              <span className="truncate">{t.autoDetect}</span>
-            </>
-          )}
-        </button>
-        <button
-          onClick={swapPair}
-          disabled={!canSwap}
-          aria-label="⇄"
-          className="flex h-9 w-9 shrink-0 items-center justify-center self-center rounded-full text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
-        >
-          <ArrowRightLeft size={16} />
-        </button>
-        <button
-          onClick={() => setPickerFor("target")}
-          disabled={pairLocked}
-          className={langBtnClass}
-        >
-          <span className="text-lg">{targetLanguage?.flag ?? "🌐"}</span>
-          <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
-        </button>
-      </div>
-
-    {compactMode ? (
-      <div className={`${CARD} overflow-hidden`}>
-        {composerRow}
-        {error && (
-          <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2.5 text-sm text-red-600 dark:text-red-400">
-            <span>{error}</span>
-          </div>
-        )}
-      </div>
-    ) : (
+    {/* Topics + chat unfold above the omnibar once there is a first turn, so
+        the composer stays pinned to the bottom edge the way a chat reads. */}
+    {!compactMode && (
     <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[2fr_3fr]`}>
       {/* Mirrors the Hero card horizontally: tinted panel first (~40%,
           same hue as the hero's art panel), functional column second — a
@@ -616,8 +597,8 @@ export function Translator({
         </div>
       </div>
 
-      {/* No background — language selectors pinned top, chat scrolls in the
-          middle, composer pinned bottom. */}
+      {/* No background — clear-history bar pinned top, chat scrolls below.
+          The composer is no longer in here; it lives in the omnibar. */}
       <div className="flex flex-col lg:h-full lg:min-h-0">
         {rows.length > 0 && (
           <div className="flex shrink-0 items-center justify-end border-b border-border px-4 py-2 sm:px-5">
@@ -651,23 +632,31 @@ export function Translator({
               <Loader2 size={15} className="animate-spin" /> {t.translating}
             </div>
           )}
-          {error && (
-            <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
-              <span>{error}</span>
-              {error === t.errors.insufficientCredits && (
-                <a href={pricingHref} className="shrink-0 font-medium underline">
-                  {t.pricingLink}
-                </a>
-              )}
-            </div>
-          )}
         </div>
-
-        {composerRow}
       </div>
 
     </div>
     )}
+
+      {/* Omnibar: language pair, text field, mic and translate CTA on one
+          row. On mobile the pair wraps onto its own row above the input —
+          three clusters never fit a phone width. */}
+      <div className={`${CARD} overflow-hidden`}>
+        <div className="flex flex-col sm:flex-row">
+          {pairRow}
+          {composerRow}
+        </div>
+        {error && (
+          <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2.5 text-sm text-red-600 dark:text-red-400">
+            <span>{error}</span>
+            {error === t.errors.insufficientCredits && (
+              <a href={pricingHref} className="shrink-0 font-medium underline">
+                {t.pricingLink}
+              </a>
+            )}
+          </div>
+        )}
+      </div>
 
       {quotaModal && (
         <Modal
