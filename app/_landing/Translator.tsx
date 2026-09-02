@@ -569,7 +569,7 @@ export function Translator({
           reduced/marketing-only variant. */}
       <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[11fr_9fr]`}>
         {compactMode ? (
-          <div className="flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8 lg:h-full">
+          <div className="flex min-w-0 flex-col items-start gap-6 bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:h-full">
             <div className="my-auto flex min-w-0 flex-col gap-4">
               <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
                 {heroTexts.title}{" "}
