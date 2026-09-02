@@ -17,6 +17,8 @@ export interface TranslatorTexts {
     logo: string;
     features: string;
     pricing: string;
+    /** Nav link to the /app workspace (the widget with no marketing page). */
+    app: string;
     mobileApp: string;
     signIn: string;
     logOut: string;

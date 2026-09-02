@@ -16,6 +16,8 @@ type HeaderTexts = {
   logo: string;
   features: string;
   pricing: string;
+  /** The /app workspace — the widget on its own, no marketing page around it. */
+  app: string;
   mobileApp: string;
   signIn: string;
   logOut: string;
@@ -37,6 +39,7 @@ const DEFAULT_TEXTS: HeaderTexts = {
   logo: "Translate",
   features: "Features",
   pricing: "Pricing",
+  app: "App",
   mobileApp: "Mobile app",
   signIn: "Sign up / Sign in",
   logOut: "Log out",
@@ -209,6 +212,13 @@ export function Header({
             </Link>
           )}
           <Link
+            href={localePath(locale, "app")}
+            onClick={() => analytics.track("Click", "Header app")}
+            className="transition-opacity hover:opacity-70"
+          >
+            {texts.app}
+          </Link>
+          <Link
             href={localePath(locale, "pricing")}
             onClick={() => analytics.track("Click", "Header pricing")}
             className="transition-opacity hover:opacity-70"
@@ -267,10 +277,20 @@ export function Header({
               menuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            {/* Pinned top (pricing) and bottom (auth) — only the feature
-                list in between scrolls, so both stay visible however long
-                that list gets. */}
+            {/* Pinned top (app + pricing) and bottom (auth) — only the
+                feature list in between scrolls, so both stay visible however
+                long that list gets. */}
             <div className="shrink-0">
+              <Link
+                href={localePath(locale, "app")}
+                className="block rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                onClick={() => {
+                  analytics.track("Click", "Mobile menu app");
+                  setMenuOpen(false);
+                }}
+              >
+                {texts.app}
+              </Link>
               <Link
                 href={localePath(locale, "pricing")}
                 className="block rounded-lg px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-70"

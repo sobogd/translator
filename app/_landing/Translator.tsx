@@ -10,11 +10,20 @@ import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
 import { Modal } from "./Modal";
 import { QUOTA_EVENT, useSession } from "./session";
+import { PAIR_COOKIE, formatPairCookie, parsePairCookie, readCookieValue } from "@/lib/cookies";
 import { analytics } from "@/lib/analytics";
 import { useTurnstileGate } from "./Turnstile";
 import type { TranslatorTexts } from "./types";
 
+// Pre-cookie storage of the target half. Only read now, as a one-time
+// migration for visitors who picked a language before PAIR_COOKIE existed.
 const TO_KEY = "translator_to_lang";
+// How long a remembered pair lives (see PAIR_COOKIE) — same ceiling as the
+// session/locale cookies.
+const PAIR_MAX_AGE = 400 * 86400;
+const rememberPair = (source: string | null, target: string) => {
+  document.cookie = `${PAIR_COOKIE}=${formatPairCookie(source, target)}; path=/; max-age=${PAIR_MAX_AGE}; samesite=lax`;
+};
 // Last thread the visitor had open, restored on the next visit to the same
 // pair page (the topic list itself is fetched after hydration — every page
 // here is prerendered, so nothing personalized exists during render).
@@ -127,7 +136,9 @@ export function Translator({
   presetSource,
   presetTarget,
   initialTarget,
+  initialSource = null,
   pricingHref = "/pricing",
+  variant = "landing",
 }: {
   texts: TranslatorTexts;
   /** SEO headline shown left of the widget until the first topic exists. */
@@ -138,9 +149,19 @@ export function Translator({
   presetTarget?: string;
   /** Soft default target (locale homes): initial value only, localStorage wins. */
   initialTarget?: string;
+  /** App page only: source half of the pair read from PAIR_COOKIE during
+   *  render (null = auto-detect). Server-resolved on purpose — restoring it
+   *  after hydration would make the pair row visibly jump. */
+  initialSource?: string | null;
   /** Locale-local pricing path for the out-of-quota error link. */
   pricingHref?: string;
+  /** "landing" — the marketing widget (hero column left, widget right).
+   *  "app" — the standalone /app page: no hero, the pair picker moves up
+   *  into the top island row next to the topics button, the whole thing
+   *  fills the viewport under the header, and the pair is persisted. */
+  variant?: "landing" | "app";
 }) {
+  const isApp = variant === "app";
   const t = texts.translator;
   // Signed-in visitors are never bot-challenged (see lib/turnstile.ts).
   const { signedIn } = useSession();
@@ -155,7 +176,7 @@ export function Translator({
   // Source language chosen before a topic exists yet — carried into the
   // topic created on first send. Mirrors topic.sourceLang's semantics
   // (null = auto-detect).
-  const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? null);
+  const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? initialSource);
   const [loadingTopic, setLoadingTopic] = useState(true);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
   const [topicsOpen, setTopicsOpen] = useState(false);
@@ -182,10 +203,20 @@ export function Translator({
   const chatScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // A pair page's preset wins over the last-used target from localStorage.
-    if (presetTarget) return;
+    // A pair page's preset wins over the remembered pair, and the app page
+    // already got that pair from the server (it renders per request) — reading
+    // it again here would only overwrite the same values after hydration.
+    if (presetTarget || isApp) return;
+    const stored = parsePairCookie(readCookieValue(PAIR_COOKIE));
+    // one-time init from storage, not a render cascade.
+    if (stored) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDefaultTarget(stored.target);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDraftSourceLang(stored.source);
+      return;
+    }
     const saved = localStorage.getItem(TO_KEY);
-    // one-time init from localStorage, not a render cascade.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (saved) setDefaultTarget(saved);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -321,15 +352,19 @@ export function Translator({
     analytics.track("Click", `Language source ${code ?? "auto"}`);
     setPickerFor(null);
     setTopic(null);
-    setDraftSourceLang(code !== null && code === defaultTarget ? null : code);
+    const next = code !== null && code === defaultTarget ? null : code;
+    rememberPair(next, defaultTarget);
+    setDraftSourceLang(next);
   }
 
   function selectTarget(code: string) {
     analytics.track("Click", `Language target ${code}`);
     setPickerFor(null);
-    localStorage.setItem(TO_KEY, code);
     setDefaultTarget(code);
     setTopic(null);
+    // A source colliding with the new target falls back to auto-detect — the
+    // remembered pair has to follow.
+    rememberPair(draftSourceLang === code ? null : draftSourceLang, code);
     setDraftSourceLang((prev) => (prev === code ? null : prev));
   }
 
@@ -623,7 +658,11 @@ export function Translator({
   // from a previous visit to a different pair page) — clicking only opens
   // the picker, nothing changes until an actual selection is made inside it.
   const heroPairRow = (
-    <div className="flex items-stretch overflow-hidden rounded-xl border border-border bg-card">
+    <div
+      className={`flex items-stretch overflow-hidden rounded-lg border border-border ${
+        isApp ? "bg-bg" : "bg-card"
+      }`}
+    >
       <button
         onClick={() => {
           analytics.track("Click", "Language picker source");
@@ -681,13 +720,20 @@ export function Translator({
     );
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className={isApp ? "h-full" : "flex flex-col gap-4"}>
       {/* SEO hero text comes first everywhere — above the widget on mobile,
           left of it on desktop — whether or not a topic exists yet; the
           widget is always fully live —
           topics live behind a toggle + sliding drawer, anchored to the
           widget itself, same on every breakpoint. */}
-      <div className="flex flex-col gap-4 lg:grid lg:h-[calc(95vh_-_89px)] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
+      <div
+        className={
+          isApp
+            ? "flex h-full flex-col"
+            : "flex flex-col gap-4 lg:grid lg:h-[calc(95vh_-_89px)] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden"
+        }
+      >
+        {!isApp && (
         <div className="flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:h-full lg:rounded-none lg:border-0">
           <div className="my-auto flex min-w-0 flex-col gap-4">
             <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
@@ -702,8 +748,18 @@ export function Translator({
             {!fixedPair && heroPairRow}
           </div>
         </div>
+        )}
 
-        <div className="relative flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0">
+        {/* App page: no card at all — it fills the box AppPage hands it (all
+            of the viewport below the header), so the chat runs edge to edge
+            and only the islands keep an inset. */}
+        <div
+          className={
+            isApp
+              ? "relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
+              : "relative flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0"
+          }
+        >
           {/* Chat spans the full height and scrolls behind the two
               islands — they're overlaid (absolute), not flex siblings, so
               they never shrink the scroll area. Padding on the scroll box
@@ -711,7 +767,9 @@ export function Translator({
               underneath one. */}
           <div
             ref={chatScrollRef}
-            className={`absolute inset-0 z-0 flex flex-col overflow-y-auto px-4 pb-28 sm:px-6 ${pairKnown ? "pt-20" : "pt-4"}`}
+            className={`absolute inset-0 z-0 flex flex-col overflow-y-auto px-4 pb-28 sm:px-6 ${
+              isApp || pairKnown ? "pt-20" : "pt-4"
+            }`}
           >
             {loadingTopic ? (
               <div className="flex justify-center py-10 text-hint">
@@ -727,19 +785,38 @@ export function Translator({
             )}
           </div>
 
-          {pairKnown && (
-            <div className="absolute inset-x-0 top-0 z-10 p-3 pb-0">
+          {/* App page: the pair card and the topics button share one row of
+              islands over the chat — the pair picker has no hero column to
+              live in there. Landing keeps the single topics button. */}
+          {isApp ? (
+            <div className="absolute inset-x-0 top-0 z-10 flex items-stretch gap-2 p-3 pb-0">
+              <div className="min-w-0 flex-1">{heroPairRow}</div>
               <button
                 onClick={() => {
                   analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
                   setTopicsOpen((v) => !v);
                 }}
-                className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+                aria-label={t.topics}
+                className="flex w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-bg text-hint transition hover:text-text active:scale-[0.99]"
               >
-                <PanelLeft size={16} />
-                <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+                <PanelLeft size={18} />
               </button>
             </div>
+          ) : (
+            pairKnown && (
+              <div className="absolute inset-x-0 top-0 z-10 p-3 pb-0">
+                <button
+                  onClick={() => {
+                    analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
+                    setTopicsOpen((v) => !v);
+                  }}
+                  className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+                >
+                  <PanelLeft size={16} />
+                  <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+                </button>
+              </div>
+            )
           )}
 
           <div className="absolute inset-x-0 bottom-0 z-10 p-3">{composerRow}</div>
