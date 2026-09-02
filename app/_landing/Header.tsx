@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW } from "./shell";
@@ -126,10 +127,17 @@ export function Header({
     if (!menuOpen) setBurgerFeaturesOpen(false);
   }, [menuOpen]);
   const menuRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  // The slide-in panel is portaled to <body>: the header's backdrop-blur (and
+  // any transform) makes it the containing block for fixed descendants, which
+  // pinned the panel inside the bar instead of the viewport.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   useEffect(() => {
     if (!menuOpen) return;
     const onDown = (e: PointerEvent) => {
       if (menuRef.current?.contains(e.target as Node)) return;
+      if (panelRef.current?.contains(e.target as Node)) return;
       setMenuOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
@@ -216,7 +224,11 @@ export function Header({
           </button>
           {/* Slide-in side panel: pinned below the (sticky) header — from its
               bottom edge to the bottom of the viewport, never covering the
-              bar itself — with a dimmed backdrop over the page content. */}
+              bar itself — with a dimmed backdrop over the page content.
+              Portaled to <body> (see the `mounted` note above). */}
+          {mounted &&
+            createPortal(
+              <div className="sm:hidden">
           <div
             className={`fixed inset-x-0 bottom-0 top-14 z-40 bg-black/30 transition-opacity duration-200 ${
               menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -224,6 +236,7 @@ export function Header({
             onClick={() => setMenuOpen(false)}
           />
           <div
+            ref={panelRef}
             className={`fixed bottom-0 right-0 top-14 z-50 flex w-72 max-w-[85vw] flex-col gap-1 overflow-y-auto border-l border-border bg-bg p-3 shadow-xl transition-transform duration-200 ${
               menuOpen ? "translate-x-0" : "translate-x-full"
             }`}
@@ -288,6 +301,9 @@ export function Header({
               />
             </div>
           </div>
+              </div>,
+              document.body,
+            )}
         </div>
       </div>
 
