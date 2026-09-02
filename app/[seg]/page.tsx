@@ -5,7 +5,7 @@ import { localeHome } from "@/lib/locale-paths";
 import { homeAlternates } from "@/lib/hreflang";
 import { buildFeatureMetadata } from "@/lib/build-feature-metadata";
 import { OG_LOCALES } from "@/lib/og-locales";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "@/lib/site";
 import { findPair } from "@/lib/pairs";
 import { CHROME, PAIR_CONTENT, READY_LOCALES } from "@/content";
 import { Landing } from "../_landing/Landing";
@@ -43,9 +43,10 @@ export async function generateMetadata({ params }: { params: Promise<{ seg: stri
         locale: OG_LOCALES[seg],
         title: texts.meta.ogTitle,
         description: texts.meta.ogDescription,
+        images: [OG_IMAGE],
       },
       twitter: {
-        card: "summary",
+        ...TWITTER_CARD,
         title: texts.meta.twitterTitle,
         description: texts.meta.twitterDescription,
       },

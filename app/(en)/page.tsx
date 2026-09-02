@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Landing } from "../_landing/Landing";
 import { homeAlternates } from "@/lib/hreflang";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "@/lib/site";
 import type { TranslatorTexts } from "../_landing/types";
 import textsJson from "./texts.json";
 
@@ -18,8 +18,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: texts.meta.ogTitle,
     description: texts.meta.ogDescription,
+    images: [OG_IMAGE],
   },
   twitter: {
+    ...TWITTER_CARD,
     title: texts.meta.twitterTitle,
     description: texts.meta.twitterDescription,
   },

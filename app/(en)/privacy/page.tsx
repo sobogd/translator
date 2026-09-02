@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../../_landing/LegalPage";
 import { LEGAL_UPDATED, OPERATOR, PRIVACY_SECTIONS } from "../../_landing/legal-content";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | IQ Translate",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Privacy Policy",
     description: "What we collect, who processes it, how long we keep it, and how to have it deleted.",
+    images: [OG_IMAGE],
   },
 };
 

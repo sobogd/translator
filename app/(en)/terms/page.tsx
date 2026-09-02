@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../../_landing/LegalPage";
 import { LEGAL_UPDATED, OPERATOR, TERMS_SECTIONS } from "../../_landing/legal-content";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service | IQ Translate",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Terms of Service",
     description: "Free allowance, subscriptions and billing, acceptable use, and the limits of an automated translation.",
+    images: [OG_IMAGE],
   },
 };
 

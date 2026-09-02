@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { FeatureContent } from "@/app/_landing/types";
 import { featureAlternates, routeKeyFromCanonical } from "./hreflang";
-import { SITE_URL } from "./site";
+import { OG_IMAGE, SITE_URL, TWITTER_CARD } from "./site";
 
 // Mirrors iq-rest's build-feature-metadata.ts so every feature page emits
 // identical metadata structure without repeating boilerplate per page.tsx.
@@ -22,10 +22,10 @@ export function buildFeatureMetadata(content: FeatureContent): Metadata {
       locale: content.meta.ogLocale,
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
-      images: [{ url: "/icon-512.png", width: 512, height: 512, alt: content.meta.ogTitle }],
+      images: [{ ...OG_IMAGE, alt: content.meta.ogTitle }],
     },
     twitter: {
-      card: "summary",
+      ...TWITTER_CARD,
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },

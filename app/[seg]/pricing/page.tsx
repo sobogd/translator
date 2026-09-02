@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/locales";
 import { pricingAlternates } from "@/lib/hreflang";
 import { OG_LOCALES } from "@/lib/og-locales";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 import { CHROME, READY_LOCALES } from "@/content";
 import { PricingPage } from "../../_landing/PricingPage";
 
@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ seg: stri
       locale: OG_LOCALES[seg],
       title: chrome.pricing.meta.title,
       description: chrome.pricing.meta.description,
+      images: [OG_IMAGE],
     },
   };
 }
