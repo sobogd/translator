@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
+import { getServerQuota } from "@/lib/quota-server";
 import type { Locale } from "@/lib/locales";
 import { SITE_URL } from "@/lib/site";
 import { CHROME, READY_LOCALES } from "@/content";
@@ -32,5 +33,6 @@ export default async function LocalePricingPage({ params }: { params: Promise<{ 
   const chrome = CHROME[seg];
   if (!chrome) notFound();
   const email = await getServerSessionEmail();
-  return <PricingPage signedIn={!!email} locale={seg as Locale} chrome={chrome} />;
+  const initialQuota = await getServerQuota();
+  return <PricingPage signedIn={!!email} initialQuota={initialQuota} locale={seg as Locale} chrome={chrome} />;
 }

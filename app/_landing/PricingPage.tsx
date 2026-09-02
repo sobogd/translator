@@ -6,6 +6,7 @@ import { PricingCards } from "./PricingCards";
 import { Container, Band, PAGE } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
+import type { Quota } from "@/lib/quota-server";
 import type { TranslatorTexts } from "./types";
 
 // Shared template for the localized /pricing page. All copy comes from the
@@ -14,10 +15,12 @@ import type { TranslatorTexts } from "./types";
 // no-signup widget, called out in the freeNote strip under the cards.
 export function PricingPage({
   signedIn,
+  initialQuota = null,
   locale,
   chrome,
 }: {
   signedIn: boolean;
+  initialQuota?: Quota | null;
   locale: Locale;
   chrome: TranslatorTexts;
 }) {
@@ -31,6 +34,7 @@ export function PricingPage({
         locale={locale}
         texts={chrome.header}
         accountTexts={chrome.account}
+        initialQuota={initialQuota}
         featureLinks={chrome.footer.featureLinks}
       />
       <Container className="py-6">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getServerSessionEmail } from "@/lib/auth";
+import { getServerQuota } from "@/lib/quota-server";
 import { Landing } from "../_landing/Landing";
 import { homeAlternates } from "@/lib/hreflang";
 import { SITE_URL } from "@/lib/site";
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
 
 export default async function EnHomePage() {
   const email = await getServerSessionEmail();
+  const initialQuota = await getServerQuota();
   return (
-    <Landing signedIn={!!email} locale="en" texts={texts} homeHref="/" pathname="/" />
+    <Landing signedIn={!!email} initialQuota={initialQuota} locale="en" texts={texts} homeHref="/" pathname="/" />
   );
 }

@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { NARROW, PRIMARY_FILL } from "./shell";
 import { LogoIcon } from "./LogoIcon";
 import { AuthButton, QuotaBadge } from "./AccountControls";
+import type { Quota } from "@/lib/quota-server";
 import { localizedFeatureLinks, type FeatureLinkDef } from "@/lib/locale-slug-overrides";
 import { localePath } from "@/lib/locale-paths";
 import { defaultLocale, type Locale } from "@/lib/locales";
@@ -73,6 +74,7 @@ export function Header({
   texts = DEFAULT_TEXTS,
   accountTexts = DEFAULT_ACCOUNT_TEXTS,
   featureLinks = [],
+  initialQuota = null,
 }: {
   signedIn: boolean;
   homeHref?: string;
@@ -80,6 +82,8 @@ export function Header({
   texts?: HeaderTexts;
   accountTexts?: AccountTexts;
   featureLinks?: FeatureLinkDef[];
+  /** SSR-computed quota for the badge (lib/quota-server.ts). */
+  initialQuota?: Quota | null;
 }) {
   const links = localizedFeatureLinks(locale, featureLinks);
   const hasFeatureLinks = links.length > 0;
@@ -200,7 +204,7 @@ export function Header({
             only the badge stays in the bar — the button lives inside the
             slide-in burger panel. */}
         <div className="hidden shrink-0 items-center gap-3 sm:flex">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} />
+          <QuotaBadge locale={locale} accountTexts={accountTexts} initialQuota={initialQuota} />
           <AuthButton
             signedIn={signedIn}
             locale={locale}
@@ -210,7 +214,7 @@ export function Header({
           />
         </div>
         <div className="flex min-w-0 items-center sm:hidden">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
+          <QuotaBadge locale={locale} accountTexts={accountTexts} initialQuota={initialQuota} compact />
         </div>
 
         {/* Mobile burger — the nav row above is sm:flex only, so small

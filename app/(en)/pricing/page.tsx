@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getServerSessionEmail } from "@/lib/auth";
+import { getServerQuota } from "@/lib/quota-server";
 import { PricingPage } from "../../_landing/PricingPage";
 import { SITE_URL } from "@/lib/site";
 import { CHROME } from "@/content";
@@ -14,5 +15,6 @@ export const metadata: Metadata = {
 
 export default async function EnPricingPage() {
   const email = await getServerSessionEmail();
-  return <PricingPage signedIn={!!email} locale="en" chrome={chrome} />;
+  const initialQuota = await getServerQuota();
+  return <PricingPage signedIn={!!email} initialQuota={initialQuota} locale="en" chrome={chrome} />;
 }

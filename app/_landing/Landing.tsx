@@ -10,16 +10,19 @@ import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
+import type { Quota } from "@/lib/quota-server";
 import type { TranslatorTexts } from "./types";
 
 export function Landing({
   signedIn,
+  initialQuota = null,
   locale,
   texts,
   homeHref,
   pathname,
 }: {
   signedIn: boolean;
+  initialQuota?: Quota | null;
   locale: Locale;
   texts: TranslatorTexts;
   homeHref: string;
@@ -50,6 +53,7 @@ export function Landing({
         locale={locale}
         texts={texts.header}
         accountTexts={texts.account}
+        initialQuota={initialQuota}
         featureLinks={texts.footer.featureLinks}
       />
       <Container className="py-6">

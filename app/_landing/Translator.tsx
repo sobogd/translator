@@ -8,6 +8,7 @@ import { apiFetch } from "@/lib/client";
 import type { Topic, TopicDetail } from "@/lib/types";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { CARD } from "./shell";
+import { QUOTA_EVENT } from "./AccountControls";
 import type { TranslatorTexts } from "./types";
 
 const TO_KEY = "translator_to_lang";
@@ -323,6 +324,7 @@ export function Translator({
       if (!res.ok) throw new Error(data.error || "error");
       await loadTopic(topicId);
       await loadTopics();
+      window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       setError(e instanceof Error ? friendlyError(e.message, t) : "Error");
       setText(sent);
@@ -358,6 +360,7 @@ export function Translator({
       if (!res.ok) throw new Error(data.error || "error");
       setText((prev) => (prev ? `${prev} ${data.transcript}` : data.transcript));
       requestAnimationFrame(autosize);
+      window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       setError(e instanceof Error ? friendlyError(e.message, t) : "Error");
     } finally {

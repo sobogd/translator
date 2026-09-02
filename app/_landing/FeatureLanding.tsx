@@ -11,6 +11,7 @@ import { FinalCta } from "./FinalCta";
 import { Container, Band, PAGE } from "./shell";
 import { localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
+import type { Quota } from "@/lib/quota-server";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
 // Icon set for a feature page's 3 spotlight cards, keyed by which feature
@@ -42,6 +43,7 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
 // iq-rest's FeatureLandingTemplate for digital-menu-for-restaurants.
 export function FeatureLanding({
   signedIn,
+  initialQuota = null,
   locale,
   chrome,
   content,
@@ -51,6 +53,7 @@ export function FeatureLanding({
   presetTarget,
 }: {
   signedIn: boolean;
+  initialQuota?: Quota | null;
   locale: Locale;
   chrome: TranslatorTexts;
   content: FeatureContent;
@@ -82,6 +85,7 @@ export function FeatureLanding({
         locale={locale}
         texts={chrome.header}
         accountTexts={chrome.account}
+        initialQuota={initialQuota}
         featureLinks={chrome.footer.featureLinks}
       />
       <Container>

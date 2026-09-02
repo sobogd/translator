@@ -6,32 +6,39 @@ import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
 import type { TranslatorTexts } from "./types";
 
-type Quota = {
-  kind: "anonymous" | "account";
-  email?: string;
-  plan: string;
-  planName?: string | null;
-  chars: number;
-  seconds: number;
-};
+import type { Quota } from "@/lib/quota-server";
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-function useQuota() {
-  const [quota, setQuota] = useState<Quota | null>(null);
+// Fired by the translator widget right after a successful translate /
+// transcribe so the badge refreshes immediately instead of waiting out the
+// 10s poll.
+export const QUOTA_EVENT = "iqt:quota";
+
+// Starts from the SSR-computed value (no extra request on page load), then
+// refreshes every 10s and instantly on QUOTA_EVENT. Only fetches upfront
+// when SSR had nothing (first-ever anonymous visit — no fp cookie yet).
+function useQuota(initial: Quota | null = null) {
+  const [quota, setQuota] = useState<Quota | null>(initial);
   useEffect(() => {
     let alive = true;
-    (async () => {
+    const refresh = async () => {
       try {
         const res = await apiFetch("/api/quota");
         if (alive && res.ok) setQuota(await res.json());
       } catch {
-        /* badge just stays hidden */
+        /* keep the last known value */
       }
-    })();
+    };
+    if (!initial) refresh();
+    const timer = setInterval(refresh, 10_000);
+    window.addEventListener(QUOTA_EVENT, refresh);
     return () => {
       alive = false;
+      clearInterval(timer);
+      window.removeEventListener(QUOTA_EVENT, refresh);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return quota;
 }
@@ -42,13 +49,16 @@ export function QuotaBadge({
   locale,
   accountTexts,
   compact = false,
+  initialQuota = null,
 }: {
   locale: string;
   accountTexts: TranslatorTexts["account"];
   /** Tighter paddings/gaps so the badge fits a narrow mobile header row. */
   compact?: boolean;
+  /** SSR-computed starting value (lib/quota-server.ts) — no load-time fetch. */
+  initialQuota?: Quota | null;
 }) {
-  const quota = useQuota();
+  const quota = useQuota(initialQuota);
   if (!quota) return null;
   const nf = new Intl.NumberFormat(locale);
   return (
@@ -87,9 +97,20 @@ export function AuthButton({
   pricingHref: string;
   fullWidth?: boolean;
 }) {
-  const quota = useQuota();
+  // The modal fetches fresh numbers when it opens — no polling of its own.
+  const [quota, setQuota] = useState<Quota | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
+
+  async function openModal() {
+    setModalOpen(true);
+    try {
+      const res = await apiFetch("/api/quota");
+      if (res.ok) setQuota(await res.json());
+    } catch {
+      /* rows show placeholders */
+    }
+  }
 
   async function openPortal() {
     setPortalBusy(true);
@@ -114,7 +135,7 @@ export function AuthButton({
   return (
     <>
       {signedIn ? (
-        <button onClick={() => setModalOpen(true)} className={btnClass}>
+        <button onClick={openModal} className={btnClass}>
           {texts.account}
         </button>
       ) : (

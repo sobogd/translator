@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getServerSessionEmail } from "@/lib/auth";
+import { getServerQuota } from "@/lib/quota-server";
 import { locales, type Locale } from "@/lib/locales";
 import { localeHome } from "@/lib/locale-paths";
 import { homeAlternates } from "@/lib/hreflang";
@@ -59,11 +60,12 @@ export async function generateMetadata({ params }: { params: Promise<{ seg: stri
 export default async function SegPage({ params }: { params: Promise<{ seg: string }> }) {
   const { seg } = await params;
   const email = await getServerSessionEmail();
+  const initialQuota = await getServerQuota();
 
   if (isReadyLocale(seg)) {
     return (
       <Landing
-        signedIn={!!email}
+        signedIn={!!email} initialQuota={initialQuota}
         locale={seg}
         texts={CHROME[seg]}
         homeHref={`/${seg}`}
@@ -77,7 +79,7 @@ export default async function SegPage({ params }: { params: Promise<{ seg: strin
   if (!pair || !content) notFound();
   return (
     <FeatureLanding
-      signedIn={!!email}
+      signedIn={!!email} initialQuota={initialQuota}
       locale="en"
       chrome={CHROME.en}
       content={content}
