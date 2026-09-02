@@ -3,7 +3,7 @@ export const PAGE = "relative flex flex-col gap-6";
 export const CARD = "rounded-2xl border border-border";
 
 export const BTN_BOX =
-  "h-10 px-4 text-sm font-semibold rounded-lg whitespace-nowrap inline-flex items-center justify-center transition-all active:scale-[0.99]";
+  "h-10 px-4 text-base font-semibold rounded-lg whitespace-nowrap inline-flex items-center justify-center transition-all active:scale-[0.99]";
 
 // Same brand gradient as iq-rest (app/_landing/components/shell.tsx there).
 export const PRIMARY_FILL = "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white";

@@ -356,7 +356,7 @@
     }
   },
   "history": {
-    "emptyState": "Inget här än. Skriv ett meddelande eller spela in din röst nedan.",
+    "emptyState": "Skriv ett meddelande eller spela in din röst nedan.",
     "readAloudAria": "Läs upp",
     "copyAria": "Kopiera"
   }

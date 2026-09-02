@@ -336,7 +336,7 @@
     }
   },
   "history": {
-    "emptyState": "Még nincs itt semmi. Írj egy üzenetet, vagy rögzítsd a hangod lent.",
+    "emptyState": "Írj egy üzenetet, vagy rögzítsd a hangod lent.",
     "readAloudAria": "Felolvasás",
     "copyAria": "Másolás"
   }

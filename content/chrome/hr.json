@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Ovdje još ništa nema. Upišite poruku ili snimite svoj glas ispod.",
+    "emptyState": "Upišite poruku ili snimite svoj glas ispod.",
     "readAloudAria": "Pročitaj naglas",
     "copyAria": "Kopiraj"
   }

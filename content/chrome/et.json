@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Siin pole veel midagi. Kirjuta sõnum või salvesta oma hääl allpool.",
+    "emptyState": "Kirjuta sõnum või salvesta oma hääl allpool.",
     "readAloudAria": "Loe ette",
     "copyAria": "Kopeeri"
   }

@@ -356,7 +356,7 @@
     }
   },
   "history": {
-    "emptyState": "Henüz bir şey yok. Aşağıdan bir mesaj yazın veya sesinizi kaydedin.",
+    "emptyState": "Aşağıdan bir mesaj yazın veya sesinizi kaydedin.",
     "readAloudAria": "Sesli oku",
     "copyAria": "Kopyala"
   }

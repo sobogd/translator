@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRightLeft, Loader2, Mic, Plus, Send, Square, Trash2 } from "lucide-react";
+import { ArrowRightLeft, Loader2, Mic, PanelLeft, Plus, Send, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -79,7 +79,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={current === null ? { background: "var(--bg)" } : undefined}
           >
-            <span className="w-8 shrink-0 text-xs font-medium text-hint">—</span>
+            <span className="w-8 shrink-0 text-base font-medium text-hint">—</span>
             <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
           </button>
         )}
@@ -90,7 +90,7 @@ function LanguagePickerModal({
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
             style={l.code === current ? { background: "var(--bg)" } : undefined}
           >
-            <span className="w-8 shrink-0 font-mono text-xs uppercase text-hint">{l.code}</span>
+            <span className="w-8 shrink-0 font-mono text-base uppercase text-hint">{l.code}</span>
             <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
           </button>
         ))}
@@ -134,6 +134,7 @@ export function Translator({
   const [draftSourceLang, setDraftSourceLang] = useState<string | null>(presetSource ?? null);
   const [loadingTopic, setLoadingTopic] = useState(!initialData);
   const [pickerFor, setPickerFor] = useState<"source" | "target" | null>(null);
+  const [topicsOpen, setTopicsOpen] = useState(false);
   const [text, setText] = useState("");
   const [textBusy, setTextBusy] = useState(false);
   const [status, setStatus] = useState<RecStatus>("idle");
@@ -434,28 +435,6 @@ export function Translator({
   const pairLocked = !!topic && topic.sourceLang !== null;
   const rows = topic ? [...topic.translations].reverse() : [];
 
-  // Reverse the pair. Only while it is still editable and the source is
-  // concrete — auto-detect has no "other side" to swap to, and a locked
-  // topic already translates both directions.
-  const canSwap = !pairLocked && !!currentSourceCode;
-  async function swapPair() {
-    if (!canSwap || !currentSourceCode) return;
-    const newSource = topic ? topic.targetLang : defaultTarget;
-    const newTarget = currentSourceCode;
-    localStorage.setItem(TO_KEY, newTarget);
-    setDefaultTarget(newTarget);
-    if (!topic) {
-      setDraftSourceLang(newSource);
-      return;
-    }
-    setTopic({ ...topic, sourceLang: newSource, targetLang: newTarget });
-    await apiFetch(`/api/topics/${topic.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sourceLang: newSource, targetLang: newTarget }),
-    });
-  }
-
   // Progressive disclosure: until the very first translation exists there is
   // nothing to manage — show just the omnibar; the topics/chat card unfolds
   // above it once the first turn lands.
@@ -470,7 +449,7 @@ export function Translator({
   const composerRow = (
     <div className="flex min-w-0 flex-1 items-stretch">
       {status !== "idle" ? (
-        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-sm text-hint">
+        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-base text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -514,7 +493,7 @@ export function Translator({
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
+        className={`relative flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-base font-semibold text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -538,7 +517,7 @@ export function Translator({
   // Language buttons: always full-width halves — the pair row sits on its
   // own line above the composer/content, on every breakpoint.
   const langBtnClass =
-    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none";
+    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-base font-semibold transition hover:bg-bg disabled:pointer-events-none";
 
   // Language pair half of the omnibar — source, reverse, target. Pickers
   // stay disabled once the pair locks.
@@ -547,29 +526,52 @@ export function Translator({
       <button onClick={() => setPickerFor("source")} disabled={pairLocked} className={langBtnClass}>
         <span className="truncate">{sourceLanguage ? sourceLanguage.nameNative : t.autoDetect}</span>
       </button>
-      <button
-        onClick={swapPair}
-        disabled={!canSwap}
-        aria-label="⇄"
-        className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:text-text active:scale-90 disabled:opacity-40"
-      >
+      <span className="flex w-10 shrink-0 items-center justify-center text-hint">
         <ArrowRightLeft size={16} />
-      </button>
+      </span>
       <button onClick={() => setPickerFor("target")} disabled={pairLocked} className={langBtnClass}>
         <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
       </button>
     </div>
   );
 
+  // Topic rows only — no background fill, active = bold text. Shared between
+  // the permanent desktop sidebar and the mobile drawer (see below).
+  const topicsList = (onPick: () => void) =>
+    topics.length === 0 ? (
+      <div className="py-6 text-center text-base text-hint">{t.noTopicsYet}</div>
+    ) : (
+      topics.map((tp) => (
+        <div key={tp.id} className="flex items-center gap-1">
+          <button
+            onClick={() => {
+              switchTopic(tp.id);
+              onPick();
+            }}
+            className={`flex min-w-0 flex-1 items-center gap-2 px-1 py-2.5 text-left text-base transition active:scale-[0.99] ${
+              tp.id === topic?.id ? "font-medium text-text" : "text-hint hover:text-text"
+            }`}
+          >
+            <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
+          </button>
+          <button
+            onClick={() => deleteTopic(tp.id)}
+            aria-label={t.deleteTopic}
+            className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+          >
+            <Trash2 size={14} />
+          </button>
+        </div>
+      ))
+    );
+
   return (
     <div className="flex flex-col gap-4">
-      {/* Hero card: SEO headline on the left until the first topic exists,
-          then the topics list takes over that column. The right column is
-          always the full live widget — pair row, chat, composer — never a
-          reduced/marketing-only variant. */}
-      <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:h-[27rem] lg:grid-cols-[11fr_9fr]`}>
-        {compactMode ? (
-          <div className="flex min-w-0 flex-col items-start gap-6 bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:h-full">
+      {compactMode ? (
+        /* Nothing to manage yet — hero grid: SEO headline on the left,
+            the live widget on the right. */
+        <div className="flex flex-col gap-4 lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
+          <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
             <div className="my-auto flex min-w-0 flex-col gap-4">
               <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
                 {heroTexts.title}{" "}
@@ -577,78 +579,124 @@ export function Translator({
                   {heroTexts.titleAccent}
                 </span>
               </h1>
-              <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
+              <p className="text-base leading-relaxed text-hint/80">{heroTexts.description}</p>
             </div>
           </div>
-        ) : (
-          <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:min-h-0">
-            <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
-            {topics.length > 0 && (
-              <button
-                onClick={newTopic}
-                className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-border/70 px-3 py-2.5 text-sm font-medium text-button transition active:scale-[0.99]"
-              >
-                <Plus size={16} /> {t.newTopic}
-              </button>
-            )}
-            <div className="flex flex-col gap-1 overflow-y-auto lg:min-h-0 lg:flex-1">
-              {topics.length === 0 ? (
-                <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
+          <div className="order-1 flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:order-2 lg:h-full lg:min-h-0 lg:rounded-none lg:border-0">
+            {pairRow}
+            <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+              {loadingTopic ? (
+                <div className="flex justify-center py-10 text-hint">
+                  <Loader2 size={20} className="animate-spin" />
+                </div>
               ) : (
-                topics.map((tp) => (
-                  <div key={tp.id} className="flex items-center gap-1">
-                    <button
-                      onClick={() => switchTopic(tp.id)}
-                      className={`flex min-w-0 flex-1 items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition active:scale-[0.99] ${
-                        tp.id === topic?.id ? "bg-card font-medium" : "hover:bg-card/60"
-                      }`}
-                    >
-                      <span className="min-w-0 flex-1 truncate">{tp.title || t.newTopic}</span>
-                    </button>
-                    <button
-                      onClick={() => deleteTopic(tp.id)}
-                      aria-label={t.deleteTopic}
-                      className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                ))
+                <History
+                  rows={rows}
+                  langA={topic?.sourceLang ?? ""}
+                  langB={topic?.targetLang ?? ""}
+                  texts={texts.history}
+                />
+              )}
+              {pending && (
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-base text-hint">
+                  <Loader2 size={15} className="animate-spin" /> {t.translating}
+                </div>
               )}
             </div>
+            <div className="shrink-0 border-t border-border">{composerRow}</div>
           </div>
-        )}
-
-        {/* Right column: language pair up top, chat scrolling in the
-            middle, composer pinned to the bottom — always live. */}
-        <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0">
-          {pairRow}
-
-          {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
-              actually shrink instead of pushing the composer off-screen) */}
-          <div ref={chatScrollRef} className="flex-1 overflow-y-auto p-4 sm:p-6 lg:min-h-0">
-            {loadingTopic ? (
-              <div className="flex justify-center py-10 text-hint">
-                <Loader2 size={20} className="animate-spin" />
-              </div>
-            ) : (
-              <History
-                rows={rows}
-                langA={topic?.sourceLang ?? ""}
-                langB={topic?.targetLang ?? ""}
-                texts={texts.history}
-              />
-            )}
-            {pending && (
-              <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-sm text-hint">
-                <Loader2 size={15} className="animate-spin" /> {t.translating}
-              </div>
-            )}
-          </div>
-
-          <div className="shrink-0 border-t border-border">{composerRow}</div>
         </div>
-      </div>
+      ) : (
+        /* Once there's a topic: a permanent sidebar column on desktop, same
+            as before; on phones that column becomes a toggle + drawer
+            instead (no room for a fixed sidebar there). */
+        <div className="relative flex flex-col overflow-hidden rounded-2xl border border-border lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr]">
+          <div className="hidden flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:flex lg:h-full lg:min-h-0">
+            <div className="flex shrink-0 items-center justify-between">
+              <h2 className="px-1 text-base font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+              <button
+                onClick={newTopic}
+                aria-label={t.newTopic}
+                className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+              >
+                <Plus size={16} />
+              </button>
+            </div>
+            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">{topicsList(() => {})}</div>
+          </div>
+
+          <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0">
+            <div className="flex shrink-0 items-center border-b border-border px-2 lg:hidden">
+              <button
+                onClick={() => setTopicsOpen(true)}
+                className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-base font-medium text-hint transition hover:text-text active:scale-[0.99]"
+              >
+                <PanelLeft size={16} />
+                <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
+              </button>
+            </div>
+
+            {pairRow}
+
+            {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
+                actually shrink instead of pushing the composer off-screen) */}
+            <div ref={chatScrollRef} className="flex flex-1 flex-col overflow-y-auto p-4 sm:p-6 lg:min-h-0">
+              {loadingTopic ? (
+                <div className="flex justify-center py-10 text-hint">
+                  <Loader2 size={20} className="animate-spin" />
+                </div>
+              ) : (
+                <History
+                  rows={rows}
+                  langA={topic?.sourceLang ?? ""}
+                  langB={topic?.targetLang ?? ""}
+                  texts={texts.history}
+                />
+              )}
+              {pending && (
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-bg p-3.5 text-base text-hint">
+                  <Loader2 size={15} className="animate-spin" /> {t.translating}
+                </div>
+              )}
+            </div>
+
+            <div className="shrink-0 border-t border-border">{composerRow}</div>
+          </div>
+
+          {topicsOpen && (
+            <div className="lg:hidden">
+              <div className="absolute inset-0 z-20 bg-black/40" onClick={() => setTopicsOpen(false)} />
+              <div className="absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-[hsl(32_44%_92%)] p-4 shadow-xl dark:bg-[hsl(32_14%_14%)] sm:p-5">
+                <div className="flex shrink-0 items-center justify-between">
+                  <h2 className="px-1 text-base font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => {
+                        newTopic();
+                        setTopicsOpen(false);
+                      }}
+                      aria-label={t.newTopic}
+                      className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+                    >
+                      <Plus size={16} />
+                    </button>
+                    <button
+                      onClick={() => setTopicsOpen(false)}
+                      aria-label={t.close}
+                      className="rounded-lg p-1.5 text-hint transition active:scale-90"
+                    >
+                      <X size={16} />
+                    </button>
+                  </div>
+                </div>
+                <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+                  {topicsList(() => setTopicsOpen(false))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {error && (
         <Modal
@@ -658,7 +706,7 @@ export function Translator({
           footer={
             <button
               onClick={() => setError(null)}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.close}
             </button>
@@ -676,13 +724,13 @@ export function Translator({
           footer={
             <a
               href={pricingHref}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.pricingLink}
             </a>
           }
         >
-          <div className="px-5 py-4 text-sm text-hint">{t.errors.insufficientCredits}</div>
+          <div className="px-5 py-4 text-base text-hint">{t.errors.insufficientCredits}</div>
         </Modal>
       )}
 

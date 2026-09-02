@@ -352,7 +352,7 @@
     }
   },
   "history": {
-    "emptyState": "Nimic aici încă. Scrie un mesaj sau înregistrează-ți vocea mai jos.",
+    "emptyState": "Scrie un mesaj sau înregistrează-ți vocea mai jos.",
     "readAloudAria": "Citește cu voce tare",
     "copyAria": "Copiază"
   }

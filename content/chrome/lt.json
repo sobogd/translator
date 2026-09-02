@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Čia dar nieko nėra. Parašykite žinutę arba įrašykite balsą žemiau.",
+    "emptyState": "Parašykite žinutę arba įrašykite balsą žemiau.",
     "readAloudAria": "Perskaityti garsiai",
     "copyAria": "Kopijuoti"
   }

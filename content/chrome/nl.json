@@ -352,7 +352,7 @@
     }
   },
   "history": {
-    "emptyState": "Hier staat nog niets. Typ een bericht of neem hieronder je stem op.",
+    "emptyState": "Typ een bericht of neem hieronder je stem op.",
     "readAloudAria": "Hardop voorlezen",
     "copyAria": "Kopiëren"
   }

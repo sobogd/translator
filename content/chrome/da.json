@@ -348,7 +348,7 @@
     }
   },
   "history": {
-    "emptyState": "Intet her endnu. Skriv en besked eller optag din stemme nedenfor.",
+    "emptyState": "Skriv en besked eller optag din stemme nedenfor.",
     "readAloudAria": "Læs højt",
     "copyAria": "Kopiér"
   }

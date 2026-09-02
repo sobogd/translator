@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Täällä ei ole vielä mitään. Kirjoita viesti tai tallenna äänesi alta.",
+    "emptyState": "Kirjoita viesti tai tallenna äänesi alta.",
     "readAloudAria": "Lue ääneen",
     "copyAria": "Kopioi"
   }

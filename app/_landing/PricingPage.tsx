@@ -46,12 +46,12 @@ export function PricingPage({
                 {p.headingAccent}
               </span>
             </h1>
-            <p className="max-w-xl text-sm text-hint sm:text-base">{p.sub}</p>
+            <p className="max-w-xl text-base text-hint">{p.sub}</p>
           </div>
           <PricingCards texts={p} />
           <div className="mt-6 rounded-2xl border border-border p-5 text-center">
-            <p className="text-sm font-semibold">{p.freeNote.title}</p>
-            <p className="mt-1 text-sm text-hint">{p.freeNote.sub}</p>
+            <p className="text-base font-semibold">{p.freeNote.title}</p>
+            <p className="mt-1 text-base text-hint">{p.freeNote.sub}</p>
           </div>
         </Band>
         <Band id="faq">

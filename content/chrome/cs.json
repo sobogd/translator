@@ -356,7 +356,7 @@
     }
   },
   "history": {
-    "emptyState": "Zatím tu nic není. Napište zprávu nebo níže nahrajte svůj hlas.",
+    "emptyState": "Napište zprávu nebo níže nahrajte svůj hlas.",
     "readAloudAria": "Přečíst nahlas",
     "copyAria": "Kopírovat"
   }

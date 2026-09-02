@@ -356,7 +356,7 @@
     }
   },
   "history": {
-    "emptyState": "Ancora nulla qui. Scrivi un messaggio o registra la tua voce qui sotto.",
+    "emptyState": "Scrivi un messaggio o registra la tua voce qui sotto.",
     "readAloudAria": "Leggi ad alta voce",
     "copyAria": "Copia"
   }

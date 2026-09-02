@@ -52,7 +52,7 @@ export function Faq({
           <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
             {heading} {headingAccent}
           </h2>
-          <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
+          <p className="text-base leading-relaxed text-hint/80">{sub}</p>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export function Faq({
               {item.q}
             </h3>
             <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-              <p itemProp="text" className="text-sm leading-relaxed text-hint">
+              <p itemProp="text" className="text-base leading-relaxed text-hint">
                 {item.a}
               </p>
             </div>

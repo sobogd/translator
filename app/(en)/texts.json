@@ -277,7 +277,7 @@
     }
   },
   "history": {
-    "emptyState": "Nothing here yet. Type a message or record your voice below.",
+    "emptyState": "Speak or type in any language — we will build the conversation for you.",
     "readAloudAria": "Read aloud",
     "copyAria": "Copy"
   },

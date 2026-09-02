@@ -352,7 +352,7 @@
     }
   },
   "history": {
-    "emptyState": "Ainda não há nada aqui. Escreva uma mensagem ou grave a sua voz abaixo.",
+    "emptyState": "Escreva uma mensagem ou grave a sua voz abaixo.",
     "readAloudAria": "Ler em voz alta",
     "copyAria": "Copiar"
   }

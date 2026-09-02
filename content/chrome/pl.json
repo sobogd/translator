@@ -360,7 +360,7 @@
     }
   },
   "history": {
-    "emptyState": "Tu jeszcze nic nie ma. Wpisz wiadomość albo nagraj swój głos poniżej.",
+    "emptyState": "Wpisz wiadomość albo nagraj swój głos poniżej.",
     "readAloudAria": "Odczytaj na głos",
     "copyAria": "Kopiuj"
   }

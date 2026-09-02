@@ -368,7 +368,7 @@
     }
   },
   "history": {
-    "emptyState": "Hier ist noch nichts. Tippe eine Nachricht oder nimm deine Stimme unten auf.",
+    "emptyState": "Tippe eine Nachricht oder nimm deine Stimme unten auf.",
     "readAloudAria": "Vorlesen",
     "copyAria": "Kopieren"
   }

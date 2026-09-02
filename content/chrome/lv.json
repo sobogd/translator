@@ -336,7 +336,7 @@
     }
   },
   "history": {
-    "emptyState": "Šeit vēl nekā nav. Uzraksti ziņu vai ieraksti balsi zemāk.",
+    "emptyState": "Uzraksti ziņu vai ieraksti balsi zemāk.",
     "readAloudAria": "Nolasīt skaļi",
     "copyAria": "Kopēt"
   }

@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Encara no hi ha res aquí. Escriu un missatge o grava la teva veu a sota.",
+    "emptyState": "Escriu un missatge o grava la teva veu a sota.",
     "readAloudAria": "Llegeix en veu alta",
     "copyAria": "Copia"
   }

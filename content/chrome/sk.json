@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "Zatiaľ tu nič nie je. Napíšte správu alebo nižšie nahrajte svoj hlas.",
+    "emptyState": "Napíšte správu alebo nižšie nahrajte svoj hlas.",
     "readAloudAria": "Prečítať nahlas",
     "copyAria": "Kopírovať"
   }

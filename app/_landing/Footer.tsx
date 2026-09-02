@@ -41,13 +41,13 @@ export function Footer({
       <div className={`${NARROW} flex flex-col gap-6`}>
         {featureLinks.length > 0 && (
           <div className="flex flex-col gap-2">
-            <p className="text-sm font-semibold">{texts.featuresHeading ?? "Features"}</p>
+            <p className="text-base font-semibold">{texts.featuresHeading ?? "Features"}</p>
             <nav className="flex flex-wrap gap-x-4 gap-y-2">
               {featureLinks.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
-                  className="text-sm text-hint transition-colors hover:text-text"
+                  className="text-base text-hint transition-colors hover:text-text"
                 >
                   {l.label}
                 </a>
@@ -58,7 +58,7 @@ export function Footer({
         {/* Locale switcher: every shipped locale's home (or the registered
             translation of the current feature route). Doubles as internal
             linking to the localized homes. */}
-        <nav className="flex flex-wrap gap-x-3 gap-y-2 text-xs uppercase tracking-wide text-hint">
+        <nav className="flex flex-wrap gap-x-3 gap-y-2 text-base uppercase tracking-wide text-hint">
           {READY_LOCALES.map((l) =>
             l === locale ? (
               <span key={l} className="font-semibold text-text">
@@ -71,7 +71,7 @@ export function Footer({
             ),
           )}
         </nav>
-        <div className="flex flex-col items-center justify-between gap-3 text-sm text-hint sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 text-base text-hint sm:flex-row">
           <span>{`© ${new Date().getFullYear()} ${texts.brand}`}</span>
           <span>{texts.tagline}</span>
         </div>

@@ -340,7 +340,7 @@
     }
   },
   "history": {
-    "emptyState": "这里还没有内容。输入消息，或在下方录制语音。",
+    "emptyState": "输入消息，或在下方录制语音。",
     "readAloudAria": "朗读",
     "copyAria": "复制"
   }

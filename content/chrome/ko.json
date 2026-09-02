@@ -344,7 +344,7 @@
     }
   },
   "history": {
-    "emptyState": "아직 아무것도 없어요. 아래에 메시지를 입력하거나 음성을 녹음해 보세요.",
+    "emptyState": "아래에 메시지를 입력하거나 음성을 녹음해 보세요.",
     "readAloudAria": "읽어주기",
     "copyAria": "복사"
   }

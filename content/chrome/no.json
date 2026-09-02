@@ -344,7 +344,7 @@
     }
   },
   "history": {
-    "emptyState": "Ingenting her ennå. Skriv en melding eller ta opp stemmen din nedenfor.",
+    "emptyState": "Skriv en melding eller ta opp stemmen din nedenfor.",
     "readAloudAria": "Les høyt",
     "copyAria": "Kopier"
   }

@@ -360,7 +360,7 @@
     }
   },
   "history": {
-    "emptyState": "Todavía no hay nada aquí. Escribe un mensaje o graba tu voz abajo.",
+    "emptyState": "Escribe un mensaje o graba tu voz abajo.",
     "readAloudAria": "Leer en voz alta",
     "copyAria": "Copiar"
   }

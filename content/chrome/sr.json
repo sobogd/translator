@@ -352,7 +352,7 @@
     }
   },
   "history": {
-    "emptyState": "Ovde još nema ničega. Ukucajte poruku ili snimite svoj glas ispod.",
+    "emptyState": "Ukucajte poruku ili snimite svoj glas ispod.",
     "readAloudAria": "Pročitaj naglas",
     "copyAria": "Kopiraj"
   }

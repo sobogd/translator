@@ -332,7 +332,7 @@
     }
   },
   "history": {
-    "emptyState": "Ekkert hér enn. Skrifaðu skilaboð eða taktu upp röddina þína hér fyrir neðan.",
+    "emptyState": "Skrifaðu skilaboð eða taktu upp röddina þína hér fyrir neðan.",
     "readAloudAria": "Lesa upphátt",
     "copyAria": "Afrita"
   }
