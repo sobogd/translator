@@ -49,13 +49,6 @@ export function Hero({ texts }: { texts: HeroTexts }) {
   return (
     <div className={`${CARD} grid grid-cols-1 overflow-hidden lg:grid-cols-[11fr_9fr]`}>
       <div className="order-1 flex min-w-0 flex-col items-start gap-6 p-6 text-start sm:p-8">
-        <div className="flex items-center gap-3 text-sm text-hint/80">
-          <span>{texts.badgeVoice}</span>
-          <span>·</span>
-          <span>{texts.badgeText}</span>
-          <span>·</span>
-          <span>{texts.badgeLanguages}</span>
-        </div>
         <div className="my-auto flex min-w-0 flex-col gap-4">
           <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
             {texts.title}{" "}
