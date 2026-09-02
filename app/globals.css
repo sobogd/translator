@@ -9,6 +9,17 @@
   --color-hint: var(--hint);
   --color-button: var(--button);
   --color-button-text: var(--button-text);
+  --animate-wave: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
 
 /* Same palette as iq-rest's landing (app/globals.css there): warm paper

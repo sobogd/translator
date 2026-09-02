@@ -466,15 +466,23 @@ export function Translator({
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the card edge (the card's
   // overflow-hidden supplies its only rounded corner).
+  const showSend = status === "idle" && text.trim().length > 0;
+  const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
+
   const composerRow = (
     <div className="flex min-w-0 flex-1 items-stretch">
       {status !== "idle" ? (
-        <div className="flex min-h-11 flex-1 items-center gap-2 px-4 text-sm text-hint">
+        <div className="flex min-h-11 flex-1 items-center gap-3 px-4 text-sm text-hint">
           {status === "recording" ? (
             <>
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
+              <span className="flex h-4 items-end gap-0.5">
+                {[0, 150, 300, 450, 300, 150].map((delay, i) => (
+                  <span
+                    key={i}
+                    className="h-4 w-1 origin-bottom animate-wave rounded-full bg-red-500"
+                    style={{ animationDelay: `${delay}ms` }}
+                  />
+                ))}
               </span>
               {t.recording} · {fmtTime(elapsed)}
             </>
@@ -499,28 +507,28 @@ export function Translator({
         />
       )}
       <button
-        onClick={status === "recording" ? stopRec : startRec}
-        disabled={status === "processing"}
-        aria-label={status === "recording" ? t.stopAria : t.recordAria}
-        className={`flex w-12 shrink-0 items-center justify-center border-l border-border transition active:scale-95 disabled:opacity-40 ${
-          status === "recording" ? "text-red-500" : "text-hint hover:text-text"
-        }`}
+        onClick={micOrSend}
+        disabled={status === "processing" || (showSend && textBusy)}
+        aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
+        className={`flex shrink-0 items-center justify-center px-5 text-sm font-semibold transition active:scale-95 disabled:opacity-40 ${
+          status === "recording" || (status === "idle" && !showSend)
+            ? "w-12 border-l border-border text-hint hover:text-text"
+            : "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white hover:opacity-90"
+        } ${status === "recording" ? "text-red-500" : ""}`}
       >
         {status === "processing" ? (
-          <Loader2 size={16} className="animate-spin" />
+          <Loader2 size={18} className="animate-spin" />
         ) : status === "recording" ? (
           <Square size={14} fill="currentColor" />
+        ) : showSend ? (
+          textBusy ? (
+            <Loader2 size={18} className="animate-spin" />
+          ) : (
+            <Send size={18} />
+          )
         ) : (
           <Mic size={18} />
         )}
-      </button>
-      <button
-        onClick={status === "recording" ? stopRec : translateText}
-        disabled={status === "processing" || (status === "idle" && (!text.trim() || textBusy))}
-        aria-label={t.translateAria}
-        className="flex shrink-0 items-center justify-center bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-5 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-40"
-      >
-        {textBusy ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
       </button>
     </div>
   );
