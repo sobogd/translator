@@ -9,7 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SITE_URL = "https://translate.iq-factura.com";
+const SITE_URL = "https://iq-translate.com";
 const refChrome = JSON.parse(fs.readFileSync(path.join(root, "app", "(en)", "texts.json")));
 
 const only = process.argv.slice(2);

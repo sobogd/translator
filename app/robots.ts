@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://translate.iq-factura.com";
+const SITE_URL = "https://iq-translate.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
