@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Loader2, Mic, Type, X } from "lucide-react";
 import { apiFetch } from "@/lib/client";
 import { PRIMARY_FILL } from "./shell";
@@ -144,9 +145,10 @@ export function AuthButton({
         </a>
       )}
 
-      {modalOpen && (
+      {modalOpen &&
+        createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
           onClick={() => setModalOpen(false)}
         >
           <div
@@ -204,7 +206,8 @@ export function AuthButton({
               {texts.logOut}
             </button>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );

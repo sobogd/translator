@@ -51,3 +51,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Tailwind v4 preflight leaves buttons with the browser-default arrow cursor;
+ * every interactive control should read as clickable, like links do. */
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
