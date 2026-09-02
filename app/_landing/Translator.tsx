@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRightLeft, Eraser, Loader2, Mic, Plus, Send, Square, Trash2 } from "lucide-react";
+import { ArrowRightLeft, Loader2, Mic, Plus, Send, Square, Trash2 } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -293,13 +293,6 @@ export function Translator({
     });
   }
 
-  async function clearHistory() {
-    if (!topic) return;
-    if (!confirm(t.clearHistoryConfirm)) return;
-    await apiFetch(`/api/topics/${topic.id}/translations`, { method: "DELETE" });
-    await loadTopic(topic.id);
-  }
-
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -537,10 +530,10 @@ export function Translator({
     </div>
   );
 
-  // Language buttons: full-width halves on mobile (their own row), capped
-  // on desktop so the text field keeps the lion's share of the omnibar.
+  // Language buttons: always full-width halves — the pair row sits on its
+  // own line above the composer/content, on every breakpoint.
   const langBtnClass =
-    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none sm:w-32 sm:flex-none lg:w-40";
+    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none";
 
   // Language pair half of the omnibar — source, reverse, target. Pickers
   // stay disabled once the pair locks.
@@ -566,18 +559,17 @@ export function Translator({
   return (
     <div className="flex flex-col gap-4">
     {compactMode ? (
-      /* Nothing to manage on the very first visit — just the omnibar. */
+      /* Nothing to manage on the very first visit — just the omnibar, pair
+          row always full-width on its own line above the composer. */
       <div className={`${CARD} overflow-hidden`}>
-        <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col">
           {pairRow}
           {composerRow}
         </div>
       </div>
     ) : (
-      /* One card: topics sidebar fixed to the same width as the language
-          selectors above the chat (22.5rem = lg:w-40 × 2 + the w-10 swap
-          button), so the two columns line up. The composer sits pinned to
-          the bottom of the right column, under the chat. */
+      /* One card: topics sidebar full height on the left; language pair,
+          scrolling chat, and composer stacked in the right column. */
       <div className={`${CARD} flex flex-col overflow-hidden lg:h-[27rem] lg:flex-row`}>
         <div className="flex flex-col gap-3 bg-[hsl(32_44%_92%)] p-4 dark:bg-[hsl(32_14%_14%)] sm:p-5 lg:h-full lg:w-[22.5rem] lg:shrink-0 lg:min-h-0">
           <h2 className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</h2>
@@ -620,18 +612,6 @@ export function Translator({
             middle, composer pinned to the bottom. */}
         <div className="flex min-w-0 flex-col lg:h-full lg:min-h-0 lg:flex-1">
           {pairRow}
-
-          {rows.length > 0 && (
-            <div className="flex shrink-0 items-center justify-end border-b border-border px-4 py-2 sm:px-5">
-              <button
-                onClick={clearHistory}
-                aria-label={t.clearHistory}
-                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-hint transition hover:text-text active:scale-95"
-              >
-                <Eraser size={14} /> {t.clearHistory}
-              </button>
-            </div>
-          )}
 
           {/* chat — its own scroll box on desktop (min-h-0 lets a flex child
               actually shrink instead of pushing the composer off-screen) */}
