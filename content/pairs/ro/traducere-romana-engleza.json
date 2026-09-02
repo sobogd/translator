@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Vorbește, nu tasta",
+      "heading": "Traducător vocal din română în engleză",
       "sub": "Apasă pe microfon, spune-o în română sau engleză, și primești o traducere pe care o poți citi sau asculta.",
       "bullets": [
-        { "title": "Vocea ta devine engleză", "sub": "Spune-o în română — cuvintele sunt transcrise, traduse și afișate în engleză în câteva secunde" },
-        { "title": "Ascultă traducerea în engleză", "sub": "Atinge iconița difuzorului dacă pronunția ta încă nu e sigură" }
+        {
+          "title": "Vocea ta devine engleză",
+          "sub": "Spune-o în română — cuvintele sunt transcrise, traduse și afișate în engleză în câteva secunde"
+        },
+        {
+          "title": "Ascultă traducerea în engleză",
+          "sub": "Atinge iconița difuzorului dacă pronunția ta încă nu e sigură"
+        }
       ]
     },
     {
-      "heading": "Un singur subiect, ambele sensuri ale conversației",
+      "heading": "Traducător pentru conversații română engleză",
       "sub": "Continuă discuția fără să iei totul de la capăt — fiecare schimb rămâne în același subiect.",
       "bullets": [
-        { "title": "Răspunde în engleză, tradus în română", "sub": "Persoana cu care vorbești poate răspunde în engleză și tu vezi și auzi totul în română" },
-        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul" }
+        {
+          "title": "Răspunde în engleză, tradus în română",
+          "sub": "Persoana cu care vorbești poate răspunde în engleză și tu vezi și auzi totul în română"
+        },
+        {
+          "title": "Conversațiile rămân salvate ca subiecte",
+          "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul"
+        }
       ]
     },
     {
-      "heading": "Română-Engleză, plus alte 185 de limbi",
+      "heading": "Traducator online din română în engleză",
       "sub": "Engleza este una dintre cele 186 de limbi disponibile, în orice direcție.",
       "bullets": [
-        { "title": "Corect cu diacritice și expresii", "sub": "Gestionează corect diacriticele românești și formulările din engleză, nu ghicește aproximativ" },
-        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru engleză și mâine pentru orice altă limbă" }
+        {
+          "title": "Corect cu diacritice și expresii",
+          "sub": "Gestionează corect diacriticele românești și formulările din engleză, nu ghicește aproximativ"
+        },
+        {
+          "title": "186 de limbi în total",
+          "sub": "Același instrument funcționează azi pentru engleză și mâine pentru orice altă limbă"
+        }
       ]
     },
     {
-      "heading": "Preferi să scrii? Merge și așa",
+      "heading": "Traducător de text română engleză",
       "sub": "Scrie sau lipește text în română și primești traducerea în engleză fără să atingi microfonul.",
       "bullets": [
-        { "title": "Scrie în loc să vorbești", "sub": "Util într-o cameră liniștită sau pe o stradă zgomotoasă" },
-        { "title": "Copiază traducerea", "sub": "Preia textul în engleză direct, gata de lipit într-un e-mail sau mesaj" }
+        {
+          "title": "Scrie în loc să vorbești",
+          "sub": "Util într-o cameră liniștită sau pe o stradă zgomotoasă"
+        },
+        {
+          "title": "Copiază traducerea",
+          "sub": "Preia textul în engleză direct, gata de lipit într-un e-mail sau mesaj"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicațiile obișnuite de traducere",
     "rows": [
-      { "title": "Cum începi", "us": "Vorbești în română sau engleză și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
-      { "title": "Istoricul conversației", "us": "Fiecare conversație română-engleză este salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
-      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
-      { "title": "Ambele sensuri", "us": "Română spre engleză și engleză spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
-      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în engleză citită cu voce tare.", "them": "Doar text, așa că pronunția rămâne pe cont propriu." }
+      {
+        "title": "Cum începi",
+        "us": "Vorbești în română sau engleză și primești traducerea pe loc.",
+        "them": "Trebuie să tastezi mai întâi ce vrei să spui."
+      },
+      {
+        "title": "Istoricul conversației",
+        "us": "Fiecare conversație română-engleză este salvată ca propriul ei subiect.",
+        "them": "Fiecare traducere dispare după ce închizi aplicația."
+      },
+      {
+        "title": "Cum pornești",
+        "us": "Deschizi într-o filă de browser — nimic de instalat.",
+        "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi."
+      },
+      {
+        "title": "Ambele sensuri",
+        "us": "Română spre engleză și engleză spre română stau în același subiect.",
+        "them": "Schimbarea sensului înseamnă de obicei o traducere nouă."
+      },
+      {
+        "title": "Ascultarea traducerii",
+        "us": "Atingi pentru a auzi traducerea în engleză citită cu voce tare.",
+        "them": "Doar text, așa că pronunția rămâne pe cont propriu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecvente",
     "sub": "Întrebări obișnuite despre traducerea română-engleză.",
     "items": [
-      { "q": "Poate traduce engleza vorbită în română?", "a": "Da — apasă pe microfon, vorbește în engleză, și primești traducerea în română ca text, cu opțiunea de a o asculta cu voce tare." },
-      { "q": "Funcționează și invers, din română în engleză?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în engleză în același subiect." },
-      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără să îți creezi cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
-      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon — nimic de descărcat." },
-      { "q": "Se potrivește pentru muncă sau călătorii?", "a": "Da, e util atât pentru o conversație rapidă în vacanță, cât și pentru discuții de lucru cu colegi vorbitori de engleză." },
-      { "q": "Pot păstra o conversație, nu doar traduceri separate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în engleză rămâne într-un singur loc, nu împrăștiată." }
+      {
+        "q": "Poate traduce engleza vorbită în română?",
+        "a": "Da — apasă pe microfon, vorbește în engleză, și primești traducerea în română ca text, cu opțiunea de a o asculta cu voce tare."
+      },
+      {
+        "q": "Funcționează și invers, din română în engleză?",
+        "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în engleză în același subiect."
+      },
+      {
+        "q": "Este gratuit?",
+        "a": "Da, poți încerca gratuit fără să îți creezi cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat."
+      },
+      {
+        "q": "Trebuie să instalez ceva?",
+        "a": "Nu, funcționează direct în browser, pe calculator sau telefon — nimic de descărcat."
+      },
+      {
+        "q": "Se potrivește pentru muncă sau călătorii?",
+        "a": "Da, e util atât pentru o conversație rapidă în vacanță, cât și pentru discuții de lucru cu colegi vorbitori de engleză."
+      },
+      {
+        "q": "Pot păstra o conversație, nu doar traduceri separate?",
+        "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în engleză rămâne într-un singur loc, nu împrăștiată."
+      }
     ]
   },
   "finalCta": {

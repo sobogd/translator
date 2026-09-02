@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "El francés que no se pronuncia",
+      "heading": "Traductor de voz de español a francés",
       "sub": "Las liaisons unen las palabras y las terminaciones no suenan: por eso cuesta separarlas de oído.",
       "bullets": [
-        { "title": "Graba y léelo en español", "sub": "La transcripción divide la frase en palabras aunque tú no las oigas" },
-        { "title": "Escucha la versión francesa", "sub": "Toca el altavoz antes de decirlo tú y evita la mitad de los malentendidos" }
+        {
+          "title": "Graba y léelo en español",
+          "sub": "La transcripción divide la frase en palabras aunque tú no las oigas"
+        },
+        {
+          "title": "Escucha la versión francesa",
+          "sub": "Toca el altavoz antes de decirlo tú y evita la mitad de los malentendidos"
+        }
       ]
     },
     {
-      "heading": "Tu o vous, según toque",
+      "heading": "Traductor para conversación en francés",
       "sub": "El francés marca la distancia con la persona y confundirlo suena mal en cualquier contexto.",
       "bullets": [
-        { "title": "El registro se mantiene", "sub": "Una frase de vous sigue siendo formal en español, no un tuteo seco" },
-        { "title": "Responde en el mismo hilo", "sub": "Escribes en español y sale en francés listo para leer en voz alta" }
+        {
+          "title": "El registro se mantiene",
+          "sub": "Una frase de vous sigue siendo formal en español, no un tuteo seco"
+        },
+        {
+          "title": "Responde en el mismo hilo",
+          "sub": "Escribes en español y sale en francés listo para leer en voz alta"
+        }
       ]
     },
     {
-      "heading": "Trámites en Francia",
+      "heading": "Traductor online gratis de español a francés",
       "sub": "Préfecture, CAF, contrato de alquiler: papeles que hay que entender a la primera.",
       "bullets": [
-        { "title": "Pega el documento", "sub": "Un escrito administrativo completo, traducido de una vez" },
-        { "title": "Copia lo que necesitas", "sub": "Llévate el texto en español a tus notas o a la respuesta" }
+        {
+          "title": "Pega el documento",
+          "sub": "Un escrito administrativo completo, traducido de una vez"
+        },
+        {
+          "title": "Copia lo que necesitas",
+          "sub": "Llévate el texto en español a tus notas o a la respuesta"
+        }
       ]
     },
     {
-      "heading": "Falsos amigos del francés",
+      "heading": "Traductor de texto de español a francés",
       "sub": "Constipé, embrasser, salir: parecen españoles y significan otra cosa.",
       "bullets": [
-        { "title": "Se traduce la frase", "sub": "El sentido lo da el contexto, no el parecido entre las dos palabras" },
-        { "title": "186 idiomas incluidos", "sub": "El mismo hilo vale para cualquier otro idioma que necesites" }
+        {
+          "title": "Se traduce la frase",
+          "sub": "El sentido lo da el contexto, no el parecido entre las dos palabras"
+        },
+        {
+          "title": "186 idiomas incluidos",
+          "sub": "El mismo hilo vale para cualquier otro idioma que necesites"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "No pillas la frase", "us": "La grabas y la lees en español.", "them": "Tienes que escribirla como creas que se escribe." },
-      { "title": "Pronunciación", "us": "Escuchas la frase en francés en voz alta.", "them": "Solo texto, sin audio." },
-      { "title": "Tuteo y formalidad", "us": "El registro se conserva en la traducción.", "them": "Todo sale igual de plano." },
-      { "title": "Historial", "us": "Cada conversación queda como un tema.", "them": "Se pierde al cerrar." },
-      { "title": "Empezar", "us": "Navegador y micrófono, nada más.", "them": "App instalada y cuenta creada." }
+      {
+        "title": "No pillas la frase",
+        "us": "La grabas y la lees en español.",
+        "them": "Tienes que escribirla como creas que se escribe."
+      },
+      {
+        "title": "Pronunciación",
+        "us": "Escuchas la frase en francés en voz alta.",
+        "them": "Solo texto, sin audio."
+      },
+      {
+        "title": "Tuteo y formalidad",
+        "us": "El registro se conserva en la traducción.",
+        "them": "Todo sale igual de plano."
+      },
+      {
+        "title": "Historial",
+        "us": "Cada conversación queda como un tema.",
+        "them": "Se pierde al cerrar."
+      },
+      {
+        "title": "Empezar",
+        "us": "Navegador y micrófono, nada más.",
+        "them": "App instalada y cuenta creada."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al francés.",
     "items": [
-      { "q": "¿Entiende francés hablado rápido?", "a": "Sí. Graba la frase y en un par de segundos la tienes en español, con las palabras separadas aunque suenen unidas." },
-      { "q": "¿Respeta el tu y el vous?", "a": "La traducción sigue el registro de la frase, así que un mensaje formal no se convierte en un tuteo brusco." },
-      { "q": "¿Puedo pegar un documento administrativo?", "a": "Sí, pega el texto completo con sus acentos y cedillas y léelo en español." },
-      { "q": "¿Funciona de francés a español?", "a": "Sí, el mismo hilo va en los dos sentidos y cualquier versión se puede escuchar." },
-      { "q": "¿Y el francés de Quebec?", "a": "Se traduce la frase entera en su contexto, así que el vocabulario propio se lee por lo que significa allí." },
-      { "q": "¿Es gratis?", "a": "Sí, hay margen gratuito sin registro; con Google aumentas la cuota mensual y guardas el historial." }
+      {
+        "q": "¿Entiende francés hablado rápido?",
+        "a": "Sí. Graba la frase y en un par de segundos la tienes en español, con las palabras separadas aunque suenen unidas."
+      },
+      {
+        "q": "¿Respeta el tu y el vous?",
+        "a": "La traducción sigue el registro de la frase, así que un mensaje formal no se convierte en un tuteo brusco."
+      },
+      {
+        "q": "¿Puedo pegar un documento administrativo?",
+        "a": "Sí, pega el texto completo con sus acentos y cedillas y léelo en español."
+      },
+      {
+        "q": "¿Funciona de francés a español?",
+        "a": "Sí, el mismo hilo va en los dos sentidos y cualquier versión se puede escuchar."
+      },
+      {
+        "q": "¿Y el francés de Quebec?",
+        "a": "Se traduce la frase entera en su contexto, así que el vocabulario propio se lee por lo que significa allí."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, hay margen gratuito sin registro; con Google aumentas la cuota mensual y guardas el historial."
+      }
     ]
   },
   "finalCta": {

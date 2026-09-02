@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Both sides of the language",
+      "heading": "Voice translator from Portuguese to English",
       "sub": "Brazilian and European Portuguese differ in sound, vocabulary and rhythm — the translation follows the sentence, not a preset.",
       "bullets": [
-        { "title": "Spoken Portuguese into English", "sub": "Record a voice note or a live sentence and read the meaning right after" },
-        { "title": "European pronunciation too", "sub": "Swallowed vowels are handled by the transcript, not left to your ear" }
+        {
+          "title": "Spoken Portuguese into English",
+          "sub": "Record a voice note or a live sentence and read the meaning right after"
+        },
+        {
+          "title": "European pronunciation too",
+          "sub": "Swallowed vowels are handled by the transcript, not left to your ear"
+        }
       ]
     },
     {
-      "heading": "Answer in one thread",
+      "heading": "Portuguese to English conversation translator",
       "sub": "Your English reply leaves as Portuguese and can be read aloud.",
       "bullets": [
-        { "title": "Both directions", "sub": "Portuguese in, English out, English in, Portuguese out — one conversation" },
-        { "title": "Saved as a topic", "sub": "Come back to the same thread when the reply arrives" }
+        {
+          "title": "Both directions",
+          "sub": "Portuguese in, English out, English in, Portuguese out — one conversation"
+        },
+        {
+          "title": "Saved as a topic",
+          "sub": "Come back to the same thread when the reply arrives"
+        }
       ]
     },
     {
-      "heading": "Everyday words, not textbook ones",
+      "heading": "Online translator for Portuguese and English",
       "sub": "Gíria and regional vocabulary are read for meaning instead of being looked up in isolation.",
       "bullets": [
-        { "title": "Slang in context", "sub": "Legal, valeu, fixe or pois é come out as what the speaker meant" },
-        { "title": "Accents and cedilla", "sub": "Paste ã, õ or ç exactly as written with nothing mangled" }
+        {
+          "title": "Slang in context",
+          "sub": "Legal, valeu, fixe or pois é come out as what the speaker meant"
+        },
+        {
+          "title": "Accents and cedilla",
+          "sub": "Paste ã, õ or ç exactly as written with nothing mangled"
+        }
       ]
     },
     {
-      "heading": "Or paste and read",
+      "heading": "Portuguese to English text translator",
       "sub": "A message, an invoice, a form — paste the Portuguese and read the English.",
       "bullets": [
-        { "title": "Whole messages", "sub": "A full paragraph at once, not line by line" },
-        { "title": "Copy the result", "sub": "Take the English into your reply or your notes" }
+        {
+          "title": "Whole messages",
+          "sub": "A full paragraph at once, not line by line"
+        },
+        {
+          "title": "Copy the result",
+          "sub": "Take the English into your reply or your notes"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "A voice note arrives", "us": "Play it into the mic and read the English.", "them": "Transcribe it yourself first." },
-      { "title": "Brazilian vs European", "us": "Both handled from the sentence itself.", "them": "One variant assumed, the other mistranslated." },
-      { "title": "Replying", "us": "English in, Portuguese out, same thread.", "them": "Two separate translations." },
-      { "title": "History", "us": "Conversations kept as topics.", "them": "Nothing kept." },
-      { "title": "Setup", "us": "Open a tab and talk.", "them": "Install, then sign up." }
+      {
+        "title": "A voice note arrives",
+        "us": "Play it into the mic and read the English.",
+        "them": "Transcribe it yourself first."
+      },
+      {
+        "title": "Brazilian vs European",
+        "us": "Both handled from the sentence itself.",
+        "them": "One variant assumed, the other mistranslated."
+      },
+      {
+        "title": "Replying",
+        "us": "English in, Portuguese out, same thread.",
+        "them": "Two separate translations."
+      },
+      {
+        "title": "History",
+        "us": "Conversations kept as topics.",
+        "them": "Nothing kept."
+      },
+      {
+        "title": "Setup",
+        "us": "Open a tab and talk.",
+        "them": "Install, then sign up."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating Portuguese into English.",
     "items": [
-      { "q": "Does it work for both Brazilian and European Portuguese?", "a": "Yes. Both are recognised and translated from the sentence itself, including the vocabulary differences between them." },
-      { "q": "Can it handle voice notes?", "a": "Play the note out loud into the mic and the English transcript appears a couple of seconds later — no typing involved." },
-      { "q": "Can I paste Portuguese text?", "a": "Yes, switch to the keyboard and paste a message, an email or a document, accents and cedillas included." },
-      { "q": "Can I answer in English?", "a": "Yes. Your English is translated to Portuguese in the same thread and can be played aloud for the other person." },
-      { "q": "Is slang translated properly?", "a": "Informal words are read in the context of the whole sentence, which is how they get the meaning the speaker intended." },
-      { "q": "Is it free?", "a": "Yes, there is a free allowance without an account, and signing in with Google increases the monthly quota and saves your history." }
+      {
+        "q": "Does it work for both Brazilian and European Portuguese?",
+        "a": "Yes. Both are recognised and translated from the sentence itself, including the vocabulary differences between them."
+      },
+      {
+        "q": "Can it handle voice notes?",
+        "a": "Play the note out loud into the mic and the English transcript appears a couple of seconds later — no typing involved."
+      },
+      {
+        "q": "Can I paste Portuguese text?",
+        "a": "Yes, switch to the keyboard and paste a message, an email or a document, accents and cedillas included."
+      },
+      {
+        "q": "Can I answer in English?",
+        "a": "Yes. Your English is translated to Portuguese in the same thread and can be played aloud for the other person."
+      },
+      {
+        "q": "Is slang translated properly?",
+        "a": "Informal words are read in the context of the whole sentence, which is how they get the meaning the speaker intended."
+      },
+      {
+        "q": "Is it free?",
+        "a": "Yes, there is a free allowance without an account, and signing in with Google increases the monthly quota and saves your history."
+      }
     ]
   },
   "finalCta": {

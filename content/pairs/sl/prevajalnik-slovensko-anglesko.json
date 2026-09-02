@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Govorite slovensko, slišite angleško takoj",
+      "heading": "Glasovni prevajalnik slovensko angleško",
       "sub": "Dotaknite se mikrofona in izgovorite stavek v slovenščini ali angleščini – prevod pride v nekaj sekundah, pripravljen za branje ali poslušanje.",
       "bullets": [
-        { "title": "Govor spremenjen v angleščino", "sub": "Izgovorite stavek v slovenščini – besede se prepišejo, prevedejo in prikažejo v angleščini v nekaj sekundah" },
-        { "title": "Poslušajte angleščino naglas", "sub": "Dotaknite se ikone zvočnika, kadar izgovorjave še niste povsem prepričani" }
+        {
+          "title": "Govor spremenjen v angleščino",
+          "sub": "Izgovorite stavek v slovenščini – besede se prepišejo, prevedejo in prikažejo v angleščini v nekaj sekundah"
+        },
+        {
+          "title": "Poslušajte angleščino naglas",
+          "sub": "Dotaknite se ikone zvočnika, kadar izgovorjave še niste povsem prepričani"
+        }
       ]
     },
     {
-      "heading": "Ena tema, celoten pogovor",
+      "heading": "Prevajalnik za pogovor v angleščini",
       "sub": "Nadaljujte pogovor sem in tja s profesorjem, sodelavcem ali sopotnikom brez začenjanja znova – vse ostane v isti temi.",
       "bullets": [
-        { "title": "Odgovor v angleščini, preveden v slovenščino", "sub": "Sogovornik lahko govori angleško, vi pa to vidite in slišite v slovenščini" },
-        { "title": "Pogovori shranjeni kot teme", "sub": "Kasneje se vrnite k istemu pogovoru o študiju ali delu, namesto da izgubite nit" }
+        {
+          "title": "Odgovor v angleščini, preveden v slovenščino",
+          "sub": "Sogovornik lahko govori angleško, vi pa to vidite in slišite v slovenščini"
+        },
+        {
+          "title": "Pogovori shranjeni kot teme",
+          "sub": "Kasneje se vrnite k istemu pogovoru o študiju ali delu, namesto da izgubite nit"
+        }
       ]
     },
     {
-      "heading": "Slovensko-angleško, plus še 185 jezikov",
+      "heading": "Spletni prevajalnik za 186 jezikov",
       "sub": "Angleščina je le eden od 186 razpoložljivih jezikov, v katero koli smer.",
       "bullets": [
-        { "title": "Uporabno za študij in delo v tujini", "sub": "Pogovori s profesorji, delodajalci ali sodelavci prevedeni brez napak" },
-        { "title": "186 jezikov skupaj", "sub": "Isto orodje deluje za angleščino danes in za katerikoli drug jezik jutri" }
+        {
+          "title": "Uporabno za študij in delo v tujini",
+          "sub": "Pogovori s profesorji, delodajalci ali sodelavci prevedeni brez napak"
+        },
+        {
+          "title": "186 jezikov skupaj",
+          "sub": "Isto orodje deluje za angleščino danes in za katerikoli drug jezik jutri"
+        }
       ]
     },
     {
-      "heading": "Raje tipkate? Tudi to je mogoče",
+      "heading": "Besedilni prevajalnik iz slovenščine",
       "sub": "Vnesite ali prilepite besedilo v slovenščini in dobite angleški prevod brez dotika mikrofona.",
       "bullets": [
-        { "title": "Tipkajte namesto govora", "sub": "Preklopite na tipkovnico za uraden e-poštni odgovor ali nalogo, ki jo morate prevesti natančno" },
-        { "title": "Kopirajte prevod", "sub": "Angleško besedilo kopirajte neposredno in ga prilepite v e-pošto ali sporočilo" }
+        {
+          "title": "Tipkajte namesto govora",
+          "sub": "Preklopite na tipkovnico za uraden e-poštni odgovor ali nalogo, ki jo morate prevesti natančno"
+        },
+        {
+          "title": "Kopirajte prevod",
+          "sub": "Angleško besedilo kopirajte neposredno in ga prilepite v e-pošto ali sporočilo"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Običajne prevajalske aplikacije",
     "rows": [
-      { "title": "Kako začnete", "us": "Spregovorite v slovenščini ali angleščini in takoj dobite prevod.", "them": "Najprej morate natipkati, kar želite povedati." },
-      { "title": "Zgodovina pogovorov", "us": "Vsak angleški pogovor se shrani kot svoja tema, ki jo lahko znova odprete.", "them": "Prevod izgine takoj, ko zaprete aplikacijo." },
-      { "title": "Namestitev", "us": "Odprite zavihek v brskalniku – nič se ne namešča.", "them": "Prenos aplikacije in dovoljenja, preden jo lahko prvič uporabite." },
-      { "title": "Obe smeri", "us": "Slovensko-angleško in angleško-slovensko sta v isti temi.", "them": "Menjava smeri običajno pomeni nov prevod od začetka." },
-      { "title": "Poslušanje prevoda", "us": "Dotaknite se, da angleški prevod slišite prebranega naglas.", "them": "Samo besedilo, izgovorjava prepuščena vam." }
+      {
+        "title": "Kako začnete",
+        "us": "Spregovorite v slovenščini ali angleščini in takoj dobite prevod.",
+        "them": "Najprej morate natipkati, kar želite povedati."
+      },
+      {
+        "title": "Zgodovina pogovorov",
+        "us": "Vsak angleški pogovor se shrani kot svoja tema, ki jo lahko znova odprete.",
+        "them": "Prevod izgine takoj, ko zaprete aplikacijo."
+      },
+      {
+        "title": "Namestitev",
+        "us": "Odprite zavihek v brskalniku – nič se ne namešča.",
+        "them": "Prenos aplikacije in dovoljenja, preden jo lahko prvič uporabite."
+      },
+      {
+        "title": "Obe smeri",
+        "us": "Slovensko-angleško in angleško-slovensko sta v isti temi.",
+        "them": "Menjava smeri običajno pomeni nov prevod od začetka."
+      },
+      {
+        "title": "Poslušanje prevoda",
+        "us": "Dotaknite se, da angleški prevod slišite prebranega naglas.",
+        "them": "Samo besedilo, izgovorjava prepuščena vam."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "vprašanja",
     "sub": "Pogosta vprašanja o prevajanju slovenščine v angleščino.",
     "items": [
-      { "q": "Ali glasovni prevod prevede slovenski govor v angleščino?", "a": "Da – dotaknite se mikrofona, izgovorite stavek v slovenščini in dobili boste angleški prevod kot besedilo, z možnostjo, da ga slišite prebranega naglas." },
-      { "q": "Je uporaben za študij ali delo v angleško govorečem okolju?", "a": "Da, odličen je za pogovor s profesorjem, delodajalcem ali sodelavci – spregovorite slovensko, angleški prevod pa pride v nekaj sekundah." },
-      { "q": "Ali deluje tudi obratno, iz angleščine v slovenščino?", "a": "Da, isti pogovor deluje v obe smeri – sogovornik lahko govori angleško, vi pa dobite slovenski prevod v isti temi." },
-      { "q": "Ali je brezplačno?", "a": "Da, lahko ga preizkusite brezplačno brez odpiranja računa. Prijavite se z Googlom za več dnevnega dobroimetja in shranjeno zgodovino." },
-      { "q": "Ali moram kaj namestiti?", "a": "Ne, deluje neposredno v brskalniku na računalniku ali telefonu – nič se ne prenaša." },
-      { "q": "Ali lahko vodim pogovor namesto posameznih prevodov?", "a": "Da, prevodi so združeni v teme, tako da pogovor v angleščini ostane na enem mestu, namesto da je razpršen po ločenih iskanjih." }
+      {
+        "q": "Ali glasovni prevod prevede slovenski govor v angleščino?",
+        "a": "Da – dotaknite se mikrofona, izgovorite stavek v slovenščini in dobili boste angleški prevod kot besedilo, z možnostjo, da ga slišite prebranega naglas."
+      },
+      {
+        "q": "Je uporaben za študij ali delo v angleško govorečem okolju?",
+        "a": "Da, odličen je za pogovor s profesorjem, delodajalcem ali sodelavci – spregovorite slovensko, angleški prevod pa pride v nekaj sekundah."
+      },
+      {
+        "q": "Ali deluje tudi obratno, iz angleščine v slovenščino?",
+        "a": "Da, isti pogovor deluje v obe smeri – sogovornik lahko govori angleško, vi pa dobite slovenski prevod v isti temi."
+      },
+      {
+        "q": "Ali je brezplačno?",
+        "a": "Da, lahko ga preizkusite brezplačno brez odpiranja računa. Prijavite se z Googlom za več dnevnega dobroimetja in shranjeno zgodovino."
+      },
+      {
+        "q": "Ali moram kaj namestiti?",
+        "a": "Ne, deluje neposredno v brskalniku na računalniku ali telefonu – nič se ne prenaša."
+      },
+      {
+        "q": "Ali lahko vodim pogovor namesto posameznih prevodov?",
+        "a": "Da, prevodi so združeni v teme, tako da pogovor v angleščini ostane na enem mestu, namesto da je razpršen po ločenih iskanjih."
+      }
     ]
   },
   "finalCta": {

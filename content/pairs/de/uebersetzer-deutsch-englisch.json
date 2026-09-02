@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Englisch, wie es gesprochen wird",
+      "heading": "Deutsch-Englisch-Sprachübersetzer für Spracheingabe",
       "sub": "Geschrieben und gesprochen sind zwei Paar Schuhe — nimm den Satz auf und lies ihn auf Deutsch.",
       "bullets": [
-        { "title": "Akzente inklusive", "sub": "Schottisch, irisch, indisch: die Transkription trennt die Wörter, auch wenn dein Ohr es nicht tut" },
-        { "title": "Aussprache anhören", "sub": "Tipp auf den Lautsprecher, bevor du den Satz selbst sagst" }
+        {
+          "title": "Akzente inklusive",
+          "sub": "Schottisch, irisch, indisch: die Transkription trennt die Wörter, auch wenn dein Ohr es nicht tut"
+        },
+        {
+          "title": "Aussprache anhören",
+          "sub": "Tipp auf den Lautsprecher, bevor du den Satz selbst sagst"
+        }
       ]
     },
     {
-      "heading": "Beruf und Meetings",
+      "heading": "Englisch-Übersetzer für flüssige Unterhaltungen",
       "sub": "Mails, Calls, Verträge — dort, wo ein missverstandener Satz teuer wird.",
       "bullets": [
-        { "title": "Ganze Mails auf einmal", "sub": "Füg den kompletten Text ein statt Zeile für Zeile" },
-        { "title": "Antwort auf Deutsch", "sub": "Du schreibst deutsch, raus geht Englisch, fertig zum Kopieren" }
+        {
+          "title": "Ganze Mails auf einmal",
+          "sub": "Füg den kompletten Text ein statt Zeile für Zeile"
+        },
+        {
+          "title": "Antwort auf Deutsch",
+          "sub": "Du schreibst deutsch, raus geht Englisch, fertig zum Kopieren"
+        }
       ]
     },
     {
-      "heading": "Phrasal Verbs und falsche Freunde",
+      "heading": "Online Deutsch-Englisch-Übersetzer im Browser",
       "sub": "Become heißt nicht bekommen, eventually nicht eventuell.",
       "bullets": [
-        { "title": "Der Satz zählt, nicht das Wort", "sub": "Get over oder put up with werden nach Bedeutung übersetzt" },
-        { "title": "Falsche Freunde entschärft", "sub": "Ähnlich klingende Wörter werden aus dem Zusammenhang gelesen" }
+        {
+          "title": "Der Satz zählt, nicht das Wort",
+          "sub": "Get over oder put up with werden nach Bedeutung übersetzt"
+        },
+        {
+          "title": "Falsche Freunde entschärft",
+          "sub": "Ähnlich klingende Wörter werden aus dem Zusammenhang gelesen"
+        }
       ]
     },
     {
-      "heading": "Britisch oder amerikanisch",
+      "heading": "Deutsch-Englisch-Textübersetzer zum Tippen",
       "sub": "Gleiche Sprache, andere Wörter — flat oder apartment, lorry oder truck.",
       "bullets": [
-        { "title": "Kontext entscheidet", "sub": "Übersetzt wird, was gemeint war" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread hilft morgen bei jeder anderen Sprache" }
+        {
+          "title": "Kontext entscheidet",
+          "sub": "Übersetzt wird, was gemeint war"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread hilft morgen bei jeder anderen Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht schnell", "us": "Aufnehmen und auf Deutsch mitlesen.", "them": "Tippen, was du verstanden zu haben glaubst." },
-      { "title": "Aussprache", "us": "Jeden Satz laut anhören.", "them": "Nur Text, Aussprache bleibt Ratespiel." },
-      { "title": "Phrasal Verbs", "us": "Nach Bedeutung übersetzt.", "them": "Wort für Wort, Sinn verloren." },
-      { "title": "Verlauf", "us": "Jedes Gespräch bleibt als Thema gespeichert.", "them": "Weg, sobald du schließt." },
-      { "title": "Start", "us": "Browser-Tab, keine Installation.", "them": "App laden, dann registrieren." }
+      {
+        "title": "Jemand spricht schnell",
+        "us": "Aufnehmen und auf Deutsch mitlesen.",
+        "them": "Tippen, was du verstanden zu haben glaubst."
+      },
+      {
+        "title": "Aussprache",
+        "us": "Jeden Satz laut anhören.",
+        "them": "Nur Text, Aussprache bleibt Ratespiel."
+      },
+      {
+        "title": "Phrasal Verbs",
+        "us": "Nach Bedeutung übersetzt.",
+        "them": "Wort für Wort, Sinn verloren."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Jedes Gespräch bleibt als Thema gespeichert.",
+        "them": "Weg, sobald du schließt."
+      },
+      {
+        "title": "Start",
+        "us": "Browser-Tab, keine Installation.",
+        "them": "App laden, dann registrieren."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Englisch.",
     "items": [
-      { "q": "Versteht es schnell gesprochenes Englisch mit Akzent?", "a": "Ja. Nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch da — auch bei Akzenten, die schwer zu folgen sind." },
-      { "q": "Taugt es für berufliche Mails?", "a": "Ja: ganze Mail einfügen, auf Deutsch lesen, Antwort auf Deutsch schreiben und auf Englisch verschicken." },
-      { "q": "Wie werden Phrasal Verbs übersetzt?", "a": "Der komplette Satz wird übersetzt, deshalb werden get over oder put up with nach ihrer Bedeutung gelesen und nicht in Einzelteile zerlegt." },
-      { "q": "Kann ich die Aussprache hören?", "a": "Ja, tipp bei jeder Übersetzung auf den Lautsprecher." },
-      { "q": "Funktioniert es auch von Englisch nach Deutsch?", "a": "Ja, derselbe Thread läuft in beide Richtungen." },
-      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Anmeldung. Mit Google-Login gibt es mehr Monatsvolumen und gespeicherten Verlauf." }
+      {
+        "q": "Versteht es schnell gesprochenes Englisch mit Akzent?",
+        "a": "Ja. Nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch da — auch bei Akzenten, die schwer zu folgen sind."
+      },
+      {
+        "q": "Taugt es für berufliche Mails?",
+        "a": "Ja: ganze Mail einfügen, auf Deutsch lesen, Antwort auf Deutsch schreiben und auf Englisch verschicken."
+      },
+      {
+        "q": "Wie werden Phrasal Verbs übersetzt?",
+        "a": "Der komplette Satz wird übersetzt, deshalb werden get over oder put up with nach ihrer Bedeutung gelesen und nicht in Einzelteile zerlegt."
+      },
+      {
+        "q": "Kann ich die Aussprache hören?",
+        "a": "Ja, tipp bei jeder Übersetzung auf den Lautsprecher."
+      },
+      {
+        "q": "Funktioniert es auch von Englisch nach Deutsch?",
+        "a": "Ja, derselbe Thread läuft in beide Richtungen."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, mit einem Gratis-Kontingent ohne Anmeldung. Mit Google-Login gibt es mehr Monatsvolumen und gespeicherten Verlauf."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Prata istället för att skriva",
+      "heading": "Röstöversättare från svenska till spanska",
       "sub": "Tryck på mikrofonen, säg det på svenska eller spanska, och läs eller lyssna på översättningen.",
       "bullets": [
-        { "title": "Tal blir till spanska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på spanska några sekunder senare" },
-        { "title": "Lyssna på spanskan", "sub": "Tryck på högtalarikonen när det spanska uttalet känns knivigt" }
+        {
+          "title": "Tal blir till spanska",
+          "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på spanska några sekunder senare"
+        },
+        {
+          "title": "Lyssna på spanskan",
+          "sub": "Tryck på högtalarikonen när det spanska uttalet känns knivigt"
+        }
       ]
     },
     {
-      "heading": "Ett ämne, båda sidorna av samtalet",
+      "heading": "Konversationsöversättare för svenska och spanska",
       "sub": "Prata med grannar, mäklare eller vårdpersonal utan att tappa tråden — allt hamnar i samma ämne.",
       "bullets": [
-        { "title": "Svara på spanska, översatt till svenska", "sub": "Den du pratar med kan säga det på spanska och du ser och hör det på svenska" },
-        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma Spanien-tråd nästa gång ni hörs" }
+        {
+          "title": "Svara på spanska, översatt till svenska",
+          "sub": "Den du pratar med kan säga det på spanska och du ser och hör det på svenska"
+        },
+        {
+          "title": "Samtal sparas som ämnen",
+          "sub": "Kom tillbaka till samma Spanien-tråd nästa gång ni hörs"
+        }
       ]
     },
     {
-      "heading": "Svenska–spanska, plus 185 språk till",
+      "heading": "Svensk-spansk översättare online utan installation",
       "sub": "Spanska är ett av 186 tillgängliga språk, åt vilket håll du vill.",
       "bullets": [
-        { "title": "Rätt på accenter och ñ", "sub": "Hanterar spansk stavning och uttal korrekt, inte en ungefärlig gissning" },
-        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för spanska idag och vilket annat språk som helst imorgon" }
+        {
+          "title": "Rätt på accenter och ñ",
+          "sub": "Hanterar spansk stavning och uttal korrekt, inte en ungefärlig gissning"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samma verktyg fungerar för spanska idag och vilket annat språk som helst imorgon"
+        }
       ]
     },
     {
-      "heading": "Föredrar du att skriva? Det går också",
+      "heading": "Textöversättning från svenska till spanska",
       "sub": "Skriv eller klistra in svensk text och få en spansk översättning utan att röra mikrofonen.",
       "bullets": [
-        { "title": "Skriv istället för att prata", "sub": "Praktiskt på ett apotek eller i väntrummet hos läkaren" },
-        { "title": "Kopiera översättningen", "sub": "Kopiera den spanska texten direkt till ett mejl eller meddelande" }
+        {
+          "title": "Skriv istället för att prata",
+          "sub": "Praktiskt på ett apotek eller i väntrummet hos läkaren"
+        },
+        {
+          "title": "Kopiera översättningen",
+          "sub": "Kopiera den spanska texten direkt till ett mejl eller meddelande"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanliga översättningsappar",
     "rows": [
-      { "title": "Hur du börjar", "us": "Prata på svenska eller spanska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
-      { "title": "Samtalshistorik", "us": "Varje Spanien-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
-      { "title": "Accenter och uttal", "us": "Hanterar á, é, í, ó, ú och ñ korrekt i både text och uppläsning.", "them": "Missar ofta accenttecken helt eller läser upp dem fel." },
-      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
-      { "title": "Att höra svaret", "us": "Tryck för att få den spanska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+      {
+        "title": "Hur du börjar",
+        "us": "Prata på svenska eller spanska och få en översättning direkt.",
+        "them": "Du måste skriva det du vill säga först."
+      },
+      {
+        "title": "Samtalshistorik",
+        "us": "Varje Spanien-samtal sparas som ett eget ämne du kan öppna igen.",
+        "them": "Varje översättning försvinner när du stänger appen."
+      },
+      {
+        "title": "Accenter och uttal",
+        "us": "Hanterar á, é, í, ó, ú och ñ korrekt i både text och uppläsning.",
+        "them": "Missar ofta accenttecken helt eller läser upp dem fel."
+      },
+      {
+        "title": "Komma igång",
+        "us": "Öppna i en webbläsarflik — inget att installera.",
+        "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den."
+      },
+      {
+        "title": "Att höra svaret",
+        "us": "Tryck för att få den spanska översättningen uppläst.",
+        "them": "Bara text, så uttalet får du klara själv."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frågor",
     "sub": "Vanliga frågor om att översätta mellan svenska och spanska.",
     "items": [
-      { "q": "Kan den översätta talad svenska till spanska?", "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en spansk översättning som text, med möjlighet att lyssna på den." },
-      { "q": "Hanterar den spanska accenter och specialtecken korrekt?", "a": "Ja, bokstäver som á, é, í, ó, ú och ñ hanteras korrekt både i texten och i uppläsningen." },
-      { "q": "Kan jag översätta tillbaka från spanska till svenska?", "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på spanska och få den svenska översättningen i samma ämne." },
-      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
-      { "q": "Passar den för mig som bor i Spanien som pensionär?", "a": "Ja, den fungerar lika bra för korta semesterresor som för vardagsärenden hos läkare, bank eller myndigheter om du bor i Spanien delar av året." },
-      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." }
+      {
+        "q": "Kan den översätta talad svenska till spanska?",
+        "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en spansk översättning som text, med möjlighet att lyssna på den."
+      },
+      {
+        "q": "Hanterar den spanska accenter och specialtecken korrekt?",
+        "a": "Ja, bokstäver som á, é, í, ó, ú och ñ hanteras korrekt både i texten och i uppläsningen."
+      },
+      {
+        "q": "Kan jag översätta tillbaka från spanska till svenska?",
+        "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på spanska och få den svenska översättningen i samma ämne."
+      },
+      {
+        "q": "Är det gratis?",
+        "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik."
+      },
+      {
+        "q": "Passar den för mig som bor i Spanien som pensionär?",
+        "a": "Ja, den fungerar lika bra för korta semesterresor som för vardagsärenden hos läkare, bank eller myndigheter om du bor i Spanien delar av året."
+      },
+      {
+        "q": "Behöver jag installera något?",
+        "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner."
+      }
     ]
   },
   "finalCta": {

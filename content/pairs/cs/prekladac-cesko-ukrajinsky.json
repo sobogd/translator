@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mluvte, nepište",
+      "heading": "Hlasový překladač z češtiny do ukrajinštiny",
       "sub": "Klepněte na mikrofon, řekněte větu česky nebo ukrajinsky a získejte překlad ke čtení i poslechu.",
       "bullets": [
-        { "title": "Řeč přeložená do ukrajinštiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí ukrajinsky během pár vteřin" },
-        { "title": "Poslechněte si ukrajinštinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když neznáte cyrilici a chcete se domluvit rychle" }
+        {
+          "title": "Řeč přeložená do ukrajinštiny",
+          "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí ukrajinsky během pár vteřin"
+        },
+        {
+          "title": "Poslechněte si ukrajinštinu nahlas",
+          "sub": "Klepněte na ikonu reproduktoru, když neznáte cyrilici a chcete se domluvit rychle"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "heading": "Překladač pro konverzaci a rozhovor",
       "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
       "bullets": [
-        { "title": "Odpověď v ukrajinštině přeložená do češtiny", "sub": "Kolega nebo soused může mluvit ukrajinsky a vy to uvidíte i uslyšíte česky" },
-        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné ukrajinské konverzaci později, místo abyste ji hledali znovu" }
+        {
+          "title": "Odpověď v ukrajinštině přeložená do češtiny",
+          "sub": "Kolega nebo soused může mluvit ukrajinsky a vy to uvidíte i uslyšíte česky"
+        },
+        {
+          "title": "Rozhovory uložené jako vlákna",
+          "sub": "Vraťte se ke stejné ukrajinské konverzaci později, místo abyste ji hledali znovu"
+        }
       ]
     },
     {
-      "heading": "Česko-ukrajinský pár a 185 dalších jazyků",
+      "heading": "Online překladač bez nutnosti instalace",
       "sub": "Ukrajinština je jeden z 186 dostupných jazyků, v libovolném směru.",
       "bullets": [
-        { "title": "Zvládá i azbuku bez nutnosti ji znát", "sub": "Ukrajinský text se zobrazí i přečte nahlas, i když cyrilici sami nečtete" },
-        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na ukrajinštinu a zítra na kterýkoli jiný jazyk" }
+        {
+          "title": "Zvládá i azbuku bez nutnosti ji znát",
+          "sub": "Ukrajinský text se zobrazí i přečte nahlas, i když cyrilici sami nečtete"
+        },
+        {
+          "title": "186 jazyků na jednom místě",
+          "sub": "Stejný nástroj funguje dnes na ukrajinštinu a zítra na kterýkoli jiný jazyk"
+        }
       ]
     },
     {
-      "heading": "Raději píšete? I to funguje",
+      "heading": "Překladač textu z češtiny do ukrajinštiny",
       "sub": "Napište nebo vložte český text a získejte ukrajinský překlad bez dotyku mikrofonu — třeba zprávu sousedovi nebo kolegovi z práce.",
       "bullets": [
-        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici kdykoli, i v hlučném prostředí" },
-        { "title": "Zkopírujte překlad", "sub": "Vložte ukrajinský text rovnou do zprávy nebo e-mailu" }
+        {
+          "title": "Pište místo mluvení",
+          "sub": "Přepněte na klávesnici kdykoli, i v hlučném prostředí"
+        },
+        {
+          "title": "Zkopírujte překlad",
+          "sub": "Vložte ukrajinský text rovnou do zprávy nebo e-mailu"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typické překladatelské aplikace",
     "rows": [
-      { "title": "Jak začnete", "us": "Mluvte česky nebo ukrajinsky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
-      { "title": "Historie rozhovorů", "us": "Každá ukrajinská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
-      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
-      { "title": "Obě strany rozhovoru", "us": "Čeština do ukrajinštiny i ukrajinština do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
-      { "title": "Poslech nahlas", "us": "Klepněte a nechte si ukrajinský překlad přečíst nahlas.", "them": "Jen text — výslovnost i azbuku si musíte ověřit sami." }
+      {
+        "title": "Jak začnete",
+        "us": "Mluvte česky nebo ukrajinsky a překlad dostanete okamžitě.",
+        "them": "Nejdřív musíte napsat, co chcete říct."
+      },
+      {
+        "title": "Historie rozhovorů",
+        "us": "Každá ukrajinská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.",
+        "them": "Překlad zmizí, jakmile aplikaci zavřete."
+      },
+      {
+        "title": "Start",
+        "us": "Otevřete v prohlížeči — nic se neinstaluje.",
+        "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete."
+      },
+      {
+        "title": "Obě strany rozhovoru",
+        "us": "Čeština do ukrajinštiny i ukrajinština do češtiny v jednom vlákně.",
+        "them": "Změna směru obvykle znamená nový překlad od nuly."
+      },
+      {
+        "title": "Poslech nahlas",
+        "us": "Klepněte a nechte si ukrajinský překlad přečíst nahlas.",
+        "them": "Jen text — výslovnost i azbuku si musíte ověřit sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "dotazy",
     "sub": "Časté otázky k překladu z češtiny do ukrajinštiny.",
     "items": [
-      { "q": "Přeloží mluvenou češtinu do ukrajinštiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete ukrajinský překlad jako text, s možností nechat si ho přečíst nahlas." },
-      { "q": "Musím umět číst azbuku?", "a": "Ne, ukrajinský text si necháte přečíst nahlas a mluvenou odpověď zase přeloží zpátky do češtiny." },
-      { "q": "Můžu překládat i z ukrajinštiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište ukrajinsky a český překlad dostanete ve stejném vlákně." },
-      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
-      { "q": "Hodí se na domluvu s ukrajinskými kolegy nebo sousedy?", "a": "Ano, poslouží při běžné komunikaci v práci, v domě i na úřadě, kde záleží na rychlé a srozumitelné odpovědi." },
-      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." }
+      {
+        "q": "Přeloží mluvenou češtinu do ukrajinštiny?",
+        "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete ukrajinský překlad jako text, s možností nechat si ho přečíst nahlas."
+      },
+      {
+        "q": "Musím umět číst azbuku?",
+        "a": "Ne, ukrajinský text si necháte přečíst nahlas a mluvenou odpověď zase přeloží zpátky do češtiny."
+      },
+      {
+        "q": "Můžu překládat i z ukrajinštiny zpátky do češtiny?",
+        "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište ukrajinsky a český překlad dostanete ve stejném vlákně."
+      },
+      {
+        "q": "Je to zdarma?",
+        "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii."
+      },
+      {
+        "q": "Hodí se na domluvu s ukrajinskými kolegy nebo sousedy?",
+        "a": "Ano, poslouží při běžné komunikaci v práci, v domě i na úřadě, kde záleží na rychlé a srozumitelné odpovědi."
+      },
+      {
+        "q": "Musím si něco instalovat?",
+        "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení."
+      }
     ]
   },
   "finalCta": {

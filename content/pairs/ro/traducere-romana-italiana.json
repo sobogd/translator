@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Vorbește, nu tasta",
+      "heading": "Traducător vocal din română în italiană",
       "sub": "Apasă pe microfon, spune-o în română sau italiană, și citește sau ascultă traducerea.",
       "bullets": [
-        { "title": "Vocea ta devine italiană", "sub": "Spune-o în română — traducerea apare în italiană câteva secunde mai târziu" },
-        { "title": "Ascultă italiana cu voce tare", "sub": "Util la medic sau la ghișeu, când pronunția nu e sigură" }
+        {
+          "title": "Vocea ta devine italiană",
+          "sub": "Spune-o în română — traducerea apare în italiană câteva secunde mai târziu"
+        },
+        {
+          "title": "Ascultă italiana cu voce tare",
+          "sub": "Util la medic sau la ghișeu, când pronunția nu e sigură"
+        }
       ]
     },
     {
-      "heading": "Un subiect, ambele sensuri ale discuției",
+      "heading": "Traducător pentru conversații română italiană",
       "sub": "Vorbește dus-întors cu un medic, un angajator sau un funcționar — fiecare schimb rămâne salvat.",
       "bullets": [
-        { "title": "Răspuns în italiană, tradus în română", "sub": "Interlocutorul vorbește italiană, tu vezi și auzi totul în română" },
-        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Discuția cu medicul sau cu primăria rămâne într-un singur loc" }
+        {
+          "title": "Răspuns în italiană, tradus în română",
+          "sub": "Interlocutorul vorbește italiană, tu vezi și auzi totul în română"
+        },
+        {
+          "title": "Conversațiile rămân salvate ca subiecte",
+          "sub": "Discuția cu medicul sau cu primăria rămâne într-un singur loc"
+        }
       ]
     },
     {
-      "heading": "Română-Italiană, plus alte 185 de limbi",
+      "heading": "Traducător online gratuit din română în italiană",
       "sub": "Italiana este una dintre cele 186 de limbi disponibile, în orice direcție.",
       "bullets": [
-        { "title": "Diacritice recunoscute corect", "sub": "Literele ă, â, î, ș, ț sunt gestionate corect, nu aproximate" },
-        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru italiană și mâine pentru orice altă limbă" }
+        {
+          "title": "Diacritice recunoscute corect",
+          "sub": "Literele ă, â, î, ș, ț sunt gestionate corect, nu aproximate"
+        },
+        {
+          "title": "186 de limbi în total",
+          "sub": "Același instrument funcționează azi pentru italiană și mâine pentru orice altă limbă"
+        }
       ]
     },
     {
-      "heading": "Preferi să scrii? Merge și așa",
+      "heading": "Traducător de text română italiană",
       "sub": "Scrie sau lipește text în italiană și primești traducerea în română fără microfon.",
       "bullets": [
-        { "title": "Lipește text în loc să vorbești", "sub": "Util pentru un mesaj de la medic, angajator sau primărie" },
-        { "title": "Copiază traducerea", "sub": "Preia textul tradus direct într-un formular sau răspuns oficial" }
+        {
+          "title": "Lipește text în loc să vorbești",
+          "sub": "Util pentru un mesaj de la medic, angajator sau primărie"
+        },
+        {
+          "title": "Copiază traducerea",
+          "sub": "Preia textul tradus direct într-un formular sau răspuns oficial"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicațiile obișnuite de traducere",
     "rows": [
-      { "title": "Cum începi", "us": "Vorbești în română sau italiană și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
-      { "title": "Istoricul conversației", "us": "Fiecare conversație română-italiană rămâne salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
-      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
-      { "title": "Ambele sensuri", "us": "Română spre italiană și italiană spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
-      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în italiană citită cu voce tare.", "them": "Doar text, deci pronunția rămâne pe cont propriu." }
+      {
+        "title": "Cum începi",
+        "us": "Vorbești în română sau italiană și primești traducerea pe loc.",
+        "them": "Trebuie să tastezi mai întâi ce vrei să spui."
+      },
+      {
+        "title": "Istoricul conversației",
+        "us": "Fiecare conversație română-italiană rămâne salvată ca propriul ei subiect.",
+        "them": "Fiecare traducere dispare după ce închizi aplicația."
+      },
+      {
+        "title": "Cum pornești",
+        "us": "Deschizi într-o filă de browser — nimic de instalat.",
+        "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi."
+      },
+      {
+        "title": "Ambele sensuri",
+        "us": "Română spre italiană și italiană spre română stau în același subiect.",
+        "them": "Schimbarea sensului înseamnă de obicei o traducere nouă."
+      },
+      {
+        "title": "Ascultarea traducerii",
+        "us": "Atingi pentru a auzi traducerea în italiană citită cu voce tare.",
+        "them": "Doar text, deci pronunția rămâne pe cont propriu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecvente",
     "sub": "Întrebări obișnuite despre traducerea română-italiană.",
     "items": [
-      { "q": "Poate traduce italiana vorbită în română?", "a": "Da — apasă pe microfon, vorbește în italiană, și primești traducerea în română ca text, cu opțiunea de a o asculta." },
-      { "q": "Funcționează și din română în italiană?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în italiană în același subiect." },
-      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
-      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon." },
-      { "q": "Se potrivește pentru muncă sau acte în Italia?", "a": "Da, e util la interviuri de angajare, la medicul de familie sau la ghișeul primăriei, când e nevoie de o traducere rapidă." },
-      { "q": "Pot ține o conversație, nu doar traduceri izolate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție cu medicul sau angajatorul rămâne organizată." }
+      {
+        "q": "Poate traduce italiana vorbită în română?",
+        "a": "Da — apasă pe microfon, vorbește în italiană, și primești traducerea în română ca text, cu opțiunea de a o asculta."
+      },
+      {
+        "q": "Funcționează și din română în italiană?",
+        "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în italiană în același subiect."
+      },
+      {
+        "q": "Este gratuit?",
+        "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat."
+      },
+      {
+        "q": "Trebuie să instalez ceva?",
+        "a": "Nu, funcționează direct în browser, pe calculator sau telefon."
+      },
+      {
+        "q": "Se potrivește pentru muncă sau acte în Italia?",
+        "a": "Da, e util la interviuri de angajare, la medicul de familie sau la ghișeul primăriei, când e nevoie de o traducere rapidă."
+      },
+      {
+        "q": "Pot ține o conversație, nu doar traduceri izolate?",
+        "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție cu medicul sau angajatorul rămâne organizată."
+      }
     ]
   },
   "finalCta": {

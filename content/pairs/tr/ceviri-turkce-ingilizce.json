@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Konuşun, İngilizce olarak dinleyin",
+      "heading": "Türkçe İngilizce sesli çevirmen",
       "sub": "Mikrofona dokunun, Türkçe ya da İngilizce konuşun, çeviriyi okuyun veya dinleyin.",
       "bullets": [
-        { "title": "Konuşma anında İngilizceye dönüşür", "sub": "Türkçe söyleyin — sözünüz yazıya dökülür, çevrilir ve saniyeler içinde İngilizce görünür" },
-        { "title": "İngilizceyi sesli dinleyin", "sub": "Telaffuzunuzdan emin değilseniz hoparlör simgesine dokunun" }
+        {
+          "title": "Konuşma anında İngilizceye dönüşür",
+          "sub": "Türkçe söyleyin — sözünüz yazıya dökülür, çevrilir ve saniyeler içinde İngilizce görünür"
+        },
+        {
+          "title": "İngilizceyi sesli dinleyin",
+          "sub": "Telaffuzunuzdan emin değilseniz hoparlör simgesine dokunun"
+        }
       ]
     },
     {
-      "heading": "Tek sohbette iki yön",
+      "heading": "İngilizce konuşma çevirmeni",
       "sub": "İş görüşmesi, seyahat ya da arkadaş sohbeti — tüm alışveriş aynı konuda kalır.",
       "bullets": [
-        { "title": "İngilizce yanıt Türkçeye çevrilir", "sub": "Karşınızdaki İngilizce konuşabilir, siz Türkçe olarak görür ve duyarsınız" },
-        { "title": "Konuşmalar konu olarak saklanır", "sub": "Aynı İngilizce sohbete daha sonra kaldığınız yerden dönün" }
+        {
+          "title": "İngilizce yanıt Türkçeye çevrilir",
+          "sub": "Karşınızdaki İngilizce konuşabilir, siz Türkçe olarak görür ve duyarsınız"
+        },
+        {
+          "title": "Konuşmalar konu olarak saklanır",
+          "sub": "Aynı İngilizce sohbete daha sonra kaldığınız yerden dönün"
+        }
       ]
     },
     {
-      "heading": "Türkçe-İngilizce, artı 185 dil daha",
+      "heading": "Tarayıcıda online İngilizce çeviri",
       "sub": "İngilizce, her yönde kullanılabilen 186 dilden biri.",
       "bullets": [
-        { "title": "Gündelik ve iş İngilizcesine uygun", "sub": "Toplantıdan otel rezervasyonuna kadar doğru çeviri" },
-        { "title": "Toplam 186 dil", "sub": "Bugün İngilizce, yarın başka bir dil — aynı araç" }
+        {
+          "title": "Gündelik ve iş İngilizcesine uygun",
+          "sub": "Toplantıdan otel rezervasyonuna kadar doğru çeviri"
+        },
+        {
+          "title": "Toplam 186 dil",
+          "sub": "Bugün İngilizce, yarın başka bir dil — aynı araç"
+        }
       ]
     },
     {
-      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "heading": "Türkçe İngilizce metin çevirisi",
       "sub": "İngilizce metni yazın ya da yapıştırın, mikrofona dokunmadan çeviriyi alın.",
       "bullets": [
-        { "title": "Konuşmak yerine yazın", "sub": "Sessiz bir ortamda ya da gürültülü bir yerde işinize yarar" },
-        { "title": "Çeviriyi kopyalayın", "sub": "İngilizce metni doğrudan e-postaya veya mesaja yapıştırın" }
+        {
+          "title": "Konuşmak yerine yazın",
+          "sub": "Sessiz bir ortamda ya da gürültülü bir yerde işinize yarar"
+        },
+        {
+          "title": "Çeviriyi kopyalayın",
+          "sub": "İngilizce metni doğrudan e-postaya veya mesaja yapıştırın"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Sıradan çeviri uygulamaları",
     "rows": [
-      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da İngilizce konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
-      { "title": "Sohbet geçmişi", "us": "Her İngilizce sohbet ayrı bir konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
-      { "title": "Kuruluma gerek yok", "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.", "them": "Uygulamayı indirip izin vermeniz gerekir." },
-      { "title": "İki yön aynı sohbette", "us": "Türkçe-İngilizce ve İngilizce-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
-      { "title": "Sesli dinleme", "us": "İngilizce çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+      {
+        "title": "Nasıl başlarsınız",
+        "us": "Türkçe ya da İngilizce konuşun, çeviri hemen gelir.",
+        "them": "Önce söylemek istediğinizi yazmanız gerekir."
+      },
+      {
+        "title": "Sohbet geçmişi",
+        "us": "Her İngilizce sohbet ayrı bir konu olarak saklanır.",
+        "them": "Uygulamayı kapatınca çeviri kaybolur."
+      },
+      {
+        "title": "Kuruluma gerek yok",
+        "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.",
+        "them": "Uygulamayı indirip izin vermeniz gerekir."
+      },
+      {
+        "title": "İki yön aynı sohbette",
+        "us": "Türkçe-İngilizce ve İngilizce-Türkçe aynı konuda yaşar.",
+        "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir."
+      },
+      {
+        "title": "Sesli dinleme",
+        "us": "İngilizce çeviriyi sesli dinlemek için dokunun.",
+        "them": "Yalnızca metin, telaffuz size kalır."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "sorular",
     "sub": "Türkçe-İngilizce çeviri hakkında en çok sorulanlar.",
     "items": [
-      { "q": "Konuşulan Türkçeyi İngilizceye çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, İngilizce çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
-      { "q": "İngilizceden Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde de çalışır — karşınızdaki İngilizce konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
-      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
-      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." },
-      { "q": "İş görüşmesi veya toplantı için uygun mu?", "a": "Evet, hem sesli hem yazılı modu var; karşılıklı konuşmayı takip etmek için ikisini birden kullanabilirsiniz." },
-      { "q": "Çeviri geçmişim kayıt altında kalır mı?", "a": "Evet, İngilizce sohbetiniz kendi konusunda saklanır, istediğiniz zaman geri dönüp devam edebilirsiniz." }
+      {
+        "q": "Konuşulan Türkçeyi İngilizceye çevirebilir mi?",
+        "a": "Evet — mikrofona dokunun, Türkçe konuşun, İngilizce çeviriyi metin olarak alın, isterseniz sesli dinleyin."
+      },
+      {
+        "q": "İngilizceden Türkçeye de çeviri yapılıyor mu?",
+        "a": "Evet, aynı sohbet iki yönde de çalışır — karşınızdaki İngilizce konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz."
+      },
+      {
+        "q": "Ücretsiz mi?",
+        "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz."
+      },
+      {
+        "q": "Bir şey indirmem gerekiyor mu?",
+        "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok."
+      },
+      {
+        "q": "İş görüşmesi veya toplantı için uygun mu?",
+        "a": "Evet, hem sesli hem yazılı modu var; karşılıklı konuşmayı takip etmek için ikisini birden kullanabilirsiniz."
+      },
+      {
+        "q": "Çeviri geçmişim kayıt altında kalır mı?",
+        "a": "Evet, İngilizce sohbetiniz kendi konusunda saklanır, istediğiniz zaman geri dönüp devam edebilirsiniz."
+      }
     ]
   },
   "finalCta": {

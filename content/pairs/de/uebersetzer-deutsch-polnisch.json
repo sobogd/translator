@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Konsonanten, die niemand tippt",
+      "heading": "Deutsch-Polnisch Sprachübersetzer für die Stimme",
       "sub": "Szcz, prz, dzi — aus dem Gedächtnis schreibt das keiner richtig.",
       "bullets": [
-        { "title": "Sprechen oder einfügen", "sub": "ą, ę, ł, ń, ś, ż und ź kommen von selbst, ohne Tastaturlayout" },
-        { "title": "Aussprache anhören", "sub": "Tipp auf den Lautsprecher und hör, wie es tatsächlich klingt" }
+        {
+          "title": "Sprechen oder einfügen",
+          "sub": "ą, ę, ł, ń, ś, ż und ź kommen von selbst, ohne Tastaturlayout"
+        },
+        {
+          "title": "Aussprache anhören",
+          "sub": "Tipp auf den Lautsprecher und hör, wie es tatsächlich klingt"
+        }
       ]
     },
     {
-      "heading": "Baustelle, Büro, Pflege",
+      "heading": "Polnisch-Deutsch Übersetzer für Gespräche",
       "sub": "Arbeitsalltag, in dem Anweisungen sofort ankommen müssen.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Du sagst es deutsch, es kommt polnisch an — und umgekehrt" },
-        { "title": "Gespräche bleiben", "sub": "Jede Person hat ihr Thema, das du wieder öffnest" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Du sagst es deutsch, es kommt polnisch an — und umgekehrt"
+        },
+        {
+          "title": "Gespräche bleiben",
+          "sub": "Jede Person hat ihr Thema, das du wieder öffnest"
+        }
       ]
     },
     {
-      "heading": "Sieben Fälle in einem Satz",
+      "heading": "Online Übersetzer für Deutsch und Polnisch",
       "sub": "Die Endungen tragen die Grammatik, deshalb wird der Satz als Ganzes übersetzt.",
       "bullets": [
-        { "title": "Wer wem was tut", "sub": "Bleibt erhalten, statt zu Wortsalat zu werden" },
-        { "title": "Pan und pani", "sub": "Die höfliche Anrede bleibt höflich statt zum knappen Du zu werden" }
+        {
+          "title": "Wer wem was tut",
+          "sub": "Bleibt erhalten, statt zu Wortsalat zu werden"
+        },
+        {
+          "title": "Pan und pani",
+          "sub": "Die höfliche Anrede bleibt höflich statt zum knappen Du zu werden"
+        }
       ]
     },
     {
-      "heading": "Oder Unterlagen einfügen",
+      "heading": "Textübersetzer für Deutsch Polnisch",
       "sub": "Umowa, Schreiben vom Amt, Rechnung.",
       "bullets": [
-        { "title": "Ganzer Text auf einmal", "sub": "Ein kompletter Absatz statt Satz für Satz" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread taugt für jede andere Sprache" }
+        {
+          "title": "Ganzer Text auf einmal",
+          "sub": "Ein kompletter Absatz statt Satz für Satz"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread taugt für jede andere Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Polnisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Buchstabieren, was du gehört hast." },
-      { "title": "Grammatik", "us": "Ganzer Satz, Fälle aufgelöst.", "them": "Wort für Wort, Subjekt weg." },
-      { "title": "Antworten", "us": "Deutsch rein, Polnisch raus, ein Thread.", "them": "Zwei getrennte Übersetzungen." },
-      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Nichts bleibt." },
-      { "title": "Start", "us": "Browser-Tab, kein Konto nötig.", "them": "Erst App, dann Registrierung." }
+      {
+        "title": "Jemand spricht Polnisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Buchstabieren, was du gehört hast."
+      },
+      {
+        "title": "Grammatik",
+        "us": "Ganzer Satz, Fälle aufgelöst.",
+        "them": "Wort für Wort, Subjekt weg."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Polnisch raus, ein Thread.",
+        "them": "Zwei getrennte Übersetzungen."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Als Themen gespeichert.",
+        "them": "Nichts bleibt."
+      },
+      {
+        "title": "Start",
+        "us": "Browser-Tab, kein Konto nötig.",
+        "them": "Erst App, dann Registrierung."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Polnisch.",
     "items": [
-      { "q": "Muss ich polnische Zeichen tippen?", "a": "Nein. Sprich den Satz oder füge die Nachricht ein — die Sonderzeichen müssen nie von deiner Tastatur kommen." },
-      { "q": "Übersetzt es schnell gesprochenes Polnisch?", "a": "Ja, ein paar Sekunden nach dem letzten Wort steht der deutsche Text da." },
-      { "q": "Kommt es mit dem Fallsystem zurecht?", "a": "Der ganze Satz wird auf einmal übersetzt, deshalb bleiben die Endungen für Subjekt und Objekt erhalten." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, deine Antwort geht im selben Gespräch auf Polnisch raus und lässt sich vorlesen." },
-      { "q": "Bleiben Gespräche gespeichert?", "a": "Jedes bleibt als Thema erhalten, einzeln löschbar oder komplett leerbar." },
-      { "q": "Ist es kostenlos?", "a": "Ja, ein Gratis-Kontingent gibt es sofort; mit Google-Login steigt das Monatsvolumen." }
+      {
+        "q": "Muss ich polnische Zeichen tippen?",
+        "a": "Nein. Sprich den Satz oder füge die Nachricht ein — die Sonderzeichen müssen nie von deiner Tastatur kommen."
+      },
+      {
+        "q": "Übersetzt es schnell gesprochenes Polnisch?",
+        "a": "Ja, ein paar Sekunden nach dem letzten Wort steht der deutsche Text da."
+      },
+      {
+        "q": "Kommt es mit dem Fallsystem zurecht?",
+        "a": "Der ganze Satz wird auf einmal übersetzt, deshalb bleiben die Endungen für Subjekt und Objekt erhalten."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, deine Antwort geht im selben Gespräch auf Polnisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleiben Gespräche gespeichert?",
+        "a": "Jedes bleibt als Thema erhalten, einzeln löschbar oder komplett leerbar."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, ein Gratis-Kontingent gibt es sofort; mit Google-Login steigt das Monatsvolumen."
+      }
     ]
   },
   "finalCta": {

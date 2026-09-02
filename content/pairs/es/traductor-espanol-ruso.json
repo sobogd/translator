@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Cirílico sin aprender cirílico",
+      "heading": "Traductor de voz de español a ruso",
       "sub": "Ni teclado ruso ni transliteración: hablas o pegas y ya está.",
       "bullets": [
-        { "title": "Pega el texto en cirílico", "sub": "Copia el mensaje tal cual y léelo en español debajo" },
-        { "title": "Escúchalo en voz alta", "sub": "Toca el altavoz cuando prefieras oírlo a descifrarlo" }
+        {
+          "title": "Pega el texto en cirílico",
+          "sub": "Copia el mensaje tal cual y léelo en español debajo"
+        },
+        {
+          "title": "Escúchalo en voz alta",
+          "sub": "Toca el altavoz cuando prefieras oírlo a descifrarlo"
+        }
       ]
     },
     {
-      "heading": "Casos y orden libre",
+      "heading": "Traductor para conversación en ruso",
       "sub": "El ruso marca quién hace qué con las terminaciones y mueve las palabras a su antojo.",
       "bullets": [
-        { "title": "Se traduce la frase entera", "sub": "Quién hace qué a quién se conserva, en vez de convertirse en palabras sueltas" },
-        { "title": "Sin artículos que adivinar", "sub": "El un y el el que faltan se deducen del contexto" }
+        {
+          "title": "Se traduce la frase entera",
+          "sub": "Quién hace qué a quién se conserva, en vez de convertirse en palabras sueltas"
+        },
+        {
+          "title": "Sin artículos que adivinar",
+          "sub": "El un y el el que faltan se deducen del contexto"
+        }
       ]
     },
     {
-      "heading": "Turismo, trabajo y trámites",
+      "heading": "Traductor online gratis sin descargas",
       "sub": "Conversaciones cortas y documentos largos, en el mismo sitio.",
       "bullets": [
-        { "title": "Responde en español", "sub": "Tu respuesta sale en ruso, lista para leer o escuchar" },
-        { "title": "Cada conversación guardada", "sub": "Se retoma como un tema cuando llegue el siguiente mensaje" }
+        {
+          "title": "Responde en español",
+          "sub": "Tu respuesta sale en ruso, lista para leer o escuchar"
+        },
+        {
+          "title": "Cada conversación guardada",
+          "sub": "Se retoma como un tema cuando llegue el siguiente mensaje"
+        }
       ]
     },
     {
-      "heading": "O escríbelo",
+      "heading": "Traductor de texto de español a ruso",
       "sub": "Un contrato, un correo, un formulario en ruso.",
       "bullets": [
-        { "title": "Párrafos completos", "sub": "Un texto largo de una sola vez" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo vale para el idioma que necesites después" }
+        {
+          "title": "Párrafos completos",
+          "sub": "Un texto largo de una sola vez"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo vale para el idioma que necesites después"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te hablan en ruso", "us": "Grabas y lo lees en español.", "them": "Habría que escribir cirílico." },
-      { "title": "Gramática", "us": "Frase completa, casos incluidos.", "them": "Palabra por palabra y el sujeto se pierde." },
-      { "title": "Responder", "us": "Español dentro, ruso fuera, mismo hilo.", "them": "Dos búsquedas separadas." },
-      { "title": "Historial", "us": "Guardado como temas reabribles.", "them": "Se pierde al cerrar." },
-      { "title": "Empezar", "us": "Una pestaña y un micrófono.", "them": "App más teclado ruso." }
+      {
+        "title": "Te hablan en ruso",
+        "us": "Grabas y lo lees en español.",
+        "them": "Habría que escribir cirílico."
+      },
+      {
+        "title": "Gramática",
+        "us": "Frase completa, casos incluidos.",
+        "them": "Palabra por palabra y el sujeto se pierde."
+      },
+      {
+        "title": "Responder",
+        "us": "Español dentro, ruso fuera, mismo hilo.",
+        "them": "Dos búsquedas separadas."
+      },
+      {
+        "title": "Historial",
+        "us": "Guardado como temas reabribles.",
+        "them": "Se pierde al cerrar."
+      },
+      {
+        "title": "Empezar",
+        "us": "Una pestaña y un micrófono.",
+        "them": "App más teclado ruso."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al ruso.",
     "items": [
-      { "q": "¿Necesito teclado cirílico?", "a": "No. Habla o pega el texto que te enviaron; nunca tienes que escribir en ruso." },
-      { "q": "¿Traduce ruso hablado?", "a": "Sí, graba la frase y en un par de segundos la tienes en español." },
-      { "q": "¿Acierta con la gramática?", "a": "Se traduce la frase entera, así que las terminaciones de caso y el orden libre de palabras no se convierten en español desordenado." },
-      { "q": "¿Va de ruso a español también?", "a": "Sí, el mismo hilo funciona en los dos sentidos y se puede escuchar." },
-      { "q": "¿Se guarda el historial?", "a": "Cada conversación queda como un tema que puedes reabrir, borrar o vaciar." },
-      { "q": "¿Es gratis?", "a": "Sí, con margen gratuito sin cuenta; con Google tienes más cuota mensual e historial sincronizado." }
+      {
+        "q": "¿Necesito teclado cirílico?",
+        "a": "No. Habla o pega el texto que te enviaron; nunca tienes que escribir en ruso."
+      },
+      {
+        "q": "¿Traduce ruso hablado?",
+        "a": "Sí, graba la frase y en un par de segundos la tienes en español."
+      },
+      {
+        "q": "¿Acierta con la gramática?",
+        "a": "Se traduce la frase entera, así que las terminaciones de caso y el orden libre de palabras no se convierten en español desordenado."
+      },
+      {
+        "q": "¿Va de ruso a español también?",
+        "a": "Sí, el mismo hilo funciona en los dos sentidos y se puede escuchar."
+      },
+      {
+        "q": "¿Se guarda el historial?",
+        "a": "Cada conversación queda como un tema que puedes reabrir, borrar o vaciar."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, con margen gratuito sin cuenta; con Google tienes más cuota mensual e historial sincronizado."
+      }
     ]
   },
   "finalCta": {

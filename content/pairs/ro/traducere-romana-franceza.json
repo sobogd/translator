@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Vorbește, nu tasta",
+      "heading": "Traducător vocal română-franceză",
       "sub": "Apasă pe microfon, spune-o în română sau franceză, și citește sau ascultă traducerea.",
       "bullets": [
-        { "title": "Vocea ta devine franceză", "sub": "Spune-o în română — traducerea apare în franceză câteva secunde mai târziu" },
-        { "title": "Ascultă franceza cu voce tare", "sub": "Util când pronunția franceză încă nu e sigură" }
+        {
+          "title": "Vocea ta devine franceză",
+          "sub": "Spune-o în română — traducerea apare în franceză câteva secunde mai târziu"
+        },
+        {
+          "title": "Ascultă franceza cu voce tare",
+          "sub": "Util când pronunția franceză încă nu e sigură"
+        }
       ]
     },
     {
-      "heading": "Un subiect, ambele sensuri ale discuției",
+      "heading": "Traducător pentru conversații",
       "sub": "Vorbește dus-întors cu un coleg, un client sau un vecin — fiecare schimb rămâne salvat.",
       "bullets": [
-        { "title": "Răspuns în franceză, tradus în română", "sub": "Interlocutorul vorbește franceză, tu vezi și auzi totul în română" },
-        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul" }
+        {
+          "title": "Răspuns în franceză, tradus în română",
+          "sub": "Interlocutorul vorbește franceză, tu vezi și auzi totul în română"
+        },
+        {
+          "title": "Conversațiile rămân salvate ca subiecte",
+          "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul"
+        }
       ]
     },
     {
-      "heading": "Română-Franceză, plus alte 185 de limbi",
+      "heading": "Traducător online română-franceză",
       "sub": "Franceza este una dintre cele 186 de limbi disponibile, în orice direcție.",
       "bullets": [
-        { "title": "Diacritice și accente recunoscute corect", "sub": "Literele românești și cele franceze (é, è, ç) sunt gestionate corect, nu aproximate" },
-        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru franceză și mâine pentru orice altă limbă" }
+        {
+          "title": "Diacritice și accente recunoscute corect",
+          "sub": "Literele românești și cele franceze (é, è, ç) sunt gestionate corect, nu aproximate"
+        },
+        {
+          "title": "186 de limbi în total",
+          "sub": "Același instrument funcționează azi pentru franceză și mâine pentru orice altă limbă"
+        }
       ]
     },
     {
-      "heading": "Preferi să scrii? Merge și așa",
+      "heading": "Traducător de text română-franceză",
       "sub": "Scrie sau lipește text în franceză și primești traducerea în română fără microfon.",
       "bullets": [
-        { "title": "Lipește text în loc să vorbești", "sub": "Util pentru un mesaj WhatsApp sau un e-mail în franceză" },
-        { "title": "Copiază traducerea", "sub": "Preia textul tradus direct într-un formular sau răspuns" }
+        {
+          "title": "Lipește text în loc să vorbești",
+          "sub": "Util pentru un mesaj WhatsApp sau un e-mail în franceză"
+        },
+        {
+          "title": "Copiază traducerea",
+          "sub": "Preia textul tradus direct într-un formular sau răspuns"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicațiile obișnuite de traducere",
     "rows": [
-      { "title": "Cum începi", "us": "Vorbești în română sau franceză și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
-      { "title": "Istoricul conversației", "us": "Fiecare conversație română-franceză rămâne salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
-      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
-      { "title": "Ambele sensuri", "us": "Română spre franceză și franceză spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
-      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în franceză citită cu voce tare.", "them": "Doar text, deci pronunția rămâne pe cont propriu." }
+      {
+        "title": "Cum începi",
+        "us": "Vorbești în română sau franceză și primești traducerea pe loc.",
+        "them": "Trebuie să tastezi mai întâi ce vrei să spui."
+      },
+      {
+        "title": "Istoricul conversației",
+        "us": "Fiecare conversație română-franceză rămâne salvată ca propriul ei subiect.",
+        "them": "Fiecare traducere dispare după ce închizi aplicația."
+      },
+      {
+        "title": "Cum pornești",
+        "us": "Deschizi într-o filă de browser — nimic de instalat.",
+        "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi."
+      },
+      {
+        "title": "Ambele sensuri",
+        "us": "Română spre franceză și franceză spre română stau în același subiect.",
+        "them": "Schimbarea sensului înseamnă de obicei o traducere nouă."
+      },
+      {
+        "title": "Ascultarea traducerii",
+        "us": "Atingi pentru a auzi traducerea în franceză citită cu voce tare.",
+        "them": "Doar text, deci pronunția rămâne pe cont propriu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecvente",
     "sub": "Întrebări obișnuite despre traducerea română-franceză.",
     "items": [
-      { "q": "Poate traduce franceza vorbită în română?", "a": "Da — apasă pe microfon, vorbește în franceză, și primești traducerea în română ca text, cu opțiunea de a o asculta." },
-      { "q": "Funcționează și din română în franceză?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în franceză în același subiect." },
-      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
-      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon." },
-      { "q": "Se potrivește pentru călătorii în Franța?", "a": "Da, e util pentru a cere indicații, a comanda la restaurant sau a rezolva o problemă rapid, în vacanță sau în delegație." },
-      { "q": "Pot ține o conversație, nu doar traduceri izolate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în franceză rămâne organizată, nu împrăștiată." }
+      {
+        "q": "Poate traduce franceza vorbită în română?",
+        "a": "Da — apasă pe microfon, vorbește în franceză, și primești traducerea în română ca text, cu opțiunea de a o asculta."
+      },
+      {
+        "q": "Funcționează și din română în franceză?",
+        "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în franceză în același subiect."
+      },
+      {
+        "q": "Este gratuit?",
+        "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat."
+      },
+      {
+        "q": "Trebuie să instalez ceva?",
+        "a": "Nu, funcționează direct în browser, pe calculator sau telefon."
+      },
+      {
+        "q": "Se potrivește pentru călătorii în Franța?",
+        "a": "Da, e util pentru a cere indicații, a comanda la restaurant sau a rezolva o problemă rapid, în vacanță sau în delegație."
+      },
+      {
+        "q": "Pot ține o conversație, nu doar traduceri izolate?",
+        "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în franceză rămâne organizată, nu împrăștiată."
+      }
     ]
   },
   "finalCta": {

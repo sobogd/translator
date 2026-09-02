@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Hovorte namiesto písania",
+      "heading": "Hlasový preklad z angličtiny do slovenčiny",
       "sub": "Klepnite na mikrofón, povedzte to po slovensky alebo po anglicky, a získajte preklad, ktorý si prečítate alebo vypočujete.",
       "bullets": [
-        { "title": "Reč zmenená na angličtinu", "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v angličtine" },
-        { "title": "Vypočujte si anglický preklad", "sub": "Klepnite na ikonu reproduktora, keď vaša výslovnosť ešte nie je dokonalá" }
+        {
+          "title": "Reč zmenená na angličtinu",
+          "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v angličtine"
+        },
+        {
+          "title": "Vypočujte si anglický preklad",
+          "sub": "Klepnite na ikonu reproduktora, keď vaša výslovnosť ešte nie je dokonalá"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obe strany rozhovoru",
+      "heading": "Konverzačný prekladač pre obe strany",
       "sub": "Pokračujte v rozhovore bez toho, aby ste začínali odznova — každá výmena zostáva v tej istej téme.",
       "bullets": [
-        { "title": "Odpoveď v angličtine, preložená do slovenčiny", "sub": "Kolega či zamestnávateľ môže hovoriť po anglicky a vy to uvidíte aj počujete po slovensky" },
-        { "title": "Rozhovory uložené ako témy", "sub": "Vráťte sa k tej istej pracovnej alebo študijnej konverzácii neskôr, namiesto straty vlákna" }
+        {
+          "title": "Odpoveď v angličtine, preložená do slovenčiny",
+          "sub": "Kolega či zamestnávateľ môže hovoriť po anglicky a vy to uvidíte aj počujete po slovensky"
+        },
+        {
+          "title": "Rozhovory uložené ako témy",
+          "sub": "Vráťte sa k tej istej pracovnej alebo študijnej konverzácii neskôr, namiesto straty vlákna"
+        }
       ]
     },
     {
-      "heading": "Slovensko-anglický pár, plus 185 ďalších jazykov",
+      "heading": "Online prekladač pre 186 jazykov vrátane angličtiny",
       "sub": "Angličtina je jedným zo 186 dostupných jazykov, v ktoromkoľvek smere.",
       "bullets": [
-        { "title": "Presný pri bežných aj odborných výrazoch", "sub": "Zvláda pracovnú aj študijnú slovnú zásobu, nielen hrubý odhad" },
-        { "title": "186 jazykov spolu", "sub": "Ten istý nástroj funguje pre angličtinu dnes aj pre akýkoľvek iný jazyk zajtra" }
+        {
+          "title": "Presný pri bežných aj odborných výrazoch",
+          "sub": "Zvláda pracovnú aj študijnú slovnú zásobu, nielen hrubý odhad"
+        },
+        {
+          "title": "186 jazykov spolu",
+          "sub": "Ten istý nástroj funguje pre angličtinu dnes aj pre akýkoľvek iný jazyk zajtra"
+        }
       ]
     },
     {
-      "heading": "Radšej píšete? Aj to funguje",
+      "heading": "Preklad textu zo slovenčiny do angličtiny",
       "sub": "Napíšte alebo vložte slovenský text a získajte anglický preklad bez toho, aby ste sa dotkli mikrofónu.",
       "bullets": [
-        { "title": "Píšte namiesto hovorenia", "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa v tichej miestnosti aj na hlučnej ulici" },
-        { "title": "Skopírujte preklad", "sub": "Skopírujte anglický text priamo do e-mailu, WhatsAppu alebo správy" }
+        {
+          "title": "Píšte namiesto hovorenia",
+          "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa v tichej miestnosti aj na hlučnej ulici"
+        },
+        {
+          "title": "Skopírujte preklad",
+          "sub": "Skopírujte anglický text priamo do e-mailu, WhatsAppu alebo správy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Bežné prekladateľské aplikácie",
     "rows": [
-      { "title": "Ako začnete", "us": "Hovorte po slovensky alebo anglicky a preklad získate okamžite.", "them": "Najprv musíte napísať, čo chcete povedať." },
-      { "title": "História rozhovorov", "us": "Každá anglická konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.", "them": "Každý preklad zmizne hneď po zatvorení aplikácie." },
-      { "title": "Nastavenie", "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.", "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete." },
-      { "title": "Obidva smery", "us": "Zo slovenčiny do angličtiny aj naopak žijú v tom istom vlákne.", "them": "Zmena smeru zvyčajne znamená začať nový preklad." },
-      { "title": "Vypočutie prekladu", "us": "Klepnite a nechajte si anglický preklad prečítať nahlas.", "them": "Iba text, výslovnosť si musíte poriešiť sami." }
+      {
+        "title": "Ako začnete",
+        "us": "Hovorte po slovensky alebo anglicky a preklad získate okamžite.",
+        "them": "Najprv musíte napísať, čo chcete povedať."
+      },
+      {
+        "title": "História rozhovorov",
+        "us": "Každá anglická konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.",
+        "them": "Každý preklad zmizne hneď po zatvorení aplikácie."
+      },
+      {
+        "title": "Nastavenie",
+        "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.",
+        "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete."
+      },
+      {
+        "title": "Obidva smery",
+        "us": "Zo slovenčiny do angličtiny aj naopak žijú v tom istom vlákne.",
+        "them": "Zmena smeru zvyčajne znamená začať nový preklad."
+      },
+      {
+        "title": "Vypočutie prekladu",
+        "us": "Klepnite a nechajte si anglický preklad prečítať nahlas.",
+        "them": "Iba text, výslovnosť si musíte poriešiť sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "otázky",
     "sub": "Bežné otázky o preklade zo slovenčiny do angličtiny.",
     "items": [
-      { "q": "Dokáže to preložiť hovorenú slovenčinu do angličtiny?", "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete anglický preklad ako text, s možnosťou nechať si ho prečítať nahlas." },
-      { "q": "Zvláda aj pracovnú a odbornú slovnú zásobu?", "a": "Áno, bežné aj odbornejšie výrazy z práce, štúdia či cestovania sa prekladajú presne, nielen slovníkovo." },
-      { "q": "Dá sa prekladať aj z angličtiny späť do slovenčiny?", "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po anglicky a slovenský preklad dostanete v tom istom vlákne." },
-      { "q": "Je to zadarmo?", "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu." },
-      { "q": "Musím si niečo inštalovať?", "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje." },
-      { "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?", "a": "Áno, preklady sa zoskupujú do tém, takže sa pracovná alebo študijná konverzácia drží na jednom mieste namiesto rozhádzaných jednotlivých prekladov." }
+      {
+        "q": "Dokáže to preložiť hovorenú slovenčinu do angličtiny?",
+        "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete anglický preklad ako text, s možnosťou nechať si ho prečítať nahlas."
+      },
+      {
+        "q": "Zvláda aj pracovnú a odbornú slovnú zásobu?",
+        "a": "Áno, bežné aj odbornejšie výrazy z práce, štúdia či cestovania sa prekladajú presne, nielen slovníkovo."
+      },
+      {
+        "q": "Dá sa prekladať aj z angličtiny späť do slovenčiny?",
+        "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po anglicky a slovenský preklad dostanete v tom istom vlákne."
+      },
+      {
+        "q": "Je to zadarmo?",
+        "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu."
+      },
+      {
+        "q": "Musím si niečo inštalovať?",
+        "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje."
+      },
+      {
+        "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?",
+        "a": "Áno, preklady sa zoskupujú do tém, takže sa pracovná alebo študijná konverzácia drží na jednom mieste namiesto rozhádzaných jednotlivých prekladov."
+      }
     ]
   },
   "finalCta": {

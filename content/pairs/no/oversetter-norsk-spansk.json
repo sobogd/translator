@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Snakk, ikke skriv",
+      "heading": "Stemmeoversetter fra norsk til spansk",
       "sub": "Trykk på mikrofonen, si det på norsk eller spansk, og få en oversettelse du kan lese eller høre.",
       "bullets": [
-        { "title": "Talen din blir spansk tekst", "sub": "Si det på norsk — ordene transkriberes, oversettes og vises på spansk sekunder senere" },
-        { "title": "Hør spansken lest høyt", "sub": "Trykk på høyttalerikonet så resepsjonisten eller kelneren forstår deg med en gang" }
+        {
+          "title": "Talen din blir spansk tekst",
+          "sub": "Si det på norsk — ordene transkriberes, oversettes og vises på spansk sekunder senere"
+        },
+        {
+          "title": "Hør spansken lest høyt",
+          "sub": "Trykk på høyttalerikonet så resepsjonisten eller kelneren forstår deg med en gang"
+        }
       ]
     },
     {
-      "heading": "Én tråd, begge sider av samtalen",
+      "heading": "Samtaleoversetter for norsk og spansk",
       "sub": "Fortsett å prate fram og tilbake uten å starte på nytt — hele samtalen holdes i samme emne.",
       "bullets": [
-        { "title": "Svar på spansk, oversatt til norsk", "sub": "Den du snakker med kan svare på spansk, og du ser og hører det på norsk" },
-        { "title": "Samtaler lagres som emner", "sub": "Kom tilbake til den samme spanske samtalen senere i stedet for å miste tråden" }
+        {
+          "title": "Svar på spansk, oversatt til norsk",
+          "sub": "Den du snakker med kan svare på spansk, og du ser og hører det på norsk"
+        },
+        {
+          "title": "Samtaler lagres som emner",
+          "sub": "Kom tilbake til den samme spanske samtalen senere i stedet for å miste tråden"
+        }
       ]
     },
     {
-      "heading": "Norsk–spansk, pluss 185 språk til",
+      "heading": "Nettbasert oversetter for spansk",
       "sub": "Spansk er ett av 186 språk som er tilgjengelige, i begge retninger.",
       "bullets": [
-        { "title": "Presist med aksenter og ñ", "sub": "Håndterer spansk stavemåte og uttale riktig, ikke en grov gjetning" },
-        { "title": "186 språk totalt", "sub": "Samme verktøy fungerer for spansk i dag og et hvilket som helst annet språk neste ferie" }
+        {
+          "title": "Presist med aksenter og ñ",
+          "sub": "Håndterer spansk stavemåte og uttale riktig, ikke en grov gjetning"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samme verktøy fungerer for spansk i dag og et hvilket som helst annet språk neste ferie"
+        }
       ]
     },
     {
-      "heading": "Foretrekker du å skrive? Det går også",
+      "heading": "Tekstoversetter fra norsk til spansk",
       "sub": "Skriv eller lim inn norsk tekst og få en spansk oversettelse uten å røre mikrofonen.",
       "bullets": [
-        { "title": "Skriv i stedet for å snakke", "sub": "Bytt til tastaturet når som helst — praktisk på et støyfullt utested eller ved bassenget" },
-        { "title": "Kopier oversettelsen", "sub": "Kopier den spanske teksten rett ut for å lime den inn i en melding til utleier eller reisefølge" }
+        {
+          "title": "Skriv i stedet for å snakke",
+          "sub": "Bytt til tastaturet når som helst — praktisk på et støyfullt utested eller ved bassenget"
+        },
+        {
+          "title": "Kopier oversettelsen",
+          "sub": "Kopier den spanske teksten rett ut for å lime den inn i en melding til utleier eller reisefølge"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanlige oversettelsesapper",
     "rows": [
-      { "title": "Slik starter du", "us": "Snakk på norsk eller spansk og få en oversettelse med det samme.", "them": "Skriv ut det du vil si først." },
-      { "title": "Samtalehistorikk", "us": "Hver spanske samtale lagres som sitt eget emne du kan åpne igjen.", "them": "Hver oversettelse forsvinner så snart du lukker appen." },
-      { "title": "Komme i gang", "us": "Åpne den i en nettleserfane — ingenting å installere før avreise.", "them": "Last ned en app og gi tillatelser før du kan bruke den." },
-      { "title": "Begge retninger", "us": "Norsk til spansk og spansk til norsk lever i samme tråd.", "them": "Å bytte retning betyr som regel å starte en ny oversettelse." },
-      { "title": "Å høre svaret", "us": "Trykk for å høre den spanske oversettelsen lest høyt.", "them": "Bare tekst, så uttalen må du klare selv på stranden." }
+      {
+        "title": "Slik starter du",
+        "us": "Snakk på norsk eller spansk og få en oversettelse med det samme.",
+        "them": "Skriv ut det du vil si først."
+      },
+      {
+        "title": "Samtalehistorikk",
+        "us": "Hver spanske samtale lagres som sitt eget emne du kan åpne igjen.",
+        "them": "Hver oversettelse forsvinner så snart du lukker appen."
+      },
+      {
+        "title": "Komme i gang",
+        "us": "Åpne den i en nettleserfane — ingenting å installere før avreise.",
+        "them": "Last ned en app og gi tillatelser før du kan bruke den."
+      },
+      {
+        "title": "Begge retninger",
+        "us": "Norsk til spansk og spansk til norsk lever i samme tråd.",
+        "them": "Å bytte retning betyr som regel å starte en ny oversettelse."
+      },
+      {
+        "title": "Å høre svaret",
+        "us": "Trykk for å høre den spanske oversettelsen lest høyt.",
+        "them": "Bare tekst, så uttalen må du klare selv på stranden."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "spørsmål",
     "sub": "Vanlige spørsmål om å oversette norsk til spansk.",
     "items": [
-      { "q": "Kan den oversette talt norsk til spansk?", "a": "Ja — trykk på mikrofonen, snakk på norsk, og du får en spansk oversettelse som tekst, med mulighet til å høre den lest høyt." },
-      { "q": "Er det gratis?", "a": "Ja, du kan prøve gratis uten å opprette en konto. Logg inn med Google for flere daglige kreditter og lagret historikk." },
-      { "q": "Takler den spanske aksenter og tegnsetting riktig?", "a": "Ja, bokstaver som á, é, í, ó, ú og ñ håndteres riktig både i det du leser og det som blir lest høyt." },
-      { "q": "Egner den seg for ferie i Syden?", "a": "Ja, mange bruker den til restaurant, apotek, utleiebolig og småprat på stranden, der en rask spansk oversettelse gjør hele forskjellen." },
-      { "q": "Må jeg installere noe?", "a": "Nei, den kjører i nettleseren din på datamaskin eller mobil — ingenting å laste ned før turen." },
-      { "q": "Kan jeg holde en løpende samtale i stedet for enkeltoversettelser?", "a": "Ja, oversettelser samles i emner, slik at en spansk samtale holder seg på ett sted i stedet for å spres over separate oppslag." }
+      {
+        "q": "Kan den oversette talt norsk til spansk?",
+        "a": "Ja — trykk på mikrofonen, snakk på norsk, og du får en spansk oversettelse som tekst, med mulighet til å høre den lest høyt."
+      },
+      {
+        "q": "Er det gratis?",
+        "a": "Ja, du kan prøve gratis uten å opprette en konto. Logg inn med Google for flere daglige kreditter og lagret historikk."
+      },
+      {
+        "q": "Takler den spanske aksenter og tegnsetting riktig?",
+        "a": "Ja, bokstaver som á, é, í, ó, ú og ñ håndteres riktig både i det du leser og det som blir lest høyt."
+      },
+      {
+        "q": "Egner den seg for ferie i Syden?",
+        "a": "Ja, mange bruker den til restaurant, apotek, utleiebolig og småprat på stranden, der en rask spansk oversettelse gjør hele forskjellen."
+      },
+      {
+        "q": "Må jeg installere noe?",
+        "a": "Nei, den kjører i nettleseren din på datamaskin eller mobil — ingenting å laste ned før turen."
+      },
+      {
+        "q": "Kan jeg holde en løpende samtale i stedet for enkeltoversettelser?",
+        "a": "Ja, oversettelser samles i emner, slik at en spansk samtale holder seg på ett sted i stedet for å spres over separate oppslag."
+      }
     ]
   },
   "finalCta": {

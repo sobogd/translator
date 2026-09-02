@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speak English, hear it in Turkish",
+      "heading": "Voice translator from English to Turkish",
       "sub": "Tap the mic and talk — your speech becomes a Turkish translation seconds later.",
       "bullets": [
-        { "title": "Spoken English becomes Turkish text", "sub": "Say it out loud and see the translation appear with correct letters like ı, ş, ğ, and ç" },
-        { "title": "Hear the Turkish spoken aloud", "sub": "Tap the speaker for pronunciation help with sounds that don't exist in English" }
+        {
+          "title": "Spoken English becomes Turkish text",
+          "sub": "Say it out loud and see the translation appear with correct letters like ı, ş, ğ, and ç"
+        },
+        {
+          "title": "Hear the Turkish spoken aloud",
+          "sub": "Tap the speaker for pronunciation help with sounds that don't exist in English"
+        }
       ]
     },
     {
-      "heading": "A conversation that stays together",
+      "heading": "English to Turkish conversation translator",
       "sub": "Whoever replies in Turkish gets translated back to English instantly, in the same thread.",
       "bullets": [
-        { "title": "Turkish replies translated back", "sub": "The other person speaks Turkish, you see and hear the English meaning" },
-        { "title": "Saved as a topic", "sub": "Reopen the same Turkish conversation later instead of losing it" }
+        {
+          "title": "Turkish replies translated back",
+          "sub": "The other person speaks Turkish, you see and hear the English meaning"
+        },
+        {
+          "title": "Saved as a topic",
+          "sub": "Reopen the same Turkish conversation later instead of losing it"
+        }
       ]
     },
     {
-      "heading": "Turkish grammar, handled for you",
+      "heading": "Online translator for English and Turkish",
       "sub": "Turkish is one of 186 languages available, with its long suffix chains sorted out automatically.",
       "bullets": [
-        { "title": "Correct suffixes and word order", "sub": "Turkish builds meaning by stacking suffixes onto a root word, and the translation gets this right" },
-        { "title": "186 languages total", "sub": "The same tool covers Turkish today and any other language you need next" }
+        {
+          "title": "Correct suffixes and word order",
+          "sub": "Turkish builds meaning by stacking suffixes onto a root word, and the translation gets this right"
+        },
+        {
+          "title": "186 languages total",
+          "sub": "The same tool covers Turkish today and any other language you need next"
+        }
       ]
     },
     {
-      "heading": "Or just type it",
+      "heading": "English to Turkish text translator",
       "sub": "Paste or type English text and get a Turkish translation without recording your voice.",
       "bullets": [
-        { "title": "Type instead of speak", "sub": "Handy for emails, forms, or a quiet room" },
-        { "title": "Copy the Turkish text", "sub": "Copy the result straight into a message or document" }
+        {
+          "title": "Type instead of speak",
+          "sub": "Handy for emails, forms, or a quiet room"
+        },
+        {
+          "title": "Copy the Turkish text",
+          "sub": "Copy the result straight into a message or document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "How you start", "us": "Speak in English or Turkish and get a translation right away.", "them": "Type your sentence out first." },
-      { "title": "Hearing pronunciation", "us": "Tap to hear the Turkish translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
-      { "title": "Conversation history", "us": "Every Turkish conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
-      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
-      { "title": "Both directions", "us": "English to Turkish and Turkish to English in one thread.", "them": "Switching direction usually means starting over." }
+      {
+        "title": "How you start",
+        "us": "Speak in English or Turkish and get a translation right away.",
+        "them": "Type your sentence out first."
+      },
+      {
+        "title": "Hearing pronunciation",
+        "us": "Tap to hear the Turkish translation spoken aloud.",
+        "them": "Text-only results, so pronunciation is left to guesswork."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every Turkish conversation is saved as its own topic.",
+        "them": "Each translation disappears once you close the app."
+      },
+      {
+        "title": "Getting set up",
+        "us": "Open it in a browser tab — nothing to install.",
+        "them": "Download an app before you can translate anything."
+      },
+      {
+        "title": "Both directions",
+        "us": "English to Turkish and Turkish to English in one thread.",
+        "them": "Switching direction usually means starting over."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating between English and Turkish.",
     "items": [
-      { "q": "Does it handle Turkish letters like ı, ş, and ğ correctly?", "a": "Yes, Turkish-specific letters appear correctly in both the written translation and what gets spoken aloud." },
-      { "q": "Can it translate spoken Turkish back to English?", "a": "Yes — speak Turkish into the mic and get an English translation as text, with audio playback available." },
-      { "q": "Does it get Turkish word order and suffixes right?", "a": "Yes, it produces natural Turkish sentences with the correct suffix chains, not a literal word-for-word swap." },
-      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
-      { "q": "Do I need a Turkish keyboard installed?", "a": "No, the app handles Turkish letters automatically — no special keyboard needed." },
-      { "q": "Can I hear how the Turkish translation is pronounced?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." }
+      {
+        "q": "Does it handle Turkish letters like ı, ş, and ğ correctly?",
+        "a": "Yes, Turkish-specific letters appear correctly in both the written translation and what gets spoken aloud."
+      },
+      {
+        "q": "Can it translate spoken Turkish back to English?",
+        "a": "Yes — speak Turkish into the mic and get an English translation as text, with audio playback available."
+      },
+      {
+        "q": "Does it get Turkish word order and suffixes right?",
+        "a": "Yes, it produces natural Turkish sentences with the correct suffix chains, not a literal word-for-word swap."
+      },
+      {
+        "q": "Is it free to use?",
+        "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history."
+      },
+      {
+        "q": "Do I need a Turkish keyboard installed?",
+        "a": "No, the app handles Turkish letters automatically — no special keyboard needed."
+      },
+      {
+        "q": "Can I hear how the Turkish translation is pronounced?",
+        "a": "Yes, tap the speaker icon on any translation to hear it read aloud."
+      }
     ]
   },
   "finalCta": {

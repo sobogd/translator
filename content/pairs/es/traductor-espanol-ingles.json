@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "El inglés hablado, entendido a la primera",
+      "heading": "Traductor de voz de español a inglés",
       "sub": "El inglés no se pronuncia como se escribe: habla o graba lo que te dijeron y léelo en español.",
       "bullets": [
-        { "title": "Acentos que cuestan", "sub": "Escocés, irlandés o del sur de EE. UU.: la transcripción los separa en palabras por ti" },
-        { "title": "Escúchalo pronunciado", "sub": "Toca el altavoz para oír cómo suena realmente la frase antes de decirla tú" }
+        {
+          "title": "Acentos que cuestan",
+          "sub": "Escocés, irlandés o del sur de EE. UU.: la transcripción los separa en palabras por ti"
+        },
+        {
+          "title": "Escúchalo pronunciado",
+          "sub": "Toca el altavoz para oír cómo suena realmente la frase antes de decirla tú"
+        }
       ]
     },
     {
-      "heading": "Para trabajo y entrevistas",
+      "heading": "Traductor para conversación en inglés",
       "sub": "Correos, reuniones y pruebas técnicas donde una frase mal entendida cuesta cara.",
       "bullets": [
-        { "title": "Correos largos de una vez", "sub": "Pega el email entero y léelo en español sin ir línea por línea" },
-        { "title": "Responde en español", "sub": "Escribes en español y sale en inglés, listo para copiar en tu respuesta" }
+        {
+          "title": "Correos largos de una vez",
+          "sub": "Pega el email entero y léelo en español sin ir línea por línea"
+        },
+        {
+          "title": "Responde en español",
+          "sub": "Escribes en español y sale en inglés, listo para copiar en tu respuesta"
+        }
       ]
     },
     {
-      "heading": "Phrasal verbs y falsos amigos",
+      "heading": "Traductor online gratis sin instalar",
       "sub": "Get over, put up with, actually, eventually: lo literal es justo lo que falla.",
       "bullets": [
-        { "title": "Traducción por frase, no por palabra", "sub": "Los verbos compuestos se leen por lo que significan, no por sus piezas" },
-        { "title": "Falsos amigos detectados", "sub": "Actually no es actualmente y eventually no es eventualmente: el contexto decide" }
+        {
+          "title": "Traducción por frase, no por palabra",
+          "sub": "Los verbos compuestos se leen por lo que significan, no por sus piezas"
+        },
+        {
+          "title": "Falsos amigos detectados",
+          "sub": "Actually no es actualmente y eventually no es eventualmente: el contexto decide"
+        }
       ]
     },
     {
-      "heading": "Británico o americano",
+      "heading": "Traductor de texto en inglés",
       "sub": "Mismo idioma, distinto vocabulario según el otro lado de la conversación.",
       "bullets": [
-        { "title": "Vocabulario según el contexto", "sub": "Flat o apartment, lorry o truck: se traduce lo que se quiso decir" },
-        { "title": "186 idiomas incluidos", "sub": "El mismo hilo te sirve mañana para cualquier otro idioma" }
+        {
+          "title": "Vocabulario según el contexto",
+          "sub": "Flat o apartment, lorry o truck: se traduce lo que se quiso decir"
+        },
+        {
+          "title": "186 idiomas incluidos",
+          "sub": "El mismo hilo te sirve mañana para cualquier otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te hablan rápido", "us": "Grabas la frase y la lees en español al momento.", "them": "Tienes que escribir lo que creíste oír." },
-      { "title": "Pronunciación", "us": "Escuchas cualquier frase en inglés en voz alta.", "them": "Solo texto, la pronunciación te la imaginas." },
-      { "title": "Phrasal verbs", "us": "Se traducen por su significado real.", "them": "Palabra por palabra, y el sentido se pierde." },
-      { "title": "Historial", "us": "Cada conversación en inglés queda como un tema.", "them": "Se borra al cerrar la app." },
-      { "title": "Empezar", "us": "Abres una pestaña y hablas, sin instalar nada.", "them": "Descargar app y registrarse antes de nada." }
+      {
+        "title": "Te hablan rápido",
+        "us": "Grabas la frase y la lees en español al momento.",
+        "them": "Tienes que escribir lo que creíste oír."
+      },
+      {
+        "title": "Pronunciación",
+        "us": "Escuchas cualquier frase en inglés en voz alta.",
+        "them": "Solo texto, la pronunciación te la imaginas."
+      },
+      {
+        "title": "Phrasal verbs",
+        "us": "Se traducen por su significado real.",
+        "them": "Palabra por palabra, y el sentido se pierde."
+      },
+      {
+        "title": "Historial",
+        "us": "Cada conversación en inglés queda como un tema.",
+        "them": "Se borra al cerrar la app."
+      },
+      {
+        "title": "Empezar",
+        "us": "Abres una pestaña y hablas, sin instalar nada.",
+        "them": "Descargar app y registrarse antes de nada."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al inglés.",
     "items": [
-      { "q": "¿Entiende el inglés hablado rápido o con acento?", "a": "Sí. Graba la frase y en un par de segundos la tienes en español, incluidos acentos británicos, irlandeses o estadounidenses que cuesta seguir de oído." },
-      { "q": "¿Sirve para correos de trabajo?", "a": "Sí: pega el correo completo y léelo en español, y escribe tu respuesta en español para enviarla en inglés." },
-      { "q": "¿Cómo traduce los phrasal verbs?", "a": "Se traduce la frase entera, así que get over o put up with se leen por lo que significan y no por la suma de sus palabras." },
-      { "q": "¿Puedo escuchar la pronunciación?", "a": "Sí, toca el altavoz en cualquier traducción para oírla antes de decirla tú." },
-      { "q": "¿Distingue inglés británico y americano?", "a": "El vocabulario se interpreta por el contexto de la conversación, que es donde se nota la diferencia." },
-      { "q": "¿Es gratis?", "a": "Sí, hay un margen gratuito sin registrarte. Con la cuenta de Google tienes más cuota mensual y el historial guardado." }
+      {
+        "q": "¿Entiende el inglés hablado rápido o con acento?",
+        "a": "Sí. Graba la frase y en un par de segundos la tienes en español, incluidos acentos británicos, irlandeses o estadounidenses que cuesta seguir de oído."
+      },
+      {
+        "q": "¿Sirve para correos de trabajo?",
+        "a": "Sí: pega el correo completo y léelo en español, y escribe tu respuesta en español para enviarla en inglés."
+      },
+      {
+        "q": "¿Cómo traduce los phrasal verbs?",
+        "a": "Se traduce la frase entera, así que get over o put up with se leen por lo que significan y no por la suma de sus palabras."
+      },
+      {
+        "q": "¿Puedo escuchar la pronunciación?",
+        "a": "Sí, toca el altavoz en cualquier traducción para oírla antes de decirla tú."
+      },
+      {
+        "q": "¿Distingue inglés británico y americano?",
+        "a": "El vocabulario se interpreta por el contexto de la conversación, que es donde se nota la diferencia."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, hay un margen gratuito sin registrarte. Con la cuenta de Google tienes más cuota mensual y el historial guardado."
+      }
     ]
   },
   "finalCta": {

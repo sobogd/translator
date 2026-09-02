@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speak English, read it in Chinese",
+      "heading": "Voice translator from English to Chinese",
       "sub": "Tap the mic and talk — your words become a Chinese translation seconds later.",
       "bullets": [
-        { "title": "Spoken English becomes Chinese text", "sub": "Say it out loud and see the correct Chinese characters appear right after" },
-        { "title": "Hear the tones spoken aloud", "sub": "Tap the speaker so you don't have to guess Mandarin tones yourself" }
+        {
+          "title": "Spoken English becomes Chinese text",
+          "sub": "Say it out loud and see the correct Chinese characters appear right after"
+        },
+        {
+          "title": "Hear the tones spoken aloud",
+          "sub": "Tap the speaker so you don't have to guess Mandarin tones yourself"
+        }
       ]
     },
     {
-      "heading": "A conversation, not one-off lookups",
+      "heading": "English to Chinese translator for conversation",
       "sub": "Whoever you're talking to can reply in Chinese and you'll understand it in English, in the same thread.",
       "bullets": [
-        { "title": "Chinese replies translated back", "sub": "The other person speaks Chinese, you see and hear the English meaning" },
-        { "title": "History kept as a topic", "sub": "Reopen the same Chinese conversation later instead of starting fresh" }
+        {
+          "title": "Chinese replies translated back",
+          "sub": "The other person speaks Chinese, you see and hear the English meaning"
+        },
+        {
+          "title": "History kept as a topic",
+          "sub": "Reopen the same Chinese conversation later instead of starting fresh"
+        }
       ]
     },
     {
-      "heading": "Chinese characters, done right",
+      "heading": "Online English to Chinese translator",
       "sub": "Chinese is one of 186 languages available, shown in proper characters rather than pinyin guesses.",
       "bullets": [
-        { "title": "Accurate character translation", "sub": "Results appear in real Chinese characters, matched to meaning and tone" },
-        { "title": "186 languages total", "sub": "The same tool covers Chinese today and any other language later" }
+        {
+          "title": "Accurate character translation",
+          "sub": "Results appear in real Chinese characters, matched to meaning and tone"
+        },
+        {
+          "title": "186 languages total",
+          "sub": "The same tool covers Chinese today and any other language later"
+        }
       ]
     },
     {
-      "heading": "Or just type it",
+      "heading": "English to Chinese text translator",
       "sub": "Paste or type English text and get a Chinese translation without recording anything.",
       "bullets": [
-        { "title": "Type instead of speak", "sub": "Useful for messages, emails, or a quiet office" },
-        { "title": "Copy the Chinese text", "sub": "Copy the result straight into a chat app or document" }
+        {
+          "title": "Type instead of speak",
+          "sub": "Useful for messages, emails, or a quiet office"
+        },
+        {
+          "title": "Copy the Chinese text",
+          "sub": "Copy the result straight into a chat app or document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "How you start", "us": "Speak in English or Chinese and get a translation right away.", "them": "Type your sentence out first, character by character." },
-      { "title": "Getting the tones right", "us": "Tap to hear the Chinese translation spoken aloud.", "them": "Text-only results, so tones are left to guesswork." },
-      { "title": "Conversation history", "us": "Every Chinese conversation is saved as its own topic.", "them": "Each translation vanishes once you close the app." },
-      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
-      { "title": "Both directions", "us": "English to Chinese and Chinese to English in one thread.", "them": "Switching direction usually means starting a new translation." }
+      {
+        "title": "How you start",
+        "us": "Speak in English or Chinese and get a translation right away.",
+        "them": "Type your sentence out first, character by character."
+      },
+      {
+        "title": "Getting the tones right",
+        "us": "Tap to hear the Chinese translation spoken aloud.",
+        "them": "Text-only results, so tones are left to guesswork."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every Chinese conversation is saved as its own topic.",
+        "them": "Each translation vanishes once you close the app."
+      },
+      {
+        "title": "Getting set up",
+        "us": "Open it in a browser tab — nothing to install.",
+        "them": "Download an app before you can translate anything."
+      },
+      {
+        "title": "Both directions",
+        "us": "English to Chinese and Chinese to English in one thread.",
+        "them": "Switching direction usually means starting a new translation."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating between English and Chinese.",
     "items": [
-      { "q": "Does it show real Chinese characters, not pinyin?", "a": "Yes, translations appear in proper Chinese characters, matched to the meaning of your sentence." },
-      { "q": "Can it translate spoken Chinese into English?", "a": "Yes — speak Chinese into the mic and get an English translation as text, with audio playback available." },
-      { "q": "How do I know I'm getting the tones right?", "a": "Tap the speaker icon on any Chinese translation to hear it read aloud, so you can hear the correct tones instead of guessing." },
-      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
-      { "q": "Do I need a Chinese keyboard or input method?", "a": "No, the app displays Chinese characters automatically — you don't need to type them yourself." },
-      { "q": "Can I keep a running conversation instead of separate lookups?", "a": "Yes, translations are grouped into topics, so a Chinese conversation stays together instead of scattering across separate searches." }
+      {
+        "q": "Does it show real Chinese characters, not pinyin?",
+        "a": "Yes, translations appear in proper Chinese characters, matched to the meaning of your sentence."
+      },
+      {
+        "q": "Can it translate spoken Chinese into English?",
+        "a": "Yes — speak Chinese into the mic and get an English translation as text, with audio playback available."
+      },
+      {
+        "q": "How do I know I'm getting the tones right?",
+        "a": "Tap the speaker icon on any Chinese translation to hear it read aloud, so you can hear the correct tones instead of guessing."
+      },
+      {
+        "q": "Is it free to use?",
+        "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history."
+      },
+      {
+        "q": "Do I need a Chinese keyboard or input method?",
+        "a": "No, the app displays Chinese characters automatically — you don't need to type them yourself."
+      },
+      {
+        "q": "Can I keep a running conversation instead of separate lookups?",
+        "a": "Yes, translations are grouped into topics, so a Chinese conversation stays together instead of scattering across separate searches."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Konuşun, Rusçayı dinleyin",
+      "heading": "Türkçe Rusça sesli çevirmen ile konuşun",
       "sub": "Mikrofona dokunun, Türkçe konuşun, Rusça çeviriyi okuyun ya da dinleyin.",
       "bullets": [
-        { "title": "Konuşmanız anında Rusçaya döner", "sub": "Türkçe söyleyin — çeviri saniyeler içinde Kiril alfabesiyle ekranda belirir" },
-        { "title": "Rusçayı sesli dinleyin", "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun" }
+        {
+          "title": "Konuşmanız anında Rusçaya döner",
+          "sub": "Türkçe söyleyin — çeviri saniyeler içinde Kiril alfabesiyle ekranda belirir"
+        },
+        {
+          "title": "Rusçayı sesli dinleyin",
+          "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun"
+        }
       ]
     },
     {
-      "heading": "Misafir ya da müşteriyle tek sohbet",
+      "heading": "Rusça konuşma için karşılıklı çevirmen",
       "sub": "Turda, otelde ya da ticari görüşmede tüm alışveriş aynı konuda kalır.",
       "bullets": [
-        { "title": "Rusça yanıt Türkçeye çevrilir", "sub": "Karşınızdaki Rusça konuşur, siz Türkçe olarak okur ve duyarsınız" },
-        { "title": "Görüşme konu olarak saklanır", "sub": "Aynı misafir ya da tedarikçiyle sohbete daha sonra kaldığınız yerden dönün" }
+        {
+          "title": "Rusça yanıt Türkçeye çevrilir",
+          "sub": "Karşınızdaki Rusça konuşur, siz Türkçe olarak okur ve duyarsınız"
+        },
+        {
+          "title": "Görüşme konu olarak saklanır",
+          "sub": "Aynı misafir ya da tedarikçiyle sohbete daha sonra kaldığınız yerden dönün"
+        }
       ]
     },
     {
-      "heading": "Türkçe-Rusça, artı 185 dil daha",
+      "heading": "Tarayıcıda çevrimiçi Türkçe Rusça çeviri",
       "sub": "Rusça, her yönde kullanılabilen 186 dilden biri.",
       "bullets": [
-        { "title": "Kiril alfabesi doğru gösterilir", "sub": "Metin kendi harfleriyle görünür, Latin harflere çevrilmez" },
-        { "title": "Toplam 186 dil", "sub": "Bugün Rusça, yarın başka bir dil — aynı araç yeterli" }
+        {
+          "title": "Kiril alfabesi doğru gösterilir",
+          "sub": "Metin kendi harfleriyle görünür, Latin harflere çevrilmez"
+        },
+        {
+          "title": "Toplam 186 dil",
+          "sub": "Bugün Rusça, yarın başka bir dil — aynı araç yeterli"
+        }
       ]
     },
     {
-      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "heading": "Hızlı ve pratik Türkçe Rusça metin çevirisi",
       "sub": "Rusça bir mesajı yapıştırın ya da Türkçe yazın, mikrofona dokunmadan çeviriyi alın.",
       "bullets": [
-        { "title": "Gelen mesajı yapıştırın", "sub": "WhatsApp'tan gelen Rusça mesajı yapıştırın, Türkçe çeviriyi anında okuyun" },
-        { "title": "Çeviriyi kopyalayın", "sub": "Rusça metni doğrudan teklife, e-postaya ya da mesaja yapıştırın" }
+        {
+          "title": "Gelen mesajı yapıştırın",
+          "sub": "WhatsApp'tan gelen Rusça mesajı yapıştırın, Türkçe çeviriyi anında okuyun"
+        },
+        {
+          "title": "Çeviriyi kopyalayın",
+          "sub": "Rusça metni doğrudan teklife, e-postaya ya da mesaja yapıştırın"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Sıradan çeviri uygulamaları",
     "rows": [
-      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da Rusça konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
-      { "title": "Rusça klavye", "us": "Rusça yazmanıza gerek yok, çeviri otomatik çıkar.", "them": "Genelde Kiril klavye düzeni kurmanız istenir." },
-      { "title": "Görüşme geçmişi", "us": "Her misafir ya da müşteriyle sohbet ayrı konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
-      { "title": "İki yön aynı sohbette", "us": "Türkçe-Rusça ve Rusça-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
-      { "title": "Sesli dinleme", "us": "Rusça çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+      {
+        "title": "Nasıl başlarsınız",
+        "us": "Türkçe ya da Rusça konuşun, çeviri hemen gelir.",
+        "them": "Önce söylemek istediğinizi yazmanız gerekir."
+      },
+      {
+        "title": "Rusça klavye",
+        "us": "Rusça yazmanıza gerek yok, çeviri otomatik çıkar.",
+        "them": "Genelde Kiril klavye düzeni kurmanız istenir."
+      },
+      {
+        "title": "Görüşme geçmişi",
+        "us": "Her misafir ya da müşteriyle sohbet ayrı konu olarak saklanır.",
+        "them": "Uygulamayı kapatınca çeviri kaybolur."
+      },
+      {
+        "title": "İki yön aynı sohbette",
+        "us": "Türkçe-Rusça ve Rusça-Türkçe aynı konuda yaşar.",
+        "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir."
+      },
+      {
+        "title": "Sesli dinleme",
+        "us": "Rusça çeviriyi sesli dinlemek için dokunun.",
+        "them": "Yalnızca metin, telaffuz size kalır."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "sorular",
     "sub": "Türkçe-Rusça çeviri hakkında en çok sorulanlar.",
     "items": [
-      { "q": "Konuşulan Türkçeyi Rusçaya çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, Rusça çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
-      { "q": "Kiril alfabesi doğru görünüyor mu?", "a": "Evet, Rusça metin kendi harfleriyle gösterilir, Latin harflere çevrilmiş bir okunuş değil." },
-      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
-      { "q": "Rusçadan Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde çalışır — misafiriniz Rusça konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
-      { "q": "Turda ya da pazarda kullanmaya uygun mu?", "a": "Evet, misafir karşılama, pazarlık ya da yol tarifi gibi kısa cümleler için hızlıca sesli çeviri alırsınız." },
-      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." }
+      {
+        "q": "Konuşulan Türkçeyi Rusçaya çevirebilir mi?",
+        "a": "Evet — mikrofona dokunun, Türkçe konuşun, Rusça çeviriyi metin olarak alın, isterseniz sesli dinleyin."
+      },
+      {
+        "q": "Kiril alfabesi doğru görünüyor mu?",
+        "a": "Evet, Rusça metin kendi harfleriyle gösterilir, Latin harflere çevrilmiş bir okunuş değil."
+      },
+      {
+        "q": "Ücretsiz mi?",
+        "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz."
+      },
+      {
+        "q": "Rusçadan Türkçeye de çeviri yapılıyor mu?",
+        "a": "Evet, aynı sohbet iki yönde çalışır — misafiriniz Rusça konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz."
+      },
+      {
+        "q": "Turda ya da pazarda kullanmaya uygun mu?",
+        "a": "Evet, misafir karşılama, pazarlık ya da yol tarifi gibi kısa cümleler için hızlıca sesli çeviri alırsınız."
+      },
+      {
+        "q": "Bir şey indirmem gerekiyor mu?",
+        "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok."
+      }
     ]
   },
   "finalCta": {

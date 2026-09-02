@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mów, nie pisz",
+      "heading": "Tłumacz głosowy z polskiego na ukraiński",
       "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub ukraińsku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
       "bullets": [
-        { "title": "Mowa zamieniona na ukraiński", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po ukraińsku w kilka sekund" },
-        { "title": "Usłysz tłumaczenie na głos", "sub": "Dotknij ikony głośnika, przydatne w urzędzie albo przychodni, gdy trzeba mówić wyraźnie" }
+        {
+          "title": "Mowa zamieniona na ukraiński",
+          "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po ukraińsku w kilka sekund"
+        },
+        {
+          "title": "Usłysz tłumaczenie na głos",
+          "sub": "Dotknij ikony głośnika, przydatne w urzędzie albo przychodni, gdy trzeba mówić wyraźnie"
+        }
       ]
     },
     {
-      "heading": "Jeden wątek, obie strony rozmowy",
+      "heading": "Tłumacz do rozmowy polsko-ukraińskiej",
       "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
       "bullets": [
-        { "title": "Odpowiedź po ukraińsku, przetłumaczona na polski", "sub": "Rozmówca może mówić po ukraińsku, a Ty zobaczysz i usłyszysz to po polsku" },
-        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy z urzędu albo szkoły później, zamiast szukać jej od nowa" }
+        {
+          "title": "Odpowiedź po ukraińsku, przetłumaczona na polski",
+          "sub": "Rozmówca może mówić po ukraińsku, a Ty zobaczysz i usłyszysz to po polsku"
+        },
+        {
+          "title": "Rozmowy zapisane jako wątki",
+          "sub": "Wróć do tej samej rozmowy z urzędu albo szkoły później, zamiast szukać jej od nowa"
+        }
       ]
     },
     {
-      "heading": "Ukraińsko-polski i 185 kolejnych języków",
+      "heading": "Tłumacz online z polskiego na ukraiński",
       "sub": "Ukraiński to jeden z 186 dostępnych języków, w dowolnym kierunku.",
       "bullets": [
-        { "title": "Poprawny zapis cyrylicą", "sub": "Tłumaczenie pokazuje właściwe ukraińskie litery, gotowe do przeczytania i wysłania" },
-        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do ukraińskiego, a jutro do dowolnego innego języka" }
+        {
+          "title": "Poprawny zapis cyrylicą",
+          "sub": "Tłumaczenie pokazuje właściwe ukraińskie litery, gotowe do przeczytania i wysłania"
+        },
+        {
+          "title": "186 języków w jednym miejscu",
+          "sub": "To samo narzędzie działa dziś do ukraińskiego, a jutro do dowolnego innego języka"
+        }
       ]
     },
     {
-      "heading": "Wolisz pisać? To też działa",
+      "heading": "Tłumacz tekstowy z polskiego na ukraiński",
       "sub": "Wpisz lub wklej tekst po polsku albo ukraińsku i otrzymaj tłumaczenie bez dotykania mikrofonu — na przykład wiadomość do nauczycielki na WhatsAppie.",
       "bullets": [
-        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę, gdy w poczekalni czy klasie nie wypada mówić na głos" },
-        { "title": "Skopiuj tłumaczenie", "sub": "Wklej gotowy tekst prosto do wiadomości, e-maila albo formularza" }
+        {
+          "title": "Pisz zamiast mówić",
+          "sub": "Przełącz się na klawiaturę, gdy w poczekalni czy klasie nie wypada mówić na głos"
+        },
+        {
+          "title": "Skopiuj tłumaczenie",
+          "sub": "Wklej gotowy tekst prosto do wiadomości, e-maila albo formularza"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typowe aplikacje do tłumaczenia",
     "rows": [
-      { "title": "Jak zaczynasz", "us": "Mów po polsku lub ukraińsku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
-      { "title": "Historia rozmów", "us": "Każda rozmowa zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
-      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
-      { "title": "Obie strony rozmowy", "us": "Polsko-ukraiński i ukraińsko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
-      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+      {
+        "title": "Jak zaczynasz",
+        "us": "Mów po polsku lub ukraińsku i od razu otrzymaj tłumaczenie.",
+        "them": "Najpierw musisz przepisać, co chcesz powiedzieć."
+      },
+      {
+        "title": "Historia rozmów",
+        "us": "Każda rozmowa zapisuje się jako osobny wątek, do którego wracasz.",
+        "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację."
+      },
+      {
+        "title": "Start pracy",
+        "us": "Otwórz w przeglądarce — nic do instalowania.",
+        "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać."
+      },
+      {
+        "title": "Obie strony rozmowy",
+        "us": "Polsko-ukraiński i ukraińsko-polski w jednym wątku.",
+        "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera."
+      },
+      {
+        "title": "Odsłuchanie na głos",
+        "us": "Dotknij, aby usłyszeć tłumaczenie odczytane na głos.",
+        "them": "Tylko tekst — wymowę musisz sprawdzić sam."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "pytania",
     "sub": "Częste pytania o tłumaczenie ukraińsko-polskie.",
     "items": [
-      { "q": "Czy tłumaczy mowę z ukraińskiego na polski?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po ukraińsku, a otrzymasz tłumaczenie na polski jako tekst, z opcją odsłuchania go na głos." },
-      { "q": "Przyda się w urzędzie albo szkole?", "a": "Tak, sprawdza się przy załatwianiu spraw urzędowych, rozmowach z nauczycielem czy lekarzem, gdzie liczy się zrozumiała odpowiedź na miejscu." },
-      { "q": "Czy mogę tłumaczyć z powrotem z polskiego na ukraiński?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po polsku i odbierz tłumaczenie na ukraiński w tym samym wątku." },
-      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
-      { "q": "Czy muszę znać cyrylicę, żeby z tego korzystać?", "a": "Nie, tłumaczenie pokazuje poprawny ukraiński tekst na ekranie i może je odczytać na głos, więc nie musisz umieć go czytać." },
-      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+      {
+        "q": "Czy tłumaczy mowę z ukraińskiego na polski?",
+        "a": "Tak — dotknij mikrofonu, powiedz zdanie po ukraińsku, a otrzymasz tłumaczenie na polski jako tekst, z opcją odsłuchania go na głos."
+      },
+      {
+        "q": "Przyda się w urzędzie albo szkole?",
+        "a": "Tak, sprawdza się przy załatwianiu spraw urzędowych, rozmowach z nauczycielem czy lekarzem, gdzie liczy się zrozumiała odpowiedź na miejscu."
+      },
+      {
+        "q": "Czy mogę tłumaczyć z powrotem z polskiego na ukraiński?",
+        "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po polsku i odbierz tłumaczenie na ukraiński w tym samym wątku."
+      },
+      {
+        "q": "Czy to jest darmowe?",
+        "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię."
+      },
+      {
+        "q": "Czy muszę znać cyrylicę, żeby z tego korzystać?",
+        "a": "Nie, tłumaczenie pokazuje poprawny ukraiński tekst na ekranie i może je odczytać na głos, więc nie musisz umieć go czytać."
+      },
+      {
+        "q": "Czy trzeba coś instalować?",
+        "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania."
+      }
     ]
   },
   "finalCta": {

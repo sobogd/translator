@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Escritura de derecha a izquierda",
+      "heading": "Traductor de voz de español a árabe",
       "sub": "No necesitas teclado árabe ni transliteración: pega el mensaje o habla.",
       "bullets": [
-        { "title": "Pega el árabe tal cual", "sub": "Las letras enlazadas y el orden se mantienen intactos" },
-        { "title": "Habla y sale en árabe", "sub": "Di la frase en español y aparece escrita, lista para enviar o leer en voz alta" }
+        {
+          "title": "Pega el árabe tal cual",
+          "sub": "Las letras enlazadas y el orden se mantienen intactos"
+        },
+        {
+          "title": "Habla y sale en árabe",
+          "sub": "Di la frase en español y aparece escrita, lista para enviar o leer en voz alta"
+        }
       ]
     },
     {
-      "heading": "Dialecto o árabe estándar",
+      "heading": "Traductor para conversación en árabe",
       "sub": "El darija marroquí, el egipcio o el del Golfo se alejan mucho del árabe de los libros.",
       "bullets": [
-        { "title": "El habla real, en contexto", "sub": "Se traduce lo que se quiso decir, no lo que dice el diccionario formal" },
-        { "title": "También el árabe culto", "sub": "Cartas oficiales y textos formales salen en español claro" }
+        {
+          "title": "El habla real, en contexto",
+          "sub": "Se traduce lo que se quiso decir, no lo que dice el diccionario formal"
+        },
+        {
+          "title": "También el árabe culto",
+          "sub": "Cartas oficiales y textos formales salen en español claro"
+        }
       ]
     },
     {
-      "heading": "Vecindario, trabajo y colegio",
+      "heading": "Traductor online sin instalar nada",
       "sub": "Conversaciones cotidianas donde no hay intérprete y hay que entenderse ya.",
       "bullets": [
-        { "title": "Los dos sentidos", "sub": "Te hablan en árabe y lo lees en español; respondes en español y lo oyen en árabe" },
-        { "title": "Cada persona, su tema", "sub": "La conversación queda guardada y se retoma cuando vuelve a escribir" }
+        {
+          "title": "Los dos sentidos",
+          "sub": "Te hablan en árabe y lo lees en español; respondes en español y lo oyen en árabe"
+        },
+        {
+          "title": "Cada persona, su tema",
+          "sub": "La conversación queda guardada y se retoma cuando vuelve a escribir"
+        }
       ]
     },
     {
-      "heading": "O pega el documento",
+      "heading": "Traductor de texto en árabe",
       "sub": "Un mensaje, un certificado, una carta.",
       "bullets": [
-        { "title": "Texto largo de una vez", "sub": "Un párrafo entero en lugar de frase a frase" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo sirve para cualquier otro idioma" }
+        {
+          "title": "Texto largo de una vez",
+          "sub": "Un párrafo entero en lugar de frase a frase"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo sirve para cualquier otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te hablan en árabe", "us": "Grabas y lo lees en español.", "them": "Tendrías que escribir un alfabeto que no tienes." },
-      { "title": "Dialectos", "us": "Se leen en su contexto.", "them": "Solo se entiende el árabe estándar." },
-      { "title": "Responder", "us": "Escribes en español y sale en árabe.", "them": "Otra traducción aparte." },
-      { "title": "Historial", "us": "Conversaciones guardadas como temas.", "them": "No se guarda nada." },
-      { "title": "Empezar", "us": "Navegador y micrófono.", "them": "App y teclado árabe." }
+      {
+        "title": "Te hablan en árabe",
+        "us": "Grabas y lo lees en español.",
+        "them": "Tendrías que escribir un alfabeto que no tienes."
+      },
+      {
+        "title": "Dialectos",
+        "us": "Se leen en su contexto.",
+        "them": "Solo se entiende el árabe estándar."
+      },
+      {
+        "title": "Responder",
+        "us": "Escribes en español y sale en árabe.",
+        "them": "Otra traducción aparte."
+      },
+      {
+        "title": "Historial",
+        "us": "Conversaciones guardadas como temas.",
+        "them": "No se guarda nada."
+      },
+      {
+        "title": "Empezar",
+        "us": "Navegador y micrófono.",
+        "them": "App y teclado árabe."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al árabe.",
     "items": [
-      { "q": "¿Necesito teclado árabe?", "a": "No. Habla al micrófono o pega el texto que te enviaron; no tienes que escribir en árabe." },
-      { "q": "¿Entiende el dariya o el egipcio?", "a": "El habla cotidiana se traduce en contexto en lugar de forzarla al árabe estándar, que es donde fallan la mayoría de herramientas." },
-      { "q": "¿Se ve bien la escritura árabe?", "a": "Sí, el sentido derecha a izquierda y las letras enlazadas se conservan al pegar y al traducir de vuelta." },
-      { "q": "¿Funciona de árabe a español?", "a": "Sí, la misma conversación va en los dos sentidos y se puede escuchar en voz alta." },
-      { "q": "¿Puedo traducir una carta oficial?", "a": "Sí, pega el documento completo y léelo en español." },
-      { "q": "¿Es gratis?", "a": "Sí, con margen gratuito sin cuenta y más cuota mensual con Google." }
+      {
+        "q": "¿Necesito teclado árabe?",
+        "a": "No. Habla al micrófono o pega el texto que te enviaron; no tienes que escribir en árabe."
+      },
+      {
+        "q": "¿Entiende el dariya o el egipcio?",
+        "a": "El habla cotidiana se traduce en contexto en lugar de forzarla al árabe estándar, que es donde fallan la mayoría de herramientas."
+      },
+      {
+        "q": "¿Se ve bien la escritura árabe?",
+        "a": "Sí, el sentido derecha a izquierda y las letras enlazadas se conservan al pegar y al traducir de vuelta."
+      },
+      {
+        "q": "¿Funciona de árabe a español?",
+        "a": "Sí, la misma conversación va en los dos sentidos y se puede escuchar en voz alta."
+      },
+      {
+        "q": "¿Puedo traducir una carta oficial?",
+        "a": "Sí, pega el documento completo y léelo en español."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, con margen gratuito sin cuenta y más cuota mensual con Google."
+      }
     ]
   },
   "finalCta": {

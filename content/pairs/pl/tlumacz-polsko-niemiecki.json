@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mów, nie pisz",
+      "heading": "Tłumacz głosowy polsko-niemiecki",
       "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub niemiecku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
       "bullets": [
-        { "title": "Mowa zamieniona na niemiecki", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po niemiecku w kilka sekund" },
-        { "title": "Usłysz niemiecki na głos", "sub": "Dotknij ikony głośnika, gdy trzeba dogadać się z brygadzistą albo urzędnikiem" }
+        {
+          "title": "Mowa zamieniona na niemiecki",
+          "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po niemiecku w kilka sekund"
+        },
+        {
+          "title": "Usłysz niemiecki na głos",
+          "sub": "Dotknij ikony głośnika, gdy trzeba dogadać się z brygadzistą albo urzędnikiem"
+        }
       ]
     },
     {
-      "heading": "Jeden wątek, obie strony rozmowy",
+      "heading": "Tłumacz do rozmów polsko-niemieckich",
       "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
       "bullets": [
-        { "title": "Odpowiedź po niemiecku, przetłumaczona na polski", "sub": "Kolega z pracy albo szef może mówić po niemiecku, a Ty zobaczysz i usłyszysz to po polsku" },
-        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy po niemiecku później, zamiast szukać jej od nowa" }
+        {
+          "title": "Odpowiedź po niemiecku, przetłumaczona na polski",
+          "sub": "Kolega z pracy albo szef może mówić po niemiecku, a Ty zobaczysz i usłyszysz to po polsku"
+        },
+        {
+          "title": "Rozmowy zapisane jako wątki",
+          "sub": "Wróć do tej samej rozmowy po niemiecku później, zamiast szukać jej od nowa"
+        }
       ]
     },
     {
-      "heading": "Polsko-niemiecki i 185 kolejnych języków",
+      "heading": "Tłumacz online bez instalowania",
       "sub": "Niemiecki to jeden z 186 dostępnych języków, w dowolnym kierunku.",
       "bullets": [
-        { "title": "Poprawne umlauty i ß", "sub": "Znaki takie jak ä, ö, ü i ß są obsługiwane poprawnie zarówno w tekście, jak i w wymowie" },
-        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do niemieckiego, a jutro do dowolnego innego języka" }
+        {
+          "title": "Poprawne umlauty i ß",
+          "sub": "Znaki takie jak ä, ö, ü i ß są obsługiwane poprawnie zarówno w tekście, jak i w wymowie"
+        },
+        {
+          "title": "186 języków w jednym miejscu",
+          "sub": "To samo narzędzie działa dziś do niemieckiego, a jutro do dowolnego innego języka"
+        }
       ]
     },
     {
-      "heading": "Wolisz pisać? To też działa",
+      "heading": "Tłumacz tekstowy z polskiego na niemiecki",
       "sub": "Wpisz lub wklej polski tekst i otrzymaj tłumaczenie na niemiecki bez dotykania mikrofonu — na przykład wiadomość na WhatsAppie do pracodawcy.",
       "bullets": [
-        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę w hałaśliwej hali produkcyjnej albo w cichym biurze" },
-        { "title": "Skopiuj tłumaczenie", "sub": "Wklej niemiecki tekst prosto do e-maila, formularza albo wiadomości" }
+        {
+          "title": "Pisz zamiast mówić",
+          "sub": "Przełącz się na klawiaturę w hałaśliwej hali produkcyjnej albo w cichym biurze"
+        },
+        {
+          "title": "Skopiuj tłumaczenie",
+          "sub": "Wklej niemiecki tekst prosto do e-maila, formularza albo wiadomości"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typowe aplikacje do tłumaczenia",
     "rows": [
-      { "title": "Jak zaczynasz", "us": "Mów po polsku lub niemiecku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
-      { "title": "Historia rozmów", "us": "Każda rozmowa po niemiecku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
-      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
-      { "title": "Obie strony rozmowy", "us": "Polsko-niemiecki i niemiecko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
-      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć niemieckie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+      {
+        "title": "Jak zaczynasz",
+        "us": "Mów po polsku lub niemiecku i od razu otrzymaj tłumaczenie.",
+        "them": "Najpierw musisz przepisać, co chcesz powiedzieć."
+      },
+      {
+        "title": "Historia rozmów",
+        "us": "Każda rozmowa po niemiecku zapisuje się jako osobny wątek, do którego wracasz.",
+        "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację."
+      },
+      {
+        "title": "Start pracy",
+        "us": "Otwórz w przeglądarce — nic do instalowania.",
+        "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać."
+      },
+      {
+        "title": "Obie strony rozmowy",
+        "us": "Polsko-niemiecki i niemiecko-polski w jednym wątku.",
+        "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera."
+      },
+      {
+        "title": "Odsłuchanie na głos",
+        "us": "Dotknij, aby usłyszeć niemieckie tłumaczenie odczytane na głos.",
+        "them": "Tylko tekst — wymowę musisz sprawdzić sam."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "pytania",
     "sub": "Częste pytania o tłumaczenie polsko-niemieckie.",
     "items": [
-      { "q": "Czy tłumaczy mowę z polskiego na niemiecki?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na niemiecki jako tekst, z opcją odsłuchania go na głos." },
-      { "q": "Czy poradzi sobie z niemieckimi umlautami?", "a": "Tak, znaki ä, ö, ü i ß są obsługiwane poprawnie zarówno w zapisie, jak i w odczytywanej na głos wymowie." },
-      { "q": "Czy mogę tłumaczyć z powrotem z niemieckiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po niemiecku i odbierz tłumaczenie na polski w tym samym wątku." },
-      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
-      { "q": "Przyda się do pracy w Niemczech?", "a": "Tak, sprawdza się w rozmowach z pracodawcą, w dojazdach do pracy i przy załatwianiu codziennych spraw, gdzie liczy się szybka odpowiedź." },
-      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+      {
+        "q": "Czy tłumaczy mowę z polskiego na niemiecki?",
+        "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na niemiecki jako tekst, z opcją odsłuchania go na głos."
+      },
+      {
+        "q": "Czy poradzi sobie z niemieckimi umlautami?",
+        "a": "Tak, znaki ä, ö, ü i ß są obsługiwane poprawnie zarówno w zapisie, jak i w odczytywanej na głos wymowie."
+      },
+      {
+        "q": "Czy mogę tłumaczyć z powrotem z niemieckiego na polski?",
+        "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po niemiecku i odbierz tłumaczenie na polski w tym samym wątku."
+      },
+      {
+        "q": "Czy to jest darmowe?",
+        "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię."
+      },
+      {
+        "q": "Przyda się do pracy w Niemczech?",
+        "a": "Tak, sprawdza się w rozmowach z pracodawcą, w dojazdach do pracy i przy załatwianiu codziennych spraw, gdzie liczy się szybka odpowiedź."
+      },
+      {
+        "q": "Czy trzeba coś instalować?",
+        "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania."
+      }
     ]
   },
   "finalCta": {

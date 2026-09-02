@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Prata istället för att skriva",
+      "heading": "Röströstöversättare från svenska till finska",
       "sub": "Tryck på mikrofonen, säg det på svenska eller finska, och läs eller lyssna på översättningen.",
       "bullets": [
-        { "title": "Tal blir till finska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på finska några sekunder senare" },
-        { "title": "Lyssna på finskan", "sub": "Tryck på högtalarikonen för att höra ordet eller frasen uttalad rätt" }
+        {
+          "title": "Tal blir till finska",
+          "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på finska några sekunder senare"
+        },
+        {
+          "title": "Lyssna på finskan",
+          "sub": "Tryck på högtalarikonen för att höra ordet eller frasen uttalad rätt"
+        }
       ]
     },
     {
-      "heading": "Ett ämne, båda sidorna av samtalet",
+      "heading": "Konversationsöversättare för svenska och finska",
       "sub": "Perfekt för kontakt med släkt, vänner eller kollegor i Finland — hela samtalet hamnar i samma ämne.",
       "bullets": [
-        { "title": "Svara på finska, översatt till svenska", "sub": "Den du pratar med kan säga det på finska och du ser och hör det på svenska" },
-        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma Finland-tråd nästa gång ni hörs, i mejl eller WhatsApp" }
+        {
+          "title": "Svara på finska, översatt till svenska",
+          "sub": "Den du pratar med kan säga det på finska och du ser och hör det på svenska"
+        },
+        {
+          "title": "Samtal sparas som ämnen",
+          "sub": "Kom tillbaka till samma Finland-tråd nästa gång ni hörs, i mejl eller WhatsApp"
+        }
       ]
     },
     {
-      "heading": "Svenska–finska, plus 185 språk till",
+      "heading": "Översätt svenska till finska online utan app",
       "sub": "Finska är ett av 186 tillgängliga språk, åt vilket håll du vill — praktiskt även om du redan pratar finlandssvenska hemma.",
       "bullets": [
-        { "title": "Klarar ett helt annat språk, inte bara ett grannspråk", "sub": "Finskan har annan grammatik och andra ord än svenskan, så en riktig översättning gör skillnad" },
-        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för finska idag och vilket annat språk som helst imorgon" }
+        {
+          "title": "Klarar ett helt annat språk, inte bara ett grannspråk",
+          "sub": "Finskan har annan grammatik och andra ord än svenskan, så en riktig översättning gör skillnad"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samma verktyg fungerar för finska idag och vilket annat språk som helst imorgon"
+        }
       ]
     },
     {
-      "heading": "Föredrar du att skriva? Det går också",
+      "heading": "Textöversättare från svenska till finska",
       "sub": "Skriv eller klistra in svensk text och få en finsk översättning utan att röra mikrofonen.",
       "bullets": [
-        { "title": "Skriv istället för att prata", "sub": "Praktiskt för ett mejl till en finsk myndighet eller ett meddelande till släkten" },
-        { "title": "Kopiera översättningen", "sub": "Kopiera den finska texten direkt till mejlet eller meddelandet" }
+        {
+          "title": "Skriv istället för att prata",
+          "sub": "Praktiskt för ett mejl till en finsk myndighet eller ett meddelande till släkten"
+        },
+        {
+          "title": "Kopiera översättningen",
+          "sub": "Kopiera den finska texten direkt till mejlet eller meddelandet"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanliga översättningsappar",
     "rows": [
-      { "title": "Hur du börjar", "us": "Prata på svenska eller finska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
-      { "title": "Ett riktigt annat språk", "us": "Klarar finskans egen grammatik, inte bara utbytbara ord som mellan de nordiska språken.", "them": "Bygger ofta på ordbyten som fungerar sämre ju mer språken skiljer sig åt." },
-      { "title": "Samtalshistorik", "us": "Varje finska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
-      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
-      { "title": "Att höra svaret", "us": "Tryck för att få den finska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+      {
+        "title": "Hur du börjar",
+        "us": "Prata på svenska eller finska och få en översättning direkt.",
+        "them": "Du måste skriva det du vill säga först."
+      },
+      {
+        "title": "Ett riktigt annat språk",
+        "us": "Klarar finskans egen grammatik, inte bara utbytbara ord som mellan de nordiska språken.",
+        "them": "Bygger ofta på ordbyten som fungerar sämre ju mer språken skiljer sig åt."
+      },
+      {
+        "title": "Samtalshistorik",
+        "us": "Varje finska-samtal sparas som ett eget ämne du kan öppna igen.",
+        "them": "Varje översättning försvinner när du stänger appen."
+      },
+      {
+        "title": "Komma igång",
+        "us": "Öppna i en webbläsarflik — inget att installera.",
+        "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den."
+      },
+      {
+        "title": "Att höra svaret",
+        "us": "Tryck för att få den finska översättningen uppläst.",
+        "them": "Bara text, så uttalet får du klara själv."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frågor",
     "sub": "Vanliga frågor om att översätta mellan svenska och finska.",
     "items": [
-      { "q": "Varför är finska svårare att översätta än danska eller norska?", "a": "Finska tillhör en helt annan språkfamilj än svenskan, med annan grammatik och ordförråd, så en riktig översättning behövs — det räcker inte att gissa utifrån stavningen." },
-      { "q": "Kan den översätta talad svenska till finska?", "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en finsk översättning som text, med möjlighet att lyssna på den." },
-      { "q": "Kan jag översätta tillbaka från finska till svenska?", "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på finska och få den svenska översättningen i samma ämne." },
-      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
-      { "q": "Fungerar den även om jag redan pratar finlandssvenska?", "a": "Ja, den är till för det finska språket specifikt, som ett komplement även om svenska redan pratas i familjen eller på orten." },
-      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." }
+      {
+        "q": "Varför är finska svårare att översätta än danska eller norska?",
+        "a": "Finska tillhör en helt annan språkfamilj än svenskan, med annan grammatik och ordförråd, så en riktig översättning behövs — det räcker inte att gissa utifrån stavningen."
+      },
+      {
+        "q": "Kan den översätta talad svenska till finska?",
+        "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en finsk översättning som text, med möjlighet att lyssna på den."
+      },
+      {
+        "q": "Kan jag översätta tillbaka från finska till svenska?",
+        "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på finska och få den svenska översättningen i samma ämne."
+      },
+      {
+        "q": "Är det gratis?",
+        "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik."
+      },
+      {
+        "q": "Fungerar den även om jag redan pratar finlandssvenska?",
+        "a": "Ja, den är till för det finska språket specifikt, som ett komplement även om svenska redan pratas i familjen eller på orten."
+      },
+      {
+        "q": "Behöver jag installera något?",
+        "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mów, nie pisz",
+      "heading": "Tłumacz głosowy polsko-francuski online",
       "sub": "Dotknij mikrofonu, powiedz zdanie po polsku lub francusku i odbierz tłumaczenie do przeczytania albo odsłuchania.",
       "bullets": [
-        { "title": "Mowa zamieniona na francuski", "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po francusku w kilka sekund" },
-        { "title": "Usłysz francuski na głos", "sub": "Dotknij ikony głośnika, gdy wymowa nosowych głosek jeszcze sprawia trudność" }
+        {
+          "title": "Mowa zamieniona na francuski",
+          "sub": "Powiedz zdanie po polsku — Twoje słowa są rozpoznawane, tłumaczone i pokazane po francusku w kilka sekund"
+        },
+        {
+          "title": "Usłysz francuski na głos",
+          "sub": "Dotknij ikony głośnika, gdy wymowa nosowych głosek jeszcze sprawia trudność"
+        }
       ]
     },
     {
-      "heading": "Jeden wątek, obie strony rozmowy",
+      "heading": "Tłumacz do rozmowy po francusku",
       "sub": "Rozmawiaj tam i z powrotem bez zaczynania od nowa — każda wymiana zostaje w tym samym wątku.",
       "bullets": [
-        { "title": "Odpowiedź po francusku, przetłumaczona na polski", "sub": "Rozmówca może mówić po francusku, a Ty zobaczysz i usłyszysz to po polsku" },
-        { "title": "Rozmowy zapisane jako wątki", "sub": "Wróć do tej samej rozmowy z podróży albo pracy później, zamiast szukać jej od nowa" }
+        {
+          "title": "Odpowiedź po francusku, przetłumaczona na polski",
+          "sub": "Rozmówca może mówić po francusku, a Ty zobaczysz i usłyszysz to po polsku"
+        },
+        {
+          "title": "Rozmowy zapisane jako wątki",
+          "sub": "Wróć do tej samej rozmowy z podróży albo pracy później, zamiast szukać jej od nowa"
+        }
       ]
     },
     {
-      "heading": "Francusko-polski i 185 kolejnych języków",
+      "heading": "Tłumaczenia online dla 186 języków",
       "sub": "Francuski to jeden z 186 dostępnych języków, w dowolnym kierunku.",
       "bullets": [
-        { "title": "Poprawnie z akcentami francuskimi", "sub": "Znaki takie jak é, è, ê, ç i œ są obsługiwane poprawnie w tekście i w wymowie" },
-        { "title": "186 języków w jednym miejscu", "sub": "To samo narzędzie działa dziś do francuskiego, a jutro do dowolnego innego języka" }
+        {
+          "title": "Poprawnie z akcentami francuskimi",
+          "sub": "Znaki takie jak é, è, ê, ç i œ są obsługiwane poprawnie w tekście i w wymowie"
+        },
+        {
+          "title": "186 języków w jednym miejscu",
+          "sub": "To samo narzędzie działa dziś do francuskiego, a jutro do dowolnego innego języka"
+        }
       ]
     },
     {
-      "heading": "Wolisz pisać? To też działa",
+      "heading": "Tłumacz tekstowy z polskiego na francuski",
       "sub": "Wpisz lub wklej tekst po polsku albo francusku i otrzymaj tłumaczenie bez dotykania mikrofonu — na przykład wiadomość do wynajmującego mieszkanie.",
       "bullets": [
-        { "title": "Pisz zamiast mówić", "sub": "Przełącz się na klawiaturę w hałaśliwej kawiarni albo cichym biurze" },
-        { "title": "Skopiuj tłumaczenie", "sub": "Wklej francuski tekst prosto do e-maila albo wiadomości" }
+        {
+          "title": "Pisz zamiast mówić",
+          "sub": "Przełącz się na klawiaturę w hałaśliwej kawiarni albo cichym biurze"
+        },
+        {
+          "title": "Skopiuj tłumaczenie",
+          "sub": "Wklej francuski tekst prosto do e-maila albo wiadomości"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typowe aplikacje do tłumaczenia",
     "rows": [
-      { "title": "Jak zaczynasz", "us": "Mów po polsku lub francusku i od razu otrzymaj tłumaczenie.", "them": "Najpierw musisz przepisać, co chcesz powiedzieć." },
-      { "title": "Historia rozmów", "us": "Każda rozmowa po francusku zapisuje się jako osobny wątek, do którego wracasz.", "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację." },
-      { "title": "Start pracy", "us": "Otwórz w przeglądarce — nic do instalowania.", "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać." },
-      { "title": "Obie strony rozmowy", "us": "Polsko-francuski i francusko-polski w jednym wątku.", "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera." },
-      { "title": "Odsłuchanie na głos", "us": "Dotknij, aby usłyszeć francuskie tłumaczenie odczytane na głos.", "them": "Tylko tekst — wymowę musisz sprawdzić sam." }
+      {
+        "title": "Jak zaczynasz",
+        "us": "Mów po polsku lub francusku i od razu otrzymaj tłumaczenie.",
+        "them": "Najpierw musisz przepisać, co chcesz powiedzieć."
+      },
+      {
+        "title": "Historia rozmów",
+        "us": "Każda rozmowa po francusku zapisuje się jako osobny wątek, do którego wracasz.",
+        "them": "Tłumaczenie znika, gdy tylko zamkniesz aplikację."
+      },
+      {
+        "title": "Start pracy",
+        "us": "Otwórz w przeglądarce — nic do instalowania.",
+        "them": "Pobierz aplikację i przyznaj uprawnienia, zanim zaczniesz korzystać."
+      },
+      {
+        "title": "Obie strony rozmowy",
+        "us": "Polsko-francuski i francusko-polski w jednym wątku.",
+        "them": "Zmiana kierunku zwykle oznacza nowe tłumaczenie od zera."
+      },
+      {
+        "title": "Odsłuchanie na głos",
+        "us": "Dotknij, aby usłyszeć francuskie tłumaczenie odczytane na głos.",
+        "them": "Tylko tekst — wymowę musisz sprawdzić sam."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "pytania",
     "sub": "Częste pytania o tłumaczenie francusko-polskie.",
     "items": [
-      { "q": "Czy tłumaczy mowę z polskiego na francuski?", "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na francuski jako tekst, z opcją odsłuchania go na głos." },
-      { "q": "Czy poradzi sobie z francuskimi akcentami?", "a": "Tak, znaki é, è, ê, ç i œ są obsługiwane poprawnie zarówno w zapisie, jak i w odczytywanej na głos wymowie." },
-      { "q": "Czy mogę tłumaczyć z powrotem z francuskiego na polski?", "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po francusku i odbierz tłumaczenie na polski w tym samym wątku." },
-      { "q": "Czy to jest darmowe?", "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię." },
-      { "q": "Przyda się na wakacjach we Francji?", "a": "Tak, sprawdza się w restauracji, hotelu, na lotnisku i w codziennych rozmowach podczas podróży." },
-      { "q": "Czy trzeba coś instalować?", "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania." }
+      {
+        "q": "Czy tłumaczy mowę z polskiego na francuski?",
+        "a": "Tak — dotknij mikrofonu, powiedz zdanie po polsku, a otrzymasz tłumaczenie na francuski jako tekst, z opcją odsłuchania go na głos."
+      },
+      {
+        "q": "Czy poradzi sobie z francuskimi akcentami?",
+        "a": "Tak, znaki é, è, ê, ç i œ są obsługiwane poprawnie zarówno w zapisie, jak i w odczytywanej na głos wymowie."
+      },
+      {
+        "q": "Czy mogę tłumaczyć z powrotem z francuskiego na polski?",
+        "a": "Tak, ta sama rozmowa działa w obie strony — mów lub pisz po francusku i odbierz tłumaczenie na polski w tym samym wątku."
+      },
+      {
+        "q": "Czy to jest darmowe?",
+        "a": "Tak, możesz wypróbować za darmo bez zakładania konta. Zaloguj się przez Google, aby mieć więcej dziennych kredytów i zapisaną historię."
+      },
+      {
+        "q": "Przyda się na wakacjach we Francji?",
+        "a": "Tak, sprawdza się w restauracji, hotelu, na lotnisku i w codziennych rozmowach podczas podróży."
+      },
+      {
+        "q": "Czy trzeba coś instalować?",
+        "a": "Nie, działa w przeglądarce na komputerze i telefonie — nic do pobrania."
+      }
     ]
   },
   "finalCta": {

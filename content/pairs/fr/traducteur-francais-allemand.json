@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parlez, n'écrivez pas",
+      "heading": "Traducteur vocal français allemand instantané",
       "sub": "Appuyez sur le micro, dites-le en français ou en allemand, et lisez ou écoutez la traduction.",
       "bullets": [
-        { "title": "Votre voix devient de l'allemand", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en allemand quelques secondes plus tard" },
-        { "title": "Écoutez l'allemand à voix haute", "sub": "Appuyez sur le haut-parleur pour entendre la prononciation quand un mot compte long vous résiste" }
+        {
+          "title": "Votre voix devient de l'allemand",
+          "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en allemand quelques secondes plus tard"
+        },
+        {
+          "title": "Écoutez l'allemand à voix haute",
+          "sub": "Appuyez sur le haut-parleur pour entendre la prononciation quand un mot compte long vous résiste"
+        }
       ]
     },
     {
-      "heading": "Un seul fil, les deux côtés de l'échange",
+      "heading": "Traducteur de conversation français allemand",
       "sub": "Discutez dans les deux sens sans repartir de zéro — chaque échange reste dans le même sujet, pratique pour le travail comme pour les démarches.",
       "bullets": [
-        { "title": "Réponse en allemand, traduite en français", "sub": "Votre interlocuteur peut parler allemand, vous le voyez et l'entendez en français" },
-        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en allemand plus tard au lieu de perdre le fil" }
+        {
+          "title": "Réponse en allemand, traduite en français",
+          "sub": "Votre interlocuteur peut parler allemand, vous le voyez et l'entendez en français"
+        },
+        {
+          "title": "Conversations enregistrées comme sujets",
+          "sub": "Retrouvez la même discussion en allemand plus tard au lieu de perdre le fil"
+        }
       ]
     },
     {
-      "heading": "Français-allemand, plus 184 autres langues",
+      "heading": "Traducteur en ligne français allemand gratuit",
       "sub": "L'allemand est l'une des 186 langues disponibles, dans les deux sens.",
       "bullets": [
-        { "title": "Précis avec les mots composés", "sub": "Traduit correctement les longs mots allemands assemblés, sans les découper au hasard" },
-        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour l'allemand et demain pour toute autre langue" }
+        {
+          "title": "Précis avec les mots composés",
+          "sub": "Traduit correctement les longs mots allemands assemblés, sans les découper au hasard"
+        },
+        {
+          "title": "186 langues au total",
+          "sub": "Le même outil fonctionne aujourd'hui pour l'allemand et demain pour toute autre langue"
+        }
       ]
     },
     {
-      "heading": "Vous préférez taper ? C'est possible aussi",
+      "heading": "Traducteur de texte français allemand",
       "sub": "Tapez ou collez du texte en français et obtenez la traduction allemande sans toucher au micro — pratique pour un e-mail professionnel.",
       "bullets": [
-        { "title": "Taper plutôt que parler", "sub": "Utile en réunion silencieuse ou pour traduire un document écrit" },
-        { "title": "Copier la traduction", "sub": "Récupérez le texte allemand pour le coller dans un e-mail ou un message" }
+        {
+          "title": "Taper plutôt que parler",
+          "sub": "Utile en réunion silencieuse ou pour traduire un document écrit"
+        },
+        {
+          "title": "Copier la traduction",
+          "sub": "Récupérez le texte allemand pour le coller dans un e-mail ou un message"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Applications de traduction classiques",
     "rows": [
-      { "title": "Pour commencer", "us": "Parlez en français ou en allemand et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire." },
-      { "title": "Historique des échanges", "us": "Chaque conversation en allemand est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
-      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
-      { "title": "Les deux sens", "us": "Français vers allemand et allemand vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
-      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction allemande lue à voix haute.", "them": "Texte uniquement, la prononciation reste à votre charge." }
+      {
+        "title": "Pour commencer",
+        "us": "Parlez en français ou en allemand et obtenez une traduction aussitôt.",
+        "them": "Il faut d'abord taper ce que vous voulez dire."
+      },
+      {
+        "title": "Historique des échanges",
+        "us": "Chaque conversation en allemand est enregistrée comme un sujet que vous pouvez rouvrir.",
+        "them": "Chaque traduction disparaît une fois l'application fermée."
+      },
+      {
+        "title": "Mise en route",
+        "us": "Ouvrez un onglet dans le navigateur — rien à installer.",
+        "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser."
+      },
+      {
+        "title": "Les deux sens",
+        "us": "Français vers allemand et allemand vers français vivent dans le même fil.",
+        "them": "Changer de sens revient souvent à démarrer une nouvelle traduction."
+      },
+      {
+        "title": "Écouter le résultat",
+        "us": "Appuyez pour entendre la traduction allemande lue à voix haute.",
+        "them": "Texte uniquement, la prononciation reste à votre charge."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "fréquentes",
     "sub": "Les questions courantes sur la traduction du français vers l'allemand.",
     "items": [
-      { "q": "Peut-il traduire du français parlé en allemand ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction allemande sous forme de texte, avec une option pour l'écouter à voix haute." },
-      { "q": "Gère-t-il les longs mots composés allemands ?", "a": "Oui, les mots composés typiques de l'allemand sont traduits selon leur sens réel, pas découpés arbitrairement." },
-      { "q": "Puis-je traduire de l'allemand vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en allemand et obtenez la traduction française dans le même sujet." },
-      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
-      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." },
-      { "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?", "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en allemand reste au même endroit au lieu de se disperser." }
+      {
+        "q": "Peut-il traduire du français parlé en allemand ?",
+        "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction allemande sous forme de texte, avec une option pour l'écouter à voix haute."
+      },
+      {
+        "q": "Gère-t-il les longs mots composés allemands ?",
+        "a": "Oui, les mots composés typiques de l'allemand sont traduits selon leur sens réel, pas découpés arbitrairement."
+      },
+      {
+        "q": "Puis-je traduire de l'allemand vers le français ?",
+        "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en allemand et obtenez la traduction française dans le même sujet."
+      },
+      {
+        "q": "Est-ce gratuit ?",
+        "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré."
+      },
+      {
+        "q": "Dois-je installer quelque chose ?",
+        "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger."
+      },
+      {
+        "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?",
+        "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en allemand reste au même endroit au lieu de se disperser."
+      }
     ]
   },
   "finalCta": {

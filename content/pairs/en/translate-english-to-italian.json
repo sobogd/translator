@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speak English, hear it in Italian",
+      "heading": "Voice translator from English to Italian",
       "sub": "Tap the mic and talk — your speech becomes an Italian translation seconds later.",
       "bullets": [
-        { "title": "Spoken English becomes Italian text", "sub": "Say it out loud and see the translation appear with correct spelling and accents" },
-        { "title": "Hear the Italian spoken aloud", "sub": "Tap the speaker for pronunciation, especially useful for double consonants" }
+        {
+          "title": "Spoken English becomes Italian text",
+          "sub": "Say it out loud and see the translation appear with correct spelling and accents"
+        },
+        {
+          "title": "Hear the Italian spoken aloud",
+          "sub": "Tap the speaker for pronunciation, especially useful for double consonants"
+        }
       ]
     },
     {
-      "heading": "A conversation that stays together",
+      "heading": "Italian conversation translator for two-way chat",
       "sub": "Whoever replies in Italian gets translated back to English instantly, in the same thread.",
       "bullets": [
-        { "title": "Italian replies translated back", "sub": "The other person speaks Italian, you see and hear the English meaning" },
-        { "title": "Saved as a topic", "sub": "Reopen the same Italian conversation later instead of losing it" }
+        {
+          "title": "Italian replies translated back",
+          "sub": "The other person speaks Italian, you see and hear the English meaning"
+        },
+        {
+          "title": "Saved as a topic",
+          "sub": "Reopen the same Italian conversation later instead of losing it"
+        }
       ]
     },
     {
-      "heading": "Italian, grammatically correct",
+      "heading": "Online translator for English, Italian, and more",
       "sub": "Italian is one of 186 languages available, with gendered nouns and agreement handled properly.",
       "bullets": [
-        { "title": "Correct gender and agreement", "sub": "Nouns, articles, and adjectives line up correctly instead of a rough word swap" },
-        { "title": "186 languages total", "sub": "The same tool covers Italian today and any other language you need next" }
+        {
+          "title": "Correct gender and agreement",
+          "sub": "Nouns, articles, and adjectives line up correctly instead of a rough word swap"
+        },
+        {
+          "title": "186 languages total",
+          "sub": "The same tool covers Italian today and any other language you need next"
+        }
       ]
     },
     {
-      "heading": "Or just type it",
+      "heading": "English to Italian text translator",
       "sub": "Paste or type English text and get an Italian translation without recording your voice.",
       "bullets": [
-        { "title": "Type instead of speak", "sub": "Handy for emails, forms, or a quiet room" },
-        { "title": "Copy the Italian text", "sub": "Copy the result straight into a message or document" }
+        {
+          "title": "Type instead of speak",
+          "sub": "Handy for emails, forms, or a quiet room"
+        },
+        {
+          "title": "Copy the Italian text",
+          "sub": "Copy the result straight into a message or document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "How you start", "us": "Speak in English or Italian and get a translation right away.", "them": "Type your sentence out first." },
-      { "title": "Hearing pronunciation", "us": "Tap to hear the Italian translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
-      { "title": "Conversation history", "us": "Every Italian conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
-      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
-      { "title": "Both directions", "us": "English to Italian and Italian to English in one thread.", "them": "Switching direction usually means starting over." }
+      {
+        "title": "How you start",
+        "us": "Speak in English or Italian and get a translation right away.",
+        "them": "Type your sentence out first."
+      },
+      {
+        "title": "Hearing pronunciation",
+        "us": "Tap to hear the Italian translation spoken aloud.",
+        "them": "Text-only results, so pronunciation is left to guesswork."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every Italian conversation is saved as its own topic.",
+        "them": "Each translation disappears once you close the app."
+      },
+      {
+        "title": "Getting set up",
+        "us": "Open it in a browser tab — nothing to install.",
+        "them": "Download an app before you can translate anything."
+      },
+      {
+        "title": "Both directions",
+        "us": "English to Italian and Italian to English in one thread.",
+        "them": "Switching direction usually means starting over."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating between English and Italian.",
     "items": [
-      { "q": "Does it get Italian noun genders right?", "a": "Yes, articles and adjectives agree correctly with the noun's gender, rather than a literal word-for-word translation." },
-      { "q": "Can it translate spoken Italian back to English?", "a": "Yes — speak Italian into the mic and get an English translation as text, with audio playback available." },
-      { "q": "Can it help with pronunciation, like double consonants?", "a": "Yes, tap the speaker icon to hear the Italian translation read aloud, useful for tricky double-letter sounds." },
-      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
-      { "q": "Do I need to install anything?", "a": "No, it runs in your browser on desktop or mobile — nothing to download." },
-      { "q": "Can I keep a running conversation instead of one-off translations?", "a": "Yes, translations are grouped into topics, so an Italian conversation stays together instead of scattering across separate lookups." }
+      {
+        "q": "Does it get Italian noun genders right?",
+        "a": "Yes, articles and adjectives agree correctly with the noun's gender, rather than a literal word-for-word translation."
+      },
+      {
+        "q": "Can it translate spoken Italian back to English?",
+        "a": "Yes — speak Italian into the mic and get an English translation as text, with audio playback available."
+      },
+      {
+        "q": "Can it help with pronunciation, like double consonants?",
+        "a": "Yes, tap the speaker icon to hear the Italian translation read aloud, useful for tricky double-letter sounds."
+      },
+      {
+        "q": "Is it free to use?",
+        "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No, it runs in your browser on desktop or mobile — nothing to download."
+      },
+      {
+        "q": "Can I keep a running conversation instead of one-off translations?",
+        "a": "Yes, translations are grouped into topics, so an Italian conversation stays together instead of scattering across separate lookups."
+      }
     ]
   },
   "finalCta": {

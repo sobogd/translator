@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Pričajte, ne kucajte",
+      "heading": "Glasovni prevodilac sa srpskog na engleski",
       "sub": "Dodirnite mikrofon, izgovorite rečenicu na srpskom ili engleskom i dobijte prevod koji možete pročitati ili čuti.",
       "bullets": [
-        { "title": "Govor pretvoren u engleski", "sub": "Recite rečenicu na srpskom – vaše reči se prepoznaju, prevode i prikazuju na engleskom za par sekundi" },
-        { "title": "Čujte engleski izgovor naglas", "sub": "Dodirnite ikonicu zvučnika kada niste sigurni kako se nešto izgovara" }
+        {
+          "title": "Govor pretvoren u engleski",
+          "sub": "Recite rečenicu na srpskom – vaše reči se prepoznaju, prevode i prikazuju na engleskom za par sekundi"
+        },
+        {
+          "title": "Čujte engleski izgovor naglas",
+          "sub": "Dodirnite ikonicu zvučnika kada niste sigurni kako se nešto izgovara"
+        }
       ]
     },
     {
-      "heading": "Jedna tema, oba smera razgovora",
+      "heading": "Prevodilac za razgovor na srpskom i engleskom",
       "sub": "Nastavite razgovor napred-nazad bez ponovnog počinjanja – svaka razmena ostaje u istoj temi.",
       "bullets": [
-        { "title": "Odgovor na engleskom, preveden na srpski", "sub": "Sagovornik može da govori engleski, a vi ćete videti i čuti prevod na srpskom" },
-        { "title": "Razgovori sačuvani kao teme", "sub": "Vratite se na isti razgovor kasnije umesto da tražite prepisku iznova" }
+        {
+          "title": "Odgovor na engleskom, preveden na srpski",
+          "sub": "Sagovornik može da govori engleski, a vi ćete videti i čuti prevod na srpskom"
+        },
+        {
+          "title": "Razgovori sačuvani kao teme",
+          "sub": "Vratite se na isti razgovor kasnije umesto da tražite prepisku iznova"
+        }
       ]
     },
     {
-      "heading": "Srpsko-engleski, plus još 185 jezika",
+      "heading": "Onlajn prevodilac za srpski i engleski",
       "sub": "Engleski je samo jedan od 186 dostupnih jezika, u oba smera.",
       "bullets": [
-        { "title": "Tačno prepoznaje izgovor i akcenat", "sub": "Radi pouzdano bez obzira na dijalekt ili brzinu govora" },
-        { "title": "186 jezika ukupno", "sub": "Isti alat radi za engleski danas i za bilo koji drugi jezik sutra" }
+        {
+          "title": "Tačno prepoznaje izgovor i akcenat",
+          "sub": "Radi pouzdano bez obzira na dijalekt ili brzinu govora"
+        },
+        {
+          "title": "186 jezika ukupno",
+          "sub": "Isti alat radi za engleski danas i za bilo koji drugi jezik sutra"
+        }
       ]
     },
     {
-      "heading": "Više volite da kucate? I to radi",
+      "heading": "Prevod teksta sa srpskog na engleski",
       "sub": "Ukucajte ili nalepite tekst na srpskom i dobijte engleski prevod bez dodirivanja mikrofona.",
       "bullets": [
-        { "title": "Kucajte umesto da govorite", "sub": "Prebacite se na tastaturu kad god poželite – korisno u tihoj kancelariji ili bučnoj ulici" },
-        { "title": "Kopirajte prevod", "sub": "Prekopirajte engleski tekst pravo u imejl, WhatsApp poruku ili radni dokument" }
+        {
+          "title": "Kucajte umesto da govorite",
+          "sub": "Prebacite se na tastaturu kad god poželite – korisno u tihoj kancelariji ili bučnoj ulici"
+        },
+        {
+          "title": "Kopirajte prevod",
+          "sub": "Prekopirajte engleski tekst pravo u imejl, WhatsApp poruku ili radni dokument"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Uobičajene aplikacije za prevođenje",
     "rows": [
-      { "title": "Kako počinjete", "us": "Govorite na srpskom ili engleskom i odmah dobijate prevod.", "them": "Prvo morate da otkucate ono što želite da kažete." },
-      { "title": "Istorija razgovora", "us": "Svaki srpsko-engleski razgovor se čuva kao posebna tema koju možete ponovo otvoriti.", "them": "Prevod nestaje čim zatvorite aplikaciju." },
-      { "title": "Podešavanje", "us": "Otvorite u pregledaču – ništa ne morate da instalirate.", "them": "Preuzimanje aplikacije i dozvole pre nego što uopšte počnete." },
-      { "title": "Oba smera", "us": "Srpsko-engleski i englesko-srpski prevod žive u istoj temi.", "them": "Promena smera obično znači novi prevod od nule." },
-      { "title": "Slušanje prevoda", "us": "Dodirnite da čujete engleski prevod izgovoren naglas.", "them": "Samo tekst, izgovor morate da pogađate sami." }
+      {
+        "title": "Kako počinjete",
+        "us": "Govorite na srpskom ili engleskom i odmah dobijate prevod.",
+        "them": "Prvo morate da otkucate ono što želite da kažete."
+      },
+      {
+        "title": "Istorija razgovora",
+        "us": "Svaki srpsko-engleski razgovor se čuva kao posebna tema koju možete ponovo otvoriti.",
+        "them": "Prevod nestaje čim zatvorite aplikaciju."
+      },
+      {
+        "title": "Podešavanje",
+        "us": "Otvorite u pregledaču – ništa ne morate da instalirate.",
+        "them": "Preuzimanje aplikacije i dozvole pre nego što uopšte počnete."
+      },
+      {
+        "title": "Oba smera",
+        "us": "Srpsko-engleski i englesko-srpski prevod žive u istoj temi.",
+        "them": "Promena smera obično znači novi prevod od nule."
+      },
+      {
+        "title": "Slušanje prevoda",
+        "us": "Dodirnite da čujete engleski prevod izgovoren naglas.",
+        "them": "Samo tekst, izgovor morate da pogađate sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "pitanja",
     "sub": "Uobičajena pitanja o prevođenju sa srpskog na engleski.",
     "items": [
-      { "q": "Da li prevodi govor sa srpskog na engleski?", "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate engleski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas." },
-      { "q": "Da li podržava ćirilicu i latinicu?", "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda." },
-      { "q": "Mogu li da prevedem sa engleskog nazad na srpski?", "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na engleskom i dobijate prevod na srpskom u istoj temi." },
-      { "q": "Da li je besplatno?", "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju." },
-      { "q": "Da li treba nešto da instaliram?", "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima." },
-      { "q": "Mogu li da vodim ceo razgovor, a ne samo pojedinačne prevode?", "a": "Da, prevodi se grupišu u teme, tako da srpsko-engleski razgovor ostaje na jednom mestu umesto da se rasipa po odvojenim pretragama." }
+      {
+        "q": "Da li prevodi govor sa srpskog na engleski?",
+        "a": "Da – dodirnite mikrofon, govorite na srpskom, i dobijate engleski prevod kao tekst, uz mogućnost da ga čujete izgovorenog naglas."
+      },
+      {
+        "q": "Da li podržava ćirilicu i latinicu?",
+        "a": "Da, prepoznaje srpski tekst i govor napisan i ćirilicom i latinicom, bez razlike u tačnosti prevoda."
+      },
+      {
+        "q": "Mogu li da prevedem sa engleskog nazad na srpski?",
+        "a": "Da, isti razgovor radi u oba smera – govorite ili kucajte na engleskom i dobijate prevod na srpskom u istoj temi."
+      },
+      {
+        "q": "Da li je besplatno?",
+        "a": "Da, možete da probate besplatno bez pravljenja naloga. Prijavite se preko Google-a za više dnevnih kredita i sačuvanu istoriju."
+      },
+      {
+        "q": "Da li treba nešto da instaliram?",
+        "a": "Ne, radi direktno u pregledaču na računaru ili telefonu – ništa se ne preuzima."
+      },
+      {
+        "q": "Mogu li da vodim ceo razgovor, a ne samo pojedinačne prevode?",
+        "a": "Da, prevodi se grupišu u teme, tako da srpsko-engleski razgovor ostaje na jednom mestu umesto da se rasipa po odvojenim pretragama."
+      }
     ]
   },
   "finalCta": {

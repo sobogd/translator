@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speech first, spelling never",
+      "heading": "Voice translator from Italian to English",
       "sub": "You don't need to know how a word is written to find out what it meant.",
       "bullets": [
-        { "title": "Spoken Italian into English", "sub": "Record what was said and read the meaning a couple of seconds later" },
-        { "title": "Double consonants don't trip it", "sub": "Nonno and nono sound alike to a beginner — the sentence decides which one it was" }
+        {
+          "title": "Spoken Italian into English",
+          "sub": "Record what was said and read the meaning a couple of seconds later"
+        },
+        {
+          "title": "Double consonants don't trip it",
+          "sub": "Nonno and nono sound alike to a beginner — the sentence decides which one it was"
+        }
       ]
     },
     {
-      "heading": "Answer in the same conversation",
+      "heading": "Italian English translator for conversations",
       "sub": "Your English reply goes out in Italian and can be played out loud.",
       "bullets": [
-        { "title": "Two directions, one thread", "sub": "Italian in, English out, then back again without setting anything up" },
-        { "title": "Kept as a topic", "sub": "Reopen the same conversation next time instead of starting over" }
+        {
+          "title": "Two directions, one thread",
+          "sub": "Italian in, English out, then back again without setting anything up"
+        },
+        {
+          "title": "Kept as a topic",
+          "sub": "Reopen the same conversation next time instead of starting over"
+        }
       ]
     },
     {
-      "heading": "Regional Italian, in context",
+      "heading": "Online Italian to English translator",
       "sub": "What people say in Naples is not what a textbook teaches in Milan.",
       "bullets": [
-        { "title": "Everyday phrasing", "sub": "Idioms are read for what they mean, not translated word for word into nonsense" },
-        { "title": "Accented letters as written", "sub": "Paste perché, città or è straight from the message and nothing is lost" }
+        {
+          "title": "Everyday phrasing",
+          "sub": "Idioms are read for what they mean, not translated word for word into nonsense"
+        },
+        {
+          "title": "Accented letters as written",
+          "sub": "Paste perché, città or è straight from the message and nothing is lost"
+        }
       ]
     },
     {
-      "heading": "Or paste the text",
+      "heading": "Italian to English text translator",
       "sub": "A message, a menu, an email from an agency — paste the Italian and read the English.",
       "bullets": [
-        { "title": "Full messages at once", "sub": "A whole paragraph goes in as one piece" },
-        { "title": "Copy the English out", "sub": "Straight into your reply, notes or a document" }
+        {
+          "title": "Full messages at once",
+          "sub": "A whole paragraph goes in as one piece"
+        },
+        {
+          "title": "Copy the English out",
+          "sub": "Straight into your reply, notes or a document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "Someone is speaking", "us": "Record it and read the English.", "them": "Type out words you didn't catch." },
-      { "title": "Idioms", "us": "Read for meaning, in context.", "them": "Literal output that says something else." },
-      { "title": "Replying", "us": "English in, Italian out, same thread.", "them": "A separate translation each way." },
-      { "title": "History", "us": "Saved as topics you can reopen.", "them": "Cleared on close." },
-      { "title": "Setup", "us": "Browser tab, no account to try it.", "them": "Install and register first." }
+      {
+        "title": "Someone is speaking",
+        "us": "Record it and read the English.",
+        "them": "Type out words you didn't catch."
+      },
+      {
+        "title": "Idioms",
+        "us": "Read for meaning, in context.",
+        "them": "Literal output that says something else."
+      },
+      {
+        "title": "Replying",
+        "us": "English in, Italian out, same thread.",
+        "them": "A separate translation each way."
+      },
+      {
+        "title": "History",
+        "us": "Saved as topics you can reopen.",
+        "them": "Cleared on close."
+      },
+      {
+        "title": "Setup",
+        "us": "Browser tab, no account to try it.",
+        "them": "Install and register first."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating Italian into English.",
     "items": [
-      { "q": "Can it translate spoken Italian?", "a": "Yes. Tap the mic, let the person finish, and the English appears within a couple of seconds — no need to know how the words are spelled." },
-      { "q": "Does it handle regional expressions?", "a": "The whole sentence is translated in context, so everyday and regional phrasing is read for what it means rather than word by word." },
-      { "q": "Can I paste Italian text?", "a": "Yes — switch to the keyboard and paste a message, an email or a longer text, accents included." },
-      { "q": "Can I reply in English?", "a": "Yes, and the Italian version can be played aloud so the other person hears it in their language." },
-      { "q": "Are my conversations saved?", "a": "Each one is kept as a topic you can reopen, and you can delete a thread or clear everything at any time." },
-      { "q": "Is it free?", "a": "There is a free allowance to try right away without an account; signing in with Google raises the monthly quota and syncs history." }
+      {
+        "q": "Can it translate spoken Italian?",
+        "a": "Yes. Tap the mic, let the person finish, and the English appears within a couple of seconds — no need to know how the words are spelled."
+      },
+      {
+        "q": "Does it handle regional expressions?",
+        "a": "The whole sentence is translated in context, so everyday and regional phrasing is read for what it means rather than word by word."
+      },
+      {
+        "q": "Can I paste Italian text?",
+        "a": "Yes — switch to the keyboard and paste a message, an email or a longer text, accents included."
+      },
+      {
+        "q": "Can I reply in English?",
+        "a": "Yes, and the Italian version can be played aloud so the other person hears it in their language."
+      },
+      {
+        "q": "Are my conversations saved?",
+        "a": "Each one is kept as a topic you can reopen, and you can delete a thread or clear everything at any time."
+      },
+      {
+        "q": "Is it free?",
+        "a": "There is a free allowance to try right away without an account; signing in with Google raises the monthly quota and syncs history."
+      }
     ]
   },
   "finalCta": {

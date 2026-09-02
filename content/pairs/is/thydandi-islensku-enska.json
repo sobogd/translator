@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Talaðu, ekki skrifa",
+      "heading": "Raddþýðandi úr íslensku yfir á ensku",
       "sub": "Ýttu á hljóðnemann, segðu það á íslensku eða ensku, og fáðu þýðingu sem þú getur lesið eða hlustað á.",
       "bullets": [
-        { "title": "Talið þitt verður að enskum texta", "sub": "Segðu það á íslensku — orðin eru umrituð, þýdd og birt á ensku örfáum sekúndum síðar" },
-        { "title": "Hlustaðu á ensku upphátt", "sub": "Ýttu á hátalaratáknið þegar framburðurinn þinn er ekki alveg kominn ennþá" }
+        {
+          "title": "Talið þitt verður að enskum texta",
+          "sub": "Segðu það á íslensku — orðin eru umrituð, þýdd og birt á ensku örfáum sekúndum síðar"
+        },
+        {
+          "title": "Hlustaðu á ensku upphátt",
+          "sub": "Ýttu á hátalaratáknið þegar framburðurinn þinn er ekki alveg kominn ennþá"
+        }
       ]
     },
     {
-      "heading": "Ein umræða, báðar hliðar samtalsins",
+      "heading": "Samtalsþýðandi fyrir íslensku og ensku",
       "sub": "Haltu áfram að tala fram og til baka án þess að byrja upp á nýtt — allt samtalið helst í sömu umræðu, hentugt fyrir ferðamenn á Íslandi eða í vinnunni.",
       "bullets": [
-        { "title": "Svarað á ensku, þýtt á íslensku", "sub": "Sá sem þú talar við getur svarað á ensku og þú sérð og heyrir það á íslensku" },
-        { "title": "Samtöl vistuð sem umræður", "sub": "Komdu aftur að sama enska samtalinu síðar í stað þess að týna þræðinum" }
+        {
+          "title": "Svarað á ensku, þýtt á íslensku",
+          "sub": "Sá sem þú talar við getur svarað á ensku og þú sérð og heyrir það á íslensku"
+        },
+        {
+          "title": "Samtöl vistuð sem umræður",
+          "sub": "Komdu aftur að sama enska samtalinu síðar í stað þess að týna þræðinum"
+        }
       ]
     },
     {
-      "heading": "Íslenska–enska, auk 185 tungumála til viðbótar",
+      "heading": "Á netinu án þess að setja upp forrit",
       "sub": "Enska er eitt af 186 tungumálum í boði, í báðar áttir.",
       "bullets": [
-        { "title": "Nákvæmt með sérhljóðum og áherslum", "sub": "Ræður rétt við íslenska stafsetningu og framburð, ekki gróft ágiskun" },
-        { "title": "186 tungumál samtals", "sub": "Sama tólið virkar fyrir ensku í dag og hvaða annað tungumál sem er á morgun" }
+        {
+          "title": "Nákvæmt með sérhljóðum og áherslum",
+          "sub": "Ræður rétt við íslenska stafsetningu og framburð, ekki gróft ágiskun"
+        },
+        {
+          "title": "186 tungumál samtals",
+          "sub": "Sama tólið virkar fyrir ensku í dag og hvaða annað tungumál sem er á morgun"
+        }
       ]
     },
     {
-      "heading": "Viltu frekar skrifa? Það gengur líka",
+      "heading": "Textaþýðandi fyrir íslensku og ensku",
       "sub": "Skrifaðu eða límdu íslenskan texta og fáðu enska þýðingu án þess að snerta hljóðnemann — hentugt fyrir tölvupóst eða WhatsApp.",
       "bullets": [
-        { "title": "Skrifaðu í stað þess að tala", "sub": "Skiptu yfir í lyklaborðið hvenær sem er — gagnlegt í fundarherbergi eða á fjölförnum stað" },
-        { "title": "Afritaðu þýðinguna", "sub": "Afritaðu enska textann beint til að líma hann inn í tölvupóst eða skilaboð" }
+        {
+          "title": "Skrifaðu í stað þess að tala",
+          "sub": "Skiptu yfir í lyklaborðið hvenær sem er — gagnlegt í fundarherbergi eða á fjölförnum stað"
+        },
+        {
+          "title": "Afritaðu þýðinguna",
+          "sub": "Afritaðu enska textann beint til að líma hann inn í tölvupóst eða skilaboð"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Venjuleg þýðingaforrit",
     "rows": [
-      { "title": "Hvernig þú byrjar", "us": "Talaðu á íslensku eða ensku og fáðu þýðingu samstundis.", "them": "Skrifaðu fyrst út það sem þú vilt segja." },
-      { "title": "Samtalasaga", "us": "Hvert enskt samtal vistast sem sín eigin umræða sem þú getur opnað aftur.", "them": "Hver þýðing hverfur um leið og forritinu er lokað." },
-      { "title": "Uppsetning", "us": "Opnaðu í vafraflipa — ekkert að setja upp.", "them": "Sækja þarf forrit og veita heimildir áður en hægt er að nota það." },
-      { "title": "Báðar áttir", "us": "Íslenska til ensku og enska til íslensku lifa í sömu umræðu.", "them": "Að skipta um átt þýðir yfirleitt að byrja nýja þýðingu." },
-      { "title": "Að heyra svarið", "us": "Ýttu til að hlusta á ensku þýðinguna lesna upphátt.", "them": "Aðeins texti, svo framburðurinn er á þína ábyrgð." }
+      {
+        "title": "Hvernig þú byrjar",
+        "us": "Talaðu á íslensku eða ensku og fáðu þýðingu samstundis.",
+        "them": "Skrifaðu fyrst út það sem þú vilt segja."
+      },
+      {
+        "title": "Samtalasaga",
+        "us": "Hvert enskt samtal vistast sem sín eigin umræða sem þú getur opnað aftur.",
+        "them": "Hver þýðing hverfur um leið og forritinu er lokað."
+      },
+      {
+        "title": "Uppsetning",
+        "us": "Opnaðu í vafraflipa — ekkert að setja upp.",
+        "them": "Sækja þarf forrit og veita heimildir áður en hægt er að nota það."
+      },
+      {
+        "title": "Báðar áttir",
+        "us": "Íslenska til ensku og enska til íslensku lifa í sömu umræðu.",
+        "them": "Að skipta um átt þýðir yfirleitt að byrja nýja þýðingu."
+      },
+      {
+        "title": "Að heyra svarið",
+        "us": "Ýttu til að hlusta á ensku þýðinguna lesna upphátt.",
+        "them": "Aðeins texti, svo framburðurinn er á þína ábyrgð."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "spurningar",
     "sub": "Algengar spurningar um að þýða íslensku yfir á ensku.",
     "items": [
-      { "q": "Getur það þýtt talaða íslensku yfir á ensku?", "a": "Já — ýttu á hljóðnemann, talaðu á íslensku, og þú færð enska þýðingu sem texta, með möguleika á að hlusta á hana upphátt." },
-      { "q": "Er þetta ókeypis?", "a": "Já, þú getur prófað frítt án þess að stofna reikning. Skráðu þig inn með Google fyrir fleiri daglegar inneignir og vistaða sögu." },
-      { "q": "Get ég þýtt úr ensku aftur yfir á íslensku?", "a": "Já, sama samtalið virkar í báðar áttir — talaðu eða skrifaðu ensku og fáðu íslensku þýðinguna í sömu umræðu." },
-      { "q": "Hentar þetta ferðamönnum á Íslandi?", "a": "Já, margir nota það til að tala við erlenda ferðamenn, spyrja til vegar eða panta á veitingastað án þess að skipta um forrit." },
-      { "q": "Þarf ég að setja eitthvað upp?", "a": "Nei, þetta keyrir í vafranum á tölvu eða síma — ekkert að sækja." },
-      { "q": "Get ég haldið áfram sama samtalinu í stað stakra þýðinga?", "a": "Já, þýðingar raðast í umræður, svo enskt samtal helst á einum stað í stað þess að dreifast á staka fletti." }
+      {
+        "q": "Getur það þýtt talaða íslensku yfir á ensku?",
+        "a": "Já — ýttu á hljóðnemann, talaðu á íslensku, og þú færð enska þýðingu sem texta, með möguleika á að hlusta á hana upphátt."
+      },
+      {
+        "q": "Er þetta ókeypis?",
+        "a": "Já, þú getur prófað frítt án þess að stofna reikning. Skráðu þig inn með Google fyrir fleiri daglegar inneignir og vistaða sögu."
+      },
+      {
+        "q": "Get ég þýtt úr ensku aftur yfir á íslensku?",
+        "a": "Já, sama samtalið virkar í báðar áttir — talaðu eða skrifaðu ensku og fáðu íslensku þýðinguna í sömu umræðu."
+      },
+      {
+        "q": "Hentar þetta ferðamönnum á Íslandi?",
+        "a": "Já, margir nota það til að tala við erlenda ferðamenn, spyrja til vegar eða panta á veitingastað án þess að skipta um forrit."
+      },
+      {
+        "q": "Þarf ég að setja eitthvað upp?",
+        "a": "Nei, þetta keyrir í vafranum á tölvu eða síma — ekkert að sækja."
+      },
+      {
+        "q": "Get ég haldið áfram sama samtalinu í stað stakra þýðinga?",
+        "a": "Já, þýðingar raðast í umræður, svo enskt samtal helst á einum stað í stað þess að dreifast á staka fletti."
+      }
     ]
   },
   "finalCta": {

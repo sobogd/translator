@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Govorite hrvatski, čujte engleski odmah",
+      "heading": "Glasovni prevoditelj s hrvatskog na engleski",
       "sub": "Dodirnite mikrofon i recite rečenicu na hrvatskom ili engleskom – prijevod stiže za nekoliko sekundi, spreman za čitanje ili slušanje.",
       "bullets": [
-        { "title": "Govor pretvoren u engleski", "sub": "Recite rečenicu na hrvatskom – riječi se prepoznaju, prevode i prikazuju na engleskom za nekoliko sekundi" },
-        { "title": "Čujte prijevod naglas", "sub": "Dodirnite ikonu zvučnika kad engleski izgovor još niste sigurni" }
+        {
+          "title": "Govor pretvoren u engleski",
+          "sub": "Recite rečenicu na hrvatskom – riječi se prepoznaju, prevode i prikazuju na engleskom za nekoliko sekundi"
+        },
+        {
+          "title": "Čujte prijevod naglas",
+          "sub": "Dodirnite ikonu zvučnika kad engleski izgovor još niste sigurni"
+        }
       ]
     },
     {
-      "heading": "Jedna tema, cijeli razgovor",
+      "heading": "Prevoditelj za razgovor na engleskom",
       "sub": "Nastavite razgovor naprijed-natrag bez počinjanja iznova – svaka razmjena ostaje u istoj temi.",
       "bullets": [
-        { "title": "Odgovor na engleskom, preveden na hrvatski", "sub": "Osoba s kojom razgovarate može govoriti engleski, a vi ćete to vidjeti i čuti na hrvatskom" },
-        { "title": "Razgovori spremljeni kao teme", "sub": "Vratite se istom razgovoru kasnije umjesto da izgubite nit" }
+        {
+          "title": "Odgovor na engleskom, preveden na hrvatski",
+          "sub": "Osoba s kojom razgovarate može govoriti engleski, a vi ćete to vidjeti i čuti na hrvatskom"
+        },
+        {
+          "title": "Razgovori spremljeni kao teme",
+          "sub": "Vratite se istom razgovoru kasnije umjesto da izgubite nit"
+        }
       ]
     },
     {
-      "heading": "Hrvatsko-engleski, plus još 185 jezika",
+      "heading": "Online prevoditelj za hrvatski i engleski",
       "sub": "Engleski je samo jedan od 186 dostupnih jezika, u bilo kojem smjeru.",
       "bullets": [
-        { "title": "Točno za posao, putovanje i svakodnevicu", "sub": "Rečenice za goste, kolege ili prijatelje prevedene bez grešaka" },
-        { "title": "186 jezika ukupno", "sub": "Isti alat radi za engleski danas i za bilo koji drugi jezik sutra" }
+        {
+          "title": "Točno za posao, putovanje i svakodnevicu",
+          "sub": "Rečenice za goste, kolege ili prijatelje prevedene bez grešaka"
+        },
+        {
+          "title": "186 jezika ukupno",
+          "sub": "Isti alat radi za engleski danas i za bilo koji drugi jezik sutra"
+        }
       ]
     },
     {
-      "heading": "Radije tipkate? I to je moguće",
+      "heading": "Prijevod teksta s hrvatskog na engleski",
       "sub": "Upišite ili zalijepite tekst na hrvatskom i dobijte prijevod na engleski bez dodirivanja mikrofona.",
       "bullets": [
-        { "title": "Tipkajte umjesto govora", "sub": "Prebacite se na tipkovnicu kada ste u tihoj sobi ili bučnoj ulici" },
-        { "title": "Kopirajte prijevod", "sub": "Kopirajte engleski tekst izravno i zalijepite ga u e-mail, WhatsApp ili poruku" }
+        {
+          "title": "Tipkajte umjesto govora",
+          "sub": "Prebacite se na tipkovnicu kada ste u tihoj sobi ili bučnoj ulici"
+        },
+        {
+          "title": "Kopirajte prijevod",
+          "sub": "Kopirajte engleski tekst izravno i zalijepite ga u e-mail, WhatsApp ili poruku"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Uobičajene aplikacije za prevođenje",
     "rows": [
-      { "title": "Kako počinjete", "us": "Govorite na hrvatskom ili engleskom i odmah dobijete prijevod.", "them": "Prvo morate utipkati što želite reći." },
-      { "title": "Povijest razgovora", "us": "Svaki engleski razgovor sprema se kao zasebna tema koju možete ponovno otvoriti.", "them": "Prijevod nestaje čim zatvorite aplikaciju." },
-      { "title": "Postavljanje", "us": "Otvorite karticu u pregledniku – ništa se ne instalira.", "them": "Preuzimanje aplikacije i dopuštenja prije prve upotrebe." },
-      { "title": "Oba smjera", "us": "Hrvatski na engleski i engleski na hrvatski žive u istoj temi.", "them": "Promjena smjera obično znači novi prijevod od nule." },
-      { "title": "Slušanje prijevoda", "us": "Dodirnite da čujete engleski prijevod pročitan naglas.", "them": "Samo tekst, izgovor prepušten vama." }
+      {
+        "title": "Kako počinjete",
+        "us": "Govorite na hrvatskom ili engleskom i odmah dobijete prijevod.",
+        "them": "Prvo morate utipkati što želite reći."
+      },
+      {
+        "title": "Povijest razgovora",
+        "us": "Svaki engleski razgovor sprema se kao zasebna tema koju možete ponovno otvoriti.",
+        "them": "Prijevod nestaje čim zatvorite aplikaciju."
+      },
+      {
+        "title": "Postavljanje",
+        "us": "Otvorite karticu u pregledniku – ništa se ne instalira.",
+        "them": "Preuzimanje aplikacije i dopuštenja prije prve upotrebe."
+      },
+      {
+        "title": "Oba smjera",
+        "us": "Hrvatski na engleski i engleski na hrvatski žive u istoj temi.",
+        "them": "Promjena smjera obično znači novi prijevod od nule."
+      },
+      {
+        "title": "Slušanje prijevoda",
+        "us": "Dodirnite da čujete engleski prijevod pročitan naglas.",
+        "them": "Samo tekst, izgovor prepušten vama."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "pitanja",
     "sub": "Uobičajena pitanja o prevođenju hrvatskog na engleski.",
     "items": [
-      { "q": "Prevodi li glasovni prijevod hrvatski govor na engleski?", "a": "Da – dodirnite mikrofon, recite rečenicu na hrvatskom i dobit ćete prijevod na engleski kao tekst, uz mogućnost da ga čujete pročitanog naglas." },
-      { "q": "Radi li i obrnuto, s engleskog na hrvatski?", "a": "Da, isti razgovor radi u oba smjera – govorite ili tipkajte na engleskom i dobijte hrvatski prijevod u istoj temi." },
-      { "q": "Je li besplatno?", "a": "Da, možete ga isprobati besplatno bez otvaranja računa. Prijavite se putem Googlea za više dnevnih kredita i spremljenu povijest." },
-      { "q": "Trebam li nešto instalirati?", "a": "Ne, radi izravno u pregledniku na računalu ili mobitelu – ništa se ne preuzima." },
-      { "q": "Mogu li ga koristiti za razgovor s gostima ili poslovnim partnerima?", "a": "Da, savršen je za brzu komunikaciju s engleskim govornicima na poslu, putovanju ili u svakodnevnim situacijama." },
-      { "q": "Mogu li voditi razgovor umjesto pojedinačnih prijevoda?", "a": "Da, prijevodi se grupiraju u teme, tako da razgovor na engleskom ostaje na jednom mjestu umjesto raspršen po zasebnim pretragama." }
+      {
+        "q": "Prevodi li glasovni prijevod hrvatski govor na engleski?",
+        "a": "Da – dodirnite mikrofon, recite rečenicu na hrvatskom i dobit ćete prijevod na engleski kao tekst, uz mogućnost da ga čujete pročitanog naglas."
+      },
+      {
+        "q": "Radi li i obrnuto, s engleskog na hrvatski?",
+        "a": "Da, isti razgovor radi u oba smjera – govorite ili tipkajte na engleskom i dobijte hrvatski prijevod u istoj temi."
+      },
+      {
+        "q": "Je li besplatno?",
+        "a": "Da, možete ga isprobati besplatno bez otvaranja računa. Prijavite se putem Googlea za više dnevnih kredita i spremljenu povijest."
+      },
+      {
+        "q": "Trebam li nešto instalirati?",
+        "a": "Ne, radi izravno u pregledniku na računalu ili mobitelu – ništa se ne preuzima."
+      },
+      {
+        "q": "Mogu li ga koristiti za razgovor s gostima ili poslovnim partnerima?",
+        "a": "Da, savršen je za brzu komunikaciju s engleskim govornicima na poslu, putovanju ili u svakodnevnim situacijama."
+      },
+      {
+        "q": "Mogu li voditi razgovor umjesto pojedinačnih prijevoda?",
+        "a": "Da, prijevodi se grupiraju u teme, tako da razgovor na engleskom ostaje na jednom mjestu umjesto raspršen po zasebnim pretragama."
+      }
     ]
   },
   "finalCta": {

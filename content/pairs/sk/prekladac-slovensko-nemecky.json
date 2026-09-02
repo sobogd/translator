@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Hovorte namiesto písania",
+      "heading": "Hlasový preklad zo slovenčiny do nemecnosti",
       "sub": "Klepnite na mikrofón, povedzte to po slovensky alebo po nemecky, a získajte preklad, ktorý si prečítate alebo vypočujete.",
       "bullets": [
-        { "title": "Reč zmenená na nemčinu", "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v nemčine" },
-        { "title": "Vypočujte si nemecký preklad", "sub": "Klepnite na ikonu reproduktora, keď vaša výslovnosť ešte nesedí" }
+        {
+          "title": "Reč zmenená na nemčinu",
+          "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v nemčine"
+        },
+        {
+          "title": "Vypočujte si nemecký preklad",
+          "sub": "Klepnite na ikonu reproduktora, keď vaša výslovnosť ešte nesedí"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obe strany rozhovoru",
+      "heading": "Prekladač na živý slovensko-nemecký rozhovor",
       "sub": "Pokračujte v rozhovore bez toho, aby ste začínali odznova — každá výmena zostáva v tej istej téme.",
       "bullets": [
-        { "title": "Odpoveď v nemčine, preložená do slovenčiny", "sub": "Zamestnávateľ, úradník či kolega môže hovoriť po nemecky a vy to uvidíte aj počujete po slovensky" },
-        { "title": "Rozhovory uložené ako témy", "sub": "Vráťte sa k tej istej pracovnej téme alebo úradnej veci neskôr, namiesto straty vlákna" }
+        {
+          "title": "Odpoveď v nemčine, preložená do slovenčiny",
+          "sub": "Zamestnávateľ, úradník či kolega môže hovoriť po nemecky a vy to uvidíte aj počujete po slovensky"
+        },
+        {
+          "title": "Rozhovory uložené ako témy",
+          "sub": "Vráťte sa k tej istej pracovnej téme alebo úradnej veci neskôr, namiesto straty vlákna"
+        }
       ]
     },
     {
-      "heading": "Slovensko-nemecký pár, plus 185 ďalších jazykov",
+      "heading": "Online prekladač pre nemčinu a ďalšie jazyky",
       "sub": "Nemčina je jedným zo 186 dostupných jazykov, v ktoromkoľvek smere.",
       "bullets": [
-        { "title": "Presný pri práci aj na úrade", "sub": "Zvláda pracovnú komunikáciu, formuláre aj bežný rozhovor, nielen hrubý odhad" },
-        { "title": "186 jazykov spolu", "sub": "Ten istý nástroj funguje pre nemčinu dnes aj pre akýkoľvek iný jazyk zajtra" }
+        {
+          "title": "Presný pri práci aj na úrade",
+          "sub": "Zvláda pracovnú komunikáciu, formuláre aj bežný rozhovor, nielen hrubý odhad"
+        },
+        {
+          "title": "186 jazykov spolu",
+          "sub": "Ten istý nástroj funguje pre nemčinu dnes aj pre akýkoľvek iný jazyk zajtra"
+        }
       ]
     },
     {
-      "heading": "Radšej píšete? Aj to funguje",
+      "heading": "Textový prekladač z nemeckého jazyka",
       "sub": "Napíšte alebo vložte slovenský text a získajte nemecký preklad bez toho, aby ste sa dotkli mikrofónu.",
       "bullets": [
-        { "title": "Píšte namiesto hovorenia", "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa pri e-mailoch aj WhatsAppe" },
-        { "title": "Skopírujte preklad", "sub": "Skopírujte nemecký text priamo do e-mailu, formulára alebo správy" }
+        {
+          "title": "Píšte namiesto hovorenia",
+          "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa pri e-mailoch aj WhatsAppe"
+        },
+        {
+          "title": "Skopírujte preklad",
+          "sub": "Skopírujte nemecký text priamo do e-mailu, formulára alebo správy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Bežné prekladateľské aplikácie",
     "rows": [
-      { "title": "Ako začnete", "us": "Hovorte po slovensky alebo nemecky a preklad získate okamžite.", "them": "Najprv musíte napísať, čo chcete povedať." },
-      { "title": "História rozhovorov", "us": "Každá nemecká konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.", "them": "Každý preklad zmizne hneď po zatvorení aplikácie." },
-      { "title": "Práca a úrady", "us": "Zvláda pracovnú komunikáciu aj formálne úradné výrazy v Nemecku či Rakúsku.", "them": "Väčšinou zvláda len jednoduché frázy, nie odbornú alebo úradnú slovnú zásobu." },
-      { "title": "Nastavenie", "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.", "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete." },
-      { "title": "Vypočutie prekladu", "us": "Klepnite a nechajte si nemecký preklad prečítať nahlas.", "them": "Iba text, výslovnosť si musíte poriešiť sami." }
+      {
+        "title": "Ako začnete",
+        "us": "Hovorte po slovensky alebo nemecky a preklad získate okamžite.",
+        "them": "Najprv musíte napísať, čo chcete povedať."
+      },
+      {
+        "title": "História rozhovorov",
+        "us": "Každá nemecká konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.",
+        "them": "Každý preklad zmizne hneď po zatvorení aplikácie."
+      },
+      {
+        "title": "Práca a úrady",
+        "us": "Zvláda pracovnú komunikáciu aj formálne úradné výrazy v Nemecku či Rakúsku.",
+        "them": "Väčšinou zvláda len jednoduché frázy, nie odbornú alebo úradnú slovnú zásobu."
+      },
+      {
+        "title": "Nastavenie",
+        "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.",
+        "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete."
+      },
+      {
+        "title": "Vypočutie prekladu",
+        "us": "Klepnite a nechajte si nemecký preklad prečítať nahlas.",
+        "them": "Iba text, výslovnosť si musíte poriešiť sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "otázky",
     "sub": "Bežné otázky o preklade zo slovenčiny do nemčiny.",
     "items": [
-      { "q": "Dokáže to preložiť hovorenú slovenčinu do nemčiny?", "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete nemecký preklad ako text, s možnosťou nechať si ho prečítať nahlas." },
-      { "q": "Hodí sa to na prácu v Nemecku alebo Rakúsku?", "a": "Áno, zvláda bežnú aj pracovnú komunikáciu — od rozhovoru s kolegom po jednoduché úradné vybavovanie." },
-      { "q": "Dá sa prekladať aj z nemčiny späť do slovenčiny?", "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po nemecky a slovenský preklad dostanete v tom istom vlákne." },
-      { "q": "Je to zadarmo?", "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu." },
-      { "q": "Musím si niečo inštalovať?", "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje." },
-      { "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?", "a": "Áno, preklady sa zoskupujú do tém, takže pracovná alebo úradná konverzácia zostáva na jednom mieste namiesto rozhádzaných jednotlivých prekladov." }
+      {
+        "q": "Dokáže to preložiť hovorenú slovenčinu do nemčiny?",
+        "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete nemecký preklad ako text, s možnosťou nechať si ho prečítať nahlas."
+      },
+      {
+        "q": "Hodí sa to na prácu v Nemecku alebo Rakúsku?",
+        "a": "Áno, zvláda bežnú aj pracovnú komunikáciu — od rozhovoru s kolegom po jednoduché úradné vybavovanie."
+      },
+      {
+        "q": "Dá sa prekladať aj z nemčiny späť do slovenčiny?",
+        "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po nemecky a slovenský preklad dostanete v tom istom vlákne."
+      },
+      {
+        "q": "Je to zadarmo?",
+        "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu."
+      },
+      {
+        "q": "Musím si niečo inštalovať?",
+        "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje."
+      },
+      {
+        "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?",
+        "a": "Áno, preklady sa zoskupujú do tém, takže pracovná alebo úradná konverzácia zostáva na jednom mieste namiesto rozhádzaných jednotlivých prekladov."
+      }
     ]
   },
   "finalCta": {

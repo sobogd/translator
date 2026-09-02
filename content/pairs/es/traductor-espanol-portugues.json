@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Brasil y Portugal no hablan igual",
+      "heading": "Traductor de voz de español a portugués",
       "sub": "Mismo idioma, distinta pronunciación y distinto vocabulario según el lado.",
       "bullets": [
-        { "title": "Los dos, sin configurar nada", "sub": "La frase decide la variante, no un ajuste que se te olvida cambiar" },
-        { "title": "Vocales cerradas del portugués europeo", "sub": "La transcripción las separa aunque tú no las distingas de oído" }
+        {
+          "title": "Los dos, sin configurar nada",
+          "sub": "La frase decide la variante, no un ajuste que se te olvida cambiar"
+        },
+        {
+          "title": "Vocales cerradas del portugués europeo",
+          "sub": "La transcripción las separa aunque tú no las distingas de oído"
+        }
       ]
     },
     {
-      "heading": "Falsos amigos que duelen",
+      "heading": "Traductor para conversación en portugués",
       "sub": "Embaraçada no es embarazada y exquisito no es exquisito.",
       "bullets": [
-        { "title": "Traducción por contexto", "sub": "Se lee la frase entera, que es donde el falso amigo se cae" },
-        { "title": "Escúchalo antes de decirlo", "sub": "Toca el altavoz y comprueba cómo suena de verdad" }
+        {
+          "title": "Traducción por contexto",
+          "sub": "Se lee la frase entera, que es donde el falso amigo se cae"
+        },
+        {
+          "title": "Escúchalo antes de decirlo",
+          "sub": "Toca el altavoz y comprueba cómo suena de verdad"
+        }
       ]
     },
     {
-      "heading": "Vecinos, trabajo y trámites",
+      "heading": "Traductor online gratis de español a portugués",
       "sub": "Del otro lado de la raya o al otro lado del Atlántico, la conversación es diaria.",
       "bullets": [
-        { "title": "Responde en el mismo hilo", "sub": "Escribes en español y sale en portugués, listo para enviar" },
-        { "title": "Conversaciones guardadas", "sub": "Cada persona tiene su tema y se retoma donde lo dejaste" }
+        {
+          "title": "Responde en el mismo hilo",
+          "sub": "Escribes en español y sale en portugués, listo para enviar"
+        },
+        {
+          "title": "Conversaciones guardadas",
+          "sub": "Cada persona tiene su tema y se retoma donde lo dejaste"
+        }
       ]
     },
     {
-      "heading": "O pega el texto",
+      "heading": "Traductor de textos en español y portugués",
       "sub": "Un contrato, una factura, un mensaje largo de WhatsApp.",
       "bullets": [
-        { "title": "Párrafos enteros", "sub": "De una vez, no línea a línea" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo vale para cualquier otro idioma" }
+        {
+          "title": "Párrafos enteros",
+          "sub": "De una vez, no línea a línea"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo vale para cualquier otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te mandan un audio", "us": "Lo reproduces al micro y lo lees en español.", "them": "Lo transcribes tú a mano." },
-      { "title": "Brasil o Portugal", "us": "Ambos se manejan desde la propia frase.", "them": "Se asume una variante y falla la otra." },
-      { "title": "Falsos amigos", "us": "Se traducen por su sentido real.", "them": "Se traducen por parecido." },
-      { "title": "Historial", "us": "Guardado como temas.", "them": "No queda nada." },
-      { "title": "Empezar", "us": "Abres una pestaña y hablas.", "them": "Instalar y registrarse." }
+      {
+        "title": "Te mandan un audio",
+        "us": "Lo reproduces al micro y lo lees en español.",
+        "them": "Lo transcribes tú a mano."
+      },
+      {
+        "title": "Brasil o Portugal",
+        "us": "Ambos se manejan desde la propia frase.",
+        "them": "Se asume una variante y falla la otra."
+      },
+      {
+        "title": "Falsos amigos",
+        "us": "Se traducen por su sentido real.",
+        "them": "Se traducen por parecido."
+      },
+      {
+        "title": "Historial",
+        "us": "Guardado como temas.",
+        "them": "No queda nada."
+      },
+      {
+        "title": "Empezar",
+        "us": "Abres una pestaña y hablas.",
+        "them": "Instalar y registrarse."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al portugués.",
     "items": [
-      { "q": "¿Funciona con portugués de Brasil y de Portugal?", "a": "Sí, los dos. La variante se deduce de la propia frase, incluidas las diferencias de vocabulario." },
-      { "q": "¿Puedo traducir un audio de WhatsApp?", "a": "Reprodúcelo cerca del micrófono y tendrás la transcripción en español un par de segundos después." },
-      { "q": "¿Evita los falsos amigos?", "a": "Se traduce la frase completa, que es donde palabras como embaraçada o esquisito revelan su sentido real." },
-      { "q": "¿Va de portugués a español también?", "a": "Sí, la misma conversación funciona en los dos sentidos." },
-      { "q": "¿Se puede escuchar la traducción?", "a": "Sí, toca el altavoz en cualquier frase para oírla en portugués." },
-      { "q": "¿Es gratis?", "a": "Sí, hay margen gratuito sin registro y más cuota mensual con la cuenta de Google." }
+      {
+        "q": "¿Funciona con portugués de Brasil y de Portugal?",
+        "a": "Sí, los dos. La variante se deduce de la propia frase, incluidas las diferencias de vocabulario."
+      },
+      {
+        "q": "¿Puedo traducir un audio de WhatsApp?",
+        "a": "Reprodúcelo cerca del micrófono y tendrás la transcripción en español un par de segundos después."
+      },
+      {
+        "q": "¿Evita los falsos amigos?",
+        "a": "Se traduce la frase completa, que es donde palabras como embaraçada o esquisito revelan su sentido real."
+      },
+      {
+        "q": "¿Va de portugués a español también?",
+        "a": "Sí, la misma conversación funciona en los dos sentidos."
+      },
+      {
+        "q": "¿Se puede escuchar la traducción?",
+        "a": "Sí, toca el altavoz en cualquier frase para oírla en portugués."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, hay margen gratuito sin registro y más cuota mensual con la cuenta de Google."
+      }
     ]
   },
   "finalCta": {

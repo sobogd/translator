@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Fale e ouça em árabe",
+      "heading": "Tradutor de voz de português para árabe",
       "sub": "Toque no microfone, fale em português e em segundos tem a tradução em árabe, pronta para ler ou ouvir.",
       "bullets": [
-        { "title": "A sua voz em árabe na hora", "sub": "Fale em português e a tradução em árabe aparece em segundos, com a escrita certa" },
-        { "title": "Ouça a pronúncia certa", "sub": "Toque no ícone de som e ouça como soa em árabe, útil quando a escrita não chega" }
+        {
+          "title": "A sua voz em árabe na hora",
+          "sub": "Fale em português e a tradução em árabe aparece em segundos, com a escrita certa"
+        },
+        {
+          "title": "Ouça a pronúncia certa",
+          "sub": "Toque no ícone de som e ouça como soa em árabe, útil quando a escrita não chega"
+        }
       ]
     },
     {
-      "heading": "Conversa nos dois sentidos, guardada",
+      "heading": "Tradutor para conversas em árabe",
       "sub": "Continue a conversa em português e árabe sem perder o fio — cada troca fica guardada no mesmo tema.",
       "bullets": [
-        { "title": "Respostas em árabe, viram português", "sub": "A outra pessoa fala em árabe e a tradução aparece em português, no mesmo tema" },
-        { "title": "Cada conversa fica guardada como um tema", "sub": "Volte a essa conversa em árabe mais tarde, sem perder o fio" }
+        {
+          "title": "Respostas em árabe, viram português",
+          "sub": "A outra pessoa fala em árabe e a tradução aparece em português, no mesmo tema"
+        },
+        {
+          "title": "Cada conversa fica guardada como um tema",
+          "sub": "Volte a essa conversa em árabe mais tarde, sem perder o fio"
+        }
       ]
     },
     {
-      "heading": "Português-árabe, e mais 185 idiomas",
+      "heading": "Tradutor online de português para árabe",
       "sub": "O árabe é um dos 186 idiomas disponíveis, em qualquer direção.",
       "bullets": [
-        { "title": "Escrita árabe reconhecida corretamente", "sub": "Lida bem com a direção da escrita e os sinais diacríticos, sem adivinhações" },
-        { "title": "186 idiomas na mesma app", "sub": "O mesmo tradutor funciona para árabe hoje e para qualquer outro idioma amanhã" }
+        {
+          "title": "Escrita árabe reconhecida corretamente",
+          "sub": "Lida bem com a direção da escrita e os sinais diacríticos, sem adivinhações"
+        },
+        {
+          "title": "186 idiomas na mesma app",
+          "sub": "O mesmo tradutor funciona para árabe hoje e para qualquer outro idioma amanhã"
+        }
       ]
     },
     {
-      "heading": "Escreva ou cole o texto",
+      "heading": "Tradutor de texto de português para árabe",
       "sub": "Traduza sem usar o microfone, escrevendo ou colando um texto em português ou árabe.",
       "bullets": [
-        { "title": "Sem precisar do microfone", "sub": "Escreva ou cole um texto em português e receba a tradução em árabe na hora" },
-        { "title": "Copie o resultado com um toque", "sub": "Cole a tradução num e-mail, numa mensagem de WhatsApp ou num documento" }
+        {
+          "title": "Sem precisar do microfone",
+          "sub": "Escreva ou cole um texto em português e receba a tradução em árabe na hora"
+        },
+        {
+          "title": "Copie o resultado com um toque",
+          "sub": "Cole a tradução num e-mail, numa mensagem de WhatsApp ou num documento"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de tradução típicas",
     "rows": [
-      { "title": "Como começa", "us": "Fala em português ou árabe e recebe a tradução na hora.", "them": "Tem de escrever antes de traduzir seja o que for." },
-      { "title": "Histórico de conversa", "us": "Cada conversa em árabe fica guardada como um tema ao qual pode voltar.", "them": "A tradução desaparece assim que fecha a app." },
-      { "title": "Instalação", "us": "Abre no navegador, não há nada para instalar.", "them": "É preciso transferir uma app e aceitar permissões antes de a usar." },
-      { "title": "Os dois sentidos", "us": "Português para árabe e árabe para português convivem no mesmo tema.", "them": "Mudar de sentido costuma significar começar do zero." },
-      { "title": "Ouvir a tradução", "us": "Toque no ícone de som e ouça a tradução em árabe em voz alta.", "them": "Só texto — a pronúncia fica por sua conta." }
+      {
+        "title": "Como começa",
+        "us": "Fala em português ou árabe e recebe a tradução na hora.",
+        "them": "Tem de escrever antes de traduzir seja o que for."
+      },
+      {
+        "title": "Histórico de conversa",
+        "us": "Cada conversa em árabe fica guardada como um tema ao qual pode voltar.",
+        "them": "A tradução desaparece assim que fecha a app."
+      },
+      {
+        "title": "Instalação",
+        "us": "Abre no navegador, não há nada para instalar.",
+        "them": "É preciso transferir uma app e aceitar permissões antes de a usar."
+      },
+      {
+        "title": "Os dois sentidos",
+        "us": "Português para árabe e árabe para português convivem no mesmo tema.",
+        "them": "Mudar de sentido costuma significar começar do zero."
+      },
+      {
+        "title": "Ouvir a tradução",
+        "us": "Toque no ícone de som e ouça a tradução em árabe em voz alta.",
+        "them": "Só texto — a pronúncia fica por sua conta."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frequentes",
     "sub": "Dúvidas comuns sobre traduzir português para árabe.",
     "items": [
-      { "q": "Traduz português falado para árabe?", "a": "Sim, toque no microfone, fale em português e recebe a tradução em árabe como texto, com a opção de a ouvir em voz alta." },
-      { "q": "Também traduz de árabe para português?", "a": "Sim, a mesma conversa funciona nos dois sentidos: fale ou escreva em árabe e receba a tradução em português no mesmo tema." },
-      { "q": "Lida bem com a escrita árabe, da direita para a esquerda?", "a": "Sim, o texto árabe é mostrado corretamente, com a direção de escrita e os sinais certos." },
-      { "q": "É útil para viajar?", "a": "Sim, serve para pedir indicações, fazer uma reserva ou entender-se num restaurante sem mudar de app." },
-      { "q": "É grátis?", "a": "Sim, pode experimentar grátis sem criar conta. Entre com Google para ter mais créditos diários e histórico guardado." },
-      { "q": "É preciso instalar alguma coisa?", "a": "Não, funciona diretamente no navegador do telemóvel ou do computador." }
+      {
+        "q": "Traduz português falado para árabe?",
+        "a": "Sim, toque no microfone, fale em português e recebe a tradução em árabe como texto, com a opção de a ouvir em voz alta."
+      },
+      {
+        "q": "Também traduz de árabe para português?",
+        "a": "Sim, a mesma conversa funciona nos dois sentidos: fale ou escreva em árabe e receba a tradução em português no mesmo tema."
+      },
+      {
+        "q": "Lida bem com a escrita árabe, da direita para a esquerda?",
+        "a": "Sim, o texto árabe é mostrado corretamente, com a direção de escrita e os sinais certos."
+      },
+      {
+        "q": "É útil para viajar?",
+        "a": "Sim, serve para pedir indicações, fazer uma reserva ou entender-se num restaurante sem mudar de app."
+      },
+      {
+        "q": "É grátis?",
+        "a": "Sim, pode experimentar grátis sem criar conta. Entre com Google para ter mais créditos diários e histórico guardado."
+      },
+      {
+        "q": "É preciso instalar alguma coisa?",
+        "a": "Não, funciona diretamente no navegador do telemóvel ou do computador."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parla, senza doverlo scrivere in giapponese",
+      "heading": "Traduttore vocale italiano giapponese",
       "sub": "Tocca il microfono, di' la frase in italiano o in giapponese, e ricevi una traduzione da leggere o da ascoltare.",
       "bullets": [
-        { "title": "Il parlato diventa giapponese", "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in giapponese in pochi secondi" },
-        { "title": "Ascolta il giapponese ad alta voce", "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta, senza dover leggere i caratteri" }
+        {
+          "title": "Il parlato diventa giapponese",
+          "sub": "Di' la frase in italiano — viene trascritta, tradotta e mostrata in giapponese in pochi secondi"
+        },
+        {
+          "title": "Ascolta il giapponese ad alta voce",
+          "sub": "Tocca l'icona dell'altoparlante per sentire la pronuncia corretta, senza dover leggere i caratteri"
+        }
       ]
     },
     {
-      "heading": "Una conversazione, due lingue",
+      "heading": "Traduttore per conversazioni in giapponese",
       "sub": "Continua a parlare avanti e indietro senza ricominciare — ogni scambio resta nello stesso argomento.",
       "bullets": [
-        { "title": "Risponde in giapponese, tradotto in italiano", "sub": "Chi ti parla può usare il giapponese e tu lo vedrai e ascolterai in italiano" },
-        { "title": "Le conversazioni si salvano come argomenti", "sub": "Ritrova la stessa chat in giapponese più tardi invece di perdere il filo" }
+        {
+          "title": "Risponde in giapponese, tradotto in italiano",
+          "sub": "Chi ti parla può usare il giapponese e tu lo vedrai e ascolterai in italiano"
+        },
+        {
+          "title": "Le conversazioni si salvano come argomenti",
+          "sub": "Ritrova la stessa chat in giapponese più tardi invece di perdere il filo"
+        }
       ]
     },
     {
-      "heading": "Italiano-giapponese, più altre 185 lingue",
+      "heading": "Traduttore online italiano giapponese",
       "sub": "Il giapponese è una delle 186 lingue disponibili, in qualsiasi direzione.",
       "bullets": [
-        { "title": "Pensato per viaggi e turismo", "sub": "Ristoranti, hotel e indicazioni stradali durante un soggiorno in Giappone" },
-        { "title": "186 lingue in totale", "sub": "Lo stesso strumento funziona per il giapponese oggi e per qualsiasi altra lingua domani" }
+        {
+          "title": "Pensato per viaggi e turismo",
+          "sub": "Ristoranti, hotel e indicazioni stradali durante un soggiorno in Giappone"
+        },
+        {
+          "title": "186 lingue in totale",
+          "sub": "Lo stesso strumento funziona per il giapponese oggi e per qualsiasi altra lingua domani"
+        }
       ]
     },
     {
-      "heading": "Preferisci scrivere? Va bene lo stesso",
+      "heading": "Traduttore di testo italiano giapponese",
       "sub": "Scrivi o incolla un testo in italiano e ottieni la traduzione in giapponese senza toccare il microfono.",
       "bullets": [
-        { "title": "Scrivi invece di parlare", "sub": "Passa alla tastiera quando vuoi — comodo per un messaggio o un'email" },
-        { "title": "Copia la traduzione", "sub": "Copia il testo in giapponese, già scritto correttamente, e incollalo dove serve" }
+        {
+          "title": "Scrivi invece di parlare",
+          "sub": "Passa alla tastiera quando vuoi — comodo per un messaggio o un'email"
+        },
+        {
+          "title": "Copia la traduzione",
+          "sub": "Copia il testo in giapponese, già scritto correttamente, e incollalo dove serve"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "App di traduzione tradizionali",
     "rows": [
-      { "title": "Come inizi", "us": "Parla in italiano o in giapponese e ricevi subito la traduzione.", "them": "Devi prima scrivere quello che vuoi dire, anche in un sistema di scrittura che non conosci." },
-      { "title": "Cronologia delle conversazioni", "us": "Ogni conversazione in giapponese si salva come argomento riapribile.", "them": "Ogni traduzione sparisce appena chiudi l'app." },
-      { "title": "Per iniziare", "us": "Si apre in una scheda del browser — niente da installare.", "them": "Devi scaricare un'app e concedere permessi prima di poterla usare." },
-      { "title": "Entrambe le direzioni", "us": "Italiano-giapponese e giapponese-italiano restano nello stesso filo.", "them": "Cambiare direzione di solito significa iniziare una nuova traduzione." },
-      { "title": "Ascoltare la traduzione", "us": "Tocca per sentire la traduzione in giapponese letta ad alta voce, senza doverla leggere.", "them": "Solo testo, quindi devi sapere leggere i caratteri giapponesi." }
+      {
+        "title": "Come inizi",
+        "us": "Parla in italiano o in giapponese e ricevi subito la traduzione.",
+        "them": "Devi prima scrivere quello che vuoi dire, anche in un sistema di scrittura che non conosci."
+      },
+      {
+        "title": "Cronologia delle conversazioni",
+        "us": "Ogni conversazione in giapponese si salva come argomento riapribile.",
+        "them": "Ogni traduzione sparisce appena chiudi l'app."
+      },
+      {
+        "title": "Per iniziare",
+        "us": "Si apre in una scheda del browser — niente da installare.",
+        "them": "Devi scaricare un'app e concedere permessi prima di poterla usare."
+      },
+      {
+        "title": "Entrambe le direzioni",
+        "us": "Italiano-giapponese e giapponese-italiano restano nello stesso filo.",
+        "them": "Cambiare direzione di solito significa iniziare una nuova traduzione."
+      },
+      {
+        "title": "Ascoltare la traduzione",
+        "us": "Tocca per sentire la traduzione in giapponese letta ad alta voce, senza doverla leggere.",
+        "them": "Solo testo, quindi devi sapere leggere i caratteri giapponesi."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frequenti",
     "sub": "Domande comuni sulla traduzione dall'italiano al giapponese.",
     "items": [
-      { "q": "Traduce anche il giapponese parlato?", "a": "Sì — tocca il microfono, parla in giapponese, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce." },
-      { "q": "Gestisce le forme di cortesia giapponesi (keigo)?", "a": "Sì, la traduzione tiene conto del registro formale usato in giapponese, adatto a contesti educati come un negozio o un ufficio." },
-      { "q": "Devo saper leggere kanji e katakana per usarlo?", "a": "No, la traduzione in giapponese può anche essere ascoltata ad alta voce, quindi non serve saperla leggere." },
-      { "q": "È gratis?", "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata." },
-      { "q": "Devo installare qualcosa?", "a": "No, funziona nel browser su computer o telefono — niente da scaricare." },
-      { "q": "Posso tradurre anche dal giapponese all'italiano?", "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in giapponese e ricevi la traduzione in italiano nello stesso argomento." }
+      {
+        "q": "Traduce anche il giapponese parlato?",
+        "a": "Sì — tocca il microfono, parla in giapponese, e ricevi la traduzione in italiano come testo, con la possibilità di ascoltarla ad alta voce."
+      },
+      {
+        "q": "Gestisce le forme di cortesia giapponesi (keigo)?",
+        "a": "Sì, la traduzione tiene conto del registro formale usato in giapponese, adatto a contesti educati come un negozio o un ufficio."
+      },
+      {
+        "q": "Devo saper leggere kanji e katakana per usarlo?",
+        "a": "No, la traduzione in giapponese può anche essere ascoltata ad alta voce, quindi non serve saperla leggere."
+      },
+      {
+        "q": "È gratis?",
+        "a": "Sì, puoi provarlo gratis senza creare un account. Accedi con Google per avere più crediti giornalieri e la cronologia salvata."
+      },
+      {
+        "q": "Devo installare qualcosa?",
+        "a": "No, funziona nel browser su computer o telefono — niente da scaricare."
+      },
+      {
+        "q": "Posso tradurre anche dal giapponese all'italiano?",
+        "a": "Sì, la stessa conversazione funziona in entrambi i sensi — parla o scrivi in giapponese e ricevi la traduzione in italiano nello stesso argomento."
+      }
     ]
   },
   "finalCta": {

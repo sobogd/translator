@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parla i escolta la resposta",
+      "heading": "Traductor de veu de català a castellà",
       "sub": "Toca el micròfon, digues-ho en català o en castellà, i obtén una traducció que pots llegir o escoltar.",
       "bullets": [
-        { "title": "La teva veu, convertida al castellà", "sub": "Ho dius en català — es transcriu, es tradueix i apareix en castellà segons després" },
-        { "title": "Escolta el castellà en veu alta", "sub": "Toca l'altaveu per confirmar com es pronuncia un tràmit o un terme oficial" }
+        {
+          "title": "La teva veu, convertida al castellà",
+          "sub": "Ho dius en català — es transcriu, es tradueix i apareix en castellà segons després"
+        },
+        {
+          "title": "Escolta el castellà en veu alta",
+          "sub": "Toca l'altaveu per confirmar com es pronuncia un tràmit o un terme oficial"
+        }
       ]
     },
     {
-      "heading": "Un sol fil, els dos costats de la conversa",
+      "heading": "Traductor per a converses en català i castellà",
       "sub": "Segueix parlant sense començar de nou — útil quan et demanen documents o expliques un tràmit pas a pas.",
       "bullets": [
-        { "title": "Respon en castellà, traduït al català", "sub": "Un funcionari o gestor pot parlar en castellà i tu ho veuràs i escoltaràs en català" },
-        { "title": "Converses desades com a temes", "sub": "Torna a la mateixa conversa de tràmits més tard sense perdre res" }
+        {
+          "title": "Respon en castellà, traduït al català",
+          "sub": "Un funcionari o gestor pot parlar en castellà i tu ho veuràs i escoltaràs en català"
+        },
+        {
+          "title": "Converses desades com a temes",
+          "sub": "Torna a la mateixa conversa de tràmits més tard sense perdre res"
+        }
       ]
     },
     {
-      "heading": "Català–castellà, més 185 llengües",
+      "heading": "Traductor online de català a castellà",
       "sub": "El castellà és una de les 186 llengües disponibles, en qualsevol sentit.",
       "bullets": [
-        { "title": "Precís amb termes oficials", "sub": "Gestiona bé el vocabulari administratiu i legal, no una aproximació" },
-        { "title": "186 llengües en total", "sub": "La mateixa eina et serveix per al castellà avui i per a qualsevol altra llengua demà" }
+        {
+          "title": "Precís amb termes oficials",
+          "sub": "Gestiona bé el vocabulari administratiu i legal, no una aproximació"
+        },
+        {
+          "title": "186 llengües en total",
+          "sub": "La mateixa eina et serveix per al castellà avui i per a qualsevol altra llengua demà"
+        }
       ]
     },
     {
-      "heading": "Prefereixes escriure? També funciona",
+      "heading": "Traductor de text de català a castellà",
       "sub": "Escriu o enganxa el text d'un formulari o correu en català i obtén la traducció al castellà sense tocar el micròfon.",
       "bullets": [
-        { "title": "Escriu en lloc de parlar", "sub": "Canvia al teclat quan sigui — útil per omplir un formulari amb calma" },
-        { "title": "Copia el resultat", "sub": "Copia el text en castellà per enganxar-lo directament en un tràmit o correu" }
+        {
+          "title": "Escriu en lloc de parlar",
+          "sub": "Canvia al teclat quan sigui — útil per omplir un formulari amb calma"
+        },
+        {
+          "title": "Copia el resultat",
+          "sub": "Copia el text en castellà per enganxar-lo directament en un tràmit o correu"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicacions de traducció habituals",
     "rows": [
-      { "title": "Com comences", "us": "Parla en català o en castellà i obtén la traducció a l'instant.", "them": "Primer has d'escriure el que vols dir." },
-      { "title": "Historial de conversa", "us": "Cada conversa de tràmits es desa com el seu propi tema, llest per reobrir.", "them": "Cada traducció desapareix en tancar l'app." },
-      { "title": "Posada en marxa", "us": "Obre-la en una pestanya del navegador — res a instal·lar.", "them": "Cal baixar una app i acceptar permisos abans de fer-la servir." },
-      { "title": "Els dos sentits", "us": "Català a castellà i castellà a català conviuen al mateix fil.", "them": "Canviar de sentit normalment vol dir començar una traducció nova." },
-      { "title": "Escoltar-ho", "us": "Toca per escoltar la traducció al castellà en veu alta.", "them": "Només text, així que la pronúncia depèn de tu." }
+      {
+        "title": "Com comences",
+        "us": "Parla en català o en castellà i obtén la traducció a l'instant.",
+        "them": "Primer has d'escriure el que vols dir."
+      },
+      {
+        "title": "Historial de conversa",
+        "us": "Cada conversa de tràmits es desa com el seu propi tema, llest per reobrir.",
+        "them": "Cada traducció desapareix en tancar l'app."
+      },
+      {
+        "title": "Posada en marxa",
+        "us": "Obre-la en una pestanya del navegador — res a instal·lar.",
+        "them": "Cal baixar una app i acceptar permisos abans de fer-la servir."
+      },
+      {
+        "title": "Els dos sentits",
+        "us": "Català a castellà i castellà a català conviuen al mateix fil.",
+        "them": "Canviar de sentit normalment vol dir començar una traducció nova."
+      },
+      {
+        "title": "Escoltar-ho",
+        "us": "Toca per escoltar la traducció al castellà en veu alta.",
+        "them": "Només text, així que la pronúncia depèn de tu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "freqüents",
     "sub": "Dubtes habituals sobre traduir del català al castellà.",
     "items": [
-      { "q": "Pot traduir català parlat al castellà?", "a": "Sí — toca el micròfon, parla en català, i obtens la traducció al castellà com a text, amb l'opció d'escoltar-la en veu alta." },
-      { "q": "Serveix per fer tràmits o gestions administratives?", "a": "Sí, funciona bé per a documents, formularis i converses amb oficines o gestories — la conversa es queda desada com un tema al qual pots tornar." },
-      { "q": "Puc traduir del castellà de tornada al català?", "a": "Sí, la mateixa conversa funciona en els dos sentits — parla o escriu en castellà i obtén la traducció al català al mateix fil." },
-      { "q": "És gratuït?", "a": "Sí, pots provar-ho gratis sense crear cap compte. Inicia sessió amb Google per a més crèdits diaris i historial desat." },
-      { "q": "Cal instal·lar alguna cosa?", "a": "No, funciona al navegador, tant a l'ordinador com al mòbil — res per baixar." },
-      { "q": "Puc mantenir una conversa seguida en lloc de traduccions soltes?", "a": "Sí, les traduccions s'agrupen en temes, així una conversa en castellà es queda en un sol lloc en lloc d'escampar-se en cerques separades." }
+      {
+        "q": "Pot traduir català parlat al castellà?",
+        "a": "Sí — toca el micròfon, parla en català, i obtens la traducció al castellà com a text, amb l'opció d'escoltar-la en veu alta."
+      },
+      {
+        "q": "Serveix per fer tràmits o gestions administratives?",
+        "a": "Sí, funciona bé per a documents, formularis i converses amb oficines o gestories — la conversa es queda desada com un tema al qual pots tornar."
+      },
+      {
+        "q": "Puc traduir del castellà de tornada al català?",
+        "a": "Sí, la mateixa conversa funciona en els dos sentits — parla o escriu en castellà i obtén la traducció al català al mateix fil."
+      },
+      {
+        "q": "És gratuït?",
+        "a": "Sí, pots provar-ho gratis sense crear cap compte. Inicia sessió amb Google per a més crèdits diaris i historial desat."
+      },
+      {
+        "q": "Cal instal·lar alguna cosa?",
+        "a": "No, funciona al navegador, tant a l'ordinador com al mòbil — res per baixar."
+      },
+      {
+        "q": "Puc mantenir una conversa seguida en lloc de traduccions soltes?",
+        "a": "Sí, les traduccions s'agrupen en temes, així una conversa en castellà es queda en un sol lloc en lloc d'escampar-se en cerques separades."
+      }
     ]
   },
   "finalCta": {

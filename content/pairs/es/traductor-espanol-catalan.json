@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Catalán del día a día",
+      "heading": "Traductor de voz de español a catalán",
       "sub": "Vecinos, colegio, ayuntamiento: la lengua que oyes en Cataluña, Valencia o Baleares.",
       "bullets": [
-        { "title": "Habla y léelo en catalán", "sub": "Di la frase en español y sale en catalán, lista para leer o escuchar" },
-        { "title": "También al revés", "sub": "Graba lo que te dijeron en catalán y léelo en español al instante" }
+        {
+          "title": "Habla y léelo en catalán",
+          "sub": "Di la frase en español y sale en catalán, lista para leer o escuchar"
+        },
+        {
+          "title": "También al revés",
+          "sub": "Graba lo que te dijeron en catalán y léelo en español al instante"
+        }
       ]
     },
     {
-      "heading": "Trámites y documentos",
+      "heading": "Traductor para conversación en catalán",
       "sub": "Muchas comunicaciones oficiales llegan solo en catalán y hay que entenderlas bien.",
       "bullets": [
-        { "title": "Pega la carta entera", "sub": "Un escrito del ayuntamiento o del colegio, traducido de una vez" },
-        { "title": "Copia el resultado", "sub": "Lleva el texto a tus notas o a la respuesta sin volver a escribirlo" }
+        {
+          "title": "Pega la carta entera",
+          "sub": "Un escrito del ayuntamiento o del colegio, traducido de una vez"
+        },
+        {
+          "title": "Copia el resultado",
+          "sub": "Lleva el texto a tus notas o a la respuesta sin volver a escribirlo"
+        }
       ]
     },
     {
-      "heading": "Variantes del catalán",
+      "heading": "Traductor online sin instalación previa",
       "sub": "Central, valenciano o balear cambian palabras y terminaciones.",
       "bullets": [
-        { "title": "Se traduce por contexto", "sub": "Xiquet o nen, esta vesprada o aquesta tarda: cuenta la frase, no el diccionario" },
-        { "title": "Apóstrofos y accents", "sub": "L'aigua, què, més: pega el texto tal cual y no se rompe nada" }
+        {
+          "title": "Se traduce por contexto",
+          "sub": "Xiquet o nen, esta vesprada o aquesta tarda: cuenta la frase, no el diccionario"
+        },
+        {
+          "title": "Apóstrofos y accents",
+          "sub": "L'aigua, què, més: pega el texto tal cual y no se rompe nada"
+        }
       ]
     },
     {
-      "heading": "O escríbelo y ya está",
+      "heading": "Traductor de texto en español a catalán",
       "sub": "Un mensaje al grupo del colegio o al administrador de la finca, en catalán correcto.",
       "bullets": [
-        { "title": "Escribe en español", "sub": "La versión en catalán sale lista para enviar" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo te sirve luego para cualquier otro idioma" }
+        {
+          "title": "Escribe en español",
+          "sub": "La versión en catalán sale lista para enviar"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo te sirve luego para cualquier otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te hablan en catalán", "us": "Grabas y lo lees en español al momento.", "them": "Escribes de memoria lo que creíste entender." },
-      { "title": "Documentos oficiales", "us": "Pegas la carta completa y la lees entera.", "them": "Traduces frase a frase y pierdes el hilo." },
-      { "title": "Variantes", "us": "Valenciano o balear se leen por contexto.", "them": "Una sola variante asumida por defecto." },
-      { "title": "Historial", "us": "Cada conversación queda guardada como tema.", "them": "Desaparece al cerrar." },
-      { "title": "Empezar", "us": "Una pestaña del navegador, sin instalar.", "them": "Descarga y registro previos." }
+      {
+        "title": "Te hablan en catalán",
+        "us": "Grabas y lo lees en español al momento.",
+        "them": "Escribes de memoria lo que creíste entender."
+      },
+      {
+        "title": "Documentos oficiales",
+        "us": "Pegas la carta completa y la lees entera.",
+        "them": "Traduces frase a frase y pierdes el hilo."
+      },
+      {
+        "title": "Variantes",
+        "us": "Valenciano o balear se leen por contexto.",
+        "them": "Una sola variante asumida por defecto."
+      },
+      {
+        "title": "Historial",
+        "us": "Cada conversación queda guardada como tema.",
+        "them": "Desaparece al cerrar."
+      },
+      {
+        "title": "Empezar",
+        "us": "Una pestaña del navegador, sin instalar.",
+        "them": "Descarga y registro previos."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al catalán.",
     "items": [
-      { "q": "¿Traduce catalán hablado?", "a": "Sí, graba la frase y la lees en español un par de segundos después, sin escribir nada." },
-      { "q": "¿Distingue el valenciano?", "a": "Se traduce la frase completa en su contexto, así que el vocabulario valenciano o balear se lee como lo que quiso decir la persona." },
-      { "q": "¿Puedo pegar una carta oficial?", "a": "Sí, pega el texto entero, con acentos y apóstrofos, y léelo en español debajo." },
-      { "q": "¿Funciona de catalán a español?", "a": "Sí, la misma conversación va en los dos sentidos y puedes escuchar cualquiera de las dos versiones." },
-      { "q": "¿Se guarda la conversación?", "a": "Cada una queda como un tema que puedes reabrir, borrar o vaciar cuando quieras." },
-      { "q": "¿Es gratis?", "a": "Sí, con un margen gratuito sin cuenta; iniciando sesión con Google tienes más cuota mensual." }
+      {
+        "q": "¿Traduce catalán hablado?",
+        "a": "Sí, graba la frase y la lees en español un par de segundos después, sin escribir nada."
+      },
+      {
+        "q": "¿Distingue el valenciano?",
+        "a": "Se traduce la frase completa en su contexto, así que el vocabulario valenciano o balear se lee como lo que quiso decir la persona."
+      },
+      {
+        "q": "¿Puedo pegar una carta oficial?",
+        "a": "Sí, pega el texto entero, con acentos y apóstrofos, y léelo en español debajo."
+      },
+      {
+        "q": "¿Funciona de catalán a español?",
+        "a": "Sí, la misma conversación va en los dos sentidos y puedes escuchar cualquiera de las dos versiones."
+      },
+      {
+        "q": "¿Se guarda la conversación?",
+        "a": "Cada una queda como un tema que puedes reabrir, borrar o vaciar cuando quieras."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, con un margen gratuito sin cuenta; iniciando sesión con Google tienes más cuota mensual."
+      }
     ]
   },
   "finalCta": {

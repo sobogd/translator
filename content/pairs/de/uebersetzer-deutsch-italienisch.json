@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Fast verstanden ist nicht verstanden",
+      "heading": "Italienisch-Sprachübersetzer für die eigene Aussprache",
       "sub": "Italienisch klingt vertraut, und genau dort passieren die Missverständnisse.",
       "bullets": [
-        { "title": "Falsche Freunde", "sub": "Burro ist Butter, salire heißt hinaufgehen: übersetzt wird der Sinn" },
-        { "title": "Vorher anhören", "sub": "Sag den Satz erst, nachdem du ihn einmal gehört hast" }
+        {
+          "title": "Falsche Freunde",
+          "sub": "Burro ist Butter, salire heißt hinaufgehen: übersetzt wird der Sinn"
+        },
+        {
+          "title": "Vorher anhören",
+          "sub": "Sag den Satz erst, nachdem du ihn einmal gehört hast"
+        }
       ]
     },
     {
-      "heading": "Urlaub in Italien",
+      "heading": "Gesprächsübersetzer für Deutsch und Italienisch",
       "sub": "Restaurant, Zug, Unterkunft — kurze Gespräche in hohem Tempo.",
       "bullets": [
-        { "title": "In Sekunden übersetzt", "sub": "Aufnehmen, lesen, weiterreden, ohne das Gespräch zu stoppen" },
-        { "title": "Nichts zu installieren", "sub": "Öffnet sich im Browser, ohne Konto zum Ausprobieren" }
+        {
+          "title": "In Sekunden übersetzt",
+          "sub": "Aufnehmen, lesen, weiterreden, ohne das Gespräch zu stoppen"
+        },
+        {
+          "title": "Nichts zu installieren",
+          "sub": "Öffnet sich im Browser, ohne Konto zum Ausprobieren"
+        }
       ]
     },
     {
-      "heading": "Dialekte und Doppelkonsonanten",
+      "heading": "Online-Übersetzer direkt im Browser nutzen",
       "sub": "Vom Venetischen bis zum Neapolitanischen klingt Italienisch selten wie im Lehrbuch.",
       "bullets": [
-        { "title": "Redewendungen im Kontext", "sub": "Sie werden nach Bedeutung gelesen, nicht Wort für Wort" },
-        { "title": "Nonno oder nono", "sub": "Doppelte Konsonanten ändern das Wort — der Satz entscheidet, welches gemeint war" }
+        {
+          "title": "Redewendungen im Kontext",
+          "sub": "Sie werden nach Bedeutung gelesen, nicht Wort für Wort"
+        },
+        {
+          "title": "Nonno oder nono",
+          "sub": "Doppelte Konsonanten ändern das Wort — der Satz entscheidet, welches gemeint war"
+        }
       ]
     },
     {
-      "heading": "Oder tippen",
+      "heading": "Textübersetzer für Deutsch-Italienisch",
       "sub": "Nachricht an den Vermieter, Mail an den Lieferanten, Bewertung.",
       "bullets": [
-        { "title": "Ganzer Text am Stück", "sub": "Ein kompletter Absatz auf einmal" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread hilft bei der nächsten Sprache" }
+        {
+          "title": "Ganzer Text am Stück",
+          "sub": "Ein kompletter Absatz auf einmal"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread hilft bei der nächsten Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Es geht schnell", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Tippen, was du zu hören glaubst." },
-      { "title": "Falsche Freunde", "us": "Nach echter Bedeutung übersetzt.", "them": "Nach Ähnlichkeit, und es kippt." },
-      { "title": "Aussprache", "us": "Jeden Satz anhören.", "them": "Nur Text." },
-      { "title": "Verlauf", "us": "Gespräche bleiben gespeichert.", "them": "Beim Schließen weg." },
-      { "title": "Start", "us": "Browser-Tab, sonst nichts.", "them": "App laden und registrieren." }
+      {
+        "title": "Es geht schnell",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Tippen, was du zu hören glaubst."
+      },
+      {
+        "title": "Falsche Freunde",
+        "us": "Nach echter Bedeutung übersetzt.",
+        "them": "Nach Ähnlichkeit, und es kippt."
+      },
+      {
+        "title": "Aussprache",
+        "us": "Jeden Satz anhören.",
+        "them": "Nur Text."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Gespräche bleiben gespeichert.",
+        "them": "Beim Schließen weg."
+      },
+      {
+        "title": "Start",
+        "us": "Browser-Tab, sonst nichts.",
+        "them": "App laden und registrieren."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Italienisch.",
     "items": [
-      { "q": "Übersetzt es gesprochenes Italienisch?", "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch." },
-      { "q": "Werden falsche Freunde richtig übersetzt?", "a": "Der ganze Satz wird übersetzt, deshalb werden Wörter wie burro, salire oder largo in ihrer italienischen Bedeutung gelesen." },
-      { "q": "Kommt es mit Dialekten zurecht?", "a": "Standarditalienisch aus dem Norden wie dem Süden klappt gut; bei starkem Dialekt hilft etwas langsameres Sprechen." },
-      { "q": "Kann ich die Übersetzung anhören?", "a": "Ja, tipp auf den Lautsprecher bei jedem Satz." },
-      { "q": "Geht es auch von Italienisch nach Deutsch?", "a": "Ja, im selben Thread, ohne neu anzufangen." },
-      { "q": "Ist es kostenlos?", "a": "Ja, Gratis-Kontingent ohne Konto, mehr Monatsvolumen mit Google-Login." }
+      {
+        "q": "Übersetzt es gesprochenes Italienisch?",
+        "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch."
+      },
+      {
+        "q": "Werden falsche Freunde richtig übersetzt?",
+        "a": "Der ganze Satz wird übersetzt, deshalb werden Wörter wie burro, salire oder largo in ihrer italienischen Bedeutung gelesen."
+      },
+      {
+        "q": "Kommt es mit Dialekten zurecht?",
+        "a": "Standarditalienisch aus dem Norden wie dem Süden klappt gut; bei starkem Dialekt hilft etwas langsameres Sprechen."
+      },
+      {
+        "q": "Kann ich die Übersetzung anhören?",
+        "a": "Ja, tipp auf den Lautsprecher bei jedem Satz."
+      },
+      {
+        "q": "Geht es auch von Italienisch nach Deutsch?",
+        "a": "Ja, im selben Thread, ohne neu anzufangen."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, Gratis-Kontingent ohne Konto, mehr Monatsvolumen mit Google-Login."
+      }
     ]
   },
   "finalCta": {

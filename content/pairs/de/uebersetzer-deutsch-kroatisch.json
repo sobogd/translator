@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Urlaub an der Adria",
+      "heading": "Deutsch-Kroatisch-Sprachübersetzer für Gespräche",
       "sub": "Vermieter, Hafen, Restaurant, Werkstatt — kurze Gespräche, die schnell gehen müssen.",
       "bullets": [
-        { "title": "In Sekunden übersetzt", "sub": "Aufnehmen, lesen, weiterreden" },
-        { "title": "Nichts installieren", "sub": "Läuft im Browser des Handys, auch ohne Konto" }
+        {
+          "title": "In Sekunden übersetzt",
+          "sub": "Aufnehmen, lesen, weiterreden"
+        },
+        {
+          "title": "Nichts installieren",
+          "sub": "Läuft im Browser des Handys, auch ohne Konto"
+        }
       ]
     },
     {
-      "heading": "Fälle und Endungen",
+      "heading": "Live-Übersetzer für Gespräche auf Deutsch und Kroatisch",
       "sub": "Kroatisch markiert mit Endungen, wer was tut, und lässt die Wortstellung frei.",
       "bullets": [
-        { "title": "Ganzer Satz auf einmal", "sub": "Der Zusammenhang bleibt erhalten statt in Einzelteile zu zerfallen" },
-        { "title": "Č, ć, š, ž und đ", "sub": "Text so einfügen, wie er geschrieben wurde" }
+        {
+          "title": "Ganzer Satz auf einmal",
+          "sub": "Der Zusammenhang bleibt erhalten statt in Einzelteile zu zerfallen"
+        },
+        {
+          "title": "Č, ć, š, ž und đ",
+          "sub": "Text so einfügen, wie er geschrieben wurde"
+        }
       ]
     },
     {
-      "heading": "Nicht dasselbe wie Serbisch",
+      "heading": "Online-Übersetzer ohne Installation nutzen",
       "sub": "Verwandt, aber mit eigenem Wortschatz und eigener Schreibung.",
       "bullets": [
-        { "title": "Kroatisch bleibt Kroatisch", "sub": "Kruh statt hleb, siječanj statt januar" },
-        { "title": "Dialekte im Kontext", "sub": "Küstennahe Ausdrücke werden nach Bedeutung gelesen" }
+        {
+          "title": "Kroatisch bleibt Kroatisch",
+          "sub": "Kruh statt hleb, siječanj statt januar"
+        },
+        {
+          "title": "Dialekte im Kontext",
+          "sub": "Küstennahe Ausdrücke werden nach Bedeutung gelesen"
+        }
       ]
     },
     {
-      "heading": "Oder tippen",
+      "heading": "Textübersetzer für Deutsch und Kroatisch",
       "sub": "Nachricht an den Vermieter, Vertrag, Anfrage.",
       "bullets": [
-        { "title": "Ganzer Absatz", "sub": "Ein kompletter Text auf einmal" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede weitere Sprache" }
+        {
+          "title": "Ganzer Absatz",
+          "sub": "Ein kompletter Text auf einmal"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread passt für jede weitere Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Kroatisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Im Buch nach einem Satz suchen, den es nicht gibt." },
-      { "title": "Grammatik", "us": "Ganzer Satz, Endungen aufgelöst.", "them": "Wort für Wort, Sinn verschoben." },
-      { "title": "Antworten", "us": "Deutsch rein, Kroatisch raus.", "them": "Zweite Übersetzung nötig." },
-      { "title": "Verlauf", "us": "Gespräche bleiben als Themen.", "them": "Nichts bleibt." },
-      { "title": "Start", "us": "Browser-Tab und Mikrofon.", "them": "App installieren und anmelden." }
+      {
+        "title": "Jemand spricht Kroatisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Im Buch nach einem Satz suchen, den es nicht gibt."
+      },
+      {
+        "title": "Grammatik",
+        "us": "Ganzer Satz, Endungen aufgelöst.",
+        "them": "Wort für Wort, Sinn verschoben."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Kroatisch raus.",
+        "them": "Zweite Übersetzung nötig."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Gespräche bleiben als Themen.",
+        "them": "Nichts bleibt."
+      },
+      {
+        "title": "Start",
+        "us": "Browser-Tab und Mikrofon.",
+        "them": "App installieren und anmelden."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Kroatisch.",
     "items": [
-      { "q": "Übersetzt es gesprochenes Kroatisch?", "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch." },
-      { "q": "Ist das dasselbe wie Serbisch?", "a": "Nein. Kroatisch hat eigenen Wortschatz und eigene Schreibung, und genau der wird hier übersetzt." },
-      { "q": "Bleiben č, ć, š, ž und đ erhalten?", "a": "Ja, in beide Richtungen, egal ob du Text einfügst oder eine Antwort übersetzen lässt." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht im selben Thread auf Kroatisch raus und lässt sich vorlesen." },
-      { "q": "Bleiben die Gespräche gespeichert?", "a": "Jedes bleibt als Thema, das du wieder öffnest oder löschst." },
-      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen." }
+      {
+        "q": "Übersetzt es gesprochenes Kroatisch?",
+        "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch."
+      },
+      {
+        "q": "Ist das dasselbe wie Serbisch?",
+        "a": "Nein. Kroatisch hat eigenen Wortschatz und eigene Schreibung, und genau der wird hier übersetzt."
+      },
+      {
+        "q": "Bleiben č, ć, š, ž und đ erhalten?",
+        "a": "Ja, in beide Richtungen, egal ob du Text einfügst oder eine Antwort übersetzen lässt."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, die Antwort geht im selben Thread auf Kroatisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleiben die Gespräche gespeichert?",
+        "a": "Jedes bleibt als Thema, das du wieder öffnest oder löschst."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen."
+      }
     ]
   },
   "finalCta": {

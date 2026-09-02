@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Kyrillisch, ohne es zu lernen",
+      "heading": "Russisch per Sprache übersetzen",
       "sub": "Keine russische Tastatur, keine Umschrift: sprechen oder einfügen reicht.",
       "bullets": [
-        { "title": "Kyrillischen Text einfügen", "sub": "Nachricht kopieren und direkt darunter auf Deutsch lesen" },
-        { "title": "Laut vorlesen lassen", "sub": "Tipp auf den Lautsprecher, wenn Hören leichter ist als Entziffern" }
+        {
+          "title": "Kyrillischen Text einfügen",
+          "sub": "Nachricht kopieren und direkt darunter auf Deutsch lesen"
+        },
+        {
+          "title": "Laut vorlesen lassen",
+          "sub": "Tipp auf den Lautsprecher, wenn Hören leichter ist als Entziffern"
+        }
       ]
     },
     {
-      "heading": "Fälle und freie Wortstellung",
+      "heading": "Gespräch von Deutsch nach Russisch",
       "sub": "Russisch markiert mit Endungen, wer was tut, und stellt die Wörter frei um.",
       "bullets": [
-        { "title": "Ganzer Satz auf einmal", "sub": "Wer wem was tut bleibt erhalten statt in Wortsalat zu zerfallen" },
-        { "title": "Keine Artikel zu raten", "sub": "Das fehlende der, die, das ergibt sich aus dem Zusammenhang" }
+        {
+          "title": "Ganzer Satz auf einmal",
+          "sub": "Wer wem was tut bleibt erhalten statt in Wortsalat zu zerfallen"
+        },
+        {
+          "title": "Keine Artikel zu raten",
+          "sub": "Das fehlende der, die, das ergibt sich aus dem Zusammenhang"
+        }
       ]
     },
     {
-      "heading": "Arbeit, Behörde, Familie",
+      "heading": "Online-Übersetzer ohne Installation",
       "sub": "Kurze Gespräche und lange Dokumente an derselben Stelle.",
       "bullets": [
-        { "title": "Antwort auf Deutsch", "sub": "Sie geht auf Russisch raus, zum Lesen oder Anhören" },
-        { "title": "Jedes Gespräch bleibt", "sub": "Als Thema gespeichert, wenn die nächste Nachricht kommt" }
+        {
+          "title": "Antwort auf Deutsch",
+          "sub": "Sie geht auf Russisch raus, zum Lesen oder Anhören"
+        },
+        {
+          "title": "Jedes Gespräch bleibt",
+          "sub": "Als Thema gespeichert, wenn die nächste Nachricht kommt"
+        }
       ]
     },
     {
-      "heading": "Oder Text einfügen",
+      "heading": "Deutscher Text auf Russisch",
       "sub": "Vertrag, Mail, Formular auf Russisch.",
       "bullets": [
-        { "title": "Ganze Absätze", "sub": "Ein langer Text in einem Schritt" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread taugt für die nächste Sprache" }
+        {
+          "title": "Ganze Absätze",
+          "sub": "Ein langer Text in einem Schritt"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread taugt für die nächste Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Russisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Kyrillisch tippen, das du nicht hast." },
-      { "title": "Grammatik", "us": "Ganzer Satz mit Fällen.", "them": "Wort für Wort, Subjekt verloren." },
-      { "title": "Antworten", "us": "Deutsch rein, Russisch raus, ein Thread.", "them": "Zwei getrennte Abfragen." },
-      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Nach dem Schließen weg." },
-      { "title": "Start", "us": "Tab und Mikrofon.", "them": "App plus russisches Tastaturlayout." }
+      {
+        "title": "Jemand spricht Russisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Kyrillisch tippen, das du nicht hast."
+      },
+      {
+        "title": "Grammatik",
+        "us": "Ganzer Satz mit Fällen.",
+        "them": "Wort für Wort, Subjekt verloren."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Russisch raus, ein Thread.",
+        "them": "Zwei getrennte Abfragen."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Als Themen gespeichert.",
+        "them": "Nach dem Schließen weg."
+      },
+      {
+        "title": "Start",
+        "us": "Tab und Mikrofon.",
+        "them": "App plus russisches Tastaturlayout."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Russisch.",
     "items": [
-      { "q": "Brauche ich eine kyrillische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein — du musst nie Russisch tippen." },
-      { "q": "Übersetzt es gesprochenes Russisch?", "a": "Ja, nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch." },
-      { "q": "Stimmt die Grammatik?", "a": "Der komplette Satz wird übersetzt, deshalb bleiben Fallendungen und freie Wortstellung erhalten statt zu verrutschen." },
-      { "q": "Geht es auch von Russisch nach Deutsch?", "a": "Ja, derselbe Thread läuft in beide Richtungen und lässt sich vorlesen." },
-      { "q": "Bleibt der Verlauf erhalten?", "a": "Jedes Gespräch bleibt als Thema, das du wieder öffnen, löschen oder komplett leeren kannst." },
-      { "q": "Ist es kostenlos?", "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und synchronisierter Verlauf." }
+      {
+        "q": "Brauche ich eine kyrillische Tastatur?",
+        "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein — du musst nie Russisch tippen."
+      },
+      {
+        "q": "Übersetzt es gesprochenes Russisch?",
+        "a": "Ja, nimm den Satz auf, und ein paar Sekunden später steht er auf Deutsch."
+      },
+      {
+        "q": "Stimmt die Grammatik?",
+        "a": "Der komplette Satz wird übersetzt, deshalb bleiben Fallendungen und freie Wortstellung erhalten statt zu verrutschen."
+      },
+      {
+        "q": "Geht es auch von Russisch nach Deutsch?",
+        "a": "Ja, derselbe Thread läuft in beide Richtungen und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleibt der Verlauf erhalten?",
+        "a": "Jedes Gespräch bleibt als Thema, das du wieder öffnen, löschen oder komplett leeren kannst."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, mit einem Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und synchronisierter Verlauf."
+      }
     ]
   },
   "finalCta": {

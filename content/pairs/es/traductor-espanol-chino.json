@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Caracteres que no puedes teclear",
+      "heading": "Traductor de voz de español a chino",
       "sub": "No hace falta método de entrada ni saber pinyin: pega el mensaje o habla.",
       "bullets": [
-        { "title": "Pega los caracteres", "sub": "Un mensaje de WeChat o una ficha de producto, tal cual llegó" },
-        { "title": "Habla y sale en chino", "sub": "Di la frase en español y aparece en caracteres, lista para enviar" }
+        {
+          "title": "Pega los caracteres",
+          "sub": "Un mensaje de WeChat o una ficha de producto, tal cual llegó"
+        },
+        {
+          "title": "Habla y sale en chino",
+          "sub": "Di la frase en español y aparece en caracteres, lista para enviar"
+        }
       ]
     },
     {
-      "heading": "Proveedores y pedidos",
+      "heading": "Traductor para conversaciones con clientes",
       "sub": "Negociar precios, plazos y muestras sin depender del inglés de nadie.",
       "bullets": [
-        { "title": "Mensajes largos completos", "sub": "Pega el correo entero del proveedor y léelo en español" },
-        { "title": "Copia y envía", "sub": "Lleva la versión en chino directamente a la conversación con la fábrica" }
+        {
+          "title": "Mensajes largos completos",
+          "sub": "Pega el correo entero del proveedor y léelo en español"
+        },
+        {
+          "title": "Copia y envía",
+          "sub": "Lleva la versión en chino directamente a la conversación con la fábrica"
+        }
       ]
     },
     {
-      "heading": "Tonos y sin espacios",
+      "heading": "Traductor online gratis sin descargas",
       "sub": "El chino no separa palabras y el tono cambia el significado: por eso se traduce la frase entera.",
       "bullets": [
-        { "title": "Las palabras se agrupan solas", "sub": "El corte entre una palabra y otra lo decide la frase, no tú" },
-        { "title": "Escúchalo pronunciado", "sub": "Toca el altavoz y oye los tonos, que el pinyin escrito no te da" }
+        {
+          "title": "Las palabras se agrupan solas",
+          "sub": "El corte entre una palabra y otra lo decide la frase, no tú"
+        },
+        {
+          "title": "Escúchalo pronunciado",
+          "sub": "Toca el altavoz y oye los tonos, que el pinyin escrito no te da"
+        }
       ]
     },
     {
-      "heading": "Simplificado o tradicional",
+      "heading": "Traductor de texto en español y chino",
       "sub": "China continental, Taiwán o Hong Kong escriben distinto.",
       "bullets": [
-        { "title": "Pega cualquiera de los dos", "sub": "Se lee igual de bien y la respuesta vuelve en el mismo sistema" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo sirve luego para cualquier otro idioma" }
+        {
+          "title": "Pega cualquiera de los dos",
+          "sub": "Se lee igual de bien y la respuesta vuelve en el mismo sistema"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo sirve luego para cualquier otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te escriben en chino", "us": "Pegas el mensaje y lo lees en español.", "them": "No puedes ni teclear los caracteres." },
-      { "title": "Sin espacios", "us": "Las palabras se agrupan por contexto.", "them": "Se corta mal y cambia el sentido." },
-      { "title": "Tonos", "us": "Escuchas la frase pronunciada.", "them": "Solo pinyin escrito, sin audio." },
-      { "title": "Historial", "us": "Cada conversación queda como tema.", "them": "Se borra al cerrar." },
-      { "title": "Empezar", "us": "Navegador, sin método de entrada.", "them": "App más teclado chino instalado." }
+      {
+        "title": "Te escriben en chino",
+        "us": "Pegas el mensaje y lo lees en español.",
+        "them": "No puedes ni teclear los caracteres."
+      },
+      {
+        "title": "Sin espacios",
+        "us": "Las palabras se agrupan por contexto.",
+        "them": "Se corta mal y cambia el sentido."
+      },
+      {
+        "title": "Tonos",
+        "us": "Escuchas la frase pronunciada.",
+        "them": "Solo pinyin escrito, sin audio."
+      },
+      {
+        "title": "Historial",
+        "us": "Cada conversación queda como tema.",
+        "them": "Se borra al cerrar."
+      },
+      {
+        "title": "Empezar",
+        "us": "Navegador, sin método de entrada.",
+        "them": "App más teclado chino instalado."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al chino.",
     "items": [
-      { "q": "¿Necesito teclado chino?", "a": "No. Habla al micrófono o pega el texto que te enviaron: no tienes que escribir ni un carácter." },
-      { "q": "¿Sirve simplificado y tradicional?", "a": "Sí, pega cualquiera de los dos y la traducción funciona igual." },
-      { "q": "¿Traduce chino hablado?", "a": "Sí, graba la frase y la lees en español un par de segundos después." },
-      { "q": "¿Puedo escuchar los tonos?", "a": "Sí, toca el altavoz para oír la frase en chino con su entonación real." },
-      { "q": "¿Va bien para hablar con proveedores?", "a": "Sí: pega correos completos, léelos en español y responde en español para enviarlo en chino." },
-      { "q": "¿Es gratis?", "a": "Sí, con margen gratuito sin cuenta y más cuota mensual iniciando sesión con Google." }
+      {
+        "q": "¿Necesito teclado chino?",
+        "a": "No. Habla al micrófono o pega el texto que te enviaron: no tienes que escribir ni un carácter."
+      },
+      {
+        "q": "¿Sirve simplificado y tradicional?",
+        "a": "Sí, pega cualquiera de los dos y la traducción funciona igual."
+      },
+      {
+        "q": "¿Traduce chino hablado?",
+        "a": "Sí, graba la frase y la lees en español un par de segundos después."
+      },
+      {
+        "q": "¿Puedo escuchar los tonos?",
+        "a": "Sí, toca el altavoz para oír la frase en chino con su entonación real."
+      },
+      {
+        "q": "¿Va bien para hablar con proveedores?",
+        "a": "Sí: pega correos completos, léelos en español y responde en español para enviarlo en chino."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, con margen gratuito sin cuenta y más cuota mensual iniciando sesión con Google."
+      }
     ]
   },
   "finalCta": {

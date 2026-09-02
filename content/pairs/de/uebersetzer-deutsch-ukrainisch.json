@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Ukrainisch ist nicht Russisch",
+      "heading": "Sprachübersetzer von Deutsch nach Ukrainisch",
       "sub": "Eigene Buchstaben, eigenes Vokabular — und genau da gehen Automatiken daneben.",
       "bullets": [
-        { "title": "Ї, є, ґ und Apostroph", "sub": "Text so einfügen, wie er geschrieben wurde, ohne Verluste" },
-        { "title": "Sprache direkt als Text", "sub": "Nimm den Satz auf und lies ihn auf Deutsch, ohne nachzufragen" }
+        {
+          "title": "Ї, є, ґ und Apostroph",
+          "sub": "Text so einfügen, wie er geschrieben wurde, ohne Verluste"
+        },
+        {
+          "title": "Sprache direkt als Text",
+          "sub": "Nimm den Satz auf und lies ihn auf Deutsch, ohne nachzufragen"
+        }
       ]
     },
     {
-      "heading": "Ankommen im Alltag",
+      "heading": "Ukrainisch-Übersetzer für Gespräche",
       "sub": "Schule, Arzt, Amt, Wohnung — Gespräche, die nicht warten können.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Sie sprechen Ukrainisch, du liest Deutsch; du antwortest deutsch, sie hören Ukrainisch" },
-        { "title": "Jede Person, ein Thema", "sub": "Das Gespräch geht beim nächsten Mal genau dort weiter" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Sie sprechen Ukrainisch, du liest Deutsch; du antwortest deutsch, sie hören Ukrainisch"
+        },
+        {
+          "title": "Jede Person, ein Thema",
+          "sub": "Das Gespräch geht beim nächsten Mal genau dort weiter"
+        }
       ]
     },
     {
-      "heading": "Formulare und Bescheide",
+      "heading": "Online-Übersetzer für Deutsch und Ukrainisch",
       "sub": "Amtsdeutsch in die eine, ukrainische Unterlagen in die andere Richtung.",
       "bullets": [
-        { "title": "Ganzes Dokument einfügen", "sub": "Eine komplette Seite statt Zeile für Zeile" },
-        { "title": "Übersetzung kopieren", "sub": "Direkt in die Notizen oder in die Antwort übernehmen" }
+        {
+          "title": "Ganzes Dokument einfügen",
+          "sub": "Eine komplette Seite statt Zeile für Zeile"
+        },
+        {
+          "title": "Übersetzung kopieren",
+          "sub": "Direkt in die Notizen oder in die Antwort übernehmen"
+        }
       ]
     },
     {
-      "heading": "Auch gesprochen umgangssprachlich",
+      "heading": "Deutscher Textübersetzer ins Ukrainische",
       "sub": "Alltagssprache und gemischte Redeweise klingen anders als im Lehrbuch.",
       "bullets": [
-        { "title": "Im Kontext gelesen", "sub": "Der Satz entscheidet, nicht der Eintrag im Wörterbuch" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede andere Sprache" }
+        {
+          "title": "Im Kontext gelesen",
+          "sub": "Der Satz entscheidet, nicht der Eintrag im Wörterbuch"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread passt für jede andere Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Ukrainisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Kyrillisch tippen, das du nicht hast." },
-      { "title": "Eigene Buchstaben", "us": "ї, є, ґ und Apostroph bleiben erhalten.", "them": "Werden verschluckt oder ersetzt." },
-      { "title": "Antworten", "us": "Deutsch rein, Ukrainisch raus.", "them": "Zweite Übersetzung nötig." },
-      { "title": "Verlauf", "us": "Gespräche bleiben als Themen.", "them": "Nichts wird gespeichert." },
-      { "title": "Start", "us": "Browser und Mikrofon.", "them": "App plus Tastaturlayout." }
+      {
+        "title": "Jemand spricht Ukrainisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Kyrillisch tippen, das du nicht hast."
+      },
+      {
+        "title": "Eigene Buchstaben",
+        "us": "ї, є, ґ und Apostroph bleiben erhalten.",
+        "them": "Werden verschluckt oder ersetzt."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Ukrainisch raus.",
+        "them": "Zweite Übersetzung nötig."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Gespräche bleiben als Themen.",
+        "them": "Nichts wird gespeichert."
+      },
+      {
+        "title": "Start",
+        "us": "Browser und Mikrofon.",
+        "them": "App plus Tastaturlayout."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Ukrainisch.",
     "items": [
-      { "q": "Ist Ukrainisch dasselbe wie Russisch?", "a": "Nein, und genau deshalb wird hier tatsächlich Ukrainisch übersetzt, inklusive ї, є, ґ und Apostroph." },
-      { "q": "Brauche ich eine kyrillische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein." },
-      { "q": "Übersetzt es gesprochenes Ukrainisch?", "a": "Ja, der deutsche Text steht ein paar Sekunden nach dem Satz da." },
-      { "q": "Kann ich Formulare übersetzen?", "a": "Ja, füge das komplette Dokument ein und lies es auf Deutsch." },
-      { "q": "Funktioniert es in beide Richtungen?", "a": "Ja, dasselbe Gespräch läuft von Deutsch nach Ukrainisch und zurück." },
-      { "q": "Ist es kostenlos?", "a": "Ja, mit Gratis-Kontingent ohne Konto und mehr Volumen nach dem Google-Login." }
+      {
+        "q": "Ist Ukrainisch dasselbe wie Russisch?",
+        "a": "Nein, und genau deshalb wird hier tatsächlich Ukrainisch übersetzt, inklusive ї, є, ґ und Apostroph."
+      },
+      {
+        "q": "Brauche ich eine kyrillische Tastatur?",
+        "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein."
+      },
+      {
+        "q": "Übersetzt es gesprochenes Ukrainisch?",
+        "a": "Ja, der deutsche Text steht ein paar Sekunden nach dem Satz da."
+      },
+      {
+        "q": "Kann ich Formulare übersetzen?",
+        "a": "Ja, füge das komplette Dokument ein und lies es auf Deutsch."
+      },
+      {
+        "q": "Funktioniert es in beide Richtungen?",
+        "a": "Ja, dasselbe Gespräch läuft von Deutsch nach Ukrainisch und zurück."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, mit Gratis-Kontingent ohne Konto und mehr Volumen nach dem Google-Login."
+      }
     ]
   },
   "finalCta": {

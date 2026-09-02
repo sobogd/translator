@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parlez, n'écrivez pas",
+      "heading": "Traducteur vocal français arabe instantané",
       "sub": "Appuyez sur le micro, dites-le en français ou en arabe, et lisez ou écoutez la traduction.",
       "bullets": [
-        { "title": "Votre voix devient de l'arabe", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en arabe quelques secondes plus tard" },
-        { "title": "Écoutez l'arabe à voix haute", "sub": "Appuyez sur le haut-parleur quand lire l'arabe reste difficile pour vous" }
+        {
+          "title": "Votre voix devient de l'arabe",
+          "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en arabe quelques secondes plus tard"
+        },
+        {
+          "title": "Écoutez l'arabe à voix haute",
+          "sub": "Appuyez sur le haut-parleur quand lire l'arabe reste difficile pour vous"
+        }
       ]
     },
     {
-      "heading": "Un seul fil, les deux côtés de l'échange",
+      "heading": "Traducteur de conversation français arabe",
       "sub": "Idéal pour garder le contact avec la famille — appelez, écrivez sur WhatsApp ou discutez en direct sans repartir de zéro à chaque fois.",
       "bullets": [
-        { "title": "Réponse en arabe, traduite en français", "sub": "Vos proches peuvent parler arabe, vous le voyez et l'entendez en français" },
-        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en arabe plus tard au lieu de perdre le fil" }
+        {
+          "title": "Réponse en arabe, traduite en français",
+          "sub": "Vos proches peuvent parler arabe, vous le voyez et l'entendez en français"
+        },
+        {
+          "title": "Conversations enregistrées comme sujets",
+          "sub": "Retrouvez la même discussion en arabe plus tard au lieu de perdre le fil"
+        }
       ]
     },
     {
-      "heading": "Français-arabe, plus 184 autres langues",
+      "heading": "Traducteur en ligne français arabe gratuit",
       "sub": "L'arabe est l'une des 186 langues disponibles, dans les deux sens.",
       "bullets": [
-        { "title": "Adapté à l'arabe parlé et écrit", "sub": "Transcrit et traduit correctement l'alphabet arabe, sans approximation phonétique" },
-        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour l'arabe et demain pour toute autre langue" }
+        {
+          "title": "Adapté à l'arabe parlé et écrit",
+          "sub": "Transcrit et traduit correctement l'alphabet arabe, sans approximation phonétique"
+        },
+        {
+          "title": "186 langues au total",
+          "sub": "Le même outil fonctionne aujourd'hui pour l'arabe et demain pour toute autre langue"
+        }
       ]
     },
     {
-      "heading": "Vous préférez taper ? C'est possible aussi",
+      "heading": "Traducteur de texte français arabe rapide",
       "sub": "Tapez ou collez du texte en français et obtenez la traduction arabe sans toucher au micro — pratique pour un e-mail ou un courrier administratif.",
       "bullets": [
-        { "title": "Taper plutôt que parler", "sub": "Utile pour traduire une lettre, un formulaire ou un message écrit" },
-        { "title": "Copier la traduction", "sub": "Récupérez le texte arabe pour le coller dans un e-mail ou un message" }
+        {
+          "title": "Taper plutôt que parler",
+          "sub": "Utile pour traduire une lettre, un formulaire ou un message écrit"
+        },
+        {
+          "title": "Copier la traduction",
+          "sub": "Récupérez le texte arabe pour le coller dans un e-mail ou un message"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Applications de traduction classiques",
     "rows": [
-      { "title": "Pour commencer", "us": "Parlez en français ou en arabe et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire, lettre par lettre en arabe." },
-      { "title": "Historique des échanges", "us": "Chaque conversation en arabe est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
-      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
-      { "title": "Les deux sens", "us": "Français vers arabe et arabe vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
-      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction arabe lue à voix haute.", "them": "Texte uniquement, difficile à déchiffrer sans habitude de l'alphabet arabe." }
+      {
+        "title": "Pour commencer",
+        "us": "Parlez en français ou en arabe et obtenez une traduction aussitôt.",
+        "them": "Il faut d'abord taper ce que vous voulez dire, lettre par lettre en arabe."
+      },
+      {
+        "title": "Historique des échanges",
+        "us": "Chaque conversation en arabe est enregistrée comme un sujet que vous pouvez rouvrir.",
+        "them": "Chaque traduction disparaît une fois l'application fermée."
+      },
+      {
+        "title": "Mise en route",
+        "us": "Ouvrez un onglet dans le navigateur — rien à installer.",
+        "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser."
+      },
+      {
+        "title": "Les deux sens",
+        "us": "Français vers arabe et arabe vers français vivent dans le même fil.",
+        "them": "Changer de sens revient souvent à démarrer une nouvelle traduction."
+      },
+      {
+        "title": "Écouter le résultat",
+        "us": "Appuyez pour entendre la traduction arabe lue à voix haute.",
+        "them": "Texte uniquement, difficile à déchiffrer sans habitude de l'alphabet arabe."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "fréquentes",
     "sub": "Les questions courantes sur la traduction du français vers l'arabe.",
     "items": [
-      { "q": "Peut-il traduire du français parlé en arabe ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction arabe sous forme de texte, avec une option pour l'écouter à voix haute." },
-      { "q": "Gère-t-il l'écriture arabe correctement, de droite à gauche ?", "a": "Oui, le texte arabe s'affiche correctement dans son sens de lecture naturel, à l'écrit comme à l'oral." },
-      { "q": "Puis-je traduire de l'arabe vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en arabe et obtenez la traduction française dans le même sujet." },
-      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
-      { "q": "Est-il utile pour parler avec ma famille au Maghreb ?", "a": "Oui, beaucoup l'utilisent pour des appels ou des messages WhatsApp avec des proches en Algérie, au Maroc ou en Tunisie, en gardant chaque conversation dans un même fil." },
-      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." }
+      {
+        "q": "Peut-il traduire du français parlé en arabe ?",
+        "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction arabe sous forme de texte, avec une option pour l'écouter à voix haute."
+      },
+      {
+        "q": "Gère-t-il l'écriture arabe correctement, de droite à gauche ?",
+        "a": "Oui, le texte arabe s'affiche correctement dans son sens de lecture naturel, à l'écrit comme à l'oral."
+      },
+      {
+        "q": "Puis-je traduire de l'arabe vers le français ?",
+        "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en arabe et obtenez la traduction française dans le même sujet."
+      },
+      {
+        "q": "Est-ce gratuit ?",
+        "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré."
+      },
+      {
+        "q": "Est-il utile pour parler avec ma famille au Maghreb ?",
+        "a": "Oui, beaucoup l'utilisent pour des appels ou des messages WhatsApp avec des proches en Algérie, au Maroc ou en Tunisie, en gardant chaque conversation dans un même fil."
+      },
+      {
+        "q": "Dois-je installer quelque chose ?",
+        "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger."
+      }
     ]
   },
   "finalCta": {

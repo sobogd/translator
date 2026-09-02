@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Snakk, ikke skriv",
+      "heading": "Stemmeoversetter for norsk til tysk",
       "sub": "Trykk på mikrofonen, si det på norsk eller tysk, og få en oversettelse du kan lese eller høre.",
       "bullets": [
-        { "title": "Talen din blir tysk tekst", "sub": "Si det på norsk — ordene transkriberes, oversettes og vises på tysk sekunder senere" },
-        { "title": "Hør tysken lest høyt", "sub": "Trykk på høyttalerikonet når du møter en tysk kunde eller kollega ansikt til ansikt" }
+        {
+          "title": "Talen din blir tysk tekst",
+          "sub": "Si det på norsk — ordene transkriberes, oversettes og vises på tysk sekunder senere"
+        },
+        {
+          "title": "Hør tysken lest høyt",
+          "sub": "Trykk på høyttalerikonet når du møter en tysk kunde eller kollega ansikt til ansikt"
+        }
       ]
     },
     {
-      "heading": "Én tråd, begge sider av samtalen",
+      "heading": "Samtalepresentasjon for norsk og tysk",
       "sub": "Fortsett å prate fram og tilbake uten å starte på nytt — hele samtalen holdes i samme emne.",
       "bullets": [
-        { "title": "Svar på tysk, oversatt til norsk", "sub": "Den du snakker med kan svare på tysk, og du ser og hører det på norsk" },
-        { "title": "Samtaler lagres som emner", "sub": "Kom tilbake til den samme tyske samtalen senere i stedet for å miste tråden" }
+        {
+          "title": "Svar på tysk, oversatt til norsk",
+          "sub": "Den du snakker med kan svare på tysk, og du ser og hører det på norsk"
+        },
+        {
+          "title": "Samtaler lagres som emner",
+          "sub": "Kom tilbake til den samme tyske samtalen senere i stedet for å miste tråden"
+        }
       ]
     },
     {
-      "heading": "Norsk–tysk, pluss 185 språk til",
+      "heading": "Nettbasert oversetter for norsk til tysk",
       "sub": "Tysk er ett av 186 språk som er tilgjengelige, i begge retninger.",
       "bullets": [
-        { "title": "Presist med sammensatte ord og kasus", "sub": "Håndterer lange tyske sammensetninger og formuleringer riktig, ikke en grov gjetning" },
-        { "title": "186 språk totalt", "sub": "Samme verktøy fungerer for tysk i dag og et hvilket som helst annet språk i morgen" }
+        {
+          "title": "Presist med sammensatte ord og kasus",
+          "sub": "Håndterer lange tyske sammensetninger og formuleringer riktig, ikke en grov gjetning"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samme verktøy fungerer for tysk i dag og et hvilket som helst annet språk i morgen"
+        }
       ]
     },
     {
-      "heading": "Foretrekker du å skrive? Det går også",
+      "heading": "Tekstoversetter fra norsk til tysk",
       "sub": "Skriv eller lim inn norsk tekst og få en tysk oversettelse uten å røre mikrofonen.",
       "bullets": [
-        { "title": "Skriv i stedet for å snakke", "sub": "Bytt til tastaturet når som helst — praktisk for en tysk e-post eller et tilbud på jobb" },
-        { "title": "Kopier oversettelsen", "sub": "Kopier den tyske teksten rett ut for å lime den inn i en e-post eller et dokument" }
+        {
+          "title": "Skriv i stedet for å snakke",
+          "sub": "Bytt til tastaturet når som helst — praktisk for en tysk e-post eller et tilbud på jobb"
+        },
+        {
+          "title": "Kopier oversettelsen",
+          "sub": "Kopier den tyske teksten rett ut for å lime den inn i en e-post eller et dokument"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanlige oversettelsesapper",
     "rows": [
-      { "title": "Slik starter du", "us": "Snakk på norsk eller tysk og få en oversettelse med det samme.", "them": "Skriv ut det du vil si først." },
-      { "title": "Samtalehistorikk", "us": "Hver tyske samtale lagres som sitt eget emne du kan åpne igjen.", "them": "Hver oversettelse forsvinner så snart du lukker appen." },
-      { "title": "Komme i gang", "us": "Åpne den i en nettleserfane — ingenting å installere.", "them": "Last ned en app og gi tillatelser før du kan bruke den." },
-      { "title": "Begge retninger", "us": "Norsk til tysk og tysk til norsk lever i samme tråd.", "them": "Å bytte retning betyr som regel å starte en ny oversettelse." },
-      { "title": "Å høre svaret", "us": "Trykk for å høre den tyske oversettelsen lest høyt.", "them": "Bare tekst, så uttalen må du klare selv." }
+      {
+        "title": "Slik starter du",
+        "us": "Snakk på norsk eller tysk og få en oversettelse med det samme.",
+        "them": "Skriv ut det du vil si først."
+      },
+      {
+        "title": "Samtalehistorikk",
+        "us": "Hver tyske samtale lagres som sitt eget emne du kan åpne igjen.",
+        "them": "Hver oversettelse forsvinner så snart du lukker appen."
+      },
+      {
+        "title": "Komme i gang",
+        "us": "Åpne den i en nettleserfane — ingenting å installere.",
+        "them": "Last ned en app og gi tillatelser før du kan bruke den."
+      },
+      {
+        "title": "Begge retninger",
+        "us": "Norsk til tysk og tysk til norsk lever i samme tråd.",
+        "them": "Å bytte retning betyr som regel å starte en ny oversettelse."
+      },
+      {
+        "title": "Å høre svaret",
+        "us": "Trykk for å høre den tyske oversettelsen lest høyt.",
+        "them": "Bare tekst, så uttalen må du klare selv."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "spørsmål",
     "sub": "Vanlige spørsmål om å oversette norsk til tysk.",
     "items": [
-      { "q": "Kan den oversette talt norsk til tysk?", "a": "Ja — trykk på mikrofonen, snakk på norsk, og du får en tysk oversettelse som tekst, med mulighet til å høre den lest høyt." },
-      { "q": "Er det gratis?", "a": "Ja, du kan prøve gratis uten å opprette en konto. Logg inn med Google for flere daglige kreditter og lagret historikk." },
-      { "q": "Passer den til møter med tyske kunder eller kolleger?", "a": "Ja, mange bruker den i jobbsammenheng — e-post, tilbud og korte samtaler der en presis tysk oversettelse trengs raskt." },
-      { "q": "Fungerer den godt når tyske turister trenger hjelp på norsk?", "a": "Ja, snu bare samtalen: den tyske turisten snakker inn, og du får svaret på norsk i samme tråd." },
-      { "q": "Må jeg installere noe?", "a": "Nei, den kjører i nettleseren din på datamaskin eller mobil — ingenting å laste ned." },
-      { "q": "Kan jeg holde en løpende samtale i stedet for enkeltoversettelser?", "a": "Ja, oversettelser samles i emner, slik at en tysk samtale holder seg på ett sted i stedet for å spres over separate oppslag." }
+      {
+        "q": "Kan den oversette talt norsk til tysk?",
+        "a": "Ja — trykk på mikrofonen, snakk på norsk, og du får en tysk oversettelse som tekst, med mulighet til å høre den lest høyt."
+      },
+      {
+        "q": "Er det gratis?",
+        "a": "Ja, du kan prøve gratis uten å opprette en konto. Logg inn med Google for flere daglige kreditter og lagret historikk."
+      },
+      {
+        "q": "Passer den til møter med tyske kunder eller kolleger?",
+        "a": "Ja, mange bruker den i jobbsammenheng — e-post, tilbud og korte samtaler der en presis tysk oversettelse trengs raskt."
+      },
+      {
+        "q": "Fungerer den godt når tyske turister trenger hjelp på norsk?",
+        "a": "Ja, snu bare samtalen: den tyske turisten snakker inn, og du får svaret på norsk i samme tråd."
+      },
+      {
+        "q": "Må jeg installere noe?",
+        "a": "Nei, den kjører i nettleseren din på datamaskin eller mobil — ingenting å laste ned."
+      },
+      {
+        "q": "Kan jeg holde en løpende samtale i stedet for enkeltoversettelser?",
+        "a": "Ja, oversettelser samles i emner, slik at en tysk samtale holder seg på ett sted i stedet for å spres over separate oppslag."
+      }
     ]
   },
   "finalCta": {

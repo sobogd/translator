@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Spanisch wird schnell gesprochen",
+      "heading": "Sprachübersetzer Deutsch-Spanisch mit Sprachausgabe",
       "sub": "Die Wörter fließen ineinander — im Text siehst du, wo eines aufhört.",
       "bullets": [
-        { "title": "Aufnehmen statt nachfragen", "sub": "Der Satz steht als deutscher Text da, bevor das Gespräch weiterläuft" },
-        { "title": "Vorher anhören", "sub": "Tipp auf den Lautsprecher und hör den spanischen Satz, bevor du ihn sagst" }
+        {
+          "title": "Aufnehmen statt nachfragen",
+          "sub": "Der Satz steht als deutscher Text da, bevor das Gespräch weiterläuft"
+        },
+        {
+          "title": "Vorher anhören",
+          "sub": "Tipp auf den Lautsprecher und hör den spanischen Satz, bevor du ihn sagst"
+        }
       ]
     },
     {
-      "heading": "Urlaub, Wohnung, Arzt",
+      "heading": "Gesprächsübersetzer für Deutsch und Spanisch",
       "sub": "Kurze Gespräche, in denen niemand übersetzt und es sofort passen muss.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Antwort auf Deutsch tippen, dein Gegenüber hört sie auf Spanisch" },
-        { "title": "Nichts installieren", "sub": "Läuft im Browser des Handys, ohne Speicherplatz und ohne Konto" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Antwort auf Deutsch tippen, dein Gegenüber hört sie auf Spanisch"
+        },
+        {
+          "title": "Nichts installieren",
+          "sub": "Läuft im Browser des Handys, ohne Speicherplatz und ohne Konto"
+        }
       ]
     },
     {
-      "heading": "Spanien oder Lateinamerika",
+      "heading": "Online Übersetzer für Deutsch und Spanisch",
       "sub": "Dasselbe Wort meint in Madrid, Mexiko-Stadt und Buenos Aires Verschiedenes.",
       "bullets": [
-        { "title": "Bedeutung aus dem Kontext", "sub": "Coger, plata oder guagua werden so gelesen, wie sie gemeint waren" },
-        { "title": "Ñ und umgedrehte Satzzeichen", "sub": "Text einfach einfügen, ¿ und ¡ bleiben erhalten" }
+        {
+          "title": "Bedeutung aus dem Kontext",
+          "sub": "Coger, plata oder guagua werden so gelesen, wie sie gemeint waren"
+        },
+        {
+          "title": "Ñ und umgedrehte Satzzeichen",
+          "sub": "Text einfach einfügen, ¿ und ¡ bleiben erhalten"
+        }
       ]
     },
     {
-      "heading": "Oder einfach tippen",
+      "heading": "Textübersetzer für Deutsch nach Spanisch",
       "sub": "Nachricht an den Vermieter, Mail ans Hotel, Anzeige.",
       "bullets": [
-        { "title": "Ganze Absätze", "sub": "Am Stück statt Zeile für Zeile" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede andere Sprache" }
+        {
+          "title": "Ganze Absätze",
+          "sub": "Am Stück statt Zeile für Zeile"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread passt für jede andere Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Es geht zu schnell", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Um Wiederholung bitten, buchstabenweise." },
-      { "title": "Regionale Wörter", "us": "Aus dem Satz heraus übersetzt.", "them": "Wörtlich, und es ergibt keinen Sinn." },
-      { "title": "Antworten", "us": "Deutsch rein, Spanisch raus, ein Thread.", "them": "Zweite Übersetzung in der Gegenrichtung." },
-      { "title": "Verlauf", "us": "Jedes Gespräch bleibt ein Thema.", "them": "Wird beim Schließen gelöscht." },
-      { "title": "Start", "us": "Tab öffnen und sprechen.", "them": "App installieren und anmelden." }
+      {
+        "title": "Es geht zu schnell",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Um Wiederholung bitten, buchstabenweise."
+      },
+      {
+        "title": "Regionale Wörter",
+        "us": "Aus dem Satz heraus übersetzt.",
+        "them": "Wörtlich, und es ergibt keinen Sinn."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Spanisch raus, ein Thread.",
+        "them": "Zweite Übersetzung in der Gegenrichtung."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Jedes Gespräch bleibt ein Thema.",
+        "them": "Wird beim Schließen gelöscht."
+      },
+      {
+        "title": "Start",
+        "us": "Tab öffnen und sprechen.",
+        "them": "App installieren und anmelden."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Spanisch.",
     "items": [
-      { "q": "Versteht es schnell gesprochenes Spanisch?", "a": "Ja, dafür ist das Mikrofon da: aufnehmen, und ein paar Sekunden später steht der Satz auf Deutsch." },
-      { "q": "Auch lateinamerikanisches Spanisch?", "a": "Ja. Der ganze Satz wird im Kontext übersetzt, also werden mexikanische, argentinische oder kolumbianische Wörter richtig gelesen." },
-      { "q": "Kann ich Text einfügen statt sprechen?", "a": "Ja, wechsle auf die Tastatur und füge Nachricht oder Mail komplett ein." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht auf Spanisch raus und lässt sich vorlesen." },
-      { "q": "Bleiben die Gespräche gespeichert?", "a": "Jedes bleibt als Thema erhalten und lässt sich wieder öffnen oder löschen." },
-      { "q": "Ist es kostenlos?", "a": "Ja, ein Gratis-Kontingent gibt es sofort ohne Konto; mit Google-Login steigt das Monatsvolumen." }
+      {
+        "q": "Versteht es schnell gesprochenes Spanisch?",
+        "a": "Ja, dafür ist das Mikrofon da: aufnehmen, und ein paar Sekunden später steht der Satz auf Deutsch."
+      },
+      {
+        "q": "Auch lateinamerikanisches Spanisch?",
+        "a": "Ja. Der ganze Satz wird im Kontext übersetzt, also werden mexikanische, argentinische oder kolumbianische Wörter richtig gelesen."
+      },
+      {
+        "q": "Kann ich Text einfügen statt sprechen?",
+        "a": "Ja, wechsle auf die Tastatur und füge Nachricht oder Mail komplett ein."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, die Antwort geht auf Spanisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleiben die Gespräche gespeichert?",
+        "a": "Jedes bleibt als Thema erhalten und lässt sich wieder öffnen oder löschen."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, ein Gratis-Kontingent gibt es sofort ohne Konto; mit Google-Login steigt das Monatsvolumen."
+      }
     ]
   },
   "finalCta": {

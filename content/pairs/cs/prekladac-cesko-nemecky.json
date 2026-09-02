@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mluvte, nepište",
+      "heading": "Hlasový překladač z češtiny do němčiny",
       "sub": "Klepněte na mikrofon, řekněte větu česky nebo německy a získejte překlad ke čtení i poslechu.",
       "bullets": [
-        { "title": "Řeč přeložená do němčiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí německy během pár vteřin" },
-        { "title": "Poslechněte si němčinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když se potřebujete domluvit s mistrem nebo úředníkem" }
+        {
+          "title": "Řeč přeložená do němčiny",
+          "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí německy během pár vteřin"
+        },
+        {
+          "title": "Poslechněte si němčinu nahlas",
+          "sub": "Klepněte na ikonu reproduktoru, když se potřebujete domluvit s mistrem nebo úředníkem"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "heading": "Překladač pro konverzaci",
       "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
       "bullets": [
-        { "title": "Odpověď v němčině přeložená do češtiny", "sub": "Kolega nebo šéf může mluvit německy a vy to uvidíte i uslyšíte česky" },
-        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné německé konverzaci později, místo abyste ji hledali znovu" }
+        {
+          "title": "Odpověď v němčině přeložená do češtiny",
+          "sub": "Kolega nebo šéf může mluvit německy a vy to uvidíte i uslyšíte česky"
+        },
+        {
+          "title": "Rozhovory uložené jako vlákna",
+          "sub": "Vraťte se ke stejné německé konverzaci později, místo abyste ji hledali znovu"
+        }
       ]
     },
     {
-      "heading": "Česko-německý pár a 185 dalších jazyků",
+      "heading": "Online překladač bez instalace",
       "sub": "Němčina je jeden z 186 dostupných jazyků, v libovolném směru.",
       "bullets": [
-        { "title": "Správné přehlásky a ß", "sub": "Znaky jako ä, ö, ü a ß zvládá správně jak v textu, tak ve výslovnosti" },
-        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na němčinu a zítra na kterýkoli jiný jazyk" }
+        {
+          "title": "Správné přehlásky a ß",
+          "sub": "Znaky jako ä, ö, ü a ß zvládá správně jak v textu, tak ve výslovnosti"
+        },
+        {
+          "title": "186 jazyků na jednom místě",
+          "sub": "Stejný nástroj funguje dnes na němčinu a zítra na kterýkoli jiný jazyk"
+        }
       ]
     },
     {
-      "heading": "Raději píšete? I to funguje",
+      "heading": "Textový překladač",
       "sub": "Napište nebo vložte český text a získejte německý překlad bez dotyku mikrofonu — třeba zprávu zaměstnavateli na WhatsAppu.",
       "bullets": [
-        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici v hlučné hale i v tiché kanceláři" },
-        { "title": "Zkopírujte překlad", "sub": "Vložte německý text rovnou do e-mailu, formuláře nebo zprávy" }
+        {
+          "title": "Pište místo mluvení",
+          "sub": "Přepněte na klávesnici v hlučné hale i v tiché kanceláři"
+        },
+        {
+          "title": "Zkopírujte překlad",
+          "sub": "Vložte německý text rovnou do e-mailu, formuláře nebo zprávy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typické překladatelské aplikace",
     "rows": [
-      { "title": "Jak začnete", "us": "Mluvte česky nebo německy a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
-      { "title": "Historie rozhovorů", "us": "Každá německá konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
-      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
-      { "title": "Obě strany rozhovoru", "us": "Čeština do němčiny i němčina do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
-      { "title": "Poslech nahlas", "us": "Klepněte a nechte si německý překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+      {
+        "title": "Jak začnete",
+        "us": "Mluvte česky nebo německy a překlad dostanete okamžitě.",
+        "them": "Nejdřív musíte napsat, co chcete říct."
+      },
+      {
+        "title": "Historie rozhovorů",
+        "us": "Každá německá konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.",
+        "them": "Překlad zmizí, jakmile aplikaci zavřete."
+      },
+      {
+        "title": "Start",
+        "us": "Otevřete v prohlížeči — nic se neinstaluje.",
+        "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete."
+      },
+      {
+        "title": "Obě strany rozhovoru",
+        "us": "Čeština do němčiny i němčina do češtiny v jednom vlákně.",
+        "them": "Změna směru obvykle znamená nový překlad od nuly."
+      },
+      {
+        "title": "Poslech nahlas",
+        "us": "Klepněte a nechte si německý překlad přečíst nahlas.",
+        "them": "Jen text — výslovnost si musíte ověřit sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "dotazy",
     "sub": "Časté otázky k překladu z češtiny do němčiny.",
     "items": [
-      { "q": "Přeloží mluvenou češtinu do němčiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete německý překlad jako text, s možností nechat si ho přečíst nahlas." },
-      { "q": "Zvládne německé přehlásky?", "a": "Ano, znaky ä, ö, ü a ß jsou zpracované správně jak v zápisu, tak v překladu čteném nahlas." },
-      { "q": "Můžu překládat i z němčiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište německy a český překlad dostanete ve stejném vlákně." },
-      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
-      { "q": "Hodí se pro práci v Německu?", "a": "Ano, poslouží při domlouvání se zaměstnavatelem, na pendlu do práce i při běžném vyřizování, kde záleží na rychlé odpovědi." },
-      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." }
+      {
+        "q": "Přeloží mluvenou češtinu do němčiny?",
+        "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete německý překlad jako text, s možností nechat si ho přečíst nahlas."
+      },
+      {
+        "q": "Zvládne německé přehlásky?",
+        "a": "Ano, znaky ä, ö, ü a ß jsou zpracované správně jak v zápisu, tak v překladu čteném nahlas."
+      },
+      {
+        "q": "Můžu překládat i z němčiny zpátky do češtiny?",
+        "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište německy a český překlad dostanete ve stejném vlákně."
+      },
+      {
+        "q": "Je to zdarma?",
+        "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii."
+      },
+      {
+        "q": "Hodí se pro práci v Německu?",
+        "a": "Ano, poslouží při domlouvání se zaměstnavatelem, na pendlu do práce i při běžném vyřizování, kde záleží na rychlé odpovědi."
+      },
+      {
+        "q": "Musím si něco instalovat?",
+        "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení."
+      }
     ]
   },
   "finalCta": {

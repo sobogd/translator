@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Prata istället för att gissa dig fram",
+      "heading": "Röstöversättare från svenska till norska",
       "sub": "Tryck på mikrofonen, säg det på svenska eller norska, och läs eller lyssna på översättningen även när dialekten är stark.",
       "bullets": [
-        { "title": "Tal blir till norska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på norska några sekunder senare" },
-        { "title": "Lyssna på norskan", "sub": "Tryck på högtalarikonen när en dialekt gör det talade svårare att förstå" }
+        {
+          "title": "Tal blir till norska",
+          "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på norska några sekunder senare"
+        },
+        {
+          "title": "Lyssna på norskan",
+          "sub": "Tryck på högtalarikonen när en dialekt gör det talade svårare att förstå"
+        }
       ]
     },
     {
-      "heading": "Ett ämne, båda sidorna av samtalet",
+      "heading": "Konversationstolk mellan svenska och norska",
       "sub": "Perfekt för svenskar som jobbar eller pendlar mot Norge — hela samtalet hamnar i samma ämne.",
       "bullets": [
-        { "title": "Svara på norska, översatt till svenska", "sub": "Kollegan eller kunden kan säga det på norska och du ser och hör det tydligt på svenska" },
-        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma Norge-tråd nästa gång ni hörs, i jobbet eller privat" }
+        {
+          "title": "Svara på norska, översatt till svenska",
+          "sub": "Kollegan eller kunden kan säga det på norska och du ser och hör det tydligt på svenska"
+        },
+        {
+          "title": "Samtal sparas som ämnen",
+          "sub": "Kom tillbaka till samma Norge-tråd nästa gång ni hörs, i jobbet eller privat"
+        }
       ]
     },
     {
-      "heading": "Svenska–norska, plus 185 språk till",
+      "heading": "Smidig svensk-norsk översättare online",
       "sub": "Norska är ett av 186 tillgängliga språk, åt vilket håll du vill.",
       "bullets": [
-        { "title": "Klarar dialekter och skriftspråk", "sub": "Fångar innebörden även när uttalet skiljer sig från bokmål eller nynorsk i skrift" },
-        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för norska idag och vilket annat språk som helst imorgon" }
+        {
+          "title": "Klarar dialekter och skriftspråk",
+          "sub": "Fångar innebörden även när uttalet skiljer sig från bokmål eller nynorsk i skrift"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samma verktyg fungerar för norska idag och vilket annat språk som helst imorgon"
+        }
       ]
     },
     {
-      "heading": "Föredrar du att skriva? Det går också",
+      "heading": "Textöversättning för svenska och norska",
       "sub": "Skriv eller klistra in svensk text och få en norsk översättning utan att röra mikrofonen.",
       "bullets": [
-        { "title": "Skriv istället för att prata", "sub": "Praktiskt för ett jobbmejl eller när du är osäker på ett norskt ord" },
-        { "title": "Kopiera översättningen", "sub": "Kopiera den norska texten direkt till ett mejl eller meddelande" }
+        {
+          "title": "Skriv istället för att prata",
+          "sub": "Praktiskt för ett jobbmejl eller när du är osäker på ett norskt ord"
+        },
+        {
+          "title": "Kopiera översättningen",
+          "sub": "Kopiera den norska texten direkt till ett mejl eller meddelande"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanliga översättningsappar",
     "rows": [
-      { "title": "Hur du börjar", "us": "Prata på svenska eller norska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
-      { "title": "Dialekter", "us": "Transkriberar talad norska även med dialektala drag.", "them": "Fungerar bäst med redan inskriven, neutral text." },
-      { "title": "Samtalshistorik", "us": "Varje norska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
-      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
-      { "title": "Att höra svaret", "us": "Tryck för att få den norska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+      {
+        "title": "Hur du börjar",
+        "us": "Prata på svenska eller norska och få en översättning direkt.",
+        "them": "Du måste skriva det du vill säga först."
+      },
+      {
+        "title": "Dialekter",
+        "us": "Transkriberar talad norska även med dialektala drag.",
+        "them": "Fungerar bäst med redan inskriven, neutral text."
+      },
+      {
+        "title": "Samtalshistorik",
+        "us": "Varje norska-samtal sparas som ett eget ämne du kan öppna igen.",
+        "them": "Varje översättning försvinner när du stänger appen."
+      },
+      {
+        "title": "Komma igång",
+        "us": "Öppna i en webbläsarflik — inget att installera.",
+        "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den."
+      },
+      {
+        "title": "Att höra svaret",
+        "us": "Tryck för att få den norska översättningen uppläst.",
+        "them": "Bara text, så uttalet får du klara själv."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frågor",
     "sub": "Vanliga frågor om att översätta mellan svenska och norska.",
     "items": [
-      { "q": "Behövs verkligen en översättare mellan svenska och norska?", "a": "Skriftspråken liknar varandra mycket, men uttal och dialekter kan skilja sig så mycket att en riktig översättning gör vardagen enklare, särskilt i jobbet." },
-      { "q": "Klarar den norska dialekter?", "a": "Ja, talad norska transkriberas och översätts även när uttalet avviker från standardspråket." },
-      { "q": "Kan jag översätta tillbaka från norska till svenska i samma samtal?", "a": "Ja, samma tråd fungerar åt båda håll, så hela samtalet hålls samlat." },
-      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
-      { "q": "Passar den för jobbpendling mellan Sverige och Norge?", "a": "Ja, den fungerar lika bra för jobbmejl och möten som för vardagsprat med norska kollegor eller grannar." },
-      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." }
+      {
+        "q": "Behövs verkligen en översättare mellan svenska och norska?",
+        "a": "Skriftspråken liknar varandra mycket, men uttal och dialekter kan skilja sig så mycket att en riktig översättning gör vardagen enklare, särskilt i jobbet."
+      },
+      {
+        "q": "Klarar den norska dialekter?",
+        "a": "Ja, talad norska transkriberas och översätts även när uttalet avviker från standardspråket."
+      },
+      {
+        "q": "Kan jag översätta tillbaka från norska till svenska i samma samtal?",
+        "a": "Ja, samma tråd fungerar åt båda håll, så hela samtalet hålls samlat."
+      },
+      {
+        "q": "Är det gratis?",
+        "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik."
+      },
+      {
+        "q": "Passar den för jobbpendling mellan Sverige och Norge?",
+        "a": "Ja, den fungerar lika bra för jobbmejl och möten som för vardagsprat med norska kollegor eller grannar."
+      },
+      {
+        "q": "Behöver jag installera något?",
+        "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner."
+      }
     ]
   },
   "finalCta": {

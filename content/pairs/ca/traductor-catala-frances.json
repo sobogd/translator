@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parla i escolta la resposta",
+      "heading": "Traductor de veu de català a francès",
       "sub": "Toca el micròfon, digues-ho en català o en francès, i obtén una traducció que pots llegir o escoltar.",
       "bullets": [
-        { "title": "La teva veu, convertida al francès", "sub": "Ho dius en català — es transcriu, es tradueix i apareix en francès segons després" },
-        { "title": "Escolta el francès en veu alta", "sub": "Toca l'altaveu quan la pronunciació francesa encara et costi" }
+        {
+          "title": "La teva veu, convertida al francès",
+          "sub": "Ho dius en català — es transcriu, es tradueix i apareix en francès segons després"
+        },
+        {
+          "title": "Escolta el francès en veu alta",
+          "sub": "Toca l'altaveu quan la pronunciació francesa encara et costi"
+        }
       ]
     },
     {
-      "heading": "Un sol fil, els dos costats de la conversa",
+      "heading": "Traductor per a converses de català a francès",
       "sub": "Segueix parlant sense començar de nou — ideal per als veïns de la Catalunya Nord o una escapada a l'altra banda de la frontera.",
       "bullets": [
-        { "title": "Respon en francès, traduït al català", "sub": "Qui parla amb tu pot fer-ho en francès i tu ho veuràs i escoltaràs en català" },
-        { "title": "Converses desades com a temes", "sub": "Torna a la mateixa conversa en francès més tard sense perdre el fil" }
+        {
+          "title": "Respon en francès, traduït al català",
+          "sub": "Qui parla amb tu pot fer-ho en francès i tu ho veuràs i escoltaràs en català"
+        },
+        {
+          "title": "Converses desades com a temes",
+          "sub": "Torna a la mateixa conversa en francès més tard sense perdre el fil"
+        }
       ]
     },
     {
-      "heading": "Català–francès, més 185 llengües",
+      "heading": "Traductor online de català a francès sense instal·lar",
       "sub": "El francès és una de les 186 llengües disponibles, en qualsevol sentit.",
       "bullets": [
-        { "title": "Precís amb accents i pronúncia", "sub": "Gestiona bé el francès parlat i escrit, no una aproximació" },
-        { "title": "186 llengües en total", "sub": "La mateixa eina et serveix per al francès avui i per a qualsevol altra llengua demà" }
+        {
+          "title": "Precís amb accents i pronúncia",
+          "sub": "Gestiona bé el francès parlat i escrit, no una aproximació"
+        },
+        {
+          "title": "186 llengües en total",
+          "sub": "La mateixa eina et serveix per al francès avui i per a qualsevol altra llengua demà"
+        }
       ]
     },
     {
-      "heading": "Prefereixes escriure? També funciona",
+      "heading": "Traductor de text de català a francès",
       "sub": "Escriu o enganxa un text en català i obtén la traducció al francès sense tocar el micròfon.",
       "bullets": [
-        { "title": "Escriu en lloc de parlar", "sub": "Canvia al teclat quan sigui — útil en un lloc sorollós o una reunió tranquil·la" },
-        { "title": "Copia el resultat", "sub": "Copia el text en francès per enganxar-lo en un correu o missatge" }
+        {
+          "title": "Escriu en lloc de parlar",
+          "sub": "Canvia al teclat quan sigui — útil en un lloc sorollós o una reunió tranquil·la"
+        },
+        {
+          "title": "Copia el resultat",
+          "sub": "Copia el text en francès per enganxar-lo en un correu o missatge"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicacions de traducció habituals",
     "rows": [
-      { "title": "Com comences", "us": "Parla en català o en francès i obtén la traducció a l'instant.", "them": "Primer has d'escriure el que vols dir." },
-      { "title": "Historial de conversa", "us": "Cada conversa en francès es desa com el seu propi tema, llest per reobrir.", "them": "Cada traducció desapareix en tancar l'app." },
-      { "title": "Posada en marxa", "us": "Obre-la en una pestanya del navegador — res a instal·lar.", "them": "Cal baixar una app i acceptar permisos abans de fer-la servir." },
-      { "title": "Els dos sentits", "us": "Català a francès i francès a català conviuen al mateix fil.", "them": "Canviar de sentit normalment vol dir començar una traducció nova." },
-      { "title": "Escoltar-ho", "us": "Toca per escoltar la traducció al francès en veu alta.", "them": "Només text, així que la pronúncia depèn de tu." }
+      {
+        "title": "Com comences",
+        "us": "Parla en català o en francès i obtén la traducció a l'instant.",
+        "them": "Primer has d'escriure el que vols dir."
+      },
+      {
+        "title": "Historial de conversa",
+        "us": "Cada conversa en francès es desa com el seu propi tema, llest per reobrir.",
+        "them": "Cada traducció desapareix en tancar l'app."
+      },
+      {
+        "title": "Posada en marxa",
+        "us": "Obre-la en una pestanya del navegador — res a instal·lar.",
+        "them": "Cal baixar una app i acceptar permisos abans de fer-la servir."
+      },
+      {
+        "title": "Els dos sentits",
+        "us": "Català a francès i francès a català conviuen al mateix fil.",
+        "them": "Canviar de sentit normalment vol dir començar una traducció nova."
+      },
+      {
+        "title": "Escoltar-ho",
+        "us": "Toca per escoltar la traducció al francès en veu alta.",
+        "them": "Només text, així que la pronúncia depèn de tu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "freqüents",
     "sub": "Dubtes habituals sobre traduir del català al francès.",
     "items": [
-      { "q": "Pot traduir català parlat al francès?", "a": "Sí — toca el micròfon, parla en català, i obtens la traducció al francès com a text, amb l'opció d'escoltar-la en veu alta." },
-      { "q": "És útil per parlar amb veïns de la Catalunya Nord?", "a": "Sí, funciona molt bé per a converses quotidianes a l'altra banda de la frontera — la conversa es queda desada com un tema al qual pots tornar." },
-      { "q": "Puc traduir del francès de tornada al català?", "a": "Sí, la mateixa conversa funciona en els dos sentits — parla o escriu en francès i obtén la traducció al català al mateix fil." },
-      { "q": "És gratuït?", "a": "Sí, pots provar-ho gratis sense crear cap compte. Inicia sessió amb Google per a més crèdits diaris i historial desat." },
-      { "q": "Cal instal·lar alguna cosa?", "a": "No, funciona al navegador, tant a l'ordinador com al mòbil — res per baixar." },
-      { "q": "Puc mantenir una conversa seguida en lloc de traduccions soltes?", "a": "Sí, les traduccions s'agrupen en temes, així una conversa en francès es queda en un sol lloc en lloc d'escampar-se en cerques separades." }
+      {
+        "q": "Pot traduir català parlat al francès?",
+        "a": "Sí — toca el micròfon, parla en català, i obtens la traducció al francès com a text, amb l'opció d'escoltar-la en veu alta."
+      },
+      {
+        "q": "És útil per parlar amb veïns de la Catalunya Nord?",
+        "a": "Sí, funciona molt bé per a converses quotidianes a l'altra banda de la frontera — la conversa es queda desada com un tema al qual pots tornar."
+      },
+      {
+        "q": "Puc traduir del francès de tornada al català?",
+        "a": "Sí, la mateixa conversa funciona en els dos sentits — parla o escriu en francès i obtén la traducció al català al mateix fil."
+      },
+      {
+        "q": "És gratuït?",
+        "a": "Sí, pots provar-ho gratis sense crear cap compte. Inicia sessió amb Google per a més crèdits diaris i historial desat."
+      },
+      {
+        "q": "Cal instal·lar alguna cosa?",
+        "a": "No, funciona al navegador, tant a l'ordinador com al mòbil — res per baixar."
+      },
+      {
+        "q": "Puc mantenir una conversa seguida en lloc de traduccions soltes?",
+        "a": "Sí, les traduccions s'agrupen en temes, així una conversa en francès es queda en un sol lloc en lloc d'escampar-se en cerques separades."
+      }
     ]
   },
   "finalCta": {

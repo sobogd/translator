@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Konuşun, Fransızcayı dinleyin",
+      "heading": "Türkçe Fransızca sesli çevirmen",
       "sub": "Mikrofona dokunun, Türkçe konuşun, Fransızca çeviriyi okuyun ya da dinleyin.",
       "bullets": [
-        { "title": "Konuşmanız anında Fransızcaya döner", "sub": "Türkçe söyleyin — çeviri saniyeler içinde Fransızca olarak ekranda belirir" },
-        { "title": "Fransızcayı sesli dinleyin", "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun" }
+        {
+          "title": "Konuşmanız anında Fransızcaya döner",
+          "sub": "Türkçe söyleyin — çeviri saniyeler içinde Fransızca olarak ekranda belirir"
+        },
+        {
+          "title": "Fransızcayı sesli dinleyin",
+          "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun"
+        }
       ]
     },
     {
-      "heading": "Seyahat ya da iş için tek sohbet",
+      "heading": "İki yönlü Türkçe Fransızca sohbet",
       "sub": "Otelde, restoranda ya da iş görüşmesinde tüm alışveriş aynı konuda kalır.",
       "bullets": [
-        { "title": "Fransızca yanıt Türkçeye çevrilir", "sub": "Karşınızdaki Fransızca konuşur, siz Türkçe olarak okur ve duyarsınız" },
-        { "title": "Görüşme konu olarak saklanır", "sub": "Aynı otel ya da iş ortağıyla sohbete daha sonra kaldığınız yerden dönün" }
+        {
+          "title": "Fransızca yanıt Türkçeye çevrilir",
+          "sub": "Karşınızdaki Fransızca konuşur, siz Türkçe olarak okur ve duyarsınız"
+        },
+        {
+          "title": "Görüşme konu olarak saklanır",
+          "sub": "Aynı otel ya da iş ortağıyla sohbete daha sonra kaldığınız yerden dönün"
+        }
       ]
     },
     {
-      "heading": "Türkçe-Fransızca, artı 185 dil daha",
+      "heading": "Tarayıcıda online Fransızca çeviri",
       "sub": "Fransızca, her yönde kullanılabilen 186 dilden biri.",
       "bullets": [
-        { "title": "Aksan ve özel harfler doğru işlenir", "sub": "é, è, ç gibi harfler doğru yazılır ve doğru okunur" },
-        { "title": "Toplam 186 dil", "sub": "Bugün Fransızca, yarın başka bir dil — aynı araç yeterli" }
+        {
+          "title": "Aksan ve özel harfler doğru işlenir",
+          "sub": "é, è, ç gibi harfler doğru yazılır ve doğru okunur"
+        },
+        {
+          "title": "Toplam 186 dil",
+          "sub": "Bugün Fransızca, yarın başka bir dil — aynı araç yeterli"
+        }
       ]
     },
     {
-      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "heading": "Türkçe Fransızca metin çevirisi",
       "sub": "Fransızca bir mesajı yapıştırın ya da Türkçe yazın, mikrofona dokunmadan çeviriyi alın.",
       "bullets": [
-        { "title": "Gelen e-postayı yapıştırın", "sub": "Fransızca yazılmış bir e-postayı yapıştırın, Türkçe çeviriyi anında okuyun" },
-        { "title": "Çeviriyi kopyalayın", "sub": "Fransızca metni doğrudan mesaja ya da forma yapıştırın" }
+        {
+          "title": "Gelen e-postayı yapıştırın",
+          "sub": "Fransızca yazılmış bir e-postayı yapıştırın, Türkçe çeviriyi anında okuyun"
+        },
+        {
+          "title": "Çeviriyi kopyalayın",
+          "sub": "Fransızca metni doğrudan mesaja ya da forma yapıştırın"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Sıradan çeviri uygulamaları",
     "rows": [
-      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da Fransızca konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
-      { "title": "Görüşme geçmişi", "us": "Her Fransızca sohbet ayrı bir konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
-      { "title": "Kuruluma gerek yok", "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.", "them": "Uygulamayı indirip izin vermeniz gerekir." },
-      { "title": "İki yön aynı sohbette", "us": "Türkçe-Fransızca ve Fransızca-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
-      { "title": "Sesli dinleme", "us": "Fransızca çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+      {
+        "title": "Nasıl başlarsınız",
+        "us": "Türkçe ya da Fransızca konuşun, çeviri hemen gelir.",
+        "them": "Önce söylemek istediğinizi yazmanız gerekir."
+      },
+      {
+        "title": "Görüşme geçmişi",
+        "us": "Her Fransızca sohbet ayrı bir konu olarak saklanır.",
+        "them": "Uygulamayı kapatınca çeviri kaybolur."
+      },
+      {
+        "title": "Kuruluma gerek yok",
+        "us": "Tarayıcı sekmesinde açın — kurulacak bir şey yok.",
+        "them": "Uygulamayı indirip izin vermeniz gerekir."
+      },
+      {
+        "title": "İki yön aynı sohbette",
+        "us": "Türkçe-Fransızca ve Fransızca-Türkçe aynı konuda yaşar.",
+        "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir."
+      },
+      {
+        "title": "Sesli dinleme",
+        "us": "Fransızca çeviriyi sesli dinlemek için dokunun.",
+        "them": "Yalnızca metin, telaffuz size kalır."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "sorular",
     "sub": "Türkçe-Fransızca çeviri hakkında en çok sorulanlar.",
     "items": [
-      { "q": "Konuşulan Türkçeyi Fransızcaya çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, Fransızca çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
-      { "q": "Aksanlı harfler doğru görünüyor mu?", "a": "Evet, é, è, à, ç gibi harfler hem okuduğunuz metinde hem de sesli okumada doğru işlenir." },
-      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
-      { "q": "Fransızcadan Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki Fransızca konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
-      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." },
-      { "q": "Sürekli bir sohbeti tek yerde tutabilir miyim?", "a": "Evet, çeviriler konu olarak gruplanır, böylece bir Fransızca sohbet dağınık aramalar yerine tek bir yerde kalır." }
+      {
+        "q": "Konuşulan Türkçeyi Fransızcaya çevirebilir mi?",
+        "a": "Evet — mikrofona dokunun, Türkçe konuşun, Fransızca çeviriyi metin olarak alın, isterseniz sesli dinleyin."
+      },
+      {
+        "q": "Aksanlı harfler doğru görünüyor mu?",
+        "a": "Evet, é, è, à, ç gibi harfler hem okuduğunuz metinde hem de sesli okumada doğru işlenir."
+      },
+      {
+        "q": "Ücretsiz mi?",
+        "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz."
+      },
+      {
+        "q": "Fransızcadan Türkçeye de çeviri yapılıyor mu?",
+        "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki Fransızca konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz."
+      },
+      {
+        "q": "Bir şey indirmem gerekiyor mu?",
+        "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok."
+      },
+      {
+        "q": "Sürekli bir sohbeti tek yerde tutabilir miyim?",
+        "a": "Evet, çeviriler konu olarak gruplanır, böylece bir Fransızca sohbet dağınık aramalar yerine tek bir yerde kalır."
+      }
     ]
   },
   "finalCta": {

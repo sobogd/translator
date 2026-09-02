@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Konuşun, Farsçayı dinleyin",
+      "heading": "Türkçe Farsça sesli çevirmen ile konuşarak çeviri",
       "sub": "Mikrofona dokunun, Türkçe konuşun, Farsça çeviriyi okuyun ya da dinleyin.",
       "bullets": [
-        { "title": "Konuşmanız Fars alfabesiyle çıkar", "sub": "Türkçe söyleyin — Farsça çeviri kendi harfleriyle, saniyeler içinde görünür" },
-        { "title": "Farsçayı sesli dinleyin", "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun" }
+        {
+          "title": "Konuşmanız Fars alfabesiyle çıkar",
+          "sub": "Türkçe söyleyin — Farsça çeviri kendi harfleriyle, saniyeler içinde görünür"
+        },
+        {
+          "title": "Farsçayı sesli dinleyin",
+          "sub": "Telaffuzdan emin değilseniz hoparlöre dokunun, çeviri sizin yerinize okunsun"
+        }
       ]
     },
     {
-      "heading": "Çarşı ya da görüşmede tek sohbet",
+      "heading": "Farsça Türkçe konuşma çevirmeni ile iki yönlü sohbet",
       "sub": "Seyahatte, çarşıda ya da ticari görüşmede tüm alışveriş aynı konuda kalır.",
       "bullets": [
-        { "title": "Farsça yanıt Türkçeye çevrilir", "sub": "Karşınızdaki Farsça konuşur, siz Türkçe olarak okur ve duyarsınız" },
-        { "title": "Görüşme konu olarak saklanır", "sub": "Aynı sohbete daha sonra kaldığınız yerden dönün" }
+        {
+          "title": "Farsça yanıt Türkçeye çevrilir",
+          "sub": "Karşınızdaki Farsça konuşur, siz Türkçe olarak okur ve duyarsınız"
+        },
+        {
+          "title": "Görüşme konu olarak saklanır",
+          "sub": "Aynı sohbete daha sonra kaldığınız yerden dönün"
+        }
       ]
     },
     {
-      "heading": "Türkçe-Farsça, artı 185 dil daha",
+      "heading": "Tarayıcıda çevrim içi Türkçe Farsça metin çevirisi",
       "sub": "Farsça, her yönde kullanılabilen 186 dilden biri.",
       "bullets": [
-        { "title": "Fars alfabesi doğru gösterilir", "sub": "Metin sağdan sola, kendi harfleriyle görünür, Latin harflere çevrilmez" },
-        { "title": "Toplam 186 dil", "sub": "Bugün Farsça, yarın başka bir dil — aynı araç yeterli" }
+        {
+          "title": "Fars alfabesi doğru gösterilir",
+          "sub": "Metin sağdan sola, kendi harfleriyle görünür, Latin harflere çevrilmez"
+        },
+        {
+          "title": "Toplam 186 dil",
+          "sub": "Bugün Farsça, yarın başka bir dil — aynı araç yeterli"
+        }
       ]
     },
     {
-      "heading": "Yazmayı mı tercih edersiniz? O da olur",
+      "heading": "Hızlı ve pratik Türkçe Farsça yazılı metin çevirmeni",
       "sub": "Farsça bir mesajı yapıştırın ya da Türkçe yazın, mikrofona dokunmadan çeviriyi alın.",
       "bullets": [
-        { "title": "Gelen mesajı yapıştırın", "sub": "Farsça bir mesajı yapıştırın, Türkçe çeviriyi anında okuyun" },
-        { "title": "Çeviriyi kopyalayın", "sub": "Farsça metni doğrudan bir e-postaya ya da mesaja yapıştırın" }
+        {
+          "title": "Gelen mesajı yapıştırın",
+          "sub": "Farsça bir mesajı yapıştırın, Türkçe çeviriyi anında okuyun"
+        },
+        {
+          "title": "Çeviriyi kopyalayın",
+          "sub": "Farsça metni doğrudan bir e-postaya ya da mesaja yapıştırın"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Sıradan çeviri uygulamaları",
     "rows": [
-      { "title": "Nasıl başlarsınız", "us": "Türkçe ya da Farsça konuşun, çeviri hemen gelir.", "them": "Önce söylemek istediğinizi yazmanız gerekir." },
-      { "title": "Fars klavyesi", "us": "Farsça yazmanıza gerek yok, çeviri otomatik çıkar.", "them": "Genelde Fars klavye düzeni kurmanız istenir." },
-      { "title": "Görüşme geçmişi", "us": "Her Farsça sohbet ayrı bir konu olarak saklanır.", "them": "Uygulamayı kapatınca çeviri kaybolur." },
-      { "title": "İki yön aynı sohbette", "us": "Türkçe-Farsça ve Farsça-Türkçe aynı konuda yaşar.", "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir." },
-      { "title": "Sesli dinleme", "us": "Farsça çeviriyi sesli dinlemek için dokunun.", "them": "Yalnızca metin, telaffuz size kalır." }
+      {
+        "title": "Nasıl başlarsınız",
+        "us": "Türkçe ya da Farsça konuşun, çeviri hemen gelir.",
+        "them": "Önce söylemek istediğinizi yazmanız gerekir."
+      },
+      {
+        "title": "Fars klavyesi",
+        "us": "Farsça yazmanıza gerek yok, çeviri otomatik çıkar.",
+        "them": "Genelde Fars klavye düzeni kurmanız istenir."
+      },
+      {
+        "title": "Görüşme geçmişi",
+        "us": "Her Farsça sohbet ayrı bir konu olarak saklanır.",
+        "them": "Uygulamayı kapatınca çeviri kaybolur."
+      },
+      {
+        "title": "İki yön aynı sohbette",
+        "us": "Türkçe-Farsça ve Farsça-Türkçe aynı konuda yaşar.",
+        "them": "Yönü değiştirmek genelde yeni bir çeviri başlatmak demektir."
+      },
+      {
+        "title": "Sesli dinleme",
+        "us": "Farsça çeviriyi sesli dinlemek için dokunun.",
+        "them": "Yalnızca metin, telaffuz size kalır."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "sorular",
     "sub": "Türkçe-Farsça çeviri hakkında en çok sorulanlar.",
     "items": [
-      { "q": "Konuşulan Türkçeyi Farsçaya çevirebilir mi?", "a": "Evet — mikrofona dokunun, Türkçe konuşun, Farsça çeviriyi metin olarak alın, isterseniz sesli dinleyin." },
-      { "q": "Fars alfabesi doğru görünüyor mu?", "a": "Evet, Farsça metin kendi harfleriyle ve sağdan sola doğru gösterilir, Latin harflere çevrilmiş bir okunuş değil." },
-      { "q": "Ücretsiz mi?", "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz." },
-      { "q": "Farsçadan Türkçeye de çeviri yapılıyor mu?", "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki Farsça konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz." },
-      { "q": "Bir şey indirmem gerekiyor mu?", "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok." },
-      { "q": "Çarşıda ya da seyahatte kullanmaya uygun mu?", "a": "Evet, pazarlık, yol tarifi ya da yemek siparişi gibi kısa cümleler için hızlıca sesli çeviri alırsınız." }
+      {
+        "q": "Konuşulan Türkçeyi Farsçaya çevirebilir mi?",
+        "a": "Evet — mikrofona dokunun, Türkçe konuşun, Farsça çeviriyi metin olarak alın, isterseniz sesli dinleyin."
+      },
+      {
+        "q": "Fars alfabesi doğru görünüyor mu?",
+        "a": "Evet, Farsça metin kendi harfleriyle ve sağdan sola doğru gösterilir, Latin harflere çevrilmiş bir okunuş değil."
+      },
+      {
+        "q": "Ücretsiz mi?",
+        "a": "Evet, kayıt olmadan ücretsiz deneyebilirsiniz. Daha fazla günlük kredi ve kaydedilen geçmiş için Google ile giriş yapabilirsiniz."
+      },
+      {
+        "q": "Farsçadan Türkçeye de çeviri yapılıyor mu?",
+        "a": "Evet, aynı sohbet iki yönde çalışır — karşınızdaki Farsça konuşsun ya da yazsın, siz Türkçe çeviriyi aynı konuda görürsünüz."
+      },
+      {
+        "q": "Bir şey indirmem gerekiyor mu?",
+        "a": "Hayır, tarayıcıda çalışır — telefonda ya da bilgisayarda, indirmeye gerek yok."
+      },
+      {
+        "q": "Çarşıda ya da seyahatte kullanmaya uygun mu?",
+        "a": "Evet, pazarlık, yol tarifi ya da yemek siparişi gibi kısa cümleler için hızlıca sesli çeviri alırsınız."
+      }
     ]
   },
   "finalCta": {

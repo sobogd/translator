@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Ein Wort, ein ganzer Satz",
+      "heading": "Sprachübersetzer Deutsch-Türkisch",
       "sub": "Türkisch hängt Endung an Endung, wo Deutsch mehrere Wörter braucht.",
       "bullets": [
-        { "title": "Endungsketten aufgelöst", "sub": "Zeit, Person, Verneinung und Frage stecken im Wort und landen alle in der Übersetzung" },
-        { "title": "Sprache direkt als Text", "sub": "Nimm den Satz auf und lies, was er insgesamt bedeutet" }
+        {
+          "title": "Endungsketten aufgelöst",
+          "sub": "Zeit, Person, Verneinung und Frage stecken im Wort und landen alle in der Übersetzung"
+        },
+        {
+          "title": "Sprache direkt als Text",
+          "sub": "Nimm den Satz auf und lies, was er insgesamt bedeutet"
+        }
       ]
     },
     {
-      "heading": "Familie, Nachbarn, Termine",
+      "heading": "Türkisch-Übersetzer für Gespräche",
       "sub": "Alltagsgespräche, bei denen niemand übersetzt.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Du antwortest auf Deutsch, dein Gegenüber hört Türkisch" },
-        { "title": "Gespräch bleibt erhalten", "sub": "Als Thema gespeichert, für die nächste Nachricht" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Du antwortest auf Deutsch, dein Gegenüber hört Türkisch"
+        },
+        {
+          "title": "Gespräch bleibt erhalten",
+          "sub": "Als Thema gespeichert, für die nächste Nachricht"
+        }
       ]
     },
     {
-      "heading": "Türkische Buchstaben ohne Tastatur",
+      "heading": "Online-Übersetzer für 186 Sprachen",
       "sub": "ı, İ, ğ, ş, ç, ö und ü musst du nie selbst tippen.",
       "bullets": [
-        { "title": "Text so einfügen, wie er kam", "sub": "Der Punkt auf dem i ändert das Wort — hier geht er nicht verloren" },
-        { "title": "Vokalharmonie berücksichtigt", "sub": "Endungen richten sich nach dem Wort, und die Übersetzung liest sie als Ganzes" }
+        {
+          "title": "Text so einfügen, wie er kam",
+          "sub": "Der Punkt auf dem i ändert das Wort — hier geht er nicht verloren"
+        },
+        {
+          "title": "Vokalharmonie berücksichtigt",
+          "sub": "Endungen richten sich nach dem Wort, und die Übersetzung liest sie als Ganzes"
+        }
       ]
     },
     {
-      "heading": "Oder tippen",
+      "heading": "Textübersetzer für Türkisch",
       "sub": "WhatsApp-Nachricht, Vertrag, Anzeige.",
       "bullets": [
-        { "title": "Ganzer Absatz", "sub": "Der komplette Text auf einmal" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für die nächste Sprache" }
+        {
+          "title": "Ganzer Absatz",
+          "sub": "Der komplette Text auf einmal"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread passt für die nächste Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Ein Wort tippen, das sich nicht trennen lässt." },
-      { "title": "Endungen", "us": "Zu einem normalen Satz aufgelöst.", "them": "Nur der Wortstamm, der Rest fällt weg." },
-      { "title": "Antworten", "us": "Deutsch rein, Türkisch raus, ein Thread.", "them": "In der Gegenrichtung neu anfangen." },
-      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Beim Schließen weg." },
-      { "title": "Start", "us": "Browser, nichts installieren.", "them": "App und Anmeldung." }
+      {
+        "title": "Jemand spricht",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Ein Wort tippen, das sich nicht trennen lässt."
+      },
+      {
+        "title": "Endungen",
+        "us": "Zu einem normalen Satz aufgelöst.",
+        "them": "Nur der Wortstamm, der Rest fällt weg."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Türkisch raus, ein Thread.",
+        "them": "In der Gegenrichtung neu anfangen."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Als Themen gespeichert.",
+        "them": "Beim Schließen weg."
+      },
+      {
+        "title": "Start",
+        "us": "Browser, nichts installieren.",
+        "them": "App und Anmeldung."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Türkisch.",
     "items": [
-      { "q": "Kommt es mit langen türkischen Wörtern zurecht?", "a": "Ja. Das Wort wird als der Satz gelesen, der es ist — Zeit, Verneinung und Frage aus den Endungen tauchen im Deutschen auf." },
-      { "q": "Brauche ich türkische Sonderzeichen auf der Tastatur?", "a": "Nein. Sprich oder füge den Text ein; ı, ğ, ş, ç, ö und ü kommen unverändert an." },
-      { "q": "Übersetzt es gesprochenes Türkisch?", "a": "Ja, ein paar Sekunden nachdem dein Gegenüber fertig ist, steht der deutsche Text da." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht im selben Thread auf Türkisch raus und lässt sich vorlesen." },
-      { "q": "Bleibt das Gespräch gespeichert?", "a": "Jedes bleibt als Thema, das du wieder öffnen oder löschen kannst." },
-      { "q": "Ist es kostenlos?", "a": "Ja, mit Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und Verlauf." }
+      {
+        "q": "Kommt es mit langen türkischen Wörtern zurecht?",
+        "a": "Ja. Das Wort wird als der Satz gelesen, der es ist — Zeit, Verneinung und Frage aus den Endungen tauchen im Deutschen auf."
+      },
+      {
+        "q": "Brauche ich türkische Sonderzeichen auf der Tastatur?",
+        "a": "Nein. Sprich oder füge den Text ein; ı, ğ, ş, ç, ö und ü kommen unverändert an."
+      },
+      {
+        "q": "Übersetzt es gesprochenes Türkisch?",
+        "a": "Ja, ein paar Sekunden nachdem dein Gegenüber fertig ist, steht der deutsche Text da."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, die Antwort geht im selben Thread auf Türkisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleibt das Gespräch gespeichert?",
+        "a": "Jedes bleibt als Thema, das du wieder öffnen oder löschen kannst."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, mit Gratis-Kontingent ohne Konto; mit Google-Login mehr Volumen und Verlauf."
+      }
     ]
   },
   "finalCta": {

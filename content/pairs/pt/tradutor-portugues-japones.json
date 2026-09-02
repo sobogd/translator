@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Fale e ouça em japonês",
+      "heading": "Tradutor de voz de português para japonês",
       "sub": "Toque no microfone, fale em português e em segundos tem a tradução em japonês, pronta para ler ou ouvir.",
       "bullets": [
-        { "title": "A sua voz em japonês na hora", "sub": "Fale em português e a tradução em japonês aparece em segundos, com o alfabeto certo" },
-        { "title": "Ouça a pronúncia certa", "sub": "Toque no ícone de som e ouça como soa em japonês, útil quando os carateres não bastam" }
+        {
+          "title": "A sua voz em japonês na hora",
+          "sub": "Fale em português e a tradução em japonês aparece em segundos, com o alfabeto certo"
+        },
+        {
+          "title": "Ouça a pronúncia certa",
+          "sub": "Toque no ícone de som e ouça como soa em japonês, útil quando os carateres não bastam"
+        }
       ]
     },
     {
-      "heading": "Conversa nos dois sentidos, guardada",
+      "heading": "Tradutor para conversas em português e japonês",
       "sub": "Continue a conversa em português e japonês sem perder o fio — cada troca fica guardada no mesmo tema.",
       "bullets": [
-        { "title": "Respostas em japonês, viram português", "sub": "A outra pessoa fala em japonês e a tradução aparece em português, no mesmo tema" },
-        { "title": "Cada conversa fica guardada como um tema", "sub": "Útil para manter contacto com amigos, família ou colegas da grande comunidade nipo-brasileira" }
+        {
+          "title": "Respostas em japonês, viram português",
+          "sub": "A outra pessoa fala em japonês e a tradução aparece em português, no mesmo tema"
+        },
+        {
+          "title": "Cada conversa fica guardada como um tema",
+          "sub": "Útil para manter contacto com amigos, família ou colegas da grande comunidade nipo-brasileira"
+        }
       ]
     },
     {
-      "heading": "Português-japonês, e mais 185 idiomas",
+      "heading": "Tradutor online de português para japonês",
       "sub": "O japonês é um dos 186 idiomas disponíveis, em qualquer direção.",
       "bullets": [
-        { "title": "Kanji, hiragana e katakana reconhecidos", "sub": "Lida corretamente com os três alfabetos do japonês, sem adivinhações" },
-        { "title": "186 idiomas na mesma app", "sub": "O mesmo tradutor funciona para japonês hoje e para qualquer outro idioma amanhã" }
+        {
+          "title": "Kanji, hiragana e katakana reconhecidos",
+          "sub": "Lida corretamente com os três alfabetos do japonês, sem adivinhações"
+        },
+        {
+          "title": "186 idiomas na mesma app",
+          "sub": "O mesmo tradutor funciona para japonês hoje e para qualquer outro idioma amanhã"
+        }
       ]
     },
     {
-      "heading": "Escreva ou cole o texto",
+      "heading": "Tradutor de texto em português e japonês",
       "sub": "Traduza sem usar o microfone, escrevendo ou colando um texto em português ou japonês.",
       "bullets": [
-        { "title": "Sem precisar do microfone", "sub": "Escreva ou cole um texto em português e receba a tradução em japonês na hora" },
-        { "title": "Copie o resultado com um toque", "sub": "Cole a tradução num e-mail, numa mensagem de WhatsApp ou num documento" }
+        {
+          "title": "Sem precisar do microfone",
+          "sub": "Escreva ou cole um texto em português e receba a tradução em japonês na hora"
+        },
+        {
+          "title": "Copie o resultado com um toque",
+          "sub": "Cole a tradução num e-mail, numa mensagem de WhatsApp ou num documento"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de tradução típicas",
     "rows": [
-      { "title": "Como começa", "us": "Fala em português ou japonês e recebe a tradução na hora.", "them": "Tem de escrever antes de traduzir seja o que for." },
-      { "title": "Histórico de conversa", "us": "Cada conversa em japonês fica guardada como um tema ao qual pode voltar.", "them": "A tradução desaparece assim que fecha a app." },
-      { "title": "Instalação", "us": "Abre no navegador, não há nada para instalar.", "them": "É preciso transferir uma app e aceitar permissões antes de a usar." },
-      { "title": "Os dois sentidos", "us": "Português para japonês e japonês para português convivem no mesmo tema.", "them": "Mudar de sentido costuma significar começar do zero." },
-      { "title": "Ouvir a tradução", "us": "Toque no ícone de som e ouça a tradução em japonês em voz alta.", "them": "Só texto — a pronúncia e os carateres ficam por sua conta." }
+      {
+        "title": "Como começa",
+        "us": "Fala em português ou japonês e recebe a tradução na hora.",
+        "them": "Tem de escrever antes de traduzir seja o que for."
+      },
+      {
+        "title": "Histórico de conversa",
+        "us": "Cada conversa em japonês fica guardada como um tema ao qual pode voltar.",
+        "them": "A tradução desaparece assim que fecha a app."
+      },
+      {
+        "title": "Instalação",
+        "us": "Abre no navegador, não há nada para instalar.",
+        "them": "É preciso transferir uma app e aceitar permissões antes de a usar."
+      },
+      {
+        "title": "Os dois sentidos",
+        "us": "Português para japonês e japonês para português convivem no mesmo tema.",
+        "them": "Mudar de sentido costuma significar começar do zero."
+      },
+      {
+        "title": "Ouvir a tradução",
+        "us": "Toque no ícone de som e ouça a tradução em japonês em voz alta.",
+        "them": "Só texto — a pronúncia e os carateres ficam por sua conta."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frequentes",
     "sub": "Dúvidas comuns sobre traduzir português para japonês.",
     "items": [
-      { "q": "Traduz português falado para japonês?", "a": "Sim, toque no microfone, fale em português e recebe a tradução em japonês como texto, com a opção de a ouvir em voz alta." },
-      { "q": "Também traduz de japonês para português?", "a": "Sim, a mesma conversa funciona nos dois sentidos: fale ou escreva em japonês e receba a tradução em português no mesmo tema." },
-      { "q": "Lida bem com kanji, hiragana e katakana?", "a": "Sim, os três sistemas de escrita do japonês são reconhecidos corretamente, tanto no texto como na voz." },
-      { "q": "É útil para falar com a comunidade nipo-brasileira?", "a": "Sim, ajuda a manter conversas com família, amigos ou colegas em japonês sem depender de outra pessoa para traduzir." },
-      { "q": "É grátis?", "a": "Sim, pode experimentar grátis sem criar conta. Entre com Google para ter mais créditos diários e histórico guardado." },
-      { "q": "É preciso instalar alguma coisa?", "a": "Não, funciona diretamente no navegador do telemóvel ou do computador." }
+      {
+        "q": "Traduz português falado para japonês?",
+        "a": "Sim, toque no microfone, fale em português e recebe a tradução em japonês como texto, com a opção de a ouvir em voz alta."
+      },
+      {
+        "q": "Também traduz de japonês para português?",
+        "a": "Sim, a mesma conversa funciona nos dois sentidos: fale ou escreva em japonês e receba a tradução em português no mesmo tema."
+      },
+      {
+        "q": "Lida bem com kanji, hiragana e katakana?",
+        "a": "Sim, os três sistemas de escrita do japonês são reconhecidos corretamente, tanto no texto como na voz."
+      },
+      {
+        "q": "É útil para falar com a comunidade nipo-brasileira?",
+        "a": "Sim, ajuda a manter conversas com família, amigos ou colegas em japonês sem depender de outra pessoa para traduzir."
+      },
+      {
+        "q": "É grátis?",
+        "a": "Sim, pode experimentar grátis sem criar conta. Entre com Google para ter mais créditos diários e histórico guardado."
+      },
+      {
+        "q": "É preciso instalar alguma coisa?",
+        "a": "Não, funciona diretamente no navegador do telemóvel ou do computador."
+      }
     ]
   },
   "finalCta": {

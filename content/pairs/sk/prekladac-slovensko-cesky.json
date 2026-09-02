@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Hovorte namiesto písania",
+      "heading": "Hlasový preklad zo slovenčiny do češtiny",
       "sub": "Klepnite na mikrofón, povedzte to po slovensky alebo po česky, a získajte preklad, ktorý si prečítate alebo vypočujete.",
       "bullets": [
-        { "title": "Reč zmenená na češtinu", "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v češtine" },
-        { "title": "Vypočujte si český preklad", "sub": "Klepnite na ikonu reproduktora, keď si nie ste istí presnou výslovnosťou" }
+        {
+          "title": "Reč zmenená na češtinu",
+          "sub": "Povedzte to po slovensky — vaše slová sa prepíšu, preložia a o pár sekúnd zobrazia v češtine"
+        },
+        {
+          "title": "Vypočujte si český preklad",
+          "sub": "Klepnite na ikonu reproduktora, keď si nie ste istí presnou výslovnosťou"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obe strany rozhovoru",
+      "heading": "Konverzačný prekladač pre dvoch rečníkov",
       "sub": "Pokračujte v rozhovore bez toho, aby ste začínali odznova — každá výmena zostáva v tej istej téme.",
       "bullets": [
-        { "title": "Odpoveď v češtine, preložená do slovenčiny", "sub": "Český partner môže hovoriť po svojom a vy to uvidíte aj počujete po slovensky" },
-        { "title": "Rozhovory uložené ako témy", "sub": "Vráťte sa k tej istej konverzácii s úradom, firmou či priateľom neskôr" }
+        {
+          "title": "Odpoveď v češtine, preložená do slovenčiny",
+          "sub": "Český partner môže hovoriť po svojom a vy to uvidíte aj počujete po slovensky"
+        },
+        {
+          "title": "Rozhovory uložené ako témy",
+          "sub": "Vráťte sa k tej istej konverzácii s úradom, firmou či priateľom neskôr"
+        }
       ]
     },
     {
-      "heading": "Blízke jazyky, presný preklad napriek tomu",
+      "heading": "Online preklad slovenčiny a češtiny v prehliadači",
       "sub": "Slovenčina a čeština si síce rozumejú, no úradné formulácie a odborné výrazy sa líšia — preklad to rieši presne.",
       "bullets": [
-        { "title": "Presné úradné a formálne výrazy", "sub": "Zvláda formuláre, zmluvy a e-maily, nielen bežnú konverzáciu" },
-        { "title": "186 jazykov spolu", "sub": "Ten istý nástroj funguje pre češtinu dnes aj pre akýkoľvek iný jazyk zajtra" }
+        {
+          "title": "Presné úradné a formálne výrazy",
+          "sub": "Zvláda formuláre, zmluvy a e-maily, nielen bežnú konverzáciu"
+        },
+        {
+          "title": "186 jazykov spolu",
+          "sub": "Ten istý nástroj funguje pre češtinu dnes aj pre akýkoľvek iný jazyk zajtra"
+        }
       ]
     },
     {
-      "heading": "Radšej píšete? Aj to funguje",
+      "heading": "Textový prekladač pre slovenský a český jazyk",
       "sub": "Napíšte alebo vložte slovenský text a získajte český preklad bez toho, aby ste sa dotkli mikrofónu.",
       "bullets": [
-        { "title": "Píšte namiesto hovorenia", "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa pri dokumentoch aj e-mailoch" },
-        { "title": "Skopírujte preklad", "sub": "Skopírujte český text priamo do formulára, e-mailu alebo správy" }
+        {
+          "title": "Píšte namiesto hovorenia",
+          "sub": "Kedykoľvek prepnite na klávesnicu — hodí sa pri dokumentoch aj e-mailoch"
+        },
+        {
+          "title": "Skopírujte preklad",
+          "sub": "Skopírujte český text priamo do formulára, e-mailu alebo správy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Bežné prekladateľské aplikácie",
     "rows": [
-      { "title": "Ako začnete", "us": "Hovorte po slovensky alebo česky a preklad získate okamžite.", "them": "Najprv musíte napísať, čo chcete povedať." },
-      { "title": "História rozhovorov", "us": "Každá česká konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.", "them": "Každý preklad zmizne hneď po zatvorení aplikácie." },
-      { "title": "Formálne výrazy", "us": "Rozpozná rozdiely medzi slovenčinou a češtinou aj v úradných formuláciách.", "them": "Často spolieha na podobnosť jazykov a formálne výrazy preloží doslovne." },
-      { "title": "Nastavenie", "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.", "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete." },
-      { "title": "Vypočutie prekladu", "us": "Klepnite a nechajte si český preklad prečítať nahlas.", "them": "Iba text, výslovnosť si musíte poriešiť sami." }
+      {
+        "title": "Ako začnete",
+        "us": "Hovorte po slovensky alebo česky a preklad získate okamžite.",
+        "them": "Najprv musíte napísať, čo chcete povedať."
+      },
+      {
+        "title": "História rozhovorov",
+        "us": "Každá česká konverzácia sa uloží ako vlastná téma, ktorú znova otvoríte.",
+        "them": "Každý preklad zmizne hneď po zatvorení aplikácie."
+      },
+      {
+        "title": "Formálne výrazy",
+        "us": "Rozpozná rozdiely medzi slovenčinou a češtinou aj v úradných formuláciách.",
+        "them": "Často spolieha na podobnosť jazykov a formálne výrazy preloží doslovne."
+      },
+      {
+        "title": "Nastavenie",
+        "us": "Otvoríte v karte prehliadača — nič sa neinštaluje.",
+        "them": "Sťahovanie aplikácie a udeľovanie povolení skôr, než ju vôbec použijete."
+      },
+      {
+        "title": "Vypočutie prekladu",
+        "us": "Klepnite a nechajte si český preklad prečítať nahlas.",
+        "them": "Iba text, výslovnosť si musíte poriešiť sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "otázky",
     "sub": "Bežné otázky o preklade zo slovenčiny do češtiny.",
     "items": [
-      { "q": "Dokáže to preložiť hovorenú slovenčinu do češtiny?", "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete český preklad ako text, s možnosťou nechať si ho prečítať nahlas." },
-      { "q": "Sú slovenčina a čeština natoľko odlišné, že to má zmysel?", "a": "Áno, hoci si jazyky rozumejú, úradné formuláre, zmluvy či odborné výrazy sa líšia a strojový preklad tu pomáha vyhnúť sa nepresnostiam." },
-      { "q": "Dá sa prekladať aj z češtiny späť do slovenčiny?", "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po česky a slovenský preklad dostanete v tom istom vlákne." },
-      { "q": "Je to zadarmo?", "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu." },
-      { "q": "Musím si niečo inštalovať?", "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje." },
-      { "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?", "a": "Áno, preklady sa zoskupujú do tém, takže konverzácia s úradom, firmou alebo priateľom zostáva na jednom mieste." }
+      {
+        "q": "Dokáže to preložiť hovorenú slovenčinu do češtiny?",
+        "a": "Áno — klepnite na mikrofón, povedzte to po slovensky a dostanete český preklad ako text, s možnosťou nechať si ho prečítať nahlas."
+      },
+      {
+        "q": "Sú slovenčina a čeština natoľko odlišné, že to má zmysel?",
+        "a": "Áno, hoci si jazyky rozumejú, úradné formuláre, zmluvy či odborné výrazy sa líšia a strojový preklad tu pomáha vyhnúť sa nepresnostiam."
+      },
+      {
+        "q": "Dá sa prekladať aj z češtiny späť do slovenčiny?",
+        "a": "Áno, ten istý rozhovor funguje obojsmerne — hovorte alebo píšte po česky a slovenský preklad dostanete v tom istom vlákne."
+      },
+      {
+        "q": "Je to zadarmo?",
+        "a": "Áno, môžete to vyskúšať zadarmo bez vytvárania účtu. Prihláste sa cez Google, ak chcete viac denných kreditov a uloženú históriu."
+      },
+      {
+        "q": "Musím si niečo inštalovať?",
+        "a": "Nie, beží to priamo v prehliadači na počítači aj mobile — nič sa nesťahuje."
+      },
+      {
+        "q": "Dá sa viesť dlhší rozhovor namiesto jednotlivých prekladov?",
+        "a": "Áno, preklady sa zoskupujú do tém, takže konverzácia s úradom, firmou alebo priateľom zostáva na jednom mieste."
+      }
     ]
   },
   "finalCta": {

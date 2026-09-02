@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mluvte, nepište",
+      "heading": "Hlasový překladač z češtiny do angličtiny",
       "sub": "Klepněte na mikrofon, řekněte větu česky nebo anglicky a získejte překlad ke čtení i poslechu.",
       "bullets": [
-        { "title": "Řeč přeložená do angličtiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí anglicky během pár vteřin" },
-        { "title": "Poslechněte si anglický překlad", "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností" }
+        {
+          "title": "Řeč přeložená do angličtiny",
+          "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí anglicky během pár vteřin"
+        },
+        {
+          "title": "Poslechněte si anglický překlad",
+          "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "heading": "Překladač pro konverzaci a mluvené rozhovory",
       "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
       "bullets": [
-        { "title": "Odpověď v angličtině přeložená do češtiny", "sub": "Kolega nebo klient může mluvit anglicky a vy to uvidíte i uslyšíte česky" },
-        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné anglické konverzaci později, místo abyste ji hledali znovu" }
+        {
+          "title": "Odpověď v angličtině přeložená do češtiny",
+          "sub": "Kolega nebo klient může mluvit anglicky a vy to uvidíte i uslyšíte česky"
+        },
+        {
+          "title": "Rozhovory uložené jako vlákna",
+          "sub": "Vraťte se ke stejné anglické konverzaci později, místo abyste ji hledali znovu"
+        }
       ]
     },
     {
-      "heading": "Anglicko-český pár a 185 dalších jazyků",
+      "heading": "Online překladač bez instalace pro 186 jazyků",
       "sub": "Angličtina je jeden z 186 dostupných jazyků, v libovolném směru.",
       "bullets": [
-        { "title": "Přesně i s idiomy a slovosledem", "sub": "Zvládá anglickou gramatiku a slovosled správně, ne jen hrubý odhad" },
-        { "title": "186 jazyků v jednom nástroji", "sub": "Stejný nástroj funguje dnes na angličtinu a zítra na kterýkoli jiný jazyk" }
+        {
+          "title": "Přesně i s idiomy a slovosledem",
+          "sub": "Zvládá anglickou gramatiku a slovosled správně, ne jen hrubý odhad"
+        },
+        {
+          "title": "186 jazyků v jednom nástroji",
+          "sub": "Stejný nástroj funguje dnes na angličtinu a zítra na kterýkoli jiný jazyk"
+        }
       ]
     },
     {
-      "heading": "Raději píšete? I to funguje",
+      "heading": "Překladač textu pro psané zprávy a e-maily",
       "sub": "Napište nebo vložte český text a získejte anglický překlad bez dotyku mikrofonu — třeba zprávu na WhatsApp nebo e-mail.",
       "bullets": [
-        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici kdykoli — v tiché kanceláři i na hlučném letišti" },
-        { "title": "Zkopírujte překlad", "sub": "Vložte anglický text rovnou do e-mailu, formuláře nebo zprávy" }
+        {
+          "title": "Pište místo mluvení",
+          "sub": "Přepněte na klávesnici kdykoli — v tiché kanceláři i na hlučném letišti"
+        },
+        {
+          "title": "Zkopírujte překlad",
+          "sub": "Vložte anglický text rovnou do e-mailu, formuláře nebo zprávy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typické překladatelské aplikace",
     "rows": [
-      { "title": "Jak začnete", "us": "Mluvte česky nebo anglicky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
-      { "title": "Historie rozhovorů", "us": "Každá anglická konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
-      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
-      { "title": "Obě strany rozhovoru", "us": "Čeština do angličtiny i angličtina do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
-      { "title": "Poslech nahlas", "us": "Klepněte a nechte si anglický překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+      {
+        "title": "Jak začnete",
+        "us": "Mluvte česky nebo anglicky a překlad dostanete okamžitě.",
+        "them": "Nejdřív musíte napsat, co chcete říct."
+      },
+      {
+        "title": "Historie rozhovorů",
+        "us": "Každá anglická konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.",
+        "them": "Překlad zmizí, jakmile aplikaci zavřete."
+      },
+      {
+        "title": "Start",
+        "us": "Otevřete v prohlížeči — nic se neinstaluje.",
+        "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete."
+      },
+      {
+        "title": "Obě strany rozhovoru",
+        "us": "Čeština do angličtiny i angličtina do češtiny v jednom vlákně.",
+        "them": "Změna směru obvykle znamená nový překlad od nuly."
+      },
+      {
+        "title": "Poslech nahlas",
+        "us": "Klepněte a nechte si anglický překlad přečíst nahlas.",
+        "them": "Jen text — výslovnost si musíte ověřit sami."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "dotazy",
     "sub": "Časté otázky k překladu z češtiny do angličtiny.",
     "items": [
-      { "q": "Přeloží mluvenou češtinu do angličtiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete anglický překlad jako text, s možností nechat si ho přečíst nahlas." },
-      { "q": "Zvládne to i běžné anglické fráze a idiomy?", "a": "Ano, překlad zohledňuje přirozený slovosled a běžné výrazy, ne jen doslovný převod slovo od slova." },
-      { "q": "Můžu překládat i z angličtiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište anglicky a český překlad dostanete ve stejném vlákně." },
-      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
-      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." },
-      { "q": "Můžu vést průběžnou konverzaci místo jednorázových překladů?", "a": "Ano, překlady se řadí do vláken, takže anglická konverzace zůstane pohromadě místo aby se rozpadla na jednotlivé dotazy." }
+      {
+        "q": "Přeloží mluvenou češtinu do angličtiny?",
+        "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete anglický překlad jako text, s možností nechat si ho přečíst nahlas."
+      },
+      {
+        "q": "Zvládne to i běžné anglické fráze a idiomy?",
+        "a": "Ano, překlad zohledňuje přirozený slovosled a běžné výrazy, ne jen doslovný převod slovo od slova."
+      },
+      {
+        "q": "Můžu překládat i z angličtiny zpátky do češtiny?",
+        "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište anglicky a český překlad dostanete ve stejném vlákně."
+      },
+      {
+        "q": "Je to zdarma?",
+        "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii."
+      },
+      {
+        "q": "Musím si něco instalovat?",
+        "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení."
+      },
+      {
+        "q": "Můžu vést průběžnou konverzaci místo jednorázových překladů?",
+        "a": "Ano, překlady se řadí do vláken, takže anglická konverzace zůstane pohromadě místo aby se rozpadla na jednotlivé dotazy."
+      }
     ]
   },
   "finalCta": {

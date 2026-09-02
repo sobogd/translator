@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Schrift von rechts nach links",
+      "heading": "Deutsch-Arabisch-Sprachübersetzer für die Stimme",
       "sub": "Keine arabische Tastatur, keine Umschrift: sprechen oder einfügen.",
       "bullets": [
-        { "title": "Arabisch so einfügen, wie es kam", "sub": "Verbundene Buchstaben und Leserichtung bleiben erhalten" },
-        { "title": "Sprechen, arabisch herausbekommen", "sub": "Dein deutscher Satz erscheint in arabischer Schrift, zum Senden oder Vorlesen" }
+        {
+          "title": "Arabisch so einfügen, wie es kam",
+          "sub": "Verbundene Buchstaben und Leserichtung bleiben erhalten"
+        },
+        {
+          "title": "Sprechen, arabisch herausbekommen",
+          "sub": "Dein deutscher Satz erscheint in arabischer Schrift, zum Senden oder Vorlesen"
+        }
       ]
     },
     {
-      "heading": "Dialekt oder Hocharabisch",
+      "heading": "Arabisch-Gesprächsübersetzer für beide Seiten",
       "sub": "Ägyptisch, levantinisch oder Golfarabisch klingen anders als die Schriftsprache.",
       "bullets": [
-        { "title": "Alltagssprache im Kontext", "sub": "Übersetzt wird, was gemeint war, nicht der Wörterbucheintrag" },
-        { "title": "Auch Hocharabisch", "sub": "Amtliche Schreiben kommen als klares Deutsch zurück" }
+        {
+          "title": "Alltagssprache im Kontext",
+          "sub": "Übersetzt wird, was gemeint war, nicht der Wörterbucheintrag"
+        },
+        {
+          "title": "Auch Hocharabisch",
+          "sub": "Amtliche Schreiben kommen als klares Deutsch zurück"
+        }
       ]
     },
     {
-      "heading": "Nachbarschaft, Ehrenamt, Behörde",
+      "heading": "Online-Übersetzer ohne Installation",
       "sub": "Gespräche, in denen kein Dolmetscher danebensteht und es trotzdem klappen muss.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Sie sprechen Arabisch, du liest Deutsch; du antwortest deutsch, sie hören Arabisch" },
-        { "title": "Jede Person, ein Thema", "sub": "Das Gespräch bleibt und geht beim nächsten Mal weiter" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Sie sprechen Arabisch, du liest Deutsch; du antwortest deutsch, sie hören Arabisch"
+        },
+        {
+          "title": "Jede Person, ein Thema",
+          "sub": "Das Gespräch bleibt und geht beim nächsten Mal weiter"
+        }
       ]
     },
     {
-      "heading": "Oder Dokument einfügen",
+      "heading": "Deutscher Textübersetzer ins Arabische",
       "sub": "Nachricht, Bescheinigung, Schreiben.",
       "bullets": [
-        { "title": "Langer Text am Stück", "sub": "Ein ganzer Absatz statt Satz für Satz" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread passt für jede Sprache" }
+        {
+          "title": "Langer Text am Stück",
+          "sub": "Ein ganzer Absatz statt Satz für Satz"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread passt für jede Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Arabisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Eine Schrift tippen, die du nicht hast." },
-      { "title": "Dialekte", "us": "Im Kontext gelesen.", "them": "Nur Hocharabisch verstanden." },
-      { "title": "Antworten", "us": "Deutsch rein, Arabisch raus.", "them": "Eine zweite Übersetzung." },
-      { "title": "Verlauf", "us": "Gespräche als Themen gespeichert.", "them": "Nichts bleibt." },
-      { "title": "Start", "us": "Browser und Mikrofon.", "them": "App plus arabische Tastatur." }
+      {
+        "title": "Jemand spricht Arabisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Eine Schrift tippen, die du nicht hast."
+      },
+      {
+        "title": "Dialekte",
+        "us": "Im Kontext gelesen.",
+        "them": "Nur Hocharabisch verstanden."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Arabisch raus.",
+        "them": "Eine zweite Übersetzung."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Gespräche als Themen gespeichert.",
+        "them": "Nichts bleibt."
+      },
+      {
+        "title": "Start",
+        "us": "Browser und Mikrofon.",
+        "them": "App plus arabische Tastatur."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Arabisch.",
     "items": [
-      { "q": "Brauche ich eine arabische Tastatur?", "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein; tippen musst du nichts." },
-      { "q": "Versteht es Dialekte?", "a": "Gesprochenes Alltagsarabisch wird im Kontext übersetzt, statt es aufs Hocharabische zu zwingen — daran scheitern die meisten Tools." },
-      { "q": "Wird die arabische Schrift korrekt angezeigt?", "a": "Ja, Leserichtung und verbundene Buchstaben bleiben beim Einfügen wie bei der Rückübersetzung erhalten." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, deine Antwort geht im selben Thread auf Arabisch raus und lässt sich vorlesen." },
-      { "q": "Kann ich ein Schreiben übersetzen?", "a": "Ja, füge den kompletten Text ein und lies ihn auf Deutsch." },
-      { "q": "Ist es kostenlos?", "a": "Ja, Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen und gespeicherter Verlauf." }
+      {
+        "q": "Brauche ich eine arabische Tastatur?",
+        "a": "Nein. Sprich in das Mikrofon oder füge den erhaltenen Text ein; tippen musst du nichts."
+      },
+      {
+        "q": "Versteht es Dialekte?",
+        "a": "Gesprochenes Alltagsarabisch wird im Kontext übersetzt, statt es aufs Hocharabische zu zwingen — daran scheitern die meisten Tools."
+      },
+      {
+        "q": "Wird die arabische Schrift korrekt angezeigt?",
+        "a": "Ja, Leserichtung und verbundene Buchstaben bleiben beim Einfügen wie bei der Rückübersetzung erhalten."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, deine Antwort geht im selben Thread auf Arabisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Kann ich ein Schreiben übersetzen?",
+        "a": "Ja, füge den kompletten Text ein und lies ihn auf Deutsch."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, Gratis-Kontingent ohne Konto; mit Google-Login mehr Monatsvolumen und gespeicherter Verlauf."
+      }
     ]
   },
   "finalCta": {

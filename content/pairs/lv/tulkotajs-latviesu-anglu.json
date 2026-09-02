@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Runā latviski, klausies angliski",
+      "heading": "Balss tulkotājs no latviešu uz angļu valodu",
       "sub": "Pieskaries mikrofonam un pasaki frāzi — pēc dažām sekundēm tā skan angliski, gatava gan tekstā, gan balsī.",
       "bullets": [
-        { "title": "Runa uzreiz kļūst par angļu tekstu", "sub": "Pasaki frāzi latviski — tā tiek atpazīta, pārtulkota un parādās ekrānā" },
-        { "title": "Noklausies pareizo izrunu", "sub": "Pieskaries skaļruņa ikonai, ja neesi drošs, kā izrunāt frāzi angliski" }
+        {
+          "title": "Runa uzreiz kļūst par angļu tekstu",
+          "sub": "Pasaki frāzi latviski — tā tiek atpazīta, pārtulkota un parādās ekrānā"
+        },
+        {
+          "title": "Noklausies pareizo izrunu",
+          "sub": "Pieskaries skaļruņa ikonai, ja neesi drošs, kā izrunāt frāzi angliski"
+        }
       ]
     },
     {
-      "heading": "Saruna abos virzienos, saglabāta kā tēma",
+      "heading": "Tulkotājs sarunai starp latviešu un angļu valodu",
       "sub": "Darba sarakste, intervija vai zvans darba devējam — visa saruna paliek vienā tēmā.",
       "bullets": [
-        { "title": "Sarunu biedrs atbild angliski — tu dzirdi latviski", "sub": "Tulkojums notiek abos virzienos vienā un tajā pašā sarunā" },
-        { "title": "Atgriezies pie sarunas vēlāk", "sub": "Darba saraksti vai studiju konsultāciju saglabā kā atsevišķu tēmu" }
+        {
+          "title": "Sarunu biedrs atbild angliski — tu dzirdi latviski",
+          "sub": "Tulkojums notiek abos virzienos vienā un tajā pašā sarunā"
+        },
+        {
+          "title": "Atgriezies pie sarunas vēlāk",
+          "sub": "Darba saraksti vai studiju konsultāciju saglabā kā atsevišķu tēmu"
+        }
       ]
     },
     {
-      "heading": "Angļu valoda — un vēl 185 valodas līdzās",
+      "heading": "Tiešsaistes tulkotājs latviešu un angļu valodā",
       "sub": "Angļu valoda bieži nepieciešama darbā vai studijās, taču tā ir tikai viena no 186 pieejamām valodām jebkurā virzienā.",
       "bullets": [
-        { "title": "Der darbam, studijām un pārcelšanās", "sub": "No darba e-pasta līdz sarunai lidostā — viens un tas pats rīks" },
-        { "title": "186 valodas vienā lietotnē", "sub": "Vajadzēs vācu vai spāņu valodu — pārslēgties nekur nevajadzēs" }
+        {
+          "title": "Der darbam, studijām un pārcelšanās",
+          "sub": "No darba e-pasta līdz sarunai lidostā — viens un tas pats rīks"
+        },
+        {
+          "title": "186 valodas vienā lietotnē",
+          "sub": "Vajadzēs vācu vai spāņu valodu — pārslēgties nekur nevajadzēs"
+        }
       ]
     },
     {
-      "heading": "Var arī vienkārši rakstīt",
+      "heading": "Teksta tulkotājs no latviešu uz angļu valodu",
       "sub": "Birojā vai sabiedriskā transportā runāt neērti — ieraksti tekstu latviski un saņem gatavu tulkojumu.",
       "bullets": [
-        { "title": "Raksti vai ielīmē tekstu", "sub": "Ielīmē e-pastu vai ziņu tieši laukā — tulkojums parādās uzreiz" },
-        { "title": "Nokopē rezultātu ar vienu pieskārienu", "sub": "Gatavo angļu tekstu var uzreiz ielīmēt e-pastā vai čatā" }
+        {
+          "title": "Raksti vai ielīmē tekstu",
+          "sub": "Ielīmē e-pastu vai ziņu tieši laukā — tulkojums parādās uzreiz"
+        },
+        {
+          "title": "Nokopē rezultātu ar vienu pieskārienu",
+          "sub": "Gatavo angļu tekstu var uzreiz ielīmēt e-pastā vai čatā"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Parastās tulkošanas lietotnes",
     "rows": [
-      { "title": "Kā sākt", "us": "Runā latviski vai angliski un uzreiz saņem tulkojumu.", "them": "Vispirms jāuzraksta frāze." },
-      { "title": "Sarunu vēsture", "us": "Katra saruna tiek saglabāta kā atsevišķa tēma, pie kuras var atgriezties.", "them": "Tulkojums pazūd, tiklīdz aizver lietotni." },
-      { "title": "Uzsākšana", "us": "Atveras pārlūkā, nekas nav jālejupielādē.", "them": "Jālejupielādē lietotne un jāpiešķir atļaujas." },
-      { "title": "Abi virzieni", "us": "Latviešu→angļu un angļu→latviešu dzīvo vienā sarunā.", "them": "Pretējam virzienam parasti jāsāk no jauna." },
-      { "title": "Balss atskaņošana", "us": "Pieskaries un dzirdi tulkojumu angliski skaļi nolasītu.", "them": "Tikai teksts, izruna jāmin pašam." }
+      {
+        "title": "Kā sākt",
+        "us": "Runā latviski vai angliski un uzreiz saņem tulkojumu.",
+        "them": "Vispirms jāuzraksta frāze."
+      },
+      {
+        "title": "Sarunu vēsture",
+        "us": "Katra saruna tiek saglabāta kā atsevišķa tēma, pie kuras var atgriezties.",
+        "them": "Tulkojums pazūd, tiklīdz aizver lietotni."
+      },
+      {
+        "title": "Uzsākšana",
+        "us": "Atveras pārlūkā, nekas nav jālejupielādē.",
+        "them": "Jālejupielādē lietotne un jāpiešķir atļaujas."
+      },
+      {
+        "title": "Abi virzieni",
+        "us": "Latviešu→angļu un angļu→latviešu dzīvo vienā sarunā.",
+        "them": "Pretējam virzienam parasti jāsāk no jauna."
+      },
+      {
+        "title": "Balss atskaņošana",
+        "us": "Pieskaries un dzirdi tulkojumu angliski skaļi nolasītu.",
+        "them": "Tikai teksts, izruna jāmin pašam."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "jautājumi",
     "sub": "Ko cilvēki jautā par tulkošanu no latviešu uz angļu valodu.",
     "items": [
-      { "q": "Vai tulko runāto latviešu valodu angliski?", "a": "Jā — pieskaries mikrofonam, runā latviski, un ekrānā parādīsies angļu teksts, ko var arī noklausīties skaļi." },
-      { "q": "Vai darbojas arī no angļu uz latviešu?", "a": "Jā, tā pati saruna strādā abos virzienos — sarunu biedrs runā vai raksta angliski, tu redzi un dzirdi tulkojumu latviski." },
-      { "q": "Vai tas ir bez maksas?", "a": "Jā, izmēģināt var bez maksas un bez reģistrācijas. Pieteikšanās ar Google dod vairāk kredītu dienā un saglabātu vēsturi." },
-      { "q": "Vai der darba sarakstei un intervijām?", "a": "Jā, ieraksti vai ielīmē e-pasta tekstu — angļu tulkojums ir gatavs uzreiz, un to viegli nokopēt atbildē." },
-      { "q": "Vai jāinstalē kāda lietotne?", "a": "Nē, viss darbojas tieši pārlūkā telefonā vai datorā, nekas nav jālejupielādē." },
-      { "q": "Vai saglabājas sarunas vēsture?", "a": "Jā, tulkojumi tiek grupēti tēmās, tāpēc darba saraksti vai ikdienas sarunas nepazūd starp citiem tulkojumiem." }
+      {
+        "q": "Vai tulko runāto latviešu valodu angliski?",
+        "a": "Jā — pieskaries mikrofonam, runā latviski, un ekrānā parādīsies angļu teksts, ko var arī noklausīties skaļi."
+      },
+      {
+        "q": "Vai darbojas arī no angļu uz latviešu?",
+        "a": "Jā, tā pati saruna strādā abos virzienos — sarunu biedrs runā vai raksta angliski, tu redzi un dzirdi tulkojumu latviski."
+      },
+      {
+        "q": "Vai tas ir bez maksas?",
+        "a": "Jā, izmēģināt var bez maksas un bez reģistrācijas. Pieteikšanās ar Google dod vairāk kredītu dienā un saglabātu vēsturi."
+      },
+      {
+        "q": "Vai der darba sarakstei un intervijām?",
+        "a": "Jā, ieraksti vai ielīmē e-pasta tekstu — angļu tulkojums ir gatavs uzreiz, un to viegli nokopēt atbildē."
+      },
+      {
+        "q": "Vai jāinstalē kāda lietotne?",
+        "a": "Nē, viss darbojas tieši pārlūkā telefonā vai datorā, nekas nav jālejupielādē."
+      },
+      {
+        "q": "Vai saglabājas sarunas vēsture?",
+        "a": "Jā, tulkojumi tiek grupēti tēmās, tāpēc darba saraksti vai ikdienas sarunas nepazūd starp citiem tulkojumiem."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Mluvte, nepište",
+      "heading": "Hlasový překladač z češtiny do francouzštiny",
       "sub": "Klepněte na mikrofon, řekněte větu česky nebo francouzsky a získejte překlad ke čtení i poslechu.",
       "bullets": [
-        { "title": "Řeč přeložená do francouzštiny", "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí francouzsky během pár vteřin" },
-        { "title": "Poslechněte si francouzštinu nahlas", "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností" }
+        {
+          "title": "Řeč přeložená do francouzštiny",
+          "sub": "Řekněte větu česky — vaše slova se přepíšou, přeloží a zobrazí francouzsky během pár vteřin"
+        },
+        {
+          "title": "Poslechněte si francouzštinu nahlas",
+          "sub": "Klepněte na ikonu reproduktoru, když si nejste jistí výslovností"
+        }
       ]
     },
     {
-      "heading": "Jedno vlákno, obě strany rozhovoru",
+      "heading": "Překladač pro konverzaci v reálném čase",
       "sub": "Mluvte tam a zpátky bez zakládání nové konverzace — každá výměna zůstává ve stejném vlákně.",
       "bullets": [
-        { "title": "Odpověď ve francouzštině přeložená do češtiny", "sub": "Partner nebo hotelová recepce může mluvit francouzsky a vy to uvidíte i uslyšíte česky" },
-        { "title": "Rozhovory uložené jako vlákna", "sub": "Vraťte se ke stejné francouzské konverzaci později, místo abyste ji hledali znovu" }
+        {
+          "title": "Odpověď ve francouzštině přeložená do češtiny",
+          "sub": "Partner nebo hotelová recepce může mluvit francouzsky a vy to uvidíte i uslyšíte česky"
+        },
+        {
+          "title": "Rozhovory uložené jako vlákna",
+          "sub": "Vraťte se ke stejné francouzské konverzaci později, místo abyste ji hledali znovu"
+        }
       ]
     },
     {
-      "heading": "Česko-francouzský pár a 185 dalších jazyků",
+      "heading": "Online překladač bez nutnosti instalace",
       "sub": "Francouzština je jeden z 186 dostupných jazyků, v libovolném směru.",
       "bullets": [
-        { "title": "Zvládá zdvořilostní obraty", "sub": "Francouzská gramatika a zdvořilé fráze jsou přeložené správně, ne jen doslovně" },
-        { "title": "186 jazyků na jednom místě", "sub": "Stejný nástroj funguje dnes na francouzštinu a zítra na kterýkoli jiný jazyk" }
+        {
+          "title": "Zvládá zdvořilostní obraty",
+          "sub": "Francouzská gramatika a zdvořilé fráze jsou přeložené správně, ne jen doslovně"
+        },
+        {
+          "title": "186 jazyků na jednom místě",
+          "sub": "Stejný nástroj funguje dnes na francouzštinu a zítra na kterýkoli jiný jazyk"
+        }
       ]
     },
     {
-      "heading": "Raději píšete? I to funguje",
+      "heading": "Překladač textu pro psané zprávy",
       "sub": "Napište nebo vložte český text a získejte francouzský překlad bez dotyku mikrofonu — třeba e-mail obchodnímu partnerovi.",
       "bullets": [
-        { "title": "Pište místo mluvení", "sub": "Přepněte na klávesnici v tiché kanceláři i na hlučném nádraží" },
-        { "title": "Zkopírujte překlad", "sub": "Vložte francouzský text rovnou do e-mailu nebo zprávy" }
+        {
+          "title": "Pište místo mluvení",
+          "sub": "Přepněte na klávesnici v tiché kanceláři i na hlučném nádraží"
+        },
+        {
+          "title": "Zkopírujte překlad",
+          "sub": "Vložte francouzský text rovnou do e-mailu nebo zprávy"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typické překladatelské aplikace",
     "rows": [
-      { "title": "Jak začnete", "us": "Mluvte česky nebo francouzsky a překlad dostanete okamžitě.", "them": "Nejdřív musíte napsat, co chcete říct." },
-      { "title": "Historie rozhovorů", "us": "Každá francouzská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.", "them": "Překlad zmizí, jakmile aplikaci zavřete." },
-      { "title": "Start", "us": "Otevřete v prohlížeči — nic se neinstaluje.", "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete." },
-      { "title": "Obě strany rozhovoru", "us": "Čeština do francouzštiny i francouzština do češtiny v jednom vlákně.", "them": "Změna směru obvykle znamená nový překlad od nuly." },
-      { "title": "Poslech nahlas", "us": "Klepněte a nechte si francouzský překlad přečíst nahlas.", "them": "Jen text — výslovnost si musíte ověřit sami." }
+      {
+        "title": "Jak začnete",
+        "us": "Mluvte česky nebo francouzsky a překlad dostanete okamžitě.",
+        "them": "Nejdřív musíte napsat, co chcete říct."
+      },
+      {
+        "title": "Historie rozhovorů",
+        "us": "Každá francouzská konverzace se uloží jako vlastní vlákno, ke kterému se vrátíte.",
+        "them": "Překlad zmizí, jakmile aplikaci zavřete."
+      },
+      {
+        "title": "Start",
+        "us": "Otevřete v prohlížeči — nic se neinstaluje.",
+        "them": "Stáhněte aplikaci a povolte oprávnění, než ji vůbec použijete."
+      },
+      {
+        "title": "Obě strany rozhovoru",
+        "us": "Čeština do francouzštiny i francouzština do češtiny v jednom vlákně.",
+        "them": "Změna směru obvykle znamená nový překlad od nuly."
+      },
+      {
+        "title": "Poslech nahlas",
+        "us": "Klepněte a nechte si francouzský překlad přečíst nahlas.",
+        "them": "Jen text — výslovnost si musíte ověřit sami."
+      }
     ]
   },
   "faq": {
@@ -74,11 +118,26 @@
     "headingAccent": "dotazy",
     "sub": "Časté otázky k překladu z češtiny do francouzštiny.",
     "items": [
-      { "q": "Přeloží mluvenou češtinu do francouzštiny?", "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete francouzský překlad jako text, s možností nechat si ho přečíst nahlas." },
-      { "q": "Zvládne zdvořilostní francouzské fráze?", "a": "Ano, zdvořilostní obraty a formální oslovení jsou přeložené správně, ne jen slovo od slova." },
-      { "q": "Můžu překládat i z francouzštiny zpátky do češtiny?", "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište francouzsky a český překlad dostanete ve stejném vlákně." },
-      { "q": "Je to zdarma?", "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii." },
-      { "q": "Musím si něco instalovat?", "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení." }
+      {
+        "q": "Přeloží mluvenou češtinu do francouzštiny?",
+        "a": "Ano — klepněte na mikrofon, řekněte větu česky a dostanete francouzský překlad jako text, s možností nechat si ho přečíst nahlas."
+      },
+      {
+        "q": "Zvládne zdvořilostní francouzské fráze?",
+        "a": "Ano, zdvořilostní obraty a formální oslovení jsou přeložené správně, ne jen slovo od slova."
+      },
+      {
+        "q": "Můžu překládat i z francouzštiny zpátky do češtiny?",
+        "a": "Ano, stejná konverzace funguje oběma směry — mluvte nebo pište francouzsky a český překlad dostanete ve stejném vlákně."
+      },
+      {
+        "q": "Je to zdarma?",
+        "a": "Ano, vyzkoušet to můžete zdarma bez zakládání účtu. Přihlaste se přes Google pro víc denních kreditů a uloženou historii."
+      },
+      {
+        "q": "Musím si něco instalovat?",
+        "a": "Ne, běží v prohlížeči na počítači i mobilu — nic ke stažení."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Kalbėkite — vertimas pasirodo iš karto",
+      "heading": "Balso vertėjas iš lietuvių į vokiečių",
       "sub": "Palieskite mikrofoną ir pasakykite frazę lietuviškai arba vokiškai — atsakymą galėsite perskaityti arba išgirsti garsiai.",
       "bullets": [
-        { "title": "Lietuviška kalba virsta vokiška", "sub": "Ištarti žodžiai atpažįstami, išverčiami ir parodomi vokiškai per kelias sekundes" },
-        { "title": "Išgirskite taisyklingą tarimą", "sub": "Palieskite garsiakalbio ikoną, kai savo vokiečių tarimu dar nesate tikri" }
+        {
+          "title": "Lietuviška kalba virsta vokiška",
+          "sub": "Ištarti žodžiai atpažįstami, išverčiami ir parodomi vokiškai per kelias sekundes"
+        },
+        {
+          "title": "Išgirskite taisyklingą tarimą",
+          "sub": "Palieskite garsiakalbio ikoną, kai savo vokiečių tarimu dar nesate tikri"
+        }
       ]
     },
     {
-      "heading": "Vienas pokalbis su darbdaviu ar kolega",
+      "heading": "Vertėjas pokalbiams vokiečių kalba",
       "sub": "Nereikia pradėti iš naujo kiekvieną kartą — pokalbis su tuo pačiu žmogumi Vokietijoje lieka toje pačioje temoje.",
       "bullets": [
-        { "title": "Atsakymas vokiškai virsta lietuvišku", "sub": "Pašnekovas gali kalbėti ar rašyti vokiškai, o jūs matote ir girdite lietuvišką vertimą" },
-        { "title": "Pokalbiai išsaugomi kaip temos", "sub": "Grįžkite prie to paties darbo pokalbio vėliau, o ne pradėkite jį iš naujo" }
+        {
+          "title": "Atsakymas vokiškai virsta lietuvišku",
+          "sub": "Pašnekovas gali kalbėti ar rašyti vokiškai, o jūs matote ir girdite lietuvišką vertimą"
+        },
+        {
+          "title": "Pokalbiai išsaugomi kaip temos",
+          "sub": "Grįžkite prie to paties darbo pokalbio vėliau, o ne pradėkite jį iš naujo"
+        }
       ]
     },
     {
-      "heading": "Vokiečių–lietuvių, plius dar 185 kalbos",
+      "heading": "Internetinis vertėjas jūsų naršyklėje",
       "sub": "Vokiečių kalba — viena iš 186 palaikomų kalbų bet kuria kryptimi.",
       "bullets": [
-        { "title": "Tvarkosi su vokiškais garsais tiksliai", "sub": "Teisingai atpažįsta ü, ö, ä ir kitus vokiškos rašybos ypatumus, o ne spėja apytiksliai" },
-        { "title": "186 kalbos iš viso", "sub": "Tas pats įrankis tinka vokiečių kalbai šiandien ir bet kuriai kitai kalbai rytoj" }
+        {
+          "title": "Tvarkosi su vokiškais garsais tiksliai",
+          "sub": "Teisingai atpažįsta ü, ö, ä ir kitus vokiškos rašybos ypatumus, o ne spėja apytiksliai"
+        },
+        {
+          "title": "186 kalbos iš viso",
+          "sub": "Tas pats įrankis tinka vokiečių kalbai šiandien ir bet kuriai kitai kalbai rytoj"
+        }
       ]
     },
     {
-      "heading": "Mieliau renkatės rašyti? Ir tai veikia",
+      "heading": "Teksto vertėjas į vokiečių kalbą",
       "sub": "Įrašykite ar įklijuokite lietuvišką tekstą ir gaukite vokišką vertimą be mikrofono.",
       "bullets": [
-        { "title": "Rašykite vietoje kalbėjimo", "sub": "Bet kada persijunkite prie klaviatūros — patogu triukšmingame gamyklos ceche ar biure" },
-        { "title": "Nukopijuokite vertimą", "sub": "Nukopijuokite vokišką tekstą tiesiai į el. laišką darbdaviui ar WhatsApp žinutę" }
+        {
+          "title": "Rašykite vietoje kalbėjimo",
+          "sub": "Bet kada persijunkite prie klaviatūros — patogu triukšmingame gamyklos ceche ar biure"
+        },
+        {
+          "title": "Nukopijuokite vertimą",
+          "sub": "Nukopijuokite vokišką tekstą tiesiai į el. laišką darbdaviui ar WhatsApp žinutę"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Įprastos vertimo programėlės",
     "rows": [
-      { "title": "Kaip pradedate", "us": "Kalbėkite lietuviškai ar vokiškai ir vertimą gaukite iš karto.", "them": "Pirma reikia surašyti tai, ką norite pasakyti." },
-      { "title": "Pokalbių istorija", "us": "Kiekvienas vokiečių kalbos pokalbis išsaugomas kaip atskira tema, kurią galima atsiversti vėl.", "them": "Kiekvienas vertimas dingsta uždarius programėlę." },
-      { "title": "Pasiruošimas", "us": "Atsidarykite naršyklės skirtuke — diegti nieko nereikia.", "them": "Reikia atsisiųsti programėlę ir suteikti leidimus prieš pradedant naudotis." },
-      { "title": "Abi kryptys", "us": "Lietuvių–vokiečių ir vokiečių–lietuvių kryptys veikia toje pačioje gijoje.", "them": "Krypties keitimas dažniausiai reiškia naują vertimą." },
-      { "title": "Vertimo išgirdimas", "us": "Palieskite, kad išgirstumėte vokišką vertimą, perskaitytą garsiai.", "them": "Tik tekstas, tad tarimu pasirūpinti turite patys." }
+      {
+        "title": "Kaip pradedate",
+        "us": "Kalbėkite lietuviškai ar vokiškai ir vertimą gaukite iš karto.",
+        "them": "Pirma reikia surašyti tai, ką norite pasakyti."
+      },
+      {
+        "title": "Pokalbių istorija",
+        "us": "Kiekvienas vokiečių kalbos pokalbis išsaugomas kaip atskira tema, kurią galima atsiversti vėl.",
+        "them": "Kiekvienas vertimas dingsta uždarius programėlę."
+      },
+      {
+        "title": "Pasiruošimas",
+        "us": "Atsidarykite naršyklės skirtuke — diegti nieko nereikia.",
+        "them": "Reikia atsisiųsti programėlę ir suteikti leidimus prieš pradedant naudotis."
+      },
+      {
+        "title": "Abi kryptys",
+        "us": "Lietuvių–vokiečių ir vokiečių–lietuvių kryptys veikia toje pačioje gijoje.",
+        "them": "Krypties keitimas dažniausiai reiškia naują vertimą."
+      },
+      {
+        "title": "Vertimo išgirdimas",
+        "us": "Palieskite, kad išgirstumėte vokišką vertimą, perskaitytą garsiai.",
+        "them": "Tik tekstas, tad tarimu pasirūpinti turite patys."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "klausimai",
     "sub": "Dažniausi klausimai apie vertimą iš lietuvių į vokiečių kalbą.",
     "items": [
-      { "q": "Ar programėlė verčia šnekamąją lietuvių kalbą į vokiečių?", "a": "Taip — palieskite mikrofoną, pasakykite frazę lietuviškai, ir gausite vokišką vertimą tekstu bei galimybe jį išgirsti garsiai." },
-      { "q": "Ar tinka darbo pokalbiams Vokietijoje?", "a": "Taip, dažnai naudojamas kalbantis su darbdaviu, kolegomis ar valdininkais Vokietijoje, taip pat susirašinėjant el. paštu." },
-      { "q": "Ar galiu versti iš vokiečių atgal į lietuvių?", "a": "Taip, tas pats pokalbis veikia abiem kryptimis — pašnekovas kalba ar rašo vokiškai, o jūs gaunate lietuvišką vertimą toje pačioje gijoje." },
-      { "q": "Ar tai nemokama?", "a": "Taip, galite išbandyti nemokamai be registracijos. Prisijungę su Google gausite daugiau kreditų per dieną ir išsaugotą istoriją." },
-      { "q": "Ar tvarkosi su vokiškais rašybos ženklais, pvz. ü ar ß?", "a": "Taip, tokie ženklai kaip ä, ö, ü ir ß teisingai atpažįstami tiek tekste, tiek balso vertime." },
-      { "q": "Ar reikia ką nors įsidiegti?", "a": "Ne, viskas veikia naršyklėje kompiuteryje ar telefone — atsisiųsti nieko nereikia." }
+      {
+        "q": "Ar programėlė verčia šnekamąją lietuvių kalbą į vokiečių?",
+        "a": "Taip — palieskite mikrofoną, pasakykite frazę lietuviškai, ir gausite vokišką vertimą tekstu bei galimybe jį išgirsti garsiai."
+      },
+      {
+        "q": "Ar tinka darbo pokalbiams Vokietijoje?",
+        "a": "Taip, dažnai naudojamas kalbantis su darbdaviu, kolegomis ar valdininkais Vokietijoje, taip pat susirašinėjant el. paštu."
+      },
+      {
+        "q": "Ar galiu versti iš vokiečių atgal į lietuvių?",
+        "a": "Taip, tas pats pokalbis veikia abiem kryptimis — pašnekovas kalba ar rašo vokiškai, o jūs gaunate lietuvišką vertimą toje pačioje gijoje."
+      },
+      {
+        "q": "Ar tai nemokama?",
+        "a": "Taip, galite išbandyti nemokamai be registracijos. Prisijungę su Google gausite daugiau kreditų per dieną ir išsaugotą istoriją."
+      },
+      {
+        "q": "Ar tvarkosi su vokiškais rašybos ženklais, pvz. ü ar ß?",
+        "a": "Taip, tokie ženklai kaip ä, ö, ü ir ß teisingai atpažįstami tiek tekste, tiek balso vertime."
+      },
+      {
+        "q": "Ar reikia ką nors įsidiegti?",
+        "a": "Ne, viskas veikia naršyklėje kompiuteryje ar telefone — atsisiųsti nieko nereikia."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Long sentences, read in order",
+      "heading": "Voice translator from German to English",
       "sub": "The verb at the end and three clauses in between stop being a problem once it's English.",
       "bullets": [
-        { "title": "Spoken German into English text", "sub": "Record the sentence and read what it actually asked for" },
-        { "title": "Compound nouns split out", "sub": "Aufenthaltserlaubnis or Krankenversicherungskarte come back as something you can act on" }
+        {
+          "title": "Spoken German into English text",
+          "sub": "Record the sentence and read what it actually asked for"
+        },
+        {
+          "title": "Compound nouns split out",
+          "sub": "Aufenthaltserlaubnis or Krankenversicherungskarte come back as something you can act on"
+        }
       ]
     },
     {
-      "heading": "Answer in the same thread",
+      "heading": "German to English conversation translator",
       "sub": "Reply in English and the German goes out, ready to be played aloud.",
       "bullets": [
-        { "title": "Both directions in one place", "sub": "German in, English out, and back again without restarting" },
-        { "title": "Saved for the next round", "sub": "Each conversation stays as a topic you can reopen when the reply arrives" }
+        {
+          "title": "Both directions in one place",
+          "sub": "German in, English out, and back again without restarting"
+        },
+        {
+          "title": "Saved for the next round",
+          "sub": "Each conversation stays as a topic you can reopen when the reply arrives"
+        }
       ]
     },
     {
-      "heading": "Sie or du, kept as intended",
+      "heading": "Online translator for German to English",
       "sub": "German officialese is formal by default, and the tone matters as much as the words.",
       "bullets": [
-        { "title": "Formal register preserved", "sub": "A Sie sentence stays polite in English instead of turning into something curt" },
-        { "title": "Umlauts and ß", "sub": "Paste ä, ö, ü or ß straight from the letter and nothing breaks" }
+        {
+          "title": "Formal register preserved",
+          "sub": "A Sie sentence stays polite in English instead of turning into something curt"
+        },
+        {
+          "title": "Umlauts and ß",
+          "sub": "Paste ä, ö, ü or ß straight from the letter and nothing breaks"
+        }
       ]
     },
     {
-      "heading": "Paste the Behörde letter",
+      "heading": "German to English text translator",
       "sub": "Rental contracts, insurance mail, forms from the Amt — paste them and read the English.",
       "bullets": [
-        { "title": "A full page at once", "sub": "Not just a headline: paste the paragraph that actually matters" },
-        { "title": "Copy the English", "sub": "Move the result into your notes or an answer in one tap" }
+        {
+          "title": "A full page at once",
+          "sub": "Not just a headline: paste the paragraph that actually matters"
+        },
+        {
+          "title": "Copy the English",
+          "sub": "Move the result into your notes or an answer in one tap"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "Someone speaks to you", "us": "Record it and read the English straight away.", "them": "Type out a language you can't spell yet." },
-      { "title": "Compound words", "us": "Translated as the thing they describe.", "them": "Split into pieces that mean nothing." },
-      { "title": "Replying", "us": "Answer in English and send it in German, same thread.", "them": "Run a second translation manually." },
-      { "title": "History", "us": "Kept as topics you can reopen.", "them": "Lost when the tab closes." },
-      { "title": "Getting started", "us": "Browser tab, no install, no account needed to try.", "them": "Install an app, then register." }
+      {
+        "title": "Someone speaks to you",
+        "us": "Record it and read the English straight away.",
+        "them": "Type out a language you can't spell yet."
+      },
+      {
+        "title": "Compound words",
+        "us": "Translated as the thing they describe.",
+        "them": "Split into pieces that mean nothing."
+      },
+      {
+        "title": "Replying",
+        "us": "Answer in English and send it in German, same thread.",
+        "them": "Run a second translation manually."
+      },
+      {
+        "title": "History",
+        "us": "Kept as topics you can reopen.",
+        "them": "Lost when the tab closes."
+      },
+      {
+        "title": "Getting started",
+        "us": "Browser tab, no install, no account needed to try.",
+        "them": "Install an app, then register."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating German into English.",
     "items": [
-      { "q": "Does it cope with very long German sentences?", "a": "Yes. The whole sentence is translated at once, so a verb sitting at the very end still lands in the right place in the English." },
-      { "q": "What about compound nouns?", "a": "Compounds are translated as the concept they describe rather than split into fragments, which is where word-by-word tools usually fall apart." },
-      { "q": "Can it understand Austrian or Swiss German?", "a": "Standard German from Austria and Switzerland is handled; strong regional dialect is harder, and speaking a little more clearly helps the transcript." },
-      { "q": "Can I paste a letter from an office or landlord?", "a": "Yes — switch to the keyboard and paste the whole thing, including umlauts and ß, then read the English underneath." },
-      { "q": "Can I reply in English and have it go out in German?", "a": "Yes. The conversation runs in both directions, and the German version can be played aloud for the other person." },
-      { "q": "Is it free?", "a": "There is a free allowance available immediately without an account, and signing in with Google raises the monthly quota and keeps your history." }
+      {
+        "q": "Does it cope with very long German sentences?",
+        "a": "Yes. The whole sentence is translated at once, so a verb sitting at the very end still lands in the right place in the English."
+      },
+      {
+        "q": "What about compound nouns?",
+        "a": "Compounds are translated as the concept they describe rather than split into fragments, which is where word-by-word tools usually fall apart."
+      },
+      {
+        "q": "Can it understand Austrian or Swiss German?",
+        "a": "Standard German from Austria and Switzerland is handled; strong regional dialect is harder, and speaking a little more clearly helps the transcript."
+      },
+      {
+        "q": "Can I paste a letter from an office or landlord?",
+        "a": "Yes — switch to the keyboard and paste the whole thing, including umlauts and ß, then read the English underneath."
+      },
+      {
+        "q": "Can I reply in English and have it go out in German?",
+        "a": "Yes. The conversation runs in both directions, and the German version can be played aloud for the other person."
+      },
+      {
+        "q": "Is it free?",
+        "a": "There is a free allowance available immediately without an account, and signing in with Google raises the monthly quota and keeps your history."
+      }
     ]
   },
   "finalCta": {

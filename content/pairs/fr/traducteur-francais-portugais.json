@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parlez, n'écrivez pas",
+      "heading": "Traducteur vocal français portugais en ligne",
       "sub": "Appuyez sur le micro, dites-le en français ou en portugais, et lisez ou écoutez la traduction.",
       "bullets": [
-        { "title": "Votre voix devient du portugais", "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en portugais quelques secondes plus tard" },
-        { "title": "Écoutez le portugais à voix haute", "sub": "Appuyez sur le haut-parleur pour entendre la prononciation, utile face aux sons nasalisés du portugais" }
+        {
+          "title": "Votre voix devient du portugais",
+          "sub": "Parlez en français — vos mots sont transcrits, traduits et affichés en portugais quelques secondes plus tard"
+        },
+        {
+          "title": "Écoutez le portugais à voix haute",
+          "sub": "Appuyez sur le haut-parleur pour entendre la prononciation, utile face aux sons nasalisés du portugais"
+        }
       ]
     },
     {
-      "heading": "Un seul fil, les deux côtés de l'échange",
+      "heading": "Traducteur de conversation français portugais",
       "sub": "Discutez dans les deux sens sans repartir de zéro — chaque échange reste dans le même sujet, pratique pour la famille comme pour le travail.",
       "bullets": [
-        { "title": "Réponse en portugais, traduite en français", "sub": "Votre interlocuteur peut parler portugais, vous le voyez et l'entendez en français" },
-        { "title": "Conversations enregistrées comme sujets", "sub": "Retrouvez la même discussion en portugais plus tard au lieu de perdre le fil" }
+        {
+          "title": "Réponse en portugais, traduite en français",
+          "sub": "Votre interlocuteur peut parler portugais, vous le voyez et l'entendez en français"
+        },
+        {
+          "title": "Conversations enregistrées comme sujets",
+          "sub": "Retrouvez la même discussion en portugais plus tard au lieu de perdre le fil"
+        }
       ]
     },
     {
-      "heading": "Français-portugais, plus 184 autres langues",
+      "heading": "Traducteur français portugais en ligne sans appli",
       "sub": "Le portugais est l'une des 186 langues disponibles, dans les deux sens.",
       "bullets": [
-        { "title": "Précis sur les tournures courantes", "sub": "Reconnaît les expressions usuelles du portugais plutôt que de traduire mot à mot" },
-        { "title": "186 langues au total", "sub": "Le même outil fonctionne aujourd'hui pour le portugais et demain pour toute autre langue" }
+        {
+          "title": "Précis sur les tournures courantes",
+          "sub": "Reconnaît les expressions usuelles du portugais plutôt que de traduire mot à mot"
+        },
+        {
+          "title": "186 langues au total",
+          "sub": "Le même outil fonctionne aujourd'hui pour le portugais et demain pour toute autre langue"
+        }
       ]
     },
     {
-      "heading": "Vous préférez taper ? C'est possible aussi",
+      "heading": "Traducteur de texte français portugais rapide",
       "sub": "Tapez ou collez du texte en français et obtenez la traduction portugaise sans toucher au micro.",
       "bullets": [
-        { "title": "Taper plutôt que parler", "sub": "Utile pour traduire un SMS, un e-mail ou un message écrit" },
-        { "title": "Copier la traduction", "sub": "Récupérez le texte portugais pour le coller dans un e-mail ou un message" }
+        {
+          "title": "Taper plutôt que parler",
+          "sub": "Utile pour traduire un SMS, un e-mail ou un message écrit"
+        },
+        {
+          "title": "Copier la traduction",
+          "sub": "Récupérez le texte portugais pour le coller dans un e-mail ou un message"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Applications de traduction classiques",
     "rows": [
-      { "title": "Pour commencer", "us": "Parlez en français ou en portugais et obtenez une traduction aussitôt.", "them": "Il faut d'abord taper ce que vous voulez dire." },
-      { "title": "Historique des échanges", "us": "Chaque conversation en portugais est enregistrée comme un sujet que vous pouvez rouvrir.", "them": "Chaque traduction disparaît une fois l'application fermée." },
-      { "title": "Mise en route", "us": "Ouvrez un onglet dans le navigateur — rien à installer.", "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser." },
-      { "title": "Les deux sens", "us": "Français vers portugais et portugais vers français vivent dans le même fil.", "them": "Changer de sens revient souvent à démarrer une nouvelle traduction." },
-      { "title": "Écouter le résultat", "us": "Appuyez pour entendre la traduction portugaise lue à voix haute.", "them": "Texte uniquement, la prononciation reste à votre charge." }
+      {
+        "title": "Pour commencer",
+        "us": "Parlez en français ou en portugais et obtenez une traduction aussitôt.",
+        "them": "Il faut d'abord taper ce que vous voulez dire."
+      },
+      {
+        "title": "Historique des échanges",
+        "us": "Chaque conversation en portugais est enregistrée comme un sujet que vous pouvez rouvrir.",
+        "them": "Chaque traduction disparaît une fois l'application fermée."
+      },
+      {
+        "title": "Mise en route",
+        "us": "Ouvrez un onglet dans le navigateur — rien à installer.",
+        "them": "Télécharger une application et accorder des autorisations avant de pouvoir l'utiliser."
+      },
+      {
+        "title": "Les deux sens",
+        "us": "Français vers portugais et portugais vers français vivent dans le même fil.",
+        "them": "Changer de sens revient souvent à démarrer une nouvelle traduction."
+      },
+      {
+        "title": "Écouter le résultat",
+        "us": "Appuyez pour entendre la traduction portugaise lue à voix haute.",
+        "them": "Texte uniquement, la prononciation reste à votre charge."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "fréquentes",
     "sub": "Les questions courantes sur la traduction du français vers le portugais.",
     "items": [
-      { "q": "Peut-il traduire du français parlé en portugais ?", "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction portugaise sous forme de texte, avec une option pour l'écouter à voix haute." },
-      { "q": "Fait-il la différence entre le portugais du Portugal et du Brésil ?", "a": "Il traduit dans un portugais courant et largement compris, adapté aux échanges du quotidien avec l'un ou l'autre." },
-      { "q": "Puis-je traduire du portugais vers le français ?", "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en portugais et obtenez la traduction française dans le même sujet." },
-      { "q": "Est-ce gratuit ?", "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré." },
-      { "q": "Dois-je installer quelque chose ?", "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger." },
-      { "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?", "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en portugais reste au même endroit au lieu de se disperser." }
+      {
+        "q": "Peut-il traduire du français parlé en portugais ?",
+        "a": "Oui — appuyez sur le micro, parlez en français, et vous obtenez une traduction portugaise sous forme de texte, avec une option pour l'écouter à voix haute."
+      },
+      {
+        "q": "Fait-il la différence entre le portugais du Portugal et du Brésil ?",
+        "a": "Il traduit dans un portugais courant et largement compris, adapté aux échanges du quotidien avec l'un ou l'autre."
+      },
+      {
+        "q": "Puis-je traduire du portugais vers le français ?",
+        "a": "Oui, la même conversation fonctionne dans les deux sens — parlez ou tapez en portugais et obtenez la traduction française dans le même sujet."
+      },
+      {
+        "q": "Est-ce gratuit ?",
+        "a": "Oui, vous pouvez l'essayer gratuitement sans créer de compte. Connectez-vous avec Google pour plus de crédits quotidiens et un historique enregistré."
+      },
+      {
+        "q": "Dois-je installer quelque chose ?",
+        "a": "Non, il fonctionne directement dans votre navigateur, sur ordinateur ou mobile — rien à télécharger."
+      },
+      {
+        "q": "Puis-je suivre une conversation continue plutôt que des traductions isolées ?",
+        "a": "Oui, les traductions sont regroupées par sujets, pour qu'une conversation en portugais reste au même endroit au lieu de se disperser."
+      }
     ]
   },
   "finalCta": {

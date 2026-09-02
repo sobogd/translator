@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Praten in plaats van typen",
+      "heading": "Nederlands Italiaanse stemvertaler voor hardop spreken",
       "sub": "Tik op de microfoon, zeg het in het Nederlands of Italiaans, en lees of beluister de vertaling.",
       "bullets": [
-        { "title": "Spraak wordt Italiaanse tekst", "sub": "Zeg het in het Nederlands — je woorden verschijnen enkele seconden later in het Italiaans" },
-        { "title": "Beluister het Italiaans hardop", "sub": "Tik op het luidsprekerpictogram voor de juiste Italiaanse uitspraak" }
+        {
+          "title": "Spraak wordt Italiaanse tekst",
+          "sub": "Zeg het in het Nederlands — je woorden verschijnen enkele seconden later in het Italiaans"
+        },
+        {
+          "title": "Beluister het Italiaans hardop",
+          "sub": "Tik op het luidsprekerpictogram voor de juiste Italiaanse uitspraak"
+        }
       ]
     },
     {
-      "heading": "Eén gespreksdraad, beide kanten",
+      "heading": "Nederlands Italiaanse vertaler voor een gesprek",
       "sub": "Blijf heen en weer praten met Italiaanse vrienden of collega's zonder de draad kwijt te raken.",
       "bullets": [
-        { "title": "Antwoord in het Italiaans, vertaald naar het Nederlands", "sub": "Een Italiaanse gesprekspartner praat gewoon door, jij ziet en hoort het in het Nederlands" },
-        { "title": "Gesprekken opgeslagen als onderwerp", "sub": "Kom later terug op hetzelfde Italiaanse gesprek zonder opnieuw te beginnen" }
+        {
+          "title": "Antwoord in het Italiaans, vertaald naar het Nederlands",
+          "sub": "Een Italiaanse gesprekspartner praat gewoon door, jij ziet en hoort het in het Nederlands"
+        },
+        {
+          "title": "Gesprekken opgeslagen als onderwerp",
+          "sub": "Kom later terug op hetzelfde Italiaanse gesprek zonder opnieuw te beginnen"
+        }
       ]
     },
     {
-      "heading": "Nederlands–Italiaans, plus 185 andere talen",
+      "heading": "Online vertaler voor Nederlands Italiaans",
       "sub": "Italiaans is een van de 186 talen die beschikbaar zijn, in elke richting.",
       "bullets": [
-        { "title": "Nauwkeurig met uitspraak en spelling", "sub": "Verwerkt Italiaanse klanken en zinsbouw correct, geen ruwe gok" },
-        { "title": "186 talen in totaal", "sub": "Dezelfde tool werkt vandaag voor Italiaans en morgen voor elke andere taal" }
+        {
+          "title": "Nauwkeurig met uitspraak en spelling",
+          "sub": "Verwerkt Italiaanse klanken en zinsbouw correct, geen ruwe gok"
+        },
+        {
+          "title": "186 talen in totaal",
+          "sub": "Dezelfde tool werkt vandaag voor Italiaans en morgen voor elke andere taal"
+        }
       ]
     },
     {
-      "heading": "Liever typen? Dat kan ook",
+      "heading": "Nederlands Italiaanse tekstvertaler",
       "sub": "Typ of plak Nederlandse tekst en krijg een Italiaanse vertaling zonder de microfoon aan te raken.",
       "bullets": [
-        { "title": "Typen in plaats van spreken", "sub": "Handig voor een bericht aan Italiaanse familie of een e-mail voor werk" },
-        { "title": "Kopieer de vertaling", "sub": "Kopieer de Italiaanse tekst direct om ergens anders te plakken" }
+        {
+          "title": "Typen in plaats van spreken",
+          "sub": "Handig voor een bericht aan Italiaanse familie of een e-mail voor werk"
+        },
+        {
+          "title": "Kopieer de vertaling",
+          "sub": "Kopieer de Italiaanse tekst direct om ergens anders te plakken"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Gewone vertaal-apps",
     "rows": [
-      { "title": "Hoe je begint", "us": "Spreek Nederlands of Italiaans en krijg meteen een vertaling.", "them": "Eerst typen wat je wilt zeggen." },
-      { "title": "Gespreksgeschiedenis", "us": "Elk Italiaans gesprek wordt opgeslagen als eigen onderwerp.", "them": "Elke vertaling verdwijnt zodra je de app sluit." },
-      { "title": "Aan de slag", "us": "Open het in een browsertab — niets te installeren.", "them": "Eerst een app downloaden en rechten toekennen." },
-      { "title": "Beide richtingen", "us": "Nederlands naar Italiaans en Italiaans naar Nederlands staan in dezelfde gespreksdraad.", "them": "Van richting wisselen betekent meestal opnieuw beginnen." },
-      { "title": "Terugluisteren", "us": "Tik om de Italiaanse vertaling hardop te laten voorlezen.", "them": "Alleen tekst, dus de uitspraak zoek je zelf uit." }
+      {
+        "title": "Hoe je begint",
+        "us": "Spreek Nederlands of Italiaans en krijg meteen een vertaling.",
+        "them": "Eerst typen wat je wilt zeggen."
+      },
+      {
+        "title": "Gespreksgeschiedenis",
+        "us": "Elk Italiaans gesprek wordt opgeslagen als eigen onderwerp.",
+        "them": "Elke vertaling verdwijnt zodra je de app sluit."
+      },
+      {
+        "title": "Aan de slag",
+        "us": "Open het in een browsertab — niets te installeren.",
+        "them": "Eerst een app downloaden en rechten toekennen."
+      },
+      {
+        "title": "Beide richtingen",
+        "us": "Nederlands naar Italiaans en Italiaans naar Nederlands staan in dezelfde gespreksdraad.",
+        "them": "Van richting wisselen betekent meestal opnieuw beginnen."
+      },
+      {
+        "title": "Terugluisteren",
+        "us": "Tik om de Italiaanse vertaling hardop te laten voorlezen.",
+        "them": "Alleen tekst, dus de uitspraak zoek je zelf uit."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "vragen",
     "sub": "Veelgestelde vragen over vertalen van Nederlands naar Italiaans.",
     "items": [
-      { "q": "Kan het gesproken Nederlands naar het Italiaans vertalen?", "a": "Ja — tik op de microfoon, spreek Nederlands, en je krijgt de Italiaanse vertaling als tekst, met de optie om die hardop te laten voorlezen." },
-      { "q": "Werkt het ook van Italiaans naar Nederlands?", "a": "Ja, hetzelfde gesprek werkt beide kanten op — spreek of typ Italiaans en krijg de Nederlandse vertaling in dezelfde gespreksdraad." },
-      { "q": "Is het gratis?", "a": "Ja, je kunt het gratis proberen zonder een account aan te maken. Log in met Google voor meer dagelijkse credits en opgeslagen geschiedenis." },
-      { "q": "Is het geschikt voor een reis naar Italië?", "a": "Ja, of je nu een menukaart wilt begrijpen of de weg vraagt, spreek of typ gewoon en de vertaling verschijnt meteen." },
-      { "q": "Moet ik iets installeren?", "a": "Nee, het werkt in je browser op desktop of mobiel — niets om te downloaden." },
-      { "q": "Kan ik een doorlopend gesprek bijhouden in plaats van losse vertalingen?", "a": "Ja, vertalingen worden gegroepeerd per onderwerp, zodat een Italiaans gesprek op één plek blijft staan in plaats van verspreid te raken." }
+      {
+        "q": "Kan het gesproken Nederlands naar het Italiaans vertalen?",
+        "a": "Ja — tik op de microfoon, spreek Nederlands, en je krijgt de Italiaanse vertaling als tekst, met de optie om die hardop te laten voorlezen."
+      },
+      {
+        "q": "Werkt het ook van Italiaans naar Nederlands?",
+        "a": "Ja, hetzelfde gesprek werkt beide kanten op — spreek of typ Italiaans en krijg de Nederlandse vertaling in dezelfde gespreksdraad."
+      },
+      {
+        "q": "Is het gratis?",
+        "a": "Ja, je kunt het gratis proberen zonder een account aan te maken. Log in met Google voor meer dagelijkse credits en opgeslagen geschiedenis."
+      },
+      {
+        "q": "Is het geschikt voor een reis naar Italië?",
+        "a": "Ja, of je nu een menukaart wilt begrijpen of de weg vraagt, spreek of typ gewoon en de vertaling verschijnt meteen."
+      },
+      {
+        "q": "Moet ik iets installeren?",
+        "a": "Nee, het werkt in je browser op desktop of mobiel — niets om te downloaden."
+      },
+      {
+        "q": "Kan ik een doorlopend gesprek bijhouden in plaats van losse vertalingen?",
+        "a": "Ja, vertalingen worden gegroepeerd per onderwerp, zodat een Italiaans gesprek op één plek blijft staan in plaats van verspreid te raken."
+      }
     ]
   },
   "finalCta": {

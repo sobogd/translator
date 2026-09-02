@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Parecido no es igual",
+      "heading": "Traductor de voz del español al italiano",
       "sub": "El italiano se entiende a medias, y esa mitad es justo la que provoca los líos.",
       "bullets": [
-        { "title": "Falsos amigos avisados", "sub": "Burro es mantequilla y salire es subir: se traduce el sentido, no el parecido" },
-        { "title": "Habla y escúchalo", "sub": "Di la frase en español y óyela en italiano antes de soltarla" }
+        {
+          "title": "Falsos amigos avisados",
+          "sub": "Burro es mantequilla y salire es subir: se traduce el sentido, no el parecido"
+        },
+        {
+          "title": "Habla y escúchalo",
+          "sub": "Di la frase en español y óyela en italiano antes de soltarla"
+        }
       ]
     },
     {
-      "heading": "De viaje por Italia",
+      "heading": "Traductor para conversaciones en italiano",
       "sub": "Restaurante, tren, hotel, alquiler: conversaciones cortas y rápidas.",
       "bullets": [
-        { "title": "Traducción en segundos", "sub": "Grabas, lees y sigues la conversación sin pararla" },
-        { "title": "Sin instalar nada", "sub": "Se abre en el navegador del móvil, sin ocupar espacio ni pedir cuenta" }
+        {
+          "title": "Traducción en segundos",
+          "sub": "Grabas, lees y sigues la conversación sin pararla"
+        },
+        {
+          "title": "Sin instalar nada",
+          "sub": "Se abre en el navegador del móvil, sin ocupar espacio ni pedir cuenta"
+        }
       ]
     },
     {
-      "heading": "Acentos y dialectos",
+      "heading": "Traductor online gratis de español a italiano",
       "sub": "Del véneto al napolitano, el italiano hablado cambia bastante del de los manuales.",
       "bullets": [
-        { "title": "Se interpreta la frase", "sub": "Las expresiones locales se leen por lo que quieren decir" },
-        { "title": "Consonantes dobles incluidas", "sub": "Nonno o nono, anno o ano: el contexto decide y evita el ridículo" }
+        {
+          "title": "Se interpreta la frase",
+          "sub": "Las expresiones locales se leen por lo que quieren decir"
+        },
+        {
+          "title": "Consonantes dobles incluidas",
+          "sub": "Nonno o nono, anno o ano: el contexto decide y evita el ridículo"
+        }
       ]
     },
     {
-      "heading": "O escríbelo",
+      "heading": "Traductor de texto del español al italiano",
       "sub": "Un mensaje al propietario, un correo a un proveedor, una reseña.",
       "bullets": [
-        { "title": "Pega el texto entero", "sub": "Un párrafo completo de una sola vez" },
-        { "title": "186 idiomas más", "sub": "El mismo hilo sirve mañana para otro idioma" }
+        {
+          "title": "Pega el texto entero",
+          "sub": "Un párrafo completo de una sola vez"
+        },
+        {
+          "title": "186 idiomas más",
+          "sub": "El mismo hilo sirve mañana para otro idioma"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Apps de traducción típicas",
     "rows": [
-      { "title": "Te hablan rápido", "us": "Grabas y lo lees en español.", "them": "Escribes lo que crees que era." },
-      { "title": "Falsos amigos", "us": "Se traducen por su significado real.", "them": "Se traducen por su parecido, y falla." },
-      { "title": "Pronunciación", "us": "Escuchas la frase en italiano.", "them": "Solo texto." },
-      { "title": "Historial", "us": "Cada conversación queda guardada.", "them": "Desaparece al cerrar." },
-      { "title": "Empezar", "us": "Pestaña del navegador y listo.", "them": "Descargar app y registrarse." }
+      {
+        "title": "Te hablan rápido",
+        "us": "Grabas y lo lees en español.",
+        "them": "Escribes lo que crees que era."
+      },
+      {
+        "title": "Falsos amigos",
+        "us": "Se traducen por su significado real.",
+        "them": "Se traducen por su parecido, y falla."
+      },
+      {
+        "title": "Pronunciación",
+        "us": "Escuchas la frase en italiano.",
+        "them": "Solo texto."
+      },
+      {
+        "title": "Historial",
+        "us": "Cada conversación queda guardada.",
+        "them": "Desaparece al cerrar."
+      },
+      {
+        "title": "Empezar",
+        "us": "Pestaña del navegador y listo.",
+        "them": "Descargar app y registrarse."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecuentes",
     "sub": "Dudas frecuentes al traducir del español al italiano.",
     "items": [
-      { "q": "¿Traduce italiano hablado?", "a": "Sí, graba la frase y la lees en español un par de segundos después, sin escribir nada." },
-      { "q": "¿Evita los falsos amigos?", "a": "Se traduce la frase completa, así que palabras como burro, salire o largo se leen por lo que significan en italiano." },
-      { "q": "¿Entiende acentos regionales?", "a": "El italiano estándar del norte al sur se maneja bien; con dialecto cerrado ayuda hablar algo más despacio." },
-      { "q": "¿Puedo escuchar la traducción?", "a": "Sí, toca el altavoz en cualquier frase para oírla en italiano." },
-      { "q": "¿Va también de italiano a español?", "a": "Sí, el mismo hilo funciona en los dos sentidos sin volver a empezar." },
-      { "q": "¿Es gratis?", "a": "Sí, con margen gratuito sin cuenta y más cuota mensual si inicias sesión con Google." }
+      {
+        "q": "¿Traduce italiano hablado?",
+        "a": "Sí, graba la frase y la lees en español un par de segundos después, sin escribir nada."
+      },
+      {
+        "q": "¿Evita los falsos amigos?",
+        "a": "Se traduce la frase completa, así que palabras como burro, salire o largo se leen por lo que significan en italiano."
+      },
+      {
+        "q": "¿Entiende acentos regionales?",
+        "a": "El italiano estándar del norte al sur se maneja bien; con dialecto cerrado ayuda hablar algo más despacio."
+      },
+      {
+        "q": "¿Puedo escuchar la traducción?",
+        "a": "Sí, toca el altavoz en cualquier frase para oírla en italiano."
+      },
+      {
+        "q": "¿Va también de italiano a español?",
+        "a": "Sí, el mismo hilo funciona en los dos sentidos sin volver a empezar."
+      },
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, con margen gratuito sin cuenta y más cuota mensual si inicias sesión con Google."
+      }
     ]
   },
   "finalCta": {

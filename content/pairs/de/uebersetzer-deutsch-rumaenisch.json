@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Romanisch mit slawischem Einschlag",
+      "heading": "Sprachübersetzer Deutsch Rumänisch",
       "sub": "Rumänisch sieht vertraut aus und benutzt trotzdem Wörter, die niemand errät.",
       "bullets": [
-        { "title": "Satz statt Wort", "sub": "Übersetzt wird der Zusammenhang, nicht die Ähnlichkeit zum Italienischen" },
-        { "title": "Sprache direkt als Text", "sub": "Nimm den Satz auf und lies ihn sofort auf Deutsch" }
+        {
+          "title": "Satz statt Wort",
+          "sub": "Übersetzt wird der Zusammenhang, nicht die Ähnlichkeit zum Italienischen"
+        },
+        {
+          "title": "Sprache direkt als Text",
+          "sub": "Nimm den Satz auf und lies ihn sofort auf Deutsch"
+        }
       ]
     },
     {
-      "heading": "Arbeit, Pflege, Baustelle",
+      "heading": "Konversationsübersetzer für Dialoge",
       "sub": "Absprachen, die sitzen müssen, auch wenn beide Seiten kein Englisch sprechen.",
       "bullets": [
-        { "title": "Beide Richtungen", "sub": "Du sagst es deutsch, es kommt rumänisch an — und zurück" },
-        { "title": "Gespräch gespeichert", "sub": "Als Thema, das beim nächsten Mal weitergeht" }
+        {
+          "title": "Beide Richtungen",
+          "sub": "Du sagst es deutsch, es kommt rumänisch an — und zurück"
+        },
+        {
+          "title": "Gespräch gespeichert",
+          "sub": "Als Thema, das beim nächsten Mal weitergeht"
+        }
       ]
     },
     {
-      "heading": "ă, â, î, ș und ț",
+      "heading": "Online Übersetzer ohne Download",
       "sub": "Die Sonderzeichen ändern die Bedeutung und sind auf keiner deutschen Tastatur.",
       "bullets": [
-        { "title": "Text so einfügen, wie er kam", "sub": "Nichts wird ersetzt oder verschluckt" },
-        { "title": "Vorlesen lassen", "sub": "Tipp auf den Lautsprecher, wenn Hören leichter ist" }
+        {
+          "title": "Text so einfügen, wie er kam",
+          "sub": "Nichts wird ersetzt oder verschluckt"
+        },
+        {
+          "title": "Vorlesen lassen",
+          "sub": "Tipp auf den Lautsprecher, wenn Hören leichter ist"
+        }
       ]
     },
     {
-      "heading": "Oder Unterlagen einfügen",
+      "heading": "Textübersetzer für Dokumente",
       "sub": "Vertrag, Bescheinigung, Nachricht.",
       "bullets": [
-        { "title": "Ganzer Absatz", "sub": "Der komplette Text auf einmal" },
-        { "title": "Und 185 weitere Sprachen", "sub": "Derselbe Thread taugt für die nächste Sprache" }
+        {
+          "title": "Ganzer Absatz",
+          "sub": "Der komplette Text auf einmal"
+        },
+        {
+          "title": "Und 185 weitere Sprachen",
+          "sub": "Derselbe Thread taugt für die nächste Sprache"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typische Übersetzer-Apps",
     "rows": [
-      { "title": "Jemand spricht Rumänisch", "us": "Aufnehmen und auf Deutsch lesen.", "them": "Tippen, was du verstanden zu haben glaubst." },
-      { "title": "Sonderzeichen", "us": "ă, â, î, ș, ț bleiben erhalten.", "them": "Werden ersetzt, Bedeutung ändert sich." },
-      { "title": "Antworten", "us": "Deutsch rein, Rumänisch raus, ein Thread.", "them": "Eine zweite Übersetzung." },
-      { "title": "Verlauf", "us": "Als Themen gespeichert.", "them": "Beim Schließen weg." },
-      { "title": "Start", "us": "Browser-Tab, keine Installation.", "them": "App und Konto zuerst." }
+      {
+        "title": "Jemand spricht Rumänisch",
+        "us": "Aufnehmen und auf Deutsch lesen.",
+        "them": "Tippen, was du verstanden zu haben glaubst."
+      },
+      {
+        "title": "Sonderzeichen",
+        "us": "ă, â, î, ș, ț bleiben erhalten.",
+        "them": "Werden ersetzt, Bedeutung ändert sich."
+      },
+      {
+        "title": "Antworten",
+        "us": "Deutsch rein, Rumänisch raus, ein Thread.",
+        "them": "Eine zweite Übersetzung."
+      },
+      {
+        "title": "Verlauf",
+        "us": "Als Themen gespeichert.",
+        "them": "Beim Schließen weg."
+      },
+      {
+        "title": "Start",
+        "us": "Browser-Tab, keine Installation.",
+        "them": "App und Konto zuerst."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "Fragen",
     "sub": "Häufige Fragen zur Übersetzung von Deutsch nach Rumänisch.",
     "items": [
-      { "q": "Übersetzt es gesprochenes Rumänisch?", "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch." },
-      { "q": "Bleiben ș und ț erhalten?", "a": "Ja, die Sonderzeichen kommen unverändert an, in beide Richtungen." },
-      { "q": "Kann ich Verträge einfügen?", "a": "Ja, füge den ganzen Text ein und lies die deutsche Fassung darunter." },
-      { "q": "Kann ich auf Deutsch antworten?", "a": "Ja, die Antwort geht im selben Gespräch auf Rumänisch raus und lässt sich vorlesen." },
-      { "q": "Bleiben Gespräche gespeichert?", "a": "Jedes bleibt als eigenes Thema, löschbar wann du willst." },
-      { "q": "Ist es kostenlos?", "a": "Ja, Gratis-Kontingent ohne Anmeldung, mehr Volumen mit Google-Login." }
+      {
+        "q": "Übersetzt es gesprochenes Rumänisch?",
+        "a": "Ja, nimm den Satz auf und lies ihn ein paar Sekunden später auf Deutsch."
+      },
+      {
+        "q": "Bleiben ș und ț erhalten?",
+        "a": "Ja, die Sonderzeichen kommen unverändert an, in beide Richtungen."
+      },
+      {
+        "q": "Kann ich Verträge einfügen?",
+        "a": "Ja, füge den ganzen Text ein und lies die deutsche Fassung darunter."
+      },
+      {
+        "q": "Kann ich auf Deutsch antworten?",
+        "a": "Ja, die Antwort geht im selben Gespräch auf Rumänisch raus und lässt sich vorlesen."
+      },
+      {
+        "q": "Bleiben Gespräche gespeichert?",
+        "a": "Jedes bleibt als eigenes Thema, löschbar wann du willst."
+      },
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, Gratis-Kontingent ohne Anmeldung, mehr Volumen mit Google-Login."
+      }
     ]
   },
   "finalCta": {

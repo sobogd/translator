@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Räägi, ära kirjuta",
+      "heading": "Häältõlkija eesti ja saksa keele vahel",
       "sub": "Puuduta mikrofoni, ütle see eesti või saksa keeles, ja saad tõlke, mida saab lugeda või kuulata.",
       "bullets": [
-        { "title": "Kõne muutub saksakeelseks tekstiks", "sub": "Ütle see eesti keeles – sõnad transkribeeritakse, tõlgitakse ja kuvatakse saksa keeles sekundite pärast" },
-        { "title": "Kuula õiget hääldust", "sub": "Puuduta kõlarit ja kuula tõlget ette loetuna, kui oma saksa keele hääldus veel ei kanna" }
+        {
+          "title": "Kõne muutub saksakeelseks tekstiks",
+          "sub": "Ütle see eesti keeles – sõnad transkribeeritakse, tõlgitakse ja kuvatakse saksa keeles sekundite pärast"
+        },
+        {
+          "title": "Kuula õiget hääldust",
+          "sub": "Puuduta kõlarit ja kuula tõlget ette loetuna, kui oma saksa keele hääldus veel ei kanna"
+        }
       ]
     },
     {
-      "heading": "Üks jutulõng, kogu vestlus",
+      "heading": "Vestluse tõlkija saksa keele jaoks",
       "sub": "Vastaspool saab vastata saksa keeles ja sina näed kohe eestikeelset tõlget – kõik salvestub samasse teemasse.",
       "bullets": [
-        { "title": "Vastus saksa keeles jõuab sinuni eesti keeles", "sub": "Teine osapool räägib või kirjutab saksa keeles ja sina loed seda eesti keeles" },
-        { "title": "Vestlused salvestuvad teemadena", "sub": "Naase sama reisi- või töövestluse juurde hiljem, selle asemel et otsast alustada" }
+        {
+          "title": "Vastus saksa keeles jõuab sinuni eesti keeles",
+          "sub": "Teine osapool räägib või kirjutab saksa keeles ja sina loed seda eesti keeles"
+        },
+        {
+          "title": "Vestlused salvestuvad teemadena",
+          "sub": "Naase sama reisi- või töövestluse juurde hiljem, selle asemel et otsast alustada"
+        }
       ]
     },
     {
-      "heading": "Eesti–saksa ja 185 muud keelt",
+      "heading": "Veebipõhine eesti saksa tõlkija",
       "sub": "Saksa keel on üks 186 keelest, mis kõik töötavad sama tööriistaga mõlemas suunas.",
       "bullets": [
-        { "title": "Täpne ka eesti täishäälikutele", "sub": "Käsitleb õ, ä, ö ja ü tähti ning käändeid õigesti, mitte umbkaudset oletust" },
-        { "title": "186 keelt sama tööriistaga", "sub": "Sama rakendus sobib saksa keele kõrval ka igale teisele keelele" }
+        {
+          "title": "Täpne ka eesti täishäälikutele",
+          "sub": "Käsitleb õ, ä, ö ja ü tähti ning käändeid õigesti, mitte umbkaudset oletust"
+        },
+        {
+          "title": "186 keelt sama tööriistaga",
+          "sub": "Sama rakendus sobib saksa keele kõrval ka igale teisele keelele"
+        }
       ]
     },
     {
-      "heading": "Kirjuta, kui rääkida ei saa",
+      "heading": "Tekstitõlkija eesti ja saksa keeles",
       "sub": "Kirjuta või kleebi eestikeelne tekst ja saad saksakeelse tõlke ilma mikrofonita.",
       "bullets": [
-        { "title": "Kleebi tekst WhatsAppist või e-kirjast", "sub": "Kirjuta või kleebi sõnum ja saad tõlke kohe ekraanile" },
-        { "title": "Kopeeri tõlge ühe puudutusega", "sub": "Vii saksakeelne tekst otse tagasi sõnumisse või e-kirja" }
+        {
+          "title": "Kleebi tekst WhatsAppist või e-kirjast",
+          "sub": "Kirjuta või kleebi sõnum ja saad tõlke kohe ekraanile"
+        },
+        {
+          "title": "Kopeeri tõlge ühe puudutusega",
+          "sub": "Vii saksakeelne tekst otse tagasi sõnumisse või e-kirja"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Tavalised tõlkerakendused",
     "rows": [
-      { "title": "Alustamine", "us": "Räägi eesti või saksa keeles ja saad tõlke kohe.", "them": "Kirjuta esmalt see, mida öelda tahad." },
-      { "title": "Vestluse ajalugu", "us": "Iga eesti-saksa vestlus salvestub omaette teemana.", "them": "Tõlge kaob, kui rakenduse suled." },
-      { "title": "Kasutuselevõtt", "us": "Ava brauseris – midagi ei pea paigaldama.", "them": "Laadi rakendus alla ja luba juurdepääsud enne kasutamist." },
-      { "title": "Mõlemad suunad", "us": "Eesti-saksa ja saksa-eesti samas jutulõngas.", "them": "Suuna vahetamine tähendab tavaliselt uut tõlget." },
-      { "title": "Ette lugemine", "us": "Puuduta ja kuula saksakeelset tõlget ette loetuna.", "them": "Ainult tekst, hääldus jääb enda arvata." }
+      {
+        "title": "Alustamine",
+        "us": "Räägi eesti või saksa keeles ja saad tõlke kohe.",
+        "them": "Kirjuta esmalt see, mida öelda tahad."
+      },
+      {
+        "title": "Vestluse ajalugu",
+        "us": "Iga eesti-saksa vestlus salvestub omaette teemana.",
+        "them": "Tõlge kaob, kui rakenduse suled."
+      },
+      {
+        "title": "Kasutuselevõtt",
+        "us": "Ava brauseris – midagi ei pea paigaldama.",
+        "them": "Laadi rakendus alla ja luba juurdepääsud enne kasutamist."
+      },
+      {
+        "title": "Mõlemad suunad",
+        "us": "Eesti-saksa ja saksa-eesti samas jutulõngas.",
+        "them": "Suuna vahetamine tähendab tavaliselt uut tõlget."
+      },
+      {
+        "title": "Ette lugemine",
+        "us": "Puuduta ja kuula saksakeelset tõlget ette loetuna.",
+        "them": "Ainult tekst, hääldus jääb enda arvata."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "küsimused",
     "sub": "Neid küsitakse enne eesti-saksa tõlkija proovimist.",
     "items": [
-      { "q": "Kas see tõlgib räägitud eesti keele saksa keelde?", "a": "Jah – puuduta mikrofoni, räägi eesti keeles ja saad saksakeelse tõlke tekstina ning võimaluse kuulata seda ette loetuna." },
-      { "q": "Kas see töötab ka saksa keelest eesti keelde?", "a": "Jah, sama vestlus toimib mõlemas suunas – räägi või kirjuta saksa keeles ja saad tõlke eesti keeles samas teemas." },
-      { "q": "Kas sobib reisimiseks ja WhatsApp-vestlusteks?", "a": "Jah, kleebi sõnum WhatsAppist või e-kirjast, või räägi otse mikrofoni, kui oled teel restoranis või hotellis." },
-      { "q": "Kas see on tasuta?", "a": "Jah, saad proovida tasuta ilma kontota. Logi sisse Google'iga, et saada rohkem päevaseid krediite ja salvestatud ajalugu." },
-      { "q": "Kas midagi tuleb paigaldada?", "a": "Ei, see töötab brauseris nii arvutis kui telefonis – midagi alla laadida pole vaja." },
-      { "q": "Kas eesti tähed õ, ä, ö ja ü kuvatakse õigesti?", "a": "Jah, need tähed käsitletakse õigesti nii tekstis kui ka ette lugemisel." }
+      {
+        "q": "Kas see tõlgib räägitud eesti keele saksa keelde?",
+        "a": "Jah – puuduta mikrofoni, räägi eesti keeles ja saad saksakeelse tõlke tekstina ning võimaluse kuulata seda ette loetuna."
+      },
+      {
+        "q": "Kas see töötab ka saksa keelest eesti keelde?",
+        "a": "Jah, sama vestlus toimib mõlemas suunas – räägi või kirjuta saksa keeles ja saad tõlke eesti keeles samas teemas."
+      },
+      {
+        "q": "Kas sobib reisimiseks ja WhatsApp-vestlusteks?",
+        "a": "Jah, kleebi sõnum WhatsAppist või e-kirjast, või räägi otse mikrofoni, kui oled teel restoranis või hotellis."
+      },
+      {
+        "q": "Kas see on tasuta?",
+        "a": "Jah, saad proovida tasuta ilma kontota. Logi sisse Google'iga, et saada rohkem päevaseid krediite ja salvestatud ajalugu."
+      },
+      {
+        "q": "Kas midagi tuleb paigaldada?",
+        "a": "Ei, see töötab brauseris nii arvutis kui telefonis – midagi alla laadida pole vaja."
+      },
+      {
+        "q": "Kas eesti tähed õ, ä, ö ja ü kuvatakse õigesti?",
+        "a": "Jah, need tähed käsitletakse õigesti nii tekstis kui ka ette lugemisel."
+      }
     ]
   },
   "finalCta": {

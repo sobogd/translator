@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Puhu suomea, kuuntele englantia",
+      "heading": "Äänikääntäjä suomesta englantiin",
       "sub": "Napauta mikrofonia ja sano viestisi suomeksi – käännös ilmestyy tekstinä ja voit kuunnella sen ääneen englanniksi.",
       "bullets": [
-        { "title": "Puheesi muuttuu englanniksi sekunneissa", "sub": "Sano se suomeksi – sanasi litteroidaan, käännetään ja näytetään englanniksi" },
-        { "title": "Kuuntele oikea ääntäminen", "sub": "Napauta kaiutinta ja kuule käännös luettuna ääneen, kun oma englantisi ei vielä riitä" }
+        {
+          "title": "Puheesi muuttuu englanniksi sekunneissa",
+          "sub": "Sano se suomeksi – sanasi litteroidaan, käännetään ja näytetään englanniksi"
+        },
+        {
+          "title": "Kuuntele oikea ääntäminen",
+          "sub": "Napauta kaiutinta ja kuule käännös luettuna ääneen, kun oma englantisi ei vielä riitä"
+        }
       ]
     },
     {
-      "heading": "Yksi aihe, koko keskustelu",
+      "heading": "Keskustelukääntäjä kahdelle kielelle",
       "sub": "Vastapuoli voi vastata englanniksi ja näet käännöksen suoraan suomeksi – kaikki tallentuu samaan aiheeseen.",
       "bullets": [
-        { "title": "Vastaus englanniksi näkyy suomeksi", "sub": "Toinen osapuoli puhuu tai kirjoittaa englantia ja sinä luet sen suomeksi" },
-        { "title": "Keskustelut talteen aiheina", "sub": "Palaa samaan suomi-englanti-keskusteluun myöhemmin sen sijaan, että aloitat alusta" }
+        {
+          "title": "Vastaus englanniksi näkyy suomeksi",
+          "sub": "Toinen osapuoli puhuu tai kirjoittaa englantia ja sinä luet sen suomeksi"
+        },
+        {
+          "title": "Keskustelut talteen aiheina",
+          "sub": "Palaa samaan suomi-englanti-keskusteluun myöhemmin sen sijaan, että aloitat alusta"
+        }
       ]
     },
     {
-      "heading": "Suomi–englanti ja 185 muuta kieltä",
+      "heading": "Verkkokääntäjä ilman asennusta",
       "sub": "Englanti on yksi 186 kielestä, jotka toimivat samalla työkalulla mihin tahansa suuntaan.",
       "bullets": [
-        { "title": "Tarkka myös suomen erikoismerkeille", "sub": "Käsittelee suomen ä:t, ö:t ja taivutukset oikein, ei vain karkeaa arvausta" },
-        { "title": "186 kieltä samalla työkalulla", "sub": "Sama sovellus toimii englannin lisäksi mille tahansa muulle kielelle" }
+        {
+          "title": "Tarkka myös suomen erikoismerkeille",
+          "sub": "Käsittelee suomen ä:t, ö:t ja taivutukset oikein, ei vain karkeaa arvausta"
+        },
+        {
+          "title": "186 kieltä samalla työkalulla",
+          "sub": "Sama sovellus toimii englannin lisäksi mille tahansa muulle kielelle"
+        }
       ]
     },
     {
-      "heading": "Kirjoita, jos et voi puhua",
+      "heading": "Tekstikääntäjä suomi-englanti",
       "sub": "Liitä tai kirjoita suomenkielinen viesti ja saat englanninkielisen käännöksen ilman mikrofonia.",
       "bullets": [
-        { "title": "Liitä teksti työsähköpostista tai WhatsAppista", "sub": "Kirjoita tai liitä viesti ja saat käännöksen heti näytölle" },
-        { "title": "Kopioi käännös yhdellä napautuksella", "sub": "Vie englanninkielinen teksti suoraan takaisin viestiin tai sähköpostiin" }
+        {
+          "title": "Liitä teksti työsähköpostista tai WhatsAppista",
+          "sub": "Kirjoita tai liitä viesti ja saat käännöksen heti näytölle"
+        },
+        {
+          "title": "Kopioi käännös yhdellä napautuksella",
+          "sub": "Vie englanninkielinen teksti suoraan takaisin viestiin tai sähköpostiin"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Tavalliset käännössovellukset",
     "rows": [
-      { "title": "Aloittaminen", "us": "Puhu suomeksi tai englanniksi ja saat käännöksen heti.", "them": "Kirjoita ensin se, mitä haluat sanoa." },
-      { "title": "Keskusteluhistoria", "us": "Jokainen suomi-englanti-keskustelu tallentuu omaksi aiheekseen.", "them": "Käännös katoaa, kun suljet sovelluksen." },
-      { "title": "Käyttöönotto", "us": "Avaa selaimessa – ei asennettavaa.", "them": "Lataa sovellus ja hyväksy käyttöoikeudet ennen käyttöä." },
-      { "title": "Molemmat suunnat", "us": "Suomesta englantiin ja englannista suomeen samassa aiheessa.", "them": "Suunnan vaihtaminen aloittaa yleensä uuden käännöksen." },
-      { "title": "Ääneen kuunteleminen", "us": "Napauta ja kuule englanninkielinen käännös luettuna ääneen.", "them": "Vain tekstiä, ääntäminen jää arvailun varaan." }
+      {
+        "title": "Aloittaminen",
+        "us": "Puhu suomeksi tai englanniksi ja saat käännöksen heti.",
+        "them": "Kirjoita ensin se, mitä haluat sanoa."
+      },
+      {
+        "title": "Keskusteluhistoria",
+        "us": "Jokainen suomi-englanti-keskustelu tallentuu omaksi aiheekseen.",
+        "them": "Käännös katoaa, kun suljet sovelluksen."
+      },
+      {
+        "title": "Käyttöönotto",
+        "us": "Avaa selaimessa – ei asennettavaa.",
+        "them": "Lataa sovellus ja hyväksy käyttöoikeudet ennen käyttöä."
+      },
+      {
+        "title": "Molemmat suunnat",
+        "us": "Suomesta englantiin ja englannista suomeen samassa aiheessa.",
+        "them": "Suunnan vaihtaminen aloittaa yleensä uuden käännöksen."
+      },
+      {
+        "title": "Ääneen kuunteleminen",
+        "us": "Napauta ja kuule englanninkielinen käännös luettuna ääneen.",
+        "them": "Vain tekstiä, ääntäminen jää arvailun varaan."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "kysymykset",
     "sub": "Näihin kysytään vastauksia ennen suomi-englanti-kääntäjän kokeilua.",
     "items": [
-      { "q": "Kääntääkö se puhutun suomen englanniksi?", "a": "Kyllä – napauta mikrofonia, puhu suomeksi, ja saat englanninkielisen käännöksen tekstinä sekä mahdollisuuden kuunnella se ääneen." },
-      { "q": "Toimiiko se myös englannista suomeen?", "a": "Kyllä, sama keskustelu toimii molempiin suuntiin – puhu tai kirjoita englanniksi ja saat käännöksen suomeksi samassa aiheessa." },
-      { "q": "Sopiiko se työsähköposteihin ja WhatsApp-viesteihin?", "a": "Kyllä, liitä tai kirjoita teksti mistä tahansa viestistä ja kopioi englanninkielinen käännös suoraan takaisin." },
-      { "q": "Onko se ilmainen?", "a": "Kyllä, voit kokeilla ilmaiseksi ilman tiliä. Kirjaudu Googlella saadaksesi lisää päivittäisiä krediittejä ja tallennetun historian." },
-      { "q": "Tarvitseeko asentaa mitään?", "a": "Ei, se toimii selaimessa tietokoneella tai puhelimella – ei ladattavaa." },
-      { "q": "Näkyvätkö suomen erikoiskirjaimet oikein?", "a": "Kyllä, ä, ö ja muut suomen kirjaimet käsitellään oikein sekä tekstissä että ääneen luettuna." }
+      {
+        "q": "Kääntääkö se puhutun suomen englanniksi?",
+        "a": "Kyllä – napauta mikrofonia, puhu suomeksi, ja saat englanninkielisen käännöksen tekstinä sekä mahdollisuuden kuunnella se ääneen."
+      },
+      {
+        "q": "Toimiiko se myös englannista suomeen?",
+        "a": "Kyllä, sama keskustelu toimii molempiin suuntiin – puhu tai kirjoita englanniksi ja saat käännöksen suomeksi samassa aiheessa."
+      },
+      {
+        "q": "Sopiiko se työsähköposteihin ja WhatsApp-viesteihin?",
+        "a": "Kyllä, liitä tai kirjoita teksti mistä tahansa viestistä ja kopioi englanninkielinen käännös suoraan takaisin."
+      },
+      {
+        "q": "Onko se ilmainen?",
+        "a": "Kyllä, voit kokeilla ilmaiseksi ilman tiliä. Kirjaudu Googlella saadaksesi lisää päivittäisiä krediittejä ja tallennetun historian."
+      },
+      {
+        "q": "Tarvitseeko asentaa mitään?",
+        "a": "Ei, se toimii selaimessa tietokoneella tai puhelimella – ei ladattavaa."
+      },
+      {
+        "q": "Näkyvätkö suomen erikoiskirjaimet oikein?",
+        "a": "Kyllä, ä, ö ja muut suomen kirjaimet käsitellään oikein sekä tekstissä että ääneen luettuna."
+      }
     ]
   },
   "finalCta": {

@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Praten in plaats van typen",
+      "heading": "Nederlands-Duits stemvertaler",
       "sub": "Tik op de microfoon, zeg het in het Nederlands of Duits, en lees of beluister de vertaling.",
       "bullets": [
-        { "title": "Spraak wordt Duitse tekst", "sub": "Zeg het in het Nederlands — je woorden verschijnen enkele seconden later in het Duits" },
-        { "title": "Beluister het Duits hardop", "sub": "Tik op het luidsprekerpictogram voor de juiste Duitse uitspraak" }
+        {
+          "title": "Spraak wordt Duitse tekst",
+          "sub": "Zeg het in het Nederlands — je woorden verschijnen enkele seconden later in het Duits"
+        },
+        {
+          "title": "Beluister het Duits hardop",
+          "sub": "Tik op het luidsprekerpictogram voor de juiste Duitse uitspraak"
+        }
       ]
     },
     {
-      "heading": "Eén gespreksdraad, beide kanten",
+      "heading": "Nederlands-Duits vertaler voor gesprekken",
       "sub": "Blijf heen en weer praten met Duitse collega's of klanten zonder de draad kwijt te raken.",
       "bullets": [
-        { "title": "Antwoord in het Duits, vertaald naar het Nederlands", "sub": "Een Duitstalige gesprekspartner praat gewoon door, jij ziet en hoort het in het Nederlands" },
-        { "title": "Gesprekken opgeslagen als onderwerp", "sub": "Kom later terug op hetzelfde Duitse gesprek zonder opnieuw te beginnen" }
+        {
+          "title": "Antwoord in het Duits, vertaald naar het Nederlands",
+          "sub": "Een Duitstalige gesprekspartner praat gewoon door, jij ziet en hoort het in het Nederlands"
+        },
+        {
+          "title": "Gesprekken opgeslagen als onderwerp",
+          "sub": "Kom later terug op hetzelfde Duitse gesprek zonder opnieuw te beginnen"
+        }
       ]
     },
     {
-      "heading": "Nederlands–Duits, plus 185 andere talen",
+      "heading": "Online Nederlands-Duits vertalen",
       "sub": "Duits is een van de 186 talen die beschikbaar zijn, in elke richting.",
       "bullets": [
-        { "title": "Nauwkeurig met zinsbouw en uitspraak", "sub": "Verwerkt Duitse naamvallen en klanken correct, geen ruwe gok" },
-        { "title": "186 talen in totaal", "sub": "Dezelfde tool werkt vandaag voor Duits en morgen voor elke andere taal" }
+        {
+          "title": "Nauwkeurig met zinsbouw en uitspraak",
+          "sub": "Verwerkt Duitse naamvallen en klanken correct, geen ruwe gok"
+        },
+        {
+          "title": "186 talen in totaal",
+          "sub": "Dezelfde tool werkt vandaag voor Duits en morgen voor elke andere taal"
+        }
       ]
     },
     {
-      "heading": "Liever typen? Dat kan ook",
+      "heading": "Nederlands-Duits tekstvertaler",
       "sub": "Typ of plak Nederlandse tekst en krijg een Duitse vertaling zonder de microfoon aan te raken.",
       "bullets": [
-        { "title": "Typen in plaats van spreken", "sub": "Handig voor een zakelijke e-mail of WhatsApp-bericht in het Duits" },
-        { "title": "Kopieer de vertaling", "sub": "Kopieer de Duitse tekst direct om ergens anders te plakken" }
+        {
+          "title": "Typen in plaats van spreken",
+          "sub": "Handig voor een zakelijke e-mail of WhatsApp-bericht in het Duits"
+        },
+        {
+          "title": "Kopieer de vertaling",
+          "sub": "Kopieer de Duitse tekst direct om ergens anders te plakken"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Gewone vertaal-apps",
     "rows": [
-      { "title": "Hoe je begint", "us": "Spreek Nederlands of Duits en krijg meteen een vertaling.", "them": "Eerst typen wat je wilt zeggen." },
-      { "title": "Gespreksgeschiedenis", "us": "Elk Duits gesprek wordt opgeslagen als eigen onderwerp.", "them": "Elke vertaling verdwijnt zodra je de app sluit." },
-      { "title": "Aan de slag", "us": "Open het in een browsertab — niets te installeren.", "them": "Eerst een app downloaden en rechten toekennen." },
-      { "title": "Beide richtingen", "us": "Nederlands naar Duits en Duits naar Nederlands staan in dezelfde gespreksdraad.", "them": "Van richting wisselen betekent meestal opnieuw beginnen." },
-      { "title": "Terugluisteren", "us": "Tik om de Duitse vertaling hardop te laten voorlezen.", "them": "Alleen tekst, dus de uitspraak zoek je zelf uit." }
+      {
+        "title": "Hoe je begint",
+        "us": "Spreek Nederlands of Duits en krijg meteen een vertaling.",
+        "them": "Eerst typen wat je wilt zeggen."
+      },
+      {
+        "title": "Gespreksgeschiedenis",
+        "us": "Elk Duits gesprek wordt opgeslagen als eigen onderwerp.",
+        "them": "Elke vertaling verdwijnt zodra je de app sluit."
+      },
+      {
+        "title": "Aan de slag",
+        "us": "Open het in een browsertab — niets te installeren.",
+        "them": "Eerst een app downloaden en rechten toekennen."
+      },
+      {
+        "title": "Beide richtingen",
+        "us": "Nederlands naar Duits en Duits naar Nederlands staan in dezelfde gespreksdraad.",
+        "them": "Van richting wisselen betekent meestal opnieuw beginnen."
+      },
+      {
+        "title": "Terugluisteren",
+        "us": "Tik om de Duitse vertaling hardop te laten voorlezen.",
+        "them": "Alleen tekst, dus de uitspraak zoek je zelf uit."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "vragen",
     "sub": "Veelgestelde vragen over vertalen van Nederlands naar Duits.",
     "items": [
-      { "q": "Kan het gesproken Nederlands naar het Duits vertalen?", "a": "Ja — tik op de microfoon, spreek Nederlands, en je krijgt de Duitse vertaling als tekst, met de optie om die hardop te laten voorlezen." },
-      { "q": "Werkt het ook van Duits naar Nederlands?", "a": "Ja, hetzelfde gesprek werkt beide kanten op — spreek of typ Duits en krijg de Nederlandse vertaling in dezelfde gespreksdraad." },
-      { "q": "Is het gratis?", "a": "Ja, je kunt het gratis proberen zonder een account aan te maken. Log in met Google voor meer dagelijkse credits en opgeslagen geschiedenis." },
-      { "q": "Is het geschikt voor zakelijk gebruik?", "a": "Ja, of het nu gaat om een e-mail aan een Duitse klant of een gesprek voorbereiden, dezelfde gespreksdraad werkt voor elke situatie." },
-      { "q": "Moet ik iets installeren?", "a": "Nee, het werkt in je browser op desktop of mobiel — niets om te downloaden." },
-      { "q": "Kan ik een doorlopend gesprek bijhouden in plaats van losse vertalingen?", "a": "Ja, vertalingen worden gegroepeerd per onderwerp, zodat een Duits gesprek op één plek blijft staan in plaats van verspreid te raken." }
+      {
+        "q": "Kan het gesproken Nederlands naar het Duits vertalen?",
+        "a": "Ja — tik op de microfoon, spreek Nederlands, en je krijgt de Duitse vertaling als tekst, met de optie om die hardop te laten voorlezen."
+      },
+      {
+        "q": "Werkt het ook van Duits naar Nederlands?",
+        "a": "Ja, hetzelfde gesprek werkt beide kanten op — spreek of typ Duits en krijg de Nederlandse vertaling in dezelfde gespreksdraad."
+      },
+      {
+        "q": "Is het gratis?",
+        "a": "Ja, je kunt het gratis proberen zonder een account aan te maken. Log in met Google voor meer dagelijkse credits en opgeslagen geschiedenis."
+      },
+      {
+        "q": "Is het geschikt voor zakelijk gebruik?",
+        "a": "Ja, of het nu gaat om een e-mail aan een Duitse klant of een gesprek voorbereiden, dezelfde gespreksdraad werkt voor elke situatie."
+      },
+      {
+        "q": "Moet ik iets installeren?",
+        "a": "Nee, het werkt in je browser op desktop of mobiel — niets om te downloaden."
+      },
+      {
+        "q": "Kan ik een doorlopend gesprek bijhouden in plaats van losse vertalingen?",
+        "a": "Ja, vertalingen worden gegroepeerd per onderwerp, zodat een Duits gesprek op één plek blijft staan in plaats van verspreid te raken."
+      }
     ]
   },
   "finalCta": {

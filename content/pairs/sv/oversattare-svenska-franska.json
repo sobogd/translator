@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Prata istället för att skriva",
+      "heading": "Röströst översättare mellan svenska och franska",
       "sub": "Tryck på mikrofonen, säg det på svenska eller franska, och läs eller lyssna på översättningen.",
       "bullets": [
-        { "title": "Tal blir till franska", "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på franska några sekunder senare" },
-        { "title": "Lyssna på franskan", "sub": "Tryck på högtalarikonen när det franska uttalet känns svårt" }
+        {
+          "title": "Tal blir till franska",
+          "sub": "Säg det på svenska — dina ord transkriberas, översätts och visas på franska några sekunder senare"
+        },
+        {
+          "title": "Lyssna på franskan",
+          "sub": "Tryck på högtalarikonen när det franska uttalet känns svårt"
+        }
       ]
     },
     {
-      "heading": "Ett ämne, båda sidorna av samtalet",
+      "heading": "Konversationsöversättare för svenska och franska",
       "sub": "Fortsätt prata fram och tillbaka med franska vänner eller kollegor — allt hamnar i samma ämne.",
       "bullets": [
-        { "title": "Svara på franska, översatt till svenska", "sub": "Den du pratar med kan säga det på franska och du ser och hör det på svenska" },
-        { "title": "Samtal sparas som ämnen", "sub": "Kom tillbaka till samma Frankrike-tråd senare istället för att tappa den" }
+        {
+          "title": "Svara på franska, översatt till svenska",
+          "sub": "Den du pratar med kan säga det på franska och du ser och hör det på svenska"
+        },
+        {
+          "title": "Samtal sparas som ämnen",
+          "sub": "Kom tillbaka till samma Frankrike-tråd senare istället för att tappa den"
+        }
       ]
     },
     {
-      "heading": "Svenska–franska, plus 185 språk till",
+      "heading": "Onlinetjänst för svenska, franska och 185 språk",
       "sub": "Franska är ett av 186 tillgängliga språk, åt vilket håll du vill.",
       "bullets": [
-        { "title": "Träffsäker på uttryck, inte bara ord", "sub": "Klarar franska idiom och artighetsfraser, inte bara ordagranna översättningar" },
-        { "title": "186 språk totalt", "sub": "Samma verktyg fungerar för franska idag och vilket annat språk som helst imorgon" }
+        {
+          "title": "Träffsäker på uttryck, inte bara ord",
+          "sub": "Klarar franska idiom och artighetsfraser, inte bara ordagranna översättningar"
+        },
+        {
+          "title": "186 språk totalt",
+          "sub": "Samma verktyg fungerar för franska idag och vilket annat språk som helst imorgon"
+        }
       ]
     },
     {
-      "heading": "Föredrar du att skriva? Det går också",
+      "heading": "Textöversättare för svenska till franska",
       "sub": "Skriv eller klistra in svensk text och få en fransk översättning utan att röra mikrofonen.",
       "bullets": [
-        { "title": "Skriv istället för att prata", "sub": "Praktiskt på tåget, i ett möte eller på en bullrig gata" },
-        { "title": "Kopiera översättningen", "sub": "Kopiera den franska texten direkt till ett mejl eller meddelande" }
+        {
+          "title": "Skriv istället för att prata",
+          "sub": "Praktiskt på tåget, i ett möte eller på en bullrig gata"
+        },
+        {
+          "title": "Kopiera översättningen",
+          "sub": "Kopiera den franska texten direkt till ett mejl eller meddelande"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Vanliga översättningsappar",
     "rows": [
-      { "title": "Hur du börjar", "us": "Prata på svenska eller franska och få en översättning direkt.", "them": "Du måste skriva det du vill säga först." },
-      { "title": "Samtalshistorik", "us": "Varje franska-samtal sparas som ett eget ämne du kan öppna igen.", "them": "Varje översättning försvinner när du stänger appen." },
-      { "title": "Komma igång", "us": "Öppna i en webbläsarflik — inget att installera.", "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den." },
-      { "title": "Båda riktningarna", "us": "Svenska till franska och franska till svenska ligger i samma tråd.", "them": "Att byta riktning betyder oftast en ny översättning." },
-      { "title": "Att höra svaret", "us": "Tryck för att få den franska översättningen uppläst.", "them": "Bara text, så uttalet får du klara själv." }
+      {
+        "title": "Hur du börjar",
+        "us": "Prata på svenska eller franska och få en översättning direkt.",
+        "them": "Du måste skriva det du vill säga först."
+      },
+      {
+        "title": "Samtalshistorik",
+        "us": "Varje franska-samtal sparas som ett eget ämne du kan öppna igen.",
+        "them": "Varje översättning försvinner när du stänger appen."
+      },
+      {
+        "title": "Komma igång",
+        "us": "Öppna i en webbläsarflik — inget att installera.",
+        "them": "Ladda ner en app och godkänna behörigheter innan du kan använda den."
+      },
+      {
+        "title": "Båda riktningarna",
+        "us": "Svenska till franska och franska till svenska ligger i samma tråd.",
+        "them": "Att byta riktning betyder oftast en ny översättning."
+      },
+      {
+        "title": "Att höra svaret",
+        "us": "Tryck för att få den franska översättningen uppläst.",
+        "them": "Bara text, så uttalet får du klara själv."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frågor",
     "sub": "Vanliga frågor om att översätta mellan svenska och franska.",
     "items": [
-      { "q": "Kan den översätta talad svenska till franska?", "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en fransk översättning som text, med möjlighet att lyssna på den." },
-      { "q": "Klarar den franska uttryck och artighetsfraser?", "a": "Ja, vanliga uttryck och artiga formuleringar översätts efter innebörd, inte ord för ord." },
-      { "q": "Kan jag översätta tillbaka från franska till svenska?", "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på franska och få den svenska översättningen i samma ämne." },
-      { "q": "Är det gratis?", "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik." },
-      { "q": "Behöver jag installera något?", "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner." },
-      { "q": "Kan jag hålla ett löpande samtal istället för enstaka översättningar?", "a": "Ja, översättningar grupperas i ämnen, så ett franska-samtal hålls samlat istället för att spridas ut över lösa sökningar." }
+      {
+        "q": "Kan den översätta talad svenska till franska?",
+        "a": "Ja — tryck på mikrofonen, prata på svenska, och du får en fransk översättning som text, med möjlighet att lyssna på den."
+      },
+      {
+        "q": "Klarar den franska uttryck och artighetsfraser?",
+        "a": "Ja, vanliga uttryck och artiga formuleringar översätts efter innebörd, inte ord för ord."
+      },
+      {
+        "q": "Kan jag översätta tillbaka från franska till svenska?",
+        "a": "Ja, samma samtal fungerar åt båda håll — prata eller skriv på franska och få den svenska översättningen i samma ämne."
+      },
+      {
+        "q": "Är det gratis?",
+        "a": "Ja, du kan testa det gratis utan att skapa ett konto. Logga in med Google för fler dagliga krediter och sparad historik."
+      },
+      {
+        "q": "Behöver jag installera något?",
+        "a": "Nej, allt körs i webbläsaren på dator eller mobil — inget att ladda ner."
+      },
+      {
+        "q": "Kan jag hålla ett löpande samtal istället för enstaka översättningar?",
+        "a": "Ja, översättningar grupperas i ämnen, så ett franska-samtal hålls samlat istället för att spridas ut över lösa sökningar."
+      }
     ]
   },
   "finalCta": {

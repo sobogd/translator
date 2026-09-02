@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speak English, read it in Japanese",
+      "heading": "Voice translator from English to Japanese",
       "sub": "Tap the mic and talk — your speech becomes a Japanese translation in kanji and kana.",
       "bullets": [
-        { "title": "Spoken English becomes Japanese text", "sub": "Say it out loud and see the translation appear in proper script seconds later" },
-        { "title": "Hear the Japanese spoken aloud", "sub": "Tap the speaker for pronunciation, since Japanese sounds don't map to English letters" }
+        {
+          "title": "Spoken English becomes Japanese text",
+          "sub": "Say it out loud and see the translation appear in proper script seconds later"
+        },
+        {
+          "title": "Hear the Japanese spoken aloud",
+          "sub": "Tap the speaker for pronunciation, since Japanese sounds don't map to English letters"
+        }
       ]
     },
     {
-      "heading": "A full back-and-forth, kept together",
+      "heading": "Japanese conversation translator for both sides",
       "sub": "Whoever replies in Japanese gets translated back to English instantly, in the same thread.",
       "bullets": [
-        { "title": "Japanese replies translated back", "sub": "The other person speaks Japanese, you see and hear the English meaning" },
-        { "title": "Saved as a topic", "sub": "Reopen the same Japanese conversation later instead of starting over" }
+        {
+          "title": "Japanese replies translated back",
+          "sub": "The other person speaks Japanese, you see and hear the English meaning"
+        },
+        {
+          "title": "Saved as a topic",
+          "sub": "Reopen the same Japanese conversation later instead of starting over"
+        }
       ]
     },
     {
-      "heading": "Japanese, with the politeness level in mind",
+      "heading": "Online English to Japanese translator",
       "sub": "Japanese is one of 186 languages available, aiming for phrasing appropriate to a normal, polite conversation.",
       "bullets": [
-        { "title": "Everyday, polite Japanese", "sub": "Translations lean toward phrasing that's natural and appropriately polite, not blunt or overly formal" },
-        { "title": "186 languages total", "sub": "The same tool covers Japanese today and any other language you need next" }
+        {
+          "title": "Everyday, polite Japanese",
+          "sub": "Translations lean toward phrasing that's natural and appropriately polite, not blunt or overly formal"
+        },
+        {
+          "title": "186 languages total",
+          "sub": "The same tool covers Japanese today and any other language you need next"
+        }
       ]
     },
     {
-      "heading": "Or type it instead",
+      "heading": "English text translator for fast typing",
       "sub": "Paste or type English text and get a Japanese translation without speaking a word.",
       "bullets": [
-        { "title": "Type instead of speak", "sub": "Handy for emails, messages, or a quiet office" },
-        { "title": "Copy the Japanese text", "sub": "Copy the result straight into a chat app or document" }
+        {
+          "title": "Type instead of speak",
+          "sub": "Handy for emails, messages, or a quiet office"
+        },
+        {
+          "title": "Copy the Japanese text",
+          "sub": "Copy the result straight into a chat app or document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "How you start", "us": "Speak in English or Japanese and get a translation right away.", "them": "Type your sentence out first." },
-      { "title": "Checking pronunciation", "us": "Tap to hear the Japanese translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
-      { "title": "Conversation history", "us": "Every Japanese conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
-      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
-      { "title": "Both directions", "us": "English to Japanese and Japanese to English in one thread.", "them": "Switching direction usually means starting over." }
+      {
+        "title": "How you start",
+        "us": "Speak in English or Japanese and get a translation right away.",
+        "them": "Type your sentence out first."
+      },
+      {
+        "title": "Checking pronunciation",
+        "us": "Tap to hear the Japanese translation spoken aloud.",
+        "them": "Text-only results, so pronunciation is left to guesswork."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every Japanese conversation is saved as its own topic.",
+        "them": "Each translation disappears once you close the app."
+      },
+      {
+        "title": "Getting set up",
+        "us": "Open it in a browser tab — nothing to install.",
+        "them": "Download an app before you can translate anything."
+      },
+      {
+        "title": "Both directions",
+        "us": "English to Japanese and Japanese to English in one thread.",
+        "them": "Switching direction usually means starting over."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating between English and Japanese.",
     "items": [
-      { "q": "Does it write Japanese in kanji and kana, not romaji?", "a": "Yes, translations appear in proper Japanese script, ready to read, hear, or copy." },
-      { "q": "Can it translate spoken Japanese back to English?", "a": "Yes — speak Japanese into the mic and get an English translation as text, with audio playback available." },
-      { "q": "Does it use polite Japanese or casual speech?", "a": "It aims for natural, appropriately polite phrasing suited to everyday conversations, travel, and casual work chats." },
-      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
-      { "q": "Do I need a Japanese input method installed?", "a": "No, the app displays kanji and kana automatically — no separate keyboard needed." },
-      { "q": "Can I hear how the Japanese translation is pronounced?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." }
+      {
+        "q": "Does it write Japanese in kanji and kana, not romaji?",
+        "a": "Yes, translations appear in proper Japanese script, ready to read, hear, or copy."
+      },
+      {
+        "q": "Can it translate spoken Japanese back to English?",
+        "a": "Yes — speak Japanese into the mic and get an English translation as text, with audio playback available."
+      },
+      {
+        "q": "Does it use polite Japanese or casual speech?",
+        "a": "It aims for natural, appropriately polite phrasing suited to everyday conversations, travel, and casual work chats."
+      },
+      {
+        "q": "Is it free to use?",
+        "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history."
+      },
+      {
+        "q": "Do I need a Japanese input method installed?",
+        "a": "No, the app displays kanji and kana automatically — no separate keyboard needed."
+      },
+      {
+        "q": "Can I hear how the Japanese translation is pronounced?",
+        "a": "Yes, tap the speaker icon on any translation to hear it read aloud."
+      }
     ]
   },
   "finalCta": {

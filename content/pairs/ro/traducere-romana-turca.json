@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Vorbește, nu tasta",
+      "heading": "Traducător vocal din română în turcă",
       "sub": "Apasă pe microfon, spune-o în română sau turcă, și citește sau ascultă traducerea.",
       "bullets": [
-        { "title": "Vocea ta devine turcă", "sub": "Spune-o în română — traducerea apare în turcă câteva secunde mai târziu" },
-        { "title": "Ascultă turca cu voce tare", "sub": "Util la piață sau în hotel, când pronunția nu e sigură" }
+        {
+          "title": "Vocea ta devine turcă",
+          "sub": "Spune-o în română — traducerea apare în turcă câteva secunde mai târziu"
+        },
+        {
+          "title": "Ascultă turca cu voce tare",
+          "sub": "Util la piață sau în hotel, când pronunția nu e sigură"
+        }
       ]
     },
     {
-      "heading": "Un subiect, ambele sensuri ale discuției",
+      "heading": "Traducător pentru conversații română turcă",
       "sub": "Vorbește dus-întors cu un vânzător, un ghid sau un partener de afaceri — fiecare schimb rămâne salvat.",
       "bullets": [
-        { "title": "Răspuns în turcă, tradus în română", "sub": "Interlocutorul vorbește turcă, tu vezi și auzi totul în română" },
-        { "title": "Conversațiile rămân salvate ca subiecte", "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul" }
+        {
+          "title": "Răspuns în turcă, tradus în română",
+          "sub": "Interlocutorul vorbește turcă, tu vezi și auzi totul în română"
+        },
+        {
+          "title": "Conversațiile rămân salvate ca subiecte",
+          "sub": "Revii la aceeași discuție mai târziu, fără să pierzi firul"
+        }
       ]
     },
     {
-      "heading": "Română-Turcă, plus alte 185 de limbi",
+      "heading": "Traducător online din română în turcă",
       "sub": "Turca este una dintre cele 186 de limbi disponibile, în orice direcție.",
       "bullets": [
-        { "title": "Litere turcești recunoscute corect", "sub": "Literele ı, ğ, ş, ç sunt gestionate corect, nu aproximate" },
-        { "title": "186 de limbi în total", "sub": "Același instrument funcționează azi pentru turcă și mâine pentru orice altă limbă" }
+        {
+          "title": "Litere turcești recunoscute corect",
+          "sub": "Literele ı, ğ, ş, ç sunt gestionate corect, nu aproximate"
+        },
+        {
+          "title": "186 de limbi în total",
+          "sub": "Același instrument funcționează azi pentru turcă și mâine pentru orice altă limbă"
+        }
       ]
     },
     {
-      "heading": "Preferi să scrii? Merge și așa",
+      "heading": "Traducător de text română turcă",
       "sub": "Scrie sau lipește text în turcă și primești traducerea în română fără microfon.",
       "bullets": [
-        { "title": "Lipește text în loc să vorbești", "sub": "Util pentru un mesaj de la hotel sau un e-mail de afaceri" },
-        { "title": "Copiază traducerea", "sub": "Preia textul tradus direct într-un mesaj sau document" }
+        {
+          "title": "Lipește text în loc să vorbești",
+          "sub": "Util pentru un mesaj de la hotel sau un e-mail de afaceri"
+        },
+        {
+          "title": "Copiază traducerea",
+          "sub": "Preia textul tradus direct într-un mesaj sau document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Aplicațiile obișnuite de traducere",
     "rows": [
-      { "title": "Cum începi", "us": "Vorbești în română sau turcă și primești traducerea pe loc.", "them": "Trebuie să tastezi mai întâi ce vrei să spui." },
-      { "title": "Istoricul conversației", "us": "Fiecare conversație română-turcă rămâne salvată ca propriul ei subiect.", "them": "Fiecare traducere dispare după ce închizi aplicația." },
-      { "title": "Cum pornești", "us": "Deschizi într-o filă de browser — nimic de instalat.", "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi." },
-      { "title": "Ambele sensuri", "us": "Română spre turcă și turcă spre română stau în același subiect.", "them": "Schimbarea sensului înseamnă de obicei o traducere nouă." },
-      { "title": "Ascultarea traducerii", "us": "Atingi pentru a auzi traducerea în turcă citită cu voce tare.", "them": "Doar text, deci pronunția rămâne pe cont propriu." }
+      {
+        "title": "Cum începi",
+        "us": "Vorbești în română sau turcă și primești traducerea pe loc.",
+        "them": "Trebuie să tastezi mai întâi ce vrei să spui."
+      },
+      {
+        "title": "Istoricul conversației",
+        "us": "Fiecare conversație română-turcă rămâne salvată ca propriul ei subiect.",
+        "them": "Fiecare traducere dispare după ce închizi aplicația."
+      },
+      {
+        "title": "Cum pornești",
+        "us": "Deschizi într-o filă de browser — nimic de instalat.",
+        "them": "Descarci o aplicație și acorzi permisiuni înainte să o poți folosi."
+      },
+      {
+        "title": "Ambele sensuri",
+        "us": "Română spre turcă și turcă spre română stau în același subiect.",
+        "them": "Schimbarea sensului înseamnă de obicei o traducere nouă."
+      },
+      {
+        "title": "Ascultarea traducerii",
+        "us": "Atingi pentru a auzi traducerea în turcă citită cu voce tare.",
+        "them": "Doar text, deci pronunția rămâne pe cont propriu."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "frecvente",
     "sub": "Întrebări obișnuite despre traducerea română-turcă.",
     "items": [
-      { "q": "Poate traduce turca vorbită în română?", "a": "Da — apasă pe microfon, vorbește în turcă, și primești traducerea în română ca text, cu opțiunea de a o asculta." },
-      { "q": "Funcționează și din română în turcă?", "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în turcă în același subiect." },
-      { "q": "Este gratuit?", "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat." },
-      { "q": "Trebuie să instalez ceva?", "a": "Nu, funcționează direct în browser, pe calculator sau telefon." },
-      { "q": "Se potrivește pentru o vacanță în Turcia?", "a": "Da, e util la hotel, pe plajă sau la piață, când ai nevoie de o traducere rapidă fără să cauți un ghid." },
-      { "q": "Pot ține o conversație, nu doar traduceri izolate?", "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în turcă rămâne organizată, nu împrăștiată." }
+      {
+        "q": "Poate traduce turca vorbită în română?",
+        "a": "Da — apasă pe microfon, vorbește în turcă, și primești traducerea în română ca text, cu opțiunea de a o asculta."
+      },
+      {
+        "q": "Funcționează și din română în turcă?",
+        "a": "Da, aceeași conversație funcționează în ambele sensuri — vorbește sau scrie în română și primești traducerea în turcă în același subiect."
+      },
+      {
+        "q": "Este gratuit?",
+        "a": "Da, poți încerca gratuit fără cont. Conectează-te cu Google pentru mai multe credite zilnice și istoric salvat."
+      },
+      {
+        "q": "Trebuie să instalez ceva?",
+        "a": "Nu, funcționează direct în browser, pe calculator sau telefon."
+      },
+      {
+        "q": "Se potrivește pentru o vacanță în Turcia?",
+        "a": "Da, e util la hotel, pe plajă sau la piață, când ai nevoie de o traducere rapidă fără să cauți un ghid."
+      },
+      {
+        "q": "Pot ține o conversație, nu doar traduceri izolate?",
+        "a": "Da, traducerile sunt grupate pe subiecte, așa că o discuție în turcă rămâne organizată, nu împrăștiată."
+      }
     ]
   },
   "finalCta": {

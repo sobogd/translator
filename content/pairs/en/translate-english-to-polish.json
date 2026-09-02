@@ -23,35 +23,59 @@
   },
   "spotlights": [
     {
-      "heading": "Speak English, hear it in Polish",
+      "heading": "Voice translator from English to Polish",
       "sub": "Tap the mic and talk — your speech is turned into a Polish translation seconds later.",
       "bullets": [
-        { "title": "Spoken English becomes Polish text", "sub": "Say it out loud and see the translation with correct spelling, including ą, ę, ł, ż" },
-        { "title": "Hear the Polish spoken aloud", "sub": "Tap the speaker for pronunciation help with sounds that don't exist in English" }
+        {
+          "title": "Spoken English becomes Polish text",
+          "sub": "Say it out loud and see the translation with correct spelling, including ą, ę, ł, ż"
+        },
+        {
+          "title": "Hear the Polish spoken aloud",
+          "sub": "Tap the speaker for pronunciation help with sounds that don't exist in English"
+        }
       ]
     },
     {
-      "heading": "A conversation that stays together",
+      "heading": "English and Polish conversation translator",
       "sub": "Whoever replies in Polish gets translated back to English instantly, in the same thread.",
       "bullets": [
-        { "title": "Polish replies translated back", "sub": "The other person speaks Polish, you see and hear the English meaning" },
-        { "title": "Saved as a topic", "sub": "Reopen the same Polish conversation later instead of losing it" }
+        {
+          "title": "Polish replies translated back",
+          "sub": "The other person speaks Polish, you see and hear the English meaning"
+        },
+        {
+          "title": "Saved as a topic",
+          "sub": "Reopen the same Polish conversation later instead of losing it"
+        }
       ]
     },
     {
-      "heading": "Polish grammar, handled for you",
+      "heading": "Online translator for 186 languages",
       "sub": "Polish is one of 186 languages available, with its complex cases and endings sorted out automatically.",
       "bullets": [
-        { "title": "Correct case endings", "sub": "Polish changes word endings depending on grammar, and the translation gets this right without you thinking about it" },
-        { "title": "186 languages total", "sub": "The same tool covers Polish today and any other language you need next" }
+        {
+          "title": "Correct case endings",
+          "sub": "Polish changes word endings depending on grammar, and the translation gets this right without you thinking about it"
+        },
+        {
+          "title": "186 languages total",
+          "sub": "The same tool covers Polish today and any other language you need next"
+        }
       ]
     },
     {
-      "heading": "Or type it out",
+      "heading": "English to Polish text translator",
       "sub": "Paste or type English text and get a Polish translation without speaking a word.",
       "bullets": [
-        { "title": "Type instead of speak", "sub": "Handy for emails, forms, or a quiet room" },
-        { "title": "Copy the Polish text", "sub": "Copy the result straight into a chat app or document" }
+        {
+          "title": "Type instead of speak",
+          "sub": "Handy for emails, forms, or a quiet room"
+        },
+        {
+          "title": "Copy the Polish text",
+          "sub": "Copy the result straight into a chat app or document"
+        }
       ]
     }
   ],
@@ -62,11 +86,31 @@
     "usLabel": "IQ Translate",
     "themLabel": "Typical translator apps",
     "rows": [
-      { "title": "How you start", "us": "Speak in English or Polish and get a translation right away.", "them": "Type your sentence out first, diacritics and all." },
-      { "title": "Hearing pronunciation", "us": "Tap to hear the Polish translation spoken aloud.", "them": "Text-only results, so pronunciation is left to guesswork." },
-      { "title": "Conversation history", "us": "Every Polish conversation is saved as its own topic.", "them": "Each translation disappears once you close the app." },
-      { "title": "Getting set up", "us": "Open it in a browser tab — nothing to install.", "them": "Download an app before you can translate anything." },
-      { "title": "Both directions", "us": "English to Polish and Polish to English in one thread.", "them": "Switching direction usually means starting over." }
+      {
+        "title": "How you start",
+        "us": "Speak in English or Polish and get a translation right away.",
+        "them": "Type your sentence out first, diacritics and all."
+      },
+      {
+        "title": "Hearing pronunciation",
+        "us": "Tap to hear the Polish translation spoken aloud.",
+        "them": "Text-only results, so pronunciation is left to guesswork."
+      },
+      {
+        "title": "Conversation history",
+        "us": "Every Polish conversation is saved as its own topic.",
+        "them": "Each translation disappears once you close the app."
+      },
+      {
+        "title": "Getting set up",
+        "us": "Open it in a browser tab — nothing to install.",
+        "them": "Download an app before you can translate anything."
+      },
+      {
+        "title": "Both directions",
+        "us": "English to Polish and Polish to English in one thread.",
+        "them": "Switching direction usually means starting over."
+      }
     ]
   },
   "faq": {
@@ -74,12 +118,30 @@
     "headingAccent": "questions",
     "sub": "Common questions about translating between English and Polish.",
     "items": [
-      { "q": "Does it handle Polish diacritics correctly?", "a": "Yes, letters like ą, ć, ę, ł, ń, ó, ś, ź, ż appear correctly in both the text and what gets spoken aloud." },
-      { "q": "Can it translate spoken Polish back to English?", "a": "Yes — speak Polish into the mic and get an English translation as text, with audio playback available." },
-      { "q": "Does it get Polish grammar cases right?", "a": "Yes, it produces natural Polish with correct grammatical endings rather than a word-for-word rough translation." },
-      { "q": "Is it free to use?", "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history." },
-      { "q": "Do I need a Polish keyboard installed?", "a": "No, the app handles Polish letters automatically — no special keyboard needed." },
-      { "q": "Can I hear how the Polish translation is pronounced?", "a": "Yes, tap the speaker icon on any translation to hear it read aloud." }
+      {
+        "q": "Does it handle Polish diacritics correctly?",
+        "a": "Yes, letters like ą, ć, ę, ł, ń, ó, ś, ź, ż appear correctly in both the text and what gets spoken aloud."
+      },
+      {
+        "q": "Can it translate spoken Polish back to English?",
+        "a": "Yes — speak Polish into the mic and get an English translation as text, with audio playback available."
+      },
+      {
+        "q": "Does it get Polish grammar cases right?",
+        "a": "Yes, it produces natural Polish with correct grammatical endings rather than a word-for-word rough translation."
+      },
+      {
+        "q": "Is it free to use?",
+        "a": "Yes, try it free without creating an account. Sign in with Google for more daily credits and saved history."
+      },
+      {
+        "q": "Do I need a Polish keyboard installed?",
+        "a": "No, the app handles Polish letters automatically — no special keyboard needed."
+      },
+      {
+        "q": "Can I hear how the Polish translation is pronounced?",
+        "a": "Yes, tap the speaker icon on any translation to hear it read aloud."
+      }
     ]
   },
   "finalCta": {
