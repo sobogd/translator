@@ -127,7 +127,15 @@ export function Translator({
   const t = texts.translator;
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>(initialData?.topics ?? []);
-  const [topic, setTopic] = useState<TopicDetail | null>(initialData?.topic ?? null);
+  // SSR hydrates the last-opened thread regardless of which pair page it
+  // is — discard it up front if it doesn't match this page's fixed pair.
+  const [topic, setTopic] = useState<TopicDetail | null>(() => {
+    const t0 = initialData?.topic ?? null;
+    if (t0 && presetSource !== undefined && presetTarget !== undefined) {
+      if (t0.sourceLang !== presetSource || t0.targetLang !== presetTarget) return null;
+    }
+    return t0;
+  });
   // Source language chosen before a topic exists yet — carried into the
   // topic created on first send. Mirrors topic.sourceLang's semantics
   // (null = auto-detect).
@@ -202,7 +210,11 @@ export function Translator({
         const res = await apiFetch("/api/topics");
         const list: Topic[] = res.ok ? await res.json() : [];
         setTopics(list);
-        if (list.length > 0) await loadTopic(list[0].id);
+        // Pair pages only auto-open a topic that actually matches their
+        // fixed pair — a Spanish thread has no business opening on an
+        // English↔Russian page just because it's the most recent overall.
+        const match = fixedPair ? list.find((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget) : list[0];
+        if (match) await loadTopic(match.id);
       } catch {
         setTopic(null);
       } finally {
@@ -438,6 +450,17 @@ export function Translator({
   const fixedPair = presetSource !== undefined && presetTarget !== undefined;
   const rows = topic ? [...topic.translations].reverse() : [];
 
+  // Topics belong to a language pair — only show/auto-open the ones that
+  // match this page's pair (fixed for pair pages; the current draft pick on
+  // home). Auto-detect (a === null) matches on either side of the pair.
+  const pairA = fixedPair ? (presetSource as string) : currentSourceCode;
+  const pairB = fixedPair ? (presetTarget as string) : (targetLanguage?.code ?? defaultTarget);
+  const pairTopics = topics.filter((tp) =>
+    pairA === null
+      ? tp.sourceLang === pairB || tp.targetLang === pairB
+      : (tp.sourceLang === pairA && tp.targetLang === pairB) || (tp.sourceLang === pairB && tp.targetLang === pairA),
+  );
+
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the card edge (the card's
   // overflow-hidden supplies its only rounded corner).
@@ -541,10 +564,10 @@ export function Translator({
   // Topic rows only — no background fill, active = bold text. Shared between
   // the permanent desktop sidebar and the mobile drawer (see below).
   const topicsList = (onPick: () => void) =>
-    topics.length === 0 ? (
+    pairTopics.length === 0 ? (
       <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
     ) : (
-      topics.map((tp) => (
+      pairTopics.map((tp) => (
         <div key={tp.id} className="flex items-center gap-1">
           <button
             onClick={() => {
@@ -574,7 +597,7 @@ export function Translator({
           exists yet; the widget on the right is always fully live —
           topics live behind a toggle + sliding drawer, anchored to the
           widget itself, same on every breakpoint. */}
-      <div className="flex flex-col gap-4 lg:grid lg:h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
+      <div className="flex flex-col gap-4 lg:grid lg:min-h-[27rem] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden">
         <div className="order-2 flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:order-1 lg:h-full lg:rounded-none lg:border-0">
           <div className="my-auto flex min-w-0 flex-col gap-4">
             <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
@@ -597,7 +620,7 @@ export function Translator({
               className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
             >
               <PanelLeft size={16} />
-              <span className="max-w-[10rem] truncate">{topic?.title || (topics.length > 0 ? t.newTopic : t.topics)}</span>
+              <span className="max-w-[10rem] truncate">{topic?.title || (pairTopics.length > 0 ? t.newTopic : t.topics)}</span>
             </button>
           </div>
 
