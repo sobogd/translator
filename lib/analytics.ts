@@ -1,15 +1,20 @@
 // Cookieless analytics client. Every event is a page/action/name triple
-// ("Home" / "Click" / "Header sign in") POSTed to /api/e, which derives the
-// visit from a salted hash of the request itself — nothing is stored on the
-// visitor's device, so the site needs no cookie banner.
+// ("Home" / "Click" / "Header sign in") POSTed directly to iq-metrix under
+// the e.iq-translate.com alias — same reasoning as iq-rest's landing
+// and dashboard clients, for the same uniform-pipeline reason. Unlike those
+// two, this is a genuinely cross-SITE request (iq-translate.com to
+// iq-rest.com, different eTLD+1s) — translator's own session cookie cannot
+// ride along the way iqr_email does for the iq-rest apps, so every event
+// here lands anonymous (email always null) regardless of `credentials`.
+// Nothing is stored on the visitor's device, so the site still needs no
+// cookie banner.
 //
-// Ported from iq-rest (apps/landing/lib/analytics.ts). Two wire details are
-// load-bearing:
-//   • `/api/e` — a readable "track"-style path is on every ad-blocker list.
+// Two wire details are load-bearing:
+//   • `/e` — a readable "track"-style path is on every ad-blocker list.
 //   • `text/plain` body — keeps the POST a CORS-*simple* request and is the
 //     only content type `navigator.sendBeacon` can carry, which is what we
 //     rely on during page unload.
-const ENDPOINT = "/api/e";
+const ENDPOINT = "https://e.iq-translate.com/e";
 const CONTENT_TYPE = "text/plain;charset=UTF-8";
 
 const SEARCH_HOST_REGEX =
