@@ -187,7 +187,12 @@ function trimQueue(): void {
 }
 
 function scheduleFlush(): void {
-  if (flushTimer || inFlight || retryTimer) return;
+  // Deliberately does NOT check `inFlight`: an event queued while the previous
+  // batch is still in the air must still get its own timer running now, not
+  // wait for that request to resolve and start a fresh FLUSH_MS from there —
+  // that stacking was adding seconds of extra latency on top of the intended
+  // buffer window. `send()` itself still guards against a double-send.
+  if (flushTimer || retryTimer) return;
   flushTimer = setTimeout(send, FLUSH_MS);
 }
 
