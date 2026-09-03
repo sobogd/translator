@@ -115,6 +115,9 @@ async function postIngest(payload: IngestPayload, timeoutMs: number): Promise<In
 
 const SPOOL_DIR = path.join(process.cwd(), "var", "spool");
 const SPOOL_FILE = path.join(SPOOL_DIR, "analytics-events.ndjson");
+// Private name the live file is rotated to for the duration of one drain pass
+// (see drainSpool) — never read/written by anything else.
+const SPOOL_DRAINING_FILE = `${SPOOL_FILE}.draining`;
 const DRAIN_INTERVAL_MS = 10_000;
 // Belt-and-braces cap on total spool size: if iq-metrix is down long enough
 // for the file to cross this, retrying is no longer the right answer — warn
@@ -153,17 +156,45 @@ export async function sendToIngest(payload: IngestPayload): Promise<IngestRespon
 
 let draining = false;
 
+/** True for anything but "the file is not there" — the one rename/read
+ *  failure this function treats as "nothing pending" rather than an error. */
+function isMissing(e: unknown): boolean {
+  return (e as NodeJS.ErrnoException)?.code === "ENOENT";
+}
+
 async function drainSpool(): Promise<void> {
   if (draining) return;
   draining = true;
   try {
-    const raw = await fs.readFile(SPOOL_FILE, "utf8").catch(() => "");
+    // Recover a `.draining` file a previous pass left behind (process killed
+    // mid-drain) by folding it back onto the live spool before rotating a
+    // fresh snapshot — otherwise whatever was in flight last time is gone.
+    const orphan = await fs.readFile(SPOOL_DRAINING_FILE, "utf8").catch(() => null);
+    if (orphan) {
+      await fs.appendFile(SPOOL_FILE, orphan.endsWith("\n") ? orphan : `${orphan}\n`, "utf8");
+      await fs.rm(SPOOL_DRAINING_FILE, { force: true });
+    }
+
+    // Rotate, don't read-then-overwrite: a concurrent sendToIngest() failure
+    // can call spoolWrite() (appendFile) at any point during this pass, and
+    // appendFile always creates the file fresh if it is missing. Renaming the
+    // live file away first means that new append lands in a brand new
+    // SPOOL_FILE instead of racing a writeFile() here that would clobber it.
+    try {
+      await fs.rename(SPOOL_FILE, SPOOL_DRAINING_FILE);
+    } catch (e) {
+      if (isMissing(e)) return; // nothing pending
+      throw e;
+    }
+    const raw = await fs.readFile(SPOOL_DRAINING_FILE, "utf8").catch(() => "");
+    await fs.rm(SPOOL_DRAINING_FILE, { force: true });
+
     const lines = raw.split("\n").filter(Boolean);
     if (lines.length === 0) return;
 
     const batch = lines.slice(0, SPOOL_MAX_LINES_PER_DRAIN);
     const untouched = lines.slice(SPOOL_MAX_LINES_PER_DRAIN);
-    const stillPending: string[] = [];
+    const failed: string[] = [];
 
     for (const line of batch) {
       let payload: IngestPayload;
@@ -173,16 +204,17 @@ async function drainSpool(): Promise<void> {
         continue; // corrupt line — drop it rather than wedge the spool forever
       }
       const res = await postIngest(payload, INGEST_TIMEOUT_MS);
-      if (!res) stillPending.push(line);
+      if (!res) failed.push(line);
     }
-    stillPending.push(...untouched);
 
-    if (stillPending.length === 0) {
-      await fs.rm(SPOOL_FILE, { force: true });
-    } else {
-      await fs.writeFile(SPOOL_FILE, `${stillPending.join("\n")}\n`, "utf8");
-      if (stillPending.length >= SPOOL_MAX_LINES_PER_DRAIN) {
-        console.warn(`[analytics] ingest spool still has ${stillPending.length}+ lines pending after a drain pass`);
+    const requeue = [...failed, ...untouched];
+    if (requeue.length > 0) {
+      // Appended, never overwritten — safe next to a concurrent spoolWrite()
+      // append. This can land requeued lines after fresher ones written
+      // during this pass, a harmless ordering blip in a fallback path.
+      await fs.appendFile(SPOOL_FILE, `${requeue.join("\n")}\n`, "utf8");
+      if (requeue.length >= SPOOL_MAX_LINES_PER_DRAIN) {
+        console.warn(`[analytics] ingest spool still has ${requeue.length}+ lines pending after a drain pass`);
       }
     }
   } catch (e) {
