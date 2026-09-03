@@ -46,10 +46,15 @@ type WidgetTexts = TranslatorTexts["translator"];
 
 /** Error codes reach the name field, which the server validates against a
  *  tight character set — anything unexpected would take the whole batch down
- *  with it, so clamp here. */
+ *  with it, so clamp here.
+ *
+ *  A message with nothing ASCII in it (a browser's own localised network
+ *  error, say) used to survive as a row of underscores — every such failure
+ *  then looked identical in the analytics and said nothing about its cause.
+ *  Those are reported as "unknown" instead. */
 function trackError(code: string): string {
   const slug = code.replace(/[^A-Za-z0-9_-]+/g, "_").slice(0, 40);
-  return slug || "unknown";
+  return /[A-Za-z0-9]/.test(slug) ? slug : "unknown";
 }
 
 // Server routes answer with opaque codes: printing an unrecognised one used to
@@ -256,6 +261,22 @@ export function Translator({
     if (res.ok) setTopic(await res.json());
   }, []);
 
+  // Drops a topic that was created for a send that then failed — without this
+  // every failed first attempt left an empty thread behind in the list (see
+  // the discardIfCreated calls in translateText/stopRec).
+  const discardTopic = useCallback(
+    async (id: string) => {
+      try {
+        await apiFetch(`/api/topics/${id}`, { method: "DELETE" });
+      } catch {
+        /* the thread stays in the list; not worth a second error on screen */
+      }
+      setTopic(null);
+      setTopics((prev) => prev.filter((tp) => tp.id !== id));
+    },
+    [],
+  );
+
   // Creates a topic and returns its id — the only place a session actually
   // gets written. Called lazily, from translateText, on the first send.
   const createTopic = useCallback(
@@ -413,11 +434,15 @@ export function Translator({
     // what keeps the composer CTA showing its spinner instead of falling
     // back to the mic icon (showSend needs non-empty text).
     const sent = text;
+    // Set only when this send is what created the thread — a failure then has
+    // to take it back out again, or the list fills up with empty threads.
+    let createdId: string | null = null;
     try {
       // First send with no topic yet: create one now, carrying over
       // whatever source/target were picked in draft state.
       if (!(await ensurePass())) throw new Error("turnstile_failed");
-      const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
+      if (!topic) createdId = await createTopic(defaultTarget, draftSourceLang);
+      const topicId = topic?.id ?? (createdId as string);
       const send = () =>
         apiFetch("/api/translate", {
           method: "POST",
@@ -442,6 +467,7 @@ export function Translator({
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Error";
+      if (createdId) await discardTopic(createdId);
       if (msg === "insufficient_credits") setQuotaModal(true);
       else {
         analytics.track("Show", `Translate error text: ${trackError(msg)}`);
@@ -507,11 +533,13 @@ export function Translator({
     const pair = trackPair();
     analytics.track("Click", "Mic stop");
     setStatus("processing");
+    let createdId: string | null = null;
     try {
       const blob = await rec.stop();
       recRef.current = null;
       if (!(await ensurePass())) throw new Error("turnstile_failed");
-      const topicId = topic?.id ?? (await createTopic(defaultTarget, draftSourceLang));
+      if (!topic) createdId = await createTopic(defaultTarget, draftSourceLang);
+      const topicId = topic?.id ?? (createdId as string);
       const fd = new FormData();
       fd.append("audio", blob, "speech.wav");
       fd.append("topicId", topicId);
@@ -530,6 +558,8 @@ export function Translator({
       window.dispatchEvent(new Event(QUOTA_EVENT));
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Error";
+      // Nothing was transcribed, so the thread this send just opened is empty.
+      if (createdId) await discardTopic(createdId);
       if (msg === "insufficient_credits") setQuotaModal(true);
       else {
         analytics.track("Show", `Translate error voice: ${trackError(msg)}`);
