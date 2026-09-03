@@ -101,10 +101,9 @@ export function searchReferrerHost(): string | null {
 const TRACKING_ENABLED =
   process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_ANALYTICS_DEV === "1";
 
-// Events are buffered and posted in batches: one request instead of ten when a
-// visitor clicks through quickly, one identity resolution per batch on the
-// server, and enough headroom under the endpoint's 10 req/s burst limit.
-const FLUSH_MS = 2000;
+// Every event fires immediately (see `track()`) — no buffer window. `MAX_BATCH`
+// still matters: while one request is in flight, events that land in that
+// window queue up and go out together in the next `send()`.
 // Server hard-caps a batch at 50; stay well under so a burst still fits.
 const MAX_BATCH = 20;
 // Upper bound on the buffer while retries are pending. On overflow the OLDEST
@@ -186,16 +185,6 @@ function trimQueue(): void {
   if (queue.length > MAX_QUEUE) queue = queue.slice(queue.length - MAX_QUEUE);
 }
 
-function scheduleFlush(): void {
-  // Deliberately does NOT check `inFlight`: an event queued while the previous
-  // batch is still in the air must still get its own timer running now, not
-  // wait for that request to resolve and start a fresh FLUSH_MS from there —
-  // that stacking was adding seconds of extra latency on top of the intended
-  // buffer window. `send()` itself still guards against a double-send.
-  if (flushTimer || retryTimer) return;
-  flushTimer = setTimeout(send, FLUSH_MS);
-}
-
 function onFailure(batch: Batch): void {
   requeue(batch);
   const exhausted = retryAttempt >= RETRY_DELAYS_MS.length;
@@ -238,7 +227,7 @@ function send(): void {
             .catch(() => {});
         }
         retryAttempt = 0;
-        if (queue.length > 0) scheduleFlush();
+        if (queue.length > 0) send();
         return;
       }
       onFailure(batch);
@@ -315,12 +304,10 @@ function track(action: string, name: string, ctx?: TrackCtx, opts?: TrackOptions
   });
   if (ctx) pendingCtx = { ...pendingCtx, ...ctx };
   trimQueue();
-
-  if (queue.length >= MAX_BATCH || opts?.instant) {
-    send();
-    return;
-  }
-  scheduleFlush();
+  // Every event fires immediately. `send()` itself is the only rate limiter
+  // left: while a request is in flight, a new event just sits in `queue`
+  // until that request's completion handler below calls `send()` again.
+  send();
 }
 
 // Registered once at module load rather than lazily inside track(): a visitor
