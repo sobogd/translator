@@ -56,9 +56,11 @@ function emailList(raw: string | undefined, fallback: string): Set<string> {
   );
 }
 
-/** Accounts whose own traffic must never be recorded (ours). */
+/** Accounts whose own traffic must never be recorded. Empty by default —
+ *  was "support@iq-rest.com" — every account, including internal ones, is
+ *  now tracked unless ANALYTICS_EXCLUDE_EMAILS is explicitly set. */
 function excludedEmails(): Set<string> {
-  return emailList(process.env.ANALYTICS_EXCLUDE_EMAILS, "support@iq-rest.com");
+  return emailList(process.env.ANALYTICS_EXCLUDE_EMAILS, "");
 }
 
 /** Accounts allowed to open the admin traffic screens. */
