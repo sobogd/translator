@@ -95,93 +95,13 @@ model Translation {
 }
 
 // ---------------------------------------------------------------------------
-// Analytics — cookieless, salt-hashed visits. Ported from iq-rest's
-// analytics-v2 pipeline (apps/dashboard-api/src/analytics-v2/**), minus the
-// ad-network conversion half: iq-translate runs no advertising.
+// Analytics used to live here too (AnalyticsSalt / SessionNew / EventNew —
+// cookieless, salt-hashed visits, ported from iq-rest's analytics-v2
+// pipeline). That pipeline moved to iq-metrix, a standalone ingest service;
+// see lib/analytics/ingest.ts and docs/analytics.md.
 //
-// Nothing is stored on the visitor's device. The key of a visit is
-// sha256(dailySalt | ip-prefix | user-agent | entropy) computed server-side,
-// and the salt is overwritten once a day, which is what makes yesterday's
-// hashes permanently unlinkable. Raw IP and raw user agent are never
-// persisted anywhere.
+// The three models are gone from here on purpose but the physical tables
+// (analytics_salt / sessions_new / events_new) are deliberately left in place
+// as a safety net rather than dropped — Prisma only stops tracking them, no
+// migration runs. Safe to actually drop once iq-metrix has proven itself.
 // ---------------------------------------------------------------------------
-
-// Singleton row (id = "current") holding the active hash salt. Rotated daily
-// at 04:00 Europe/Madrid; the previous salt is destroyed by the overwrite.
-model AnalyticsSalt {
-  id        String   @id
-  value     String
-  rotatedAt DateTime
-
-  @@map("analytics_salt")
-}
-
-// One row = one VISIT: a device hash plus an identity, cut after 30 minutes of
-// silence. Device/geo/source attribution lives here so event rows stay minimal.
-model SessionNew {
-  id         String   @id @default(cuid())
-  // Dedup key of one visit: sha256(hash | email ?? "" | start-minute). The raw
-  // `hash` cannot be unique — two signed-out people behind one NAT with the
-  // same UA share it and must not share a visit row once one of them signs in,
-  // and the same device starts a NEW visit after 30 minutes of silence. The
-  // start-minute bucket makes two racing "start a visit" requests converge on
-  // one row instead of inserting two.
-  visitKey   String   @unique
-  hash       String
-  firstAt    DateTime @default(now())
-  lastAt     DateTime @default(now())
-  device     String? // 'mobile' | 'tablet' | 'desktop'
-  os         String? // 'ios' | 'android' | 'windows' | 'macos' | 'linux' | 'other'
-  country    String   @default("XX")
-  region     String   @default("")
-  city       String   @default("")
-  lang       String? // full Accept-Language primary tag, e.g. "es-ES"
-  theme      String? // 'dark' | 'light' — prefers-color-scheme, first-write-wins
-  from       String? // ?from= campaign tag, first-write-wins
-  ref        String? // first-touch referrer host (search engines only)
-  // Identity of the visit — the verified Google email, which is this app's
-  // account key (there is no User table). Stamped as soon as the session
-  // cookie resolves, so a visit that starts anonymous is promoted in place and
-  // its pre-sign-in events keep their row.
-  email      String?
-  // How many anonymous rows were folded into this one (same device signed out
-  // and back in within a salt-day).
-  mergeCount Int      @default(0)
-
-  events EventNew[]
-
-  @@index([firstAt])
-  @@index([email])
-  // Ingest looks up the LIVE visit for a device hash (lastAt inside the 30-min
-  // idle window), so the timestamp belongs in the index; the admin list sorts a
-  // 30-day window by lastAt.
-  @@index([hash, lastAt])
-  @@index([lastAt])
-  @@map("sessions_new")
-}
-
-// Everything about the device/geo/source lives on the visit; the event row
-// carries only what can change between two events of the same visit.
-model EventNew {
-  id        String   @id @default(cuid())
-  sessionId String
-  page      String // "Home", "Pair", "Pricing", "Legal", …
-  action    String // "Show" | "Click" | "Translate" | "Register" | …
-  name      String // "Pageview", "Header sign in", "Text es-en", …
-  // Conversation active at the moment of the event. Per-event rather than
-  // per-visit because one visit moves between topics.
-  topicId   String?
-  // Locale the page was rendered in ("es"), as opposed to SessionNew.lang,
-  // which is the browser's Accept-Language. Per-event for the same reason as
-  // the topic: a visit can cross locales.
-  locale    String?
-  at        DateTime @default(now())
-
-  session SessionNew @relation(fields: [sessionId], references: [id], onDelete: Cascade)
-
-  @@index([sessionId, at])
-  @@index([page, action, at])
-  @@index([topicId, at])
-  @@index([at])
-  @@map("events_new")
-}

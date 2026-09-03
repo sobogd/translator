@@ -1,16 +1,13 @@
-import { prisma } from "@/lib/prisma";
-import { getSalt } from "./salt";
-import { sessionHash } from "./session-hash";
-import { resolveVisit } from "./visit";
-import { clientNetwork, clientUa, hashEntropy, visitSeed, type HeaderReader } from "./request-facts";
+import { type HeaderReader, rawClientIp, rawClientUa, rawIngestHeaders, sendToIngest } from "./ingest";
 
-// Events the client cannot fire truthfully — a sign-in only becomes real on the
-// server, after Google's token exchange. Derives the visit from exactly the
-// same request facts the ingest route uses, so the event lands on the visit
-// that produced it instead of starting a new one.
+// Events the client cannot fire truthfully — a sign-in only becomes real on
+// the server, after Google's token exchange. Relayed through the same
+// forward-to-iq-metrix path as app/api/e/route.ts, built from the raw signals
+// on this request.
 //
 // Ported from iq-rest's conversion service (handleRegistration), minus the ad
-// networks: here it only writes the event and stitches the identity.
+// networks: here it only forwards the event and lets iq-metrix stitch the
+// identity onto whatever visit produced it.
 
 export interface ServerEvent {
   page: string;
@@ -24,13 +21,12 @@ export function trackServerEvent(h: HeaderReader, email: string | null, event: S
 }
 
 async function record(h: HeaderReader, email: string | null, event: ServerEvent): Promise<void> {
-  const now = new Date();
-  const hash = sessionHash(await getSalt(), clientNetwork(h), clientUa(h), hashEntropy(h));
-  // Promotes the anonymous visit in place, so the pageviews that led here keep
-  // their row. With no live visit (tracking blocked, or the visitor arrived
-  // somewhere we never saw) a row is created from this request's own facts.
-  const session = await resolveVisit(hash, email, visitSeed(h), now);
-  await prisma.eventNew.create({
-    data: { sessionId: session.id, page: event.page, action: event.action, name: event.name, at: now },
+  await sendToIngest({
+    site: "iq-translate",
+    ip: rawClientIp(h),
+    ua: rawClientUa(h),
+    headers: rawIngestHeaders(h),
+    email,
+    events: [{ page: event.page, action: event.action, name: event.name, locale: null, at: new Date().toISOString() }],
   });
 }

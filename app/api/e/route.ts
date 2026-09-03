@@ -1,27 +1,19 @@
 import { NextResponse } from "next/server";
 import { isbot } from "isbot";
-import type { SessionNew } from "@prisma/client";
-import { prisma } from "@/lib/prisma";
-import { getSalt } from "@/lib/analytics/salt";
-import { sessionHash } from "@/lib/analytics/session-hash";
-import { continueVisit, enrich, resolveVisit } from "@/lib/analytics/visit";
 import { resolveIdentity, resolveTopicId } from "@/lib/analytics/identity";
 import { allowIngest } from "@/lib/analytics/rate-limit";
-import { signVisitToken, tokenSecret, verifyVisitToken } from "@/lib/analytics/visit-token";
-import {
-  clientIp,
-  clientNetwork,
-  clientUa,
-  hashEntropy,
-  visitSeed,
-} from "@/lib/analytics/request-facts";
+import { rawClientIp, rawClientUa, rawIngestHeaders, sendToIngest, type IngestEvent } from "@/lib/analytics/ingest";
 
 // The one ingest path. Deliberately not named "track": that word is a literal
 // entry in the common ad-blocker filter lists, and a blocked first batch loses
 // the whole visit. The client posts `text/plain` so the request stays
 // CORS-simple and `navigator.sendBeacon` can carry it during page teardown.
 //
-// Ported from iq-rest (apps/dashboard-api/src/analytics-v2/track-v2.controller.ts).
+// This used to hash the request into a visit and store it in this app's own
+// sessions_new/events_new tables (see git history). That pipeline moved to
+// iq-metrix, a standalone service — this route now only validates, resolves
+// who is asking (identity.ts, unchanged) and relays the batch over the
+// network (lib/analytics/ingest.ts).
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -86,15 +78,16 @@ interface ParsedEvent {
   name: string;
   at: Date | null;
   locale: string | null;
+  /** Raw, not-yet-ownership-checked — only used to work out the batch's active
+   *  conversation for `meta.topicId` below, never forwarded per-event. */
   topicId: string | null;
 }
 
 /** Buffered events arrive together; spacing the fallbacks 1ms apart keeps them
- *  in the order the visitor produced them. */
-function clampToVisit(at: Date | null, firstAt: Date, now: Date, index: number): Date {
-  const fallback = new Date(now.getTime() + index);
-  if (!at) return fallback;
-  return at < firstAt ? firstAt : at;
+ *  in the order the visitor produced them. There is no local visit to clamp
+ *  against anymore — iq-metrix resolves sessions from these timestamps itself. */
+function eventAt(at: Date | null, now: Date, index: number): Date {
+  return at ?? new Date(now.getTime() + index);
 }
 
 function parseTs(raw: unknown, now: Date): Date | null {
@@ -133,11 +126,12 @@ export async function POST(req: Request) {
   const now = new Date();
   const h = req.headers;
 
-  const ua = clientUa(h);
+  const ua = rawClientUa(h);
   if (!ua || HARD_BOT_UA_REGEX.test(ua) || isbot(ua) || CRAWLER_UA_REGEX.test(ua)) {
     return NextResponse.json({});
   }
-  if (!allowIngest(clientIp(h) || ua, now.getTime())) {
+  const ip = rawClientIp(h);
+  if (!allowIngest(ip || ua, now.getTime())) {
     return NextResponse.json({ error: "rate limited" }, { status: 429 });
   }
 
@@ -156,60 +150,40 @@ export async function POST(req: Request) {
   const who = await resolveIdentity(h);
   if (who.skip) return NextResponse.json({});
 
-  const secret = tokenSecret();
-
-  // A batch carrying a valid continuation token lands on its own visit row
-  // directly — immune to the hash flapping mid-visit (mobile network prefix or
-  // geo changing between requests).
-  let session: SessionNew | null = null;
-  if (secret && typeof body.tok === "string") {
-    const sid = verifyVisitToken(body.tok, secret, now);
-    if (sid) session = await continueVisit(sid, who.email, now);
-  }
-
-  if (!session) {
-    // Raw IP and raw UA live only on this stack frame — hashed and derived,
-    // never stored.
-    const hash = sessionHash(await getSalt(), clientNetwork(h), ua, hashEntropy(h));
-    session = await resolveVisit(hash, who.email, visitSeed(h), now);
-  }
-
-  // Pin the resolved row: `session` is a `let`, so its narrowing does not
-  // survive into the createMany callback below.
-  const visit: SessionNew = session;
+  // The batch's active conversation, for meta.topicId: the last event carrying
+  // a topic id is the most recent state, i.e. whatever is open right now. Only
+  // stamped when the caller actually owns it (resolveTopicId re-checks against
+  // the DB — the id arrives from the client, so an unowned one is dropped).
+  const lastTopicIdRaw = [...events].reverse().find((e) => e.topicId)?.topicId ?? null;
+  const topicId = await resolveTopicId(who.email, lastTopicIdRaw);
 
   const ctx: TrackCtx = body.ctx && typeof body.ctx === "object" ? body.ctx : {};
-  await enrich(visit, {
-    from: typeof ctx.from === "string" && FROM_REGEX.test(ctx.from) ? ctx.from : null,
-    ref: typeof ctx.ref === "string" && HOST_REGEX.test(ctx.ref) ? ctx.ref.toLowerCase() : null,
-    theme: typeof ctx.theme === "string" && THEME_REGEX.test(ctx.theme) ? ctx.theme : null,
+  const from = typeof ctx.from === "string" && FROM_REGEX.test(ctx.from) ? ctx.from : undefined;
+  const ref = typeof ctx.ref === "string" && HOST_REGEX.test(ctx.ref) ? ctx.ref.toLowerCase() : undefined;
+  const theme = typeof ctx.theme === "string" && THEME_REGEX.test(ctx.theme) ? ctx.theme : undefined;
+  const meta =
+    topicId || from || ref || theme
+      ? { ...(topicId ? { topicId } : {}), ...(from ? { from } : {}), ...(ref ? { ref } : {}), ...(theme ? { theme } : {}) }
+      : undefined;
+
+  const outEvents: IngestEvent[] = events.map((e, i) => ({
+    page: e.page,
+    action: e.action,
+    name: e.name,
+    locale: e.locale,
+    at: eventAt(e.at, now, i).toISOString(),
+  }));
+
+  const result = await sendToIngest({
+    site: "iq-translate",
+    ip,
+    ua,
+    headers: rawIngestHeaders(h),
+    email: who.email,
+    ...(meta ? { meta } : {}),
+    ...(typeof body.tok === "string" ? { tok: body.tok } : {}),
+    events: outEvents,
   });
 
-  // Topic ids repeat across a batch; resolve each distinct one once.
-  const owned = new Map<string, string | null>();
-  for (const id of new Set(events.map((e) => e.topicId).filter((v): v is string => !!v))) {
-    owned.set(id, await resolveTopicId(who.email, id));
-  }
-
-  await prisma.eventNew.createMany({
-    data: events.map((e, i) => ({
-      sessionId: visit.id,
-      page: e.page,
-      action: e.action,
-      name: e.name,
-      topicId: e.topicId ? (owned.get(e.topicId) ?? null) : null,
-      locale: e.locale,
-      // Client time, but never before the visit it lands on. A buffer that
-      // survived a long offline stretch arrives with timestamps from a visit
-      // that has since been closed by the 30-minute cut, and an event dated
-      // before its own visit's firstAt corrupts every "first page" aggregate
-      // the admin computes by ordering on `at`.
-      at: clampToVisit(e.at, visit.firstAt, now, i),
-    })),
-  });
-
-  // Fresh token every response: its liveness window slides with the visit's
-  // lastAt, and the beacon/keepalive callers that cannot read a body simply
-  // keep their previous one.
-  return NextResponse.json(secret ? { v: signVisitToken(visit.id, secret, now) } : {});
+  return NextResponse.json(result.tok ? { v: result.tok } : {});
 }

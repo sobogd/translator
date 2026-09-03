@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { SESSION_COOKIE, hashSessionToken, parseCookie } from "@/lib/auth";
-import type { HeaderReader } from "./request-facts";
+import type { HeaderReader } from "./ingest";
 
 // Who is behind an ingest call, and which conversation they had open.
 //
