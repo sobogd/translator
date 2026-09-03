@@ -22,6 +22,15 @@ const SEARCH_HOST_REGEX =
 //
 // Most assistants strip or shorten the referrer, so what lands here is a floor
 // on the channel, never the whole of it — the rest shows up as direct.
+// Hosts we send the visitor to ourselves and get them back from: the Google
+// sign-in screen, Stripe checkout, the Turnstile challenge. accounts.google.com
+// matches the search pattern below, so a visitor returning from sign-in used to
+// be booked as a fresh arrival from Google search. None of these are an
+// acquisition channel — the visit was already ours — so they are dropped
+// before either classification runs.
+const RETURN_HOST_REGEX =
+  /^(accounts\.google\.com|accounts\.youtube\.com|oauth2\.googleapis\.com|myaccount\.google\.com|appleid\.apple\.com|login\.microsoftonline\.com|checkout\.stripe\.com|billing\.stripe\.com|pay\.google\.com|challenges\.cloudflare\.com)$/i;
+
 const AI_HOST_REGEX =
   /(?:^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|anthropic\.com|gemini\.google\.com|bard\.google\.com|copilot\.microsoft\.com|you\.com|phind\.com|poe\.com)$/i;
 
@@ -71,6 +80,8 @@ export function searchReferrerHost(): string | null {
     const ref = document.referrer;
     if (!ref) return null;
     const host = new URL(ref).hostname;
+    // Coming back from our own sign-in/payment detour is not an arrival.
+    if (RETURN_HOST_REGEX.test(host)) return null;
     // AI first: gemini.google.com matches the search pattern too.
     if (AI_HOST_REGEX.test(host)) return host;
     return SEARCH_HOST_REGEX.test(host) ? host : null;
