@@ -76,11 +76,14 @@ function matchesQuery(l: { nameRu: string; nameNative: string }, q: string): boo
   return l.nameRu.toLowerCase().includes(needle) || l.nameNative.toLowerCase().includes(needle);
 }
 
+// Language picker: a plain overlay inside the translator (no modal chrome,
+// no dimming — just blur behind). Top: one search field styled like the
+// composer's input. Below: the scrollable list of languages. Nothing else;
+// picking a language closes it.
 function LanguagePickerModal({
   current,
   forSource,
   texts,
-  onClose,
   onSelect,
 }: {
   current: string | null;
@@ -91,69 +94,69 @@ function LanguagePickerModal({
    *  auto-detect (see selectSource/selectTarget), not by hiding options. */
   forSource?: boolean;
   texts: WidgetTexts;
-  onClose: () => void;
   onSelect: (code: string | null) => void;
 }) {
   const [query, setQuery] = useState("");
   const list = LANGUAGES.filter((l) => matchesQuery(l, query));
 
   return (
-    <Modal title={texts.chooseLanguage} onClose={onClose} closeAria={texts.close} maxWidth="max-w-lg">
-      {/* Flush full-width search: no box, no fill — just a bottom border,
-          sticky over the list, text aligned with the option rows below. */}
-      {/* type="search" + the ignore hints, same set the composer textarea
-          carries: a bare <input> with no type and no name reads as a
-          credential field to iOS and to password managers, which put the
-          AutoFill/passwords bar over the keyboard here. */}
-      <input
-        type="search"
-        inputMode="search"
-        enterKeyHint="search"
-        name="language-search"
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="none"
-        spellCheck={false}
-        data-lpignore="true"
-        data-1p-ignore
-        data-bwignore
-        data-form-type="other"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        autoFocus
-        placeholder={texts.searchPlaceholder}
-        className="sticky top-0 z-10 w-full shrink-0 border-b border-border px-5 py-3.5 text-base outline-none placeholder:text-hint"
-        style={{ background: "var(--card)" }}
-      />
-      {/* No flags anywhere in the widget — the ISO code carries the same
-          "which language is this" cue without implying a country, and keeps
-          a 180-row list scannable. */}
-      <div className="p-2">
+    <div
+      className="absolute inset-0 z-40 flex flex-col gap-2 backdrop-blur-md"
+      onWheel={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+    >
+      {/* Search field — designed like the phrase input: same island surface,
+          same height, same bare-input treatment (the password-manager ignore
+          hints the composer textarea carries). */}
+      <div className="taskbar-glass flex h-10 shrink-0 items-center rounded-md px-2">
+        <input
+          type="search"
+          inputMode="search"
+          enterKeyHint="search"
+          name="language-search"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="none"
+          spellCheck={false}
+          data-lpignore="true"
+          data-1p-ignore
+          data-bwignore
+          data-form-type="other"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          autoFocus
+          placeholder={texts.searchPlaceholder}
+          className="min-w-0 flex-1 bg-transparent px-1 text-base leading-6 outline-none placeholder:text-hint"
+        />
+      </div>
+
+      {/* The plain scrollable list — names only, nothing else. */}
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
         {forSource && (
           <button
+            type="button"
             onClick={() => onSelect(null)}
-            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
-            style={current === null ? { background: "var(--bg)" } : undefined}
+            className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+              current === null ? "font-semibold text-text" : "text-text/80"
+            }`}
           >
-            {/* Keeps the label aligned with the coded rows below it — the
-                auto-detect row has no code to show, and a dash read as one. */}
-            <span className="w-8 shrink-0" aria-hidden />
-            <span className="min-w-0 flex-1 truncate">{texts.autoDetect}</span>
+            {texts.autoDetect}
           </button>
         )}
         {list.map((l) => (
           <button
             key={l.code}
+            type="button"
             onClick={() => onSelect(l.code)}
-            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition active:scale-[0.99]"
-            style={l.code === current ? { background: "var(--bg)" } : undefined}
+            className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+              l.code === current ? "font-semibold text-text" : "text-text/80"
+            }`}
           >
-            <span className="w-8 shrink-0 font-mono text-xs uppercase text-hint">{l.code}</span>
             <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
           </button>
         ))}
       </div>
-    </Modal>
+    </div>
   );
 }
 
@@ -916,7 +919,6 @@ export function Translator({
           current={pickerFor === "source" ? currentSourceCode : currentTargetCode}
           forSource={pickerFor === "source"}
           texts={t}
-          onClose={() => setPickerFor(null)}
           onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
         />
       )}
