@@ -105,7 +105,7 @@ function LanguagePickerModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto p-2 backdrop-blur-[8px]"
+      className="fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto p-2 backdrop-blur-[4px]"
       onClick={onClose}
     >
       {/* One column, two rows, 8px apart; no shared background between them —
