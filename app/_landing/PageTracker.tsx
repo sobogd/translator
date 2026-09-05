@@ -83,13 +83,12 @@ function createScrollTracker() {
   let timer: ReturnType<typeof setTimeout> | null = null;
 
   /** The active content scroller. The page is pinned at 100dvh; content lives
-   *  in the window's second part (.content-scroll) which scrolls on its own
-   *  once the translator part is gone — or in the single legacy window scroll
-   *  (.window-scroll) on product-less pages. The document itself never scrolls;
-   *  fall back to its metrics only for a standalone surface (the 404, which
-   *  does not run this tracker anyway). */
+   *  in the window's single scroll area (.page-scroll) or in the legacy
+   *  single-scroll window (.window-scroll) on product-less pages. The
+   *  document itself never scrolls; fall back to its metrics only for a
+   *  standalone surface (the 404, which does not run this tracker anyway). */
   const scroller = (): { el: HTMLElement | null; scrollTop: number; clientHeight: number } => {
-    const el = document.querySelector<HTMLElement>(".content-scroll, .page-scroll, .window-scroll");
+    const el = document.querySelector<HTMLElement>(".page-scroll, .window-scroll");
     if (el) return { el, scrollTop: el.scrollTop, clientHeight: el.clientHeight };
     return { el: null, scrollTop: window.scrollY, clientHeight: window.innerHeight };
   };
@@ -143,7 +142,7 @@ function createScrollTracker() {
     // scrollTop keeps its old value — the bottom-of-page rule above would
     // then read as "reached the end" from wherever the visitor happened to
     // be. Nothing done inside a modal is a scroll gesture.
-    const con = document.querySelector<HTMLElement>(".content-scroll, .page-scroll, .window-scroll");
+    const con = document.querySelector<HTMLElement>(".page-scroll, .window-scroll");
     if (con?.style.overflow === "hidden") return;
     const now = currentSection();
     const y = scroller().scrollTop;

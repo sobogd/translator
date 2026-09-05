@@ -1,11 +1,11 @@
 // Scroll lock, shared by every overlay that has one (the modal shell).
 //
 // The desktop chrome pins the page at 100dvh and scrolls content inside the
-// window (.page-scroll / .content-scroll), so locking scroll means hiding
-// overflow on those containers — and on <body> too, for the rare standalone
-// surface (404). .window-scroll is the legacy single-scroll window used on
-// pages without the translator product part.
-const SCROLLERS = ".window-scroll, .page-scroll, .content-scroll";
+// window (.page-scroll), so locking scroll means hiding overflow on that
+// container — and on <body> too, for the rare standalone surface (404).
+// .window-scroll is the single-scroll window used on pages without the
+// translator product part.
+const SCROLLERS = ".window-scroll, .page-scroll";
 //
 // Ref-counted on purpose. Two overlays used to do the obvious thing — save
 // the element's overflow, set "hidden", restore the saved value on close —
