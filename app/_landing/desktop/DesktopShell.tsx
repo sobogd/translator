@@ -63,32 +63,29 @@ export function DesktopShell({
         />
       </div>
 
-      {/* The desktop canvas the window floats in. It is the page's <main>: the
-          actual content is what the window shows, while the floating taskbar
-          above stays a sibling <header> landmark. The window fills the canvas
-          edge to edge below the header (constant 64px of chrome), so the
-          two-part scroll inside it can size its halves from the viewport. */}
-      <main className="pointer-events-none relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pb-2 pt-2 sm:px-6 sm:pb-2 sm:pt-2">
-        <div className="pointer-events-none h-full w-full max-w-[1000px]">
-          <AppWindow product={product}>
-            {/* The full brand mark (icon + word) lives at the top of the home
-                window content, as PostHog does — the taskbar above keeps only
-                the small rounded "IQ" square. Inner pages don't repeat it. */}
-            {showBrand && (
-              <div className="flex items-center gap-1.5 px-6 pt-6 sm:px-8">
-                <Link
-                  href={homeHref}
-                  className="inline-flex shrink-0 items-center gap-1.5 text-lg font-semibold tracking-tight sm:text-xl"
-                  aria-label={headerTexts.logo}
-                >
-                  <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
-                  {headerTexts.logo}
-                </Link>
-              </div>
-            )}
-            {children}
-          </AppWindow>
-        </div>
+      {/* The desktop canvas: the scroll surface reaches the screen edges, so
+          its scrollbar sits at the very edge of the viewport. The windows
+          (translator + content) inside it stay centred in their max-w
+          container — only the scrolling area is full-bleed. */}
+      <main className="pointer-events-none relative z-10 min-h-0 flex-1">
+        <AppWindow product={product}>
+          {/* The full brand mark (icon + word) lives at the top of the home
+              window content, as PostHog does — the taskbar above keeps only
+              the small rounded "IQ" square. Inner pages don't repeat it. */}
+          {showBrand && (
+            <div className="flex items-center gap-1.5 px-6 pt-6 sm:px-8">
+              <Link
+                href={homeHref}
+                className="inline-flex shrink-0 items-center gap-1.5 text-lg font-semibold tracking-tight sm:text-xl"
+                aria-label={headerTexts.logo}
+              >
+                <LogoIcon className="h-7 w-7 sm:h-8 sm:w-8" />
+                {headerTexts.logo}
+              </Link>
+            </div>
+          )}
+          {children}
+        </AppWindow>
       </main>
     </div>
   );

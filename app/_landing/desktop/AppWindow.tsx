@@ -32,34 +32,35 @@ export function AppWindow({
   return (
     <div className="pointer-events-auto relative flex size-full flex-col overflow-hidden rounded-lg">
       {product ? (
-        // The desktop field is the page's own zero background: the scroll area
-        // is transparent, so the base wallpaper shows through everywhere the
-        // blocks don't cover it (gaps included). The content window below is
-        // the glass surface the original single window had.
+        // The scroll surface is full-bleed (its scrollbar sits at the very
+        // edge of the screen); the windows below stay centred in the site's
+        // max-w container, with the desktop surface around them.
         <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
-          {/* Zone 1 — the translator blocks. Full first screen on mobile,
-              70dvh on desktop. Transparent itself; the blocks inside carry the
-              window surface. */}
-          <section
-            aria-label="Translator"
-            className="flex h-[calc(100dvh-72px)] w-full shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
-          >
-            {product}
-          </section>
+          <div className="flex w-full flex-col px-2 py-2 sm:px-6">
+            {/* Zone 1 — the translator. Full first screen on mobile, 70dvh on
+                desktop. Transparent itself; the blocks inside carry the
+                window surface. */}
+            <section
+              aria-label="Translator"
+              className="mx-auto flex h-[calc(100dvh-72px)] w-full max-w-[1000px] shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
+            >
+              {product}
+            </section>
 
-          {/* Window 2 — the page content: the same glass window the single
-              scroll window used to be, separated by the same LAYOUT_GAP.
-              No inner scroll: it passes through the one outer scroll. */}
-          <section
-            style={{ marginTop: LAYOUT_GAP }}
-            className="window-glass w-full overflow-hidden rounded-lg"
-          >
-            {children}
-          </section>
+            {/* Window 2 — the page content: the same glass window the single
+                scroll window used to be, separated by the same LAYOUT_GAP.
+                No inner scroll: it passes through the one outer scroll. */}
+            <section
+              style={{ marginTop: LAYOUT_GAP }}
+              className="window-glass mx-auto w-full max-w-[1000px] overflow-hidden rounded-lg"
+            >
+              {children}
+            </section>
+          </div>
         </div>
       ) : (
         <div className="window-scroll min-h-0 w-full flex-1">
-          <div className="min-h-full">{children}</div>
+          <div className="mx-auto min-h-full w-full max-w-[1000px] px-2 py-2 sm:px-6">{children}</div>
         </div>
       )}
     </div>
