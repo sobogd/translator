@@ -28,6 +28,7 @@ import { useSession } from "../session";
 import { QuotaBadge } from "../AccountControls";
 import { SignInPanel } from "../SignInPanel";
 import { applyResolvedTheme, getThemeChoice, setThemeChoice, subscribeTheme, type ThemeChoice } from "@/lib/theme";
+import { LOCALE_COOKIE } from "@/lib/cookies";
 import {
   DEFAULT_ACCOUNT_TEXTS,
   DEFAULT_TEXTS,
@@ -251,6 +252,11 @@ export function Taskbar({
                 className="flex w-full items-center rounded-md px-2 py-1.5 text-[13px] leading-tight text-hint transition-colors hover:bg-accent hover:text-text"
                 onClick={() => {
                   analytics.track("Click", `Header language ${l}`);
+                  // Remember the explicit choice before the navigation lands on
+                  // the English root: proxy.ts routes "/" by NEXT_LOCALE, and
+                  // the old value (the page you're leaving) would bounce the
+                  // English switch straight back to the current locale.
+                  document.cookie = `${LOCALE_COOKIE}=${l}; path=/; max-age=${400 * 86400}; samesite=lax`;
                   onDone();
                 }}
               >
