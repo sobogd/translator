@@ -10,10 +10,13 @@
 // the header; from then on only the second part scrolls (its inner area sits
 // exactly where the translator was).
 //
-// `scrollContentToTop()` is what the header's "Translate" CTA uses: it scrolls
-// the outer area back to the top so the translator part is shown again.
+// `scrollContentToTop()` is what the header's "Translate" CTA uses: it brings
+// the translator part back (outer layer to its top) and resets the content
+// part, so the next scroll starts from the content's beginning again.
 export function scrollContentToTop() {
   if (typeof window === "undefined") return;
+  const inner = document.querySelector<HTMLElement>(".content-scroll");
+  if (inner) inner.scrollTop = 0;
   const el = document.querySelector<HTMLElement>(".page-scroll");
   el?.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -31,7 +34,10 @@ export function AppWindow({
   return (
     <div className="window-glass pointer-events-auto relative flex size-full flex-col overflow-hidden rounded-lg">
       {product ? (
-        <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
+        // Outer scroll: carries the translator part up and away. `overscroll`
+        // stays at its default so the inner content part can chain its own
+        // scroll back up to this layer (no `overscroll-contain`).
+        <div className="page-scroll h-full w-full overflow-y-auto">
           {/* Part 1 — the translator. Same height on every page so the widget
               is embedded identically everywhere; it scrolls up and away with
               the outer area until it is fully under the header. */}
@@ -43,8 +49,10 @@ export function AppWindow({
           </section>
 
           {/* Part 2 — the page content. Once the translator is fully off the
-              top, this block fills the viewport and scrolls on its own. */}
-          <section style={{ height: CONTENT_H }} className="content-scroll w-full overflow-y-auto overscroll-contain">
+              top, this block fills the viewport and scrolls on its own. No
+              overscroll-contain on purpose: at its top an upward scroll must
+              chain to the outer layer so the translator part comes back. */}
+          <section style={{ height: CONTENT_H }} className="content-scroll w-full overflow-y-auto">
             {children}
           </section>
         </div>
