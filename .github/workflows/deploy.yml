@@ -68,6 +68,17 @@ jobs:
             GOOGLE_CLIENT_ID="${{ secrets.GOOGLE_CLIENT_ID }}"
             GOOGLE_CLIENT_SECRET="${{ secrets.GOOGLE_CLIENT_SECRET }}"
             ALLOWED_GOOGLE_EMAILS="${{ secrets.ALLOWED_GOOGLE_EMAILS }}"
+            # Email OTP sign-in (SMTP).
+            SMTP_HOST="${{ secrets.SMTP_HOST }}"
+            SMTP_PORT="${{ secrets.SMTP_PORT }}"
+            SMTP_USER="${{ secrets.SMTP_USER }}"
+            SMTP_PASS="${{ secrets.SMTP_PASS }}"
+            FROM_EMAIL="${{ secrets.FROM_EMAIL }}"
+            # Sign in with Apple.
+            APPLE_TEAM_ID="${{ secrets.APPLE_TEAM_ID }}"
+            APPLE_KEY_ID="${{ secrets.APPLE_KEY_ID }}"
+            APPLE_SERVICES_ID="${{ secrets.APPLE_SERVICES_ID }}"
+            APPLE_PRIVATE_KEY="${{ secrets.APPLE_PRIVATE_KEY }}"
             STRIPE_SECRET_KEY="${{ secrets.STRIPE_SECRET_KEY }}"
             STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}"
             TS_SITE="${{ secrets.TS_SITE }}"

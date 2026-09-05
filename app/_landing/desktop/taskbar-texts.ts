@@ -22,6 +22,23 @@ export type TaskbarTexts = {
   signIn: string;
   logOut: string;
   anyLanguageHint: string;
+  /** Sign-in flow copy (email OTP + social buttons). */
+  signInEmail: string;
+  signInGoogle: string;
+  signInApple: string;
+  emailTitle: string;
+  emailHint: string;
+  codeHint: string;
+  emailPlaceholder: string;
+  codePlaceholder: string;
+  sendCode: string;
+  verifyCode: string;
+  errEmailInvalid: string;
+  errCodeInvalid: string;
+  errCodeExpired: string;
+  errTooMany: string;
+  errNotAllowed: string;
+  errGeneric: string;
 };
 
 export type AccountTexts = {
@@ -52,6 +69,22 @@ export const DEFAULT_TEXTS: TaskbarTexts = {
   signIn: "Sign in",
   logOut: "Log out",
   anyLanguageHint: "Translate to any language",
+  signInEmail: "Email",
+  signInGoogle: "Google",
+  signInApple: "Apple",
+  emailTitle: "Sign in with email",
+  emailHint: "We'll email you a one-time code to finish signing in.",
+  codeHint: "Enter the 6-digit code we emailed you.",
+  emailPlaceholder: "you@example.com",
+  codePlaceholder: "Code",
+  sendCode: "Send code",
+  verifyCode: "Verify code",
+  errEmailInvalid: "Enter a valid email address.",
+  errCodeInvalid: "That code is not right — check it and try again.",
+  errCodeExpired: "That code expired — request a new one.",
+  errTooMany: "Too many requests — try again in a few minutes.",
+  errNotAllowed: "This email is not allowed to sign in.",
+  errGeneric: "Something went wrong. Try again.",
 };
 
 export const DEFAULT_ACCOUNT_TEXTS: AccountTexts = {

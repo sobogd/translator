@@ -1,7 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-html-link-for-pages -- the OAuth start route (/api/auth/google/start) must be a full document navigation */
-
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,7 +16,6 @@ import {
   Type,
   LogOut,
   ArrowRight,
-  UserRound,
 } from "lucide-react";
 import { LogoIcon } from "../LogoIcon";
 import { localePath } from "@/lib/locale-paths";
@@ -29,6 +26,7 @@ import { analytics } from "@/lib/analytics";
 import { apiFetch } from "@/lib/client";
 import { useSession } from "../session";
 import { QuotaBadge } from "../AccountControls";
+import { SignInPanel } from "../SignInPanel";
 import { applyResolvedTheme, getThemeChoice, setThemeChoice, subscribeTheme, type ThemeChoice } from "@/lib/theme";
 import {
   DEFAULT_ACCOUNT_TEXTS,
@@ -92,6 +90,7 @@ export function Taskbar({
   anyLanguage?: FeatureRow;
 }) {
   const [openMenu, setOpenMenu] = useState<MenuKind | null>(null);
+  const [authOpen, setAuthOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSub, setMobileSub] = useState<MenuKind | null>(null);
@@ -135,27 +134,26 @@ export function Taskbar({
     window.location.reload();
   }
 
-  function signIn() {
-    analytics.track("Click", "Sign in with Google");
-    analytics.flush();
-  }
-
   const closeAll = () => {
     setOpenMenu(null);
+    setAuthOpen(false);
     setMenuOpen(false);
     setMobileSub(null);
   };
 
-  // Close any open desktop menu on outside press / Escape.
+  // Close any open desktop menu / sign-in dropdown on outside press or Escape.
   useEffect(() => {
-    if (!openMenu) return;
+    if (!openMenu && !authOpen) return;
     const onDown = (e: PointerEvent) => {
-      if ((e.target as HTMLElement).closest?.("#top")) return;
+      const t = e.target as HTMLElement;
+      if (t.closest?.("#top, [data-auth-modal]")) return;
       setOpenMenu(null);
+      setAuthOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpenMenu(null);
+        setAuthOpen(false);
       }
     };
     document.addEventListener("pointerdown", onDown, true);
@@ -164,7 +162,7 @@ export function Taskbar({
       document.removeEventListener("pointerdown", onDown, true);
       document.removeEventListener("keydown", onKey);
     };
-  }, [openMenu]);
+  }, [openMenu, authOpen]);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -380,19 +378,7 @@ export function Taskbar({
         </button>
       </div>
     ) : (
-      <div className="flex flex-col">
-        <a
-          href="/api/auth/google/start"
-          onClick={signIn}
-          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-[13px] font-medium leading-normal transition-colors hover:bg-accent"
-        >
-          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-hint">
-            <UserRound className="h-4 w-4" />
-          </span>
-          <span className="flex-1">{texts.signIn}</span>
-          <ArrowRight className="h-4 w-4 text-hint" />
-        </a>
-      </div>
+      <SignInPanel texts={texts} />
     );
 
   const submenuTitle = (sub: MenuKind): string => {
@@ -410,6 +396,7 @@ export function Taskbar({
       onClick={() => {
         const next = openMenu === kind ? null : kind;
         setOpenMenu(next);
+        setAuthOpen(false);
         analytics.track("Click", `Header ${kind}`);
       }}
       aria-expanded={openMenu === kind}
@@ -443,8 +430,8 @@ export function Taskbar({
 
         {/* Mobile: the site menu sits right next to the logo, as a pill that
             opens the same menus the desktop bar uses. */}
-        <div className="mr-auto flex items-center gap-1.5 sm:hidden">
-          <div className="relative" ref={menuRef}>
+        <div className="mr-auto flex h-full items-center gap-1.5 sm:hidden">
+          <div className="relative flex h-full items-center" ref={menuRef}>
             <button
               type="button"
               aria-label={texts.menu}
@@ -514,9 +501,9 @@ export function Taskbar({
 
         {/* Desktop row: menu triggers first, Pricing at the end. Hidden below
             `sm` — on a phone these overflow the bar. */}
-        <nav className="mr-auto hidden items-center gap-0.5 pl-2 text-[13px] font-medium leading-normal sm:flex">
+        <nav className="mr-auto hidden h-full items-center gap-0.5 pl-2 text-[13px] font-medium leading-normal sm:flex">
           {MENU_ROWS.map((row) => (
-            <span key={row.kind} className="relative">
+            <span key={row.kind} className="relative flex h-full items-center">
               {trigger(row.kind, row.label(texts))}
               {openMenu === row.kind && (
                 <div
@@ -541,16 +528,29 @@ export function Taskbar({
         {/* Right cluster: remaining quota, and — while signed out — a compact
             red "Sign in" CTA (the account/registration flow is one screen,
             like mermaid's "Open editor" button). */}
-        <div className="ml-3 flex shrink-0 items-center gap-2">
+        <div className="ml-3 flex h-full shrink-0 items-center gap-2">
           <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
           {!signedIn && (
-            <a
-              href="/api/auth/google/start"
-              onClick={signIn}
-              className="header-open-editor ml-2 inline-flex h-7 shrink-0 items-center rounded bg-button px-2.5 text-[13px] font-semibold leading-normal text-button-text transition-all active:scale-[0.99]"
-            >
-              {texts.signIn}
-            </a>
+            <div className="relative flex h-full items-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setAuthOpen((v) => !v);
+                  setOpenMenu(null);
+                  analytics.track("Click", `Sign in menu ${authOpen ? "close" : "open"}`);
+                }}
+                aria-expanded={authOpen}
+                aria-haspopup="menu"
+                className="header-open-editor ml-2 inline-flex h-7 shrink-0 items-center gap-1 rounded bg-button px-2.5 text-[13px] font-semibold leading-normal text-button-text transition-all hover:opacity-90 active:scale-[0.99] data-[state=open]:opacity-90"
+              >
+                {texts.signIn}
+              </button>
+              {authOpen && (
+                <div className="absolute right-0 top-full z-50 mt-2 w-72 rounded-lg bg-[var(--taskbar-bg)] p-1.5 shadow-xl">
+                  <SignInPanel texts={texts} />
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>

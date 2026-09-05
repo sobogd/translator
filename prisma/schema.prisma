@@ -72,6 +72,19 @@ model AnonymousCredit {
   @@map("anonymous_credits")
 }
 
+// Email sign-in challenges (OTP). Identity is the lowercased, verified email
+// (same key as Session/Account); the row holds the current pending challenge
+// only — hashed code, expiry and the failed-attempt counter.
+model OtpCode {
+  email     String   @id
+  otpHash   String
+  expiresAt DateTime
+  attempts  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@map("otp_codes")
+}
+
 // Stripe webhook idempotency: event id checked before processing, written after.
 model StripeEvent {
   id         String   @id

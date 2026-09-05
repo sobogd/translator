@@ -40,6 +40,23 @@ export interface TranslatorTexts {
     /** Right-edge header CTA — scrolls the content window back to the
      *  translator widget at the top. */
     translate?: string;
+    /** Sign-in flow copy (email OTP + social buttons). */
+    signInEmail?: string;
+    signInGoogle?: string;
+    signInApple?: string;
+    emailTitle?: string;
+    emailHint?: string;
+    codeHint?: string;
+    emailPlaceholder?: string;
+    codePlaceholder?: string;
+    sendCode?: string;
+    verifyCode?: string;
+    errEmailInvalid?: string;
+    errCodeInvalid?: string;
+    errCodeExpired?: string;
+    errTooMany?: string;
+    errNotAllowed?: string;
+    errGeneric?: string;
   };
   // The header's account modal (signed-in) / quota badge labels.
   account: {
