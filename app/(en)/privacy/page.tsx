@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  return <LegalPage title={PRIVACY_TITLE} sections={PRIVACY_SECTIONS} pathname="/privacy" />;
+  return <LegalPage title={PRIVACY_TITLE} sections={PRIVACY_SECTIONS} />;
 }

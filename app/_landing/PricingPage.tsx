@@ -1,10 +1,10 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { DesktopShell } from "./desktop/DesktopShell";
+import { mergeTaskbarTexts } from "./desktop/taskbar-texts";
 import { Faq } from "./Faq";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FinalCta } from "./FinalCta";
 import { PricingCards } from "./PricingCards";
-import { Container, Band, PAGE } from "./shell";
+import { Band } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import type { Locale } from "@/lib/locales";
 import { SITE_URL } from "@/lib/site";
@@ -12,8 +12,9 @@ import { breadcrumbLd, faqPageLd, graphLd, organizationLd, planOffersLd, softwar
 import { SessionProvider } from "./session";
 import type { TranslatorTexts } from "./types";
 
-// Shared template for the localized /pricing page. All copy comes from the
-// locale's chrome (texts.pricing); prices render from lib/plans.ts inside
+// The localized /pricing page, dressed in the same desktop chrome as every
+// other page: one typographic column inside the window. All copy comes from
+// the locale's chrome (texts.pricing); prices render from lib/plans.ts inside
 // PricingCards. There is no free plan card and no free-tier strip — the free
 // tier is the anonymous no-signup widget on the home page.
 export function PricingPage({
@@ -25,6 +26,7 @@ export function PricingPage({
 }) {
   const p = chrome.pricing;
   const pathname = localePath(locale, "pricing");
+  const homeHref = localeHome(locale);
   const jsonLd = graphLd([
     organizationLd(),
     webSiteLd(locale),
@@ -38,67 +40,53 @@ export function PricingPage({
   ]);
   return (
     <SessionProvider locale={locale} page="Pricing">
-      <main className={PAGE}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Header
-          homeHref={localeHome(locale)}
-          locale={locale}
-          texts={chrome.header}
-          accountTexts={chrome.account}
-          featureLinks={chrome.footer.featureLinks}
-        />
-        <Container>
-          <Band section="plans">
-            {/* One card at every breakpoint (unlike the feature hero, which
-                splits into two on mobile): filled half carries the SEO copy,
-                bare half the plans — flat with dividers, no card in a card. */}
-            <div className="flex flex-col overflow-hidden rounded-2xl border border-border lg:grid lg:grid-cols-[2fr_3fr]">
-              <div className="flex min-w-0 flex-col items-start justify-center bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8">
-                <div className="my-auto flex min-w-0 flex-col gap-4">
-                  <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
-                    {p.heading}{" "}
-                    <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
-                      {p.headingAccent}
-                    </span>
-                  </h1>
-                  <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{p.sub}</p>
-                </div>
-              </div>
-              <div className="min-w-0 p-6 sm:p-8">
-                <PricingCards texts={p} variant="flat" />
-              </div>
-            </div>
-          </Band>
-          <Band section="breadcrumbs">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <DesktopShell
+        locale={locale}
+        homeHref={homeHref}
+        headerTexts={mergeTaskbarTexts(chrome.header)}
+        accountTexts={chrome.account}
+        pricingHref={pathname}
+        featureLinks={chrome.footer.featureLinks}
+      >
+        <Band section="pricing" className="px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-10">
+          <div className="flex w-full max-w-[760px] flex-col">
             <Breadcrumbs
-              homeHref={localeHome(locale)}
+              homeHref={homeHref}
               homeLabel={chrome.footer.brand}
               current={chrome.header.pricing}
             />
-          </Band>
-          <Band id="faq" section="faq">
-            <Faq
-              heading={p.faq.heading}
-              headingAccent={p.faq.headingAccent}
-              sub={p.faq.sub}
-              items={p.faq.items}
-            />
-          </Band>
-          <Band section="final_cta">
-            <FinalCta
-              heading={p.finalCta.heading}
-              headingAccent={p.finalCta.headingAccent}
-              sub={p.finalCta.sub}
-              ctaLabel={p.finalCta.ctaLabel}
-              ctaHref={localeHome(locale)}
-            />
-          </Band>
-        </Container>
-        <Footer locale={locale} pathname={pathname} texts={chrome.footer} />
-      </main>
+            <div className="mt-10 flex flex-col gap-y-14 sm:mt-12">
+              <div className="flex flex-col gap-3">
+                <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl">
+                  {p.heading}{" "}
+                  <span className="text-button">{p.headingAccent}</span>
+                </h1>
+                <p className="max-w-[62ch] text-pretty text-[15px] leading-relaxed text-text/75 sm:text-base">
+                  {p.sub}
+                </p>
+              </div>
+              <PricingCards texts={p} variant="flat" />
+              <Faq
+                heading={p.faq.heading}
+                headingAccent={p.faq.headingAccent}
+                sub={p.faq.sub}
+                items={p.faq.items}
+              />
+              <FinalCta
+                heading={p.finalCta.heading}
+                headingAccent={p.finalCta.headingAccent}
+                sub={p.finalCta.sub}
+                ctaLabel={p.finalCta.ctaLabel}
+                ctaHref={`${homeHref}#app`}
+              />
+            </div>
+          </div>
+        </Band>
+      </DesktopShell>
     </SessionProvider>
   );
 }

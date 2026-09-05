@@ -1,10 +1,7 @@
 import Link from "next/link";
-import { CARD } from "./shell";
 
-// In-body cross-links between pair pages. Until now the only path from one
-// pair page to another was the header dropdown and the footer — navigation
-// chrome, which carries far less weight than a contextual link inside the
-// content, and which a visitor reading to the end of the page never sees.
+// In-body cross-links between pair pages, styled as the plain list of related
+// guides in iq-mermaid's article pages (no card, no divider).
 //
 // Labels come from the locale's own footer.featureLinks, so the anchor text
 // is already translated and always matches the slug it points at.
@@ -17,19 +14,22 @@ export function RelatedPairs({
 }) {
   if (links.length === 0) return null;
   return (
-    <div className={`${CARD} flex flex-col gap-3 p-5 sm:p-6`}>
-      <h2 className="text-base font-medium tracking-tight sm:text-lg">{heading}</h2>
-      <nav className="flex flex-wrap gap-x-4 gap-y-2">
+    <section className="flex flex-col gap-5">
+      <h2 className="text-2xl font-semibold leading-[1.15] tracking-tight text-text sm:text-3xl">
+        {heading}
+      </h2>
+      <ol className="flex flex-col gap-4">
         {links.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            className="text-sm text-hint transition-colors hover:text-text"
-          >
-            {l.label}
-          </Link>
+          <li key={l.href}>
+            <Link
+              href={l.href}
+              className="text-[15px] font-semibold leading-snug tracking-tight text-text underline-offset-4 transition-colors hover:underline hover:decoration-text/40"
+            >
+              {l.label}
+            </Link>
+          </li>
         ))}
-      </nav>
-    </div>
+      </ol>
+    </section>
   );
 }

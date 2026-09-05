@@ -30,5 +30,5 @@ export const metadata: Metadata = {
 // Statically prerendered, like every page here: quota, topics and the
 // signed-in flag are resolved after hydration by SessionProvider.
 export default function EnHomePage() {
-  return <Landing locale="en" texts={texts} homeHref="/" pathname="/" />;
+  return <Landing locale="en" texts={texts} homeHref="/" />;
 }

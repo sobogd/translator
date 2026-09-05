@@ -1,4 +1,6 @@
 import { locales, rtlLocales } from "@/lib/locales";
+import { DesktopChrome } from "@/app/_landing/desktop/DesktopChrome";
+import { THEME_BOOTSTRAP_SCRIPT } from "@/lib/theme";
 
 // Document shell for every dynamic-segment route (locale homes, pair pages,
 // localized pricing). The (en)/ and ru/ groups own their static shells; this
@@ -17,7 +19,15 @@ export default async function SegLayout({
   const dir = (rtlLocales as readonly string[]).includes(lang) ? "rtl" : undefined;
   return (
     <html lang={lang} dir={dir} className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: THEME_BOOTSTRAP_SCRIPT,
+          }}
+        />
+        <DesktopChrome />
+        {children}
+      </body>
     </html>
   );
 }

@@ -16,7 +16,17 @@
     "signIn": "登録 / ログイン",
     "logOut": "ログアウト",
     "tryItNow": "今すぐ試す",
-    "account": "アカウント"
+    "account": "アカウント",
+    "menu": "メニュー",
+    "languages": "言語",
+    "legal": "法的事項",
+    "theme": "テーマ",
+    "themeSystem": "システム",
+    "themeLight": "ライト",
+    "themeDark": "ダーク",
+    "legalPrivacy": "プライバシーポリシー",
+    "legalTerms": "利用規約",
+    "translate": "翻訳する"
   },
   "hero": {
     "badgeVoice": "音声",

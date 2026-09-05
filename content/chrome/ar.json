@@ -16,7 +16,17 @@
     "signIn": "إنشاء حساب / تسجيل الدخول",
     "logOut": "تسجيل الخروج",
     "tryItNow": "جرّبه الآن",
-    "account": "الحساب"
+    "account": "الحساب",
+    "menu": "القائمة",
+    "languages": "اللغات",
+    "legal": "قانوني",
+    "theme": "المظهر",
+    "themeSystem": "النظام",
+    "themeLight": "فاتح",
+    "themeDark": "داكن",
+    "legalPrivacy": "الخصوصية",
+    "legalTerms": "الشروط",
+    "translate": "ترجمة"
   },
   "hero": {
     "badgeVoice": "صوت",

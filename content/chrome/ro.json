@@ -16,7 +16,17 @@
     "signIn": "Înregistrare / Conectare",
     "logOut": "Deconectare",
     "tryItNow": "Încearcă acum",
-    "account": "Cont"
+    "account": "Cont",
+    "menu": "Meniu",
+    "languages": "Limbi",
+    "legal": "Informații legale",
+    "theme": "Temă",
+    "themeSystem": "Sistem",
+    "themeLight": "Luminos",
+    "themeDark": "Întunecat",
+    "legalPrivacy": "Confidențialitate",
+    "legalTerms": "Termeni",
+    "translate": "Tradu"
   },
   "hero": {
     "badgeVoice": "Voce",

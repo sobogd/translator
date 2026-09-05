@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  return <LegalPage title={TERMS_TITLE} sections={TERMS_SECTIONS} pathname="/terms" />;
+  return <LegalPage title={TERMS_TITLE} sections={TERMS_SECTIONS} />;
 }

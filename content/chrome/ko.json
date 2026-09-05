@@ -16,7 +16,17 @@
     "signIn": "회원가입 / 로그인",
     "logOut": "로그아웃",
     "tryItNow": "지금 사용해 보기",
-    "account": "계정"
+    "account": "계정",
+    "menu": "메뉴",
+    "languages": "언어",
+    "legal": "법적 정보",
+    "theme": "테마",
+    "themeSystem": "시스템",
+    "themeLight": "라이트",
+    "themeDark": "다크",
+    "legalPrivacy": "개인정보 처리방침",
+    "legalTerms": "이용약관",
+    "translate": "번역하기"
   },
   "hero": {
     "badgeVoice": "음성",

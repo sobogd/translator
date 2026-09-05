@@ -16,7 +16,17 @@
     "signIn": "Rekisteröidy / Kirjaudu sisään",
     "logOut": "Kirjaudu ulos",
     "tryItNow": "Kokeile nyt",
-    "account": "Tili"
+    "account": "Tili",
+    "menu": "Valikko",
+    "languages": "Kielet",
+    "legal": "Lakiasiat",
+    "theme": "Teema",
+    "themeSystem": "Järjestelmä",
+    "themeLight": "Vaalea",
+    "themeDark": "Tumma",
+    "legalPrivacy": "Tietosuoja",
+    "legalTerms": "Käyttöehdot",
+    "translate": "Käännä"
   },
   "hero": {
     "badgeVoice": "Puhe",

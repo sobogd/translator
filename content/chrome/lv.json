@@ -16,7 +16,17 @@
     "signIn": "Reģistrēties / Pierakstīties",
     "logOut": "Iziet",
     "tryItNow": "Izmēģini tagad",
-    "account": "Konts"
+    "account": "Konts",
+    "menu": "Izvēlne",
+    "languages": "Valodas",
+    "legal": "Juridiskā informācija",
+    "theme": "Tēma",
+    "themeSystem": "Sistēma",
+    "themeLight": "Gaišais",
+    "themeDark": "Tumšais",
+    "legalPrivacy": "Privātuma politika",
+    "legalTerms": "Lietošanas noteikumi",
+    "translate": "Tulkot"
   },
   "hero": {
     "badgeVoice": "Balss",

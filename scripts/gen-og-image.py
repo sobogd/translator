@@ -15,7 +15,7 @@ W, H = 1200, 630
 BG = (249, 246, 241)        # --bg, warm paper
 TEXT = (21, 18, 15)         # --text
 HINT = (114, 106, 96)       # --hint
-GRAD = ((255, 73, 41), (249, 158, 31))  # brand gradient, hsl(9 100% 58%) -> hsl(35 95% 55%)
+GRAD = ((217, 83, 79), (217, 83, 79))  # brand red #d9534f, solid (no gradient)
 
 
 def sf(size, weight="Regular"):

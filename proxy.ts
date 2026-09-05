@@ -99,27 +99,9 @@ export function proxy(req: NextRequest) {
     return response;
   }
 
-  // The PWA's start_url. A manifest has exactly one, so it points at the
-  // English workspace and the visitor's own language is resolved here — same
-  // cookie-then-Accept-Language order as the root, so launching the installed
-  // app lands on /<locale>/app.
-  if (pathname === "/app") {
-    const preferred = req.cookies.get(LOCALE_COOKIE)?.value as Locale | undefined;
-    const target = preferred && locales.includes(preferred) ? preferred : detectLocale(req);
-    if (target !== defaultLocale) {
-      const redirectUrl = new URL(`/${target}/app`, req.url);
-      redirectUrl.search = req.nextUrl.search;
-      const response = NextResponse.redirect(redirectUrl, 302);
-      response.headers.set("Vary", "Accept-Language, Cookie");
-      refreshSession(req, response);
-      return response;
-    }
-    const res = NextResponse.next();
-    res.headers.set("Vary", "Accept-Language, Cookie");
-    refreshSession(req, res);
-    ensureAnonId(req, res);
-    return res;
-  }
+  // The /app workspace was removed (the translator widget is embedded at the
+  // top of every page's window now), so there is no start_url redirect to
+  // keep — the manifest points at "/" and the root branch below routes it.
 
   // Only the bare root is language-routed. Anything else unprefixed is either
   // an English-only path (handled above) or simply not a page: redirecting

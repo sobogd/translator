@@ -34,16 +34,13 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
 
   return (
     <div className={`flex ${fromA ? "justify-end" : "justify-start"}`}>
-      {/* Both sides are the same shape — a flat tinted fill, no outline. The
-          two tones are the first and third of the spotlight tint rotation
-          (app/_landing/Spotlights.tsx): near enough to belong to one thread,
-          far enough apart to tell the speakers apart. Neither is the accent —
-          a long thread of that left nothing for the send button to say. */}
+      {/* Both sides are the same shape — flat neutral fills, no outline. The
+          two tones come from the palette tokens (accent grey for one speaker,
+          bare border for the other) so they read on the widget's white chat
+          surface without pulling any colour into the thread. */}
       <div
         className={`w-full max-w-[85%] rounded-lg p-3.5 ${
-          fromA
-            ? "bg-[hsl(32_44%_92%)] dark:bg-[hsl(32_14%_14%)]"
-            : "bg-[hsl(45_44%_92%)] dark:bg-[hsl(45_14%_14%)]"
+          fromA ? "bg-accent" : "border border-border"
         }`}
       >
         {/* Original (small, muted) above the translation (larger, primary) —

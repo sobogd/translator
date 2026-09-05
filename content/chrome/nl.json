@@ -16,7 +16,17 @@
     "signIn": "Registreren / Inloggen",
     "logOut": "Uitloggen",
     "tryItNow": "Nu proberen",
-    "account": "Account"
+    "account": "Account",
+    "menu": "Menu",
+    "languages": "Talen",
+    "legal": "Juridisch",
+    "theme": "Thema",
+    "themeSystem": "Systeem",
+    "themeLight": "Licht",
+    "themeDark": "Donker",
+    "legalPrivacy": "Privacybeleid",
+    "legalTerms": "Algemene voorwaarden",
+    "translate": "Vertalen"
   },
   "hero": {
     "badgeVoice": "Spraak",

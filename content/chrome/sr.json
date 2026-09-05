@@ -16,7 +16,17 @@
     "signIn": "Registracija / Prijava",
     "logOut": "Odjava",
     "tryItNow": "Isprobaj odmah",
-    "account": "Nalog"
+    "account": "Nalog",
+    "menu": "Meni",
+    "languages": "Jezici",
+    "legal": "Pravne informacije",
+    "theme": "Tema",
+    "themeSystem": "Sistem",
+    "themeLight": "Svetla",
+    "themeDark": "Tamna",
+    "legalPrivacy": "Privatnost",
+    "legalTerms": "Uslovi",
+    "translate": "Prevedi"
   },
   "hero": {
     "badgeVoice": "Glas",

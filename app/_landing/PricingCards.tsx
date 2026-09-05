@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { CARD, PRIMARY_BTN, OUTLINE_BTN } from "./shell";
+import { PRIMARY_BTN, OUTLINE_BTN } from "./shell";
 import { PLAN_ORDER, PLANS, type PlanId } from "@/lib/plans";
 import { analytics } from "@/lib/analytics";
 import type { TranslatorTexts } from "./types";
@@ -114,7 +114,7 @@ export function PricingCards({
         return (
           <div
             key={id}
-            className={`${CARD} flex flex-col gap-5 p-6 ${plan.popular ? "ring-2 ring-button" : ""}`}
+            className={`flex flex-col gap-5 rounded-2xl border border-border p-6 ${plan.popular ? "ring-2 ring-button" : ""}`}
           >
             {plan.popular && (
               <span className="w-fit rounded-full bg-button/15 px-2.5 py-1 text-xs font-semibold text-button">

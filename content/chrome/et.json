@@ -16,7 +16,17 @@
     "signIn": "Registreeru / Logi sisse",
     "logOut": "Logi välja",
     "tryItNow": "Proovi kohe",
-    "account": "Konto"
+    "account": "Konto",
+    "menu": "Menüü",
+    "languages": "Keeled",
+    "legal": "Õigusteave",
+    "theme": "Teema",
+    "themeSystem": "Süsteem",
+    "themeLight": "Hele",
+    "themeDark": "Tume",
+    "legalPrivacy": "Privaatsus",
+    "legalTerms": "Kasutustingimused",
+    "translate": "Tõlgi"
   },
   "hero": {
     "badgeVoice": "Hääl",

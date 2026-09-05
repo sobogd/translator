@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NARROW, PRIMARY_BTN, OUTLINE_BTN } from "./_landing/shell";
+import { THEME_BOOTSTRAP_SCRIPT } from "@/lib/theme";
 import { PAIRS } from "@/lib/pairs";
 import { PAIR_CONTENT, READY_LOCALES } from "@/content";
 import { getLanguage } from "@/lib/languages";
@@ -40,16 +41,16 @@ export default function NotFound() {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
+        {/* Resolved theme before first paint, like every locale shell. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
         <main className={`${NARROW} flex flex-1 flex-col justify-center gap-8 py-16`}>
           <div className="flex flex-col gap-4">
             <p className="text-sm font-semibold uppercase tracking-wide text-hint">404</p>
-            <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
+            <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl">
               This page doesn&apos;t exist{" "}
-              <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
-                — the translator does
-              </span>
+              <span className="text-button">— the translator does</span>
             </h1>
-            <p className="max-w-[60ch] text-sm leading-relaxed text-hint/80 sm:text-base">
+            <p className="max-w-[62ch] text-[15px] leading-relaxed text-text/75 sm:text-base">
               The address you followed isn&apos;t a page here. Open the translator and speak or
               type in any of 186 languages, or jump straight to a language pair below.
             </p>

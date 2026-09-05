@@ -1,16 +1,15 @@
-import { Mic, Volume2, Keyboard, Copy, Globe2, Languages, RefreshCw, History, FileText, Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Mic, Volume2, Keyboard, Copy, Globe2, Languages, RefreshCw, History } from "lucide-react";
+import { DesktopShell } from "./desktop/DesktopShell";
+import { mergeTaskbarTexts } from "./desktop/taskbar-texts";
 import { Translator } from "./Translator";
-import { StatCards } from "./StatCards";
 import { Spotlights } from "./Spotlights";
 import { Comparison } from "./Comparison";
 import { Faq } from "./Faq";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { RelatedPairs } from "./RelatedPairs";
 import { FinalCta } from "./FinalCta";
-import { Container, Band, PAGE } from "./shell";
+import { Band } from "./shell";
 import { localeHome, localePath } from "@/lib/locale-paths";
 import { relatedPairs } from "@/lib/pairs";
 import type { Locale } from "@/lib/locales";
@@ -18,21 +17,18 @@ import { breadcrumbLd, faqPageLd, graphLd, organizationLd, softwareApplicationLd
 import { SessionProvider } from "./session";
 import type { TranslatorTexts, FeatureContent } from "./types";
 
-// Icon set for a feature page's 3 spotlight cards, keyed by which feature
-// the page targets. Same positional-icon convention as the home page's
-// Spotlights (icon choice lives in code, copy lives in content.json).
+// Icon set for a pair page's spotlight sections, keyed by which feature the
+// page targets (icon choice lives in code, copy lives in the pair JSON).
 const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
   text: [
-    [FileText, Sparkles],
     [Keyboard, Copy],
     [Globe2, History],
   ],
   voice: [
     [Mic, Volume2],
     [Globe2, Languages],
-    [RefreshCw, History],
   ],
-  // Pair pages carry 4 sub-feature cards (vs 3 on the generic feature pages).
+  // Pair pages carry 4 feature sections (vs 3 on the generic feature pages).
   pair: [
     [Mic, Volume2],
     [RefreshCw, History],
@@ -41,9 +37,10 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
   ],
 };
 
-// Shared template for every SEO feature page (text translator, voice
-// translator, ...). Same section order as the home page's Landing.tsx —
-// mirrors iq-rest's FeatureLandingTemplate for digital-menu-for-restaurants.
+// Shared template for every SEO language-pair page. The pair page mirrors
+// iq-mermaid's guide-page structure: the translator widget embedded at the top
+// of the window, then a simple typographic column (breadcrumbs, feature
+// sections, related pairs, FAQ, closing CTA) — no cards, no dividers.
 export function FeatureLanding({
   locale,
   chrome,
@@ -75,75 +72,70 @@ export function FeatureLanding({
     webSiteLd(locale),
     softwareApplicationLd(content.meta.description),
     // Home > this page: the pair pages are one level deep in every locale.
-    // `name` is exactly the label the <Breadcrumbs> below renders — the
-    // accent half of the hero title is marketing tail, not a page name.
     breadcrumbLd(locale, { name: content.hero.title, url: content.meta.canonical }),
     faqPageLd(content.faq.items),
   ]);
 
+  const pricingHref = localePath(locale, "pricing");
+  const homeHref = localeHome(locale);
+
   return (
     <SessionProvider locale={locale} page="Pair">
-      <main className={PAGE}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Header
-          homeHref={locale === "en" ? "/" : `/${locale}`}
-          locale={locale}
-          texts={chrome.header}
-          accountTexts={chrome.account}
-          featureLinks={chrome.footer.featureLinks}
-        />
-        <Container>
-          <Band id="app" section="widget">
-            <Translator
-              texts={chrome}
-              heroTexts={content.hero}
-              presetSource={presetSource}
-              presetTarget={presetTarget}
-              pricingHref={localePath(locale, "pricing")}
-            />
-          </Band>
-          <Band section="stats">
-            <StatCards items={chrome.statCards} />
-          </Band>
-          <Band section="breadcrumbs">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <DesktopShell
+        locale={locale}
+        homeHref={homeHref}
+        headerTexts={mergeTaskbarTexts(chrome.header)}
+        accountTexts={chrome.account}
+        pricingHref={pricingHref}
+        featureLinks={chrome.footer.featureLinks}
+      >
+        {/* The translator widget first, preset to the page's language pair. */}
+        <Band id="app" section="widget" className="px-6 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10">
+          <Translator
+            texts={chrome}
+            heroTexts={content.hero}
+            presetSource={presetSource}
+            presetTarget={presetTarget}
+            pricingHref={pricingHref}
+          />
+        </Band>
+
+        {/* The content column below the widget: one plain typographic column,
+            like a guide article — no cards, no dividers. */}
+        <Band section="pair-content" className="px-6 pb-16 sm:px-8 sm:pb-24">
+          <div className="flex w-full max-w-[760px] flex-col">
             <Breadcrumbs
-              homeHref={localeHome(locale)}
+              homeHref={homeHref}
               homeLabel={chrome.footer.brand}
               current={content.hero.title}
             />
-          </Band>
-          <Band id="features" section="features">
-            <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
-          </Band>
-          <Band section="related">
-            <RelatedPairs heading={chrome.footer.pairsHeading} links={related} />
-          </Band>
-          <Band id="comparison" section="comparison">
-            <Comparison texts={content.comparison} />
-          </Band>
-          <Band id="faq" section="faq">
-            <Faq
-              heading={content.faq.heading}
-              headingAccent={content.faq.headingAccent}
-              sub={content.faq.sub}
-              items={content.faq.items}
-            />
-          </Band>
-          <Band section="final_cta">
-            <FinalCta
-              heading={content.finalCta.heading}
-              headingAccent={content.finalCta.headingAccent}
-              sub={content.finalCta.sub}
-              ctaLabel={content.finalCta.ctaLabel}
-              ctaHref={localeHome(locale)}
-            />
-          </Band>
-        </Container>
-        <Footer locale={locale} pathname={pathname} texts={chrome.footer} />
-      </main>
+            <div className="mt-10 flex flex-col gap-y-14 sm:mt-12">
+              <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
+              {related.length > 0 && (
+                <RelatedPairs heading={chrome.footer.pairsHeading} links={related} />
+              )}
+              <Comparison texts={content.comparison} />
+              <Faq
+                heading={content.faq.heading}
+                headingAccent={content.faq.headingAccent}
+                sub={content.faq.sub}
+                items={content.faq.items}
+              />
+              <FinalCta
+                heading={content.finalCta.heading}
+                headingAccent={content.finalCta.headingAccent}
+                sub={content.finalCta.sub}
+                ctaLabel={content.finalCta.ctaLabel}
+                ctaHref={`${homeHref}#app`}
+              />
+            </div>
+          </div>
+        </Band>
+      </DesktopShell>
     </SessionProvider>
   );
 }

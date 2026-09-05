@@ -16,7 +16,17 @@
     "signIn": "Registra't / Inicia sessió",
     "logOut": "Tanca sessió",
     "tryItNow": "Prova-ho ara",
-    "account": "Compte"
+    "account": "Compte",
+    "menu": "Menú",
+    "languages": "Idiomes",
+    "legal": "Informació legal",
+    "theme": "Tema",
+    "themeSystem": "Sistema",
+    "themeLight": "Clar",
+    "themeDark": "Fosc",
+    "legalPrivacy": "Privadesa",
+    "legalTerms": "Termes",
+    "translate": "Tradueix"
   },
   "hero": {
     "badgeVoice": "Veu",

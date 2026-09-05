@@ -16,7 +16,17 @@
     "signIn": "Regístrate / Inicia sesión",
     "logOut": "Cerrar sesión",
     "tryItNow": "Pruébalo ahora",
-    "account": "Cuenta"
+    "account": "Cuenta",
+    "menu": "Menú",
+    "languages": "Idiomas",
+    "legal": "Legal",
+    "theme": "Tema",
+    "themeSystem": "Sistema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "legalPrivacy": "Privacidad",
+    "legalTerms": "Términos",
+    "translate": "Traducir"
   },
   "hero": {
     "badgeVoice": "Voz",

@@ -16,7 +16,17 @@
     "signIn": "Εγγραφή / Σύνδεση",
     "logOut": "Αποσύνδεση",
     "tryItNow": "Δοκιμάστε τώρα",
-    "account": "Λογαριασμός"
+    "account": "Λογαριασμός",
+    "menu": "Μενού",
+    "languages": "Γλώσσες",
+    "legal": "Νομικά",
+    "theme": "Θέμα",
+    "themeSystem": "Σύστημα",
+    "themeLight": "Φωτεινό",
+    "themeDark": "Σκοτεινό",
+    "legalPrivacy": "Πολιτική Απορρήτου",
+    "legalTerms": "Όροι Χρήσης",
+    "translate": "Μετάφραση"
   },
   "hero": {
     "badgeVoice": "Φωνή",

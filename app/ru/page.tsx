@@ -28,5 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function RuHomePage() {
-  return <Landing locale="ru" texts={texts} homeHref="/ru" pathname="/ru" />;
+  return <Landing locale="ru" texts={texts} homeHref="/ru" />;
 }

@@ -35,30 +35,71 @@
   }
 }
 
-/* Same palette as iq-rest's landing (app/globals.css there): warm paper
-   light theme, warm #1A1612 dark theme, brand-orange accent. */
+/* ---------------------------------------------------------------------------
+   PostHog-style desktop palette (the "island" landing).
+   The whole site is a desktop metaphor: a folded-paper wallpaper behind, a
+   floating taskbar "island" on top, and every page's content inside a
+   closable, internally-scrolling AppWindow.
+
+   Both themes are monochrome — pure neutral greys ("paper" light, "charcoal"
+   dark) with an origami paper-fold noise tile — with the IQ-Mermaid red
+   #D9534F kept as the only accent.
+--------------------------------------------------------------------------- */
 :root {
-  --bg: hsl(38 30% 97%);
-  --accent: hsl(40 33% 99%); /* header / footer surface */
-  --card: hsl(40 33% 99%);
-  --text: hsl(30 12% 8%);
-  --hint: hsl(30 8% 42%);
-  --border: hsl(36 20% 91%);
-  --button: hsl(23 100% 42%);
+  /* Light theme is monochrome like the dark one: pure neutral greys
+     (R=G=B) everywhere, no sage/green cast. Only the brand red accent stays. */
+  --bg: #b3b3b3; /* page/desktop surface — neutral paper grey */
+  --noise-bg: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22260%22%20height%3D%22260%22%20viewBox%3D%220%200%20260%20260%22%3E%3Cg%20opacity%3D%220.35%22%3E%3Cpolygon%20points%3D%220%2C40%20150%2C0%2090%2C150%22%20fill%3D%22%23a8a8a8%22%2F%3E%3Cpolygon%20points%3D%22150%2C0%20260%2C90%20170%2C180%22%20fill%3D%22%23c4c4c4%22%2F%3E%3Cpolygon%20points%3D%22260%2C90%20260%2C260%20150%2C200%22%20fill%3D%22%23969696%22%2F%3E%3Cpolygon%20points%3D%2290%2C150%20170%2C180%2060%2C260%22%20fill%3D%22%23cdcdcd%22%2F%3E%3Cpolygon%20points%3D%220%2C40%2090%2C150%200%2C200%22%20fill%3D%22%23afafaf%22%2F%3E%3Cpolygon%20points%3D%22150%2C200%20260%2C260%2090%2C260%22%20fill%3D%22%23a0a0a0%22%2F%3E%3Cpolygon%20points%3D%220%2C200%2060%2C260%200%2C260%22%20fill%3D%22%23bbbbbb%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --accent: rgb(233 233 233); /* PostHog surface accent */
+  --card: rgb(247 247 247); /* PostHog "paper" */
+  --text: rgb(17 17 17); /* PostHog text-primary */
+  --hint: rgb(102 102 102); /* PostHog text-secondary */
+  --border: rgb(208 208 208); /* PostHog border */
+  --button: #d9534f; /* accent button / logo square — solid brand red */
   --button-text: #ffffff;
+
+  /* Window: solid chosen surface (the scroll content block). */
+  --window-bg: #d9d9d9;
+  --window-border: rgb(208 208 208);
+  /* Taskbar "island": solid chosen header surface. */
+  --taskbar-bg: #d6d6d6;
+  --taskbar-border: transparent;
+  /* Scrollbar thumb: the header's grey tone, darkened enough to read on the
+     pale window and the editor surfaces. */
+  --scrollbar-thumb: rgb(135 135 135);
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: hsl(30 18% 9%); /* #1A1612 */
-    --accent: hsl(30 18% 9%);
-    --card: hsl(30 18% 9%);
-    --text: hsl(40 38% 95%); /* #f7f3ec */
-    --hint: hsl(36 11% 60%); /* #a59c8f */
-    --border: hsl(0 0% 12%);
-    --button: hsl(23 100% 58%);
-    --button-text: #ffffff;
-  }
+/* Dark theme. Toggled by a `data-theme="dark"` attribute on <html> (set by
+   lib/theme.ts from the header's Settings → Theme menu, defaulting to the
+   OS preference) — NOT by a media query, so the choice can override the OS. */
+:root[data-theme="dark"] {
+  /* Dark theme is true monochrome: every surface is a pure neutral grey
+     (R=G=B) — no green, no brown, no warm cast anywhere. */
+  --bg: #1d1d1d;
+  /* Neutral paper-fold origami on the dark theme — the same tile as the
+     light theme's --noise-bg, drawn in pure greys so the folds read as
+     ч/б paper, clearly visible but with no colour cast. */
+  --noise-bg: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22260%22%20height%3D%22260%22%20viewBox%3D%220%200%20260%20260%22%3E%3Cg%20opacity%3D%220.26%22%3E%3Cpolygon%20points%3D%220%2C40%20150%2C0%2090%2C150%22%20fill%3D%22%23393939%22%2F%3E%3Cpolygon%20points%3D%22150%2C0%20260%2C90%20170%2C180%22%20fill%3D%22%232d2d2d%22%2F%3E%3Cpolygon%20points%3D%22260%2C90%20260%2C260%20150%2C200%22%20fill%3D%22%23454545%22%2F%3E%3Cpolygon%20points%3D%2290%2C150%20170%2C180%2060%2C260%22%20fill%3D%22%23252525%22%2F%3E%3Cpolygon%20points%3D%220%2C40%2090%2C150%200%2C200%22%20fill%3D%22%23343434%22%2F%3E%3Cpolygon%20points%3D%22150%2C200%20260%2C260%2090%2C260%22%20fill%3D%22%232a2a2a%22%2F%3E%3Cpolygon%20points%3D%220%2C200%2060%2C260%200%2C260%22%20fill%3D%22%23505050%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --accent: rgb(45 46 55); /* PostHog dark accent */
+  --card: rgb(30 31 35); /* PostHog dark paper */
+  --text: rgb(250 250 250); /* PostHog dark text */
+  --hint: rgb(174 179 194); /* PostHog dark text-secondary */
+  --border: rgb(62 66 79); /* PostHog dark border */
+  --button: #d9534f; /* accent button / logo square — solid brand red */
+  --button-text: #ffffff;
+
+  /* Solid window surface — no translucency, so the origami wallpaper never
+     shows through the content area (same as the light theme's solid window). */
+  --window-bg: rgb(30 31 35);
+  --window-border: rgb(62 66 79);
+  /* Header island and the editor dock rails: neutral grey, matching the
+     monochrome paper-fold wallpaper. */
+  --taskbar-bg: #262626;
+  --taskbar-border: transparent;
+  /* Scrollbar thumb: neutral grey lifted off the dark surfaces. */
+  --scrollbar-thumb: rgb(124 124 124);
+  color-scheme: dark;
 }
 
 html,
@@ -68,7 +109,11 @@ body {
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--noise-bg);
+  background-size: 340px 340px;
+  
+  background-repeat: repeat;
   color: var(--text);
 }
 
@@ -81,4 +126,125 @@ html {
 button:not(:disabled),
 [role="button"]:not(:disabled) {
   cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+   Desktop wallpaper — a flat neutral off-white field behind the floating
+   island (no gradient, no grass): just slightly darker than pure white, so
+   the white window reads as a floating surface. A very soft top glow keeps it
+   from feeling dead.
+--------------------------------------------------------------------------- */
+.desktop-wallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--bg);
+  background-image: var(--noise-bg);
+  background-size: 340px 340px;
+  
+  background-repeat: repeat;
+}
+
+/* ---------------------------------------------------------------------------
+   AppWindow glass surfaced the way PostHog does it.
+--------------------------------------------------------------------------- */
+.window-glass {
+  background: var(--window-bg);
+  /* No border and no inner white gloss: on the pale window surface the light
+     frame plus the inset highlight read as a whitish line along the top edge
+     (and the gloss fights the content fade at the bottom). The soft drop
+     shadow alone floats the window off the desktop. */
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.taskbar-glass {
+  background: var(--taskbar-bg);
+  border: none;
+  box-shadow: 0 10px 28px -12px rgb(0 0 0 / 0.18);
+}
+
+/* Once the shared editor is revealed (AppWindow toggles `iqm-editor-revealed`
+   on <html>), the taskbar's "Open editor" button has nothing left to open —
+   drop it from both the mobile and the desktop header. */
+html.iqm-editor-revealed .header-open-editor {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   The internal scroll area: content scrolls inside the window, not the page.
+   Fades the top & bottom edges so rows appear to sink into the glass.
+--------------------------------------------------------------------------- */
+.window-scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 1.5rem,
+    #000 calc(100% - 1.5rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 1.5rem,
+    #000 calc(100% - 1.5rem),
+    transparent
+  );
+  /* No scrollbar-width / scrollbar-color here on purpose: Chromium lets those
+     override (and disable) the ::-webkit-scrollbar pills from the recipe
+     below, so this area inherits the global webkit styling in Chrome/Safari
+     and the Firefox @supports block below in Firefox. */
+}
+
+/* ---------------------------------------------------------------------------
+   Custom scrollbars — a slim 5px bar everywhere a scrollable area appears.
+   The thumb is the header's neutral grey tone, darkened via
+   --scrollbar-thumb so it actually reads against the window and the editor
+   surfaces (the raw header tone is nearly identical to those backgrounds).
+   The track is transparent, so only the pill shows; hovering deepens the
+   thumb to the accent (brand red).
+
+   Two renderers share the job and Chromium (Chrome/Edge ≥ 121) lets the
+   CSS-Scrollbars spec properties win: as soon as scrollbar-color or
+   scrollbar-width is set on an element, its ::-webkit-scrollbar styles are
+   ignored. So the spec properties are emitted ONLY for Firefox — the one
+   engine that cannot draw ::-webkit-scrollbar pseudo-elements at all
+   (@supports selector(...) is false there) — and WebKit/Blink draw the pills
+   below. Keep scrollbar-color/width out of any WebKit/Blink rule.
+--------------------------------------------------------------------------- */
+@supports not selector(::-webkit-scrollbar) {
+  /* Firefox: same colours (neutral-grey thumb on a transparent track); its
+     scrollbar-width: thin is the closest Firefox comes to 5px. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+  }
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--button);
+}
+
+/* Loading state shared by the editor's auth-check and its dynamic() fallback.
+ * Lives here (always loaded) rather than editor.css (loaded with the mermaid
+ * chunk) so the screen isn't a blank flash before the editor arrives. */
+.editor-loading {
+  height: 100dvh;
+  background-color: var(--bg);
+  background-image: var(--noise-bg);
+  background-size: 340px 340px;
+  
+  background-repeat: repeat;
 }

@@ -16,7 +16,17 @@
     "signIn": "Registrácia / Prihlásenie",
     "logOut": "Odhlásiť sa",
     "tryItNow": "Vyskúšať teraz",
-    "account": "Účet"
+    "account": "Účet",
+    "menu": "Ponuka",
+    "languages": "Jazyky",
+    "legal": "Právne informácie",
+    "theme": "Motív",
+    "themeSystem": "Systém",
+    "themeLight": "Svetlý",
+    "themeDark": "Tmavý",
+    "legalPrivacy": "Ochrana súkromia",
+    "legalTerms": "Podmienky",
+    "translate": "Preložiť"
   },
   "hero": {
     "badgeVoice": "Hlas",

@@ -16,7 +16,17 @@
     "signIn": "注册 / 登录",
     "logOut": "退出登录",
     "tryItNow": "立即试用",
-    "account": "账户"
+    "account": "账户",
+    "menu": "菜单",
+    "languages": "语言",
+    "legal": "法律信息",
+    "theme": "主题",
+    "themeSystem": "系统",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "legalPrivacy": "隐私",
+    "legalTerms": "条款",
+    "translate": "翻译"
   },
   "hero": {
     "badgeVoice": "语音",

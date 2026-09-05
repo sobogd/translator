@@ -16,7 +16,17 @@
     "signIn": "Registracija / Prijava",
     "logOut": "Odjava",
     "tryItNow": "Isprobaj sada",
-    "account": "Račun"
+    "account": "Račun",
+    "menu": "Izbornik",
+    "languages": "Jezici",
+    "legal": "Pravne informacije",
+    "theme": "Tema",
+    "themeSystem": "Sustav",
+    "themeLight": "Svijetlo",
+    "themeDark": "Tamno",
+    "legalPrivacy": "Privatnost",
+    "legalTerms": "Uvjeti korištenja",
+    "translate": "Prevedi"
   },
   "hero": {
     "badgeVoice": "Glas",

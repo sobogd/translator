@@ -16,7 +16,17 @@
     "signIn": "Nýskráning / Innskráning",
     "logOut": "Skrá út",
     "tryItNow": "Prófa núna",
-    "account": "Aðgangur"
+    "account": "Aðgangur",
+    "menu": "Valmynd",
+    "languages": "Tungumál",
+    "legal": "Lagaleg skjöl",
+    "theme": "Þema",
+    "themeSystem": "Kerfi",
+    "themeLight": "Ljós",
+    "themeDark": "Dökk",
+    "legalPrivacy": "Persónuvernd",
+    "legalTerms": "Notkunarskilmálar",
+    "translate": "Þýða"
   },
   "hero": {
     "badgeVoice": "Rödd",

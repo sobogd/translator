@@ -7,8 +7,8 @@ import { SITE_URL } from "@/lib/site";
 // (/pricing, the [seg] locale homes and all pair pages) rendering unstyled.
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1612" },
+    { media: "(prefers-color-scheme: light)", color: "#d9d9d9" },
+    { media: "(prefers-color-scheme: dark)", color: "#1d1d1d" },
   ],
   // No maximumScale/userScalable here on purpose: blocking pinch-zoom is an
   // accessibility failure (Lighthouse a11y). The iOS focus-zoom it used to

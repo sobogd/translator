@@ -1,28 +1,21 @@
-export const NARROW = "max-w-[1000px] mx-auto px-4 sm:px-6";
-export const PAGE = "relative flex flex-col gap-6";
-export const CARD = "rounded-2xl border border-border";
+// Layout + button tokens for the PostHog-style desktop landing (ported 1:1
+// from iq-mermaid's app/_landing/shell.tsx).
+//
+// The whole site lives inside a glass AppWindow, so sections are plain bands
+// that share the window's side padding and space themselves with vertical
+// padding only — no wrappers, no cards — and CTAs use the solid brand red.
+export const NARROW = "max-w-[960px] mx-auto px-4 sm:px-6";
 
-export const BTN_BOX =
-  "h-10 px-4 text-sm font-semibold rounded-lg whitespace-nowrap inline-flex items-center justify-center transition-all active:scale-[0.99]";
+const BTN_BOX =
+  "h-10 px-4 text-sm font-semibold rounded-md whitespace-nowrap inline-flex items-center justify-center transition-all active:scale-[0.99]";
 
-// Same brand gradient as iq-rest (app/_landing/components/shell.tsx there).
-export const PRIMARY_FILL = "bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-white";
-export const PRIMARY_BTN = `${BTN_BOX} ${PRIMARY_FILL} hover:opacity-90`;
+// Accent CTA: solid red `#d9534f` fill with white text.
+const PRIMARY_FILL = "bg-button text-button-text";
+export const PRIMARY_BTN = `${BTN_BOX} ${PRIMARY_FILL} hover:brightness-95`;
 export const OUTLINE_BTN = `${BTN_BOX} border border-border text-text bg-transparent hover:bg-card`;
-
-export function Container({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={`w-full`}>
-      <div className={`${NARROW} flex flex-col gap-6 ${className}`}>{children}</div>
-    </div>
-  );
-}
+// PRIMARY_FILL is exported under its old name too — the translator widget and
+// the account controls (AuthButton / modal CTAs) still compose it directly.
+export { PRIMARY_FILL };
 
 export function Band({
   id,
@@ -31,9 +24,8 @@ export function Band({
   children,
 }: {
   id?: string;
-  /** Analytics hook: the scroll tracker names a scroll after the section the
-   *  page came to rest on (see app/_landing/PageTracker.tsx). Separate from
-   *  `id`, which is an anchor target and not always present. */
+  /** Stable name of the band, kept as a data attribute so a section can be
+   *  referred to without relying on `id` (an anchor target, not always set). */
   section?: string;
   className?: string;
   children: React.ReactNode;

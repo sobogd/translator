@@ -16,7 +16,17 @@
     "signIn": "Regisztráció / Bejelentkezés",
     "logOut": "Kijelentkezés",
     "tryItNow": "Próbáld ki most",
-    "account": "Fiók"
+    "account": "Fiók",
+    "menu": "Menü",
+    "languages": "Nyelvek",
+    "legal": "Jogi nyilatkozat",
+    "theme": "Téma",
+    "themeSystem": "Rendszer",
+    "themeLight": "Világos",
+    "themeDark": "Sötét",
+    "legalPrivacy": "Adatvédelem",
+    "legalTerms": "Felhasználási feltételek",
+    "translate": "Fordítás"
   },
   "hero": {
     "badgeVoice": "Hang",

@@ -65,7 +65,6 @@ export default async function SegPage({ params }: { params: Promise<{ seg: strin
         locale={seg}
         texts={CHROME[seg]}
         homeHref={`/${seg}`}
-        pathname={`/${seg}`}
       />
     );
   }

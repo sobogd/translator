@@ -24,6 +24,22 @@ export interface TranslatorTexts {
     logOut: string;
     tryItNow: string;
     account: string;
+    /** Taskbar menus added with the iq-mermaid desktop-chrome port (the
+     *  footer is gone, so navigation moved fully into the header). Kept
+     *  optional: mergeTaskbarTexts fills English fallbacks until every
+     *  locale's chrome carries the translated keys. */
+    menu?: string;
+    languages?: string;
+    legal?: string;
+    theme?: string;
+    themeSystem?: string;
+    themeLight?: string;
+    themeDark?: string;
+    legalPrivacy?: string;
+    legalTerms?: string;
+    /** Right-edge header CTA — scrolls the content window back to the
+     *  translator widget at the top. */
+    translate?: string;
   };
   // The header's account modal (signed-in) / quota badge labels.
   account: {

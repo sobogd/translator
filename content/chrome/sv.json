@@ -16,7 +16,17 @@
     "signIn": "Registrera dig / Logga in",
     "logOut": "Logga ut",
     "tryItNow": "Prova nu",
-    "account": "Konto"
+    "account": "Konto",
+    "menu": "Meny",
+    "languages": "Språk",
+    "legal": "Juridiskt",
+    "theme": "Tema",
+    "themeSystem": "System",
+    "themeLight": "Ljust",
+    "themeDark": "Mörkt",
+    "legalPrivacy": "Integritet",
+    "legalTerms": "Villkor",
+    "translate": "Översätt"
   },
   "hero": {
     "badgeVoice": "Röst",

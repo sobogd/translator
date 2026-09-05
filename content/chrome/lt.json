@@ -16,7 +16,17 @@
     "signIn": "Registracija / Prisijungimas",
     "logOut": "Atsijungti",
     "tryItNow": "Išbandyti dabar",
-    "account": "Paskyra"
+    "account": "Paskyra",
+    "menu": "Meniu",
+    "languages": "Kalbos",
+    "legal": "Teisinė informacija",
+    "theme": "Tema",
+    "themeSystem": "Sistema",
+    "themeLight": "Šviesi",
+    "themeDark": "Tamsi",
+    "legalPrivacy": "Privatumo politika",
+    "legalTerms": "Paslaugų teikimo sąlygos",
+    "translate": "Versti"
   },
   "hero": {
     "badgeVoice": "Balsas",

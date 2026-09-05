@@ -27,9 +27,9 @@ const DEFAULT_ITEMS: FaqItem[] = [
   },
 ];
 
-// Same layout as iq-rest's Faq: tinted 40% column on the left (heading/sub,
-// sticky while the right column scrolls, no gradient on the accent — that's
-// Hero-only there), plain 60% column on the right with the questions.
+// FAQ as one full-width column of type: the heading block on top, then every
+// question and its answer beneath it. No sticky side column, no grid
+// (mirrors iq-mermaid's Faq).
 export function Faq({
   heading = "Frequently asked",
   headingAccent = "questions",
@@ -42,22 +42,20 @@ export function Faq({
   items?: FaqItem[];
 }) {
   return (
-    <div className="grid grid-cols-1 rounded-2xl border border-border lg:grid-cols-[2fr_3fr]">
-      <div className="rounded-t-2xl bg-[hsl(28_48%_93%)] dark:bg-[hsl(28_15%_13%)] lg:rounded-t-none lg:rounded-l-2xl">
-        <div className="flex flex-col items-start gap-3 p-5 text-start sm:p-6 lg:sticky lg:top-16">
-          <h2 className="text-2xl font-medium leading-[1.15] tracking-tight sm:text-[1.75rem]">
-            {heading} {headingAccent}
-          </h2>
-          <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{sub}</p>
-        </div>
+    <div className="flex flex-col gap-y-12">
+      <div className="flex flex-col items-start gap-3">
+        <h2 className="text-2xl font-semibold leading-[1.15] tracking-tight text-text sm:text-3xl">
+          {heading} {headingAccent}
+        </h2>
+        <p className="max-w-[62ch] text-[15px] leading-relaxed text-text/75">{sub}</p>
       </div>
 
-      <div className="flex flex-col gap-8 p-5 sm:p-6">
+      <div className="flex flex-col gap-y-8">
         {items.map((item) => (
-          <div key={item.q}>
-            <h3 className="mb-2 text-base font-medium tracking-tight sm:text-lg">{item.q}</h3>
-            <p className="text-sm leading-relaxed text-hint">{item.a}</p>
-          </div>
+          <section key={item.q} className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold leading-snug tracking-tight text-text">{item.q}</h3>
+            <p className="text-[15px] leading-relaxed text-text/75">{item.a}</p>
+          </section>
         ))}
       </div>
     </div>

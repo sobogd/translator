@@ -7,7 +7,6 @@ import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
 import type { Topic, TopicDetail } from "@/lib/types";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
-import { CARD } from "./shell";
 import { Modal } from "./Modal";
 import { QUOTA_EVENT, useSession } from "./session";
 import { PAIR_COOKIE, formatPairCookie, parsePairCookie, readCookieValue } from "@/lib/cookies";
@@ -632,7 +631,7 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-bg p-1.5 pr-2">
+    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-card p-1.5 pr-2">
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
@@ -684,7 +683,7 @@ export function Translator({
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
+        className={`relative flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-lg bg-button text-sm font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -708,7 +707,7 @@ export function Translator({
   // Language buttons: always full-width halves — the pair row sits on its
   // own line above the composer/content, on every breakpoint.
   const langBtnClass =
-    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-bg disabled:pointer-events-none";
+    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-card disabled:pointer-events-none";
 
   // Standalone pill — sits under the hero headline on the home widget,
   // pre-loading the pair the composer on the right will use. Shows the
@@ -718,7 +717,7 @@ export function Translator({
   const heroPairRow = (
     <div
       className={`flex items-stretch overflow-hidden rounded-lg border border-border ${
-        isApp ? "bg-bg" : "bg-card"
+        isApp ? "bg-card" : "bg-card"
       }`}
     >
       <button
@@ -788,19 +787,19 @@ export function Translator({
         className={
           isApp
             ? "flex h-full flex-col"
-            : "flex flex-col gap-4 lg:grid lg:h-[calc(95vh_-_89px)] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:rounded-2xl lg:border lg:border-border lg:overflow-hidden"
+            : "flex flex-col gap-4 lg:grid lg:h-[600px] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:overflow-hidden lg:rounded-2xl lg:border lg:border-border"
         }
       >
         {!isApp && (
-        <div className="flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-[hsl(32_44%_92%)] p-6 text-start dark:bg-[hsl(32_14%_14%)] sm:p-8 lg:h-full lg:rounded-none lg:border-0">
+        <div className="flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-accent p-6 text-start sm:p-8 lg:h-full lg:rounded-none lg:border-0">
           <div className="my-auto flex min-w-0 flex-col gap-4">
-            <h1 className="text-4xl font-medium leading-[1.1] tracking-tight sm:text-[2.5rem]">
+            <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl">
               {heroTexts.title}{" "}
-              <span className="bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] bg-clip-text text-transparent">
+              <span className="text-button">
                 {heroTexts.titleAccent}
               </span>
             </h1>
-            <p className="text-sm leading-relaxed text-hint/80 sm:text-base">{heroTexts.description}</p>
+            <p className="text-pretty text-[17px] leading-relaxed text-text/80 sm:text-lg">{heroTexts.description}</p>
             {/* Pre-loads the composer on the right — home only, pair
                 pages have nothing to pick, it's fixed by the slug. */}
             {!fixedPair && heroPairRow}
@@ -808,14 +807,16 @@ export function Translator({
         </div>
         )}
 
-        {/* App page: no card at all — it fills the box AppPage hands it (all
-            of the viewport below the header), so the chat runs edge to edge
-            and only the islands keep an inset. */}
+        {/* The chat surface: fixed height within the window's content, the
+            conversation scrolls inside it and the composer is an overlaid
+            island. (The old /app workspace was removed — the widget lives on
+            the marketing pages now, so the `isApp` branch below is dormant
+            legacy kept only to avoid churn.) */}
         <div
           className={
             isApp
               ? "relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
-              : "relative flex h-[calc(95dvh_-_81px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border lg:h-[calc(95vh_-_89px)] lg:rounded-none lg:border-0"
+              : "relative flex h-[calc(100dvh_-_190px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card lg:h-[600px] lg:rounded-none lg:border-0"
           }
         >
           {/* Chat spans the full height and scrolls behind the two
@@ -856,7 +857,7 @@ export function Translator({
                   setTopicsOpen((v) => !v);
                 }}
                 aria-label={t.topics}
-                className="flex w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-bg text-hint transition hover:text-text active:scale-[0.99]"
+                className="flex w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-hint transition hover:text-text active:scale-[0.99]"
               >
                 <BookOpen size={18} />
               </button>
@@ -870,7 +871,7 @@ export function Translator({
                     analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
                     setTopicsOpen((v) => !v);
                   }}
-                  className="flex items-center gap-2 rounded-lg border border-border bg-bg p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
+                  className="flex items-center gap-2 rounded-lg border border-border bg-card p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
                 >
                   <BookOpen size={16} />
                   <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
@@ -936,7 +937,7 @@ export function Translator({
           footer={
             <button
               onClick={() => setError(null)}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-button px-4 text-sm font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.close}
             </button>
@@ -958,7 +959,7 @@ export function Translator({
                 analytics.track("Click", "Quota modal upgrade");
                 analytics.flush();
               }}
-              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[hsl(9,100%,58%)] to-[hsl(35,95%,55%)] px-4 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+              className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-button px-4 text-sm font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99]"
             >
               {t.pricingLink}
             </a>

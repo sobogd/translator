@@ -27,7 +27,7 @@ W, H = 1200, 630
 BG = (249, 246, 241)
 TEXT = (21, 18, 15)
 HINT = (114, 106, 96)
-GRAD = ((255, 73, 41), (249, 158, 31))
+GRAD = ((217, 83, 79), (217, 83, 79))  # brand red #d9534f, solid (no gradient)
 
 # Only the codes that actually appear in lib/pairs.ts as a `from` or `to`.
 ENGLISH_NAMES = {

@@ -82,29 +82,42 @@ function createScrollTracker() {
   let sent = 0;
   let timer: ReturnType<typeof setTimeout> | null = null;
 
+  /** The content scroller: the desktop chrome pins the page at 100dvh and the
+   *  window scrolls internally (.window-scroll) — the document itself never
+   *  scrolls. Fall back to the document metrics if a page has no window
+   *  (only the standalone 404, which does not run this tracker). */
+  const scroller = (): { el: HTMLElement | null; scrollTop: number; clientHeight: number } => {
+    const el = document.querySelector<HTMLElement>(".window-scroll");
+    if (el) return { el, scrollTop: el.scrollTop, clientHeight: el.clientHeight };
+    return { el: null, scrollTop: window.scrollY, clientHeight: window.innerHeight };
+  };
+
   /** The section the viewport is looking at = the one containing its middle.
    *  Using the centre rather than the top edge keeps the answer stable while a
-   *  section boundary drifts past the top of the screen. */
+   *  section boundary drifts past the top of the window. */
   const currentSection = (): string | null => {
     const els = Array.from(document.querySelectorAll<HTMLElement>("[data-section]")).filter(
       (el) => el.dataset.section,
     );
     if (els.length === 0) return null;
+    const { el: con, scrollTop, clientHeight } = scroller();
+    const conTop = con ? con.getBoundingClientRect().top : 0;
+    const topOf = (el: HTMLElement) => el.getBoundingClientRect().top - conTop + scrollTop;
 
-    // At the very bottom, name the last section outright. A short footer never
-    // reaches the middle of the screen, so the centre rule alone would report
-    // the block above it as the end of every scroll to the end of the page.
-    const scrollable = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-    if (window.scrollY + window.innerHeight >= scrollable - 2) {
+    // At the very bottom, name the last section outright. A short closing band
+    // never reaches the middle of the screen, so the centre rule alone would
+    // report the block above it as the end of every scroll to the end.
+    const scrollHeight = con ? con.scrollHeight : Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    if (scrollTop + clientHeight >= scrollHeight - 2) {
       const last = els[els.length - 1].dataset.section;
       return last ? sectionLabel(last) : null;
     }
 
-    const centre = window.scrollY + window.innerHeight / 2;
+    const centre = scrollTop + clientHeight / 2;
     let best: string | null = null;
     let bestTop = -Infinity;
     for (const el of els) {
-      const top = el.getBoundingClientRect().top + window.scrollY;
+      const top = topOf(el);
       if (top > centre) continue;
       // Sections are laid out in document order, but a nested one can appear
       // later with a smaller top — take the lowest section that starts above
@@ -123,13 +136,15 @@ function createScrollTracker() {
       clearTimeout(timer);
       timer = null;
     }
-    // A modal locks body scroll, which collapses the scrollable height to about
-    // one viewport while scrollY keeps its old value — the bottom-of-page rule
-    // above would then read as "reached the footer" from wherever the visitor
-    // happened to be. Nothing done inside a modal is a scroll gesture.
-    if (document.body.style.overflow === "hidden") return;
+    // A modal locks the window's scroll (lib/scroll-lock.ts sets overflow:
+    // hidden on .window-scroll), which collapses the scrollable height while
+    // scrollTop keeps its old value — the bottom-of-page rule above would
+    // then read as "reached the end" from wherever the visitor happened to
+    // be. Nothing done inside a modal is a scroll gesture.
+    const con = document.querySelector<HTMLElement>(".window-scroll");
+    if (con?.style.overflow === "hidden") return;
     const now = currentSection();
-    const y = window.scrollY;
+    const y = scroller().scrollTop;
     if (!now) return;
     if (settled && now !== settled && sent < MAX_SCROLL_EVENTS) {
       sent += 1;
@@ -149,7 +164,7 @@ function createScrollTracker() {
    *  means that is not necessarily the top. */
   const begin = () => {
     settled = currentSection();
-    settledY = window.scrollY;
+    settledY = scroller().scrollTop;
   };
 
   /** The pageview is ending: close any scroll still in flight and push it out.
@@ -206,7 +221,10 @@ export function PageTracker({ page }: { page: string }) {
         scroll.onMove();
       });
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    // Scroll events do not bubble, so listen on document in the capture phase
+    // to catch the window's internal scroller (.window-scroll) regardless of
+    // which element actually scrolls.
+    document.addEventListener("scroll", onScroll, { capture: true, passive: true });
     // Three exits, and all three are needed. On mobile a tab is usually swiped
     // away or backgrounded, which fires visibilitychange and often no pagehide
     // at all; desktop link-outs fire pagehide; a soft navigation fires neither
@@ -231,7 +249,7 @@ export function PageTracker({ page }: { page: string }) {
 
     return () => {
       if (frame) cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("scroll", onScroll, { capture: true } as EventListenerOptions);
       window.removeEventListener("pagehide", scroll.finish);
       window.removeEventListener("pageshow", onShow);
       document.removeEventListener("visibilitychange", onHide);

@@ -16,7 +16,17 @@
     "signIn": "Kaydol / Giriş yap",
     "logOut": "Çıkış yap",
     "tryItNow": "Hemen dene",
-    "account": "Hesap"
+    "account": "Hesap",
+    "menu": "Menü",
+    "languages": "Diller",
+    "legal": "Yasal",
+    "theme": "Tema",
+    "themeSystem": "Sistem",
+    "themeLight": "Açık",
+    "themeDark": "Koyu",
+    "legalPrivacy": "Gizlilik",
+    "legalTerms": "Koşullar",
+    "translate": "Çevir"
   },
   "hero": {
     "badgeVoice": "Ses",

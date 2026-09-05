@@ -16,7 +16,17 @@
     "signIn": "ثبت‌نام / ورود",
     "logOut": "خروج",
     "tryItNow": "همین حالا امتحان کنید",
-    "account": "حساب کاربری"
+    "account": "حساب کاربری",
+    "menu": "منو",
+    "languages": "زبان‌ها",
+    "legal": "حقوقی",
+    "theme": "تم",
+    "themeSystem": "سیستم",
+    "themeLight": "روشن",
+    "themeDark": "تیره",
+    "legalPrivacy": "حریم‌خصوصی",
+    "legalTerms": "شرایط‌استفاده",
+    "translate": "ترجمه"
   },
   "hero": {
     "badgeVoice": "صدا",

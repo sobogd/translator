@@ -16,7 +16,17 @@
     "signIn": "Регистрация / Вход",
     "logOut": "Выйти",
     "tryItNow": "Попробовать",
-    "account": "Аккаунт"
+    "account": "Аккаунт",
+    "menu": "Меню",
+    "languages": "Языки",
+    "legal": "Правовые",
+    "theme": "Тема",
+    "themeSystem": "Система",
+    "themeLight": "Светлая",
+    "themeDark": "Тёмная",
+    "legalPrivacy": "Конфиденциальность",
+    "legalTerms": "Условия",
+    "translate": "Перевести"
   },
   "hero": {
     "badgeVoice": "Голос",

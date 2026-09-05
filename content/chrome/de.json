@@ -16,7 +16,17 @@
     "signIn": "Registrieren / Anmelden",
     "logOut": "Abmelden",
     "tryItNow": "Jetzt testen",
-    "account": "Konto"
+    "account": "Konto",
+    "menu": "Menü",
+    "languages": "Sprachen",
+    "legal": "Rechtliches",
+    "theme": "Design",
+    "themeSystem": "System",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "legalPrivacy": "Datenschutz",
+    "legalTerms": "Nutzungsbedingungen",
+    "translate": "Übersetzen"
   },
   "hero": {
     "badgeVoice": "Sprache",

@@ -1,22 +1,20 @@
 import type { MetadataRoute } from "next";
+import { BRAND } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    // `id` pins the app's identity to what it was before start_url moved, so
-    // existing installs update in place instead of becoming a second app.
     id: "/",
-    name: "IQ Translate",
+    name: BRAND,
     short_name: "Translate",
     description: "Voice and text translator between any languages",
-    // Installed copies open the workspace, not the marketing page. proxy.ts
-    // sends /app on to the visitor's own locale (/es/app, /ru/app, …).
-    start_url: "/app",
-    // The whole site stays inside the installed app — a pair page opened from
-    // a link should not bounce the user out into the browser.
+    // The product (the translator widget) is embedded at the top of the home
+    // window on every page — there is no separate /app route anymore, so an
+    // installed copy simply opens the home page (mirrors iq-mermaid).
+    start_url: "/",
     scope: "/",
     display: "standalone",
     background_color: "#faf8f5",
-    theme_color: "#d65200",
+    theme_color: "#d9534f",
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "maskable" },
       { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },

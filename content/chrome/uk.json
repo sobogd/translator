@@ -16,7 +16,17 @@
     "signIn": "Реєстрація / Вхід",
     "logOut": "Вийти",
     "tryItNow": "Спробувати зараз",
-    "account": "Акаунт"
+    "account": "Акаунт",
+    "menu": "Меню",
+    "languages": "Мови",
+    "legal": "Правова інформація",
+    "theme": "Тема",
+    "themeSystem": "Система",
+    "themeLight": "Світла",
+    "themeDark": "Темна",
+    "legalPrivacy": "Конфіденційність",
+    "legalTerms": "Умови",
+    "translate": "Перекласти"
   },
   "hero": {
     "badgeVoice": "Голос",
