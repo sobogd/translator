@@ -11,10 +11,11 @@ import type { TranslatorTexts } from "./types";
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-// Live remaining-quota chips (header): one chip for voice minutes and one
-// for characters. Content-block background, no border, same height (h-7) as
-// the mermaid header's "Open editor" button. The anonymous fingerprint pool
-// or the signed-in account balance.
+// Live remaining-quota counters (header): voice minutes and characters,
+// background-free with just a gap between them. While /api/quota has not
+// answered yet, static placeholders are rendered (also in SSR) so the header
+// paints content immediately and the numbers replace them without a layout
+// shift (fixed min-widths).
 export function QuotaBadge({
   locale,
   accountTexts,
@@ -22,24 +23,31 @@ export function QuotaBadge({
 }: {
   locale: string;
   accountTexts: TranslatorTexts["account"];
-  /** Kept for compatibility — the chips are always compact (h-7). */
+  /** Kept for compatibility — the counters are always compact (h-7). */
   compact?: boolean;
 }) {
   // Fetched + polled once per page by SessionProvider (app/_landing/session.tsx).
   const { quota } = useSession();
-  if (!quota) return null;
   const nf = new Intl.NumberFormat(locale);
-  const chip =
-    "inline-flex h-7 items-center gap-1 rounded bg-[var(--window-bg)] px-2 text-xs font-medium leading-none text-hint";
+  const counter =
+    "inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap text-xs font-medium leading-normal text-hint tabular-nums";
+  const seconds = quota ? fmtSeconds(quota.seconds) : "–:––";
+  const chars = quota ? nf.format(quota.chars) : "–";
   return (
     <>
-      <span className={chip} title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)}`}>
+      <span
+        className={`${counter} min-w-[5ch]`}
+        title={quota ? `${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)}` : accountTexts.minutesLeft}
+      >
         <Mic className="h-3.5 w-3.5" aria-hidden="true" />
-        {fmtSeconds(quota.seconds)}
+        {seconds}
       </span>
-      <span className={chip} title={`${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}>
+      <span
+        className={`${counter} min-w-[4ch]`}
+        title={quota ? `${accountTexts.charsLeft}: ${nf.format(quota.chars)}` : accountTexts.charsLeft}
+      >
         <Type className="h-3.5 w-3.5" aria-hidden="true" />
-        {nf.format(quota.chars)}
+        {chars}
       </span>
     </>
   );
