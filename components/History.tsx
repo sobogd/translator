@@ -37,25 +37,25 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
       {/* Both sides are the same: one flat surface, no outline, no colour —
           the header/taskbar background. The speaker is implied only by the
           side of the pane the block sits on. */}
-      <div className="w-full max-w-[85%] rounded-lg bg-[var(--taskbar-bg)] p-3.5">
+      <div className="w-full max-w-[85%] rounded-lg bg-[var(--taskbar-bg)] p-2">
         {/* Original (small, muted) above the translation (larger, primary) —
             both texts, no language labels, no interaction. */}
-        <p className="mb-1.5 text-sm leading-snug text-hint">{r.transcript}</p>
+        <p className="mb-2 text-sm leading-snug text-hint">{r.transcript}</p>
 
         <div className="flex items-start justify-between gap-2">
           <p className="text-base leading-relaxed">{r.translation}</p>
-          <div className="flex shrink-0 items-center gap-0.5">
+          <div className="flex shrink-0 items-center gap-2">
             <button
               onClick={() => speak(r.translation, target)}
               aria-label={texts.readAloudAria}
-              className="rounded-lg p-1.5 text-button transition active:scale-90"
+              className="rounded-lg p-2 text-button transition active:scale-90"
             >
               <Volume2 size={15} />
             </button>
             <button
               onClick={copy}
               aria-label={texts.copyAria}
-              className="rounded-lg p-1.5 text-button transition active:scale-90"
+              className="rounded-lg p-2 text-button transition active:scale-90"
             >
               {copied ? <Check size={15} /> : <Copy size={15} />}
             </button>
@@ -80,7 +80,7 @@ export function History({
   if (rows.length === 0) {
     return (
       <div
-        className="flex min-h-full w-full flex-col items-center justify-center gap-2.5 px-4 text-center text-[15px] opacity-50"
+        className="flex min-h-full w-full flex-col items-center justify-center gap-2 px-2 text-center text-[15px] opacity-50"
         style={{ color: "var(--hint)" }}
       >
         <MessageSquare size={30} />
@@ -90,7 +90,7 @@ export function History({
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       {rows.map((r) => (
         <Turn key={r.id} r={r} langA={langA} langB={langB} texts={texts} />
       ))}

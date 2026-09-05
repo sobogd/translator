@@ -118,9 +118,9 @@ function LanguagePickerModal({
   // no blur, nothing else. Picking a language returns to the chat.
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-2">
-      {/* Search block — same height (h-14) and surface as the message input,
+      {/* Search block — same height (h-12) and surface as the message input,
           with a bare close icon on the right (no border/background). */}
-      <div className="flex h-12 shrink-0 items-center gap-1 rounded-lg bg-[var(--window-bg)] px-3">
+      <div className="flex h-12 shrink-0 items-center gap-2 rounded-lg bg-[var(--window-bg)] px-2">
         <input
           type="search"
           inputMode="search"
@@ -152,12 +152,12 @@ function LanguagePickerModal({
       </div>
 
       {/* Language list — fills the remaining height of the panel */}
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain rounded-lg bg-[var(--window-bg)] p-1">
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain rounded-lg bg-[var(--window-bg)] p-2">
         {forSource && (
           <button
             type="button"
             onClick={() => onSelect(null)}
-            className={`flex w-full items-center px-3 py-2.5 text-left text-sm transition-colors hover:bg-accent ${
+            className={`flex w-full items-center px-2 py-2 text-left text-sm transition-colors hover:bg-accent ${
               current === null ? "font-semibold text-text" : "text-text/80"
             }`}
           >
@@ -169,7 +169,7 @@ function LanguagePickerModal({
             key={l.code}
             type="button"
             onClick={() => onSelect(l.code)}
-            className={`flex w-full items-center px-3 py-2.5 text-left text-sm transition-colors hover:bg-accent ${
+            className={`flex w-full items-center px-2 py-2 text-left text-sm transition-colors hover:bg-accent ${
               l.code === current ? "font-semibold text-text" : "text-text/80"
             }`}
           >
@@ -643,7 +643,7 @@ export function Translator({
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
       {status !== "idle" ? (
-        <div className="flex min-w-0 flex-1 items-center self-center gap-3 px-2 text-sm text-hint">
+        <div className="flex min-w-0 flex-1 items-center self-center gap-2 px-2 text-sm text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -718,27 +718,28 @@ export function Translator({
 
   // Topic rows — the shared history across every pair. Each topic is one flat
   // block on the history surface, built exactly like a conversation message
-  // block: header/taskbar background, p-3.5 padding, the title in the same
+  // block: header/taskbar background, p-2 padding, the title in the same
   // text-base size as a translation, the pair/date line in the same text-sm
-  // muted size as a transcript, one rounded icon (delete) on the right.
+  // muted size as a transcript, one rounded icon (delete) on the right. All
+  // gaps and paddings are 8px — same rhythm as the chat.
   const topicsList = (onPick: () => void) =>
     topics.length === 0 ? (
       <div
-        className="flex min-h-full w-full flex-col items-center justify-center gap-2.5 px-4 text-center text-[15px] opacity-50"
+        className="flex min-h-full w-full flex-col items-center justify-center gap-2 px-2 text-center text-[15px] opacity-50"
         style={{ color: "var(--hint)" }}
       >
         <BookOpen size={30} />
         <span>{t.noTopicsYet}</span>
       </div>
     ) : (
-      <div className="flex w-full flex-col gap-3">
+      <div className="flex w-full flex-col gap-2">
         {topics.map((tp) => {
           const date = formatTopicDate(tp.lastUsedAt || tp.createdAt);
           const active = tp.id === topic?.id;
           return (
             <div
               key={tp.id}
-              className="w-full rounded-lg bg-[var(--taskbar-bg)] p-3.5"
+              className="w-full rounded-lg bg-[var(--taskbar-bg)] p-2"
             >
               <div className="flex items-start justify-between gap-2">
                 <button
@@ -750,13 +751,13 @@ export function Translator({
                   className="min-w-0 flex-1 text-left transition active:scale-[0.99]"
                 >
                   <span
-                    className={`mb-1.5 block w-full truncate text-base leading-relaxed ${
+                    className={`mb-2 block w-full truncate text-base leading-relaxed ${
                       active ? "font-medium" : ""
                     }`}
                   >
                     {tp.title || t.newTopic}
                   </span>
-                  <span className="flex w-full items-center gap-1.5 text-sm leading-snug text-hint">
+                  <span className="flex w-full items-center gap-2 text-sm leading-snug text-hint">
                     <span className="min-w-0 truncate">{topicMeta(tp)}</span>
                     {date && (
                       <>
@@ -770,7 +771,7 @@ export function Translator({
                   type="button"
                   onClick={() => deleteTopic(tp.id)}
                   aria-label={t.deleteTopic}
-                  className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+                  className="shrink-0 rounded-lg p-2 text-hint transition hover:text-red-500 active:scale-90"
                 >
                   <Trash2 size={15} />
                 </button>
@@ -799,30 +800,30 @@ export function Translator({
         }`}
       >
         {/* No history label — just the mobile back control on top. */}
-        <div className="flex shrink-0 items-center justify-end px-2 pt-1">
+        <div className="flex shrink-0 items-center justify-end px-2 pt-2 sm:hidden">
           <button
             type="button"
             onClick={() => setTopicsOpen(false)}
             aria-label={t.close}
             title={t.close}
-            className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90 sm:hidden"
+            className="rounded-lg p-2 text-hint transition hover:text-text active:scale-90"
           >
             <X size={15} />
           </button>
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-1">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
           {topicsList(() => setTopicsOpen(false))}
         </div>
         {/* "New topic" sits under the list and only appears once history has
             at least one thread. */}
         {topics.length > 0 && (
-          <div className="flex shrink-0 items-center px-1 pb-2">
+          <div className="flex shrink-0 items-center p-2">
             <button
               type="button"
               onClick={() => newTopic()}
               aria-label={t.newTopic}
               title={t.newTopic}
-              className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-hint transition hover:text-text active:scale-90"
+              className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-hint transition hover:text-text active:scale-90"
             >
               <Plus size={15} />
               <span>{t.newTopic}</span>
@@ -920,7 +921,7 @@ export function Translator({
               onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
             />
           ) : (
-            <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
+            <div ref={chatScrollRef} className="h-full overflow-y-auto p-2">
               {loadingTopic ? (
                 <div className="flex justify-center py-10 text-hint">
                   <Loader2 size={20} className="animate-spin" />
