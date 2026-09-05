@@ -776,9 +776,10 @@ export function Translator({
         <div className="min-w-0 flex-1">{langRow}</div>
       </div>
 
-      {/* Block: the conversation — its own panel (same grey surface as the
-          window) with an inner scroll, so the widget never scrolls the page. */}
-      <div className="window-glass relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg">
+      {/* Block: the conversation — a flat panel in the window's own grey tone
+          (no heavy glass shadow, so nothing reads as a background behind the
+          widget), with an inner scroll so the widget never scrolls the page. */}
+      <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg border border-border bg-[var(--window-bg)]">
         <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
           {loadingTopic ? (
             <div className="flex justify-center py-10 text-hint">
