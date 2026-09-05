@@ -69,6 +69,12 @@ function refreshSession(req: NextRequest, res: NextResponse): void {
 // those authenticate on their own terms.
 function crossSiteWrite(req: NextRequest): boolean {
   if (req.method === "GET" || req.method === "HEAD" || req.method === "OPTIONS") return false;
+  // Sign in with Apple lands on the callback as `response_mode=form_post` —
+  // a top-level cross-site POST from appleid.apple.com. That is expected and
+  // legitimate: CSRF is covered by the httpOnly oauth state cookie (and the
+  // code exchange), so the callback must be exempt from this guard. (Google's
+  // callback is a plain GET redirect, so it never trips this check.)
+  if (req.nextUrl.pathname === "/api/auth/apple/callback") return false;
   const origin = req.headers.get("origin");
   if (!origin) return false;
   try {

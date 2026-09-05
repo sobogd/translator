@@ -26,10 +26,15 @@ export async function GET(req: Request) {
     new URL(`https://appleid.apple.com/auth/authorize?${params.toString()}`),
     302,
   );
+  // The callback arrives as `response_mode=form_post` — a cross-site POST
+  // from appleid.apple.com. SameSite=Lax would not be sent with it (Lax only
+  // covers top-level GET navigations), so the oauth state cookie must be
+  // None; Secure + httpOnly to make the round-trip. It is a short-lived
+  // random CSRF token, never readable by scripts.
   res.cookies.set(STATE_COOKIE, state, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     path: "/",
     maxAge: 300,
   });
