@@ -82,12 +82,14 @@ function createScrollTracker() {
   let sent = 0;
   let timer: ReturnType<typeof setTimeout> | null = null;
 
-  /** The content scroller: the desktop chrome pins the page at 100dvh and the
-   *  window scrolls internally (.window-scroll) — the document itself never
-   *  scrolls. Fall back to the document metrics if a page has no window
-   *  (only the standalone 404, which does not run this tracker). */
+  /** The active content scroller. The page is pinned at 100dvh; content lives
+   *  in the window's second part (.content-scroll) which scrolls on its own
+   *  once the translator part is gone — or in the single legacy window scroll
+   *  (.window-scroll) on product-less pages. The document itself never scrolls;
+   *  fall back to its metrics only for a standalone surface (the 404, which
+   *  does not run this tracker anyway). */
   const scroller = (): { el: HTMLElement | null; scrollTop: number; clientHeight: number } => {
-    const el = document.querySelector<HTMLElement>(".window-scroll");
+    const el = document.querySelector<HTMLElement>(".content-scroll, .page-scroll, .window-scroll");
     if (el) return { el, scrollTop: el.scrollTop, clientHeight: el.clientHeight };
     return { el: null, scrollTop: window.scrollY, clientHeight: window.innerHeight };
   };
@@ -137,11 +139,11 @@ function createScrollTracker() {
       timer = null;
     }
     // A modal locks the window's scroll (lib/scroll-lock.ts sets overflow:
-    // hidden on .window-scroll), which collapses the scrollable height while
+    // hidden on the scrollers), which collapses the scrollable height while
     // scrollTop keeps its old value — the bottom-of-page rule above would
     // then read as "reached the end" from wherever the visitor happened to
     // be. Nothing done inside a modal is a scroll gesture.
-    const con = document.querySelector<HTMLElement>(".window-scroll");
+    const con = document.querySelector<HTMLElement>(".content-scroll, .page-scroll, .window-scroll");
     if (con?.style.overflow === "hidden") return;
     const now = currentSection();
     const y = scroller().scrollTop;
