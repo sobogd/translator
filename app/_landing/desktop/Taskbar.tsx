@@ -28,7 +28,7 @@ import { defaultLocale, locales, type Locale } from "@/lib/locales";
 import { analytics } from "@/lib/analytics";
 import { apiFetch } from "@/lib/client";
 import { useSession } from "../session";
-import { scrollContentToTop } from "./AppWindow";
+import { QuotaBadge } from "../AccountControls";
 import { applyResolvedTheme, getThemeChoice, setThemeChoice, subscribeTheme, type ThemeChoice } from "@/lib/theme";
 import {
   DEFAULT_ACCOUNT_TEXTS,
@@ -92,7 +92,7 @@ export function Taskbar({
   const [accountOpen, setAccountOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mobileSub, setMobileSub] = useState<MenuKind | "account" | null>(null);
+  const [mobileSub, setMobileSub] = useState<MenuKind | null>(null);
 
   const { signedIn, quota, refreshQuota } = useSession();
 
@@ -191,12 +191,7 @@ export function Taskbar({
     };
   }, [menuOpen]);
 
-  const scrollTop = (track: string) => {
-    analytics.track("Click", track);
-    scrollContentToTop();
-  };
-
-  // ---- shared row builders (rendered inside desktop popovers and the
+  // ---- shared row builders (rendered inside the desktop popovers and the
   // mobile menu's second level; `onDone` closes whichever surface owns them) ----
 
   const featuresContent = (onDone: () => void) => (
@@ -401,12 +396,11 @@ export function Taskbar({
       </div>
     );
 
-  const submenuTitle = (sub: MenuKind | "account"): string => {
+  const submenuTitle = (sub: MenuKind): string => {
     if (sub === "features") return texts.features;
     if (sub === "languages") return texts.languages;
     if (sub === "legal") return texts.legal;
-    if (sub === "theme") return texts.theme;
-    return texts.account;
+    return texts.theme;
   };
 
   // ---- desktop trigger button for the nav menus ----
@@ -434,9 +428,6 @@ export function Taskbar({
     theme: themeContent,
   };
 
-  const ctaBtnClass =
-    "header-open-editor inline-flex h-7 shrink-0 items-center rounded bg-button px-2.5 text-[13px] font-semibold leading-none text-button-text transition-all active:scale-[0.99]";
-
   return (
     <header id="top" className="relative z-50 p-2 sm:p-2">
       <div className="taskbar-glass mx-auto flex h-10 w-full items-center justify-between gap-2 rounded-md px-2">
@@ -452,7 +443,7 @@ export function Taskbar({
 
         {/* Mobile: the site menu sits right next to the logo, as a pill that
             opens the same menus the desktop bar uses. */}
-        <div className="flex items-center gap-1.5 sm:hidden">
+        <div className="mr-auto flex items-center gap-1.5 sm:hidden">
           <div className="relative" ref={menuRef}>
             <button
               type="button"
@@ -485,37 +476,13 @@ export function Taskbar({
                       <span>{submenuTitle(mobileSub)}</span>
                     </button>
                     <div className="my-1 border-t border-border/60" />
-                    {mobileSub === "account"
-                      ? accountContent(() => {
-                          setMenuOpen(false);
-                          setMobileSub(null);
-                        })
-                      : menuByKind[mobileSub](() => {
-                          setMenuOpen(false);
-                          setMobileSub(null);
-                        })}
+                    {menuByKind[mobileSub](() => {
+                      setMenuOpen(false);
+                      setMobileSub(null);
+                    })}
                   </div>
                 ) : (
                   <div className="flex flex-col">
-                    {signedIn ? (
-                      <button
-                        type="button"
-                        className="flex w-full items-center justify-between gap-2 rounded-md px-2 py-2 text-left text-sm font-medium leading-none text-text transition-colors hover:bg-accent"
-                        onClick={() => setMobileSub("account")}
-                      >
-                        <span>{texts.account}</span>
-                        <ChevronRight className="h-4 w-4 text-hint" />
-                      </button>
-                    ) : (
-                      <a
-                        href="/api/auth/google/start"
-                        onClick={signIn}
-                        className="flex w-full items-center justify-between gap-2 rounded-md px-2 py-2 text-left text-sm font-medium leading-none text-text transition-colors hover:bg-accent"
-                      >
-                        <span>{texts.signIn}</span>
-                        <ArrowRight className="h-4 w-4 text-hint" />
-                      </a>
-                    )}
                     {MENU_ROWS.map((row) => (
                       <button
                         key={row.kind}
@@ -571,51 +538,33 @@ export function Taskbar({
           </Link>
         </nav>
 
-        {/* Mobile: the red Translate CTA on the right edge, as in mermaid's
-            header. The site menu is next to the logo. */}
-        <div className="ml-auto flex items-center sm:hidden">
-          <button type="button" onClick={() => scrollTop("Mobile translate")} className={ctaBtnClass}>
-            {texts.translate}
-          </button>
-        </div>
-
-        {/* Desktop: Account chip + the same Translate CTA on the right edge. */}
-        <div className="ml-3 hidden shrink-0 items-center gap-1.5 sm:flex">
-          {signedIn ? (
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => {
-                  refreshQuota();
-                  setAccountOpen((v) => !v);
-                  setOpenMenu(null);
-                  analytics.track("Click", "Account menu");
-                }}
-                aria-expanded={accountOpen}
-                className="inline-flex h-7 shrink-0 items-center gap-1.5 rounded border border-border px-2.5 text-[13px] font-semibold leading-none text-text transition-colors hover:bg-card"
-              >
-                <UserRound className="h-3.5 w-3.5 text-hint" />
-                {texts.account}
-              </button>
-              {accountOpen && (
-                <div className="absolute right-0 top-full z-50 mt-1 w-[248px] rounded-lg border border-border bg-card p-1.5 shadow-xl">
-                  {accountContent(() => setAccountOpen(false))}
-                </div>
-              )}
-            </div>
-          ) : (
-            <a
-              href="/api/auth/google/start"
-              onClick={signIn}
-              className="inline-flex h-7 shrink-0 items-center gap-1.5 rounded border border-border px-2.5 text-[13px] font-semibold leading-none text-text transition-colors hover:bg-card"
+        {/* Remaining quota at a glance + Account as a context dropdown — on
+            every size. The standalone "Translate" CTA is gone: the translator
+            widget is already the always-present block on every page. */}
+        <div className="ml-3 flex shrink-0 items-center gap-1.5">
+          <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => {
+                refreshQuota();
+                setAccountOpen((v) => !v);
+                setOpenMenu(null);
+                analytics.track("Click", "Account menu");
+              }}
+              aria-label={texts.account}
+              aria-expanded={accountOpen}
+              title={texts.account}
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-text transition-colors hover:bg-accent active:scale-[0.99]"
             >
-              <UserRound className="h-3.5 w-3.5 text-hint" />
-              {texts.signIn}
-            </a>
-          )}
-          <button type="button" onClick={() => scrollTop("Header translate")} className={`${ctaBtnClass} hidden sm:flex`}>
-            {texts.translate}
-          </button>
+              <UserRound className="h-4 w-4" />
+            </button>
+            {accountOpen && (
+              <div className="absolute right-0 top-full z-50 mt-1 w-[248px] rounded-lg border border-border bg-card p-1.5 shadow-xl">
+                {accountContent(() => setAccountOpen(false))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>
