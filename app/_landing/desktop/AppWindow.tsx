@@ -30,7 +30,7 @@ export function AppWindow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="pointer-events-auto relative flex size-full flex-col overflow-hidden rounded-lg">
+    <div className="pointer-events-auto relative flex size-full flex-col overflow-hidden">
       {product ? (
         // The scroll surface is full-bleed (its scrollbar sits at the very
         // edge of the screen); the windows below stay centred in the site's
