@@ -22,6 +22,9 @@ export function DesktopShell({
   /** The locale's "features" links (language pairs + the catch-all "/" row),
    *  shown in the header's Features menu (previously the footer's list). */
   featureLinks = [],
+  /** The fixed translator block pinned at the top of the window. Rendered on
+   *  every page the same way, above the scrollable content. */
+  product,
   showBrand = false,
   children,
 }: {
@@ -31,6 +34,7 @@ export function DesktopShell({
   accountTexts?: AccountTexts;
   pricingHref?: string;
   featureLinks?: FeatureLinkDef[];
+  product?: ReactNode;
   /** Whether the content window leads with the brand row (icon + word). Only
    *  the home page shows it — inner pages start with their own heading. */
   showBrand?: boolean;
@@ -64,7 +68,7 @@ export function DesktopShell({
           above stays a sibling <header> landmark. */}
       <main className="pointer-events-none relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pb-2 sm:px-6 sm:pb-5">
         <div className="pointer-events-none h-full w-full max-w-[1000px] sm:h-[96%]">
-          <AppWindow>
+          <AppWindow product={product}>
             {/* The full brand mark (icon + word) lives at the top of the home
                 window content, as PostHog does — the taskbar above keeps only
                 the small rounded "IQ" square. Inner pages don't repeat it. */}

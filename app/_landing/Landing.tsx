@@ -13,10 +13,11 @@ import { faqPageLd, graphLd, organizationLd, softwareApplicationLd, webSiteLd } 
 import { SessionProvider } from "./session";
 import type { TranslatorTexts } from "./types";
 
-// The locale home. Every page now lives in the desktop chrome (taskbar +
-// internally-scrolling window, ported from iq-mermaid): the translator widget
-// is the first band of the window's content — always visible at the top —
-// and the marketing sections follow as one plain column of type (no cards).
+// The locale home. Every page lives in the desktop chrome: the translator is
+// the SAME fixed block pinned at the top of the window on every page, and
+// below it the content part scrolls — a plain typographic column that opens
+// with the page's heading + subheading (the hero copy) and runs through the
+// marketing sections with no cards.
 export function Landing({
   locale,
   texts,
@@ -26,9 +27,9 @@ export function Landing({
   texts: TranslatorTexts;
   homeHref: string;
 }) {
-  // The home widget defaults its target to the page's own language (a /lv
-  // visitor most likely translates INTO Latvian's pair, not Spanish); a
-  // previously saved localStorage choice still wins over this soft default.
+  // The widget defaults its target to the page's own language (a /lv visitor
+  // most likely translates INTO Latvian's pair, not Spanish); a previously
+  // saved localStorage choice still wins over this soft default.
   const jsonLd = graphLd([
     organizationLd(),
     webSiteLd(locale),
@@ -51,19 +52,22 @@ export function Landing({
         accountTexts={texts.account}
         pricingHref={pricingHref}
         featureLinks={texts.footer.featureLinks}
-        showBrand
+        product={
+          <Translator texts={texts} initialTarget={locale} pricingHref={pricingHref} />
+        }
       >
-        {/* The translator sits at the top of the window's content; everything
-            below is one running column of type — each section a plain Band
-            that shares the brand row's side padding and spaces itself with
-            vertical padding only. */}
-        <Band id="app" section="widget" className="px-6 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10">
-          <Translator
-            texts={texts}
-            heroTexts={texts.hero}
-            initialTarget={locale}
-            pricingHref={pricingHref}
-          />
+        {/* Heading + subheading of the page, then the marketing sections — one
+            running column of type (no cards, no dividers). */}
+        <Band id="hero" section="hero" className="px-6 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10">
+          <div className="flex w-full max-w-[760px] flex-col items-start gap-3">
+            <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl">
+              {texts.hero.title}{" "}
+              <span className="text-button">{texts.hero.titleAccent}</span>
+            </h1>
+            <p className="text-pretty text-[17px] leading-relaxed text-text/80 sm:text-lg">
+              {texts.hero.description}
+            </p>
+          </div>
         </Band>
 
         <Band section="stats" className="px-6 pb-12 sm:px-8 sm:pb-16">
@@ -92,8 +96,6 @@ export function Landing({
             heading={texts.finalCta.heading}
             headingAccent={texts.finalCta.headingAccent}
             sub={texts.finalCta.sub}
-            ctaLabel={texts.finalCta.ctaLabel}
-            ctaHref={`${homeHref}#app`}
           />
         </Band>
       </DesktopShell>

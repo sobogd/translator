@@ -156,43 +156,34 @@ function LanguagePickerModal({
   );
 }
 
-export type HeroTexts = { title: string; titleAccent: string; description: string };
-
 export function Translator({
   texts,
-  heroTexts,
   presetSource,
   presetTarget,
   initialTarget,
   initialSource = null,
   pricingHref = "/pricing",
-  variant = "landing",
 }: {
   texts: TranslatorTexts;
-  /** SEO headline shown left of the widget until the first topic exists. */
-  heroTexts: HeroTexts;
-  /** Pair-page preset: pre-picked source language for the draft state. */
+  /** Seed source language for the draft pair (pair pages pass the page's
+   *  own pair). Only an initial value — the pair is always switchable. */
   presetSource?: string;
-  /** Pair-page preset: pre-picked target language; wins over localStorage. */
+  /** Seed target language (pair pages); wins over localStorage on mount. */
   presetTarget?: string;
-  /** Soft default target (locale homes): initial value only, localStorage wins. */
+  /** Soft default target (locale homes/pricing/legal): initial value only. */
   initialTarget?: string;
-  /** App page only: source half of the pair read from PAIR_COOKIE during
-   *  render (null = auto-detect). Server-resolved on purpose — restoring it
-   *  after hydration would make the pair row visibly jump. */
+  /** Source half of the pair resolved server-side for pages that need it
+   *  (null = auto-detect). */
   initialSource?: string | null;
   /** Locale-local pricing path for the out-of-quota error link. */
   pricingHref?: string;
-  /** "landing" — the marketing widget (hero column left, widget right).
-   *  "app" — the standalone /app page: no hero, the pair picker moves up
-   *  into the top island row next to the topics button, the whole thing
-   *  fills the viewport under the header, and the pair is persisted. */
-  variant?: "landing" | "app";
 }) {
-  const isApp = variant === "app";
   const t = texts.translator;
   // Signed-in visitors are never bot-challenged (see lib/turnstile.ts).
   const { signedIn } = useSession();
+  // Pages that arrive with a concrete pair (SEO pair pages) seed the draft
+  // with it and auto-open that pair's thread; everywhere else starts blank.
+  const seededPair = presetSource !== undefined && presetTarget !== undefined;
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   // Only pair pages auto-open a thread (the matching one, fetched below);
@@ -231,10 +222,9 @@ export function Translator({
   const chatScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // A pair page's preset wins over the remembered pair, and the app page
-    // already got that pair from the server (it renders per request) — reading
+    // A seeded pair (SEO pair pages) wins over the remembered pair — reading
     // it again here would only overwrite the same values after hydration.
-    if (presetTarget || isApp) return;
+    if (presetTarget) return;
     const stored = parsePairCookie(readCookieValue(PAIR_COOKIE));
     // one-time init from storage, not a render cascade.
     if (stored) {
@@ -305,12 +295,12 @@ export function Translator({
         const res = await apiFetch("/api/topics");
         const list: Topic[] = res.ok ? await res.json() : [];
         setTopics(list);
-        // Pair pages auto-open the topic matching their fixed pair — the one
-        // last used here if it still exists, otherwise the most recent (the
-        // list arrives ordered by lastUsedAt). Home never auto-opens
-        // anything: it only ever gets a topic once the user actually sends
-        // something in this session.
-        const candidates = fixedPair
+        // Seeded pages (SEO pair pages) auto-open the topic matching their
+        // starting pair — the one last used here if it still exists,
+        // otherwise the most recent of that pair (the list arrives ordered by
+        // lastUsedAt). Everywhere else starts blank: a topic is only created
+        // once the user actually sends something in this session.
+        const candidates = seededPair
           ? list.filter((tp) => tp.sourceLang === presetSource && tp.targetLang === presetTarget)
           : [];
         let remembered: string | null = null;
@@ -607,26 +597,23 @@ export function Translator({
 
   const currentSourceCode = topic ? topic.sourceLang : draftSourceLang;
   const targetLanguage = useMemo(() => getLanguage(topic?.targetLang ?? defaultTarget), [topic?.targetLang, defaultTarget]);
-  // Pair pages bake both languages into the slug/SEO copy — nothing to pick,
-  // ever. Only the home widget (no presets) offers the source/target picker.
-  const fixedPair = presetSource !== undefined && presetTarget !== undefined;
+  const currentTargetCode = topic?.targetLang ?? defaultTarget;
   const rows = topic ? [...topic.translations].reverse() : [];
 
-  // Topics belong to a language pair — only show/auto-open the ones that
-  // match this page's pair (fixed for pair pages; the current draft pick on
-  // home). While the source side is still "auto-detect" the pair isn't
-  // known yet (the flow is: send → server detects the source language →
-  // that gets plugged into the selector), so topics stay hidden entirely
-  // until then.
-  const pairA = fixedPair ? (presetSource as string) : currentSourceCode;
-  const pairB = fixedPair ? (presetTarget as string) : (targetLanguage?.code ?? defaultTarget);
-  const pairKnown = pairA !== null;
-  const matchesPair = (tp: Topic) => (tp.sourceLang === pairA && tp.targetLang === pairB) || (tp.sourceLang === pairB && tp.targetLang === pairA);
+  // Topics belong to a language pair. While the source side is still
+  // "auto-detect" the pair isn't known yet (send → the server detects the
+  // source language → it gets plugged into the selector), so the topics list
+  // stays hidden until then; once the pair is known, only that pair's threads
+  // are offered.
+  const pairKnown = currentSourceCode !== null;
+  const matchesPair = (tp: Topic): boolean =>
+    currentSourceCode !== null &&
+    ((tp.sourceLang === currentSourceCode && tp.targetLang === currentTargetCode) ||
+      (tp.sourceLang === currentTargetCode && tp.targetLang === currentSourceCode));
   const pairTopics = pairKnown ? topics.filter(matchesPair) : [];
 
   // Composer half of the omnibar — text field, a mic separated by a left
-  // border, and the accent translate CTA hugging the card edge (the card's
-  // overflow-hidden supplies its only rounded corner).
+  // border, and the accent translate CTA hugging the field edge.
   const showSend = status === "idle" && text.trim().length > 0;
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
@@ -677,8 +664,9 @@ export function Translator({
           className="min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-2.5 text-base leading-6 outline-none"
         />
       )}
-      {/* Square, sized off the header's CTA (h-9) so the two accent buttons on
-          screen read as the same control at the same weight. */}
+      {/* Square CTA — the accent action of the widget (record / stop /
+          send), at the same size as the header CTA so the two read as one
+          control. */}
       <button
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
@@ -704,22 +692,13 @@ export function Translator({
     </div>
   );
 
-  // Language buttons: always full-width halves — the pair row sits on its
-  // own line above the composer/content, on every breakpoint.
+  // Language buttons: always full-width halves of the pair row above the
+  // conversation — source ⇄ target. Rendered on every page; the pair is
+  // always changeable (a page pair only seeds the starting value).
   const langBtnClass =
-    "flex min-h-11 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-card disabled:pointer-events-none";
-
-  // Standalone pill — sits under the hero headline on the home widget,
-  // pre-loading the pair the composer on the right will use. Shows the
-  // DRAFT pair, never whatever topic happens to be loaded (e.g. hydrated
-  // from a previous visit to a different pair page) — clicking only opens
-  // the picker, nothing changes until an actual selection is made inside it.
-  const heroPairRow = (
-    <div
-      className={`flex items-stretch overflow-hidden rounded-lg border border-border ${
-        isApp ? "bg-card" : "bg-card"
-      }`}
-    >
+    "flex min-h-10 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-accent disabled:pointer-events-none";
+  const langRow = (
+    <div className="flex items-stretch overflow-hidden rounded-lg border border-border bg-card">
       <button
         onClick={() => {
           analytics.track("Click", "Language picker source");
@@ -731,8 +710,8 @@ export function Translator({
           {currentSourceCode ? (getLanguage(currentSourceCode)?.nameNative ?? currentSourceCode) : t.autoDetect}
         </span>
       </button>
-      <span className="flex w-10 shrink-0 items-center justify-center text-hint">
-        <ArrowRightLeft size={16} />
+      <span className="flex w-10 shrink-0 items-center justify-center border-x border-border text-hint" aria-hidden="true">
+        <ArrowRightLeft size={15} />
       </span>
       <button
         onClick={() => {
@@ -746,8 +725,8 @@ export function Translator({
     </div>
   );
 
-  // Topic rows only — no background fill, active = bold text. Shared between
-  // the permanent desktop sidebar and the mobile drawer (see below).
+  // Topic rows only — no background fill, active = bold text. Shown in the
+  // sliding drawer (see below).
   const topicsList = (onPick: () => void) =>
     pairTopics.length === 0 ? (
       <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
@@ -777,155 +756,89 @@ export function Translator({
     );
 
   return (
-    <div className={isApp ? "h-full" : "flex flex-col gap-4"}>
-      {/* SEO hero text comes first everywhere — above the widget on mobile,
-          left of it on desktop — whether or not a topic exists yet; the
-          widget is always fully live —
-          topics live behind a toggle + sliding drawer, anchored to the
-          widget itself, same on every breakpoint. */}
+    <div className="relative flex h-full min-h-0 w-full flex-col gap-2.5 overflow-hidden">
+      {/* Top row: the topics toggle (once the pair is known) next to the
+          always-visible language picker. */}
+      <div className="relative z-10 flex shrink-0 items-stretch gap-2">
+        {pairKnown && (
+          <button
+            onClick={() => {
+              analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
+              setTopicsOpen((v) => !v);
+            }}
+            aria-label={t.topics}
+            title={topic?.title ?? t.topics}
+            className="flex w-11 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-hint transition hover:text-text active:scale-[0.99]"
+          >
+            <BookOpen size={17} />
+          </button>
+        )}
+        <div className="min-w-0 flex-1">{langRow}</div>
+      </div>
+
+      {/* The conversation: its own scroll inside the widget, so the widget
+          itself never scrolls the page. */}
       <div
-        className={
-          isApp
-            ? "flex h-full flex-col"
-            : "flex flex-col gap-4 lg:grid lg:h-[600px] lg:grid-cols-[2fr_3fr] lg:gap-0 lg:overflow-hidden lg:rounded-2xl lg:border lg:border-border"
-        }
+        ref={chatScrollRef}
+        className="relative z-0 min-h-0 flex-1 overflow-y-auto rounded-lg border border-border bg-card px-3 py-3 sm:px-4"
       >
-        {!isApp && (
-        <div className="flex min-w-0 flex-col items-start gap-6 rounded-2xl border border-border bg-accent p-6 text-start sm:p-8 lg:h-full lg:rounded-none lg:border-0">
-          <div className="my-auto flex min-w-0 flex-col gap-4">
-            <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl">
-              {heroTexts.title}{" "}
-              <span className="text-button">
-                {heroTexts.titleAccent}
-              </span>
-            </h1>
-            <p className="text-pretty text-[17px] leading-relaxed text-text/80 sm:text-lg">{heroTexts.description}</p>
-            {/* Pre-loads the composer on the right — home only, pair
-                pages have nothing to pick, it's fixed by the slug. */}
-            {!fixedPair && heroPairRow}
+        {loadingTopic ? (
+          <div className="flex justify-center py-10 text-hint">
+            <Loader2 size={20} className="animate-spin" />
+          </div>
+        ) : (
+          <History
+            rows={rows}
+            langA={topic?.sourceLang ?? ""}
+            langB={topic?.targetLang ?? ""}
+            texts={texts.history}
+          />
+        )}
+      </div>
+
+      <div className="relative z-10 shrink-0">{composerRow}</div>
+
+      {/* Always mounted (not conditionally) so the transform/opacity
+          transitions actually animate instead of popping in. Backdrop
+          blurs the widget behind it. */}
+      <div
+        className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          topicsOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        onClick={() => setTopicsOpen(false)}
+      />
+      <div
+        className={`absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:p-5 ${
+          topicsOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex shrink-0 items-center justify-between">
+          {/* Not a heading: this is the widget's sidebar label, and as an
+              <h2> it would land above every real section heading in the
+              document outline. */}
+          <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => {
+                newTopic();
+                setTopicsOpen(false);
+              }}
+              aria-label={t.newTopic}
+              className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+            >
+              <Plus size={16} />
+            </button>
+            <button
+              onClick={() => setTopicsOpen(false)}
+              aria-label={t.close}
+              className="rounded-lg p-1.5 text-hint transition active:scale-90"
+            >
+              <X size={16} />
+            </button>
           </div>
         </div>
-        )}
-
-        {/* The chat surface: fixed height within the window's content, the
-            conversation scrolls inside it and the composer is an overlaid
-            island. (The old /app workspace was removed — the widget lives on
-            the marketing pages now, so the `isApp` branch below is dormant
-            legacy kept only to avoid churn.) */}
-        <div
-          className={
-            isApp
-              ? "relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
-              : "relative flex h-[calc(100dvh_-_190px)] min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-card lg:h-[600px] lg:rounded-none lg:border-0"
-          }
-        >
-          {/* Chat spans the full height and scrolls behind the two
-              islands — they're overlaid (absolute), not flex siblings, so
-              they never shrink the scroll area. Padding on the scroll box
-              matches each island's own box height so content never sits
-              underneath one. */}
-          <div
-            ref={chatScrollRef}
-            className={`absolute inset-0 z-0 flex flex-col overflow-y-auto px-4 pb-28 sm:px-6 ${
-              isApp || pairKnown ? "pt-20" : "pt-4"
-            }`}
-          >
-            {loadingTopic ? (
-              <div className="flex justify-center py-10 text-hint">
-                <Loader2 size={20} className="animate-spin" />
-              </div>
-            ) : (
-              <History
-                rows={rows}
-                langA={topic?.sourceLang ?? ""}
-                langB={topic?.targetLang ?? ""}
-                texts={texts.history}
-              />
-            )}
-          </div>
-
-          {/* App page: the pair card and the topics button share one row of
-              islands over the chat — the pair picker has no hero column to
-              live in there. Landing keeps the single topics button. */}
-          {isApp ? (
-            <div className="absolute inset-x-0 top-0 z-10 flex items-stretch gap-2 p-3 pb-0">
-              {/* Left of the pair card, on the same side the topics drawer
-                  slides in from. */}
-              <button
-                onClick={() => {
-                  analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
-                  setTopicsOpen((v) => !v);
-                }}
-                aria-label={t.topics}
-                className="flex w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-hint transition hover:text-text active:scale-[0.99]"
-              >
-                <BookOpen size={18} />
-              </button>
-              <div className="min-w-0 flex-1">{heroPairRow}</div>
-            </div>
-          ) : (
-            pairKnown && (
-              <div className="absolute inset-x-0 top-0 z-10 p-3 pb-0">
-                <button
-                  onClick={() => {
-                    analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
-                    setTopicsOpen((v) => !v);
-                  }}
-                  className="flex items-center gap-2 rounded-lg border border-border bg-card p-2.5 text-sm font-medium text-hint transition hover:text-text active:scale-[0.99]"
-                >
-                  <BookOpen size={16} />
-                  <span className="max-w-[10rem] truncate">{topic?.title || t.topics}</span>
-                </button>
-              </div>
-            )
-          )}
-
-          <div className="absolute inset-x-0 bottom-0 z-10 p-3">{composerRow}</div>
-
-          {/* Always mounted (not conditionally) so the transform/opacity
-              transitions actually animate instead of popping in. Backdrop
-              blurs the chat behind it — blur fades with the opacity since
-              it rides the same element. */}
-          <div
-            className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
-              topicsOpen ? "opacity-100" : "pointer-events-none opacity-0"
-            }`}
-            onClick={() => setTopicsOpen(false)}
-          />
-          <div
-            className={`absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:p-5 ${
-              topicsOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
-          >
-            <div className="flex shrink-0 items-center justify-between">
-              {/* Not a heading: this is the widget's sidebar label, and as an
-                  <h2> it landed above every real section heading in the
-                  document outline. */}
-              <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
-              <div className="flex items-center gap-1">
-                <button
-                  onClick={() => {
-                    newTopic();
-                    setTopicsOpen(false);
-                  }}
-                  aria-label={t.newTopic}
-                  className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
-                >
-                  <Plus size={16} />
-                </button>
-                <button
-                  onClick={() => setTopicsOpen(false)}
-                  aria-label={t.close}
-                  className="rounded-lg p-1.5 text-hint transition active:scale-90"
-                >
-                  <X size={16} />
-                </button>
-              </div>
-            </div>
-            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-              {topicsList(() => setTopicsOpen(false))}
-            </div>
-          </div>
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+          {topicsList(() => setTopicsOpen(false))}
         </div>
       </div>
 
@@ -971,7 +884,7 @@ export function Translator({
 
       {pickerFor && (
         <LanguagePickerModal
-          current={pickerFor === "source" ? currentSourceCode : (topic?.targetLang ?? defaultTarget)}
+          current={pickerFor === "source" ? currentSourceCode : currentTargetCode}
           forSource={pickerFor === "source"}
           texts={t}
           onClose={() => setPickerFor(null)}

@@ -1,5 +1,6 @@
 import { DesktopShell } from "./desktop/DesktopShell";
 import { mergeTaskbarTexts } from "./desktop/taskbar-texts";
+import { Translator } from "./Translator";
 import { Band } from "./shell";
 import { SessionProvider } from "./session";
 import type { LegalSection } from "./legal-content";
@@ -34,6 +35,7 @@ export function LegalPage({
         accountTexts={chrome.account}
         pricingHref="/pricing"
         featureLinks={chrome.footer.featureLinks}
+        product={<Translator texts={chrome} pricingHref="/pricing" />}
       >
         <Band section="legal" className="px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-10">
           <div lang="en" dir="ltr" className="flex w-full max-w-[760px] flex-col gap-y-10">

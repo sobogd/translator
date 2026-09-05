@@ -37,10 +37,11 @@ const SPOTLIGHT_ICONS: Record<string, LucideIcon[][]> = {
   ],
 };
 
-// Shared template for every SEO language-pair page. The pair page mirrors
-// iq-mermaid's guide-page structure: the translator widget embedded at the top
-// of the window, then a simple typographic column (breadcrumbs, feature
-// sections, related pairs, FAQ, closing CTA) — no cards, no dividers.
+// Shared template for every SEO language-pair page. Like every other page it
+// uses the desktop chrome: the SAME fixed translator block on top (seeded with
+// the page's own pair, but the pair is always switchable), and below it a
+// simple typographic content column — breadcrumbs, the page heading +
+// subheading, feature sections, related pairs, FAQ and the closing CTA.
 export function FeatureLanding({
   locale,
   chrome,
@@ -92,21 +93,18 @@ export function FeatureLanding({
         accountTexts={chrome.account}
         pricingHref={pricingHref}
         featureLinks={chrome.footer.featureLinks}
-      >
-        {/* The translator widget first, preset to the page's language pair. */}
-        <Band id="app" section="widget" className="px-6 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10">
+        product={
           <Translator
             texts={chrome}
-            heroTexts={content.hero}
             presetSource={presetSource}
             presetTarget={presetTarget}
             pricingHref={pricingHref}
           />
-        </Band>
-
-        {/* The content column below the widget: one plain typographic column,
-            like a guide article — no cards, no dividers. */}
-        <Band section="pair-content" className="px-6 pb-16 sm:px-8 sm:pb-24">
+        }
+      >
+        {/* The content column below the translator: heading + subheading, then
+            one plain typographic column — no cards, no dividers. */}
+        <Band section="pair-content" className="px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-10">
           <div className="flex w-full max-w-[760px] flex-col">
             <Breadcrumbs
               homeHref={homeHref}
@@ -114,6 +112,15 @@ export function FeatureLanding({
               current={content.hero.title}
             />
             <div className="mt-10 flex flex-col gap-y-14 sm:mt-12">
+              <div className="flex flex-col items-start gap-3">
+                <h1 className="text-balance text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl">
+                  {content.hero.title}{" "}
+                  <span className="text-button">{content.hero.titleAccent}</span>
+                </h1>
+                <p className="text-pretty text-[17px] leading-relaxed text-text/80 sm:text-lg">
+                  {content.hero.description}
+                </p>
+              </div>
               <Spotlights items={content.spotlights} icons={SPOTLIGHT_ICONS[icons]} />
               {related.length > 0 && (
                 <RelatedPairs heading={chrome.footer.pairsHeading} links={related} />
@@ -130,7 +137,7 @@ export function FeatureLanding({
                 headingAccent={content.finalCta.headingAccent}
                 sub={content.finalCta.sub}
                 ctaLabel={content.finalCta.ctaLabel}
-                ctaHref={`${homeHref}#app`}
+                ctaHref={homeHref}
               />
             </div>
           </div>
