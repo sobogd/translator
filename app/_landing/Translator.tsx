@@ -732,147 +732,129 @@ export function Translator({
     );
 
   return (
-    <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden" style={{ gap: LAYOUT_GAP }}>
-      {/* Block: language pair (source ⇄ target) with the topics toggle — a
-          clean header-like island: same taskbar-glass surface, same height
-          (h-10), same rounded design. Children are direct flex rows, so the
-          selects are always vertically centred. */}
-      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md pl-1 pr-2">
-        {pairKnown && (
-          <button
-            onClick={() => {
-              analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
-              setTopicsOpen((v) => !v);
-            }}
-            aria-label={t.topics}
-            title={topic?.title ?? t.topics}
-            className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:bg-accent active:scale-[0.99] sm:hidden"
-          >
-            <BookOpen size={16} />
-          </button>
-        )}
-        <button
-          type="button"
-          onClick={() => {
-            analytics.track("Click", "Language picker source");
-            setPickerFor("source");
-          }}
-          title={sourceLanguageLabel}
-          className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
-        >
-          <span className="min-w-0 truncate">{sourceLanguageLabel}</span>
-        </button>
-        <span
-          aria-hidden="true"
-          className="flex w-8 shrink-0 items-center justify-center self-stretch text-hint"
-        >
-          <ArrowRightLeft size={14} />
-        </span>
-        <button
-          type="button"
-          onClick={() => {
-            analytics.track("Click", "Language picker target");
-            setPickerFor("target");
-          }}
-          title={targetLanguageLabel}
-          className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
-        >
-          <span className="min-w-0 truncate">{targetLanguageLabel}</span>
-        </button>
-      </div>
-
-      {/* Block: translation history (the saved threads) — a separate block on
-          desktop, same window-tone panel as the conversation. On mobile this
-          history lives behind the topics button as the sliding drawer below. */}
-      <div className="hidden w-full shrink-0 flex-col overflow-hidden rounded-lg border border-border bg-[var(--window-bg)] sm:flex">
-        <div className="flex shrink-0 items-center justify-between gap-2 px-3 pb-1 pt-2">
-          <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
-          <button
-            type="button"
-            onClick={() => {
-              newTopic();
-            }}
-            aria-label={t.newTopic}
-            title={t.newTopic}
-            className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
-          >
-            <Plus size={15} />
-          </button>
-        </div>
-        <div className="min-h-0 max-h-44 overflow-y-auto px-1 pb-2 sm:max-h-52">
-          {topicsList(() => {})}
-        </div>
-      </div>
-
-      {/* Block: the conversation — a flat panel in the window's own grey tone
-          (no heavy glass shadow, so nothing reads as a background behind the
-          widget), with an inner scroll so the widget never scrolls the page. */}
-      <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg border border-border bg-[var(--window-bg)]">
-        <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
-          {loadingTopic ? (
-            <div className="flex justify-center py-10 text-hint">
-              <Loader2 size={20} className="animate-spin" />
-            </div>
-          ) : (
-            <History
-              rows={rows}
-              langA={topic?.sourceLang ?? ""}
-              langB={topic?.targetLang ?? ""}
-              texts={texts.history}
-            />
-          )}
-        </div>
-      </div>
-
-      {/* Block: the composer — styled exactly like the header island: same
-          taskbar-glass surface, same height (h-10), same rounded design. */}
-      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md px-1.5">
-        {composerRow}
-      </div>
-
-      {/* Always mounted (not conditionally) so the transform/opacity
-          transitions actually animate instead of popping in. Backdrop
-          blurs the widget behind it. */}
+    <div className="relative flex h-full min-h-0 w-full overflow-hidden">
+      {/* Two-pane layout: [history] [translator].
+          Mobile — the panes are two full-width screens: the translator shows
+          by default and the history sits off-screen to the left; opening the
+          history slides the track (translateX), so the translator moves away
+          and the history takes its place. Desktop — no sliding: both columns
+          are visible side by side, history on the left for the full height,
+          the translator (languages / conversation / composer) on the right. */}
       <div
-        className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 sm:hidden ${
-          topicsOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        onClick={() => setTopicsOpen(false)}
-      />
-      <div
-        className={`absolute inset-0 z-30 flex w-full flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:hidden sm:p-5 ${
-          topicsOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`flex h-full w-[200%] min-w-0 transition-transform duration-300 ease-out sm:w-full sm:transition-none ${
+          topicsOpen ? "translate-x-0" : "-translate-x-1/2"
+        } sm:translate-x-0`}
+        style={{ gap: LAYOUT_GAP }}
       >
-        <div className="flex shrink-0 items-center justify-between">
-          {/* Not a heading: this is the widget's sidebar label, and as an
-              <h2> it would land above every real section heading in the
-              document outline. */}
-          <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => {
-                newTopic();
-                setTopicsOpen(false);
-              }}
-              aria-label={t.newTopic}
-              className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
-            >
-              <Plus size={16} />
-            </button>
-            <button
-              onClick={() => setTopicsOpen(false)}
-              aria-label={t.close}
-              className="rounded-lg p-1.5 text-hint transition active:scale-90"
-            >
-              <X size={16} />
-            </button>
+        {/* Column 1 — history of saved threads. Always present as its own
+            panel; shows the placeholder when there are no threads yet. */}
+        <div className="relative flex h-full w-1/2 shrink-0 flex-col overflow-hidden rounded-lg border border-border bg-[var(--window-bg)] sm:w-[300px]">
+          <div className="flex shrink-0 items-center justify-between gap-2 px-3 pb-1 pt-2">
+            <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
+            <div className="flex items-center gap-0.5">
+              <button
+                type="button"
+                onClick={() => newTopic()}
+                aria-label={t.newTopic}
+                title={t.newTopic}
+                className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+              >
+                <Plus size={15} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setTopicsOpen(false)}
+                aria-label={t.close}
+                title={t.close}
+                className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90 sm:hidden"
+              >
+                <X size={15} />
+              </button>
+            </div>
+          </div>
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 pb-2">
+            {topicsList(() => setTopicsOpen(false))}
           </div>
         </div>
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-          {topicsList(() => setTopicsOpen(false))}
+
+        {/* Column 2 — the translator, three rows: languages island,
+            conversation, composer. */}
+        <div
+          className="flex h-full w-1/2 shrink-0 flex-col overflow-hidden sm:w-auto sm:min-w-0 sm:flex-1"
+          style={{ gap: LAYOUT_GAP }}
+        >
+          {/* Row 1 — language pair (source ⇄ target) + the mobile history
+              toggle. Header-like island: taskbar-glass, h-10. */}
+          <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md pl-1 pr-2">
+            <button
+              type="button"
+              onClick={() => {
+                analytics.track("Click", `Topics ${topicsOpen ? "close" : "open"}`);
+                setTopicsOpen((v) => !v);
+              }}
+              aria-label={t.topics}
+              aria-expanded={topicsOpen}
+              title={t.topics}
+              className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:bg-accent active:scale-[0.99] sm:hidden"
+            >
+              <BookOpen size={16} />
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                analytics.track("Click", "Language picker source");
+                setPickerFor("source");
+              }}
+              title={sourceLanguageLabel}
+              className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
+            >
+              <span className="min-w-0 truncate">{sourceLanguageLabel}</span>
+            </button>
+            <span
+              aria-hidden="true"
+              className="flex w-8 shrink-0 items-center justify-center self-stretch text-hint"
+            >
+              <ArrowRightLeft size={14} />
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                analytics.track("Click", "Language picker target");
+                setPickerFor("target");
+              }}
+              title={targetLanguageLabel}
+              className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
+            >
+              <span className="min-w-0 truncate">{targetLanguageLabel}</span>
+            </button>
+          </div>
+
+          {/* Row 2 — the conversation of the current thread: flat window-tone
+              panel with its own inner scroll. */}
+          <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg border border-border bg-[var(--window-bg)]">
+            <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
+              {loadingTopic ? (
+                <div className="flex justify-center py-10 text-hint">
+                  <Loader2 size={20} className="animate-spin" />
+                </div>
+              ) : (
+                <History
+                  rows={rows}
+                  langA={topic?.sourceLang ?? ""}
+                  langB={topic?.targetLang ?? ""}
+                  texts={texts.history}
+                />
+              )}
+            </div>
+          </div>
+
+          {/* Row 3 — composer island: taskbar-glass, h-10, like the header. */}
+          <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md px-1.5">
+            {composerRow}
+          </div>
         </div>
       </div>
+
 
       {error && (
         <Modal
