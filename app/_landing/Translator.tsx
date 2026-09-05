@@ -406,7 +406,7 @@ export function Translator({
   // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2.5 (20px).
   // One line is 44px — the resting height of the field — and the island adds
   // its p-1.5 and border on top of that. Anything longer grows the island.
-  const TEXTAREA_MAX_H = 92;
+  const TEXTAREA_MAX_H = 40;
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -619,12 +619,12 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-end gap-1.5">
+    <div className="flex min-w-0 flex-1 items-center gap-1.5">
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
       {status !== "idle" ? (
-        <div className="flex min-h-11 flex-1 items-center gap-3 px-2.5 text-sm text-hint">
+        <div className="flex min-w-0 flex-1 items-center gap-3 px-2 text-sm text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -662,7 +662,7 @@ export function Translator({
           data-bwignore
           data-form-type="other"
           style={{ maxHeight: TEXTAREA_MAX_H }}
-          className="min-h-11 flex-1 resize-none self-center border-0 bg-transparent px-2.5 py-2.5 text-base leading-6 outline-none"
+          className="min-h-9 flex-1 resize-none self-center border-0 bg-transparent px-2 py-1.5 text-base leading-6 outline-none"
         />
       )}
       {/* Square CTA — the accent action of the widget (record / stop /
@@ -693,11 +693,9 @@ export function Translator({
     </div>
   );
 
-  // Language buttons: always full-width halves of the pair row above the
-  // conversation — source ⇄ target. Rendered on every page; the pair is
-  // always changeable (a page pair only seeds the starting value).
+  // Language buttons: fill the header-like pair island (h-10, taskbar-glass).
   const langBtnClass =
-    "flex min-h-10 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-accent disabled:pointer-events-none";
+    "flex min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-accent disabled:pointer-events-none";
   const langRow = (
     <div className="flex min-w-0 flex-1 items-stretch overflow-hidden rounded-lg">
       <button
@@ -758,9 +756,10 @@ export function Translator({
 
   return (
     <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden" style={{ gap: LAYOUT_GAP }}>
-      {/* Block: language pair (source ⇄ target) with the topics toggle — its
-          own panel in the window's own (grey) surface. */}
-      <div className="window-glass relative z-10 flex shrink-0 items-stretch gap-2 overflow-hidden rounded-lg p-1.5">
+      {/* Block: language pair (source ⇄ target) with the topics toggle —
+          styled exactly like the header island: same taskbar-glass surface,
+          same height (h-10), same rounded design. */}
+      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch gap-1 overflow-hidden rounded-md pl-1.5 pr-2">
         {pairKnown && (
           <button
             onClick={() => {
@@ -769,9 +768,9 @@ export function Translator({
             }}
             aria-label={t.topics}
             title={topic?.title ?? t.topics}
-            className="flex w-11 shrink-0 items-center justify-center rounded-lg text-hint transition hover:bg-accent active:scale-[0.99]"
+            className="flex w-10 shrink-0 items-center justify-center rounded text-hint transition hover:bg-accent active:scale-[0.99]"
           >
-            <BookOpen size={17} />
+            <BookOpen size={16} />
           </button>
         )}
         <div className="min-w-0 flex-1">{langRow}</div>
@@ -796,8 +795,11 @@ export function Translator({
         </div>
       </div>
 
-      {/* Block: the composer — its own panel in the same grey window surface. */}
-      <div className="window-glass relative z-10 shrink-0 rounded-lg p-1.5">{composerRow}</div>
+      {/* Block: the composer — styled exactly like the header island: same
+          taskbar-glass surface, same height (h-10), same rounded design. */}
+      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md px-1.5">
+        {composerRow}
+      </div>
 
       {/* Always mounted (not conditionally) so the transform/opacity
           transitions actually animate instead of popping in. Backdrop

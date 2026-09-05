@@ -32,12 +32,11 @@ export function AppWindow({
   return (
     <div className="pointer-events-auto relative flex size-full flex-col overflow-hidden rounded-lg">
       {product ? (
-        // The desktop field (darker surface) the grey blocks float on. The
-        // translator window below has NO own backing surface: it is the three
-        // grey (window-bg) blocks — languages / history / composer — stacked
-        // on this field and separated by the same LAYOUT_GAP, which shows the
-        // darker field between them.
-        <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain bg-bg">
+        // The desktop field is the page's own zero background: the scroll area
+        // is transparent, so the base wallpaper shows through everywhere the
+        // blocks don't cover it (gaps included). The content window below is
+        // the glass surface the original single window had.
+        <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
           {/* Zone 1 — the translator blocks. Full first screen on mobile,
               70dvh on desktop. Transparent itself; the blocks inside carry the
               window surface. */}
