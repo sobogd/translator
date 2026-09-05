@@ -56,13 +56,16 @@ const THEME_OPTIONS: { key: ThemeChoice; icon: React.ReactNode }[] = [
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-export type MenuKind = "features" | "languages" | "legal" | "theme";
+export type MenuKind = "features" | "languages" | "legal" | "theme" | "account";
 
 const MENU_ROWS: { kind: MenuKind; label: (t: TaskbarTexts) => string }[] = [
   { kind: "features", label: (t) => t.features },
   { kind: "languages", label: (t) => t.languages },
   { kind: "legal", label: (t) => t.legal },
   { kind: "theme", label: (t) => t.theme },
+  // Account is a plain text item of the header menu (not an icon): signed-out
+  // visitors see "Sign in", signed-in ones get plan/quota/account actions.
+  { kind: "account", label: (t) => t.account },
 ];
 
 // PostHog's floating glass "island" taskbar: a capsule that floats over the
@@ -89,12 +92,11 @@ export function Taskbar({
   anyLanguage?: FeatureRow;
 }) {
   const [openMenu, setOpenMenu] = useState<MenuKind | null>(null);
-  const [accountOpen, setAccountOpen] = useState(false);
   const [portalBusy, setPortalBusy] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSub, setMobileSub] = useState<MenuKind | null>(null);
 
-  const { signedIn, quota, refreshQuota } = useSession();
+  const { signedIn, quota } = useSession();
 
   // The theme choice shown in the header's Theme menu, as an external store so
   // it stays in sync with lib/theme.ts without local state/effects.
@@ -140,23 +142,20 @@ export function Taskbar({
 
   const closeAll = () => {
     setOpenMenu(null);
-    setAccountOpen(false);
     setMenuOpen(false);
     setMobileSub(null);
   };
 
   // Close any open desktop menu on outside press / Escape.
   useEffect(() => {
-    if (!openMenu && !accountOpen) return;
+    if (!openMenu) return;
     const onDown = (e: PointerEvent) => {
       if ((e.target as HTMLElement).closest?.("#top")) return;
       setOpenMenu(null);
-      setAccountOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpenMenu(null);
-        setAccountOpen(false);
       }
     };
     document.addEventListener("pointerdown", onDown, true);
@@ -165,7 +164,7 @@ export function Taskbar({
       document.removeEventListener("pointerdown", onDown, true);
       document.removeEventListener("keydown", onKey);
     };
-  }, [openMenu, accountOpen]);
+  }, [openMenu]);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -400,7 +399,8 @@ export function Taskbar({
     if (sub === "features") return texts.features;
     if (sub === "languages") return texts.languages;
     if (sub === "legal") return texts.legal;
-    return texts.theme;
+    if (sub === "theme") return texts.theme;
+    return texts.account;
   };
 
   // ---- desktop trigger button for the nav menus ----
@@ -410,7 +410,6 @@ export function Taskbar({
       onClick={() => {
         const next = openMenu === kind ? null : kind;
         setOpenMenu(next);
-        setAccountOpen(false);
         analytics.track("Click", `Header ${kind}`);
       }}
       aria-expanded={openMenu === kind}
@@ -426,6 +425,7 @@ export function Taskbar({
     languages: languagesContent,
     legal: legalContent,
     theme: themeContent,
+    account: accountContent,
   };
 
   return (
@@ -538,33 +538,11 @@ export function Taskbar({
           </Link>
         </nav>
 
-        {/* Remaining quota at a glance + Account as a context dropdown — on
-            every size. The standalone "Translate" CTA is gone: the translator
-            widget is already the always-present block on every page. */}
+        {/* Remaining quota at a glance — the only thing that stays outside
+            the menus. Account lives in the header menus as a plain text item
+            (Features / Languages / Legal / Theme / Account), not as an icon. */}
         <div className="ml-3 flex shrink-0 items-center gap-1.5">
           <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => {
-                refreshQuota();
-                setAccountOpen((v) => !v);
-                setOpenMenu(null);
-                analytics.track("Click", "Account menu");
-              }}
-              aria-label={texts.account}
-              aria-expanded={accountOpen}
-              title={texts.account}
-              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-text transition-colors hover:bg-accent active:scale-[0.99]"
-            >
-              <UserRound className="h-4 w-4" />
-            </button>
-            {accountOpen && (
-              <div className="absolute right-0 top-full z-50 mt-1 w-[248px] rounded-lg border border-border bg-card p-1.5 shadow-xl">
-                {accountContent(() => setAccountOpen(false))}
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </header>
