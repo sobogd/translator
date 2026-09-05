@@ -799,7 +799,7 @@ export function Translator({
         >
           {/* Row 1 — language pair (source ⇄ target) + the mobile history
               toggle. Header-like island: taskbar-glass, h-10. */}
-          <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md pl-1 pr-2">
+          <div className="relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-lg bg-[var(--window-bg)] pl-1 pr-2">
             <button
               type="button"
               onClick={() => {
@@ -863,7 +863,7 @@ export function Translator({
           </div>
 
           {/* Row 3 — composer island: taskbar-glass, h-10, like the header. */}
-          <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md px-1.5">
+          <div className="relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-lg bg-[var(--window-bg)] px-1.5">
             {composerRow}
           </div>
         </div>
