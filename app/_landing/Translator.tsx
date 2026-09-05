@@ -717,9 +717,10 @@ export function Translator({
   const targetLanguageLabel = targetLanguage?.nameNative ?? defaultTarget;
 
   // Topic rows — the shared history across every pair. Each topic is one flat
-  // block on the history surface — the same design as a message block: the
-  // header/taskbar background, rounded, no outline. The row shows the thread
-  // title, the pair it belongs to and the last-activity date.
+  // block on the history surface, built exactly like a conversation message
+  // block: header/taskbar background, p-3.5 padding, the title in the same
+  // text-base size as a translation, the pair/date line in the same text-sm
+  // muted size as a transcript, one rounded icon (delete) on the right.
   const topicsList = (onPick: () => void) =>
     topics.length === 0 ? (
       <div
@@ -730,46 +731,50 @@ export function Translator({
         <span>{t.noTopicsYet}</span>
       </div>
     ) : (
-      <div className="flex w-full flex-col gap-1.5">
+      <div className="flex w-full flex-col gap-3">
         {topics.map((tp) => {
           const date = formatTopicDate(tp.lastUsedAt || tp.createdAt);
           const active = tp.id === topic?.id;
           return (
             <div
               key={tp.id}
-              className="flex w-full items-center gap-0.5 rounded-lg bg-[var(--taskbar-bg)] p-1"
+              className="w-full rounded-lg bg-[var(--taskbar-bg)] p-3.5"
             >
-              <button
-                type="button"
-                onClick={() => {
-                  switchTopic(tp.id);
-                  onPick();
-                }}
-                className={`flex min-w-0 flex-1 flex-col items-start gap-0.5 rounded-md px-2 py-1.5 text-left transition hover:bg-accent active:scale-[0.99] ${
-                  active ? "text-text" : "text-hint hover:text-text"
-                }`}
-              >
-                <span className={`w-full truncate text-sm ${active ? "font-medium" : ""}`}>
-                  {tp.title || t.newTopic}
-                </span>
-                <span className="flex w-full items-center gap-1.5 text-xs text-hint">
-                  <span className="min-w-0 truncate">{topicMeta(tp)}</span>
-                  {date && (
-                    <>
-                      <span aria-hidden="true">·</span>
-                      <span className="shrink-0">{date}</span>
-                    </>
-                  )}
-                </span>
-              </button>
-              <button
-                type="button"
-                onClick={() => deleteTopic(tp.id)}
-                aria-label={t.deleteTopic}
-                className="shrink-0 rounded-md p-1.5 text-hint transition hover:bg-accent hover:text-red-500 active:scale-90"
-              >
-                <Trash2 size={14} />
-              </button>
+              <div className="flex items-start justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    switchTopic(tp.id);
+                    onPick();
+                  }}
+                  className="min-w-0 flex-1 text-left transition active:scale-[0.99]"
+                >
+                  <span
+                    className={`mb-1.5 block w-full truncate text-base leading-relaxed ${
+                      active ? "font-medium" : ""
+                    }`}
+                  >
+                    {tp.title || t.newTopic}
+                  </span>
+                  <span className="flex w-full items-center gap-1.5 text-sm leading-snug text-hint">
+                    <span className="min-w-0 truncate">{topicMeta(tp)}</span>
+                    {date && (
+                      <>
+                        <span aria-hidden="true">·</span>
+                        <span className="shrink-0">{date}</span>
+                      </>
+                    )}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => deleteTopic(tp.id)}
+                  aria-label={t.deleteTopic}
+                  className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
+                >
+                  <Trash2 size={15} />
+                </button>
+              </div>
             </div>
           );
         })}
