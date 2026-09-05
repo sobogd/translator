@@ -34,15 +34,10 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
 
   return (
     <div className={`flex ${fromA ? "justify-end" : "justify-start"}`}>
-      {/* Both sides are the same shape — flat neutral fills, no outline. The
-          two tones come from the palette tokens (accent grey for one speaker,
-          bare border for the other) so they read on the widget's white chat
-          surface without pulling any colour into the thread. */}
-      <div
-        className={`w-full max-w-[85%] rounded-lg p-3.5 ${
-          fromA ? "bg-accent" : "border border-border"
-        }`}
-      >
+      {/* Both sides are the same: one flat surface, no outline, no colour —
+          the header/taskbar background. The speaker is implied only by the
+          side of the pane the block sits on. */}
+      <div className="w-full max-w-[85%] rounded-lg bg-[var(--taskbar-bg)] p-3.5">
         {/* Original (small, muted) above the translation (larger, primary) —
             both texts, no language labels, no interaction. */}
         <p className="mb-1.5 text-sm leading-snug text-hint">{r.transcript}</p>

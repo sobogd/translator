@@ -716,8 +716,10 @@ export function Translator({
     : t.autoDetect;
   const targetLanguageLabel = targetLanguage?.nameNative ?? defaultTarget;
 
-  // Topic rows — the shared history across every pair. Each row shows the
-  // thread title, the pair it belongs to and the last-activity date.
+  // Topic rows — the shared history across every pair. Each topic is one flat
+  // block on the history surface — the same design as a message block: the
+  // header/taskbar background, rounded, no outline. The row shows the thread
+  // title, the pair it belongs to and the last-activity date.
   const topicsList = (onPick: () => void) =>
     topics.length === 0 ? (
       <div
@@ -728,44 +730,50 @@ export function Translator({
         <span>{t.noTopicsYet}</span>
       </div>
     ) : (
-      topics.map((tp) => {
-        const date = formatTopicDate(tp.lastUsedAt || tp.createdAt);
-        return (
-          <div key={tp.id} className="flex items-center gap-1">
-            <button
-              type="button"
-              onClick={() => {
-                switchTopic(tp.id);
-                onPick();
-              }}
-              className={`flex min-w-0 flex-1 flex-col items-start gap-0.5 px-2 py-2 text-left transition active:scale-[0.99] ${
-                tp.id === topic?.id ? "text-text" : "text-hint hover:text-text"
-              }`}
+      <div className="flex w-full flex-col gap-1.5">
+        {topics.map((tp) => {
+          const date = formatTopicDate(tp.lastUsedAt || tp.createdAt);
+          const active = tp.id === topic?.id;
+          return (
+            <div
+              key={tp.id}
+              className="flex w-full items-center gap-0.5 rounded-lg bg-[var(--taskbar-bg)] p-1"
             >
-              <span className={`w-full truncate text-sm ${tp.id === topic?.id ? "font-medium" : ""}`}>
-                {tp.title || t.newTopic}
-              </span>
-              <span className="flex w-full items-center gap-1.5 text-xs text-hint">
-                <span className="min-w-0 truncate">{topicMeta(tp)}</span>
-                {date && (
-                  <>
-                    <span aria-hidden="true">·</span>
-                    <span className="shrink-0">{date}</span>
-                  </>
-                )}
-              </span>
-            </button>
-            <button
-              type="button"
-              onClick={() => deleteTopic(tp.id)}
-              aria-label={t.deleteTopic}
-              className="shrink-0 rounded-lg p-1.5 text-hint transition hover:text-red-500 active:scale-90"
-            >
-              <Trash2 size={14} />
-            </button>
-          </div>
-        );
-      })
+              <button
+                type="button"
+                onClick={() => {
+                  switchTopic(tp.id);
+                  onPick();
+                }}
+                className={`flex min-w-0 flex-1 flex-col items-start gap-0.5 rounded-md px-2 py-1.5 text-left transition hover:bg-accent active:scale-[0.99] ${
+                  active ? "text-text" : "text-hint hover:text-text"
+                }`}
+              >
+                <span className={`w-full truncate text-sm ${active ? "font-medium" : ""}`}>
+                  {tp.title || t.newTopic}
+                </span>
+                <span className="flex w-full items-center gap-1.5 text-xs text-hint">
+                  <span className="min-w-0 truncate">{topicMeta(tp)}</span>
+                  {date && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span className="shrink-0">{date}</span>
+                    </>
+                  )}
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => deleteTopic(tp.id)}
+                aria-label={t.deleteTopic}
+                className="shrink-0 rounded-md p-1.5 text-hint transition hover:bg-accent hover:text-red-500 active:scale-90"
+              >
+                <Trash2 size={14} />
+              </button>
+            </div>
+          );
+        })}
+      </div>
     );
 
   return (
