@@ -118,7 +118,7 @@ function LanguagePickerModal({
         aria-label={texts.chooseLanguage}
       >
         {/* Row 1 — search field, on the same surface as the header. */}
-        <div className="flex h-11 shrink-0 items-center rounded-lg bg-[var(--taskbar-bg)] px-3">
+        <div className="flex min-h-12 shrink-0 items-center rounded-lg bg-[var(--taskbar-bg)] px-3">
           <input
             type="search"
             inputMode="search"
@@ -147,7 +147,7 @@ function LanguagePickerModal({
             <button
               type="button"
               onClick={() => onSelect(null)}
-              className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+              className={`flex w-full items-center px-3 py-2.5 text-left text-sm transition-colors hover:bg-accent ${
                 current === null ? "font-semibold text-text" : "text-text/80"
               }`}
             >
@@ -159,7 +159,7 @@ function LanguagePickerModal({
               key={l.code}
               type="button"
               onClick={() => onSelect(l.code)}
-              className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+              className={`flex w-full items-center px-3 py-2.5 text-left text-sm transition-colors hover:bg-accent ${
                 l.code === current ? "font-semibold text-text" : "text-text/80"
               }`}
             >
@@ -422,7 +422,7 @@ export function Translator({
   // Caps at 3 lines: leading-6 (24px) × 3 + the textarea's own py-2.5 (20px).
   // One line is 44px — the resting height of the field — and the island adds
   // its p-1.5 and border on top of that. Anything longer grows the island.
-  const TEXTAREA_MAX_H = 40;
+  const TEXTAREA_MAX_H = 96;
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -635,12 +635,12 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-center gap-1.5">
+    <div className="flex min-w-0 w-full items-end gap-2">
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
       {status !== "idle" ? (
-        <div className="flex min-w-0 flex-1 items-center gap-3 px-2 text-sm text-hint">
+        <div className="flex min-w-0 flex-1 items-center self-center gap-3 px-2 text-sm text-hint">
           {status === "recording" ? (
             <>
               <span className="flex h-4 items-end gap-0.5">
@@ -678,17 +678,16 @@ export function Translator({
           data-bwignore
           data-form-type="other"
           style={{ maxHeight: TEXTAREA_MAX_H }}
-          className="min-h-9 flex-1 resize-none self-center border-0 bg-transparent px-2 py-1.5 text-base leading-6 outline-none"
+          className="min-h-12 min-w-0 flex-1 resize-none border-0 bg-transparent px-2 py-2 text-base leading-6 outline-none"
         />
       )}
-      {/* Square CTA — the accent action of the widget (record / stop /
-          send), at the same size as the header CTA so the two read as one
-          control. */}
+      {/* Square CTA — stays a fixed square (never stretches with the field);
+          the input grows on its own. */}
       <button
         onClick={micOrSend}
         disabled={status === "processing" || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
-        className={`relative flex h-9 w-9 shrink-0 self-center items-center justify-center rounded-lg bg-button text-sm font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
+        className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-button font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
@@ -868,8 +867,9 @@ export function Translator({
           </div>
         </div>
 
-        {/* Row 3 — composer, on the same background as the content blocks. */}
-        <div className="relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-lg bg-[var(--window-bg)] px-1.5">
+        {/* Row 3 — composer: grows vertically with the input; the action
+            button stays a fixed square. */}
+        <div className="relative z-10 flex shrink-0 flex-col rounded-lg bg-[var(--window-bg)] px-2 py-1.5">
           {composerRow}
         </div>
       </div>
