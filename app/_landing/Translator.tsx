@@ -922,13 +922,19 @@ export function Translator({
               </div>
               {/* Remaining quota — always visible at the bottom of the chat
                   pane (it does not scroll with the messages); the scroll fades
-                  into it. Text only, numbers in the accent tone. */}
-              <div className="flex shrink-0 items-center justify-center gap-1.5 px-3 py-1.5 text-xs leading-normal text-hint">
-                <span>{texts.account.minutesLeft}:</span>
-                <span className="font-semibold text-button">{quotaSeconds}</span>
-                <span aria-hidden="true">·</span>
-                <span>{texts.account.charsLeft}:</span>
-                <span className="font-semibold text-button">{quotaChars}</span>
+                  into it. Text only, numbers in the accent tone. On mobile the
+                  two limits stack as separate rows (minutes first, characters
+                  second); from sm up they sit on one line again. */}
+              <div className="flex shrink-0 flex-col items-center justify-center gap-y-1 px-3 py-1.5 text-xs leading-normal text-hint sm:flex-row sm:gap-x-1.5 sm:gap-y-0">
+                <span className="flex items-center gap-1.5">
+                  <span>{texts.account.minutesLeft}:</span>
+                  <span className="font-semibold text-button">{quotaSeconds}</span>
+                </span>
+                <span aria-hidden="true" className="hidden sm:inline">·</span>
+                <span className="flex items-center gap-1.5">
+                  <span>{texts.account.charsLeft}:</span>
+                  <span className="font-semibold text-button">{quotaChars}</span>
+                </span>
               </div>
             </div>
           )}
