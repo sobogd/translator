@@ -716,8 +716,11 @@ export function Translator({
   // history column (full width on mobile, left column on desktop).
   const topicsList = (onPick: () => void) =>
     pairTopics.length === 0 ? (
-      <div className="flex h-full min-h-[8rem] w-full flex-col items-center justify-center gap-2 text-center text-sm text-hint">
-        <BookOpen size={20} strokeWidth={1.75} />
+      <div
+        className="flex min-h-full w-full flex-col items-center justify-center gap-2.5 px-4 text-center text-[15px] opacity-50"
+        style={{ color: "var(--hint)" }}
+      >
+        <BookOpen size={30} />
         <span>{t.noTopicsYet}</span>
       </div>
     ) : (
@@ -753,12 +756,12 @@ export function Translator({
           off-screen to the left. Opening the history slides the panes (each
           is 100% of the widget width), so the translator moves off-screen to
           the right and the history takes its place — no half-width panes.
-          Desktop — no sliding: history column on the left (300px), the
+          Desktop — no sliding: history column on the left (40%), the
           translator on the right (flex). */}
       {/* Pane 1 — history of saved threads. Always present as its own panel;
           shows the placeholder when there are no threads yet. */}
       <div
-        className={`absolute inset-0 flex h-full w-full flex-col overflow-hidden rounded-lg bg-[var(--window-bg)] transition-transform duration-300 ease-out sm:static sm:w-[300px] sm:shrink-0 sm:translate-x-0 ${
+        className={`absolute inset-0 flex h-full w-full flex-col overflow-hidden rounded-lg bg-[var(--window-bg)] transition-transform duration-300 ease-out sm:static sm:w-[40%] sm:shrink-0 sm:translate-x-0 ${
           topicsOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
