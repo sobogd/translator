@@ -117,7 +117,7 @@ function LanguagePickerModal({
         aria-label={texts.chooseLanguage}
       >
         {/* Row 1 — search field, on the same surface as the content panels. */}
-        <div className="flex h-11 shrink-0 items-center rounded-lg border border-border bg-[var(--window-bg)] px-3">
+        <div className="flex h-11 shrink-0 items-center rounded-lg bg-[var(--window-bg)] px-3">
           <input
             type="search"
             inputMode="search"
@@ -141,7 +141,7 @@ function LanguagePickerModal({
 
         {/* Row 2 — the 400px scrollable list, one language per row, same
             surface as the content panels. */}
-        <div className="h-[400px] overflow-y-auto overscroll-contain rounded-lg border border-border bg-[var(--window-bg)] p-1">
+        <div className="h-[400px] overflow-y-auto overscroll-contain rounded-lg bg-[var(--window-bg)] p-1">
           {forSource && (
             <button
               type="button"
@@ -762,7 +762,7 @@ export function Translator({
       >
         {/* Column 1 — history of saved threads. Always present as its own
             panel; shows the placeholder when there are no threads yet. */}
-        <div className="relative flex h-full w-1/2 shrink-0 flex-col overflow-hidden rounded-lg border border-border bg-[var(--window-bg)] sm:w-[300px]">
+        <div className="relative flex h-full w-1/2 shrink-0 flex-col overflow-hidden rounded-lg bg-[var(--window-bg)] sm:w-[300px]">
           <div className="flex shrink-0 items-center justify-between gap-2 px-3 pb-1 pt-2">
             <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
             <div className="flex items-center gap-0.5">
@@ -845,7 +845,7 @@ export function Translator({
 
           {/* Row 2 — the conversation of the current thread: flat window-tone
               panel with its own inner scroll. */}
-          <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg border border-border bg-[var(--window-bg)]">
+          <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg bg-[var(--window-bg)]">
             <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
               {loadingTopic ? (
                 <div className="flex justify-center py-10 text-hint">
