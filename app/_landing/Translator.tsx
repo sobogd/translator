@@ -693,36 +693,10 @@ export function Translator({
     </div>
   );
 
-  // Language buttons: fill the header-like pair island (h-10, taskbar-glass).
-  const langBtnClass =
-    "flex min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-accent disabled:pointer-events-none";
-  const langRow = (
-    <div className="flex min-w-0 flex-1 items-stretch overflow-hidden rounded-lg">
-      <button
-        onClick={() => {
-          analytics.track("Click", "Language picker source");
-          setPickerFor("source");
-        }}
-        className={langBtnClass}
-      >
-        <span className="truncate">
-          {currentSourceCode ? (getLanguage(currentSourceCode)?.nameNative ?? currentSourceCode) : t.autoDetect}
-        </span>
-      </button>
-      <span className="flex w-10 shrink-0 items-center justify-center border-x border-border text-hint" aria-hidden="true">
-        <ArrowRightLeft size={15} />
-      </span>
-      <button
-        onClick={() => {
-          analytics.track("Click", "Language picker target");
-          setPickerFor("target");
-        }}
-        className={langBtnClass}
-      >
-        <span className="truncate">{targetLanguage?.nameNative ?? defaultTarget}</span>
-      </button>
-    </div>
-  );
+  const sourceLanguageLabel = currentSourceCode
+    ? (getLanguage(currentSourceCode)?.nameNative ?? currentSourceCode)
+    : t.autoDetect;
+  const targetLanguageLabel = targetLanguage?.nameNative ?? defaultTarget;
 
   // Topic rows only — no background fill, active = bold text. Shown in the
   // sliding drawer (see below).
@@ -756,10 +730,11 @@ export function Translator({
 
   return (
     <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden" style={{ gap: LAYOUT_GAP }}>
-      {/* Block: language pair (source ⇄ target) with the topics toggle —
-          styled exactly like the header island: same taskbar-glass surface,
-          same height (h-10), same rounded design. */}
-      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch gap-1 overflow-hidden rounded-md pl-1.5 pr-2">
+      {/* Block: language pair (source ⇄ target) with the topics toggle — a
+          clean header-like island: same taskbar-glass surface, same height
+          (h-10), same rounded design. Children are direct flex rows, so the
+          selects are always vertically centred. */}
+      <div className="taskbar-glass relative z-10 flex h-10 shrink-0 items-stretch overflow-hidden rounded-md pl-1 pr-2">
         {pairKnown && (
           <button
             onClick={() => {
@@ -768,12 +743,39 @@ export function Translator({
             }}
             aria-label={t.topics}
             title={topic?.title ?? t.topics}
-            className="flex w-10 shrink-0 items-center justify-center rounded text-hint transition hover:bg-accent active:scale-[0.99]"
+            className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:bg-accent active:scale-[0.99]"
           >
             <BookOpen size={16} />
           </button>
         )}
-        <div className="min-w-0 flex-1">{langRow}</div>
+        <button
+          type="button"
+          onClick={() => {
+            analytics.track("Click", "Language picker source");
+            setPickerFor("source");
+          }}
+          title={sourceLanguageLabel}
+          className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
+        >
+          <span className="min-w-0 truncate">{sourceLanguageLabel}</span>
+        </button>
+        <span
+          aria-hidden="true"
+          className="flex w-8 shrink-0 items-center justify-center self-stretch text-hint"
+        >
+          <ArrowRightLeft size={14} />
+        </span>
+        <button
+          type="button"
+          onClick={() => {
+            analytics.track("Click", "Language picker target");
+            setPickerFor("target");
+          }}
+          title={targetLanguageLabel}
+          className="flex h-full min-w-0 flex-1 items-center justify-center gap-1.5 rounded px-2 text-sm font-medium leading-none text-text transition-colors hover:bg-accent active:scale-[0.99]"
+        >
+          <span className="min-w-0 truncate">{targetLanguageLabel}</span>
+        </button>
       </div>
 
       {/* Block: the conversation — a flat panel in the window's own grey tone
