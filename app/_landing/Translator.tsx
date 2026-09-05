@@ -713,10 +713,13 @@ export function Translator({
   const targetLanguageLabel = targetLanguage?.nameNative ?? defaultTarget;
 
   // Topic rows only — no background fill, active = bold text. Shown in the
-  // sliding drawer (see below).
+  // history column (full width on mobile, left column on desktop).
   const topicsList = (onPick: () => void) =>
     pairTopics.length === 0 ? (
-      <div className="py-6 text-center text-sm text-hint">{t.noTopicsYet}</div>
+      <div className="flex h-full min-h-[8rem] w-full flex-col items-center justify-center gap-2 text-center text-sm text-hint">
+        <BookOpen size={20} strokeWidth={1.75} />
+        <span>{t.noTopicsYet}</span>
+      </div>
     ) : (
       pairTopics.map((tp) => (
         <div key={tp.id} className="flex items-center gap-1">

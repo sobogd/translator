@@ -85,10 +85,10 @@ export function History({
   if (rows.length === 0) {
     return (
       <div
-        className="flex flex-1 min-h-[14rem] max-w-[300px] flex-col items-center justify-center gap-3 self-center text-center text-base opacity-50"
+        className="flex min-h-full w-full flex-col items-center justify-center gap-2.5 px-4 text-center text-[15px] opacity-50"
         style={{ color: "var(--hint)" }}
       >
-        <MessageSquare size={36} />
+        <MessageSquare size={30} />
         {texts.emptyState}
       </div>
     );
