@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowRightLeft, ArrowUp, BookOpen, Loader2, Mic, Plus, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
@@ -102,9 +103,9 @@ function LanguagePickerModal({
   const [query, setQuery] = useState("");
   const list = LANGUAGES.filter((l) => matchesQuery(l, query));
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto p-2 backdrop-blur-md"
+      className="fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto p-2 backdrop-blur-[8px]"
       onClick={onClose}
     >
       {/* One column, two rows, 8px apart; no shared background between them —
@@ -116,8 +117,8 @@ function LanguagePickerModal({
         aria-modal="true"
         aria-label={texts.chooseLanguage}
       >
-        {/* Row 1 — search field, on the same surface as the content panels. */}
-        <div className="flex h-11 shrink-0 items-center rounded-lg bg-[var(--window-bg)] px-3">
+        {/* Row 1 — search field, on the same surface as the header. */}
+        <div className="flex h-11 shrink-0 items-center rounded-lg bg-[var(--taskbar-bg)] px-3">
           <input
             type="search"
             inputMode="search"
@@ -139,9 +140,9 @@ function LanguagePickerModal({
           />
         </div>
 
-        {/* Row 2 — the 400px scrollable list, one language per row, same
-            surface as the content panels. */}
-        <div className="h-[400px] overflow-y-auto overscroll-contain rounded-lg bg-[var(--window-bg)] p-1">
+        {/* Row 2 — the 400px scrollable list, one language per row, on the
+            same surface as the header. */}
+        <div className="h-[400px] overflow-y-auto overscroll-contain rounded-lg bg-[var(--taskbar-bg)] p-1">
           {forSource && (
             <button
               type="button"
@@ -167,7 +168,8 @@ function LanguagePickerModal({
           ))}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
