@@ -759,8 +759,8 @@ export function Translator({
   return (
     <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden" style={{ gap: LAYOUT_GAP }}>
       {/* Block: language pair (source ⇄ target) with the topics toggle — its
-          own panel with its own background. */}
-      <div className="relative z-10 flex shrink-0 items-stretch gap-2 rounded-xl border border-border bg-card p-1.5">
+          own panel in the window's own (grey) surface. */}
+      <div className="window-glass relative z-10 flex shrink-0 items-stretch gap-2 overflow-hidden rounded-lg p-1.5">
         {pairKnown && (
           <button
             onClick={() => {
@@ -777,9 +777,9 @@ export function Translator({
         <div className="min-w-0 flex-1">{langRow}</div>
       </div>
 
-      {/* Block: the conversation — its own panel with an inner scroll, so the
-          widget itself never scrolls the page. */}
-      <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-xl border border-border bg-card">
+      {/* Block: the conversation — its own panel (same grey surface as the
+          window) with an inner scroll, so the widget never scrolls the page. */}
+      <div className="window-glass relative z-0 min-h-0 flex-1 overflow-hidden rounded-lg">
         <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
           {loadingTopic ? (
             <div className="flex justify-center py-10 text-hint">
@@ -796,8 +796,8 @@ export function Translator({
         </div>
       </div>
 
-      {/* Block: the composer — its own panel with its own background. */}
-      <div className="relative z-10 shrink-0 rounded-xl border border-border bg-card p-1.5">{composerRow}</div>
+      {/* Block: the composer — its own panel in the same grey window surface. */}
+      <div className="window-glass relative z-10 shrink-0 rounded-lg p-1.5">{composerRow}</div>
 
       {/* Always mounted (not conditionally) so the transform/opacity
           transitions actually animate instead of popping in. Backdrop

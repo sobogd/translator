@@ -32,20 +32,24 @@ export function AppWindow({
   return (
     <div className="pointer-events-auto relative flex size-full flex-col overflow-hidden rounded-lg">
       {product ? (
-        // The desktop field the two windows float on; both windows use the
-        // same `.window-glass` surface as the original single window.
+        // The desktop field (darker surface) the grey blocks float on. The
+        // translator window below has NO own backing surface: it is the three
+        // grey (window-bg) blocks — languages / history / composer — stacked
+        // on this field and separated by the same LAYOUT_GAP, which shows the
+        // darker field between them.
         <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain bg-bg">
-          {/* Window 1 — the translator: full first screen on mobile, 70dvh on
-              desktop (its own glass surface, exactly like the window below). */}
+          {/* Zone 1 — the translator blocks. Full first screen on mobile,
+              70dvh on desktop. Transparent itself; the blocks inside carry the
+              window surface. */}
           <section
             aria-label="Translator"
-            className="window-glass flex h-[calc(100dvh-72px)] w-full shrink-0 flex-col items-stretch overflow-hidden rounded-lg px-5 pb-5 pt-5 sm:h-[70dvh] sm:px-8"
+            className="flex h-[calc(100dvh-72px)] w-full shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
           >
             {product}
           </section>
 
-          {/* Window 2 — the page content: the same design the single scroll
-              window used to have, separated by the same gap as the header.
+          {/* Window 2 — the page content: the same glass window the single
+              scroll window used to be, separated by the same LAYOUT_GAP.
               No inner scroll: it passes through the one outer scroll. */}
           <section
             style={{ marginTop: LAYOUT_GAP }}
