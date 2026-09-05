@@ -743,7 +743,7 @@ export function Translator({
             }}
             aria-label={t.topics}
             title={topic?.title ?? t.topics}
-            className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:bg-accent active:scale-[0.99]"
+            className="flex w-10 shrink-0 items-center justify-center text-hint transition hover:bg-accent active:scale-[0.99] sm:hidden"
           >
             <BookOpen size={16} />
           </button>
@@ -778,6 +778,29 @@ export function Translator({
         </button>
       </div>
 
+      {/* Block: translation history (the saved threads) — a separate block on
+          desktop, same window-tone panel as the conversation. On mobile this
+          history lives behind the topics button as the sliding drawer below. */}
+      <div className="hidden w-full shrink-0 flex-col overflow-hidden rounded-lg border border-border bg-[var(--window-bg)] sm:flex">
+        <div className="flex shrink-0 items-center justify-between gap-2 px-3 pb-1 pt-2">
+          <p className="px-1 text-xs font-semibold uppercase tracking-wide text-hint">{t.topics}</p>
+          <button
+            type="button"
+            onClick={() => {
+              newTopic();
+            }}
+            aria-label={t.newTopic}
+            title={t.newTopic}
+            className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
+          >
+            <Plus size={15} />
+          </button>
+        </div>
+        <div className="min-h-0 max-h-44 overflow-y-auto px-1 pb-2 sm:max-h-52">
+          {topicsList(() => {})}
+        </div>
+      </div>
+
       {/* Block: the conversation — a flat panel in the window's own grey tone
           (no heavy glass shadow, so nothing reads as a background behind the
           widget), with an inner scroll so the widget never scrolls the page. */}
@@ -808,13 +831,13 @@ export function Translator({
           transitions actually animate instead of popping in. Backdrop
           blurs the widget behind it. */}
       <div
-        className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`absolute inset-0 z-20 bg-black/40 backdrop-blur-sm transition-opacity duration-300 sm:hidden ${
           topicsOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={() => setTopicsOpen(false)}
       />
       <div
-        className={`absolute inset-y-0 left-0 z-30 flex w-full max-w-[18rem] flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:p-5 ${
+        className={`absolute inset-0 z-30 flex w-full flex-col gap-3 overflow-hidden bg-bg p-4 transition-transform duration-300 ease-out sm:hidden sm:p-5 ${
           topicsOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
