@@ -11,8 +11,10 @@ import type { TranslatorTexts } from "./types";
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-// Live remaining-quota badge: voice seconds (m:ss) + characters — the
-// anonymous fingerprint pool or the signed-in account balance.
+// Live remaining-quota chips (header): one chip for voice minutes and one
+// for characters. Content-block background, no border, same height (h-7) as
+// the mermaid header's "Open editor" button. The anonymous fingerprint pool
+// or the signed-in account balance.
 export function QuotaBadge({
   locale,
   accountTexts,
@@ -20,29 +22,26 @@ export function QuotaBadge({
 }: {
   locale: string;
   accountTexts: TranslatorTexts["account"];
-  /** Tighter paddings/gaps so the badge fits a narrow mobile header row. */
+  /** Kept for compatibility — the chips are always compact (h-7). */
   compact?: boolean;
 }) {
   // Fetched + polled once per page by SessionProvider (app/_landing/session.tsx).
   const { quota } = useSession();
   if (!quota) return null;
   const nf = new Intl.NumberFormat(locale);
+  const chip =
+    "inline-flex h-7 items-center gap-1 rounded bg-[var(--window-bg)] px-2 text-xs font-medium leading-none text-hint";
   return (
-    <span
-      className={`flex h-9 items-center rounded-lg border border-border font-medium text-hint ${
-        compact ? "gap-2 px-2.5 text-xs" : "shrink-0 gap-2.5 px-3 text-sm"
-      }`}
-      title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)} · ${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}
-    >
-      <span className="flex items-center gap-1">
-        <Mic className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} aria-label={accountTexts.minutesLeft} />
+    <>
+      <span className={chip} title={`${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)}`}>
+        <Mic className="h-3.5 w-3.5" aria-hidden="true" />
         {fmtSeconds(quota.seconds)}
       </span>
-      <span className="flex items-center gap-1">
-        <Type className={compact ? "h-3.5 w-3.5" : "h-4 w-4"} aria-label={accountTexts.charsLeft} />
+      <span className={chip} title={`${accountTexts.charsLeft}: ${nf.format(quota.chars)}`}>
+        <Type className="h-3.5 w-3.5" aria-hidden="true" />
         {nf.format(quota.chars)}
       </span>
-    </span>
+    </>
   );
 }
 
