@@ -8,6 +8,7 @@ import { apiFetch } from "@/lib/client";
 import type { Topic, TopicDetail } from "@/lib/types";
 import { LANGUAGES, getLanguage } from "@/lib/languages";
 import { Modal } from "./Modal";
+import { LAYOUT_GAP } from "./desktop/layout";
 import { QUOTA_EVENT, useSession } from "./session";
 import { PAIR_COOKIE, formatPairCookie, parsePairCookie, readCookieValue } from "@/lib/cookies";
 import { analytics } from "@/lib/analytics";
@@ -618,7 +619,7 @@ export function Translator({
   const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
 
   const composerRow = (
-    <div className="flex min-w-0 flex-1 items-end gap-1.5 rounded-lg border border-border bg-card p-1.5 pr-2">
+    <div className="flex min-w-0 flex-1 items-end gap-1.5">
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
@@ -698,7 +699,7 @@ export function Translator({
   const langBtnClass =
     "flex min-h-10 min-w-0 flex-1 items-center justify-center px-3 text-sm font-semibold transition hover:bg-accent disabled:pointer-events-none";
   const langRow = (
-    <div className="flex items-stretch overflow-hidden rounded-lg border border-border bg-card">
+    <div className="flex min-w-0 flex-1 items-stretch overflow-hidden rounded-lg">
       <button
         onClick={() => {
           analytics.track("Click", "Language picker source");
@@ -756,10 +757,10 @@ export function Translator({
     );
 
   return (
-    <div className="relative flex h-full min-h-0 w-full flex-col gap-2.5 overflow-hidden">
-      {/* Top row: the topics toggle (once the pair is known) next to the
-          always-visible language picker. */}
-      <div className="relative z-10 flex shrink-0 items-stretch gap-2">
+    <div className="relative flex h-full min-h-0 w-full flex-col overflow-hidden" style={{ gap: LAYOUT_GAP }}>
+      {/* Block: language pair (source ⇄ target) with the topics toggle — its
+          own panel with its own background. */}
+      <div className="relative z-10 flex shrink-0 items-stretch gap-2 rounded-xl border border-border bg-card p-1.5">
         {pairKnown && (
           <button
             onClick={() => {
@@ -768,7 +769,7 @@ export function Translator({
             }}
             aria-label={t.topics}
             title={topic?.title ?? t.topics}
-            className="flex w-11 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-hint transition hover:text-text active:scale-[0.99]"
+            className="flex w-11 shrink-0 items-center justify-center rounded-lg text-hint transition hover:bg-accent active:scale-[0.99]"
           >
             <BookOpen size={17} />
           </button>
@@ -776,27 +777,27 @@ export function Translator({
         <div className="min-w-0 flex-1">{langRow}</div>
       </div>
 
-      {/* The conversation: its own scroll inside the widget, so the widget
-          itself never scrolls the page. */}
-      <div
-        ref={chatScrollRef}
-        className="relative z-0 min-h-0 flex-1 overflow-y-auto rounded-lg border border-border bg-card px-3 py-3 sm:px-4"
-      >
-        {loadingTopic ? (
-          <div className="flex justify-center py-10 text-hint">
-            <Loader2 size={20} className="animate-spin" />
-          </div>
-        ) : (
-          <History
-            rows={rows}
-            langA={topic?.sourceLang ?? ""}
-            langB={topic?.targetLang ?? ""}
-            texts={texts.history}
-          />
-        )}
+      {/* Block: the conversation — its own panel with an inner scroll, so the
+          widget itself never scrolls the page. */}
+      <div className="relative z-0 min-h-0 flex-1 overflow-hidden rounded-xl border border-border bg-card">
+        <div ref={chatScrollRef} className="h-full overflow-y-auto px-3 py-3 sm:px-4">
+          {loadingTopic ? (
+            <div className="flex justify-center py-10 text-hint">
+              <Loader2 size={20} className="animate-spin" />
+            </div>
+          ) : (
+            <History
+              rows={rows}
+              langA={topic?.sourceLang ?? ""}
+              langB={topic?.targetLang ?? ""}
+              texts={texts.history}
+            />
+          )}
+        </div>
       </div>
 
-      <div className="relative z-10 shrink-0">{composerRow}</div>
+      {/* Block: the composer — its own panel with its own background. */}
+      <div className="relative z-10 shrink-0 rounded-xl border border-border bg-card p-1.5">{composerRow}</div>
 
       {/* Always mounted (not conditionally) so the transform/opacity
           transitions actually animate instead of popping in. Backdrop

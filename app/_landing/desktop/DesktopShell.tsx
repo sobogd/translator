@@ -68,7 +68,7 @@ export function DesktopShell({
           above stays a sibling <header> landmark. The window fills the canvas
           edge to edge below the header (constant 64px of chrome), so the
           two-part scroll inside it can size its halves from the viewport. */}
-      <main className="pointer-events-none relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pb-2 sm:px-6 sm:pb-2">
+      <main className="pointer-events-none relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pb-2 pt-2 sm:px-6 sm:pb-2 sm:pt-2">
         <div className="pointer-events-none h-full w-full max-w-[1000px]">
           <AppWindow product={product}>
             {/* The full brand mark (icon + word) lives at the top of the home

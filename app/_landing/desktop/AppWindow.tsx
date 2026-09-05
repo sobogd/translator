@@ -3,26 +3,23 @@
 //
 // With a product (the translator) the desktop shows TWO glass windows of the
 // same design, stacked in ONE common scroll (no nested scroll):
-//   1) the translator window — fills the whole area below the header, so on
-//      arrival only it is visible; scrolling moves it up and away;
+//   1) the translator window — full height on mobile, 70dvh on desktop, so on
+//      arrival only it is visible (on mobile) / the content window is already
+//      peeking below it (on desktop); scrolling moves it up and away;
 //   2) the content window — same design as before (the window that used to be
-//      the single scroll block), below a gap of the desktop surface; it
-//      scrolls through the same outer scroll after the translator is gone.
+//      the single scroll block), separated by the same LAYOUT_GAP as the gap
+//      between the header and the first window.
 // Scrolling back up returns the translator window.
 //
 // `scrollContentToTop()` is what the header's "Translate" CTA uses: it brings
 // the translator window back (scrolls the single scroll area to its top).
+import { LAYOUT_GAP } from "./layout";
+
 export function scrollContentToTop() {
   if (typeof window === "undefined") return;
   const el = document.querySelector<HTMLElement>(".page-scroll");
   el?.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-// The window area under the fixed header (taskbar + margins) — the height the
-// translator window fills on arrival.
-const VIEW_H = "calc(100dvh - 64px)";
-// Desktop-surface gap between the two windows (their backgrounds never touch).
-const PART_GAP = 28;
 
 export function AppWindow({
   product,
@@ -38,20 +35,22 @@ export function AppWindow({
         // The desktop field the two windows float on; both windows use the
         // same `.window-glass` surface as the original single window.
         <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain bg-bg">
-          {/* Window 1 — the translator, fills the first screen (its own glass
-              surface, exactly like the window below). */}
+          {/* Window 1 — the translator: full first screen on mobile, 70dvh on
+              desktop (its own glass surface, exactly like the window below). */}
           <section
             aria-label="Translator"
-            style={{ height: VIEW_H }}
-            className="window-glass flex w-full shrink-0 flex-col items-stretch overflow-hidden rounded-lg px-5 pb-5 pt-5 sm:px-8"
+            className="window-glass flex h-[calc(100dvh-72px)] w-full shrink-0 flex-col items-stretch overflow-hidden rounded-lg px-5 pb-5 pt-5 sm:h-[70dvh] sm:px-8"
           >
             {product}
           </section>
 
           {/* Window 2 — the page content: the same design the single scroll
-              window used to have, sitting below a gap of the desktop surface.
+              window used to have, separated by the same gap as the header.
               No inner scroll: it passes through the one outer scroll. */}
-          <section style={{ marginTop: PART_GAP }} className="window-glass w-full overflow-hidden rounded-lg">
+          <section
+            style={{ marginTop: LAYOUT_GAP }}
+            className="window-glass w-full overflow-hidden rounded-lg"
+          >
             {children}
           </section>
         </div>
