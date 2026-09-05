@@ -617,20 +617,7 @@ export function Translator({
   const rows = topic ? [...topic.translations].reverse() : [];
 
   // History is global across all language pairs: every thread is listed
-  // together (newest first, as the server returns them), with its pair and
-  // last-used date shown per row.
-  const langName = (code: string | null) => (code ? (getLanguage(code)?.nameNative ?? code) : t.autoDetect);
-  const topicMeta = (tp: Topic) => `${langName(tp.sourceLang)} → ${langName(tp.targetLang)}`;
-  const formatTopicDate = (iso: string): string => {
-    try {
-      return new Intl.DateTimeFormat(document.documentElement.lang || "en", {
-        day: "numeric",
-        month: "short",
-      }).format(new Date(iso));
-    } catch {
-      return "";
-    }
-  };
+  // together (newest first, as the server returns them).
 
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the field edge.
@@ -716,12 +703,9 @@ export function Translator({
     : t.autoDetect;
   const targetLanguageLabel = targetLanguage?.nameNative ?? defaultTarget;
 
-  // Topic rows — the shared history across every pair. Each topic is one flat
-  // block on the history surface, built exactly like a conversation message
-  // block: header/taskbar background, p-2 padding, the title in the same
-  // text-base size as a translation, the pair/date line in the same text-sm
-  // muted size as a transcript, one rounded icon (delete) on the right. All
-  // gaps and paddings are 8px — same rhythm as the chat.
+  // Topic rows — the shared history across every pair. Each topic is a plain
+  // row (no card background): just the thread title at text-sm, with the
+  // delete control on the right.
   const topicsList = (onPick: () => void) =>
     topics.length === 0 ? (
       <div
@@ -732,50 +716,31 @@ export function Translator({
         <span>{t.noTopicsYet}</span>
       </div>
     ) : (
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col">
         {topics.map((tp) => {
-          const date = formatTopicDate(tp.lastUsedAt || tp.createdAt);
           const active = tp.id === topic?.id;
           return (
-            <div
-              key={tp.id}
-              className="w-full rounded-lg bg-[var(--taskbar-bg)] p-2"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    switchTopic(tp.id);
-                    onPick();
-                  }}
-                  className="min-w-0 flex-1 text-left transition active:scale-[0.99]"
-                >
-                  <span
-                    className={`mb-2 block w-full truncate text-base leading-relaxed ${
-                      active ? "font-medium" : ""
-                    }`}
-                  >
-                    {tp.title || t.newTopic}
-                  </span>
-                  <span className="flex w-full items-center gap-2 text-sm leading-snug text-hint">
-                    <span className="min-w-0 truncate">{topicMeta(tp)}</span>
-                    {date && (
-                      <>
-                        <span aria-hidden="true">·</span>
-                        <span className="shrink-0">{date}</span>
-                      </>
-                    )}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => deleteTopic(tp.id)}
-                  aria-label={t.deleteTopic}
-                  className="shrink-0 rounded-lg p-2 text-hint transition hover:text-red-500 active:scale-90"
-                >
-                  <Trash2 size={15} />
-                </button>
-              </div>
+            <div key={tp.id} className="flex w-full items-center gap-1">
+              <button
+                type="button"
+                onClick={() => {
+                  switchTopic(tp.id);
+                  onPick();
+                }}
+                className={`min-w-0 flex-1 truncate px-2 py-2 text-left text-sm leading-normal transition active:scale-[0.99] ${
+                  active ? "font-medium text-text" : "text-hint hover:text-text"
+                }`}
+              >
+                {tp.title || t.newTopic}
+              </button>
+              <button
+                type="button"
+                onClick={() => deleteTopic(tp.id)}
+                aria-label={t.deleteTopic}
+                className="shrink-0 rounded-lg p-2 text-hint transition hover:text-red-500 active:scale-90"
+              >
+                <Trash2 size={15} />
+              </button>
             </div>
           );
         })}
@@ -811,7 +776,7 @@ export function Translator({
             <X size={15} />
           </button>
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3">
           {topicsList(() => setTopicsOpen(false))}
         </div>
         {/* "New topic" sits under the list and only appears once history has
@@ -921,7 +886,7 @@ export function Translator({
               onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
             />
           ) : (
-            <div ref={chatScrollRef} className="h-full overflow-y-auto p-2">
+            <div ref={chatScrollRef} className="h-full overflow-y-auto p-3">
               {loadingTopic ? (
                 <div className="flex justify-center py-10 text-hint">
                   <Loader2 size={20} className="animate-spin" />

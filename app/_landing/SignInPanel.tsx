@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { apiFetch } from "@/lib/client";
 import { analytics } from "@/lib/analytics";
-import { Loader2, Mail, X, AtSign } from "lucide-react";
+import { Loader2, X, AtSign } from "lucide-react";
 import type { TaskbarTexts } from "./desktop/taskbar-texts";
 
 // Sign-in panel shown in the header dropdown (and the Account menu while
@@ -110,9 +110,10 @@ function EmailModal({ texts, onClose }: { texts: AuthTexts; onClose: () => void 
   }
 
   const inputClass =
-    "h-12 w-full rounded-lg bg-[var(--window-bg)] px-3 text-base outline-none placeholder:text-hint";
+    "h-12 w-full rounded-lg bg-[var(--taskbar-bg)] px-3 text-base outline-none placeholder:text-hint";
+  // Accent CTA — full width, h-10, compact text-sm label.
   const primaryClass =
-    "flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-button px-4 text-sm font-semibold text-button-text transition-all hover:opacity-90 disabled:opacity-50";
+    "flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-button px-4 text-sm font-semibold leading-normal text-button-text transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-50";
 
   return createPortal(
     <div
@@ -129,7 +130,7 @@ function EmailModal({ texts, onClose }: { texts: AuthTexts; onClose: () => void 
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col gap-1">
-            <h2 className="text-base font-semibold leading-normal text-text">{texts.emailTitle}</h2>
+            <h2 className="text-lg font-semibold leading-normal text-text">{texts.emailTitle}</h2>
             <p className="text-sm leading-relaxed text-hint">
               {step === "email" ? texts.emailHint : texts.codeHint}
             </p>
@@ -158,7 +159,7 @@ function EmailModal({ texts, onClose }: { texts: AuthTexts; onClose: () => void 
               className={inputClass}
             />
             <button type="button" disabled={busy} onClick={sendCode} className={primaryClass}>
-              {busy ? <Loader2 size={15} className="animate-spin" /> : <Mail size={15} />}
+              {busy ? <Loader2 size={15} className="animate-spin" /> : null}
               {texts.sendCode}
             </button>
           </>
@@ -176,7 +177,7 @@ function EmailModal({ texts, onClose }: { texts: AuthTexts; onClose: () => void 
               className={`${inputClass} text-center tracking-[0.5em]`}
             />
             <button type="button" disabled={busy} onClick={verifyCode} className={primaryClass}>
-              {busy ? <Loader2 size={15} className="animate-spin" /> : null}
+              {busy ? <Loader2 size={16} className="animate-spin" /> : null}
               {texts.verifyCode}
             </button>
           </>
@@ -208,7 +209,13 @@ export function SignInPanel({ texts }: { texts: AuthTexts }) {
     analytics.flush();
   };
 
+  // While /api/auth/providers has not answered yet the menu must paint its
+  // final shape on the very first frame — otherwise the Apple row "jumps" in
+  // a moment later and the dropdown shifts under the cursor. So Apple defaults
+  // to visible like Email does (?? true) and is only removed if the server
+  // explicitly reports it is not configured.
   const hasEmail = providers?.email ?? true;
+  const hasApple = providers?.apple ?? true;
 
   return (
     <div className="flex w-full flex-col gap-0.5 p-0">
@@ -226,7 +233,7 @@ export function SignInPanel({ texts }: { texts: AuthTexts }) {
         </span>
         {texts.signInGoogle}
       </a>
-      {providers?.apple && (
+      {hasApple && (
         <a href="/api/auth/apple/start" onClick={() => goSocial("Apple")} className={ROW}>
           <span className={ICON_BOX}>
             <AppleIcon />
