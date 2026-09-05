@@ -36,20 +36,22 @@ export function AppWindow({
         // edge of the screen); the windows below stay centred in the site's
         // max-w container, with the desktop surface around them.
         <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
-          <div className="flex w-full flex-col px-2 py-2 sm:px-6">
+          <div className="flex w-full flex-col px-2 pb-2 sm:px-2">
             {/* Zone 1 — the translator. Full first screen on mobile, 70dvh on
                 desktop. Transparent itself; the blocks inside carry the
-                window surface. */}
+                window surface. The top spacing equals the header's own
+                bottom inset (8px), same as every other gap. */}
             <section
               aria-label="Translator"
-              className="mx-auto flex h-[calc(100dvh-72px)] w-full max-w-[1000px] shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
+              className="mx-auto flex h-[calc(100dvh-64px)] w-full max-w-[1000px] shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
             >
               {product}
             </section>
 
             {/* Window 2 — the page content: the same glass window the single
-                scroll window used to be, separated by the same LAYOUT_GAP.
-                No inner scroll: it passes through the one outer scroll. */}
+                scroll window used to be, separated by the same LAYOUT_GAP
+                (8px). No inner scroll: it passes through the one outer
+                scroll. */}
             <section
               style={{ marginTop: LAYOUT_GAP }}
               className="window-glass mx-auto w-full max-w-[1000px] overflow-hidden rounded-lg"
@@ -60,7 +62,7 @@ export function AppWindow({
         </div>
       ) : (
         <div className="window-scroll min-h-0 w-full flex-1">
-          <div className="mx-auto min-h-full w-full max-w-[1000px] px-2 py-2 sm:px-6">{children}</div>
+          <div className="mx-auto min-h-full w-full max-w-[1000px] px-2 pb-2 sm:px-2">{children}</div>
         </div>
       )}
     </div>

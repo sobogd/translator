@@ -464,7 +464,7 @@ export function Taskbar({
             </button>
 
             {menuOpen && (
-              <div className="absolute left-0 top-full z-50 mt-1 max-h-[min(75vh,560px)] w-64 max-w-[calc(100vw-3.5rem)] overflow-y-auto rounded-lg border border-border bg-card p-1.5 shadow-xl">
+              <div className="absolute left-0 top-full z-50 mt-2 max-h-[min(75vh,560px)] w-64 max-w-[calc(100vw-3.5rem)] overflow-y-auto rounded-lg border border-border bg-card p-1.5 shadow-xl">
                 {mobileSub ? (
                   <div className="flex flex-col">
                     <button
@@ -520,7 +520,7 @@ export function Taskbar({
               {trigger(row.kind, row.label(texts))}
               {openMenu === row.kind && (
                 <div
-                  className={`absolute left-0 top-full mt-1 rounded-lg border border-border bg-card p-1.5 shadow-xl ${
+                  className={`absolute left-0 top-full mt-2 rounded-lg border border-border bg-card p-1.5 shadow-xl ${
                     row.kind === "languages" ? "w-64" : "w-[248px]"
                   }`}
                 >
