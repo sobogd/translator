@@ -76,14 +76,16 @@ function matchesQuery(l: { nameRu: string; nameNative: string }, q: string): boo
   return l.nameRu.toLowerCase().includes(needle) || l.nameNative.toLowerCase().includes(needle);
 }
 
-// Language picker: a plain overlay inside the translator (no modal chrome,
-// no dimming — just blur behind). Top: one search field styled like the
-// composer's input. Below: the scrollable list of languages. Nothing else;
-// picking a language closes it.
+// Language picker: a full-screen blurred modal.
+// Everything behind is blurred (no dimming). Centred is one column of two
+// rows, 8px apart: the search field on top and a 400px-tall scrollable list
+// of languages below — both on the same background as the content panels.
+// There is no header/close button; a click on the blurred background closes.
 function LanguagePickerModal({
   current,
   forSource,
   texts,
+  onClose,
   onSelect,
 }: {
   current: string | null;
@@ -94,6 +96,7 @@ function LanguagePickerModal({
    *  auto-detect (see selectSource/selectTarget), not by hiding options. */
   forSource?: boolean;
   texts: WidgetTexts;
+  onClose: () => void;
   onSelect: (code: string | null) => void;
 }) {
   const [query, setQuery] = useState("");
@@ -101,60 +104,68 @@ function LanguagePickerModal({
 
   return (
     <div
-      className="absolute inset-0 z-40 flex flex-col gap-2 backdrop-blur-md"
-      onWheel={(e) => e.stopPropagation()}
-      onTouchMove={(e) => e.stopPropagation()}
+      className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto p-4 backdrop-blur-md"
+      onClick={onClose}
     >
-      {/* Search field — designed like the phrase input: same island surface,
-          same height, same bare-input treatment (the password-manager ignore
-          hints the composer textarea carries). */}
-      <div className="taskbar-glass flex h-10 shrink-0 items-center rounded-md px-2">
-        <input
-          type="search"
-          inputMode="search"
-          enterKeyHint="search"
-          name="language-search"
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="none"
-          spellCheck={false}
-          data-lpignore="true"
-          data-1p-ignore
-          data-bwignore
-          data-form-type="other"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-          placeholder={texts.searchPlaceholder}
-          className="min-w-0 flex-1 bg-transparent px-1 text-base leading-6 outline-none placeholder:text-hint"
-        />
-      </div>
+      {/* One column, two rows, 8px apart; no shared background between them —
+          the blur shows through the gap. */}
+      <div
+        className="flex w-full max-w-[420px] flex-col gap-2"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={texts.chooseLanguage}
+      >
+        {/* Row 1 — search field, on the same surface as the content panels. */}
+        <div className="flex h-11 shrink-0 items-center rounded-lg border border-border bg-[var(--window-bg)] px-3">
+          <input
+            type="search"
+            inputMode="search"
+            enterKeyHint="search"
+            name="language-search"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            data-lpignore="true"
+            data-1p-ignore
+            data-bwignore
+            data-form-type="other"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            autoFocus
+            placeholder={texts.searchPlaceholder}
+            className="min-w-0 flex-1 bg-transparent text-base leading-6 outline-none placeholder:text-hint"
+          />
+        </div>
 
-      {/* The plain scrollable list — names only, nothing else. */}
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
-        {forSource && (
-          <button
-            type="button"
-            onClick={() => onSelect(null)}
-            className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
-              current === null ? "font-semibold text-text" : "text-text/80"
-            }`}
-          >
-            {texts.autoDetect}
-          </button>
-        )}
-        {list.map((l) => (
-          <button
-            key={l.code}
-            type="button"
-            onClick={() => onSelect(l.code)}
-            className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
-              l.code === current ? "font-semibold text-text" : "text-text/80"
-            }`}
-          >
-            <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
-          </button>
-        ))}
+        {/* Row 2 — the 400px scrollable list, one language per row, same
+            surface as the content panels. */}
+        <div className="h-[400px] overflow-y-auto overscroll-contain rounded-lg border border-border bg-[var(--window-bg)] p-1">
+          {forSource && (
+            <button
+              type="button"
+              onClick={() => onSelect(null)}
+              className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+                current === null ? "font-semibold text-text" : "text-text/80"
+              }`}
+            >
+              {texts.autoDetect}
+            </button>
+          )}
+          {list.map((l) => (
+            <button
+              key={l.code}
+              type="button"
+              onClick={() => onSelect(l.code)}
+              className={`flex w-full items-center px-3 py-2.5 text-left text-[15px] transition-colors hover:bg-accent ${
+                l.code === current ? "font-semibold text-text" : "text-text/80"
+              }`}
+            >
+              <span className="min-w-0 flex-1 truncate">{l.nameNative}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -901,6 +912,7 @@ export function Translator({
           current={pickerFor === "source" ? currentSourceCode : currentTargetCode}
           forSource={pickerFor === "source"}
           texts={t}
+          onClose={() => setPickerFor(null)}
           onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
         />
       )}
