@@ -138,7 +138,7 @@ function LanguagePickerModal({
           onChange={(e) => setQuery(e.target.value)}
           autoFocus
           placeholder={texts.searchPlaceholder}
-          className="min-w-0 flex-1 bg-transparent text-base leading-6 outline-none placeholder:text-hint"
+          className="min-w-0 flex-1 bg-transparent px-2 text-base leading-6 outline-none placeholder:text-hint"
         />
         <button
           type="button"
@@ -205,7 +205,7 @@ export function Translator({
 }) {
   const t = texts.translator;
   // Signed-in visitors are never bot-challenged (see lib/turnstile.ts).
-  const { signedIn } = useSession();
+  const { signedIn, quota } = useSession();
   const [defaultTarget, setDefaultTarget] = useState(presetTarget ?? initialTarget ?? DEFAULT_TO);
   const [topics, setTopics] = useState<Topic[]>([]);
   // Only pair pages auto-open a thread (the matching one, fetched below);
@@ -422,6 +422,19 @@ export function Translator({
   // One line is 44px — the resting height of the field — and the island adds
   // its p-1.5 and border on top of that. Anything longer grows the island.
   const TEXTAREA_MAX_H = 96;
+
+  const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  // Remaining-quota copy that sits, always visible, at the bottom of the chat
+  // pane (below the scroll, above the composer). SSR-safe placeholders mirror
+  // the old header counters: the numbers replace them once /api/quota lands.
+  const quotaSeconds = quota ? fmtTime(quota.seconds) : "–:––";
+  const quotaChars = quota ? quota.chars.toLocaleString() : "–";
+
+  // Language pair of whatever is about to be sent, as one locale-stable token
+  // ("es-en", "auto-fr") — the analytics name, never a translated label.
+  const trackPair = () =>
+    `${topic?.sourceLang ?? draftSourceLang ?? "auto"}-${topic?.targetLang ?? defaultTarget}`;
+
   function autosize() {
     const el = taRef.current;
     if (!el) return;
@@ -513,30 +526,13 @@ export function Translator({
     }
   }
 
-  // Out of seconds mid-recording: drop the take (sending it would just 402)
-  // and surface the quota modal instead.
-  async function cancelRec() {
-    analytics.track("Show", "Recording cut: out of seconds");
-    const rec = recRef.current;
-    recRef.current = null;
-    setStatus("idle");
-    if (rec) {
-      try {
-        await rec.stop();
-      } catch {
-        /* already stopped */
-      }
-    }
-    setQuotaModal(true);
-  }
-
   // Stop = send: the recording goes straight through STT + translation in
   // one request (no intermediate editable transcript step).
-  async function stopRec() {
+  async function stopRec(auto = false) {
     const rec = recRef.current;
     if (!rec) return;
     const pair = trackPair();
-    analytics.track("Click", "Mic stop");
+    analytics.track("Click", auto ? "Mic auto-stop (quota reached)" : "Mic stop");
     setStatus("processing");
     let createdId: string | null = null;
     try {
@@ -578,11 +574,21 @@ export function Translator({
   useEffect(() => {
     if (status !== "recording") return;
     const start = Date.now();
+    // Stop 1s early: the server bills seconds with Math.ceil, so a recording
+    // that runs a hair past the quota (30.1s -> 31) would 402 and lose the
+    // take. Cutting a second short guarantees the file fits the remaining
+    // balance, and the auto-stop SENDS the take (stopRec) instead of dropping
+    // it like cancelRec used to.
+    let autoStopped = false;
     const tick = setInterval(() => {
       const secs = Math.floor((Date.now() - start) / 1000);
       setElapsed(secs);
       const left = secondsLeftRef.current;
-      if (left !== null && secs >= left) cancelRec();
+      if (autoStopped) return;
+      if (left !== null && secs >= Math.max(1, left - 1)) {
+        autoStopped = true;
+        void stopRec(true);
+      }
     }, 250);
     return () => {
       clearInterval(tick);
@@ -590,13 +596,6 @@ export function Translator({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
-
-  const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-
-  // Language pair of whatever is about to be sent, as one locale-stable token
-  // ("es-en", "auto-fr") — the analytics name, never a translated label.
-  const trackPair = () =>
-    `${topic?.sourceLang ?? draftSourceLang ?? "auto"}-${topic?.targetLang ?? defaultTarget}`;
 
   // Stamp every event fired from here with the conversation it happened in;
   // the server drops the id unless the caller really owns that topic.
@@ -622,7 +621,7 @@ export function Translator({
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the field edge.
   const showSend = status === "idle" && text.trim().length > 0;
-  const micOrSend = status === "recording" ? stopRec : showSend ? translateText : startRec;
+  const micOrSend = status === "recording" ? () => stopRec(false) : showSend ? translateText : startRec;
 
   const composerRow = (
     <div className="flex min-w-0 w-full items-center gap-2">
@@ -727,11 +726,17 @@ export function Translator({
                   switchTopic(tp.id);
                   onPick();
                 }}
-                className={`min-w-0 flex-1 truncate px-2 py-2 text-left text-sm leading-normal transition active:scale-[0.99] ${
-                  active ? "font-medium text-text" : "text-hint hover:text-text"
+                className={`min-w-0 flex-1 px-2 py-2 text-left text-sm leading-normal transition active:scale-[0.99] ${
+                  active ? "text-text" : "text-hint hover:text-text"
                 }`}
               >
-                {tp.title || t.newTopic}
+                <span
+                  className={`block w-full truncate ${
+                    active ? "font-medium" : ""
+                  }`}
+                >
+                  {tp.title || t.newTopic}
+                </span>
               </button>
               <button
                 type="button"
@@ -764,37 +769,51 @@ export function Translator({
           topicsOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* No history label — just the mobile back control on top. */}
-        <div className="flex shrink-0 items-center justify-end px-2 pt-2 sm:hidden">
-          <button
-            type="button"
-            onClick={() => setTopicsOpen(false)}
-            aria-label={t.close}
-            title={t.close}
-            className="rounded-lg p-2 text-hint transition hover:text-text active:scale-90"
-          >
-            <X size={15} />
-          </button>
-        </div>
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3">
-          {topicsList(() => setTopicsOpen(false))}
-        </div>
-        {/* "New topic" sits under the list and only appears once history has
-            at least one thread. */}
-        {topics.length > 0 && (
-          <div className="flex shrink-0 items-center p-2">
+        {/* Panel header — only once there is something to list: the history
+            title on the left; a "New translation" CTA and the mobile back
+            control on the right. An empty history shows just the placeholder,
+            with only the mobile back control on top. */}
+        {topics.length > 0 ? (
+          <div className="flex shrink-0 items-center justify-between gap-2 px-3 pt-3">
+            <span className="truncate text-sm font-semibold text-text">{t.topics}</span>
+            <div className="flex shrink-0 items-center gap-1">
+              <button
+                type="button"
+                onClick={() => setTopicsOpen(false)}
+                aria-label={t.close}
+                title={t.close}
+                className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90 sm:hidden"
+              >
+                <X size={15} />
+              </button>
+              <button
+                type="button"
+                onClick={() => newTopic()}
+                aria-label={t.newTopic}
+                title={t.newTopic}
+                className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-text transition hover:bg-accent active:scale-90"
+              >
+                <Plus size={15} />
+                <span>{t.newTopic}</span>
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex shrink-0 items-center justify-end px-3 pt-3 sm:hidden">
             <button
               type="button"
-              onClick={() => newTopic()}
-              aria-label={t.newTopic}
-              title={t.newTopic}
-              className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-hint transition hover:text-text active:scale-90"
+              onClick={() => setTopicsOpen(false)}
+              aria-label={t.close}
+              title={t.close}
+              className="rounded-lg p-1.5 text-hint transition hover:text-text active:scale-90"
             >
-              <Plus size={15} />
-              <span>{t.newTopic}</span>
+              <X size={15} />
             </button>
           </div>
         )}
+        <div className="fade-scroll min-h-0 flex-1 overflow-y-auto p-3">
+          {topicsList(() => setTopicsOpen(false))}
+        </div>
       </div>
 
       {/* Pane 2 — the translator, three rows: languages, conversation,
@@ -886,19 +905,31 @@ export function Translator({
               onSelect={pickerFor === "source" ? selectSource : (code) => code && selectTarget(code)}
             />
           ) : (
-            <div ref={chatScrollRef} className="h-full overflow-y-auto p-3">
-              {loadingTopic ? (
-                <div className="flex justify-center py-10 text-hint">
-                  <Loader2 size={20} className="animate-spin" />
-                </div>
-              ) : (
-                <History
-                  rows={rows}
-                  langA={topic?.sourceLang ?? ""}
-                  langB={topic?.targetLang ?? ""}
-                  texts={texts.history}
-                />
-              )}
+            <div className="flex h-full min-h-0 flex-col">
+              <div ref={chatScrollRef} className="fade-scroll min-h-0 flex-1 overflow-y-auto p-3">
+                {loadingTopic ? (
+                  <div className="flex justify-center py-10 text-hint">
+                    <Loader2 size={20} className="animate-spin" />
+                  </div>
+                ) : (
+                  <History
+                    rows={rows}
+                    langA={topic?.sourceLang ?? ""}
+                    langB={topic?.targetLang ?? ""}
+                    texts={texts.history}
+                  />
+                )}
+              </div>
+              {/* Remaining quota — always visible at the bottom of the chat
+                  pane (it does not scroll with the messages); the scroll fades
+                  into it. Text only, numbers in the accent tone. */}
+              <div className="flex shrink-0 items-center justify-center gap-1.5 px-3 py-1.5 text-xs leading-normal text-hint">
+                <span>{texts.account.minutesLeft}:</span>
+                <span className="font-semibold text-button">{quotaSeconds}</span>
+                <span aria-hidden="true">·</span>
+                <span>{texts.account.charsLeft}:</span>
+                <span className="font-semibold text-button">{quotaChars}</span>
+              </div>
             </div>
           )}
         </div>

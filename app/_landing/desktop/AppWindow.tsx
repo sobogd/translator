@@ -37,13 +37,14 @@ export function AppWindow({
         // max-w container, with the desktop surface around them.
         <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
           <div className="flex w-full flex-col px-2 pb-2 sm:px-2">
-            {/* Zone 1 — the translator. Full first screen on mobile, 70dvh on
-                desktop. Transparent itself; the blocks inside carry the
-                window surface. The top spacing equals the header's own
-                bottom inset (8px), same as every other gap. */}
+            {/* Zone 1 — the translator. Full first screen on mobile (the visual
+                viewport height minus the header minus an 8px bottom inset so
+                the composer never hides under the on-screen keyboard / system
+                bars), 70dvh on desktop. Transparent itself; the blocks inside
+                carry the window surface. */}
             <section
               aria-label="Translator"
-              className="mx-auto flex h-[calc(100dvh-64px)] w-full max-w-[1000px] shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
+              className="mx-auto flex h-[calc(var(--app-vh,100dvh)-var(--header-h,64px)-8px)] w-full max-w-[1000px] shrink-0 flex-col overflow-hidden sm:h-[70dvh]"
             >
               {product}
             </section>
@@ -61,8 +62,15 @@ export function AppWindow({
           </div>
         </div>
       ) : (
-        <div className="window-scroll min-h-0 w-full flex-1">
-          <div className="mx-auto min-h-full w-full max-w-[1000px] px-2 pb-2 sm:px-2">{children}</div>
+        // No product (pricing / legal / bare pages): one glass content window,
+        // the same design as Window 2 — full-bleed scroll surface, centred
+        // glass column, no translator zone on top.
+        <div className="page-scroll h-full w-full overflow-y-auto overscroll-contain">
+          <div className="flex w-full flex-col px-2 pb-2 sm:px-2">
+            <section className="window-glass mx-auto w-full max-w-[1000px] overflow-hidden rounded-lg">
+              {children}
+            </section>
+          </div>
         </div>
       )}
     </div>

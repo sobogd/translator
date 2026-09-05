@@ -346,9 +346,9 @@
     }
   },
   "translator": {
-    "topics": "موضوعات",
-    "newTopic": "موضوع جدید",
-    "noTopicsYet": "هنوز موضوعی نیست",
+    "topics": "ترجمه‌ها",
+    "newTopic": "ترجمه جدید",
+    "noTopicsYet": "هنوز ترجمه‌ای نیست",
     "deleteTopic": "حذف موضوع",
     "deleteTopicConfirm": "این موضوع و همه ترجمه‌هایش حذف شود؟",
     "autoDetect": "تشخیص خودکار",

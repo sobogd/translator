@@ -358,9 +358,9 @@
     }
   },
   "translator": {
-    "topics": "Konular",
-    "newTopic": "Yeni konu",
-    "noTopicsYet": "Henüz konu yok",
+    "topics": "Çeviriler",
+    "newTopic": "Yeni çeviri",
+    "noTopicsYet": "Henüz çeviri yok",
     "deleteTopic": "Konuyu sil",
     "deleteTopicConfirm": "Bu konu ve tüm çevirileri silinsin mi?",
     "autoDetect": "Otomatik algıla",

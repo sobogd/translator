@@ -30,7 +30,7 @@ export function QuotaBadge({
   const { quota } = useSession();
   const nf = new Intl.NumberFormat(locale);
   const counter =
-    "inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap text-xs font-medium leading-normal text-hint tabular-nums";
+    "inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap text-sm font-medium leading-normal text-hint tabular-nums";
   const seconds = quota ? fmtSeconds(quota.seconds) : "–:––";
   const chars = quota ? nf.format(quota.chars) : "–";
   return (

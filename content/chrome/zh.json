@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "话题",
-    "newTopic": "新建话题",
-    "noTopicsYet": "暂无话题",
+    "topics": "翻译记录",
+    "newTopic": "新建翻译",
+    "noTopicsYet": "暂无翻译记录",
     "deleteTopic": "删除话题",
     "deleteTopicConfirm": "删除此话题及其所有翻译记录？",
     "autoDetect": "自动检测",

@@ -358,9 +358,9 @@
     }
   },
   "translator": {
-    "topics": "Теми",
-    "newTopic": "Нова тема",
-    "noTopicsYet": "Поки немає тем",
+    "topics": "Переклади",
+    "newTopic": "Новий переклад",
+    "noTopicsYet": "Перекладів ще немає",
     "deleteTopic": "Видалити тему",
     "deleteTopicConfirm": "Видалити цю тему і всі переклади в ній?",
     "autoDetect": "Автовизначення",

@@ -346,9 +346,9 @@
     }
   },
   "translator": {
-    "topics": "Emner",
-    "newTopic": "Nytt emne",
-    "noTopicsYet": "Ingen emner ennå",
+    "topics": "Oversettelser",
+    "newTopic": "Ny oversettelse",
+    "noTopicsYet": "Ingen oversettelser ennå",
     "deleteTopic": "Slett emne",
     "deleteTopicConfirm": "Slette dette emnet og alle oversettelsene i det?",
     "autoDetect": "Automatisk gjenkjenning",

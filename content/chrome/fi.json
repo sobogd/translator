@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Aiheet",
-    "newTopic": "Uusi aihe",
-    "noTopicsYet": "Ei vielä aiheita",
+    "topics": "Käännökset",
+    "newTopic": "Uusi käännös",
+    "noTopicsYet": "Ei vielä käännöksiä",
     "deleteTopic": "Poista aihe",
     "deleteTopicConfirm": "Poistetaanko tämä aihe ja kaikki sen käännökset?",
     "autoDetect": "Tunnista automaattisesti",

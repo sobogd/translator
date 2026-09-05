@@ -362,9 +362,9 @@
     }
   },
   "translator": {
-    "topics": "Wątki",
-    "newTopic": "Nowy wątek",
-    "noTopicsYet": "Brak wątków",
+    "topics": "Tłumaczenia",
+    "newTopic": "Nowe tłumaczenie",
+    "noTopicsYet": "Brak tłumaczeń",
     "deleteTopic": "Usuń wątek",
     "deleteTopicConfirm": "Usunąć ten wątek i wszystkie jego tłumaczenia?",
     "autoDetect": "Wykryj automatycznie",

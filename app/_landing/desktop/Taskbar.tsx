@@ -25,7 +25,6 @@ import { defaultLocale, locales, type Locale } from "@/lib/locales";
 import { analytics } from "@/lib/analytics";
 import { apiFetch } from "@/lib/client";
 import { useSession } from "../session";
-import { QuotaBadge } from "../AccountControls";
 import { SignInPanel } from "../SignInPanel";
 import { applyResolvedTheme, getThemeChoice, setThemeChoice, subscribeTheme, type ThemeChoice } from "@/lib/theme";
 import { LOCALE_COOKIE } from "@/lib/cookies";
@@ -55,16 +54,13 @@ const THEME_OPTIONS: { key: ThemeChoice; icon: React.ReactNode }[] = [
 
 const fmtSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
-export type MenuKind = "features" | "languages" | "legal" | "theme" | "account";
+export type MenuKind = "features" | "languages" | "legal" | "theme";
 
 const MENU_ROWS: { kind: MenuKind; label: (t: TaskbarTexts) => string }[] = [
-  { kind: "features", label: (t) => t.features },
+  { kind: "features", label: (t) => t.translate },
   { kind: "languages", label: (t) => t.languages },
   { kind: "legal", label: (t) => t.legal },
   { kind: "theme", label: (t) => t.theme },
-  // Account is a plain text item of the header menu (not an icon): signed-out
-  // visitors see "Sign in", signed-in ones get plan/quota/account actions.
-  { kind: "account", label: (t) => t.account },
 ];
 
 // PostHog's floating glass "island" taskbar: a capsule that floats over the
@@ -108,6 +104,33 @@ export function Taskbar({
   // what the CSS actually reads). Live updates come through subscribeThemes.
   useEffect(() => {
     applyResolvedTheme();
+  }, []);
+
+  // The translator pane is sized "one visible screen minus the header, minus
+  // an 8px bottom inset" (see AppWindow). 100dvh does NOT shrink when the on-
+  // screen keyboard opens (the layout viewport keeps its height), so publish
+  // the *visual* viewport height as --app-vh and the header's measured height
+  // as --header-h; AppWindow keeps static fallbacks until the first measure.
+  useEffect(() => {
+    const el = document.getElementById("top");
+    const vv = window.visualViewport;
+    const sync = () => {
+      if (el) document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+      const vh = vv?.height ?? window.innerHeight;
+      document.documentElement.style.setProperty("--app-vh", `${vh}px`);
+    };
+    sync();
+    const ro = new ResizeObserver(sync);
+    if (el) ro.observe(el);
+    window.addEventListener("resize", sync);
+    vv?.addEventListener("resize", sync);
+    vv?.addEventListener("scroll", sync);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", sync);
+      vv?.removeEventListener("resize", sync);
+      vv?.removeEventListener("scroll", sync);
+    };
   }, []);
 
   const isPaid = signedIn && quota?.kind === "account" && quota.plan !== "FREE";
@@ -193,13 +216,13 @@ export function Taskbar({
   // mobile menu's second level; `onDone` closes whichever surface owns them) ----
 
   const featuresContent = (onDone: () => void) => (
-    <div className="flex flex-col">
+    <div className="flex max-h-[min(70vh,440px)] w-full flex-col overflow-y-auto">
       {pairLinks.map((l) => (
         <Link
           key={l.href}
           href={l.href}
           prefetch={false}
-          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-[13px] font-medium leading-normal transition-colors hover:bg-accent"
+          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-sm font-medium leading-normal transition-colors hover:bg-accent"
           onClick={() => {
             analytics.track("Click", `Header feature: ${l.routeKey}`);
             onDone();
@@ -214,7 +237,7 @@ export function Taskbar({
       <div className="my-1 border-t border-border/60" />
       <Link
         href={anyLanguage?.href ?? homeHref}
-        className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-[13px] font-medium leading-normal text-hint transition-colors hover:bg-accent hover:text-text"
+        className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-sm font-medium leading-normal text-hint transition-colors hover:bg-accent hover:text-text"
         onClick={() => {
           analytics.track("Click", "Header feature: all languages");
           onDone();
@@ -240,7 +263,7 @@ export function Taskbar({
             {active ? (
               <span
                 aria-current="true"
-                className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-[13px] font-semibold leading-tight text-text"
+                className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-semibold leading-tight text-text"
               >
                 <span className="min-w-0 flex-1 truncate">{name}</span>
                 <span className="ml-auto h-1 w-1 shrink-0 rounded-full bg-button" aria-hidden="true" />
@@ -249,7 +272,7 @@ export function Taskbar({
               <Link
                 href={href}
                 prefetch={false}
-                className="flex w-full items-center rounded-md px-2 py-1.5 text-[13px] leading-tight text-hint transition-colors hover:bg-accent hover:text-text"
+                className="flex w-full items-center rounded-md px-2 py-1.5 text-sm leading-tight text-hint transition-colors hover:bg-accent hover:text-text"
                 onClick={() => {
                   analytics.track("Click", `Header language ${l}`);
                   // Remember the explicit choice before the navigation lands on
@@ -275,7 +298,7 @@ export function Taskbar({
         <Link
           key={l.href}
           href={l.href}
-          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-[13px] font-medium leading-normal transition-colors hover:bg-accent"
+          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-sm font-medium leading-normal transition-colors hover:bg-accent"
           onClick={() => {
             analytics.track("Click", l.track);
             onDone();
@@ -297,7 +320,7 @@ export function Taskbar({
           key={opt.key}
           type="button"
           aria-pressed={theme === opt.key}
-          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-[13px] font-medium leading-normal transition-colors hover:bg-accent"
+          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-sm font-medium leading-normal transition-colors hover:bg-accent"
           onClick={() => {
             analytics.track("Click", `Header theme ${opt.key}`);
             setThemeChoice(opt.key);
@@ -320,20 +343,20 @@ export function Taskbar({
     signedIn ? (
       <div className="flex w-full flex-col">
         <div className="flex flex-col gap-1 px-2 pb-2 pt-1">
-          {quota?.email && <p className="truncate text-xs text-hint">{quota.email}</p>}
-          <div className="flex items-center justify-between gap-3 text-[13px]">
+          {quota?.email && <p className="truncate text-sm text-hint">{quota.email}</p>}
+          <div className="flex items-center justify-between gap-3 text-sm">
             <span className="text-hint">{accountTexts.planLabel}</span>
             <span className="font-semibold leading-normal">
               {isPaid ? (quota?.planName ?? quota?.plan) : accountTexts.freePlan}
             </span>
           </div>
-          <div className="flex items-center justify-between gap-3 text-[13px]">
+          <div className="flex items-center justify-between gap-3 text-sm">
             <span className="flex items-center gap-1.5 text-hint">
               <Mic className="h-3.5 w-3.5" /> {accountTexts.minutesLeft}
             </span>
             <span className="font-medium leading-normal">{quota ? fmtSeconds(quota.seconds) : "…"}</span>
           </div>
-          <div className="flex items-center justify-between gap-3 text-[13px]">
+          <div className="flex items-center justify-between gap-3 text-sm">
             <span className="flex items-center gap-1.5 text-hint">
               <Type className="h-3.5 w-3.5" /> {accountTexts.charsLeft}
             </span>
@@ -349,7 +372,7 @@ export function Taskbar({
               closeAll();
               void openPortal();
             }}
-            className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-[13px] font-medium leading-normal transition-colors hover:bg-accent disabled:opacity-60"
+            className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-sm font-medium leading-normal transition-colors hover:bg-accent disabled:opacity-60"
           >
             <span className="flex-1">{accountTexts.manageSubscription}</span>
           </button>
@@ -362,7 +385,7 @@ export function Taskbar({
                 analytics.flush();
                 onDone();
               }}
-              className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-[13px] font-medium leading-normal text-text transition-colors hover:bg-accent"
+              className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-sm font-medium leading-normal text-text transition-colors hover:bg-accent"
             >
               <span className="flex-1">{accountTexts.upgrade}</span>
               <ArrowRight className="h-4 w-4 text-hint" />
@@ -375,7 +398,7 @@ export function Taskbar({
             closeAll();
             void logout();
           }}
-          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-[13px] font-medium leading-normal text-text transition-colors hover:bg-accent"
+          className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-sm font-medium leading-normal text-text transition-colors hover:bg-accent"
         >
           <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-hint">
             <LogOut className="h-4 w-4" />
@@ -388,11 +411,10 @@ export function Taskbar({
     );
 
   const submenuTitle = (sub: MenuKind): string => {
-    if (sub === "features") return texts.features;
+    if (sub === "features") return texts.translate;
     if (sub === "languages") return texts.languages;
     if (sub === "legal") return texts.legal;
-    if (sub === "theme") return texts.theme;
-    return texts.account;
+    return texts.theme;
   };
 
   // ---- desktop trigger button for the nav menus ----
@@ -406,7 +428,7 @@ export function Taskbar({
         analytics.track("Click", `Header ${kind}`);
       }}
       aria-expanded={openMenu === kind}
-      className="inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[13px] font-medium leading-normal transition-colors hover:bg-accent data-[state=open]:bg-accent"
+      className="inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-sm font-medium leading-normal transition-colors hover:bg-accent data-[state=open]:bg-accent"
     >
       {label}
       <ChevronDown className="h-3 w-3 opacity-60" />
@@ -418,20 +440,20 @@ export function Taskbar({
     languages: languagesContent,
     legal: legalContent,
     theme: themeContent,
-    account: accountContent,
   };
 
   return (
     <header id="top" className="relative z-50 p-2 sm:p-2">
-      <div className="taskbar-glass mx-auto flex h-10 w-full items-center justify-between gap-2 rounded-md px-2">
-        {/* Brand mark: only the small rounded "IQ" square, no text. */}
+      <div className="taskbar-glass mx-auto flex h-12 w-full items-center justify-between gap-2 rounded-md px-2">
+        {/* Brand mark: the red "IQ" square sized to leave 8px of the header's
+            px-2 padding visible on both sides (h-12 capsule → 32px mark). */}
         <Link
           href={homeHref}
-          className="shrink-0 rounded p-0.5 transition-colors hover:bg-accent"
+          className="shrink-0 rounded transition-colors hover:bg-accent"
           aria-label={texts.logo}
           onClick={() => analytics.track("Click", "Header logo")}
         >
-          <LogoIcon className="h-6 w-6" />
+          <LogoIcon className="h-8 w-8" />
         </Link>
 
         {/* Mobile: the site menu sits right next to the logo, as a pill that
@@ -448,7 +470,7 @@ export function Taskbar({
                 if (!menuOpen) setMobileSub(null);
                 setMenuOpen((v) => !v);
               }}
-              className="inline-flex h-8 shrink-0 items-center gap-1 rounded-md px-2.5 text-[13px] font-semibold leading-normal text-text transition-colors hover:bg-accent data-[state=open]:bg-accent"
+              className="inline-flex h-8 shrink-0 items-center gap-1 rounded-md px-2.5 text-sm font-semibold leading-normal text-text transition-colors hover:bg-accent data-[state=open]:bg-accent"
             >
               <span className="whitespace-nowrap">{texts.menu}</span>
               <ChevronDown
@@ -462,7 +484,7 @@ export function Taskbar({
                   <div className="flex flex-col">
                     <button
                       type="button"
-                      className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-[13px] font-semibold leading-normal text-text transition-colors hover:bg-accent"
+                      className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-sm font-semibold leading-normal text-text transition-colors hover:bg-accent"
                       onClick={() => setMobileSub(null)}
                     >
                       <ChevronLeft className="h-4 w-4 text-hint" />
@@ -507,7 +529,7 @@ export function Taskbar({
 
         {/* Desktop row: menu triggers first, Pricing at the end. Hidden below
             `sm` — on a phone these overflow the bar. */}
-        <nav className="mr-auto hidden h-full items-center gap-0.5 pl-2 text-[13px] font-medium leading-normal sm:flex">
+        <nav className="mr-auto hidden h-full items-center gap-0.5 pl-2 text-sm font-medium leading-normal sm:flex">
           {MENU_ROWS.map((row) => (
             <span key={row.kind} className="relative flex h-full items-center">
               {trigger(row.kind, row.label(texts))}
@@ -531,33 +553,30 @@ export function Taskbar({
           </Link>
         </nav>
 
-        {/* Right cluster: remaining quota, and — while signed out — a compact
-            red "Sign in" CTA (the account/registration flow is one screen,
-            like mermaid's "Open editor" button). */}
+        {/* Right cluster — the account CTA: "Sign in" while signed out, the
+            same accent button labelled "Account" once signed in. It opens the
+            matching dropdown (providers / plan+quota+actions). */}
         <div className="ml-3 flex h-full shrink-0 items-center gap-2">
-          <QuotaBadge locale={locale} accountTexts={accountTexts} compact />
-          {!signedIn && (
-            <div className="relative flex h-full items-center">
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthOpen((v) => !v);
-                  setOpenMenu(null);
-                  analytics.track("Click", `Sign in menu ${authOpen ? "close" : "open"}`);
-                }}
-                aria-expanded={authOpen}
-                aria-haspopup="menu"
-                className="header-open-editor ml-2 inline-flex h-7 shrink-0 items-center gap-1 rounded bg-button px-2.5 text-[13px] font-semibold leading-normal text-button-text transition-all hover:opacity-90 active:scale-[0.99] data-[state=open]:opacity-90"
-              >
-                {texts.signIn}
-              </button>
-              {authOpen && (
-                <div className="absolute right-0 top-full z-50 mt-2 w-72 rounded-lg bg-[var(--taskbar-bg)] p-1.5 shadow-xl">
-                  <SignInPanel texts={texts} />
-                </div>
-              )}
-            </div>
-          )}
+          <div className="relative flex h-full items-center">
+            <button
+              type="button"
+              onClick={() => {
+                setAuthOpen((v) => !v);
+                setOpenMenu(null);
+                analytics.track("Click", `${signedIn ? "Account" : "Sign in"} menu ${authOpen ? "close" : "open"}`);
+              }}
+              aria-expanded={authOpen}
+              aria-haspopup="menu"
+              className="header-open-editor ml-2 inline-flex h-8 shrink-0 items-center gap-1 rounded bg-button px-2.5 text-sm font-semibold leading-normal text-button-text transition-all hover:opacity-90 active:scale-[0.99] data-[state=open]:opacity-90"
+            >
+              {signedIn ? texts.account : texts.signIn}
+            </button>
+            {authOpen && (
+              <div className="absolute right-0 top-full z-50 mt-2 w-72 rounded-lg bg-[var(--taskbar-bg)] p-1.5 shadow-xl">
+                {signedIn ? accountContent(() => setAuthOpen(false)) : <SignInPanel texts={texts} />}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>

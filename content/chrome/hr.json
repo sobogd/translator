@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Teme",
-    "newTopic": "Nova tema",
-    "noTopicsYet": "Još nema tema",
+    "topics": "Prijevodi",
+    "newTopic": "Novi prijevod",
+    "noTopicsYet": "Još nema prijevoda",
     "deleteTopic": "Izbriši temu",
     "deleteTopicConfirm": "Izbrisati ovu temu i sve njezine prijevode?",
     "autoDetect": "Automatsko prepoznavanje",

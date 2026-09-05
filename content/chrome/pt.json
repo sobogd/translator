@@ -354,9 +354,9 @@
     }
   },
   "translator": {
-    "topics": "Temas",
-    "newTopic": "Novo tema",
-    "noTopicsYet": "Ainda não há temas",
+    "topics": "Traduções",
+    "newTopic": "Nova tradução",
+    "noTopicsYet": "Ainda não há traduções",
     "deleteTopic": "Eliminar tema",
     "deleteTopicConfirm": "Eliminar este tema e todas as suas traduções?",
     "autoDetect": "Deteção automática",

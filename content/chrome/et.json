@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Teemad",
-    "newTopic": "Uus teema",
-    "noTopicsYet": "Teemasid pole veel",
+    "topics": "Tõlked",
+    "newTopic": "Uus tõlge",
+    "noTopicsYet": "Tõlkeid pole veel",
     "deleteTopic": "Kustuta teema",
     "deleteTopicConfirm": "Kustutada see teema ja kõik selle tõlked?",
     "autoDetect": "Tuvasta automaatselt",

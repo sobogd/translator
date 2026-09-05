@@ -346,9 +346,9 @@
     }
   },
   "translator": {
-    "topics": "Теми",
-    "newTopic": "Нова тема",
-    "noTopicsYet": "Все още няма теми",
+    "topics": "Преводи",
+    "newTopic": "Нов превод",
+    "noTopicsYet": "Все още няма преводи",
     "deleteTopic": "Изтрий темата",
     "deleteTopicConfirm": "Да се изтрие ли тази тема и всичките ѝ преводи?",
     "autoDetect": "Автоматично разпознаване",

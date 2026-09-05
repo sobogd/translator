@@ -358,9 +358,9 @@
     }
   },
   "translator": {
-    "topics": "История",
-    "newTopic": "Новая тема",
-    "noTopicsYet": "История пуста",
+    "topics": "Переводы",
+    "newTopic": "Новый перевод",
+    "noTopicsYet": "Переводов пока нет",
     "deleteTopic": "Удалить тему",
     "deleteTopicConfirm": "Удалить эту тему и все переводы в ней?",
     "autoDetect": "Автоопределение",

@@ -327,9 +327,9 @@
     "pairsHeading": "More language pairs"
   },
   "translator": {
-    "topics": "History",
-    "newTopic": "New topic",
-    "noTopicsYet": "History is empty",
+    "topics": "Translations",
+    "newTopic": "New translation",
+    "noTopicsYet": "No translations yet",
     "deleteTopic": "Delete topic",
     "deleteTopicConfirm": "Delete this topic and all its translations?",
     "autoDetect": "Auto-detect",

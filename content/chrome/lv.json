@@ -338,9 +338,9 @@
     }
   },
   "translator": {
-    "topics": "Tēmas",
-    "newTopic": "Jauna tēma",
-    "noTopicsYet": "Vēl nav tēmu",
+    "topics": "Tulkojumi",
+    "newTopic": "Jauns tulkojums",
+    "noTopicsYet": "Vēl nav tulkojumu",
     "deleteTopic": "Dzēst tēmu",
     "deleteTopicConfirm": "Dzēst šo tēmu un visus tās tulkojumus?",
     "autoDetect": "Automātiska noteikšana",

@@ -346,9 +346,9 @@
     }
   },
   "translator": {
-    "topics": "토픽",
-    "newTopic": "새 토픽",
-    "noTopicsYet": "아직 토픽이 없어요",
+    "topics": "번역",
+    "newTopic": "새 번역",
+    "noTopicsYet": "아직 번역이 없어요",
     "deleteTopic": "토픽 삭제",
     "deleteTopicConfirm": "이 토픽과 모든 번역 내용을 삭제할까요?",
     "autoDetect": "자동 감지",

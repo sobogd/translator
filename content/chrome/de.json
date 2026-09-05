@@ -370,9 +370,9 @@
     }
   },
   "translator": {
-    "topics": "Themen",
-    "newTopic": "Neues Thema",
-    "noTopicsYet": "Noch keine Themen",
+    "topics": "Übersetzungen",
+    "newTopic": "Neue Übersetzung",
+    "noTopicsYet": "Noch keine Übersetzungen",
     "deleteTopic": "Thema löschen",
     "deleteTopicConfirm": "Dieses Thema und alle Übersetzungen löschen?",
     "autoDetect": "Automatisch erkennen",

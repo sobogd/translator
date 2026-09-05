@@ -84,13 +84,13 @@ export function History({
         style={{ color: "var(--hint)" }}
       >
         <MessageSquare size={30} />
-        {texts.emptyState}
+        <span className="max-w-[300px]">{texts.emptyState}</span>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-3">
       {rows.map((r) => (
         <Turn key={r.id} r={r} langA={langA} langB={langB} texts={texts} />
       ))}

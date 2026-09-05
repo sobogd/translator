@@ -199,7 +199,7 @@ html.iqm-editor-revealed .header-open-editor {
 }
 
 /* ---------------------------------------------------------------------------
-   Custom scrollbars — a slim 5px bar everywhere a scrollable area appears.
+   Custom scrollbars — a slim 3px bar everywhere a scrollable area appears.
    The thumb is the header's neutral grey tone, darkened via
    --scrollbar-thumb so it actually reads against the window and the editor
    surfaces (the raw header tone is nearly identical to those backgrounds).
@@ -216,15 +216,15 @@ html.iqm-editor-revealed .header-open-editor {
 --------------------------------------------------------------------------- */
 @supports not selector(::-webkit-scrollbar) {
   /* Firefox: same colours (neutral-grey thumb on a transparent track); its
-     scrollbar-width: thin is the closest Firefox comes to 5px. */
+     scrollbar-width: thin is the closest Firefox comes to 3px. */
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) transparent;
   }
 }
 *::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
 }
 *::-webkit-scrollbar-track {
   background: transparent;
@@ -235,6 +235,40 @@ html.iqm-editor-revealed .header-open-editor {
 }
 *::-webkit-scrollbar-thumb:hover {
   background: var(--button);
+}
+
+/* On phones the page's own content scroll (.page-scroll — the window the
+   widget and the content live in) hides its scrollbar: the panes are
+   full-screen there, so the pill adds nothing and eats 3px of the edge.
+   Inner scrollbars (chat, topics, picker) stay visible. */
+@media (max-width: 639px) {
+  .page-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .page-scroll {
+    scrollbar-width: none;
+  }
+}
+
+/* List scrolls fade at BOTH edges — the topics list and the chat. The mask
+   is fixed to the visible viewport of the scroller (not to its content), so
+   while scrolling, rows melt into the top/bottom edge of the pane and the
+   chat melts into the fixed quota line pinned under it. */
+.fade-scroll {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 1.25rem,
+    #000 calc(100% - 1.25rem),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 1.25rem,
+    #000 calc(100% - 1.25rem),
+    transparent 100%
+  );
 }
 
 /* Loading state shared by the editor's auth-check and its dynamic() fallback.

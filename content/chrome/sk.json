@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Vlákna",
-    "newTopic": "Nové vlákno",
-    "noTopicsYet": "Zatiaľ žiadne vlákna",
+    "topics": "Preklady",
+    "newTopic": "Nový preklad",
+    "noTopicsYet": "Zatiaľ žiadne preklady",
     "deleteTopic": "Zmazať vlákno",
     "deleteTopicConfirm": "Zmazať toto vlákno a všetky jeho preklady?",
     "autoDetect": "Automaticky rozpoznať",

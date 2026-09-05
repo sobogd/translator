@@ -338,9 +338,9 @@
     }
   },
   "translator": {
-    "topics": "Témák",
-    "newTopic": "Új téma",
-    "noTopicsYet": "Még nincsenek témák",
+    "topics": "Fordítások",
+    "newTopic": "Új fordítás",
+    "noTopicsYet": "Még nincsenek fordítások",
     "deleteTopic": "Téma törlése",
     "deleteTopicConfirm": "Törlöd ezt a témát az összes fordításával együtt?",
     "autoDetect": "Automatikus felismerés",

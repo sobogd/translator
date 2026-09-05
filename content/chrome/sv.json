@@ -358,9 +358,9 @@
     }
   },
   "translator": {
-    "topics": "Ämnen",
-    "newTopic": "Nytt ämne",
-    "noTopicsYet": "Inga ämnen än",
+    "topics": "Översättningar",
+    "newTopic": "Ny översättning",
+    "noTopicsYet": "Inga översättningar än",
     "deleteTopic": "Ta bort ämne",
     "deleteTopicConfirm": "Ta bort det här ämnet och alla dess översättningar?",
     "autoDetect": "Automatisk identifiering",

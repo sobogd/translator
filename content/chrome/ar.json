@@ -354,9 +354,9 @@
     }
   },
   "translator": {
-    "topics": "المواضيع",
-    "newTopic": "موضوع جديد",
-    "noTopicsYet": "لا توجد مواضيع بعد",
+    "topics": "الترجمات",
+    "newTopic": "ترجمة جديدة",
+    "noTopicsYet": "لا توجد ترجمات بعد",
     "deleteTopic": "حذف الموضوع",
     "deleteTopicConfirm": "هل تريد حذف هذا الموضوع وكل ترجماته؟",
     "autoDetect": "الكشف التلقائي",

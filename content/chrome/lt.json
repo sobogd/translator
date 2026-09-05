@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Temos",
-    "newTopic": "Nauja tema",
-    "noTopicsYet": "Kol kas nėra temų",
+    "topics": "Vertimai",
+    "newTopic": "Naujas vertimas",
+    "noTopicsYet": "Kol kas nėra vertimų",
     "deleteTopic": "Ištrinti temą",
     "deleteTopicConfirm": "Ištrinti šią temą ir visus jos vertimus?",
     "autoDetect": "Automatinis aptikimas",

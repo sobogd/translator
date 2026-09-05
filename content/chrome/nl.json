@@ -354,9 +354,9 @@
     }
   },
   "translator": {
-    "topics": "Onderwerpen",
-    "newTopic": "Nieuw onderwerp",
-    "noTopicsYet": "Nog geen onderwerpen",
+    "topics": "Vertalingen",
+    "newTopic": "Nieuwe vertaling",
+    "noTopicsYet": "Nog geen vertalingen",
     "deleteTopic": "Onderwerp verwijderen",
     "deleteTopicConfirm": "Dit onderwerp en alle vertalingen verwijderen?",
     "autoDetect": "Automatisch detecteren",

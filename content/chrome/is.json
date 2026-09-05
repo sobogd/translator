@@ -334,9 +334,9 @@
     }
   },
   "translator": {
-    "topics": "Umræður",
-    "newTopic": "Ný umræða",
-    "noTopicsYet": "Engar umræður enn",
+    "topics": "Þýðingar",
+    "newTopic": "Ný þýðing",
+    "noTopicsYet": "Engar þýðingar enn",
     "deleteTopic": "Eyða umræðu",
     "deleteTopicConfirm": "Eyða þessari umræðu og öllum þýðingum í henni?",
     "autoDetect": "Sjálfvirk greining",

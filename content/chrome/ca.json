@@ -342,9 +342,9 @@
     }
   },
   "translator": {
-    "topics": "Temes",
-    "newTopic": "Tema nou",
-    "noTopicsYet": "Encara no hi ha temes",
+    "topics": "Traduccions",
+    "newTopic": "Nova traducció",
+    "noTopicsYet": "Encara no hi ha traduccions",
     "deleteTopic": "Elimina el tema",
     "deleteTopicConfirm": "Vols eliminar aquest tema i totes les seves traduccions?",
     "autoDetect": "Detecció automàtica",

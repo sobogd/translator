@@ -1,6 +1,5 @@
 import { DesktopShell } from "./desktop/DesktopShell";
 import { mergeTaskbarTexts } from "./desktop/taskbar-texts";
-import { Translator } from "./Translator";
 import { Faq } from "./Faq";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FinalCta } from "./FinalCta";
@@ -52,7 +51,6 @@ export function PricingPage({
         accountTexts={chrome.account}
         pricingHref={pathname}
         featureLinks={chrome.footer.featureLinks}
-        product={<Translator texts={chrome} initialTarget={locale} pricingHref={pathname} />}
       >
         <Band section="pricing" className="px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-10">
           <div className="flex w-full max-w-[760px] flex-col">
