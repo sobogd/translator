@@ -154,6 +154,22 @@ def _attach_ink_bounds(img: Image.Image, rows: list[dict]) -> None:
         row["l0"] = x0 + int(xs.min())
         row["l1"] = x0 + int(xs.max()) + 1
         row["ih"] = row["i1"] - row["i0"]
+        # The surface colour the line sits on — used to keep different
+        # elements (messages, input box, page background) from merging.
+        row["fill"] = _ring_median(img, (x0, y0, x1, y1))
+
+
+def _same_surface(a: dict, b: dict) -> bool:
+    """True when two candidate lines sit on the same background colour.
+
+    Different elements (a chat bubble vs the page background vs the input
+    box) almost always differ in surface colour, so this is what stops a
+    multi-line 'region' from swallowing unrelated lines below it."""
+    fa = a.get("fill")
+    fb = b.get("fill")
+    if fa is None or fb is None:
+        return True
+    return abs(fa[0] - fb[0]) + abs(fa[1] - fb[1]) + abs(fa[2] - fb[2]) <= 45
 
 
 def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
@@ -174,9 +190,10 @@ def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
         min_w = min(prev["w"], row["w"])
         same_region = (
             gap >= -1
-            and gap <= max(avg_h * 1.15, 16.0)
+            and gap <= max(avg_h * 0.85, 16.0)
             and h_ratio <= 2.6
             and overlap >= min_w * 0.12
+            and _same_surface(row, prev)
         )
         if same_region:
             regions[-1].append(row)
@@ -329,6 +346,14 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
         x1, y1 = min(int(width), x1), min(int(height), y1)
         w, h = x1 - x0, y1 - y0
         if w < 10 or h < 6:
+            continue
+        # Row with no letters (timestamp, price, icons, "|||") is UI chrome,
+        # not transatable text: leave it as the original and never paint over.
+        if not any(ch.isalpha() for ch in text):
+            continue
+        # Stray one-glyph fragments (a leftover "b" under a button) are OCR
+        # noise, not a word to translate.
+        if len(text) <= 1 and w < 60:
             continue
         rows.append({"x0": x0, "y0": y0, "x1": x1, "y1": y1, "w": w, "h": h, "text": text})
 
