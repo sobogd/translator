@@ -215,6 +215,36 @@ def _continuous_surface(bgr: np.ndarray, a: dict, b: dict) -> bool:
     return abs(_lum(ia) - lum_gap) < 45 and abs(_lum(ib) - lum_gap) < 45
 
 
+def _has_vertical_boundary(bgr: np.ndarray, a: dict, b: dict) -> bool:
+    """True when a thin near-uniform vertical stroke sits in or right at the
+    edges of the strip between two candidate boxes.
+
+    That is a button/card border or a divider line between columns — a hard
+    visual split that means the two boxes belong to separate controls even
+    when the background colour continues across the gap (e.g. outlined
+    buttons on a white page). Text fragments of one phrase never produce such
+    a line: their gap is plain background, so every column there is uniform
+    AND matches the background luminance."""
+    h, w = bgr.shape[:2]
+    x_lo = max(0, int(a["box"][2]) - 2)
+    x_hi = min(w - 1, int(b["box"][0]) + 2)
+    if x_hi - x_lo < 3:
+        return False
+    y0 = max(int(a["box"][1]), int(b["box"][1]))
+    y1 = min(int(a["box"][3]), int(b["box"][3]))
+    y0, y1 = max(0, y0 - 1), min(h, y1 + 1)
+    if y1 - y0 < 6:
+        return False
+
+    band = bgr[y0:y1, x_lo : x_hi + 1]
+    lum = 0.299 * band[:, :, 2].astype(np.float32) + 0.587 * band[:, :, 1].astype(np.float32) + 0.114 * band[:, :, 0].astype(np.float32)
+    col_std = lum.std(axis=0)
+    col_med = np.median(lum, axis=0)
+    overall = np.median(lum)
+    strokes = np.where((col_std < 16) & (np.abs(col_med - overall) > 45))[0]
+    return len(strokes) > 0
+
+
 def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list[dict]:
     """Join detector fragments that belong to the same visual line.
 
@@ -223,8 +253,8 @@ def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list
     translating each fragment separately is what makes a phrase come back
     "scattered" — every piece centred in its own little box. Merge boxes that
     sit on the same vertical band, are close enough horizontally AND look like
-    the same surface (same fill behind the text), so separate buttons/labels
-    on the same row are left alone.
+    the same surface — same fill behind the text AND no border/divider between
+    them — so separate buttons/labels/cards on the same row are left alone.
 
     When no image is available (unit tests) only the geometric part runs.
     """
@@ -244,8 +274,12 @@ def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list
                 continue
             gap = bx0 - lx1
             # A small gap (or horizontal overlap) can still mean one phrase —
-            # but only when the surface continues across it.
-            if gap <= max(18.0, height * 1.1) and (bgr is None or _continuous_surface(bgr, line, b)):
+            # but only when it is genuinely one surface: same background AND
+            # no border or divider between the boxes.
+            same_surface = bgr is None or (
+                _continuous_surface(bgr, line, b) and not _has_vertical_boundary(bgr, line, b)
+            )
+            if gap <= max(18.0, height * 1.1) and same_surface:
                 line["box"][0] = min(line["box"][0], bx0)
                 line["box"][1] = min(line["box"][1], by0)
                 line["box"][2] = max(line["box"][2], bx1)
