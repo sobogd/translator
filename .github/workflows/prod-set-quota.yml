@@ -1,0 +1,47 @@
+name: Prod set quota (manual)
+on:
+  workflow_dispatch:
+  # Push-triggered fallback (no dispatch rights): change setquota.txt to run.
+  push:
+    branches: [main]
+    paths: ["setquota.txt"]
+
+jobs:
+  set-quota:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update account quota over SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: deployer
+          key: ${{ secrets.SSH_KEY }}
+          command_timeout: 3m
+          script: |
+            cd /home/deploy/apps/translator
+            set -a
+            # shellcheck disable=SC1091
+            . ./.env
+            set +a
+            node -e '
+              const { PrismaClient } = require("@prisma/client");
+              const p = new PrismaClient();
+              const EMAIL = "support@iq-rest.com";
+              (async () => {
+                const res = await p.account.updateMany({
+                  where: { email: EMAIL },
+                  data: { charsBalance: 999999999, secondsBalance: 999999999 },
+                });
+                console.log("updated rows:", res.count);
+                const a = await p.account.findUnique({ where: { email: EMAIL } });
+                if (a) {
+                  console.log("ACCOUNT", a.email, "plan=" + a.plan,
+                    "charsLeft=" + a.charsBalance,
+                    "secondsLeft=" + a.secondsBalance,
+                    "imagesLeft=" + a.imagesBalance);
+                } else {
+                  console.log("account not found:", EMAIL);
+                }
+                await p.$disconnect();
+              })().catch((e) => { console.error("DBERR", e && e.message); process.exit(1); });
+            '
