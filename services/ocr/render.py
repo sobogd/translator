@@ -191,60 +191,53 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     med_h = float(np.median([r["h"] for r in rows]))
     med_lum = float(np.median([_lum_rgb(f) for f in fills])) if fills else 200.0
     fg: tuple[int, int, int] = (28, 28, 28) if med_lum > 140 else (242, 242, 242)
-    pad = max(3, round(med_h * 0.10))
+    pad = max(2, round(med_h * 0.06))
 
-    # Block bounding area we are allowed to paint into.
+    # Block bounding area (original text zone).
     bx0 = min(r["x0"] for r in rows)
     bx1 = max(r["x1"] for r in rows)
     by0 = min(r["y0"] for r in rows)
     by1 = max(r["y1"] for r in rows)
     bw, bh = bx1 - bx0, by1 - by0
-    max_w = max(bw - 2 * pad, 12.0)
+    if bw < 8 or bh < 6:
+        return
 
     multi = len(rows) > 1
     left_edge = bx0 < img_w * 0.22
-    # Paragraph / left-ish block -> re-flow as one text, left aligned.
     paragraph = multi or (not multi and left_edge)
     target = int(round(med_h * 0.78))
 
     if paragraph:
         text = " ".join(r["text"] for r in rows if r["text"]).strip()
-        if not text:
-            return
-        # Strict inner boundaries of the block (original text bbox minus a
-        # small margin) — the translation must not leave them.
-        inner_w = max(bw - 2 * pad, 12.0)
-        inner_h = max(bh - 2 * max(1, round(med_h * 0.08)), 8.0)
-        size = _pick_font_size(draw, text, inner_w, inner_h, target)
-        font = _font(size)
-        lines = _wrap(text, font, inner_w) or [text]
-        meas, total, lead = _ink_block(draw, lines, font)
-        top = by0 + max(0.0, (bh - total) / 2)
-        x = bx0 + pad
-        y = top
-        for ln, left, top_, iw, ih in meas:
-            draw.text((x - left, y - top_), ln, font=font, fill=fg, anchor="la")
-            y += ih + lead
-        return
-
-    # Single, standalone element (button/heading/centered chip): fit inside
-    # its own band and centre it.
-    row = rows[0]
-    text = row["text"]
+    else:
+        text = (rows[0]["text"] or "").strip()
     if not text:
         return
-    inner_w = max(row["w"] - 2 * pad, 12.0)
-    inner_h = max(row["h"] - 2 * max(1, round(row["h"] * 0.06)), 8.0)
-    size = _pick_font_size(draw, text, inner_w, inner_h, target)
+
+    # 2) Paint the translation on an overlay EXACTLY the size of the original
+    #    text zone and paste it with alpha: PIL clips to the overlay, so no
+    #    pixel of the translation can ever land outside the zone, whatever the
+    #    metrics say.
+    layer = Image.new("RGBA", (int(bw), int(bh)), (0, 0, 0, 0))
+    dc = ImageDraw.Draw(layer)
+
+    inner_w = max(bw - 2 * pad, 10.0)
+    inner_h = max(bh - 2 * pad, 8.0)
+    size = _pick_font_size(dc, text, inner_w, inner_h, target)
     font = _font(size)
     lines = _wrap(text, font, inner_w) or [text]
-    meas, total, lead = _ink_block(draw, lines, font)
-    top = row["y0"] + max(0.0, (row["h"] - total) / 2)
+    meas, total, lead = _ink_block(dc, lines, font)
+    top = max(0.0, (bh - total) / 2)
     y = top
     for ln, left, top_, iw, ih in meas:
-        x = row["x0"] + (row["w"] - iw) / 2 - left
-        draw.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
+        if paragraph:
+            x = pad - left
+        else:
+            x = (bw - iw) / 2 - left
+        dc.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
         y += ih + lead
+
+    img.paste(layer, (int(bx0), int(by0)), layer)
 
 
 def render(original: bytes, width: int, height: int, blocks: list[dict]) -> bytes:
