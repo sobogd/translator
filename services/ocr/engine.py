@@ -241,7 +241,10 @@ def _has_vertical_boundary(bgr: np.ndarray, a: dict, b: dict) -> bool:
     col_std = lum.std(axis=0)
     col_med = np.median(lum, axis=0)
     overall = np.median(lum)
-    strokes = np.where((col_std < 16) & (np.abs(col_med - overall) > 45))[0]
+    # Lenient on purpose: thin, light borders (ghost/outlined buttons on a
+    # white page) are nearly uniform vertically and differ from the page by
+    # only ~20-40 luminance units.
+    strokes = np.where((col_std < 24) & (np.abs(col_med - overall) > 18))[0]
     return len(strokes) > 0
 
 
