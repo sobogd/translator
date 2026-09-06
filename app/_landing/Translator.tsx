@@ -1081,6 +1081,8 @@ export function Translator({
                   of stacking on narrow screens. */}
               <div className="flex shrink-0 flex-wrap items-center justify-center gap-x-4 gap-y-1 px-3 py-1.5 text-xs leading-normal text-hint">
                 <span
+                  role="img"
+                  aria-label={quota ? `${texts.account.minutesLeft}: ${quotaSeconds}` : texts.account.minutesLeft}
                   className="flex items-center gap-1 tabular-nums"
                   title={quota ? `${texts.account.minutesLeft}: ${quotaSeconds}` : undefined}
                 >
@@ -1088,6 +1090,8 @@ export function Translator({
                   {quotaSeconds}
                 </span>
                 <span
+                  role="img"
+                  aria-label={quota ? `${texts.account.charsLeft}: ${quotaChars}` : texts.account.charsLeft}
                   className="flex items-center gap-1 tabular-nums"
                   title={quota ? `${texts.account.charsLeft}: ${quotaChars}` : undefined}
                 >
@@ -1095,8 +1099,10 @@ export function Translator({
                   {quotaChars}
                 </span>
                 <span
+                  role="img"
+                  aria-label={quota ? `${texts.account.imagesLeft}: ${quotaImages}` : texts.account.imagesLeft}
                   className="flex items-center gap-1 tabular-nums"
-                  title={quota ? `${t.addImage ?? "Image"}: ${quotaImages}` : undefined}
+                  title={quota ? `${texts.account.imagesLeft}: ${quotaImages}` : undefined}
                 >
                   <ImageIcon size={14} aria-hidden="true" />
                   {quotaImages}

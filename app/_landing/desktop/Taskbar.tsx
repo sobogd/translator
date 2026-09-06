@@ -14,6 +14,7 @@ import {
   Moon,
   Mic,
   Type,
+  Image as ImageIcon,
   LogOut,
   ArrowRight,
 } from "lucide-react";
@@ -351,16 +352,43 @@ export function Taskbar({
             </span>
           </div>
           <div className="flex items-center justify-between gap-3 text-sm">
-            <span className="flex items-center gap-1.5 text-hint">
-              <Mic className="h-3.5 w-3.5" /> {accountTexts.minutesLeft}
+            <span
+              role="img"
+              aria-label={accountTexts.minutesLeft}
+              className="flex items-center text-hint"
+              title={quota ? `${accountTexts.minutesLeft}: ${fmtSeconds(quota.seconds)}` : accountTexts.minutesLeft}
+            >
+              <Mic className="h-3.5 w-3.5" aria-hidden="true" />
             </span>
-            <span className="font-medium leading-normal">{quota ? fmtSeconds(quota.seconds) : "…"}</span>
+            <span className="font-medium leading-normal tabular-nums">{quota ? fmtSeconds(quota.seconds) : "…"}</span>
           </div>
           <div className="flex items-center justify-between gap-3 text-sm">
-            <span className="flex items-center gap-1.5 text-hint">
-              <Type className="h-3.5 w-3.5" /> {accountTexts.charsLeft}
+            <span
+              role="img"
+              aria-label={accountTexts.charsLeft}
+              className="flex items-center text-hint"
+              title={quota ? `${accountTexts.charsLeft}: ${nf.format(quota.chars)}` : accountTexts.charsLeft}
+            >
+              <Type className="h-3.5 w-3.5" aria-hidden="true" />
             </span>
-            <span className="font-medium leading-normal">{quota ? nf.format(quota.chars) : "…"}</span>
+            <span className="font-medium leading-normal tabular-nums">{quota ? nf.format(quota.chars) : "…"}</span>
+          </div>
+          <div className="flex items-center justify-between gap-3 text-sm">
+            <span
+              role="img"
+              aria-label={accountTexts.imagesLeft}
+              className="flex items-center text-hint"
+              title={
+                quota
+                  ? `${accountTexts.imagesLeft}: ${typeof quota.images === "number" ? nf.format(quota.images) : "0"}`
+                  : accountTexts.imagesLeft
+              }
+            >
+              <ImageIcon className="h-3.5 w-3.5" aria-hidden="true" />
+            </span>
+            <span className="font-medium leading-normal tabular-nums">
+              {quota ? (typeof quota.images === "number" ? nf.format(quota.images) : "…") : "…"}
+            </span>
           </div>
         </div>
         <div className="my-1 border-t border-border/60" />

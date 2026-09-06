@@ -47,6 +47,7 @@ export type AccountTexts = {
   freePlan: string;
   minutesLeft: string;
   charsLeft: string;
+  imagesLeft: string;
   manageSubscription: string;
   upgrade: string;
 };
@@ -93,6 +94,7 @@ export const DEFAULT_ACCOUNT_TEXTS: AccountTexts = {
   freePlan: "Free trial",
   minutesLeft: "Voice minutes left",
   charsLeft: "Characters left",
+  imagesLeft: "Photo translations left",
   manageSubscription: "Manage subscription",
   upgrade: "Upgrade",
 };

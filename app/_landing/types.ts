@@ -65,6 +65,7 @@ export interface TranslatorTexts {
     freePlan: string;
     minutesLeft: string;
     charsLeft: string;
+    imagesLeft: string;
     manageSubscription: string;
     upgrade: string;
   };

@@ -252,6 +252,7 @@
     "freePlan": "무료 체험",
     "minutesLeft": "남은 음성 분",
     "charsLeft": "남은 글자 수",
+    "imagesLeft": "남은 이미지 수",
     "manageSubscription": "구독 관리",
     "upgrade": "업그레이드"
   },
