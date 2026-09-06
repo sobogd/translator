@@ -44,6 +44,11 @@ const AI_HOST_REGEX =
 // the source instead.
 const PAGE_REGEX = /^[A-Za-z0-9][A-Za-z0-9 _\-./+]{0,63}$/;
 
+// Concrete pathname of the page an event happened on. window.location.pathname
+// already excludes query/hash, so this only guards shape/length — mirrors the
+// server's PATH_REGEX so a stamped path is never silently dropped.
+const PATH_REGEX = /^\/[^\s?#"<>\\]{0,254}$/;
+
 /** True when `label` is accepted by the server as a page/action value. */
 export function isValidPageLabel(label: string): boolean {
   return PAGE_REGEX.test(label);
@@ -124,6 +129,10 @@ interface QueuedEvent {
    *  beaconed batch must not collapse onto its delivery time. The server
    *  accepts [now-6h, now+60s]. */
   ts: number;
+  /** Pathname of the page the event happened on ("/", "/ru/feature-slug"),
+   *  captured at fire time — a retried batch must not be re-stamped with the
+   *  page the visitor moved on to. */
+  path?: string;
   /** Rendered locale at the moment of the event. */
   loc?: string;
   /** Conversation open at the moment of the event. */
@@ -299,6 +308,7 @@ function track(action: string, name: string, ctx?: TrackCtx, opts?: TrackOptions
     action,
     name,
     ts: Date.now(),
+    ...(PATH_REGEX.test(window.location.pathname) ? { path: window.location.pathname } : {}),
     ...(currentLocale ? { loc: currentLocale } : {}),
     ...(currentTopic ? { tid: currentTopic } : {}),
   });
