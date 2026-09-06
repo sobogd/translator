@@ -15,6 +15,8 @@ export interface HistoryRow {
   sourceLang: string;
   transcript: string;
   translation: string;
+  /** Photo translation: relative URL of the composed result image. */
+  imageUrl?: string | null;
   createdAt: string;
 }
 

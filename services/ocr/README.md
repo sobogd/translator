@@ -85,6 +85,24 @@ curl -s -X POST --data-binary @/path/to/photo.jpg \
 Errors: `413 image_too_large`, `415 unsupported image`, `400 empty body`,
 `400 unsupported rec_lang`, `500 ocr_error`.
 
+`POST /compose` — JSON body, returns the translated image as `image/jpeg`:
+
+```jsonc
+{
+  "image": "<base64 of the ORIGINAL upload>",
+  "width": 2000, "height": 1500,          // processed dims from /ocr
+  "blocks": [{ "polygon": [[0.1,0.2], ...], "translation": "Выход" }] // normalized 0..1
+}
+```
+
+Repaints each block: erases the area with the median colour of its
+surrounding ring and draws the translation auto-fitted (wrap + shrink) in
+black/white for contrast. Not an inpainter — flat backgrounds are clean,
+complex photo textures may leave traces. Requires a font covering the target
+script: set `TRANSLATED_FONT` to a TTF path, otherwise DejaVu Sans is tried
+(Latin + Cyrillic). Tune JPEG quality with `COMPOSE_QUALITY` (default 88).
+Errors: `413 payload_too_large`, `400 bad json|image|payload`, `500 compose_error`.
+
 `GET /healthz` — liveness + loaded engines.
 
 ## Known limits

@@ -38,29 +38,66 @@ function Turn({ r, langA, langB, texts }: { r: HistoryRow; langA: string; langB:
           the header/taskbar background. The speaker is implied only by the
           side of the pane the block sits on. */}
       <div className="w-full max-w-[85%] rounded-lg bg-[var(--taskbar-bg)] p-2">
-        {/* Original (small, muted) above the translation (larger, primary) —
-            both texts, no language labels, no interaction. */}
-        <p className="mb-2 text-sm leading-snug text-hint">{r.transcript}</p>
-
-        <div className="flex items-start justify-between gap-2">
-          <p className="text-base leading-relaxed">{r.translation}</p>
-          <div className="flex shrink-0 items-center gap-2">
-            <button
-              onClick={() => speak(r.translation, target)}
-              aria-label={texts.readAloudAria}
-              className="rounded-lg p-2 text-button transition active:scale-90"
-            >
-              <Volume2 size={15} />
-            </button>
-            <button
-              onClick={copy}
-              aria-label={texts.copyAria}
-              className="rounded-lg p-2 text-button transition active:scale-90"
-            >
-              {copied ? <Check size={15} /> : <Copy size={15} />}
-            </button>
+        {r.imageUrl ? (
+          /* Photo translation: the reply IS the repainted image (original
+             text erased, translation drawn in). The source/translation text
+             still lives on the row for copy/speak — the icons below act on
+             it. */
+          <div>
+            {/* Plain <img>, not next/image: the URL is the authed per-topic
+                API route, which the image optimizer's own fetcher cannot
+                authenticate. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={r.imageUrl}
+              alt={r.transcript}
+              loading="lazy"
+              className="block max-h-72 w-full rounded-md object-contain"
+            />
+            <div className="mt-2 flex items-center justify-end gap-2">
+              <button
+                onClick={() => speak(r.translation, target)}
+                aria-label={texts.readAloudAria}
+                className="rounded-lg p-2 text-button transition active:scale-90"
+              >
+                <Volume2 size={15} />
+              </button>
+              <button
+                onClick={copy}
+                aria-label={texts.copyAria}
+                className="rounded-lg p-2 text-button transition active:scale-90"
+              >
+                {copied ? <Check size={15} /> : <Copy size={15} />}
+              </button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <>
+            {/* Original (small, muted) above the translation (larger, primary) —
+                both texts, no language labels, no interaction. */}
+            <p className="mb-2 text-sm leading-snug text-hint">{r.transcript}</p>
+
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-base leading-relaxed">{r.translation}</p>
+              <div className="flex shrink-0 items-center gap-2">
+                <button
+                  onClick={() => speak(r.translation, target)}
+                  aria-label={texts.readAloudAria}
+                  className="rounded-lg p-2 text-button transition active:scale-90"
+                >
+                  <Volume2 size={15} />
+                </button>
+                <button
+                  onClick={copy}
+                  aria-label={texts.copyAria}
+                  className="rounded-lg p-2 text-button transition active:scale-90"
+                >
+                  {copied ? <Check size={15} /> : <Copy size={15} />}
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -105,6 +105,10 @@ model Translation {
   sourceLang  String // ISO 639-1 code
   transcript  String
   translation String
+  // Photo translation only: relative URL of the composed result image
+  // (original text erased, translation drawn in), served by
+  // /api/topics/[id]/translations/[tid]/image.
+  imageUrl    String?
   createdAt   DateTime @default(now())
 
   @@index([topicId])

@@ -5,7 +5,8 @@ import { hasValidPass, requiresTurnstile } from "@/lib/turnstile";
 import { getLanguage } from "@/lib/languages";
 import { chargeImage, refundImage } from "@/lib/credits";
 import { allowRequest } from "@/lib/rate-limit";
-import { ocrImage, OcrError } from "@/lib/image-ocr";
+import { ocrImage, composeImage, OcrError } from "@/lib/image-ocr";
+import { saveTranslatedImage, translatedImageUrl } from "@/lib/translated-image";
 import {
   translateImageBlocks,
   detectImageTextLanguage,
@@ -171,6 +172,9 @@ export async function POST(req: NextRequest) {
         box: [x0 / ocr.width, y0 / ocr.height, x1 / ocr.width, y1 / ocr.height],
       };
     });
+    // Same normalized polygons the sidecar's /compose needs to paint back in
+    // the identical processed space.
+    const normPolygons = blocks.map((b) => b.polygon);
 
     const payload: Record<string, unknown> = {
       width: ocr.width,
@@ -201,6 +205,30 @@ export async function POST(req: NextRequest) {
         },
       });
       payload.id = row.id;
+
+      // Repaint the photo: erase the original text, draw the translations.
+      // Optional layer — if compose/disk fails the turn still persists as a
+      // text message and the error is only logged.
+      try {
+        const jpeg = await composeImage(
+          imageBuf,
+          ocr.width,
+          ocr.height,
+          kept.map((b, i) => ({
+            polygon: normPolygons[i] as [number, number][],
+            translation: translations[i] ?? "",
+          })),
+        );
+        await saveTranslatedImage(topic.id, row.id, jpeg);
+        const imageUrl = translatedImageUrl(topic.id, row.id);
+        await prisma.translation.update({
+          where: { id: row.id },
+          data: { imageUrl },
+        });
+        payload.imageUrl = imageUrl;
+      } catch (composeErr) {
+        console.error("[translate-image] compose failed — turn saved without image", composeErr);
+      }
     }
 
     return NextResponse.json(payload);

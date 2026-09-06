@@ -18,7 +18,10 @@ POST /ocr              raw image bytes -> JSON blocks with pixel geometry
 from __future__ import annotations
 
 import asyncio
+import base64
+import binascii
 import io
+import json
 import logging
 import os
 import time
@@ -27,10 +30,11 @@ from contextlib import asynccontextmanager
 
 import numpy as np
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 import engine as ocr_engine
+import render as ocr_render
 
 logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"))
 log = logging.getLogger("ocr.main")
@@ -137,3 +141,57 @@ async def ocr(request: Request) -> JSONResponse:
         raise HTTPException(status_code=500, detail="ocr_error") from exc
 
     return JSONResponse(out)
+
+
+def _compose(raw_body: bytes) -> dict:
+    try:
+        data = json.loads(raw_body.decode("utf-8"))
+    except (ValueError, UnicodeDecodeError) as exc:
+        raise HTTPException(status_code=400, detail="bad json") from exc
+
+    image_b64 = data.get("image")
+    if not isinstance(image_b64, str):
+        raise HTTPException(status_code=400, detail="missing image")
+    try:
+        image_bytes = base64.b64decode(image_b64, validate=True)
+    except (ValueError, binascii.Error) as exc:
+        raise HTTPException(status_code=400, detail="bad image b64") from exc
+    if len(image_bytes) > MAX_BYTES:
+        raise HTTPException(status_code=413, detail="image_too_large")
+
+    width = data.get("width")
+    height = data.get("height")
+    blocks = data.get("blocks")
+    if not isinstance(width, int) or not isinstance(height, int) or not isinstance(blocks, list):
+        raise HTTPException(status_code=400, detail="bad payload")
+    if width < 1 or height < 1 or width > 4096 or height > 4096:
+        raise HTTPException(status_code=400, detail="bad dimensions")
+    if len(blocks) > 2000:
+        raise HTTPException(status_code=400, detail="too many blocks")
+
+    jpeg = ocr_render.render(image_bytes, width, height, blocks)
+    return {"jpeg": jpeg}
+
+
+@app.post("/compose")
+async def compose(request: Request) -> Response:
+    declared = request.headers.get("content-length")
+    if declared and declared.isdigit() and int(declared) > MAX_BYTES * 2 + 1024 * 1024:
+        raise HTTPException(status_code=413, detail="payload_too_large")
+
+    raw = await request.body()
+    if not raw:
+        raise HTTPException(status_code=400, detail="empty body")
+    if len(raw) > MAX_BYTES * 2 + 1024 * 1024:
+        raise HTTPException(status_code=413, detail="payload_too_large")
+
+    loop = asyncio.get_running_loop()
+    try:
+        out = await loop.run_in_executor(_infer_pool, _compose, raw)
+    except HTTPException:
+        raise
+    except Exception as exc:  # noqa: BLE001 — surface as 500, log detail
+        log.exception("compose failed")
+        raise HTTPException(status_code=500, detail="compose_error") from exc
+
+    return Response(content=out["jpeg"], media_type="image/jpeg")

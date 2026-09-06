@@ -75,3 +75,51 @@ export async function ocrImage(buf: Buffer, mime: string, recLang?: string): Pro
   }
   return data;
 }
+
+// --- Translated-image composition (sidecar /compose) ------------------------
+// The sidecar repaints the uploaded photo: erases each OCR block with the
+// ring colour and draws the translation back inside the same box. Returns a
+// JPEG in the processed coordinate space (width/height below).
+
+export type ComposeBlock = { polygon: OcrPolygon; translation: string };
+
+export async function composeImage(
+  buf: Buffer,
+  width: number,
+  height: number,
+  blocks: ComposeBlock[],
+): Promise<Buffer> {
+  let res: Response;
+  try {
+    res = await fetch(`${OCR_SIDECAR_URL}/compose`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ image: buf.toString("base64"), width, height, blocks }),
+      signal: AbortSignal.timeout(45_000),
+    });
+  } catch (err) {
+    const timedOut = err instanceof Error && err.name === "TimeoutError";
+    throw new OcrError(
+      `ocr sidecar compose ${timedOut ? "timed out" : "unreachable"}: ${String(err)}`,
+      0,
+      timedOut ? "compose_timeout" : "compose_unavailable",
+    );
+  }
+
+  if (!res.ok) {
+    let code = `http_${res.status}`;
+    try {
+      const body = (await res.json()) as { detail?: string };
+      if (typeof body.detail === "string") code = body.detail;
+    } catch {
+      // keep the generic code
+    }
+    throw new OcrError(`ocr sidecar compose error ${res.status}`, res.status, code);
+  }
+
+  const contentType = res.headers.get("content-type") ?? "";
+  if (!contentType.startsWith("image/")) {
+    throw new OcrError("ocr sidecar compose returned a malformed payload", 0, "compose_bad_response");
+  }
+  return Buffer.from(await res.arrayBuffer());
+}
