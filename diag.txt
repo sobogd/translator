@@ -1,1 +1,1 @@
-diag marker rev3 — dump last composed image preview
+diag marker rev4 — fixed yaml, dump image preview
