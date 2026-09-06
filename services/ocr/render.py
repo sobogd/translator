@@ -1,21 +1,23 @@
-"""Paint the translation onto a copy of the photo.
+"""Paint the translation onto a copy of the photo (v2 layout).
 
-Each OCR block from /ocr gets:
-  1) its area erased with the median colour of the ring AROUND the box —
-     clean on flat backgrounds (screenshots, menus, posters, signs);
-  2) the translated text drawn back inside the same box, wrapped to the box
-     width and auto-fitted to its height, in black/white chosen for contrast
-     against the fill colour.
+Per OCR line from /ocr the translated text is erased-and-redrawn, but the
+typography is region-consistent instead of per-box-random:
 
-Deliberately NOT an inpainter: complex photo backgrounds (foliage, fabric
-patterns) will show traces where the old glyphs were. For those the caller
-should fall back to the JSON geometry and a real inpainting pipeline. Text
-is drawn axis-aligned inside the axis-aligned box of the polygon — strongly
-rotated captions render upright rather than along the original skew.
+  1) lines are clustered into text regions (a chat bubble, a paragraph, a
+     wrapped label) by vertical proximity + horizontal overlap;
+  2) ONE font size and ONE line spacing serve every line of a region — the
+     size starts from the region's median line height and only shrinks if a
+     line's translation cannot fit its band;
+  3) lines keep their original vertical bands (no per-fragment recentering),
+     sub-lines of a wrapped translation flow downward with uniform leading;
+  4) alignment follows the region: paragraphs and left-ish text are
+     left-aligned, isolated centered elements (buttons/headings) stay
+     centered;
+  5) one text colour per region, chosen from its fills.
 
-The sidecar renders in the SAME processed space as its OCR (EXIF-normalized,
-downscaled to the width/height it reports), so the caller just sends back the
-original upload plus those width/height and normalized polygons.
+Erase still uses the median ring colour of each line's box — clean on flat
+backgrounds; complex photo textures remain the known limitation (a real
+inpainter would be the next step).
 """
 
 from __future__ import annotations
@@ -51,6 +53,15 @@ def _font(size: int) -> ImageFont.FreeTypeFont:
         font = ImageFont.truetype(path, size)
         _font_cache[key] = font
     return font
+
+
+def _lum(bgr: np.ndarray) -> float:
+    """Perceived luminance of a BGR pixel row."""
+    return 0.299 * bgr[2] + 0.587 * bgr[1] + 0.114 * bgr[0]
+
+
+def _lum_rgb(c: tuple[int, int, int]) -> float:
+    return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
 
 
 def _ring_median(img: Image.Image, box: tuple[int, int, int, int]) -> tuple[int, int, int]:
@@ -91,7 +102,6 @@ def _wrap(text: str, font: ImageFont.FreeTypeFont, max_w: float) -> list[str]:
         if cur:
             lines.append(cur)
             cur = ""
-        # A single word wider than the box: break it by characters.
         if not fits(word):
             piece = ""
             for ch in word:
@@ -104,73 +114,126 @@ def _wrap(text: str, font: ImageFont.FreeTypeFont, max_w: float) -> list[str]:
         cur = word
     if cur:
         lines.append(cur)
-    return lines
+    return lines or [text]
 
 
-def _measure_lines(
-    draw: ImageDraw.ImageDraw,
-    lines: list[str],
-    font: ImageFont.FreeTypeFont,
-) -> tuple[list, int, int]:
-    """Per-line ink bbox (textbbox) and the stacked block height. The ink box
-    is what is actually painted — centering it (not the em box) is what makes
-    ascenders/descenders/accents sit correctly inside the erased area."""
-    lead = max(1, font.size // 7)
+def _ink_metrics(draw: ImageDraw.ImageDraw, lines: list[str], font: ImageFont.FreeTypeFont):
+    """Per-line ink boxes + stacked height of a wrapped translation."""
+    lead = max(1, round(font.size * 0.2))
     meas: list = []
     total = 0
-    for line in lines:
-        left, top, right, bottom = draw.textbbox((0, 0), line, font=font, anchor="la")
+    for ln in lines:
+        left, top, right, bottom = draw.textbbox((0, 0), ln, font=font, anchor="la")
         iw = right - left
         ih = bottom - top
-        meas.append((line, left, top, iw, ih))
+        meas.append((ln, left, top, iw, ih))
         total += ih
     if len(lines) > 1:
         total += lead * (len(lines) - 1)
     return meas, total, lead
 
 
-def _draw_translated(
+def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
+    """Group stacked lines that look like one text region (chat bubble,
+    paragraph, wrapped label): small vertical gap, similar height, and a
+    horizontal overlap with the lines above."""
+    regions: list[list[dict]] = []
+    for row in rows:
+        if not regions:
+            regions.append([row])
+            continue
+        prev = regions[-1][-1]
+        gap = row["y0"] - prev["y1"]
+        avg_h = (prev["h"] + row["h"]) / 2
+        h_ratio = max(prev["h"], row["h"]) / max(1, min(prev["h"], row["h"]))
+        # Horizontal overlap of the two x-ranges.
+        overlap = min(prev["x1"], row["x1"]) - max(prev["x0"], row["x0"])
+        min_w = min(prev["w"], row["w"])
+        same_region = (
+            gap >= -1
+            and gap <= max(avg_h * 0.9, 14.0)
+            and h_ratio <= 2.4
+            and overlap >= min_w * 0.25
+        )
+        if same_region:
+            regions[-1].append(row)
+        else:
+            regions.append([row])
+    return regions
+
+
+def _region_font_size(
     draw: ImageDraw.ImageDraw,
-    box: tuple[int, int, int, int],
-    text: str,
-    bg: tuple[int, int, int],
-) -> None:
-    x0, y0, x1, y1 = box
-    w, h = x1 - x0, y1 - y0
-    if w < 10 or h < 6:
-        return
-    lum = 0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]
-    fg: tuple[int, int, int] = (28, 28, 28) if lum > 140 else (242, 242, 242)
-    pad = max(2, int(h * 0.08))
-    max_w = max(w - 2 * pad, 8.0)
+    rows: list[dict],
+    width: int,
+    height: int,
+) -> int:
+    """Uniform font size for the whole region: start from the median line
+    height and shrink until every line's wrapped translation fits its band."""
+    med_h = float(np.median([r["h"] for r in rows]))
+    target = int(round(med_h * 0.78))
+    size = max(7, min(target, 120))
+    # Tiny pad keeps glyphs inside the erased band.
+    for s in range(size, 6, -1):
+        font = _font(s)
+        ok = True
+        for row in rows:
+            text = row["text"]
+            if not text:
+                continue
+            max_w = max(row["w"] - 2 * max(2, round(row["h"] * 0.06)), 8.0)
+            lines = _wrap(text, font, max_w)
+            meas, total, _ = _ink_metrics(draw, lines, font)
+            # Allow a little vertical slack, never a full extra row.
+            if total > row["h"] + s * 0.8:
+                ok = False
+                break
+        if ok:
+            return s
+    return 7
 
-    # Largest font size whose wrapped lines stack inside the box height.
-    chosen: tuple | None = None
-    start = max(7, int(h * 0.8))
-    for size in range(start, 6, -1):
-        font = _font(size)
-        lines = _wrap(text, font, max_w) or [text]
-        meas, total, _ = _measure_lines(draw, lines, font)
-        if total <= h:
-            chosen = (font, lines, meas, total)
-            break
-    if chosen is None:
-        # Tiny box: last resort at the floor size, even if it overflows a bit.
-        font = _font(7)
-        lines = _wrap(text, font, max_w) or [text]
-        meas, total, _ = _measure_lines(draw, lines, font)
-        chosen = (font, lines, meas, total)
 
-    font, lines, meas, total = chosen  # type: ignore[assignment]
-    lead = max(1, font.size // 7)
-    top = y0 + max(0.0, (h - total) / 2)
-    y = top
-    for line, left, top_, iw, ih in meas:
-        # Draw so this line's ink box starts exactly at (x, y): subtract the
-        # bbox origin from the desired position.
-        x = x0 + (w - iw) / 2 - left
-        draw.text((x, y - top_), line, font=font, fill=fg, anchor="la")
-        y += ih + lead
+def _draw_region(img: Image.Image, rows: list[dict], img_w: int) -> None:
+    draw = ImageDraw.Draw(img)
+    # Erase every line first (own ring colour), then paint typography.
+    fills = []
+    for row in rows:
+        x0, y0, x1, y1 = row["x0"], row["y0"], row["x1"], row["y1"]
+        bg = _ring_median(img, (x0, y0, x1, y1))
+        fills.append(bg)
+        draw.rectangle([x0 - 1, y0 - 1, x1 + 1, y1 + 1], fill=bg)
+        row["_bg"] = bg
+
+    # One text colour per region.
+    med_lum = float(np.median([_lum_rgb(f) for f in fills])) if fills else 200.0
+    fg: tuple[int, int, int] = (28, 28, 28) if med_lum > 140 else (242, 242, 242)
+
+    # Alignment: multi-line / text hugging the left edge -> left; a lone
+    # centred element (button, heading) stays centred.
+    left_edge = min(r["x0"] for r in rows)
+    left_align = len(rows) > 1 or left_edge < img_w * 0.22
+
+    size = _region_font_size(draw, rows, img_w, img.size[1])
+    font = _font(size)
+    lead = max(1, round(size * 0.2))
+
+    for row in rows:
+        text = row["text"]
+        if not text:
+            continue
+        pad = max(2, round(row["h"] * 0.06))
+        max_w = max(row["w"] - 2 * pad, 8.0)
+        lines = _wrap(text, font, max_w) or [text]
+        meas, total, _ = _ink_metrics(draw, lines, font)
+        top = row["y0"] + max(0.0, (row["h"] - total) / 2)
+        y = top
+        for ln, left, top_, iw, ih in meas:
+            if left_align:
+                x = row["x0"] + pad - left
+            else:
+                x = row["x0"] + (row["w"] - iw) / 2 - left
+            draw.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
+            y += ih + lead
 
 
 def render(original: bytes, width: int, height: int, blocks: list[dict]) -> bytes:
@@ -184,10 +247,10 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
     if img.mode != "RGB":
         img = img.convert("RGB")
     img = img.resize((int(width), int(height)), Image.LANCZOS)
-    draw = ImageDraw.Draw(img)
 
+    rows: list[dict] = []
     for b in blocks:
-        translation = (b.get("translation") or "").strip()
+        text = (b.get("translation") or "").strip()
         poly = b.get("polygon") or []
         if len(poly) < 4:
             continue
@@ -202,13 +265,12 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
         w, h = x1 - x0, y1 - y0
         if w < 10 or h < 6:
             continue
+        rows.append({"x0": x0, "y0": y0, "x1": x1, "y1": y1, "w": w, "h": h, "text": text})
 
-        # Always erase the original text area so a block that ended up without
-        # a translation reads as removed, not as left-behind original text.
-        bg = _ring_median(img, (x0, y0, x1, y1))
-        draw.rectangle([x0 - 1, y0 - 1, x1 + 1, y1 + 1], fill=bg)
-        if translation:
-            _draw_translated(draw, (x0, y0, x1, y1), translation, bg)
+    rows.sort(key=lambda r: (r["y0"], r["x0"]))
+    regions = _cluster_regions(rows)
+    for region in regions:
+        _draw_region(img, region, width)
 
     out = io.BytesIO()
     img.save(out, format="JPEG", quality=JPEG_QUALITY, optimize=True)
