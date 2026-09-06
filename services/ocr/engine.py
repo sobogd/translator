@@ -248,6 +248,24 @@ def _has_vertical_boundary(bgr: np.ndarray, a: dict, b: dict) -> bool:
     return len(strokes) > 0
 
 
+def _first_letter(text: str) -> str | None:
+    for ch in text:
+        if ch.isalpha():
+            return ch
+    return None
+
+
+def _capital_pair(line_text: str, b_text: str) -> bool:
+    """Two neighbouring units that both start with a capital letter are almost
+    certainly separate controls/labels ("Buy" + "Make offer", "Отмена" +
+    "Сохранить"), never fragments of one sentence — a mid-sentence break
+    continues with a lowercase word. Sentence-initial fragments are a rare
+    false negative and accepted over wrongly gluing buttons together."""
+    a0 = _first_letter(line_text)
+    b0 = _first_letter(b_text)
+    return bool(a0 and b0 and a0.isupper() and b0.isupper())
+
+
 def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list[dict]:
     """Join detector fragments that belong to the same visual line.
 
@@ -277,10 +295,10 @@ def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list
                 continue
             gap = bx0 - lx1
             # A small gap (or horizontal overlap) can still mean one phrase —
-            # but only when it is genuinely one surface: same background AND
-            # no border or divider between the boxes.
-            same_surface = bgr is None or (
-                _continuous_surface(bgr, line, b) and not _has_vertical_boundary(bgr, line, b)
+            # but only when it is genuinely one unit: same background, no
+            # border/divider between, and not two capitalised controls.
+            same_surface = not _capital_pair(line["text"], b["text"]) and (
+                bgr is None or (_continuous_surface(bgr, line, b) and not _has_vertical_boundary(bgr, line, b))
             )
             if gap <= max(18.0, height * 1.1) and same_surface:
                 line["box"][0] = min(line["box"][0], bx0)
