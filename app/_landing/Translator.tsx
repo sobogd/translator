@@ -736,7 +736,7 @@ export function Translator({
             aria-expanded={attachOpen}
             title={addLabel}
             disabled={textBusy}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-hint transition-colors hover:bg-accent hover:text-text active:scale-90 disabled:opacity-40"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--taskbar-bg)] text-hint transition-colors hover:bg-accent hover:text-text active:scale-90 disabled:opacity-40"
           >
             <Plus size={17} />
           </button>

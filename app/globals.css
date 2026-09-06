@@ -61,8 +61,11 @@
   /* Window: solid chosen surface (the scroll content block). */
   --window-bg: #d9d9d9;
   --window-border: rgb(208 208 208);
-  /* Taskbar "island": solid chosen header surface. */
-  --taskbar-bg: #d6d6d6;
+  /* Taskbar "island": solid chosen header surface — kept a clear step darker
+     than the window so the floating header reads as a separate surface (the
+     same variable also paints header dropdowns, chat bubbles and input
+     fields). */
+  --taskbar-bg: #c8c8c8;
   --taskbar-border: transparent;
   /* Scrollbar thumb: the header's grey tone, darkened enough to read on the
      pale window and the editor surfaces. */
