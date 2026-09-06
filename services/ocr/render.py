@@ -159,41 +159,46 @@ def _attach_ink_bounds(img: Image.Image, rows: list[dict]) -> None:
         row["fill"] = _ring_median(img, (x0, y0, x1, y1))
 
 
-def _same_surface(a: dict, b: dict) -> bool:
-    """True when two candidate lines sit on the same background colour.
-
-    Different elements (a chat bubble vs the page background vs the input
-    box) almost always differ in surface colour, so this is what stops a
-    multi-line 'region' from swallowing unrelated lines below it."""
-    fa = a.get("fill")
-    fb = b.get("fill")
-    if fa is None or fb is None:
-        return True
-    return abs(fa[0] - fb[0]) + abs(fa[1] - fb[1]) + abs(fa[2] - fb[2]) <= 45
+def _inc(row: dict, k: str, fallback: str) -> int:
+    """A row's ink coordinate if measured, else its OCR-box coordinate."""
+    return row.get(k, row[fallback])
 
 
 def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
-    """Group stacked lines into text blocks (chat bubble, paragraph, wrapped
-    label). Rule of thumb: consecutive lines belong together when the vertical
-    gap is within one line-height, heights are comparable and the x-ranges
-    overlap at least a little."""
+    """Group stacked lines into text blocks using ONLY the text itself.
+
+    Lines belong to one block when their glyph heights are comparable (same
+    font), their ink spans overlap horizontally (it's a wrap within one
+    element), and the vertical gap between them is no more than one
+    line-height (leading) — no background/colour information involved. A
+    separate element (a new message, the system notice, the input box) breaks
+    at least one of these, so it starts a new block."""
     regions: list[list[dict]] = []
     for row in rows:
         if not regions:
             regions.append([row])
             continue
         prev = regions[-1][-1]
-        gap = row["y0"] - prev["y1"]
-        avg_h = (prev["h"] + row["h"]) / 2
-        h_ratio = max(prev["h"], row["h"]) / max(1, min(prev["h"], row["h"]))
-        overlap = min(prev["x1"], row["x1"]) - max(prev["x0"], row["x0"])
-        min_w = min(prev["w"], row["w"])
+        p_top = _inc(prev, "i0", "y0")
+        p_bot = _inc(prev, "i1", "y1")
+        c_top = _inc(row, "i0", "y0")
+        c_bot = _inc(row, "i1", "y1")
+        p_l = _inc(prev, "l0", "x0")
+        p_r = _inc(prev, "l1", "x1")
+        c_l = _inc(row, "l0", "x0")
+        c_r = _inc(row, "l1", "x1")
+
+        gap = c_top - p_bot
+        ph, ch = p_bot - p_top, c_bot - c_top
+        avg_h = (ph + ch) / 2
+        h_ratio = max(max(ph, 1), max(ch, 1)) / max(1, min(max(ph, 1), max(ch, 1)))
+        overlap = min(p_r, c_r) - max(p_l, c_l)
+        min_w = max(min(p_r - p_l, c_r - c_l), 1)
         same_region = (
-            gap >= -1
-            and gap <= max(avg_h * 0.85, 16.0)
-            and h_ratio <= 2.6
-            and overlap >= min_w * 0.12
-            and _same_surface(row, prev)
+            gap >= -2
+            and gap <= max(avg_h * 0.9, 12.0)
+            and h_ratio <= 2.2
+            and overlap >= min_w * 0.15
         )
         if same_region:
             regions[-1].append(row)
@@ -258,62 +263,41 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     if not text:
         return
 
-    # Original text zone (union of OCR boxes).
-    bx0 = min(r["x0"] for r in rows)
-    bx1 = max(r["x1"] for r in rows)
-    by0 = min(r["y0"] for r in rows)
-    by1 = max(r["y1"] for r in rows)
+    # 2) Zone = the REAL glyph extents of the block (top of the tallest
+    #    letter, bottom of the lowest, left/right ink extremes). No background
+    #    is consulted — the translation is fitted to the text itself.
+    bx0 = min(_inc(r, "l0", "x0") for r in rows)
+    bx1 = max(_inc(r, "l1", "x1") for r in rows)
+    by0 = min(_inc(r, "i0", "y0") for r in rows)
+    by1 = max(_inc(r, "i1", "y1") for r in rows)
     bw, bh = bx1 - bx0, by1 - by0
     if bw < 8 or bh < 6:
         return
 
-    # 2) Paint on an overlay exactly the size of the zone and paste with an
-    #    alpha mask: PIL clips to the overlay, so no pixel can escape the zone.
+    # 3) Paint on an overlay exactly the size of that glyph zone and paste
+    #    with an alpha mask: PIL clips to the overlay, so no pixel can escape.
     layer = Image.new("RGBA", (int(bw), int(bh)), (0, 0, 0, 0))
     dc = ImageDraw.Draw(layer)
+
+    inner_pad = max(2, round(min(bw, bh) * 0.03))
+    inner_w = max(bw - 2 * inner_pad, 10.0)
+    inner_h = max(bh - 2 * inner_pad, 8.0)
+    left_align = len(rows) > 1 or bx0 < img_w * 0.22
     target = _target_size(rows)
 
-    if multi:
-        # Paragraph: pour the whole block into the union area (extra wrapped
-        # lines may use the inter-line room), left-aligned.
-        inner_w = max(bw - 2 * pad, 10.0)
-        inner_h = max(bh - 2 * pad, 8.0)
-        size = _pick_font_size(dc, text, inner_w, inner_h, target)
-        font = _font(size)
-        lines = _wrap(text, font, inner_w) or [text]
-        meas, total, lead = _ink_block(dc, lines, font)
-        top = max(0.0, (bh - total) / 2)
-        y = top
-        for ln, left, top_, iw, ih in meas:
-            dc.text((pad - left, y - top_), ln, font=font, fill=fg, anchor="la")
-            y += ih + lead
-    else:
-        # Single line with no container (text on a photo): anchor to the real
-        # glyph bounds of the original — top of the tallest letter, bottom of
-        # the lowest one, and the left/right ink extremes.
-        row = rows[0]
-        y_a = row.get("i0", row["y0"])
-        y_b = row.get("i1", row["y1"])
-        x_a = row.get("l0", row["x0"])
-        x_b = row.get("l1", row["x1"])
-        band_h = max(8, y_b - y_a)
-        span_w = max(10.0, float(x_b - x_a))
-        left_align = x_a < img_w * 0.22 or bx0 < img_w * 0.22
-        inner_w = min(span_w, max(bw - 2 * pad, 10.0))
-        inner_h = max(band_h - 2, 6.0)
-        size = _pick_font_size(dc, text, inner_w, inner_h, target)
-        font = _font(size)
-        lines = _wrap(text, font, inner_w) or [text]
-        meas, total, lead = _ink_block(dc, lines, font)
-        top = (y_a - by0) + max(0.0, (band_h - total) / 2)
-        y = top
-        for ln, left, top_, iw, ih in meas:
-            if left_align:
-                x = (x_a - bx0) - left
-            else:
-                x = (bw - iw) / 2 - left
-            dc.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
-            y += ih + lead
+    size = _pick_font_size(dc, text, inner_w, inner_h, target)
+    font = _font(size)
+    lines = _wrap(text, font, inner_w) or [text]
+    meas, total, lead = _ink_block(dc, lines, font)
+    top = max(0.0, (bh - total) / 2)
+    y = top
+    for ln, left, top_, iw, ih in meas:
+        if left_align:
+            x = inner_pad - left
+        else:
+            x = (bw - iw) / 2 - left
+        dc.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
+        y += ih + lead
 
     img.paste(layer, (int(bx0), int(by0)), layer)
 
