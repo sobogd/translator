@@ -171,4 +171,59 @@ def recognize(img_bgr: np.ndarray, rec_lang: str | None = None) -> tuple[list[di
                 "box": [round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1)],
             }
         )
-    return blocks, elapse, rec_lang or DEFAULT_LANG
+    return _merge_into_lines(blocks), elapse, rec_lang or DEFAULT_LANG
+
+
+def _merge_into_lines(blocks: list[dict]) -> list[dict]:
+    """Join detector fragments that belong to the same visual line.
+
+    The detector frequently splits one printed line into several boxes at
+    word-level gaps (or when a long phrase wraps inside an UI column), and
+    translating each fragment separately is what makes a phrase come back
+    "scattered" — every piece centred in its own little box. Merge boxes that
+    sit on the same vertical band and are close enough horizontally into one
+    line: the whole phrase is then translated as one unit and painted across
+    the merged width.
+
+    Boxes that share a band but are far apart (separate labels/columns on the
+    same row) are intentionally NOT merged.
+    """
+    if len(blocks) <= 1:
+        return blocks
+
+    ordered = sorted(blocks, key=lambda b: (b["box"][1], b["box"][0]))
+    lines: list[dict] = []
+    for b in ordered:
+        bx0, by0, bx1, by1 = b["box"]
+        height = by1 - by0
+        merged = False
+        for line in lines:
+            lx0, ly0, lx1, ly1 = line["box"]
+            # Different vertical band -> different visual line.
+            if min(ly1, by1) - max(ly0, by0) <= 0:
+                continue
+            gap = bx0 - lx1
+            # A small gap (or horizontal overlap) means one continuous phrase.
+            if gap <= max(18.0, height * 1.1):
+                line["box"][0] = min(line["box"][0], bx0)
+                line["box"][1] = min(line["box"][1], by0)
+                line["box"][2] = max(line["box"][2], bx1)
+                line["box"][3] = max(line["box"][3], by1)
+                line["text"] = f"{line['text']} {b['text']}".strip()
+                line["confidence"] = round(min(line["confidence"], b["confidence"]), 3)
+                merged = True
+                break
+        if not merged:
+            lines.append(dict(b))
+
+    # Rebuild an axis-aligned polygon per merged line (the per-fragment
+    # rotation is lost by design — downstream only uses the box anyway).
+    for line in lines:
+        x0, y0, x1, y1 = line["box"]
+        line["polygon"] = [
+            [x0, y0],
+            [x1, y0],
+            [x1, y1],
+            [x0, y1],
+        ]
+    return lines
