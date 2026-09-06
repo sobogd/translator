@@ -127,6 +127,35 @@ def _ink_block(
     return meas, total, lead
 
 
+def _attach_ink_bounds(img: Image.Image, rows: list[dict]) -> None:
+    """Find the real glyph bounds of every original text row.
+
+    OCR boxes carry padding around the letters, and for text that sits
+    directly on a photo there is no visual container to hide that padding —
+    the translation then lands slightly off where the original letters were.
+    Measure the actual ink (pixels that differ from the local background) so
+    the translation can be sized and placed against the true glyph top /
+    bottom / left / right instead of the padded box."""
+    arr = np.asarray(img).astype(np.int16)
+    lum = 0.299 * arr[:, :, 2] + 0.587 * arr[:, :, 1] + 0.114 * arr[:, :, 0]
+    h, w = lum.shape
+    for row in rows:
+        x0, y0, x1, y1 = row["x0"], row["y0"], row["x1"], row["y1"]
+        if x1 <= x0 or y1 <= y0:
+            continue
+        region = lum[y0:y1, x0:x1]
+        bg = float(np.median(region))
+        mask = np.abs(region - bg) > 26
+        if int(mask.sum()) == 0:
+            continue  # unreadable box — keep OCR bounds as fallback
+        ys, xs = np.where(mask)
+        row["i0"] = y0 + int(ys.min())
+        row["i1"] = y0 + int(ys.max()) + 1
+        row["l0"] = x0 + int(xs.min())
+        row["l1"] = x0 + int(xs.max()) + 1
+        row["ih"] = row["i1"] - row["i0"]
+
+
 def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
     """Group stacked lines into text blocks (chat bubble, paragraph, wrapped
     label). Rule of thumb: consecutive lines belong together when the vertical
@@ -177,6 +206,17 @@ def _pick_font_size(
     return 7
 
 
+def _target_size(rows: list[dict]) -> int:
+    """Ideal font size for a set of rows. Prefers the measured ink height of
+    the original glyphs (≈ real cap/descender span) over the padded OCR box
+    height; factor 1.15 converts an ink span back to a font em size."""
+    inks = [r["ih"] for r in rows if "ih" in r and r["ih"] > 0]
+    if inks:
+        return max(8, int(round(float(np.median(inks)) * 1.15)))
+    med_h = float(np.median([r["h"] for r in rows]))
+    return max(8, int(round(med_h * 0.8)))
+
+
 def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     draw = ImageDraw.Draw(img)
 
@@ -193,7 +233,15 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     fg: tuple[int, int, int] = (28, 28, 28) if med_lum > 140 else (242, 242, 242)
     pad = max(2, round(med_h * 0.06))
 
-    # Block bounding area (original text zone).
+    multi = len(rows) > 1
+    if multi:
+        text = " ".join(r["text"] for r in rows if r["text"]).strip()
+    else:
+        text = (rows[0]["text"] or "").strip()
+    if not text:
+        return
+
+    # Original text zone (union of OCR boxes).
     bx0 = min(r["x0"] for r in rows)
     bx1 = max(r["x1"] for r in rows)
     by0 = min(r["y0"] for r in rows)
@@ -202,40 +250,53 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     if bw < 8 or bh < 6:
         return
 
-    multi = len(rows) > 1
-    left_edge = bx0 < img_w * 0.22
-    paragraph = multi or (not multi and left_edge)
-    target = int(round(med_h * 0.78))
-
-    if paragraph:
-        text = " ".join(r["text"] for r in rows if r["text"]).strip()
-    else:
-        text = (rows[0]["text"] or "").strip()
-    if not text:
-        return
-
-    # 2) Paint the translation on an overlay EXACTLY the size of the original
-    #    text zone and paste it with alpha: PIL clips to the overlay, so no
-    #    pixel of the translation can ever land outside the zone, whatever the
-    #    metrics say.
+    # 2) Paint on an overlay exactly the size of the zone and paste with an
+    #    alpha mask: PIL clips to the overlay, so no pixel can escape the zone.
     layer = Image.new("RGBA", (int(bw), int(bh)), (0, 0, 0, 0))
     dc = ImageDraw.Draw(layer)
+    target = _target_size(rows)
 
-    inner_w = max(bw - 2 * pad, 10.0)
-    inner_h = max(bh - 2 * pad, 8.0)
-    size = _pick_font_size(dc, text, inner_w, inner_h, target)
-    font = _font(size)
-    lines = _wrap(text, font, inner_w) or [text]
-    meas, total, lead = _ink_block(dc, lines, font)
-    top = max(0.0, (bh - total) / 2)
-    y = top
-    for ln, left, top_, iw, ih in meas:
-        if paragraph:
-            x = pad - left
-        else:
-            x = (bw - iw) / 2 - left
-        dc.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
-        y += ih + lead
+    if multi:
+        # Paragraph: pour the whole block into the union area (extra wrapped
+        # lines may use the inter-line room), left-aligned.
+        inner_w = max(bw - 2 * pad, 10.0)
+        inner_h = max(bh - 2 * pad, 8.0)
+        size = _pick_font_size(dc, text, inner_w, inner_h, target)
+        font = _font(size)
+        lines = _wrap(text, font, inner_w) or [text]
+        meas, total, lead = _ink_block(dc, lines, font)
+        top = max(0.0, (bh - total) / 2)
+        y = top
+        for ln, left, top_, iw, ih in meas:
+            dc.text((pad - left, y - top_), ln, font=font, fill=fg, anchor="la")
+            y += ih + lead
+    else:
+        # Single line with no container (text on a photo): anchor to the real
+        # glyph bounds of the original — top of the tallest letter, bottom of
+        # the lowest one, and the left/right ink extremes.
+        row = rows[0]
+        y_a = row.get("i0", row["y0"])
+        y_b = row.get("i1", row["y1"])
+        x_a = row.get("l0", row["x0"])
+        x_b = row.get("l1", row["x1"])
+        band_h = max(8, y_b - y_a)
+        span_w = max(10.0, float(x_b - x_a))
+        left_align = x_a < img_w * 0.22 or bx0 < img_w * 0.22
+        inner_w = min(span_w, max(bw - 2 * pad, 10.0))
+        inner_h = max(band_h - 2, 6.0)
+        size = _pick_font_size(dc, text, inner_w, inner_h, target)
+        font = _font(size)
+        lines = _wrap(text, font, inner_w) or [text]
+        meas, total, lead = _ink_block(dc, lines, font)
+        top = (y_a - by0) + max(0.0, (band_h - total) / 2)
+        y = top
+        for ln, left, top_, iw, ih in meas:
+            if left_align:
+                x = (x_a - bx0) - left
+            else:
+                x = (bw - iw) / 2 - left
+            dc.text((x, y - top_), ln, font=font, fill=fg, anchor="la")
+            y += ih + lead
 
     img.paste(layer, (int(bx0), int(by0)), layer)
 
@@ -272,6 +333,7 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
         rows.append({"x0": x0, "y0": y0, "x1": x1, "y1": y1, "w": w, "h": h, "text": text})
 
     rows.sort(key=lambda r: (r["y0"], r["x0"]))
+    _attach_ink_bounds(img, rows)
     regions = _cluster_regions(rows)
     for region in regions:
         _draw_block(img, region, width)
