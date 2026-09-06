@@ -30,7 +30,7 @@ jobs:
               (async () => {
                 const res = await p.account.updateMany({
                   where: { email: EMAIL },
-                  data: { charsBalance: 999999999, secondsBalance: 999999999 },
+                  data: { charsBalance: 999999999, secondsBalance: 999999999, imagesBalance: 999999999 },
                 });
                 console.log("updated rows:", res.count);
                 const a = await p.account.findUnique({ where: { email: EMAIL } });
