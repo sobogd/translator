@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
-import { ArrowUp, BookOpen, ChevronDown, Image as ImageIcon, Loader2, Mic, Plus, Square, Trash2, X } from "lucide-react";
+import { ArrowUp, BookOpen, ChevronDown, Image as ImageIcon, Loader2, Mic, Plus, Square, Trash2, Type, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -440,9 +440,12 @@ export function Translator({
   const TEXTAREA_MAX_H = 96;
 
   const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-  // Remaining-quota copy that sits, always visible, at the bottom of the chat
-  // pane (below the scroll, above the composer). SSR-safe placeholders mirror
-  // the old header counters: the numbers replace them once /api/quota lands.
+  // Remaining-quota counters that sit, always visible, at the bottom of the
+  // chat pane (below the scroll, above the composer). SSR-safe placeholders
+  // mirror the old header counters: the numbers replace them once /api/quota
+  // lands. Photo translations are the newest of the three — there used to be
+  // no counter for them at all.
+  const quotaImages = quota ? (typeof quota.images === "number" ? quota.images.toLocaleString() : "–") : "–";
   const quotaSeconds = quota ? fmtTime(quota.seconds) : "–:––";
   const quotaChars = quota ? quota.chars.toLocaleString() : "–";
 
@@ -1070,18 +1073,33 @@ export function Translator({
               </div>
               {/* Remaining quota — always visible at the bottom of the chat
                   pane (it does not scroll with the messages); the scroll fades
-                  into it. Text only, numbers in the accent tone. On mobile the
-                  two limits stack as separate rows (minutes first, characters
-                  second); from sm up they sit on one line again. */}
-              <div className="flex shrink-0 flex-col items-center justify-center gap-y-1 px-3 py-1.5 text-xs leading-normal text-hint sm:flex-row sm:gap-x-1.5 sm:gap-y-0">
-                <span className="flex items-center gap-1.5">
-                  <span>{texts.account.minutesLeft}:</span>
-                  <span className="font-semibold text-button">{quotaSeconds}</span>
+                  into it. Three quiet counters — voice minutes, characters and
+                  photo translations left — each an icon plus the amount. Icons
+                  and figures are both gray (same tone as the hint text), so
+                  the strip reads as a footer, not a set of buttons; the full
+                  meaning lives in each chip's tooltip. The row wraps instead
+                  of stacking on narrow screens. */}
+              <div className="flex shrink-0 flex-wrap items-center justify-center gap-x-4 gap-y-1 px-3 py-1.5 text-xs leading-normal text-hint">
+                <span
+                  className="flex items-center gap-1 tabular-nums"
+                  title={quota ? `${texts.account.minutesLeft}: ${quotaSeconds}` : undefined}
+                >
+                  <Mic size={14} aria-hidden="true" />
+                  {quotaSeconds}
                 </span>
-                <span aria-hidden="true" className="hidden sm:inline">·</span>
-                <span className="flex items-center gap-1.5">
-                  <span>{texts.account.charsLeft}:</span>
-                  <span className="font-semibold text-button">{quotaChars}</span>
+                <span
+                  className="flex items-center gap-1 tabular-nums"
+                  title={quota ? `${texts.account.charsLeft}: ${quotaChars}` : undefined}
+                >
+                  <Type size={14} aria-hidden="true" />
+                  {quotaChars}
+                </span>
+                <span
+                  className="flex items-center gap-1 tabular-nums"
+                  title={quota ? `${t.addImage ?? "Image"}: ${quotaImages}` : undefined}
+                >
+                  <ImageIcon size={14} aria-hidden="true" />
+                  {quotaImages}
                 </span>
               </div>
             </div>
