@@ -171,22 +171,62 @@ def recognize(img_bgr: np.ndarray, rec_lang: str | None = None) -> tuple[list[di
                 "box": [round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1)],
             }
         )
-    return _merge_into_lines(blocks), elapse, rec_lang or DEFAULT_LANG
+    return _merge_into_lines(blocks, img_bgr), elapse, rec_lang or DEFAULT_LANG
 
 
-def _merge_into_lines(blocks: list[dict]) -> list[dict]:
+def _lum(bgr: np.ndarray) -> float:
+    """Perceived luminance of one BGR pixel row."""
+    return 0.299 * bgr[2] + 0.587 * bgr[1] + 0.114 * bgr[0]
+
+
+def _median_color(bgr: np.ndarray, x0: int, y0: int, x1: int, y1: int):
+    """Median colour of a pixel region, or None when the region is empty."""
+    h, w = bgr.shape[:2]
+    x0, y0 = max(0, x0), max(0, y0)
+    x1, y1 = min(w, x1), min(h, y1)
+    if x1 - x0 < 1 or y1 - y0 < 1:
+        return None
+    region = bgr[y0:y1, x0:x1].reshape(-1, 3)
+    return np.median(region, axis=0)
+
+
+def _continuous_surface(bgr: np.ndarray, a: dict, b: dict) -> bool:
+    """True when the strip between two candidate boxes looks like the same
+    surface as their interiors — i.e. they are fragments of one printed line,
+    not two separate controls (buttons/cards have a fill or edge that differs
+    from the gap of page background between them)."""
+    gap_x0 = int(a["box"][2])
+    gap_x1 = int(b["box"][0])
+    if gap_x1 <= gap_x0 + 1:
+        return True  # touching/overlapping: nothing to judge the surface by
+    y0 = max(int(a["box"][1]), int(b["box"][1]))
+    y1 = min(int(a["box"][3]), int(b["box"][3]))
+    if y1 - y0 < 4:
+        return True
+    gap = _median_color(bgr, gap_x0, y0, gap_x1, y1)
+    if gap is None:
+        return True
+    # Sample the interiors a couple of pixels in from the OCR box edges.
+    ia = _median_color(bgr, int(a["box"][0]) + 2, y0 + 1, int(a["box"][2]) - 2, y1 - 1)
+    ib = _median_color(bgr, int(b["box"][0]) + 2, y0 + 1, int(b["box"][2]) - 2, y1 - 1)
+    if ia is None or ib is None:
+        return True
+    lum_gap = _lum(gap)
+    return abs(_lum(ia) - lum_gap) < 45 and abs(_lum(ib) - lum_gap) < 45
+
+
+def _merge_into_lines(blocks: list[dict], bgr: np.ndarray | None = None) -> list[dict]:
     """Join detector fragments that belong to the same visual line.
 
     The detector frequently splits one printed line into several boxes at
     word-level gaps (or when a long phrase wraps inside an UI column), and
     translating each fragment separately is what makes a phrase come back
     "scattered" — every piece centred in its own little box. Merge boxes that
-    sit on the same vertical band and are close enough horizontally into one
-    line: the whole phrase is then translated as one unit and painted across
-    the merged width.
+    sit on the same vertical band, are close enough horizontally AND look like
+    the same surface (same fill behind the text), so separate buttons/labels
+    on the same row are left alone.
 
-    Boxes that share a band but are far apart (separate labels/columns on the
-    same row) are intentionally NOT merged.
+    When no image is available (unit tests) only the geometric part runs.
     """
     if len(blocks) <= 1:
         return blocks
@@ -203,8 +243,9 @@ def _merge_into_lines(blocks: list[dict]) -> list[dict]:
             if min(ly1, by1) - max(ly0, by0) <= 0:
                 continue
             gap = bx0 - lx1
-            # A small gap (or horizontal overlap) means one continuous phrase.
-            if gap <= max(18.0, height * 1.1):
+            # A small gap (or horizontal overlap) can still mean one phrase —
+            # but only when the surface continues across it.
+            if gap <= max(18.0, height * 1.1) and (bgr is None or _continuous_surface(bgr, line, b)):
                 line["box"][0] = min(line["box"][0], bx0)
                 line["box"][1] = min(line["box"][1], by0)
                 line["box"][2] = max(line["box"][2], bx1)
