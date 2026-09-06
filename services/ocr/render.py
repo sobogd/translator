@@ -107,6 +107,28 @@ def _wrap(text: str, font: ImageFont.FreeTypeFont, max_w: float) -> list[str]:
     return lines
 
 
+def _measure_lines(
+    draw: ImageDraw.ImageDraw,
+    lines: list[str],
+    font: ImageFont.FreeTypeFont,
+) -> tuple[list, int, int]:
+    """Per-line ink bbox (textbbox) and the stacked block height. The ink box
+    is what is actually painted — centering it (not the em box) is what makes
+    ascenders/descenders/accents sit correctly inside the erased area."""
+    lead = max(1, font.size // 7)
+    meas: list = []
+    total = 0
+    for line in lines:
+        left, top, right, bottom = draw.textbbox((0, 0), line, font=font, anchor="la")
+        iw = right - left
+        ih = bottom - top
+        meas.append((line, left, top, iw, ih))
+        total += ih
+    if len(lines) > 1:
+        total += lead * (len(lines) - 1)
+    return meas, total, lead
+
+
 def _draw_translated(
     draw: ImageDraw.ImageDraw,
     box: tuple[int, int, int, int],
@@ -122,29 +144,33 @@ def _draw_translated(
     pad = max(2, int(h * 0.08))
     max_w = max(w - 2 * pad, 8.0)
 
-    size = int(h * 0.8)
-    if size < 7:
-        return
-    while size >= 7:
+    # Largest font size whose wrapped lines stack inside the box height.
+    chosen: tuple | None = None
+    start = max(7, int(h * 0.8))
+    for size in range(start, 6, -1):
         font = _font(size)
-        lines = _wrap(text, font, max_w)
-        total_h = len(lines) * size * 1.3
-        if total_h <= h or size <= 7:
+        lines = _wrap(text, font, max_w) or [text]
+        meas, total, _ = _measure_lines(draw, lines, font)
+        if total <= h:
+            chosen = (font, lines, meas, total)
             break
-        size = int(size * 0.85)
+    if chosen is None:
+        # Tiny box: last resort at the floor size, even if it overflows a bit.
+        font = _font(7)
+        lines = _wrap(text, font, max_w) or [text]
+        meas, total, _ = _measure_lines(draw, lines, font)
+        chosen = (font, lines, meas, total)
 
-    font = _font(max(7, size))
-    lines = _wrap(text, font, max_w) or [text]
-    line_h = font.size * 1.3
-    total_h = len(lines) * line_h
-    top = y0 + max(0.0, (h - total_h) / 2)
-    ascent, _ = font.getmetrics()
+    font, lines, meas, total = chosen  # type: ignore[assignment]
+    lead = max(1, font.size // 7)
+    top = y0 + max(0.0, (h - total) / 2)
     y = top
-    for line in lines:
-        tw = font.getlength(line)
-        x = x0 + (w - tw) / 2
-        draw.text((x, y + (line_h - font.size) / 2 + ascent - font.size * 0.2), line, font=font, fill=fg)
-        y += line_h
+    for line, left, top_, iw, ih in meas:
+        # Draw so this line's ink box starts exactly at (x, y): subtract the
+        # bbox origin from the desired position.
+        x = x0 + (w - iw) / 2 - left
+        draw.text((x, y - top_), line, font=font, fill=fg, anchor="la")
+        y += ih + lead
 
 
 def render(original: bytes, width: int, height: int, blocks: list[dict]) -> bytes:
