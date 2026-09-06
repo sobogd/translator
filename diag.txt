@@ -1,1 +1,1 @@
-diag marker — touch to run prod-diagnostics
+diag marker — touch to run prod-diagnostics (rev2: db dump)
