@@ -149,6 +149,12 @@ export interface TranslatorTexts {
     recordAria: string;
     stopAria: string;
     pricingLink: string;
+    /** "Add" trigger that opens the attachment context menu (composer).
+     *  Optional: locales without the translated key fall back to English —
+     *  same policy as the taskbar chrome keys. */
+    add?: string;
+    addImage?: string;
+    imageReading?: string;
     errors: {
       insufficientCredits: string;
       textTooLong: string;

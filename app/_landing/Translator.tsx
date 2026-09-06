@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUp, BookOpen, ChevronDown, Loader2, Mic, Plus, Square, Trash2, X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
+import { ArrowUp, BookOpen, ChevronDown, Image as ImageIcon, Loader2, Mic, Plus, Square, Trash2, X } from "lucide-react";
 import { WavRecorder } from "@/lib/recorder";
 import { History } from "@/components/History";
 import { apiFetch } from "@/lib/client";
@@ -40,6 +40,17 @@ const rememberTopic = (id: string) => {
 // secret half (TS_SECRET) never leaves lib/turnstile.ts.
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TS_SITE ?? null;
 const DEFAULT_TO = "es";
+
+// OCR recognition engine for a photo, guessed from what we know about the
+// text it likely contains: the topic's locked source, or failing that the
+// target (a user translating INTO a Cyrillic language most often photographs
+// Latin text, and vice versa). The sidecar defaults to "cyrillic", which also
+// reads English — this only widens coverage for Latin-source photos.
+const CYRILLIC_CODES = new Set(["ru", "uk", "be", "bg", "sr", "mk"]);
+function guessRecLang(sourceCode: string | null | undefined, targetCode: string): string {
+  if (sourceCode) return CYRILLIC_CODES.has(sourceCode) ? "cyrillic" : "latin";
+  return CYRILLIC_CODES.has(targetCode) ? "latin" : "cyrillic";
+}
 
 type RecStatus = "idle" | "recording" | "processing";
 type WidgetTexts = TranslatorTexts["translator"];
@@ -230,6 +241,11 @@ export function Translator({
   // Remaining voice seconds, fetched when recording starts — the ticking
   // timer stops the mic the moment the free/plan pool would run out.
   const secondsLeftRef = useRef<number | null>(null);
+  // Attachment context menu (composer) + the in-flight image translation.
+  const [attachOpen, setAttachOpen] = useState(false);
+  const [imageBusy, setImageBusy] = useState(false);
+  const attachFileRef = useRef<HTMLInputElement>(null);
+  const composerIslandRef = useRef<HTMLDivElement>(null);
 
   // Bot gate in front of the Gemini-spending endpoints. Anonymous visitors
   // only: an account's requests are never challenged server-side, so the
@@ -444,6 +460,7 @@ export function Translator({
 
   async function translateText() {
     if (!text.trim() || textBusy) return;
+    setAttachOpen(false);
     const pair = trackPair();
     analytics.track("Click", "Send text");
     setError(null);
@@ -496,8 +513,66 @@ export function Translator({
     }
   }
 
+  // Photo -> OCR -> translation -> one persisted chat turn, exactly like the
+  // voice flow: creates the topic on first send, reloads it afterwards, and
+  // refunds nothing client-side — the route only charges for detected text.
+  async function sendImage(file: File) {
+    analytics.track("Click", "Attach image");
+    setError(null);
+    setAttachOpen(false);
+    setImageBusy(true);
+    let createdId: string | null = null;
+    try {
+      if (!(await ensurePass())) throw new Error("turnstile_failed");
+      if (!topic) createdId = await createTopic(defaultTarget, draftSourceLang);
+      const topicId = topic?.id ?? (createdId as string);
+      const fd = new FormData();
+      fd.append("image", file);
+      fd.append("topicId", topicId);
+      // Tell the OCR engine which script it is about to read.
+      fd.append(
+        "recLang",
+        guessRecLang(topic?.sourceLang ?? draftSourceLang, topic?.targetLang ?? defaultTarget),
+      );
+      const send = () => apiFetch("/api/translate-image", { method: "POST", body: fd });
+      let res = await send();
+      // The pass cookie expired between the local check and the request:
+      // solve once more and resend rather than surfacing an error.
+      if (res.status === 403) {
+        invalidatePass();
+        if (!(await ensurePass())) throw new Error("turnstile_failed");
+        res = await send();
+      }
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "error");
+      analytics.track("Translate", `Image ${trackPair()}`);
+      await loadTopic(topicId);
+      await loadTopics();
+      window.dispatchEvent(new Event(QUOTA_EVENT));
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "Error";
+      // Nothing was translated, so the thread this send just opened is empty.
+      if (createdId) await discardTopic(createdId);
+      if (msg === "insufficient_credits") setQuotaModal(true);
+      else {
+        analytics.track("Show", `Translate error image: ${trackError(msg)}`);
+        setError(friendlyError(msg, t));
+      }
+    } finally {
+      setImageBusy(false);
+    }
+  }
+
+  function onAttachFileChange(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) void sendImage(file);
+    // Allow re-picking the same file next time.
+    e.target.value = "";
+  }
+
   async function startRec() {
     analytics.track("Click", "Mic start");
+    setAttachOpen(false);
     setError(null);
     try {
       const res = await apiFetch("/api/quota");
@@ -604,6 +679,20 @@ export function Translator({
     return () => analytics.setTopic(null);
   }, [topic?.id]);
 
+  // Close the attachment menu on any tap outside the composer island (its own
+  // button/menu live inside it; a pointerdown inside keeps it open so the
+  // file picker button stays reachable).
+  useEffect(() => {
+    if (!attachOpen) return;
+    const closeOnOutside = (e: PointerEvent) => {
+      const node = composerIslandRef.current;
+      if (node && e.target instanceof Node && node.contains(e.target)) return;
+      setAttachOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOnOutside);
+    return () => document.removeEventListener("pointerdown", closeOnOutside);
+  }, [attachOpen]);
+
   // One event wherever the out-of-quota modal comes up — it is opened from
   // four places (text, voice, mic start, mid-recording cut).
   useEffect(() => {
@@ -621,6 +710,10 @@ export function Translator({
   // Composer half of the omnibar — text field, a mic separated by a left
   // border, and the accent translate CTA hugging the field edge.
   const showSend = status === "idle" && text.trim().length > 0;
+  const busy = status !== "idle" || imageBusy;
+  const busyLabel = status === "recording" ? t.recording : status === "processing" ? t.recognizing : (t.imageReading ?? "Reading image…");
+  const addLabel = t.add ?? "Add";
+  const addImageLabel = t.addImage ?? "Image";
   const micOrSend = status === "recording" ? () => stopRec(false) : showSend ? translateText : startRec;
 
   const composerRow = (
@@ -628,7 +721,49 @@ export function Translator({
       {/* Turnstile render target. Empty (zero-height) unless Cloudflare
           decides this visitor has to interact with the challenge. */}
       <div ref={turnstileRef} className="empty:hidden" />
-      {status !== "idle" ? (
+      {!busy && (
+        <>
+          {/* "Add" trigger — context menu of attachable inputs. Disabled while
+              a send is in flight so two flows never race the same topic. */}
+          <button
+            type="button"
+            onClick={() => {
+              analytics.track("Click", "Attach menu open");
+              setAttachOpen(true);
+            }}
+            aria-label={addLabel}
+            aria-haspopup="menu"
+            aria-expanded={attachOpen}
+            title={addLabel}
+            disabled={textBusy}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-hint transition-colors hover:bg-accent hover:text-text active:scale-90 disabled:opacity-40"
+          >
+            <Plus size={17} />
+          </button>
+          {attachOpen && (
+            <div
+              role="menu"
+              aria-label={addLabel}
+              className="absolute bottom-full left-2 z-10 mb-1 w-48 overflow-hidden rounded-lg bg-[var(--window-bg)] py-1 shadow-xl"
+            >
+              <button
+                type="button"
+                role="menuitem"
+                onClick={() => {
+                  analytics.track("Click", "Attach image");
+                  setAttachOpen(false);
+                  attachFileRef.current?.click();
+                }}
+                className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm text-text/90 transition-colors hover:bg-accent hover:text-text"
+              >
+                <ImageIcon size={16} className="shrink-0 text-hint" />
+                {addImageLabel}
+              </button>
+            </div>
+          )}
+        </>
+      )}
+      {busy ? (
         <div className="flex min-w-0 flex-1 items-center self-center gap-2 px-2 text-sm text-hint">
           {status === "recording" ? (
             <>
@@ -645,7 +780,7 @@ export function Translator({
             </>
           ) : (
             <>
-              <Loader2 size={14} className="animate-spin" /> {t.recognizing}
+              <Loader2 size={14} className="animate-spin" /> {busyLabel}
             </>
           )}
         </div>
@@ -673,14 +808,17 @@ export function Translator({
       {/* Square CTA — stays a fixed square (never stretches with the field);
           the input grows on its own. */}
       <button
-        onClick={micOrSend}
-        disabled={status === "processing" || (showSend && textBusy)}
+        onClick={() => {
+          setAttachOpen(false);
+          void micOrSend();
+        }}
+        disabled={status === "processing" || imageBusy || (showSend && textBusy)}
         aria-label={status === "recording" ? t.stopAria : showSend ? t.translateAria : t.recordAria}
         className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-button font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99] disabled:opacity-40 ${
           status === "recording" ? "animate-pulse-ring" : ""
         }`}
       >
-        {status === "processing" ? (
+        {status === "processing" || imageBusy ? (
           <Loader2 className="h-5 w-5 animate-spin" />
         ) : status === "recording" ? (
           <Square className="h-4 w-4" fill="currentColor" />
@@ -694,6 +832,16 @@ export function Translator({
           <Mic className="h-5 w-5" />
         )}
       </button>
+      {/* Hidden file input — opened by the "Image" menu item. accept list must
+          match the server's ALLOWED_MIME (and 15MB sidecar cap). */}
+      <input
+        ref={attachFileRef}
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        onChange={onAttachFileChange}
+        className="hidden"
+        tabIndex={-1}
+      />
     </div>
   );
 
@@ -943,7 +1091,7 @@ export function Translator({
         {/* Row 3 — composer: resting height h-14 with the text vertically
             centred; it grows once the input needs more lines. The action
             button stays a fixed square, always centred. */}
-        <div className="relative z-10 flex min-h-14 shrink-0 flex-col justify-center rounded-lg bg-[var(--window-bg)] px-2">
+        <div ref={composerIslandRef} className="relative z-10 flex min-h-14 shrink-0 flex-col justify-center rounded-lg bg-[var(--window-bg)] px-2">
           {composerRow}
         </div>
       </div>

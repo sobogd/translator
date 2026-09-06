@@ -284,3 +284,34 @@ Return a JSON object with a single "translations" array: exactly one translation
   }
   return clean.map((_, i) => String(translations[i] ?? "").trim());
 }
+
+// A photo's first turn on a fresh topic has no locked source language, but
+// the topic/translation rows need one. One tiny text-only call answers just
+// that — no translation, no image tokens. Returns an ISO 639-1 code or null
+// when the model can't tell.
+export async function detectImageTextLanguage(texts: string[]): Promise<string | null> {
+  const sample = texts
+    .join("\n")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 2000);
+  if (!sample) return null;
+
+  const prompt = `Detect the language of the text below. It is a list of text pieces found in one photo, usually all in the same language.
+Answer with a JSON object {"source_lang": "ISO 639-1 code"} choosing ONLY from: ${LANGUAGES.map((l) => l.code).join(", ")}.
+If the text is empty, gibberish or mixed beyond one dominant language, return "".`;
+  const schema = {
+    type: Type.OBJECT,
+    properties: { source_lang: { type: Type.STRING } },
+    required: ["source_lang"],
+  };
+
+  const response = await ai().models.generateContent({
+    model: MODEL,
+    contents: [{ role: "user", parts: [{ text: `${prompt}\n\nTEXT:\n${sample}` }] }],
+    config: genConfig(schema, 2048),
+  });
+  const parsed = JSON.parse(response.text ?? "{}") as { source_lang?: unknown };
+  const code = typeof parsed.source_lang === "string" ? parsed.source_lang.trim().toLowerCase() : "";
+  return code ? code : null;
+}
