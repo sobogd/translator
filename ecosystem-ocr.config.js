@@ -9,14 +9,13 @@ const path = require("path");
 
 const APP_DIR = __dirname;
 const OCR_DIR = path.join(APP_DIR, "services", "ocr");
-const OCR_PYTHON = path.join(OCR_DIR, ".venv", "bin", "python");
 
 module.exports = {
   apps: [
     {
       name: "translator-ocr",
       cwd: OCR_DIR, // main:app must import from services/ocr
-      script: OCR_PYTHON, // absolute venv python; interpreter 'none' = run it directly
+      script: path.join(OCR_DIR, "ocr.sh"), // launcher: venv python or system python3
       args: [
         "-m",
         "uvicorn",

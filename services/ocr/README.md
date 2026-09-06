@@ -29,7 +29,11 @@ only that the cap is explicit, not that it must stay 1.
 
 ## Setup
 
-Requires Python >= 3.10, < 3.13 (onnxruntime wheel availability).
+Requires Python >= 3.10, < 3.13 (onnxruntime wheel availability). The deploy
+workflow provisions the venv itself and tolerates boxes without `python3-venv`
+(no `ensurepip`): it tries a plain `venv`, then `venv --without-pip` +
+bootstrap pip, then a `pip install --user` fallback that the `ocr.sh` launcher
+uses via the system `python3`.
 
 ```bash
 cd services/ocr
