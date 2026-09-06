@@ -189,7 +189,7 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
     for b in blocks:
         translation = (b.get("translation") or "").strip()
         poly = b.get("polygon") or []
-        if not translation or len(poly) < 4:
+        if len(poly) < 4:
             continue
         xs = [float(p[0]) for p in poly]
         ys = [float(p[1]) for p in poly]
@@ -203,10 +203,12 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
         if w < 10 or h < 6:
             continue
 
+        # Always erase the original text area so a block that ended up without
+        # a translation reads as removed, not as left-behind original text.
         bg = _ring_median(img, (x0, y0, x1, y1))
-        # Slight outward pad so the old glyphs are fully covered.
         draw.rectangle([x0 - 1, y0 - 1, x1 + 1, y1 + 1], fill=bg)
-        _draw_translated(draw, (x0, y0, x1, y1), translation, bg)
+        if translation:
+            _draw_translated(draw, (x0, y0, x1, y1), translation, bg)
 
     out = io.BytesIO()
     img.save(out, format="JPEG", quality=JPEG_QUALITY, optimize=True)

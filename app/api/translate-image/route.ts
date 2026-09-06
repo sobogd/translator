@@ -147,13 +147,8 @@ export async function POST(req: NextRequest) {
     }
 
     const translations = await translateImageBlocks(targetLang, texts, sourceLang);
-    if (translations.length !== texts.length) {
-      // Model returned a mismatched count — nothing was translated, refund.
-      await refundImage(identity);
-      charged = false;
-      return NextResponse.json({ error: "not_recognized" }, { status: 422 });
-    }
     if (translations.every((t) => !t)) {
+      // Model returned nothing at all — nothing was translated, refund.
       await refundImage(identity);
       charged = false;
       return NextResponse.json({ error: "not_recognized" }, { status: 422 });

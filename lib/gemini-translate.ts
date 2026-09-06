@@ -230,24 +230,70 @@ If the audio is empty or unintelligible, return an empty transcript.`;
 // tokens, no coordinate guessing: geometry stays with the OCR layer.
 // ---------------------------------------------------------------------------
 
+// Blocks come back keyed by their own id (1-based, as sent), never by array
+// position: the model occasionally skips a segment, and with a plain array a
+// skipped entry silently shifts every later translation onto the wrong box.
 function imageBlocksSchema() {
   return {
     type: Type.OBJECT,
     properties: {
-      translations: {
+      blocks: {
         type: Type.ARRAY,
-        items: { type: Type.STRING },
+        items: {
+          type: Type.OBJECT,
+          properties: {
+            id: { type: Type.INTEGER },
+            translation: { type: Type.STRING },
+          },
+          required: ["id", "translation"],
+        },
       },
     },
-    required: ["translations"],
+    required: ["blocks"],
   };
 }
 
+// How many segments fit in one request. Flash-Lite started dropping entries on
+// ~30-segment payloads; chunking to a quarter of that makes drops rare, and
+// any survivor is asked again in the next round.
+const IMAGE_BLOCK_CHUNK = 15;
+const IMAGE_BLOCK_ROUNDS = 2;
+
+async function translateSegmentBatch(
+  targetLang: Language,
+  sourceLang: Language | null | undefined,
+  segments: { id: number; text: string }[],
+): Promise<Map<number, string>> {
+  const fromClause = sourceLang ? ` The segments are written in ${langLabel(sourceLang)}.` : "";
+  const prompt = `You are a professional interpreter translating text found in a photo into ${langLabel(targetLang)}.${fromClause}
+Below is a numbered list of text segments from that photo, one per line: [id] text.
+Translate EVERY segment into ${langLabel(targetLang)} — natural, fluent, idiomatic, not literal; keep meaning, tone and register.
+Return a JSON object with a single "blocks" array. For each segment you translated add one object {"id": <the segment's id>, "translation": "<translation>"}.
+Never merge segments and never invent ids: only ids from the list above. Do not echo the source text, do not add notes.`;
+
+  const numbered = segments.map((s) => `[${s.id}] ${s.text}`).join("\n");
+  const chars = segments.reduce((n, s) => n + s.text.length, 0);
+  const response = await ai().models.generateContent({
+    model: MODEL,
+    contents: [{ role: "user", parts: [{ text: `${prompt}\n\nSEGMENTS:\n${numbered}` }] }],
+    config: genConfig(imageBlocksSchema(), outputBudget(chars)),
+  });
+  const parsed = JSON.parse(response.text ?? "{}") as { blocks?: { id?: unknown; translation?: unknown }[] };
+  const out = new Map<number, string>();
+  for (const b of Array.isArray(parsed.blocks) ? parsed.blocks : []) {
+    if (typeof b.id === "number" && Number.isInteger(b.id)) {
+      const translation = typeof b.translation === "string" ? b.translation.trim() : "";
+      if (translation) out.set(b.id, translation);
+    }
+  }
+  return out;
+}
+
 /**
- * Translate every block text in one Gemini call. Resolves with exactly as
- * many entries as `texts` (index-aligned); throws when the model returns a
- * count mismatch so the caller can refund instead of mis-pairing a
- * translation with a box.
+ * Translate every block text. Resolves with exactly as many entries as
+ * `texts`, index-aligned (a missing translation is an empty string, never a
+ * shifted one): segments are sent in small id-keyed batches and any the model
+ * skipped are requested again, so one dropped entry does not fail the photo.
  */
 export async function translateImageBlocks(
   targetLang: Language,
@@ -261,28 +307,29 @@ export async function translateImageBlocks(
   }
   if (clean.length === 0) return [];
 
-  const numbered = clean.map((t, i) => `[${i + 1}] ${t}`).join("\n");
-  const fromClause = sourceLang ? ` The segments are written in ${langLabel(sourceLang)}.` : "";
-  const prompt = `You are a professional interpreter translating text found in a photo into ${langLabel(targetLang)}.${fromClause}
-Below is a numbered list of text segments from that photo, one per line.
-Translate EVERY segment into ${langLabel(targetLang)} — natural, fluent, idiomatic, not literal; keep meaning, tone and register.
-Return a JSON object with a single "translations" array: exactly one translation per segment, in the SAME ORDER. Do not echo the source text, do not keep the numbers, do not add notes.`;
+  const result: string[] = new Array(clean.length).fill("");
+  const missing = new Set<number>(clean.map((_, i) => i + 1)); // 1-based ids
 
-  const totalChars = clean.reduce((n, t) => n + t.length, 0);
-  const response = await ai().models.generateContent({
-    model: MODEL,
-    contents: [{ role: "user", parts: [{ text: `${prompt}\n\nSEGMENTS:\n${numbered}` }] }],
-    config: genConfig(imageBlocksSchema(), outputBudget(totalChars)),
-  });
-
-  const parsed = JSON.parse(response.text ?? "{}") as { translations?: unknown };
-  const translations = parsed.translations;
-  if (!Array.isArray(translations) || translations.length !== clean.length) {
-    throw new Error(
-      `translateImageBlocks: expected ${clean.length} translations, got ${Array.isArray(translations) ? translations.length : "none"}`,
-    );
+  for (let round = 0; round < IMAGE_BLOCK_ROUNDS && missing.size > 0; round++) {
+    const ids = [...missing];
+    for (let from = 0; from < ids.length; from += IMAGE_BLOCK_CHUNK) {
+      const chunk = ids.slice(from, from + IMAGE_BLOCK_CHUNK);
+      const segments = chunk.map((id) => ({ id, text: clean[id - 1] }));
+      const got = await translateSegmentBatch(targetLang, sourceLang, segments);
+      for (const id of chunk) {
+        const translation = got.get(id);
+        if (translation !== undefined) {
+          result[id - 1] = translation;
+          missing.delete(id);
+        }
+      }
+    }
   }
-  return clean.map((_, i) => String(translations[i] ?? "").trim());
+
+  if (missing.size > 0) {
+    console.warn(`[translate-image] ${missing.size} block(s) left untranslated after retries: ${[...missing].join(",")}`);
+  }
+  return result;
 }
 
 // A photo's first turn on a fresh topic has no locked source language, but
