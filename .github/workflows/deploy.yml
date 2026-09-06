@@ -42,7 +42,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: deployer
           key: ${{ secrets.SSH_KEY }}
-          source: ".next/,package.json,package-lock.json,public/,prisma/"
+          source: ".next/,package.json,package-lock.json,public/,prisma/,services/ocr/,ecosystem-ocr.config.js"
           target: "/home/deploy/apps/translator"
           overwrite: true
 
@@ -91,6 +91,7 @@ jobs:
             INGEST_SHARED_SECRET="${{ secrets.INGEST_SHARED_SECRET }}"
             ANALYTICS_ADMIN_EMAILS="${{ secrets.ANALYTICS_ADMIN_EMAILS }}"
             ANALYTICS_EXCLUDE_EMAILS="${{ secrets.ANALYTICS_EXCLUDE_EMAILS }}"
+            OCR_SIDECAR_URL="http://127.0.0.1:8701"
             PORT="8200"
             EOF
 
@@ -100,6 +101,26 @@ jobs:
             # PORT must be a real env var — next start ignores PORT from .env file
             PORT=8200 pm2 restart translator --update-env || PORT=8200 pm2 start npm --name "translator" -- start
             pm2 save
+
+            # --- OCR sidecar: its OWN PM2 process, resource-capped (see
+            # ecosystem-ocr.config.js). A missing python3 or a failed model
+            # warmup must never take the translator deploy down with it —
+            # the sidecar is only needed for the image-translate feature.
+            if command -v python3 >/dev/null 2>&1; then
+              cd /home/deploy/apps/translator/services/ocr
+              if [ ! -d .venv ]; then python3 -m venv .venv; fi
+              ./.venv/bin/pip install --quiet --upgrade pip
+              ./.venv/bin/pip install --quiet -r requirements.txt
+              # Pre-download the rec models so the first real request never
+              # stalls behind a download (non-fatal: next deploy retries).
+              ./.venv/bin/python warmup.py > /tmp/translator-ocr-warmup.log 2>&1 \
+                || echo "translator-ocr warmup failed — see /tmp/translator-ocr-warmup.log"
+              cd /home/deploy/apps/translator
+              pm2 restart translator-ocr --update-env || pm2 start ecosystem-ocr.config.js
+              pm2 save
+            else
+              echo "python3 not found — OCR sidecar (translator-ocr) not installed"
+            fi
 
       # IndexNow: tell Bing (and Yandex/Seznam/Naver, one endpoint fans out)
       # what this deploy changed, instead of waiting for the next crawl.

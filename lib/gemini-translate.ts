@@ -222,3 +222,65 @@ If the audio is empty or unintelligible, return an empty transcript.`;
     transcript: parsed.transcript ?? "",
   };
 }
+
+// ---------------------------------------------------------------------------
+// Image translation: OCR already split the photo into text blocks with boxes
+// (lib/image-ocr.ts -> translator-ocr sidecar). The model only sees the text
+// — numbered segments in, an aligned array of translations out. No image
+// tokens, no coordinate guessing: geometry stays with the OCR layer.
+// ---------------------------------------------------------------------------
+
+function imageBlocksSchema() {
+  return {
+    type: Type.OBJECT,
+    properties: {
+      translations: {
+        type: Type.ARRAY,
+        items: { type: Type.STRING },
+      },
+    },
+    required: ["translations"],
+  };
+}
+
+/**
+ * Translate every block text in one Gemini call. Resolves with exactly as
+ * many entries as `texts` (index-aligned); throws when the model returns a
+ * count mismatch so the caller can refund instead of mis-pairing a
+ * translation with a box.
+ */
+export async function translateImageBlocks(
+  targetLang: Language,
+  texts: string[],
+  sourceLang?: Language | null,
+): Promise<string[]> {
+  const clean: string[] = [];
+  for (const t of texts) {
+    const trimmed = t.trim();
+    if (trimmed) clean.push(trimmed);
+  }
+  if (clean.length === 0) return [];
+
+  const numbered = clean.map((t, i) => `[${i + 1}] ${t}`).join("\n");
+  const fromClause = sourceLang ? ` The segments are written in ${langLabel(sourceLang)}.` : "";
+  const prompt = `You are a professional interpreter translating text found in a photo into ${langLabel(targetLang)}.${fromClause}
+Below is a numbered list of text segments from that photo, one per line.
+Translate EVERY segment into ${langLabel(targetLang)} — natural, fluent, idiomatic, not literal; keep meaning, tone and register.
+Return a JSON object with a single "translations" array: exactly one translation per segment, in the SAME ORDER. Do not echo the source text, do not keep the numbers, do not add notes.`;
+
+  const totalChars = clean.reduce((n, t) => n + t.length, 0);
+  const response = await ai().models.generateContent({
+    model: MODEL,
+    contents: [{ role: "user", parts: [{ text: `${prompt}\n\nSEGMENTS:\n${numbered}` }] }],
+    config: genConfig(imageBlocksSchema(), outputBudget(totalChars)),
+  });
+
+  const parsed = JSON.parse(response.text ?? "{}") as { translations?: unknown };
+  const translations = parsed.translations;
+  if (!Array.isArray(translations) || translations.length !== clean.length) {
+    throw new Error(
+      `translateImageBlocks: expected ${clean.length} translations, got ${Array.isArray(translations) ? translations.length : "none"}`,
+    );
+  }
+  return clean.map((_, i) => String(translations[i] ?? "").trim());
+}

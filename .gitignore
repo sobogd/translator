@@ -43,3 +43,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OCR sidecar (services/ocr) — python venv, caches, bytecode
+services/ocr/.venv/
+services/ocr/__pycache__/
+services/ocr/**/__pycache__/
+*.pyc
+.pytest_cache/
