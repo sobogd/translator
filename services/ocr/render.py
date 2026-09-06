@@ -54,6 +54,71 @@ def _lum_rgb(c: tuple[int, int, int]) -> float:
     return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
 
 
+def _distinct_fill(c: tuple[int, int, int]) -> bool:
+    """Is this surface clearly a container (coloured bubble/button)? Neutral
+    greys/whites are ambiguous — there the glyph bounds decide, not the
+    background."""
+    sat = int(max(c)) - int(min(c))
+    lum = _lum_rgb(c)
+    return sat > 28 or lum < 185
+
+
+def _median_region(img: Image.Image, xa: int, ya: int, xb: int, yb: int):
+    w, h = img.size
+    xa, ya = max(0, xa), max(0, ya)
+    xb, yb = min(w, xb), min(h, yb)
+    if xb <= xa or yb <= ya:
+        return None
+    region = np.asarray(img, dtype=np.int16)[ya:yb, xa:xb].reshape(-1, 3)
+    return np.median(region, axis=0)
+
+
+def _fill_compatible(a: dict, b: dict) -> bool:
+    """Background as a SUPPLEMENTARY signal: when at least one of the two
+    surfaces is a clearly visible fill, a big colour difference means they are
+    different elements — never merge them. Neutral (grey/white) surfaces fall
+    back to the glyph-typography rules only."""
+    fa = a.get("fill")
+    fb = b.get("fill")
+    if fa is None or fb is None:
+        return True
+    if not (_distinct_fill(fa) or _distinct_fill(fb)):
+        return True
+    return abs(fa[0] - fb[0]) + abs(fa[1] - fb[1]) + abs(fa[2] - fb[2]) <= 60
+
+
+def _container_box(img: Image.Image, box: tuple[int, int, int, int], fill, max_pad: int):
+    """Grow the glyph box outward while the pixels right outside are still the
+    same fill — i.e. recover the bubble/button rectangle the text sits in, so
+    the translation can be fitted into the container with proper margins."""
+    x0, y0, x1, y1 = box
+    w, h = img.size
+
+    def matches(xa: int, ya: int, xb: int, yb: int) -> bool:
+        med = _median_region(img, xa, ya, xb, yb)
+        if med is None:
+            return False
+        return sum(abs(int(fill[i]) - int(med[i])) for i in range(3)) <= 40
+
+    for _ in range(max_pad):
+        grew = False
+        if x0 > 0 and matches(x0 - 2, y0, x0, y1):
+            x0 -= 1
+            grew = True
+        if x1 < w and matches(x1, y0, x1 + 2, y1):
+            x1 += 1
+            grew = True
+        if y0 > 0 and matches(x0, y0 - 2, x1, y0):
+            y0 -= 1
+            grew = True
+        if y1 < h and matches(x0, y1, x1, y1 + 2):
+            y1 += 1
+            grew = True
+        if not grew:
+            break
+    return (x0, y0, x1, y1)
+
+
 def _ring_median(img: Image.Image, box: tuple[int, int, int, int]) -> tuple[int, int, int]:
     """Median RGB of the band just outside the box — the fill colour that
     makes the erased area blend into the surrounding background."""
@@ -199,6 +264,7 @@ def _cluster_regions(rows: list[dict]) -> list[list[dict]]:
             and gap <= max(avg_h * 0.9, 12.0)
             and h_ratio <= 2.2
             and overlap >= min_w * 0.15
+            and _fill_compatible(row, prev)
         )
         if same_region:
             regions[-1].append(row)
@@ -239,7 +305,7 @@ def _target_size(rows: list[dict]) -> int:
     return max(8, int(round(med_h * 0.8)))
 
 
-def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
+def _draw_block(img: Image.Image, rows: list[dict], img_w: int, global_target: int) -> None:
     draw = ImageDraw.Draw(img)
 
     # 1) Erase each original line (own ring colour).
@@ -253,7 +319,6 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     med_h = float(np.median([r["h"] for r in rows]))
     med_lum = float(np.median([_lum_rgb(f) for f in fills])) if fills else 200.0
     fg: tuple[int, int, int] = (28, 28, 28) if med_lum > 140 else (242, 242, 242)
-    pad = max(2, round(med_h * 0.06))
 
     multi = len(rows) > 1
     if multi:
@@ -263,27 +328,39 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
     if not text:
         return
 
-    # 2) Zone = the REAL glyph extents of the block (top of the tallest
-    #    letter, bottom of the lowest, left/right ink extremes). No background
-    #    is consulted — the translation is fitted to the text itself.
+    # Glyph zone (real letter extents).
     bx0 = min(_inc(r, "l0", "x0") for r in rows)
     bx1 = max(_inc(r, "l1", "x1") for r in rows)
     by0 = min(_inc(r, "i0", "y0") for r in rows)
     by1 = max(_inc(r, "i1", "y1") for r in rows)
+
+    # When the block sits on a clearly visible fill (coloured bubble/button),
+    # recover the container rectangle and fit into IT (background in priority);
+    # neutral surfaces keep the pure glyph bounds.
+    block_fill = fills[0] if fills else None
+    if block_fill is not None and _distinct_fill(block_fill):
+        expanded = _container_box(img, (bx0, by0, bx1, by1), block_fill, max_pad=400)
+        bx0, by0, bx1, by1 = expanded
+
     bw, bh = bx1 - bx0, by1 - by0
     if bw < 8 or bh < 6:
         return
 
-    # 3) Paint on an overlay exactly the size of that glyph zone and paste
-    #    with an alpha mask: PIL clips to the overlay, so no pixel can escape.
+    # Paint on an overlay exactly the size of the zone and paste with alpha.
     layer = Image.new("RGBA", (int(bw), int(bh)), (0, 0, 0, 0))
     dc = ImageDraw.Draw(layer)
 
-    inner_pad = max(2, round(min(bw, bh) * 0.03))
+    inner_pad = max(3 if block_fill is not None and _distinct_fill(block_fill) else 2,
+                    round(min(bw, bh) * 0.04))
     inner_w = max(bw - 2 * inner_pad, 10.0)
     inner_h = max(bh - 2 * inner_pad, 8.0)
     left_align = len(rows) > 1 or bx0 < img_w * 0.22
+
+    # Same-type blocks share one font: snap to the global body size unless the
+    # block is clearly bigger/smaller (headline, caption).
     target = _target_size(rows)
+    if abs(target - global_target) <= 0.30 * global_target:
+        target = global_target
 
     size = _pick_font_size(dc, text, inner_w, inner_h, target)
     font = _font(size)
@@ -344,8 +421,12 @@ def render(original: bytes, width: int, height: int, blocks: list[dict]) -> byte
     rows.sort(key=lambda r: (r["y0"], r["x0"]))
     _attach_ink_bounds(img, rows)
     regions = _cluster_regions(rows)
+
+    # One shared "body" font across same-type blocks, so all messages read
+    # consistently; clearly larger/smaller blocks keep their own size.
+    global_target = int(round(float(np.median([_target_size(reg) for reg in regions])))) if regions else 0
     for region in regions:
-        _draw_block(img, region, width)
+        _draw_block(img, region, width, global_target)
 
     out = io.BytesIO()
     img.save(out, format="JPEG", quality=JPEG_QUALITY, optimize=True)
