@@ -1,6 +1,11 @@
 name: Prod diagnostics (manual)
 on:
   workflow_dispatch:
+  # Also run when the marker file changes — the only way to trigger it from a
+  # token without workflow-dispatch rights. Touch diag.txt to re-run.
+  push:
+    branches: [main]
+    paths: ["diag.txt"]
 
 jobs:
   diag:
