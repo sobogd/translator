@@ -163,13 +163,16 @@ def _pick_font_size(
     height: float,
     target: int,
 ) -> int:
-    """Largest font whose wrapped `text` fits width x height (slightly
-    padded); never below 7."""
+    """Largest font whose wrapped `text` fits STRICTLY inside width x height.
+
+    `width`/`height` are the block's content boundaries (original text bbox
+    minus padding): the translation must never leave them, so no slack is
+    allowed — the font shrinks until every wrapped line fits."""
     for s in range(max(7, min(target, 160)), 6, -1):
         font = _font(s)
         lines = _wrap(text, font, width)
         _, total, _ = _ink_block(draw, lines, font)
-        if total <= height + s * 0.6:
+        if total <= height:
             return s
     return 7
 
@@ -208,9 +211,13 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
         text = " ".join(r["text"] for r in rows if r["text"]).strip()
         if not text:
             return
-        size = _pick_font_size(draw, text, max_w, bh + med_h * 0.5, target)
+        # Strict inner boundaries of the block (original text bbox minus a
+        # small margin) — the translation must not leave them.
+        inner_w = max(bw - 2 * pad, 12.0)
+        inner_h = max(bh - 2 * max(1, round(med_h * 0.08)), 8.0)
+        size = _pick_font_size(draw, text, inner_w, inner_h, target)
         font = _font(size)
-        lines = _wrap(text, font, max_w) or [text]
+        lines = _wrap(text, font, inner_w) or [text]
         meas, total, lead = _ink_block(draw, lines, font)
         top = by0 + max(0.0, (bh - total) / 2)
         x = bx0 + pad
@@ -220,15 +227,17 @@ def _draw_block(img: Image.Image, rows: list[dict], img_w: int) -> None:
             y += ih + lead
         return
 
-    # Single, standalone element (button/heading/centered chip): keep its own
-    # band and centre it.
+    # Single, standalone element (button/heading/centered chip): fit inside
+    # its own band and centre it.
     row = rows[0]
     text = row["text"]
     if not text:
         return
-    size = _pick_font_size(draw, text, max(row["w"] - 2 * pad, 12.0), row["h"] + row["h"] * 0.4, target)
+    inner_w = max(row["w"] - 2 * pad, 12.0)
+    inner_h = max(row["h"] - 2 * max(1, round(row["h"] * 0.06)), 8.0)
+    size = _pick_font_size(draw, text, inner_w, inner_h, target)
     font = _font(size)
-    lines = _wrap(text, font, max(row["w"] - 2 * pad, 12.0)) or [text]
+    lines = _wrap(text, font, inner_w) or [text]
     meas, total, lead = _ink_block(draw, lines, font)
     top = row["y0"] + max(0.0, (row["h"] - total) / 2)
     y = top
