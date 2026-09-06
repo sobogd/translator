@@ -3,10 +3,11 @@ import { prisma } from "./prisma";
 import { FALLBACK_PERIOD_MS, FREE_TRIAL, PLANS, type Plan, type PlanId } from "./plans";
 import type { Identity } from "./auth";
 
-// Two independent quotas: characters of text translation and seconds of STT
-// audio. Consumption stays an atomic conditional decrement (single UPDATE
-// with a WHERE guard on the balance) so two concurrent requests can never
-// both succeed past zero — mirrors iq-rest's ai-quota.ts pattern.
+// Three independent quotas: characters of text translation, seconds of STT
+// audio and images of photo translation. Consumption stays an atomic
+// conditional decrement (single UPDATE with a WHERE guard on the balance) so
+// two concurrent requests can never both succeed past zero — mirrors iq-rest's
+// ai-quota.ts pattern.
 //
 // No entitled plan = the lifetime free pool the account (or the anonymous
 // fingerprint) was created with; it never refills. An entitled plan refills
@@ -44,6 +45,7 @@ async function refillIfDue(account: Account): Promise<Account> {
   const data = {
     charsBalance: plan.charsPerMonth,
     secondsBalance: plan.minutesPerMonth * 60,
+    imagesBalance: plan.imagesPerMonth,
     quotaResetAt: nextReset,
   };
   // Guarded on the timestamp we read, so two concurrent requests refill once.
@@ -131,6 +133,28 @@ export async function chargeSeconds(identity: Identity, seconds: number): Promis
   return result.count > 0 ? "ok" : "insufficient";
 }
 
+// Photo translation is one image per request — no length dimension (a single
+// image's text is bounded in the route, not here). Result is never
+// "too_long": the only failure mode is an exhausted pool.
+export async function chargeImage(identity: Identity): Promise<"ok" | "insufficient"> {
+  if (identity.kind === "anonymous") {
+    const fingerprint = fingerprintOf(identity);
+    await ensureAnonymousRow(fingerprint);
+    const result = await prisma.anonymousCredit.updateMany({
+      where: { fingerprint, imagesUsed: { lte: FREE_TRIAL.images - 1 } },
+      data: { imagesUsed: { increment: 1 } },
+    });
+    return result.count > 0 ? "ok" : "insufficient";
+  }
+
+  await getAccountUsage(identity.ownerKey);
+  const result = await prisma.account.updateMany({
+    where: { email: identity.ownerKey, imagesBalance: { gte: 1 } },
+    data: { imagesBalance: { decrement: 1 } },
+  });
+  return result.count > 0 ? "ok" : "insufficient";
+}
+
 // Voice charges its two legs apart (seconds before the STT, characters after
 // it), so every failure between them has to hand the seconds back — otherwise
 // an empty transcript or an out-of-characters account silently ate them.
@@ -170,6 +194,26 @@ export async function refundSeconds(identity: Identity, seconds: number): Promis
   } catch {
     // A failed refund must not turn a handled error into a 500 — the caller is
     // already on its way out with a real message for the user.
+  }
+}
+
+// Voice/photo pattern: charge up front, hand the image back when the request
+// died between charging and a result (empty OCR, failed translation, ...).
+export async function refundImage(identity: Identity): Promise<void> {
+  try {
+    if (identity.kind === "anonymous") {
+      await prisma.anonymousCredit.updateMany({
+        where: { fingerprint: fingerprintOf(identity), imagesUsed: { gte: 1 } },
+        data: { imagesUsed: { decrement: 1 } },
+      });
+      return;
+    }
+    await prisma.account.updateMany({
+      where: { email: identity.ownerKey },
+      data: { imagesBalance: { increment: 1 } },
+    });
+  } catch {
+    // A failed refund must not turn a handled error into a 500.
   }
 }
 

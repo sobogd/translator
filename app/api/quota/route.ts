@@ -31,6 +31,7 @@ export async function GET(req: NextRequest) {
       plan: "FREE",
       chars: Math.max(0, FREE_TRIAL.chars - (row?.charsUsed ?? 0)),
       seconds: Math.max(0, FREE_TRIAL.seconds - (row?.secondsUsed ?? 0)),
+      images: Math.max(0, FREE_TRIAL.images - (row?.imagesUsed ?? 0)),
     });
   }
 
@@ -46,6 +47,7 @@ export async function GET(req: NextRequest) {
     subscriptionStatus: account.subscriptionStatus,
     chars: Math.max(0, account.charsBalance),
     seconds: Math.max(0, account.secondsBalance),
+    images: Math.max(0, account.imagesBalance),
     // Rides along with the quota the account modal already polls, so the admin
     // button needs no request of its own.
     isAdmin: isAnalyticsAdmin(account.email),

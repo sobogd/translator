@@ -43,11 +43,14 @@ model Account {
   subscriptionStatus   String    @default("INACTIVE") // "INACTIVE" | "ACTIVE" | "PAST_DUE" | "CANCELED" | "EXPIRED"
   currentPeriodEnd     DateTime?
   cancelAtPeriodEnd    Boolean   @default(false)
-  // Quotas (chars of text translation + seconds of STT audio). Without a
-  // subscription these hold the lifetime free-trial pool (no refill); on an
-  // active plan they refill to the plan's monthly allowance at quotaResetAt.
+  // Quotas (chars of text translation + seconds of STT audio + images of
+  // photo translation). Without a subscription these hold the lifetime
+  // free-trial pool (no refill); on an active plan they refill to the plan's
+  // monthly allowance at quotaResetAt. Defaults must match FREE_ACCOUNT in
+  // lib/plans.ts.
   charsBalance         Int       @default(4000)
   secondsBalance       Int       @default(120)
+  imagesBalance        Int       @default(10)
   quotaResetAt         DateTime  @default(now())
   // What was already granted for the current paid period, so one period can
   // only ever hand out its allowance once. Without this, PRO -> STARTER -> PRO
@@ -67,6 +70,7 @@ model AnonymousCredit {
   fingerprint String   @id
   charsUsed   Int      @default(0)
   secondsUsed Int      @default(0)
+  imagesUsed  Int      @default(0)
   createdAt   DateTime @default(now())
 
   @@map("anonymous_credits")

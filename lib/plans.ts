@@ -6,6 +6,7 @@ export type Plan = {
   priceMonthly: number; // USD
   charsPerMonth: number; // text-translation quota, characters
   minutesPerMonth: number; // voice (speech-to-text) quota, minutes
+  imagesPerMonth: number; // photo translation quota, images
   maxCharsPerRequest: number;
   popular?: boolean;
 };
@@ -25,6 +26,14 @@ export type Plan = {
 //     as much as it can is pure loss (MAX_OUTPUT_TOKENS caps it);
 //   - the recent-turns context is resent with every request and is not
 //     charged either (CONTEXT_MAX_CHARS caps it).
+//
+// Image translation is billed per PHOTO, not per character (the OCR leg is
+// self-hosted and near-free; see services/ocr). Gemini text-only unit costs
+// put a typical 100-2000-char screenshot at ~$0.0005-0.002 including the
+// fixed prompt overhead, so a $0.02/person free budget is ~10 images. The
+// per-image cost ceiling is enforced in /api/translate-image by refusing to
+// send more than MAX_IMAGE_TEXT_CHARS to the model — one image can then never
+// cost more than ~$0.01-0.02 regardless of what a screenshot contains.
 export const PLANS: Record<PlanId, Plan> = {
   STARTER: {
     id: "STARTER",
@@ -32,6 +41,7 @@ export const PLANS: Record<PlanId, Plan> = {
     priceMonthly: 9.9,
     charsPerMonth: 1_500_000,
     minutesPerMonth: 250,
+    imagesPerMonth: 400,
     maxCharsPerRequest: 30000,
   },
   PRO: {
@@ -40,6 +50,7 @@ export const PLANS: Record<PlanId, Plan> = {
     priceMonthly: 19.9,
     charsPerMonth: 3_000_000,
     minutesPerMonth: 600,
+    imagesPerMonth: 700,
     maxCharsPerRequest: 100000,
     popular: true,
   },
@@ -49,6 +60,7 @@ export const PLANS: Record<PlanId, Plan> = {
     priceMonthly: 49.9,
     charsPerMonth: 8_000_000,
     minutesPerMonth: 1500,
+    imagesPerMonth: 1500,
     maxCharsPerRequest: 150000,
   },
 };
@@ -75,6 +87,7 @@ export function planRank(plan: PlanId | "FREE" | string): number {
 export const FREE_TRIAL = {
   chars: 500,
   seconds: 30,
+  images: 10,
   maxCharsPerRequest: 500,
 };
 
@@ -88,6 +101,10 @@ export const FREE_TRIAL = {
 export const FREE_ACCOUNT = {
   chars: 4000,
   seconds: 120,
+  // Photos stay at the anonymous count: OCR is free but a single dense image
+  // still costs more than 500 chars of text, so the same ~$0.02/person budget
+  // allows no more photos than the anonymous pool does.
+  images: 10,
 };
 
 // Refill period for an active subscription when Stripe has not told us when

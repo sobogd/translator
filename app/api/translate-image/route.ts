@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { resolveIdentity } from "@/lib/auth";
 import { hasValidPass, requiresTurnstile } from "@/lib/turnstile";
 import { getLanguage } from "@/lib/languages";
-import { chargeChars, refundChars } from "@/lib/credits";
+import { chargeImage, refundImage } from "@/lib/credits";
 import { allowRequest } from "@/lib/rate-limit";
 import { ocrImage, OcrError } from "@/lib/image-ocr";
 import {
@@ -17,8 +17,14 @@ export const maxDuration = 60;
 // Image translation: photo in -> OCR sidecar (text + pixel boxes) -> one
 // text-only Gemini call for per-block translations -> blocks with normalized
 // geometry back to the client, which pastes the translated text into the
-// image itself. Charged by the total length of the detected source text, the
-// same currency as /api/translate — the OCR leg is free on our side.
+// image itself.
+//
+// Quota is PER PHOTO, not per character (one image = one unit of the
+// imagesBalance pool) — a screenshot must never be refused because its
+// recognized text would be "too long for the text plan". Costs are bounded
+// two ways instead: the OCR input is capped (bytes, pixels, line count) and
+// MAX_IMAGE_TEXT_CHARS below stops one image from ever feeding an unbounded
+// prompt to Gemini, so a single image stays ~$0.01-0.02 of Gemini spend.
 //
 // Two modes:
 //  * topicId given (widget flow) — behaves like /api/translate-voice: reads
@@ -34,6 +40,10 @@ const ALLOWED_MIME: Record<string, string> = {
   "image/png": "image/png",
   "image/webp": "image/webp",
 };
+// Safety ceiling on what a single image may feed Gemini (~$0.01-0.02 worst
+// case at Flash-Lite output rates). Real screenshots/photos are far below;
+// only a pathological dense image would ever hit it.
+const MAX_IMAGE_TEXT_CHARS = 12000;
 
 export async function POST(req: NextRequest) {
   const identity = await resolveIdentity(req);
@@ -54,7 +64,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "image_too_large" }, { status: 413 });
   }
 
-  let charged = 0;
+  // One photo per request, charged like voice charges its seconds: up front,
+  // handed back whenever the request dies between charging and a result.
+  let charged = false;
   try {
     const form = await req.formData();
     const file = form.get("image");
@@ -95,6 +107,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "image_too_large" }, { status: 413 });
     }
 
+    const charge = await chargeImage(identity);
+    if (charge === "insufficient") {
+      return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
+    }
+    charged = true;
+
     const ocr = await ocrImage(imageBuf, ALLOWED_MIME[file.type], recLang);
 
     // Filter FIRST so texts and blocks stay index-aligned for the translation
@@ -102,28 +120,26 @@ export async function POST(req: NextRequest) {
     const kept = ocr.blocks.filter((b) => b.text.trim().length > 0);
     const texts = kept.map((b) => b.text.trim());
     if (texts.length === 0) {
+      await refundImage(identity);
+      charged = false;
       return NextResponse.json({ error: "not_recognized" }, { status: 422 });
     }
     const detectedChars = texts.reduce((n, t) => n + t.length, 0);
-
-    const charge = await chargeChars(identity, detectedChars);
-    if (charge === "too_long") {
+    if (detectedChars > MAX_IMAGE_TEXT_CHARS) {
+      // Refund and refuse: one image must not be able to bill a huge prompt.
+      await refundImage(identity);
+      charged = false;
       return NextResponse.json({ error: "text_too_long" }, { status: 413 });
     }
-    if (charge === "insufficient") {
-      return NextResponse.json({ error: "insufficient_credits" }, { status: 402 });
-    }
-    charged = detectedChars;
 
     // Fresh topic, no locked source yet: identify the language once so the
-    // pair locks like it does for a text/voice first message. Blocks were
-    // OCR'd by a script-specific engine; the model gets the actual text.
+    // pair locks like it does for a text/voice first message.
     if (lockSource) {
       const code = await detectImageTextLanguage(texts);
       const detected = code ? getLanguage(code) : undefined;
       if (!detected) {
-        await refundChars(identity, charged);
-        charged = 0;
+        await refundImage(identity);
+        charged = false;
         return NextResponse.json({ error: "not_recognized" }, { status: 422 });
       }
       sourceLang = detected;
@@ -132,13 +148,13 @@ export async function POST(req: NextRequest) {
     const translations = await translateImageBlocks(targetLang, texts, sourceLang);
     if (translations.length !== texts.length) {
       // Model returned a mismatched count — nothing was translated, refund.
-      await refundChars(identity, charged);
-      charged = 0;
+      await refundImage(identity);
+      charged = false;
       return NextResponse.json({ error: "not_recognized" }, { status: 422 });
     }
     if (translations.every((t) => !t)) {
-      await refundChars(identity, charged);
-      charged = 0;
+      await refundImage(identity);
+      charged = false;
       return NextResponse.json({ error: "not_recognized" }, { status: 422 });
     }
 
@@ -160,7 +176,6 @@ export async function POST(req: NextRequest) {
       width: ocr.width,
       height: ocr.height,
       recLang: ocr.recLang,
-      chargedChars: detectedChars,
       blocks,
     };
 
@@ -190,7 +205,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(payload);
   } catch (err: unknown) {
-    if (charged) await refundChars(identity, charged);
+    if (charged) {
+      await refundImage(identity);
+      charged = false;
+    }
     if (err instanceof OcrError) {
       console.error("[translate-image] ocr failed", err.code, err.message);
       // Forward the sidecar's 4xx (bad rec_lang / oversized / unreadable

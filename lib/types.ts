@@ -35,6 +35,8 @@ export interface Quota {
   subscriptionStatus?: string;
   chars: number;
   seconds: number;
+  /** Photo translations left (per-image quota, not characters). */
+  images?: number;
   /** Opens the admin traffic screens in the account modal. Server-decided
    *  (ANALYTICS_ADMIN_EMAILS) — the endpoints re-check it, this only paints
    *  the button. */

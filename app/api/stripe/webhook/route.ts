@@ -84,6 +84,7 @@ function quotaFor(account: Account, plan: PlanId | "FREE", status: string, perio
     return {
       charsBalance: planDef.charsPerMonth,
       secondsBalance: planDef.minutesPerMonth * 60,
+      imagesBalance: planDef.imagesPerMonth,
       quotaResetAt: periodEnd ?? new Date(Date.now() + FALLBACK_PERIOD_MS),
       grantedPlan: plan,
       grantedPeriodEnd: periodEnd,
@@ -95,6 +96,7 @@ function quotaFor(account: Account, plan: PlanId | "FREE", status: string, perio
     return {
       charsBalance: Math.min(account.charsBalance, planDef.charsPerMonth),
       secondsBalance: Math.min(account.secondsBalance, planDef.minutesPerMonth * 60),
+      imagesBalance: Math.min(account.imagesBalance, planDef.imagesPerMonth),
       ...(periodEnd ? { quotaResetAt: periodEnd } : {}),
     };
   }
@@ -168,6 +170,7 @@ async function handleEvent(event: Stripe.Event, stripe: Stripe): Promise<void> {
           cancelAtPeriodEnd: false,
           charsBalance: 0,
           secondsBalance: 0,
+          imagesBalance: 0,
           grantedPlan: null,
           grantedPeriodEnd: null,
         },
@@ -199,6 +202,7 @@ async function handleEvent(event: Stripe.Event, stripe: Stripe): Promise<void> {
         data: {
           charsBalance: planDef.charsPerMonth,
           secondsBalance: planDef.minutesPerMonth * 60,
+          imagesBalance: planDef.imagesPerMonth,
           quotaResetAt: periodEnd ?? new Date(Date.now() + FALLBACK_PERIOD_MS),
           currentPeriodEnd: periodEnd,
           grantedPlan: account.plan,
