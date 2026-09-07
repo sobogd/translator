@@ -9,9 +9,23 @@ import { sectionLabel } from "@/lib/track-sections";
 // SessionProvider, which every page component already wraps around itself.
 //
 // Ported from iq-rest (apps/landing/app/_landing/components/page-tracker.tsx),
-// minus the paid-click collection: this site runs no advertising.
+// including the allowlisted ad/campaign capture: like iq-rest's landing tracker,
+// this one keeps gclid/fbclid/… click ids and utm_* campaign params out of a
+// fresh URL and sends them as visit attribution (the server stores only those
+// keys, never the rest of the query string).
 
 const FROM_REGEX = /^[A-Za-z0-9_.-]{1,64}$/;
+
+// Click-id params the analytics server keeps as attribution (mirrors the
+// server-side allowlist — anything else in the query never leaves the page).
+const CLICK_ID_KEYS = new Set(["gclid", "gbraid", "wbraid", "fbclid", "msclkid", "yclid"]);
+// UTM keys accepted by the server: utm_ + 1..24 lowercase alphanumerics or _.
+const UTM_KEY_RE = /^utm_[a-z0-9_]{1,24}$/i;
+// Server caps: 16 params total, click-id values up to 512 chars, utm values up
+// to 256 chars, param names up to 32 chars (UTM_KEY_RE already bounds names).
+const Q_MAX_KEYS = 16;
+const Q_MAX_CLICK_ID = 512;
+const Q_MAX_UTM = 256;
 
 // Document-scoped (not pageview-scoped) facts. They describe the visit, not the
 // route, so re-sending them on every client-side navigation would inflate the
@@ -28,6 +42,21 @@ function collectCtxAndCleanUrl(): { ctx?: TrackCtx; billing: string | null } {
 
   const from = sp.get("from");
   if (from && FROM_REGEX.test(from)) ctx.from = from;
+
+  // Allowlisted ad/campaign params (?gclid=, ?utm_source=, …) — the paid-click
+  // and campaign equivalent of ?from=. Values stay RAW: the server validates
+  // shape and length, so do not lower-case or sanitize here.
+  const q: Record<string, string> = {};
+  for (const [key, value] of sp) {
+    if (Object.keys(q).length >= Q_MAX_KEYS) break;
+    if (CLICK_ID_KEYS.has(key)) {
+      if (value.length <= Q_MAX_CLICK_ID) q[key] = value;
+    } else if (UTM_KEY_RE.test(key) && value.length <= Q_MAX_UTM) {
+      q[key] = value;
+    }
+  }
+  if (Object.keys(q).length > 0) ctx.q = q;
+
   const ref = searchReferrerHost();
   if (ref) ctx.ref = ref;
   if (window.matchMedia) {
@@ -51,12 +80,13 @@ function collectCtxAndCleanUrl(): { ctx?: TrackCtx; billing: string | null } {
   return { ctx: Object.keys(ctx).length > 0 ? ctx : undefined, billing };
 }
 
-/** `?from=` only ever comes from a fresh entry URL, so seeing one means a
- *  genuinely new attribution — worth sending even mid-visit. `ref` is derived
- *  from document.referrer, which survives soft navigations and would otherwise
- *  re-attribute the visit on every route change. */
+/** A `?from=` or an allowlisted click-id / utm_* param only ever comes from a
+ *  fresh entry URL, so seeing one means a genuinely new attribution — worth
+ *  sending even mid-visit. `ref` is derived from document.referrer, which
+ *  survives soft navigations and would otherwise re-attribute the visit on
+ *  every route change. */
 function hasFreshAttribution(ctx: TrackCtx): boolean {
-  return Boolean(ctx.from);
+  return Boolean(ctx.from || (ctx.q && Object.keys(ctx.q).length > 0));
 }
 
 /** How long the page must sit still before a scroll counts as finished. Long

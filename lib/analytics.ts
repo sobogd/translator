@@ -58,6 +58,11 @@ export interface TrackCtx {
   from?: string;
   ref?: string;
   theme?: string;
+  /** Captured URL query params (allowlisted click-id / utm_* keys) sent with the
+   *  visit attribution. Server is the authority on which keys it stores; this
+   *  client mirrors the allowlist so non-ad junk in the URL never leaves the
+   *  page. */
+  q?: Record<string, string>;
 }
 
 // Current page label, set by PageTracker on mount so deep components (header,
