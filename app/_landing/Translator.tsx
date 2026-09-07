@@ -41,6 +41,17 @@ const rememberTopic = (id: string) => {
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TS_SITE ?? null;
 const DEFAULT_TO = "es";
 
+// Every browser on iOS is WebKit (Safari's engine is mandatory there), and
+// WebKit treats the on-screen keyboard as an overlay: it does NOT shrink the
+// layout viewport — which is exactly why the widget pane is sized from the
+// *visual* viewport via --app-vh (see Taskbar). The flip side is that WebKit
+// scrolls a focused field into view by itself, and that scroll fights the
+// pane's keyboard-driven shrink (see the focus guard effect in <Translator>).
+const IS_IOS =
+  typeof navigator !== "undefined" &&
+  (/iP(hone|ad|od)/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
+
 // OCR recognition engine for a photo, guessed from what we know about the
 // text it likely contains: the topic's locked source, or failing that the
 // target (a user translating INTO a Cyrillic language most often photographs
@@ -258,6 +269,7 @@ export function Translator({
   const recRef = useRef<WavRecorder | null>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // A seeded pair (SEO pair pages) wins over the remembered pair — reading
@@ -696,6 +708,75 @@ export function Translator({
     return () => document.removeEventListener("pointerdown", closeOnOutside);
   }, [attachOpen]);
 
+  // WebKit-only focus guard for the widget's own fields (the composer and the
+  // language-picker search). The pane is deliberately sized from the *visual*
+  // viewport (--app-vh, see Taskbar) so that when the keyboard opens the pane
+  // shrinks and the field stays just above the keys — no scrolling needed.
+  // The fields also sit inside the page's single scroll surface
+  // (.page-scroll), and iOS WebKit answers a focus by scrolling that surface
+  // to reveal the field. Both mechanisms drive the same field at once: the
+  // reveal scroll is computed against the pane mid-shrink, overshoots, and
+  // leaves the field above the visible area with no way to scroll back while
+  // the keyboard stays up (the reveal keeps re-applying). Android never sees
+  // this — Chrome resizes the layout viewport for the keyboard, so its native
+  // reveal scroll lands exactly where the pane shrink already put the field.
+  // Fix: while one of these fields is focused on iOS, hold the outer scroller
+  // at the position it had when the focus landed — the pane shrink alone is
+  // what keeps the field visible above the keyboard.
+  useEffect(() => {
+    if (!IS_IOS) return;
+    const root = rootRef.current;
+    if (!root) return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+    let scroller = document.querySelector<HTMLElement>(".page-scroll");
+    let base = 0;
+    let active = false;
+    let frame = 0;
+    const isField = (node: EventTarget | null) =>
+      node instanceof HTMLElement && (node.tagName === "INPUT" || node.tagName === "TEXTAREA");
+    const clamp = () => {
+      frame = 0;
+      // Only while the software keyboard is actually covering the viewport
+      // (vv.height < window.innerHeight is the layout viewport keeping its
+      // height — see Modal's keyboardOpen heuristic). With no keyboard up the
+      // page may scroll freely.
+      if (!active || vv.height > window.innerHeight - 80) return;
+      scroller ??= document.querySelector<HTMLElement>(".page-scroll");
+      if (scroller && Math.abs(scroller.scrollTop - base) > 1) scroller.scrollTop = base;
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(clamp);
+    };
+    const onFocusIn = (e: FocusEvent) => {
+      if (!isField(e.target) || !root.contains(e.target as Node)) return;
+      scroller ??= document.querySelector<HTMLElement>(".page-scroll");
+      base = scroller?.scrollTop ?? 0;
+      active = true;
+      schedule();
+    };
+    const onFocusOut = (e: FocusEvent) => {
+      const next = e.relatedTarget;
+      if (!(next instanceof Node) || !root.contains(next) || !isField(next)) active = false;
+    };
+    const onScroll = () => {
+      if (active) schedule();
+    };
+    window.addEventListener("focusin", onFocusIn, true);
+    window.addEventListener("focusout", onFocusOut, true);
+    scroller?.addEventListener("scroll", onScroll);
+    vv.addEventListener("resize", schedule);
+    vv.addEventListener("scroll", schedule);
+    return () => {
+      window.removeEventListener("focusin", onFocusIn, true);
+      window.removeEventListener("focusout", onFocusOut, true);
+      scroller?.removeEventListener("scroll", onScroll);
+      vv.removeEventListener("resize", schedule);
+      vv.removeEventListener("scroll", schedule);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   // One event wherever the out-of-quota modal comes up — it is opened from
   // four places (text, voice, mic start, mid-recording cut).
   useEffect(() => {
@@ -904,7 +985,7 @@ export function Translator({
     );
 
   return (
-    <div className="relative h-full min-h-0 w-full overflow-hidden sm:flex sm:flex-row sm:gap-2">
+    <div ref={rootRef} className="relative h-full min-h-0 w-full overflow-hidden sm:flex sm:flex-row sm:gap-2">
       {/* Two-pane layout: [history] [translator].
           Mobile — the panes are two full-width screens stacked over each
           other: the translator is active by default, the history sits fully
