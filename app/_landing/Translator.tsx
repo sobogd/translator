@@ -66,6 +66,10 @@ function guessRecLang(sourceCode: string | null | undefined, targetCode: string)
 type RecStatus = "idle" | "recording" | "processing";
 type WidgetTexts = TranslatorTexts["translator"];
 
+/** Why getUserMedia() failed, so the mic modal can say what actually happened
+ *  and analytics can split the one "Mic denied" event into its real causes. */
+type MicErrorKind = "blocked" | "notfound" | "busy" | "insecure" | "unknown";
+
 /** Error codes reach the name field, which the server validates against a
  *  tight character set — anything unexpected would take the whole batch down
  *  with it, so clamp here.
@@ -90,6 +94,51 @@ function friendlyError(code: string, texts: WidgetTexts): string {
   if (code === "not_recognized" || code === "bad_audio") return e.notRecognized;
   if (code === "rate_limited") return e.rateLimited;
   return e.generic;
+}
+
+/** Classify a getUserMedia() rejection. The permissions API is the
+ *  authoritative "the user blocked it" signal; the error name only narrows
+ *  hardware vs permission for the rest. A missing navigator.mediaDevices or an
+ *  explicit SecurityError means no secure context (http://) — the silent killer
+ *  that masquerades as a plain "Mic denied". */
+async function classifyMicError(err: unknown): Promise<MicErrorKind> {
+  if (typeof navigator === "undefined" || !navigator.mediaDevices?.getUserMedia) {
+    return "insecure";
+  }
+  const name = err instanceof Error ? err.name : typeof err === "string" ? err : "";
+  try {
+    const st = await navigator.permissions.query({ name: "microphone" });
+    if (st.state === "denied") return "blocked";
+  } catch {
+    // permissions.query unsupported (older Safari) or rejects the name.
+  }
+  // NotAllowedError: the permission-prompt dismissal — covered again above when
+  // the permissions API is available, this is the fallback path.
+  if (name === "NotAllowedError") return "blocked";
+  if (name === "SecurityError") return "insecure";
+  if (name === "NotFoundError" || name === "DevicesNotFoundError" || name === "OverconstrainedError") {
+    return "notfound";
+  }
+  if (name === "NotReadableError") return "busy";
+  return "unknown";
+}
+
+// The analytics event keeps saying "denied" for the blocked case so the
+// existing funnel doesn't split; the rarer causes get their own name.
+function micErrorEvent(kind: MicErrorKind): string {
+  if (kind === "blocked") return "Mic denied";
+  if (kind === "notfound") return "Mic not-found";
+  if (kind === "busy") return "Mic busy";
+  if (kind === "insecure") return "Mic insecure";
+  return "Mic unknown";
+}
+
+function micErrorTitle(t: WidgetTexts, kind: MicErrorKind): string {
+  if (kind === "blocked") return t.micBlockedTitle;
+  if (kind === "notfound") return t.micNotFound;
+  if (kind === "busy") return t.micBusy;
+  if (kind === "insecure") return t.micInsecure;
+  return t.micGeneric;
 }
 
 function matchesQuery(l: { nameRu: string; nameNative: string }, q: string): boolean {
@@ -248,6 +297,7 @@ export function Translator({
   const [status, setStatus] = useState<RecStatus>("idle");
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [micError, setMicError] = useState<MicErrorKind | null>(null);
   const [quotaModal, setQuotaModal] = useState(false);
   // Remaining voice seconds, fetched when recording starts — the ticking
   // timer stops the mic the moment the free/plan pool would run out.
@@ -589,6 +639,7 @@ export function Translator({
     analytics.track("Click", "Mic start");
     setAttachOpen(false);
     setError(null);
+    setMicError(null);
     try {
       const res = await apiFetch("/api/quota");
       if (res.ok) {
@@ -610,10 +661,22 @@ export function Translator({
       // Solve while the user is still speaking — by the time the recording
       // is sent the pass is usually already there.
       void ensurePass();
-    } catch {
-      analytics.track("Show", "Mic denied");
-      setError(t.micDeniedError);
+    } catch (e) {
+      // Don't lump every failure into one "denied": say what actually broke
+      // and give the user a way to fix it (see classifyMicError).
+      const kind = await classifyMicError(e);
+      analytics.track("Show", micErrorEvent(kind));
+      setMicError(kind);
     }
+  }
+
+  // Re-run the whole start flow. The browser will NOT reopen the permission
+  // prompt (that only happens the first time per site), so retrying just
+  // re-probes getUserMedia: once the user actually allows the mic in the
+  // browser's site settings, the next retry succeeds and recording starts.
+  function retryMic() {
+    setMicError(null);
+    void startRec();
   }
 
   // Stop = send: the recording goes straight through STT + translation in
@@ -1257,6 +1320,40 @@ export function Translator({
           }
         >
           {null}
+        </Modal>
+      )}
+
+      {micError && (
+        <Modal
+          title={micErrorTitle(t, micError)}
+          onClose={() => setMicError(null)}
+          closeAria={t.close}
+          footer={
+            <div className="flex w-full gap-2">
+              <button
+                onClick={() => setMicError(null)}
+                className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg border border-border px-4 text-sm font-semibold transition-all hover:opacity-90 active:scale-[0.99]"
+                style={{ color: "var(--hint)" }}
+              >
+                {t.close}
+              </button>
+              <button
+                onClick={retryMic}
+                className="inline-flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-lg bg-button px-4 text-sm font-semibold text-button-text transition-all hover:opacity-90 active:scale-[0.99]"
+              >
+                {t.micRetry}
+              </button>
+            </div>
+          }
+        >
+          <div className="px-5 py-4 text-sm text-hint">
+            {micError === "blocked" && <p className="mb-3">{t.micBlockedDesc}</p>}
+            {micError === "blocked" && (
+              <p className="rounded-lg border border-border bg-card px-4 py-3 leading-relaxed">
+                {t.micBlockedHow}
+              </p>
+            )}
+          </div>
         </Modal>
       )}
 

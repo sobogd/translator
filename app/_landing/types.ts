@@ -145,6 +145,17 @@ export interface TranslatorTexts {
     typePlaceholder: string;
     translateAria: string;
     micDeniedError: string;
+    /** Mic-failure copy, split by cause so a failed getUserMedia can say WHAT
+     *  went wrong instead of folding every cause into one "denied" string.
+     *  See classifyMicError() in Translator.tsx. */
+    micBlockedTitle: string;
+    micBlockedDesc: string;
+    micBlockedHow: string;
+    micNotFound: string;
+    micBusy: string;
+    micInsecure: string;
+    micGeneric: string;
+    micRetry: string;
     recording: string;
     recognizing: string;
     recordAria: string;
