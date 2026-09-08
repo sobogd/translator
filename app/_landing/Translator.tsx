@@ -708,72 +708,112 @@ export function Translator({
     return () => document.removeEventListener("pointerdown", closeOnOutside);
   }, [attachOpen]);
 
-  // WebKit-only focus guard for the widget's own fields (the composer and the
-  // language-picker search). The pane is deliberately sized from the *visual*
-  // viewport (--app-vh, see Taskbar) so that when the keyboard opens the pane
-  // shrinks and the field stays just above the keys — no scrolling needed.
-  // The fields also sit inside the page's single scroll surface
-  // (.page-scroll), and iOS WebKit answers a focus by scrolling that surface
-  // to reveal the field. Both mechanisms drive the same field at once: the
-  // reveal scroll is computed against the pane mid-shrink, overshoots, and
-  // leaves the field above the visible area with no way to scroll back while
-  // the keyboard stays up (the reveal keeps re-applying). Android never sees
-  // this — Chrome resizes the layout viewport for the keyboard, so its native
-  // reveal scroll lands exactly where the pane shrink already put the field.
-  // Fix: while one of these fields is focused on iOS, hold the outer scroller
-  // at the position it had when the focus landed — the pane shrink alone is
-  // what keeps the field visible above the keyboard.
+  // iOS keyboard geometry. WebKit keeps the layout viewport full-height when
+  // the keyboard opens (which is why the pane is sized from the *visual*
+  // viewport via --app-vh, see Taskbar) and answers a focus by scrolling the
+  // focused field into view itself. Resizing the pane live while that reveal
+  // scroll runs made the composer jump and left it unreachable — two
+  // mechanisms fighting over the same field, and re-clamping the scroll after
+  // the fact was janky and race-dependent. Here the roles are split instead:
+  //   * while a widget field is focused on iOS the pane is frozen
+  //     (html[data-freeze-vh]; Taskbar's sync skips --app-vh) — the composer's
+  //     geometry is static, so WebKit's own reveal scroll is one smooth,
+  //     deterministic move (the native behaviour, like any chat page);
+  //   * once the keyboard has settled, if the field is still below the keys
+  //     (WebKit did not scroll far enough), one corrective smooth scroll
+  //     closes the gap;
+  //   * when the field loses focus and the keyboard has fully closed, the page
+  //     eases back to the position it had before the field was focused, so the
+  //     widget returns to its full "one screen" state.
+  // Android is unaffected: Chrome resizes the layout viewport for the keyboard,
+  // so there the live --app-vh shrink is correct and no reveal scroll fires.
   useEffect(() => {
     if (!IS_IOS) return;
     const root = rootRef.current;
     if (!root) return;
     const vv = window.visualViewport;
     if (!vv) return;
+    const doc = document.documentElement;
     let scroller = document.querySelector<HTMLElement>(".page-scroll");
+    let focused = false;
+    let pendingUnfreeze = false;
     let base = 0;
-    let active = false;
-    let frame = 0;
+    let settle = 0;
+
     const isField = (node: EventTarget | null) =>
       node instanceof HTMLElement && (node.tagName === "INPUT" || node.tagName === "TEXTAREA");
-    const clamp = () => {
-      frame = 0;
-      // Only while the software keyboard is actually covering the viewport
-      // (vv.height < window.innerHeight is the layout viewport keeping its
-      // height — see Modal's keyboardOpen heuristic). With no keyboard up the
-      // page may scroll freely.
-      if (!active || vv.height > window.innerHeight - 80) return;
-      scroller ??= document.querySelector<HTMLElement>(".page-scroll");
-      if (scroller && Math.abs(scroller.scrollTop - base) > 1) scroller.scrollTop = base;
-    };
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(clamp);
-    };
+    // Keyboard up = the visual viewport is markedly shorter than the layout
+    // viewport (same heuristic as Modal.tsx); on iOS the layout viewport does
+    // not shrink for the keyboard.
+    const keyboardUp = () => vv.height < window.innerHeight - 80;
+    const findScroller = () => (scroller ??= document.querySelector<HTMLElement>(".page-scroll"));
+
     const onFocusIn = (e: FocusEvent) => {
       if (!isField(e.target) || !root.contains(e.target as Node)) return;
-      scroller ??= document.querySelector<HTMLElement>(".page-scroll");
-      base = scroller?.scrollTop ?? 0;
-      active = true;
-      schedule();
+      const el = findScroller();
+      base = el?.scrollTop ?? 0;
+      focused = true;
+      pendingUnfreeze = false;
+      doc.dataset.freezeVh = "1";
     };
+
     const onFocusOut = (e: FocusEvent) => {
       const next = e.relatedTarget;
-      if (!(next instanceof Node) || !root.contains(next) || !isField(next)) active = false;
+      // Moving between widget fields (composer → picker search) keeps the
+      // freeze — the keyboard never closes across that transition.
+      if (next instanceof Node && root.contains(next) && isField(next)) return;
+      focused = false;
+      if (keyboardUp()) {
+        // Keyboard still open/closing: WebKit revealed the field by scrolling
+        // the page. Once the keyboard has fully closed, drop the freeze and
+        // ease back to where the widget was when the field gained focus (no-op
+        // when nothing moved), restoring the "one screen" state.
+        pendingUnfreeze = true;
+      } else {
+        // No keyboard involved — the pane was never resized nor the page
+        // scrolled, so just release the freeze.
+        delete doc.dataset.freezeVh;
+      }
     };
-    const onScroll = () => {
-      if (active) schedule();
+
+    const onVv = () => {
+      if (pendingUnfreeze && !focused && !keyboardUp()) {
+        pendingUnfreeze = false;
+        delete doc.dataset.freezeVh;
+        const el = findScroller();
+        if (el && Math.abs(el.scrollTop - base) > 4) {
+          el.scrollTo({ top: base, behavior: "smooth" });
+        }
+        return;
+      }
+      if (!focused || !keyboardUp()) return;
+      // Keyboard animating: once it (and WebKit's reveal scroll) has settled,
+      // make sure the active field really sits above the keys. This only
+      // corrects a shortfall — a deficit ≤ 0 means WebKit already revealed it.
+      window.clearTimeout(settle);
+      settle = window.setTimeout(() => {
+        const ae = document.activeElement;
+        if (!(ae instanceof HTMLElement) || !root.contains(ae)) return;
+        const visibleBottom = vv.offsetTop + vv.height;
+        const deficit = ae.getBoundingClientRect().bottom - (visibleBottom - 8);
+        if (deficit > 1) {
+          const el = findScroller();
+          el?.scrollBy({ top: deficit, behavior: "smooth" });
+        }
+      }, 220);
     };
+
     window.addEventListener("focusin", onFocusIn, true);
     window.addEventListener("focusout", onFocusOut, true);
-    scroller?.addEventListener("scroll", onScroll);
-    vv.addEventListener("resize", schedule);
-    vv.addEventListener("scroll", schedule);
+    vv.addEventListener("resize", onVv);
+    vv.addEventListener("scroll", onVv);
     return () => {
       window.removeEventListener("focusin", onFocusIn, true);
       window.removeEventListener("focusout", onFocusOut, true);
-      scroller?.removeEventListener("scroll", onScroll);
-      vv.removeEventListener("resize", schedule);
-      vv.removeEventListener("scroll", schedule);
-      if (frame) cancelAnimationFrame(frame);
+      vv.removeEventListener("resize", onVv);
+      vv.removeEventListener("scroll", onVv);
+      window.clearTimeout(settle);
+      delete doc.dataset.freezeVh;
     };
   }, []);
 

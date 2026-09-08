@@ -117,6 +117,14 @@ export function Taskbar({
     const vv = window.visualViewport;
     const sync = () => {
       if (el) document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+      // While a widget field is focused on iOS the Translator freezes the pane
+      // (html[data-freeze-vh]) so its geometry stays static for WebKit's own
+      // keyboard reveal scroll — racing that reveal with a live pane resize is
+      // what made the composer jump (see the iOS keyboard effect in
+      // Translator.tsx). Android never sets the flag: there the layout
+      // viewport itself shrinks for the keyboard, so the live --app-vh shrink
+      // is the correct and only mechanism.
+      if (document.documentElement.dataset.freezeVh === "1") return;
       const vh = vv?.height ?? window.innerHeight;
       document.documentElement.style.setProperty("--app-vh", `${vh}px`);
     };
