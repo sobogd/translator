@@ -1,6 +1,9 @@
-// Sign-in email (OTP delivery) via SMTP, ported from iq-mermaid's lib/mail.ts.
-// Reads SMTP_HOST/PORT/USER/PASS + FROM_EMAIL. Without SMTP config the send is
-// silently skipped (dev-friendly) — the endpoint still stores the challenge.
+// Sign-in email (OTP delivery) via Brevo's transactional SMTP relay
+// (smtp-relay.brevo.com) — the same setup as iq-mermaid's lib/mail.ts. The
+// sender is read from FROM_EMAIL (support@iq-translate.com, an address on the
+// domain authenticated in Brevo); SMTP_HOST/PORT/USER/PASS come from env.
+// Without SMTP config the send is silently skipped (dev-friendly) — the
+// endpoint still stores the challenge.
 import nodemailer from "nodemailer";
 
 export async function sendOtpEmail(email: string, code: string, brand = "IQ Translate"): Promise<void> {
@@ -21,7 +24,7 @@ export async function sendOtpEmail(email: string, code: string, brand = "IQ Tran
     greetingTimeout: 10_000,
     socketTimeout: 15_000,
   });
-  const from = process.env.FROM_EMAIL || "noreply@iq-rest.com";
+  const from = process.env.FROM_EMAIL || "support@iq-translate.com";
   await transporter.sendMail({
     from,
     to: email,

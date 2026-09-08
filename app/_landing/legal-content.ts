@@ -14,8 +14,8 @@ export const OPERATOR = {
   status: "individual entrepreneur (autónomo) registered in Spain",
   brand: "IQ Translate",
   domain: "iq-translate.com",
-  // The operator's existing support mailbox, shared across their brands.
-  contactEmail: "support@iq-rest.com",
+  // The operator's support mailbox for this brand (domain bound to Brevo).
+  contactEmail: "support@iq-translate.com",
   fiscalAddress: "Calle Boca Del Rio 2, 1A, Oviedo, 33010, Asturias, Spain",
   taxId: "ESZ1894474S",
   hostingProvider: "Hetzner Online GmbH, Nuremberg, Germany",
